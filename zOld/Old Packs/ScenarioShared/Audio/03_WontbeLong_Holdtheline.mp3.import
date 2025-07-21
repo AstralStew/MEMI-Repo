@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2cp3iaei06yv"
+path="res://.godot/imported/03_WontbeLong_Holdtheline.mp3-6fc9ae91150a5031c2dc91036da7f19e.mp3str"
+
+[deps]
+
+source_file="res://zOld/Old Packs/ScenarioShared/Audio/03_WontbeLong_Holdtheline.mp3"
+dest_files=["res://.godot/imported/03_WontbeLong_Holdtheline.mp3-6fc9ae91150a5031c2dc91036da7f19e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

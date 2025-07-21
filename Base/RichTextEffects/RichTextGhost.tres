@@ -1,0 +1,6 @@
+[gd_resource type="RichTextEffect" script_class="RichTextFadeIn" load_steps=2 format=3 uid="uid://cpglq8nnv67wh"]
+
+[ext_resource type="Script" uid="uid://da85oc6otqxyh" path="res://Base/RichTextEffects/RichTextGhost.gd" id="1_tkic6"]
+
+[resource]
+script = ExtResource("1_tkic6")

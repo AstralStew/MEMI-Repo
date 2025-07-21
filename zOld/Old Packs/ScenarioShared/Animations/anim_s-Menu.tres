@@ -1,0 +1,202 @@
+[gd_resource type="Animation" format=3 uid="uid://bfflie73uj3id"]
+
+[resource]
+resource_name = "anim_s1-1"
+length = 6.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scenario")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"pause"
+}, {
+"args": [&"anim_s-Start"],
+"method": &"queue"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 5.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Label_MenuHeader:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.200004),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["S-M_TITLE_1"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Label_MenuHeader:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.400003, 0.900003, 4.96334, 5.46334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.26667, 1.6, 4.29334, 4.62667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.66667, 2, 4.29334, 4.62667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario3:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.06667, 2.4, 4.29334, 4.62667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.46667, 2.8, 4.29334, 4.62667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/Image_Mascot:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.5185, 3.87654),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.43334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["S-M_COMMENT_1"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(3.51853, 3.87657),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer:size_flags_stretch_ratio")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.400003, 0.833333, 5.1, 5.53333),
+"transitions": PackedFloat32Array(-1.9, -1.9, -1.9, -1.9),
+"update": 0,
+"values": [2.0, 3.5, 3.5, 2.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = false
+tracks/13/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 6.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = false
+tracks/14/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special/Label_Special:text")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(3.25804),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["G_BUTTON_START"]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = false
+tracks/15/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 3.35804, 4.55),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}

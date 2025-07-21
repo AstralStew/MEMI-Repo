@@ -1,0 +1,17 @@
+[gd_resource type="AnimationLibrary" load_steps=6 format=3 uid="uid://bg24rvmvcfl4u"]
+
+[ext_resource type="Animation" uid="uid://c8dosvx527dmf" path="res://AssetPacks/1_Intro/Animations/Intro_Landing_2_Explanation.res" id="1_7cmcn"]
+[ext_resource type="Animation" uid="uid://dpim4otuk8tkk" path="res://AssetPacks/1_Intro/Animations/Intro_Landing_0_Load.res" id="2_r20va"]
+[ext_resource type="Animation" uid="uid://douvf4gf7l4li" path="res://AssetPacks/1_Intro/Animations/Intro_Landing_1_LanguageChoice.res" id="3_uqmyd"]
+[ext_resource type="Animation" uid="uid://dbvgmh76xkqlh" path="res://AssetPacks/1_Intro/Animations/Intro_Landing_4_Unload.res" id="5_dapqf"]
+[ext_resource type="Animation" uid="uid://t2riqoos8m3o" path="res://AssetPacks/1_Intro/Animations/Intro_Landing_3_CallsAreFake.res" id="5_uqmyd"]
+
+[resource]
+resource_name = "Intro_Landing"
+_data = {
+&"Intro_Landing_0_Load": ExtResource("2_r20va"),
+&"Intro_Landing_1_LanguageChoice": ExtResource("3_uqmyd"),
+&"Intro_Landing_2_Explanation": ExtResource("1_7cmcn"),
+&"Intro_Landing_3_CallsAreFake": ExtResource("5_uqmyd"),
+&"Intro_Landing_4_Unload": ExtResource("5_dapqf")
+}

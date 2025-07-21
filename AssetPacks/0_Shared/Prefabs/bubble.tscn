@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://4k2jk6jxassl"]
+
+[ext_resource type="Script" uid="uid://pomjtlbypnca" path="res://Base/Scripts/Bubble.gd" id="1_q3shg"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="2_gcy47"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_0a8cw"]
+[ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="3_0eaqi"]
+
+[node name="Bubble" type="MarginContainer"]
+offset_left = 135.0
+offset_top = 467.0
+offset_right = 360.667
+offset_bottom = 587.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
+script = ExtResource("1_q3shg")
+_debug = true
+_autoText = "[color=green][i]whoa dude[/i]..."
+_autoTitle = "000 SAYS"
+_autoColor = Color(0.333751, 0.501714, 0.490145, 1)
+old_text = "Tap and say which
+service you 
+need
+gdfgdf"
+
+[node name="BubbleText" type="RichTextLabel" parent="."]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(180.667, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_gcy47")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "[b]Tap[/b] and [i]say[/i] which
+[color=green]service[/color] you [color=blue]
+[url={www.google.com}]need[/url][/color]
+gdfgdf"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_0a8cw")
+
+[node name="BubbleBG" type="NinePatchRect" parent="BubbleText"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 13.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_0eaqi")
+patch_margin_left = 24
+patch_margin_top = 20
+patch_margin_right = 24
+patch_margin_bottom = 15
+
+[node name="BubbleTitle" type="Label" parent="BubbleText/BubbleBG"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = -31.0
+offset_right = 192.0
+offset_bottom = -7.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("2_gcy47")
+theme_override_font_sizes/font_size = 16
+text = "BUBBLE_TITLE"
+autowrap_mode = 3
+uppercase = true
+
+[connection signal="meta_link_1" from="BubbleText" to="." method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="BubbleText" to="." method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="BubbleText" to="." method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="BubbleText" to="." method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="BubbleText" to="." method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="BubbleText" to="." method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="BubbleText" to="." method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="BubbleText" to="." method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="BubbleText" to="." method="_send_meta_link_9"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxlqcm0osuy7f"
+path="res://.godot/imported/F03_WhereCalling.mp3-1a788d2323105ff4b149115e565158e6.mp3str"
+
+[deps]
+
+source_file="res://zOld/Old Packs/Scenario1/Audio/F03_WhereCalling.mp3"
+dest_files=["res://.godot/imported/F03_WhereCalling.mp3-1a788d2323105ff4b149115e565158e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

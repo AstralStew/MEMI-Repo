@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cctsl7yxinv31"
+path="res://.godot/imported/02B_StateandTown.mp3-54d773d70c3961edd354bddb2cf5f583.mp3str"
+
+[deps]
+
+source_file="res://zOld/Old Packs/ScenarioShared/Audio/02B_StateandTown.mp3"
+dest_files=["res://.godot/imported/02B_StateandTown.mp3-54d773d70c3961edd354bddb2cf5f583.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://xpci4ibgea2w"]
+
+[ext_resource type="Script" uid="uid://ckgvll5b32yn8" path="res://zOld/OldScripts/Landing.gd" id="1_20ada"]
+[ext_resource type="Texture2D" uid="uid://bx1jjwed4jg0h" path="res://zOld/Old Other/chevron left.png" id="2_uyqxr"]
+
+[node name="Landing" type="Node2D"]
+script = ExtResource("1_20ada")
+debugging = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.205208
+anchor_right = 1.0
+anchor_bottom = 0.794792
+offset_left = 120.0
+offset_top = 120.0
+offset_right = -120.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_uyqxr")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

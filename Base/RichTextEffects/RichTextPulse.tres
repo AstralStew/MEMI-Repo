@@ -1,0 +1,6 @@
+[gd_resource type="RichTextEffect" script_class="RichTextHide" load_steps=2 format=3 uid="uid://bwdlax5xuwin4"]
+
+[ext_resource type="Script" uid="uid://b3rqrsuxqp60x" path="res://Base/RichTextEffects/RichTextPulse.gd" id="1_4uity"]
+
+[resource]
+script = ExtResource("1_4uity")

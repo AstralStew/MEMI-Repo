@@ -1,0 +1,1236 @@
+[gd_scene load_steps=26 format=3 uid="uid://ckaxxg17bev4x"]
+
+[ext_resource type="Script" uid="uid://18a4s0inli5p" path="res://zOld/OldScripts/Scenario.gd" id="1_4n0ar"]
+[ext_resource type="Theme" uid="uid://c81wtsb6phq0w" path="res://AssetPacks/0_Shared/Theme/memi_theme.tres" id="1_n4uvr"]
+[ext_resource type="Animation" uid="uid://bfflie73uj3id" path="res://zOld/Old Packs/ScenarioShared/Animations/anim_s-Menu.tres" id="3_1at74"]
+[ext_resource type="Animation" uid="uid://cl0mxptvmfjs8" path="res://zOld/Old Packs/ScenarioShared/Animations/anim_s-Start.tres" id="4_pnti6"]
+[ext_resource type="Texture2D" uid="uid://bx1jjwed4jg0h" path="res://zOld/Old Other/chevron left.png" id="5_6n3ke"]
+[ext_resource type="Texture2D" uid="uid://cvk4rv3cxbtqh" path="res://zOld/Old Packs/ScenarioShared/Images/phone_in_hand.png" id="5_mvdbq"]
+[ext_resource type="Script" uid="uid://chdkpq4cliq4k" path="res://zOld/OldScripts/PhraseComparer.gd" id="5_t6eor"]
+[ext_resource type="AnimationLibrary" uid="uid://vdykkbad66bt" path="res://zOld/Old Packs/Scenario1/Animations/AnimLibrary_Scenario1.res" id="5_tbbjf"]
+[ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://Base/Images/lil_guy.png" id="12_livnf"]
+[ext_resource type="Script" uid="uid://bnfxt1udjslg3" path="res://Base/Scripts/TranslatedLabel.gd" id="12_mt6i1"]
+[ext_resource type="Script" uid="uid://dn6ymiyj68jvq" path="res://Base/Scripts/Counter.gd" id="12_ut65h"]
+[ext_resource type="Script" uid="uid://slj3083jgm76" path="res://Base/Scripts/SignalHelper.gd" id="14_umc6w"]
+[ext_resource type="FontVariation" uid="uid://daqqn7m71r3d0" path="res://AssetPacks/0_Shared/Fonts/Roboto_Thick.tres" id="16_822lt"]
+[ext_resource type="Texture2D" uid="uid://ds3ov2sk2wjwq" path="res://zOld/Old Packs/ScenarioShared/Images/chat_bubble_operator.png" id="16_kty4c"]
+[ext_resource type="Texture2D" uid="uid://03exp2vs2v7h" path="res://zOld/Old Packs/ScenarioShared/Images/chat_bubble_caller.png" id="17_822lt"]
+[ext_resource type="FontVariation" uid="uid://30ybu638mdx8" path="res://AssetPacks/0_Shared/Fonts/Roboto_Italic.tres" id="18_qodp3"]
+[ext_resource type="Texture2D" uid="uid://dgasgod4n6ujf" path="res://zOld/Old Other/Language.png" id="20_pnti6"]
+[ext_resource type="FontVariation" uid="uid://dvpls0ts5q5pb" path="res://AssetPacks/0_Shared/Fonts/Roboto_Normal.tres" id="20_qodp3"]
+[ext_resource type="FontVariation" uid="uid://j4qa6wthgjht" path="res://AssetPacks/0_Shared/Fonts/OnlyRoboto_Thick.tres" id="24_1at74"]
+[ext_resource type="Texture2D" uid="uid://dt1g1eqvgybae" path="res://zOld/Old Other/button.png" id="25_05luv"]
+[ext_resource type="Texture2D" uid="uid://y6eggn2tmg8j" path="res://zOld/Old Packs/ScenarioShared/Images/microphone.png" id="25_newoh"]
+[ext_resource type="Texture2D" uid="uid://d0tbesj7ihb2v" path="res://zOld/Old Other/button_pressed.png" id="26_qodp3"]
+[ext_resource type="Script" uid="uid://bny3q8db3xibt" path="res://Base/Scripts/VisibleOnSpeech.gd" id="42_lab8m"]
+
+[sub_resource type="Animation" id="Animation_1at74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone/HBoxCon_Phone/Spacer_PhoneMargin:size_flags_stretch_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble/Label_OperatorTitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/Image_Mascot:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone/HBoxCon_Phone/Image_Phone:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble/Label_Operator:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble/Label_Operator:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["..."]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_822lt")]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Scenario/Phrase-s1-1:active")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Scenario/Phrase-s1-2:active")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Scenario/Phrase-s1-4:active")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Scenario/Phrase-s1-5:active")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Scenario/Phrase-s1-6:active")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/Spacer_OperatorBubbleRight:size_flags_stretch_ratio")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.45]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble:size_flags_stretch_ratio")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble:texture")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_kty4c")]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer:size_flags_stretch_ratio")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.5]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer:size_flags_stretch_ratio")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_CommentHeader:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_CommentHeader:text")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_CommentHeader:modulate")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Panel_ScenarioDescription:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Panel_ScenarioDescription:modulate")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Panel_ScenarioDescription/Label_ScenarioDescription:modulate")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Label_MenuHeader:modulate")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Label_MenuHeader:text")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Choose your scenario"]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special/Label_Special:text")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["G_BUTTON_END"]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu:visible")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario1:modulate")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario2:modulate")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario3:modulate")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario4:modulate")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("Scenario/AudioStreamPlayer:stream")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mt6i1"]
+_data = {
+&"RESET": SubResource("Animation_1at74"),
+&"anim_s-Menu": ExtResource("3_1at74"),
+&"anim_s-Start": ExtResource("4_pnti6")
+}
+
+[node name="Scenario" type="AnimationPlayer" groups=["Important"]]
+libraries = {
+&"": SubResource("AnimationLibrary_mt6i1"),
+&"AnimLibrary_Scenario1": ExtResource("5_tbbjf")
+}
+autoplay = "anim_s-Menu"
+script = ExtResource("1_4n0ar")
+debug = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Phrase-s1-1" type="Node" parent="." groups=["Important"]]
+script = ExtResource("5_t6eor")
+phrases = Array[String](["police", "fire", "ambulance"])
+targetPhrase = "fire"
+debug = true
+
+[node name="Counter" type="Node" parent="Phrase-s1-1"]
+script = ExtResource("12_ut65h")
+target = 3
+
+[node name="Phrase-s1-2" type="Node" parent="." groups=["Important"]]
+script = ExtResource("5_t6eor")
+targetPhrase = "Victoria"
+debug = true
+
+[node name="Counter" type="Node" parent="Phrase-s1-2"]
+script = ExtResource("12_ut65h")
+target = 3
+
+[node name="Phrase-s1-4" type="Node" parent="." groups=["Important"]]
+script = ExtResource("5_t6eor")
+targetPhrase = "123 Main Road Mildura"
+debug = true
+
+[node name="Counter" type="Node" parent="Phrase-s1-4"]
+script = ExtResource("12_ut65h")
+target = 3
+
+[node name="Phrase-s1-5" type="Node" parent="." groups=["Important"]]
+script = ExtResource("5_t6eor")
+targetPhrase = "yes"
+debug = true
+
+[node name="Counter" type="Node" parent="Phrase-s1-5"]
+script = ExtResource("12_ut65h")
+target = 3
+
+[node name="Phrase-s1-6" type="Node" parent="." groups=["Important"]]
+script = ExtResource("5_t6eor")
+targetPhrase = "living room"
+debug = true
+
+[node name="Counter" type="Node" parent="Phrase-s1-6"]
+script = ExtResource("12_ut65h")
+target = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+
+[node name="TopMarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.18
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+mouse_filter = 2
+texture = ExtResource("5_6n3ke")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Test" type="Label" parent="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("18_qodp3")
+theme_override_font_sizes/font_size = 17
+text = "Back to scenarios"
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("12_mt6i1")
+translationKey = "G_BACK"
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Test"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0833333
+anchor_top = 0.324324
+anchor_right = 0.453333
+anchor_bottom = 0.702703
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n4uvr")
+theme_type_variation = &"FlatButton"
+theme_override_constants/line_spacing = -20
+flat = true
+script = ExtResource("14_umc6w")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+theme = ExtResource("1_n4uvr")
+theme_type_variation = &"FlatButton"
+theme_override_constants/line_spacing = -20
+icon = ExtResource("20_pnti6")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("14_umc6w")
+metadata/_edit_use_anchors_ = true
+
+[node name="MiddleMarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Margins_Menu" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="VBoxCon_Menu" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu"]
+layout_mode = 2
+
+[node name="Label_MenuHeader" type="Label" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_822lt")
+theme_override_font_sizes/font_size = 41
+text = "Choose your scenario"
+
+[node name="VBoxCon_ScenarioMenu" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Button_Scenario1" type="Button" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+theme_override_fonts/font = ExtResource("20_qodp3")
+theme_override_font_sizes/font_size = 24
+text = "S1-M_SHORTDESC"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Button_Scenario2" type="Button" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "S2-M_SHORTDESC"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Button_Scenario3" type="Button" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_qodp3")
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "S3-M_SHORTDESC"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Button_Scenario4" type="Button" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("20_qodp3")
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "S4-M_SHORTDESC"
+alignment = 0
+autowrap_mode = 3
+
+[node name="Panel_ScenarioDescription" type="Panel" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+
+[node name="Label_ScenarioDescription" type="Label" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Panel_ScenarioDescription"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0434783
+anchor_top = 0.0134317
+anchor_right = 0.963043
+anchor_bottom = 0.943184
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -30
+theme_override_fonts/font = ExtResource("16_822lt")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxCon_Phone" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Spacer_PhoneTop" type="VSeparator" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.07
+script = ExtResource("14_umc6w")
+
+[node name="HBoxCon_Phone" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Spacer_PhoneMargin" type="VSeparator" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone/HBoxCon_Phone"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+script = ExtResource("14_umc6w")
+
+[node name="Image_Phone" type="TextureRect" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone/HBoxCon_Phone"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("5_mvdbq")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Margins_ChatBubbles" type="MarginContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxCon_ChatBubbles" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles"]
+layout_mode = 2
+
+[node name="Spacer_ChatBubblesTop" type="VSeparator" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+script = ExtResource("14_umc6w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer"]
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Image_OperatorBubble" type="TextureRect" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer" groups=["Important"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("16_kty4c")
+expand_mode = 1
+
+[node name="Label_OperatorTitle" type="Label" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble" groups=["Important"]]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(104.985, 0)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0935252
+anchor_top = 0.12
+anchor_right = 0.482
+anchor_bottom = 0.304
+offset_left = 15.9137
+offset_top = 8.56
+offset_right = 0.0979919
+offset_bottom = -7.24801
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.15
+theme = ExtResource("1_n4uvr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_822lt")
+theme_override_font_sizes/font_size = 17
+text = "OPERATOR"
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("12_mt6i1")
+translationKey = "G_OPERATOR_TITLE"
+
+[node name="Label_Operator" type="Label" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble" groups=["Important"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.149496
+anchor_top = 0.282652
+anchor_right = 0.85745
+anchor_bottom = 0.8656
+offset_left = 0.140995
+offset_top = -0.142563
+offset_right = -0.0859985
+offset_bottom = 2.63197
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("24_1at74")
+theme_override_font_sizes/font_size = 25
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Spacer_OperatorBubbleRight" type="VSeparator" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
+script = ExtResource("14_umc6w")
+
+[node name="Image_CallerBubble" type="TextureRect" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles" groups=["Important"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+mouse_filter = 2
+texture = ExtResource("17_822lt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label_Response" type="Label" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble" groups=["Important"]]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162
+anchor_top = 0.107
+anchor_right = 0.811
+anchor_bottom = 0.744
+offset_left = 17.1
+offset_top = 24.904
+offset_right = -1.95001
+offset_bottom = -24.032
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("16_822lt")
+theme_override_font_sizes/font_size = 25
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Image_Microphone" type="TextureRect" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.916302
+anchor_top = 0.362
+anchor_right = 1.009
+anchor_bottom = 0.486
+offset_left = 0.124969
+offset_top = -0.0700073
+offset_right = 12.9475
+offset_bottom = 9.78999
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.66, 0.75)
+texture = ExtResource("25_newoh")
+expand_mode = 1
+script = ExtResource("42_lab8m")
+debug = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Text_CommentHeader" type="Label" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" groups=["Important"]]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(277.63, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_n4uvr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("18_qodp3")
+theme_override_font_sizes/font_size = 29
+autowrap_mode = 3
+script = ExtResource("12_mt6i1")
+translationKey = "S1.0_COMMENT_1"
+
+[node name="Text_Comment" type="Label" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" groups=["Important"]]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(277.63, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_n4uvr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -20
+theme_override_fonts/font = ExtResource("18_qodp3")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+script = ExtResource("12_mt6i1")
+translationKey = "S1.0_COMMENT_1"
+
+[node name="Image_Mascot" type="TextureRect" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.75
+texture = ExtResource("12_livnf")
+stretch_mode = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button_Retry" type="TextureButton" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 129.59)
+layout_mode = 2
+texture_normal = ExtResource("25_05luv")
+texture_pressed = ExtResource("26_qodp3")
+stretch_mode = 5
+
+[node name="Label_Retry" type="Label" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_822lt")
+theme_override_font_sizes/font_size = 31
+text = "G_BUTTON_RETRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Next" type="TextureButton" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 129.59)
+layout_mode = 2
+texture_normal = ExtResource("25_05luv")
+texture_pressed = ExtResource("26_qodp3")
+stretch_mode = 5
+
+[node name="Label_Next" type="Label" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_822lt")
+theme_override_font_sizes/font_size = 28
+text = "G_BUTTON_NEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Special" type="TextureButton" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 129.59)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture_normal = ExtResource("25_05luv")
+texture_pressed = ExtResource("26_qodp3")
+stretch_mode = 0
+
+[node name="Label_Special" type="Label" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -11.59
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("16_822lt")
+theme_override_font_sizes/font_size = 28
+text = "G_BUTTON_END"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/HBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+
+[connection signal="correct_match" from="Phrase-s1-1" to="." method="play" binds= ["Scenario1/anim_s1-1a"]]
+[connection signal="correct_match_with" from="Phrase-s1-1" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="incorrect_match" from="Phrase-s1-1" to="." method="play" binds= ["Scenario1/anim_s1-1b"]]
+[connection signal="incorrect_match_with" from="Phrase-s1-1" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="no_match" from="Phrase-s1-1" to="." method="play" binds= ["Scenario1/anim_s1-1c"]]
+[connection signal="no_match_with" from="Phrase-s1-1" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="target_not_reached" from="Phrase-s1-1/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-1_COMMENT_4"]]
+[connection signal="target_not_reached" from="Phrase-s1-1/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-1/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-1_COMMENT_5"]]
+[connection signal="target_reached" from="Phrase-s1-1/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-1/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next" method="set_visible" binds= [true]]
+[connection signal="correct_match" from="Phrase-s1-2" to="." method="play" binds= ["Scenario1/anim_s1-2a"]]
+[connection signal="correct_match_with" from="Phrase-s1-2" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="incorrect_match_with" from="Phrase-s1-2" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="no_match" from="Phrase-s1-2" to="." method="play" binds= ["Scenario1/anim_s1-2b"]]
+[connection signal="no_match_with" from="Phrase-s1-2" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="target_not_reached" from="Phrase-s1-2/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-2_COMMENT_3"]]
+[connection signal="target_not_reached" from="Phrase-s1-2/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-2/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-2_COMMENT_4"]]
+[connection signal="target_reached" from="Phrase-s1-2/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-2/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next" method="set_visible" binds= [true]]
+[connection signal="correct_match" from="Phrase-s1-4" to="." method="play" binds= ["Scenario1/anim_s1-4a"]]
+[connection signal="correct_match_with" from="Phrase-s1-4" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="incorrect_match_with" from="Phrase-s1-4" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="no_match" from="Phrase-s1-4" to="." method="play" binds= ["Scenario1/anim_s1-4b"]]
+[connection signal="no_match_with" from="Phrase-s1-4" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="target_not_reached" from="Phrase-s1-4/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-4_COMMENT_3"]]
+[connection signal="target_not_reached" from="Phrase-s1-4/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-4/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-4_COMMENT_4"]]
+[connection signal="target_reached" from="Phrase-s1-4/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-4/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next" method="set_visible" binds= [true]]
+[connection signal="correct_match" from="Phrase-s1-5" to="." method="play" binds= ["Scenario1/anim_s1-5a"]]
+[connection signal="correct_match_with" from="Phrase-s1-5" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="incorrect_match_with" from="Phrase-s1-5" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="no_match" from="Phrase-s1-5" to="." method="play" binds= ["Scenario1/anim_s1-5b"]]
+[connection signal="no_match_with" from="Phrase-s1-5" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="target_not_reached" from="Phrase-s1-5/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-5_COMMENT_3"]]
+[connection signal="target_not_reached" from="Phrase-s1-5/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-5/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-5_COMMENT_4"]]
+[connection signal="target_reached" from="Phrase-s1-5/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-5/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next" method="set_visible" binds= [true]]
+[connection signal="correct_match" from="Phrase-s1-6" to="." method="play" binds= ["Scenario1/anim_s1-6a"]]
+[connection signal="correct_match_with" from="Phrase-s1-6" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="incorrect_match_with" from="Phrase-s1-6" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="no_match" from="Phrase-s1-6" to="." method="play" binds= ["Scenario1/anim_s1-6b"]]
+[connection signal="no_match_with" from="Phrase-s1-6" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response" method="set_text"]
+[connection signal="target_not_reached" from="Phrase-s1-6/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-6_COMMENT_3"]]
+[connection signal="target_not_reached" from="Phrase-s1-6/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-6/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment" method="set_text" binds= ["S1-6_COMMENT_4"]]
+[connection signal="target_reached" from="Phrase-s1-6/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" method="set_visible" binds= [true]]
+[connection signal="target_reached" from="Phrase-s1-6/Counter" to="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next" method="set_visible" binds= [true]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Test/Button" to="." method="_reset_to_menu"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Button2" to="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Test" method="_populate"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Button2" to="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Button2" method="_cycle_language"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer/Button2" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble/Label_OperatorTitle" method="_populate"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario1" to="." method="play"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario1" to="." method="_set_ID" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/VBoxCon_ScenarioMenu/Button_Scenario1" to="CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_Menu/VBoxCon_Menu/Panel_ScenarioDescription/Label_ScenarioDescription" method="set_text" binds= ["S1-M_LONGDESC"]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Retry" to="." method="_retry"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Next" to="." method="_next"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/AspectRatioContainer/HBoxContainer/Button_Special" to="." method="play"]

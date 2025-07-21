@@ -1,0 +1,13 @@
+[gd_resource type="FontVariation" load_steps=4 format=3 uid="uid://30ybu638mdx8"]
+
+[ext_resource type="FontFile" uid="uid://blkv3mscjotfu" path="res://AssetPacks/0_Shared/Fonts/Bases/Roboto-Italic-VariableFont.ttf" id="1_wlfvg"]
+[ext_resource type="FontVariation" uid="uid://ce7yu5g2iws4v" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Thin.tres" id="2_1wwuy"]
+[ext_resource type="FontVariation" uid="uid://tmjl127r8kn7" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Thin.tres" id="3_wttut"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_1wwuy"), ExtResource("3_wttut")])
+base_font = ExtResource("1_wlfvg")
+variation_opentype = {
+2003072104: 100,
+2003265652: 400
+}

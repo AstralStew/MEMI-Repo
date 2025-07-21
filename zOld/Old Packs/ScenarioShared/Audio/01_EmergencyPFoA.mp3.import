@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmq0062mxbfto"
+path="res://.godot/imported/01_EmergencyPFoA.mp3-8701686f7799c42684410797c2dec7e2.mp3str"
+
+[deps]
+
+source_file="res://zOld/Old Packs/ScenarioShared/Audio/01_EmergencyPFoA.mp3"
+dest_files=["res://.godot/imported/01_EmergencyPFoA.mp3-8701686f7799c42684410797c2dec7e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,178 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5ec3pp2an2ar"]
+
+[ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="1_a8uuy"]
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_dttgg"]
+[ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="2_d7wrp"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_g7nwq"]
+[ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="4_qwm0n"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="5_jts34"]
+[ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="6_ulcts"]
+[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="7_nptio"]
+[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="8_5jjvs"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="9_o3dlw"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="10_2sctr"]
+
+[node name="Intro_Landing_VB" type="VBoxContainer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dttgg")
+debugging = true
+
+[node name="LandingMenu_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Logo_VB" type="VBoxContainer" parent="LandingMenu_VB"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Logo_MC" type="MarginContainer" parent="LandingMenu_VB/Logo_VB"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 0
+
+[node name="Logo_TR" type="TextureRect" parent="LandingMenu_VB/Logo_VB/Logo_MC"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("1_a8uuy")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LanguageChoice_MC" type="MarginContainer" parent="LandingMenu_VB"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 130
+
+[node name="Labels_VB" type="VBoxContainer" parent="LandingMenu_VB/LanguageChoice_MC"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="English_RTL" type="RichTextLabel" parent="LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_d7wrp")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]English[/url]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g7nwq")
+debugging = true
+
+[node name="Arabic_RTL" type="RichTextLabel" parent="LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_qwm0n")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]عَرَبِيّ[/url]"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g7nwq")
+
+[node name="Dari_RTL" type="RichTextLabel" parent="LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_qwm0n")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]دری[/url]"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g7nwq")
+
+[node name="Chinese_RTL" type="RichTextLabel" parent="LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_jts34")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]汉语[/url]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_g7nwq")
+
+[node name="Explanation_MC" type="MarginContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LadLanding1" type="TextureRect" parent="Explanation_MC/Explanation_VB"]
+layout_mode = 2
+texture = ExtResource("6_ulcts")
+stretch_mode = 4
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("7_nptio")]
+script = ExtResource("3_g7nwq")
+debugging = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("9_o3dlw")]
+script = ExtResource("3_g7nwq")
+debugging = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("10_2sctr")]
+script = ExtResource("3_g7nwq")
+debugging = true
+
+[node name="Bubble" parent="Explanation_MC/Explanation_VB" instance=ExtResource("8_5jjvs")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+_debug = false
+_autostart = true
+_autoText = "[url={1}]continue[/url]"
+_autoTitle = ""
+_autoColor = Color(1, 1, 1, 1)
+
+[connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro_Landing/Intro_Landing_2_Explanation"]]
+[connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]
+[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Bubble" to="." method="play_animation" binds= ["Intro_Landing/Intro_Landing_3_CallsAreFake"]]

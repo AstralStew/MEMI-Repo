@@ -1,0 +1,11 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://tmjl127r8kn7"]
+
+[ext_resource type="FontFile" uid="uid://cw1s8i160m6s4" path="res://AssetPacks/0_Shared/Fonts/Bases/NotoSansSC-VariableFont_wght.ttf" id="1_p1tml"]
+
+[resource]
+base_font = ExtResource("1_p1tml")
+variation_opentype = {
+2003265652: 700
+}
+spacing_top = -50
+spacing_bottom = -50

@@ -1,0 +1,143 @@
+[gd_resource type="Animation" load_steps=2 format=3 uid="uid://r2rqkd01rwbo"]
+
+[ext_resource type="AudioStream" uid="uid://suhilrsjn3np" path="res://zOld/Old Packs/Scenario1/Audio/F01_Where.mp3" id="1_g16i2"]
+
+[resource]
+resource_name = "anim_s1-1"
+length = 4.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scenario")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.86668),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_start_recognition"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scenario/Phrase-s1-4:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.93335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scenario/AudioStreamPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_g16i2")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scenario/AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.035013),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble/Label_Operator:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Fire rescue. Where is your emergency?"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/HBoxContainer/VBoxContainer/Image_OperatorBubble/Label_Operator:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.233333, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.46667, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.40002),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["S1-4_COMMENT_1"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scenario/CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Text_Comment:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.48521, 2.84325),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.83335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["..."]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scenario/CanvasLayer/VBoxContainer/MiddleMarginContainer/Margins_ChatBubbles/VBoxCon_ChatBubbles/Image_CallerBubble/Label_Response:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.03336, 3.23336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}

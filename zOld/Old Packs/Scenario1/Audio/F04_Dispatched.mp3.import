@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fr1klxpfp7b0"
+path="res://.godot/imported/F04_Dispatched.mp3-e23b8fca790a1b85c3e465b48adfaff8.mp3str"
+
+[deps]
+
+source_file="res://zOld/Old Packs/Scenario1/Audio/F04_Dispatched.mp3"
+dest_files=["res://.godot/imported/F04_Dispatched.mp3-e23b8fca790a1b85c3e465b48adfaff8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

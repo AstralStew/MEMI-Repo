@@ -1,0 +1,283 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0jvp4gltggw3"]
+
+[ext_resource type="Theme" uid="uid://c81wtsb6phq0w" path="res://AssetPacks/0_Shared/Theme/memi_theme.tres" id="1_185ed"]
+[ext_resource type="Script" uid="uid://bnfxt1udjslg3" path="res://Base/Scripts/TranslatedLabel.gd" id="2_28oh4"]
+[ext_resource type="Script" uid="uid://slj3083jgm76" path="res://Base/Scripts/SignalHelper.gd" id="3_yenoo"]
+[ext_resource type="Texture2D" uid="uid://bx1jjwed4jg0h" path="res://zOld/Old Other/chevron left.png" id="4_3rlvv"]
+[ext_resource type="Script" uid="uid://byoiquvpr46xd" path="res://zOld/OldScripts/ImageChanger.gd" id="5_w63dj"]
+[ext_resource type="Texture2D" path="res://zOld/OldImages/kettleportrait.png" id="6_vleqp"]
+[ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030857.png" id="7_2f7qa"]
+[ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030820.png" id="8_dcwtr"]
+[ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030941.png" id="9_qqjwn"]
+[ext_resource type="FontFile" uid="uid://blkv3mscjotfu" path="res://AssetPacks/0_Shared/Fonts/Bases/Roboto-Italic-VariableFont.ttf" id="10_ovvd7"]
+[ext_resource type="Texture2D" uid="uid://cvk4rv3cxbtqh" path="res://zOld/Old Packs/ScenarioShared/Images/phone_in_hand.png" id="11_w14o3"]
+[ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://Base/Images/lil_guy.png" id="12_uxn35"]
+
+[node name="ScenarioX" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 540.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TranslatedLabel" type="Label" parent="Control"]
+process_mode = 4
+visible = false
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.45
+anchor_right = 1.0
+anchor_bottom = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "asdasd
+asd
+asd"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_28oh4")
+translationKey = "TEST"
+
+[node name="Test" type="Label" parent="Control"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.45
+anchor_right = 1.0
+anchor_bottom = 0.55
+offset_top = -432.0
+offset_bottom = -432.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0.71, 0.71, 0.71, 1)
+theme_override_font_sizes/font_size = 15
+text = "SX_TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Header" type="Label" parent="Control"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.45
+anchor_right = 1.0
+anchor_bottom = 0.55
+offset_top = -262.0
+offset_bottom = -262.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.98866, 1)
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SX_H1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Body Text" type="Label" parent="Control"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.45
+anchor_right = 1.0
+anchor_bottom = 0.55
+offset_top = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SX_TB1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Comment Text" type="Label" parent="Control"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.45
+anchor_right = 1.0
+anchor_bottom = 0.55
+offset_top = 208.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SX_TC1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -100.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.998191, 1)
+text = "SX_B1"
+autowrap_mode = 3
+script = ExtResource("3_yenoo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopMarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.18
+theme_override_constants/margin_left = 76
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+mouse_filter = 2
+texture = ExtResource("4_3rlvv")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("5_w63dj")
+runtimeImageArray = Array[Texture2D]([ExtResource("6_vleqp"), ExtResource("7_2f7qa"), ExtResource("8_dcwtr"), ExtResource("9_qqjwn")])
+
+[node name="Test" type="Label" parent="CanvasLayer/VBoxContainer/TopMarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("10_ovvd7")
+theme_override_font_sizes/font_size = 17
+text = "G_BACK"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MiddleMarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/AspectRatioContainer"]
+custom_minimum_size = Vector2(95.815, 0)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("11_w14o3")
+expand_mode = 4
+stretch_mode = 5
+script = ExtResource("5_w63dj")
+runtimeImageArray = Array[Texture2D]([ExtResource("6_vleqp"), ExtResource("7_2f7qa"), ExtResource("8_dcwtr"), ExtResource("9_qqjwn")])
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Comment Text" type="Label" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(242.645, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("1_185ed")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_ovvd7")
+theme_override_font_sizes/font_size = 24
+text = "S1.0_COMMENT_1"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("12_uxn35")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/BottomMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "S1.0_BUTTON_1"
+autowrap_mode = 3
+script = ExtResource("3_yenoo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/BottomMarginContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/VBoxContainer/BottomMarginContainer/HBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_cycle_language"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BottomMarginContainer/Button" to="CanvasLayer/VBoxContainer/BottomMarginContainer/Button" method="_cycle_language"]

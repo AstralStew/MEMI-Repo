@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b1a7uj4tpvfim"]
+
+[ext_resource type="FontFile" uid="uid://cmljbfgderb4a" path="res://AssetPacks/0_Shared/Fonts/Bases/NotoSansArabic-VariableFont_wdth,wght.ttf" id="1_dqifh"]
+
+[resource]
+base_font = ExtResource("1_dqifh")
+variation_opentype = {
+2003072104: 100,
+2003265652: 700
+}

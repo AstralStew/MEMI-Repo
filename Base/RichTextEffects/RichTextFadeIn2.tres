@@ -1,0 +1,9 @@
+[gd_resource type="RichTextEffect" script_class="RichTextFadeIn" load_steps=2 format=3 uid="uid://bvl0th5qdb5ld"]
+
+[ext_resource type="Script" uid="uid://bscreaf7vmgln" path="res://Base/RichTextEffects/RichTextFadeIn.gd" id="1_7vdor"]
+
+[resource]
+script = ExtResource("1_7vdor")
+_duration = 0.03
+_fade_range = 5
+_fade_factor = 1.0

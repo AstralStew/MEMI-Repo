@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://c81wtsb6phq0w"]
+
+[ext_resource type="StyleBox" uid="uid://qrh1fnecduac" path="res://AssetPacks/0_Shared/Theme/background_disabled.tres" id="1_gckh5"]
+[ext_resource type="StyleBox" uid="uid://fyj1pte6uw83" path="res://AssetPacks/0_Shared/Theme/background_plane.tres" id="1_xfdbn"]
+[ext_resource type="FontVariation" uid="uid://dvpls0ts5q5pb" path="res://AssetPacks/0_Shared/Fonts/Roboto_Normal.tres" id="2_gckh5"]
+[ext_resource type="StyleBox" uid="uid://dvnj7vmuxu5de" path="res://AssetPacks/0_Shared/Theme/background_focus.tres" id="2_s2qfs"]
+
+[resource]
+default_font = ExtResource("2_gckh5")
+default_font_size = 30
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.76, 0.76, 0.76, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = ExtResource("1_gckh5")
+Button/styles/focus = ExtResource("2_s2qfs")
+Button/styles/hover = ExtResource("1_xfdbn")
+Button/styles/normal = ExtResource("1_xfdbn")
+Button/styles/pressed = ExtResource("1_xfdbn")
+Panel/styles/panel = ExtResource("1_xfdbn")

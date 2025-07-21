@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://j4qa6wthgjht"]
+
+[ext_resource type="FontFile" uid="uid://cc0qslymcwb75" path="res://AssetPacks/0_Shared/Fonts/Bases/Roboto-VariableFont.ttf" id="1_g2uee"]
+
+[resource]
+base_font = ExtResource("1_g2uee")
+variation_opentype = {
+2003072104: 100,
+2003265652: 600
+}
