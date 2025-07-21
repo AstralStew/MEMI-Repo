@@ -1,0 +1,15 @@
+res://AssetPacks/1_Intro/Animations/Intro_Landing.tres
+res://Base/AllMother.tscn
+res://Base/Scripts/AllMother.gd
+res://Base/Scripts/ScreenController.gd
+res://AssetPacks/1_Intro/Animations/Intro_Landing_2_Explanation.res
+res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Thin.tres
+res://AssetPacks/0_Shared/Fonts/NotoSansSC-Thin.tres
+res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres
+res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres
+res://AssetPacks/1_Intro/Animations/Intro_Landing_0_Load.res
+res://AssetPacks/1_Intro/Animations/Intro_Landing_1_LanguageChoice.res
+res://AssetPacks/1_Intro/Animations/Intro_Landing_4_Unload.res
+res://AssetPacks/1_Intro/Animations/Intro_Landing_3_CallsAreFake.res
+res://AssetPacks/0_Shared/ScreenSets/Intro.tres
+res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Thick.tres
