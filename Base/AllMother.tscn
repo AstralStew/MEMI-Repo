@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=22 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Script" uid="uid://s3e3fyrh8rh4" path="res://Base/Scripts/AllMother.gd" id="1_p5q3o"]
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
@@ -14,12 +14,14 @@
 [ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="8_11gex"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="8_qbn4n"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="9_qbn4n"]
-[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="9_u0b1i"]
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="9_w56q6"]
 [ext_resource type="Texture2D" uid="uid://bxujeo3eek7mv" path="res://AssetPacks/0_Shared/Fonts/Screenshot 2025-07-07 153138.png" id="12_11gex"]
 [ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="13_q73ni"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="14_80dkk"]
-[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="17_w56q6"]
-[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="18_ixt38"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="17_ixt38"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="18_bihe8"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfw6p"]
 
 [node name="AllMother" type="Node2D"]
 script = ExtResource("1_p5q3o")
@@ -56,6 +58,7 @@ layer = 0
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
 libraries = {
+&"": SubResource("AnimationLibrary_mfw6p"),
 &"Intro_Landing": ExtResource("4_u0b1i")
 }
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
@@ -80,7 +83,7 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
+modulate = Color(0.792157, 0.717647, 0.65098, 1)
 z_index = -1
 custom_minimum_size = Vector2(800, 1600)
 layout_mode = 1
@@ -100,17 +103,17 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Intro_Landing_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("9_u0b1i")
+script = ExtResource("9_w56q6")
 debugging = true
 
 [node name="LandingMenu_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Logo_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB"]
 layout_mode = 2
@@ -120,13 +123,13 @@ size_flags_vertical = 2
 [node name="Logo_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/Logo_VB"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 0
 
 [node name="Logo_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/Logo_VB/Logo_MC"]
-custom_minimum_size = Vector2(0, 300)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("6_iu5ba")
@@ -134,6 +137,8 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="LanguageChoice_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 10
 theme_override_constants/margin_bottom = 130
@@ -200,8 +205,6 @@ vertical_alignment = 1
 script = ExtResource("8_qbn4n")
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB"]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_constants/margin_left = 20
@@ -216,6 +219,7 @@ theme_override_constants/separation = 15
 [node name="LadLanding1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
 layout_mode = 2
 texture = ExtResource("13_q73ni")
+expand_mode = 4
 stretch_mode = 4
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
@@ -234,7 +238,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 fit_content = true
-custom_effects = [ExtResource("17_w56q6")]
+custom_effects = [ExtResource("17_ixt38")]
 script = ExtResource("8_qbn4n")
 debugging = true
 
@@ -244,7 +248,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 fit_content = true
-custom_effects = [ExtResource("18_ixt38")]
+custom_effects = [ExtResource("18_bihe8")]
 script = ExtResource("8_qbn4n")
 debugging = true
 
