@@ -209,7 +209,7 @@ func destroy_prefab(_key:String):
 	_unsubscribe(loaded_elements[_key] as ScreenPrefab)
 	
 	# Destroy the prefab
-	loaded_elements[_key].queue_free
+	loaded_elements[_key].queue_free()
 	if loaded_elements.erase(_key):
 		if debugging: print("[ScreenController]Prefab at '",_key,"' destroyed.")
 

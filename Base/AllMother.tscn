@@ -52,6 +52,9 @@ layer = 0
 
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
+libraries = {
+&"Intro_Landing": ExtResource("4_u0b1i")
+}
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
