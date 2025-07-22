@@ -14,3 +14,5 @@ res://AssetPacks/1_Intro/Animations/Intro_Landing.tres
 res://AssetPacks/0_Shared/ScreenSets/Intro.tres
 res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Thick.tres
 res://Base/AllMother.tscn
+res://AssetPacks/0_Shared/Prefabs/bubble.tscn
+res://zOld/Old Packs/ScenarioShared/Scenario.tscn

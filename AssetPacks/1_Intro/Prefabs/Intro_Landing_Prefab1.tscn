@@ -135,7 +135,8 @@ stretch_mode = 4
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 fit_content = true
 custom_effects = [ExtResource("7_nptio")]
