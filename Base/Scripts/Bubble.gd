@@ -7,6 +7,7 @@ class_name Bubble
 @export var _updateInEditor := false
 
 @export_group("Resize Properties")
+@export var min_height := 0
 @export var min_width := 42
 @export var max_width := 250
 @export var min_char_threshold := 4
@@ -16,6 +17,7 @@ class_name Bubble
 @export var _autostart := false
 @export var _autoText := ""
 @export var _autoTitle := ""
+@export var _autoTitleBelow := false
 @export var _autoColor := Color.WHITE
 
 @export_group("Read Only")
@@ -24,7 +26,8 @@ class_name Bubble
 # Private variables
 var bubbleText : RichTextLabel
 var bubbleBG : NinePatchRect
-var bubbleTitle : Label
+var bubbleTitleTop : Label
+var bubbleTitleBottom : Label
 
 signal meta_link_1
 signal meta_link_2
@@ -38,11 +41,8 @@ signal meta_link_9
 
 
 func _ready() -> void:
-	bubbleText = get_child(0)
-	bubbleBG = bubbleText.get_child(0)
-	bubbleTitle = bubbleText.get_child(0).get_child(0)
-	
-	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor)
+	_getrefs()
+	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow)
 	
 	# set the label minimum width to 200px
 	#label.custom_minimum_size.x = 200
@@ -55,15 +55,20 @@ func _ready() -> void:
 	# When the label gets resized, change the size of this panel container to the minimum size of the label
 	#label.finished.resized.connect(_resize)
 
+func _getrefs() -> void:	
+	bubbleText = get_child(0)
+	bubbleBG = bubbleText.get_child(0)
+	bubbleTitleTop = bubbleText.get_child(0).get_child(0)
+	bubbleTitleBottom = bubbleText.get_child(0).get_child(1)
+
 #region Editor only
 
 func _process(delta: float) -> void:
 	if _updateInEditor && Engine.is_editor_hint():
+		if bubbleText == null: _getrefs()
 		
-		if bubbleText == null:
-			bubbleText = get_child(0)
-			bubbleBG = bubbleText.get_child(0)
-			bubbleTitle = bubbleText.get_child(0).get_child(0)
+		if _autostart && bubbleText.get_parsed_text() !=_autoText:
+			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow)
 		
 		if bubbleText.get_parsed_text() != old_text:
 			if _debug: print("[Bubble] In-editor resize triggered")
@@ -73,16 +78,24 @@ func _process(delta: float) -> void:
 #endregion
 
 
-func _set_properties(text:String,title:String="",bg:Color=Color.WHITE) -> void:
+func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false) -> void:
 	if _debug: print("[Bubble(",name,")] Initialising...")
 	
 	if title == "":
 		if _debug: print("[Bubble] No title, skipping...")
-		bubbleTitle.visible = false
+		bubbleTitleTop.visible = false
+		bubbleTitleBottom.visible = false
 	else:
-		if _debug: print("[Bubble] Title set...")
-		bubbleTitle.visible = true		
-		bubbleTitle.text = title
+		if titleBelow:
+			bubbleTitleTop.visible = false
+			bubbleTitleBottom.visible = true
+			bubbleTitleBottom.text = title
+			if _debug: print("[Bubble] Bottom title set...")
+		else:
+			bubbleTitleTop.visible = true
+			bubbleTitleBottom.visible = false
+			bubbleTitleTop.text = title
+			if _debug: print("[Bubble] Top title set...")
 	
 	if bg != Color.WHITE:
 		if _debug: print("[Bubble] BG color set...")
@@ -94,6 +107,12 @@ func _set_properties(text:String,title:String="",bg:Color=Color.WHITE) -> void:
 	
 	_resize()
 
+func _set_size_parametres(_min_height:int,_min_width:int,_max_width:int,_min_char_threshold:int,_max_char_threshold:int):
+	min_height = _min_height
+	min_width = _min_width
+	max_width = _max_width
+	min_char_threshold = _min_char_threshold
+	max_char_threshold = _max_char_threshold
 
 func _resize() -> void:
 	if _debug: print("[Bubble] Resizing bubble to fit text...")

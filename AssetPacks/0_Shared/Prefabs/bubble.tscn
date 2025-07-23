@@ -18,8 +18,10 @@ theme_override_constants/margin_right = 21
 theme_override_constants/margin_bottom = 19
 script = ExtResource("1_q3shg")
 _debug = true
+_updateInEditor = true
 _autoText = "[color=green][i]whoa dude[/i]..."
 _autoTitle = "000 SAYS"
+_autoTitleBelow = null
 _autoColor = Color(0.333751, 0.501714, 0.490145, 1)
 old_text = "Tap and say which
 service you 
@@ -69,7 +71,7 @@ patch_margin_top = 20
 patch_margin_right = 24
 patch_margin_bottom = 15
 
-[node name="BubbleTitle" type="Label" parent="BubbleText/BubbleBG"]
+[node name="BubbleTitleTop" type="Label" parent="BubbleText/BubbleBG"]
 layout_mode = 2
 offset_left = 12.0
 offset_top = -31.0
@@ -78,7 +80,24 @@ offset_bottom = -7.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.5)
 theme_override_fonts/font = ExtResource("2_gcy47")
 theme_override_font_sizes/font_size = 16
-text = "BUBBLE_TITLE"
+text = "BUBBLE_TITLE_TOP"
+autowrap_mode = 3
+uppercase = true
+
+[node name="BubbleTitleBottom" type="Label" parent="BubbleText/BubbleBG"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 192.0
+offset_bottom = 55.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("2_gcy47")
+theme_override_font_sizes/font_size = 16
+text = "BUBBLE_TITLE_BOTTOM"
 autowrap_mode = 3
 uppercase = true
 

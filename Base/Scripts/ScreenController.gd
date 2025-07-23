@@ -43,7 +43,7 @@ func _ready() -> void:
 		push_error("[ScreenController] ERROR -> No animation library resource_named '",animLibrary.resource_name,"' found! :(")
 	
 	add_animation_library(animLibrary.resource_name,library)
-	play_animation("Intro_Landing/Intro_Landing_0_Load")
+	play_animation("Intro/Intro_Load")
 	#---------TEMPORARY-------------------
 	
 	
