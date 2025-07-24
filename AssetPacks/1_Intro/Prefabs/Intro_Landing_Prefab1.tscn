@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5ec3pp2an2ar"]
+[gd_scene load_steps=13 format=3 uid="uid://c5ec3pp2an2ar"]
 
 [ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="1_a8uuy"]
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_dttgg"]
@@ -12,10 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="8_o3nuq"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="9_o3dlw"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="10_2sctr"]
-[ext_resource type="Script" uid="uid://pomjtlbypnca" path="res://Base/Scripts/Bubble.gd" id="13_dmale"]
-[ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="14_nrm3g"]
 
 [node name="Intro_Landing_VB" type="VBoxContainer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,7 +24,6 @@ script = ExtResource("1_dttgg")
 debugging = true
 
 [node name="LandingMenu_VB" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -117,6 +115,8 @@ vertical_alignment = 1
 script = ExtResource("3_g7nwq")
 
 [node name="Explanation_MC" type="MarginContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_constants/margin_left = 20
@@ -155,7 +155,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-text = "ASD"
 fit_content = true
 custom_effects = [ExtResource("7_nptio")]
 script = ExtResource("3_g7nwq")
@@ -166,7 +165,6 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "ASDASD"
 fit_content = true
 custom_effects = [ExtResource("9_o3dlw")]
 script = ExtResource("3_g7nwq")
@@ -183,24 +181,27 @@ script = ExtResource("3_g7nwq")
 debugging = true
 
 [node name="Continue_Bubble" parent="Explanation_MC/Explanation_VB" instance=ExtResource("8_5jjvs")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 _debug = false
 _updateInEditor = false
 _autostart = true
-_autoText = "[url={1}]continue[/url]"
+_autoText = "INTRO_LANDING_2_EXPLANATION_B1"
 _autoTitle = ""
-_autoTitleBelow = false
 _autoColor = Color(1, 1, 1, 1)
 old_text = "continue"
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_MC/Explanation_VB"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Bubble" parent="Explanation_MC/Explanation_VB" instance=ExtResource("8_5jjvs")]
+[node name="YouSay_Bubble" parent="Explanation_MC/Explanation_VB" instance=ExtResource("8_5jjvs")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -208,109 +209,11 @@ min_height = 151
 min_width = 228
 _autostart = true
 _autoText = "..."
-_autoTitle = "YOU SAY"
+_autoTitle = "COMMON_YOUSAY"
 _autoTitleBelow = true
 _autoColor = Color(1, 1, 1, 1)
 old_text = "..."
 
-[node name="YouSay_Bubble" type="MarginContainer" parent="Explanation_MC/Explanation_VB"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 21
-theme_override_constants/margin_bottom = 19
-script = ExtResource("13_dmale")
-_debug = true
-_updateInEditor = true
-min_height = 150
-min_width = 228
-_autoText = "[color=green][i]whoa dude[/i]..."
-_autoTitle = "000 SAYS"
-_autoColor = Color(0.333751, 0.501714, 0.490145, 1)
-old_text = "..."
-
-[node name="BubbleText" type="RichTextLabel" parent="Explanation_MC/Explanation_VB/YouSay_Bubble"]
-z_index = 1
-clip_contents = false
-custom_minimum_size = Vector2(228, 150)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_jts34")
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
-bbcode_enabled = true
-text = "..."
-fit_content = true
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("3_g7nwq")
-
-[node name="BubbleBG" type="NinePatchRect" parent="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText"]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -11.0
-offset_right = 13.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("14_nrm3g")
-patch_margin_left = 24
-patch_margin_top = 20
-patch_margin_right = 24
-patch_margin_bottom = 15
-
-[node name="BubbleTitleTop" type="Label" parent="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText/BubbleBG"]
-visible = false
-layout_mode = 2
-offset_left = 12.0
-offset_top = -31.0
-offset_right = 192.0
-offset_bottom = -7.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_fonts/font = ExtResource("5_jts34")
-theme_override_font_sizes/font_size = 16
-text = "BUBBLE_TITLE_TOP"
-autowrap_mode = 3
-uppercase = true
-
-[node name="BubbleTitleBottom" type="Label" parent="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText/BubbleBG"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 4.0
-offset_right = 192.0
-offset_bottom = 55.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_fonts/font = ExtResource("5_jts34")
-theme_override_font_sizes/font_size = 16
-text = "YOU SAY"
-autowrap_mode = 3
-uppercase = true
-
 [connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
 [connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
-[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_1"]
-[connection signal="meta_link_2" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_2"]
-[connection signal="meta_link_3" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_3"]
-[connection signal="meta_link_4" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_4"]
-[connection signal="meta_link_5" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_5"]
-[connection signal="meta_link_6" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_6"]
-[connection signal="meta_link_7" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_7"]
-[connection signal="meta_link_8" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_8"]
-[connection signal="meta_link_9" from="Explanation_MC/Explanation_VB/YouSay_Bubble/BubbleText" to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="_send_meta_link_9"]

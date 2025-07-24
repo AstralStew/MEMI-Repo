@@ -1,22 +1,35 @@
 string key,en,ar,prs,zh
+COMMON_YOUSAY,YOU SAY,,,
+COMMON_000SAYS,000 SAYS,,,
+COMMON_GREAT,Great,,,
+COMMON_CONTINUE,[url={1}]continue[/url],,,
 ,,,,
 ,,,,
-INTRO_LANDING_2_EXPLANATION_1,[fade_in]Let’s [b]practise calling 000[/b] in an emergency.[/fade_in],[fade_in]دعونا نتدرب على الاتصال بالرقم 000 في حالة الطوارئ.,[fade_in] بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.[/fade_in],[fade_in]让我们练习一下紧急情况下拨打000。
-INTRO_LANDING_2_EXPLANATION_2,[fade_in]Using example scenarios I will guide you through a few 000 calls step by step.[/fade_in],[fade_in]باستخدام سيناريوهات المثال، سأرشدك خلال بضعة آلاف من المكالمات خطوة بخطوة.," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
+INTRO_LANDING_2_EXPLANATION_T1,[fade_in]Let’s practise calling 000 in an emergency.[/fade_in],[fade_in]دعونا نتدرب على الاتصال بالرقم 000 في حالة الطوارئ.,[fade_in] بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.[/fade_in],[fade_in]让我们练习一下紧急情况下拨打000。
+INTRO_LANDING_2_EXPLANATION_T2,[fade_in] I will help you step by step using example situations. [/fade_in],[fade_in]باستخدام سيناريوهات المثال، سأرشدك خلال بضعة آلاف من المكالمات خطوة بخطوة.," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
 
 [fade_in]با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.[/fade_in]",使用示例场景，我将逐步指导您完成几千个呼叫。
-INTRO_LANDING_2_EXPLANATION_3,"[fade_in]Even though a real 000 call will be different to this, [/fade_in]",[fade_in]على الرغم من أن المكالمة الحقيقية 000 ستكون مختلفة عن هذه،," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
+INTRO_LANDING_2_EXPLANATION_T3,"[fade_in]Real 000 calls are different, but this practise will help you in a real emergency.[/fade_in]",[fade_in]على الرغم من أن المكالمة الحقيقية 000 ستكون مختلفة عن هذه،," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
 
 با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.
 
 [fade_in]درحالیکه یک تماس واقعی 000 با این متفاوت خواهد بود،[/fade_in]",尽管真正的 000 电话与此不同，
-INTRO_LANDING_2_EXPLANATION_4,"Even though a real 000 call will be different to this, [fade_in]the skills we practice here will help you in a real emergency call.[/fade_in]",," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
-
-با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.
-
-درحالیکه یک تماس واقعی 000 با این متفاوت خواهد بود، [fade_in]مهارت های که ما اینجا تمرین میکنیم در یک تماس واقعی اضطراری به شما کمک خواهد کرد.[/fade_in]",
+INTRO_LANDING_2_EXPLANATION_B1,[url={1}]Let's start[/url],,,
 ,,,,
-INTRO_LANDING_3_CALLSAREFAKE_1,[fade_in]The calls here are fake.[/fade_in],,,
-INTRO_LANDING_3_CALLSAREFAKE_2,[fade_in]We will never make a real call.[/fade_in],,,
-INTRO_LANDING_3_CALLSAREFAKE_3,"[fade_in]You will use your voice to answer questions,[/fade_in]",,,
-INTRO_LANDING_3_CALLSAREFAKE_4,"You will use your voice to answer questions, [fade_in]but we will never save your voice.[/fade_in]",,,
+,,,,
+INTRO_LANDING_3_CALLSAREFAKE_T1,[fade_in]The calls here are fake.[/fade_in],,,
+INTRO_LANDING_3_CALLSAREFAKE_T2,[fade_in]We will never make a real call.[/fade_in],,,
+INTRO_LANDING_3_CALLSAREFAKE_T3,"[fade_in]You will use your voice to answer questions,[/fade_in]",,,
+INTRO_LANDING_3_CALLSAREFAKE_T4,"You will use your voice to answer questions, [fade_in]but we will never save your voice.[/fade_in]",,,
+,,,,
+INTRO_TUTORIAL_1_LETSTRY_T1,[fade_in]Let's try it![/fade_in],,,
+INTRO_TUTORIAL_1_LETSTRY_T2,[fade_in]Tap and say [url={1}]‘OK’[/url]🔉[/fade_in],,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,"Real 000 calls are different, but this practise will help you in a real emergency.",,,

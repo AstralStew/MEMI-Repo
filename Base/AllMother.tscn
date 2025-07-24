@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=18 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Script" uid="uid://s3e3fyrh8rh4" path="res://Base/Scripts/AllMother.gd" id="1_p5q3o"]
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
@@ -13,15 +13,10 @@
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="7_q73ni"]
 [ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="8_11gex"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="8_qbn4n"]
-[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="9_bihe8"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="9_qbn4n"]
 [ext_resource type="Texture2D" uid="uid://bxujeo3eek7mv" path="res://AssetPacks/0_Shared/Fonts/Screenshot 2025-07-07 153138.png" id="12_11gex"]
 [ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="13_q73ni"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="14_80dkk"]
-[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="16_mfw6p"]
-[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="18_sm636"]
-[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="19_341tn"]
-[ext_resource type="Script" uid="uid://pomjtlbypnca" path="res://Base/Scripts/Bubble.gd" id="21_58hmj"]
 
 [node name="AllMother" type="Node2D"]
 script = ExtResource("1_p5q3o")
@@ -57,9 +52,6 @@ layer = 0
 
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
-libraries = {
-&"Intro": ExtResource("4_u0b1i")
-}
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
@@ -82,7 +74,7 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
+modulate = Color(0.792157, 0.717647, 0.65098, 1)
 z_index = -1
 custom_minimum_size = Vector2(800, 1600)
 layout_mode = 1
@@ -100,276 +92,6 @@ mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Intro_Landing_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_bihe8")
-debugging = true
-
-[node name="LandingMenu_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB"]
-layout_mode = 2
-
-[node name="Logo_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-
-[node name="Logo_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/Logo_VB"]
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 0
-
-[node name="Logo_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/Logo_VB/Logo_MC"]
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
-size_flags_vertical = 0
-texture = ExtResource("6_iu5ba")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="LanguageChoice_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_constants/margin_bottom = 130
-
-[node name="Labels_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="English_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("7_hqape")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]English[/url]"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-debugging = true
-
-[node name="Arabic_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("8_11gex")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]عَرَبِيّ[/url]"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="Dari_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("8_11gex")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]دری[/url]"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="Chinese_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("9_qbn4n")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]汉语[/url]"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB"]
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 50
-
-[node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="LadLanding1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
-visible = false
-layout_mode = 2
-texture = ExtResource("13_q73ni")
-stretch_mode = 4
-
-[node name="LadTutorial1_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="LadTutorial1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/LadTutorial1_C"]
-layout_mode = 0
-offset_left = 101.0
-offset_top = -4.0
-offset_right = 461.0
-offset_bottom = 343.0
-texture = ExtResource("16_mfw6p")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-text = "[b]Let's try it!"
-fit_content = true
-custom_effects = [ExtResource("14_80dkk")]
-script = ExtResource("8_qbn4n")
-debugging = true
-
-[node name="Explanation2_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[b]Tap and say 'OK'"
-fit_content = true
-custom_effects = [ExtResource("18_sm636")]
-script = ExtResource("8_qbn4n")
-debugging = true
-
-[node name="Explanation3_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-fit_content = true
-custom_effects = [ExtResource("19_341tn")]
-script = ExtResource("8_qbn4n")
-debugging = true
-
-[node name="Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB" instance=ExtResource("4_iu5ba")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-_debug = false
-min_height = null
-_autostart = true
-_autoText = "[url={1}]continue[/url]"
-_autoTitle = ""
-_autoTitleBelow = false
-_autoColor = Color(1, 1, 1, 1)
-old_text = "continue"
-
-[node name="Bubble2" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 21
-theme_override_constants/margin_bottom = 19
-script = ExtResource("21_58hmj")
-_debug = true
-_updateInEditor = true
-min_height = 150
-min_width = 228
-_autoText = "[color=green][i]whoa dude[/i]..."
-_autoTitle = "000 SAYS"
-_autoColor = Color(0.333751, 0.501714, 0.490145, 1)
-old_text = "..."
-
-[node name="BubbleText" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2"]
-z_index = 1
-clip_contents = false
-custom_minimum_size = Vector2(228, 150)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("9_qbn4n")
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
-bbcode_enabled = true
-text = "..."
-fit_content = true
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="BubbleBG" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText"]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -11.0
-offset_right = 13.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("5_eopm5")
-patch_margin_left = 24
-patch_margin_top = 20
-patch_margin_right = 24
-patch_margin_bottom = 15
-
-[node name="BubbleTitleTop" type="Label" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText/BubbleBG"]
-visible = false
-layout_mode = 2
-offset_left = 12.0
-offset_top = -31.0
-offset_right = 192.0
-offset_bottom = -7.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_fonts/font = ExtResource("9_qbn4n")
-theme_override_font_sizes/font_size = 16
-text = "BUBBLE_TITLE_TOP"
-autowrap_mode = 3
-uppercase = true
-
-[node name="BubbleTitleBottom" type="Label" parent="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText/BubbleBG"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 4.0
-offset_right = 192.0
-offset_bottom = 55.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_fonts/font = ExtResource("9_qbn4n")
-theme_override_font_sizes/font_size = 16
-text = "YOU SAY"
-autowrap_mode = 3
-uppercase = true
 
 [node name="Control" type="Control" parent="ContentCanvas"]
 visible = false
@@ -517,11 +239,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 _debug = false
-min_height = null
 _autostart = true
 _autoText = "[url={1}]continue[/url]"
 _autoTitle = ""
-_autoTitleBelow = false
 _autoColor = Color(1, 1, 1, 1)
 old_text = "continue"
 
@@ -555,16 +275,4 @@ offset_right = 457.0
 offset_bottom = 1015.0
 texture = ExtResource("12_11gex")
 
-[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB" method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
-[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]
-[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB" method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
-[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_1"]
-[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_2"]
-[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_3"]
-[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_4"]
-[connection signal="meta_link_5" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_5"]
-[connection signal="meta_link_6" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_6"]
-[connection signal="meta_link_7" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_7"]
-[connection signal="meta_link_8" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_8"]
-[connection signal="meta_link_9" from="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/Intro_Landing_VB/Explanation_MC/Explanation_VB/Bubble2" method="_send_meta_link_9"]
 [connection signal="meta_link_1" from="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]

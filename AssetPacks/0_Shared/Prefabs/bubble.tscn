@@ -21,7 +21,6 @@ _debug = true
 _updateInEditor = true
 _autoText = "[color=green][i]whoa dude[/i]..."
 _autoTitle = "000 SAYS"
-_autoTitleBelow = null
 _autoColor = Color(0.333751, 0.501714, 0.490145, 1)
 old_text = "Tap and say which
 service you 

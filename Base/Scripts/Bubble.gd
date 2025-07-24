@@ -128,7 +128,7 @@ func _resize() -> void:
 		
 	if _debug: print("[Bubble] Get_line_count() = ",bubbleText.get_line_count(),"max_line_length = ",max_line_length,", min_size = ",min_size)
 		
-	bubbleText.custom_minimum_size = Vector2(min_size,0)
+	bubbleText.custom_minimum_size = Vector2(min_size,min_height)
 	
 	if _debug: print("[Bubble] Finished resizing!")
 

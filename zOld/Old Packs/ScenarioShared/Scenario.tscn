@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ckaxxg17bev4x"]
+[gd_scene load_steps=27 format=3 uid="uid://ckaxxg17bev4x"]
 
 [ext_resource type="Script" uid="uid://18a4s0inli5p" path="res://zOld/OldScripts/Scenario.gd" id="1_4n0ar"]
 [ext_resource type="Theme" uid="uid://c81wtsb6phq0w" path="res://AssetPacks/0_Shared/Theme/memi_theme.tres" id="1_n4uvr"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ds3ov2sk2wjwq" path="res://zOld/Old Packs/ScenarioShared/Images/chat_bubble_operator.png" id="16_kty4c"]
 [ext_resource type="Texture2D" uid="uid://03exp2vs2v7h" path="res://zOld/Old Packs/ScenarioShared/Images/chat_bubble_caller.png" id="17_822lt"]
 [ext_resource type="FontVariation" uid="uid://30ybu638mdx8" path="res://AssetPacks/0_Shared/Fonts/Roboto_Italic.tres" id="18_qodp3"]
+[ext_resource type="Texture2D" uid="uid://btklqv8vsvym4" path="res://zOld/Old Packs/ScenarioShared/Images/chat_bubble_correct.png" id="19_d4bc1"]
 [ext_resource type="Texture2D" uid="uid://dgasgod4n6ujf" path="res://zOld/Old Other/Language.png" id="20_pnti6"]
 [ext_resource type="FontVariation" uid="uid://dvpls0ts5q5pb" path="res://AssetPacks/0_Shared/Fonts/Roboto_Normal.tres" id="20_qodp3"]
 [ext_resource type="FontVariation" uid="uid://j4qa6wthgjht" path="res://AssetPacks/0_Shared/Fonts/OnlyRoboto_Thick.tres" id="24_1at74"]
@@ -815,7 +816,6 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxCon_Phone" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Spacer_PhoneTop" type="VSeparator" parent="CanvasLayer/VBoxContainer/MiddleMarginContainer/VBoxCon_Phone"]
@@ -948,7 +948,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
 mouse_filter = 2
-texture = ExtResource("17_822lt")
+texture = ExtResource("19_d4bc1")
 expand_mode = 3
 stretch_mode = 5
 
@@ -1058,6 +1058,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -20
 theme_override_fonts/font = ExtResource("18_qodp3")
 theme_override_font_sizes/font_size = 24
+text = "S1-1_COMMENT_2"
 autowrap_mode = 3
 script = ExtResource("12_mt6i1")
 translationKey = "S1.0_COMMENT_1"
