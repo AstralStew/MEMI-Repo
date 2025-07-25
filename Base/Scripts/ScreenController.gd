@@ -24,6 +24,7 @@ var _current_screen_index := 0
 #var _scene_instance : Node
 signal pack_load_finished
 
+@export var sentenceComparer : SentenceComparer = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,6 +47,9 @@ func _ready() -> void:
 	play_animation("Intro/Intro_Load")
 	#---------TEMPORARY-------------------
 	
+	sentenceComparer.compare("I would like fire department")
+	sentenceComparer.compare("I would like ambulance")
+	sentenceComparer.compare("I need the police")
 	
 	if !autostart: return
 	BridgeManager._initialise()

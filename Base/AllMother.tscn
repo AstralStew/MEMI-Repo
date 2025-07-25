@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=22 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Script" uid="uid://s3e3fyrh8rh4" path="res://Base/Scripts/AllMother.gd" id="1_p5q3o"]
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
@@ -11,12 +11,31 @@
 [ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="6_iu5ba"]
 [ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="7_hqape"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="7_q73ni"]
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="8_0v13x"]
 [ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="8_11gex"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="8_qbn4n"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="9_qbn4n"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="9_w56q6"]
 [ext_resource type="Texture2D" uid="uid://bxujeo3eek7mv" path="res://AssetPacks/0_Shared/Fonts/Screenshot 2025-07-07 153138.png" id="12_11gex"]
 [ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="13_q73ni"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="14_80dkk"]
+
+[sub_resource type="Resource" id="Resource_ixt38"]
+script = ExtResource("8_0v13x")
+checkType = 0
+phrases = Array[String](["ambulance"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[sub_resource type="Resource" id="Resource_bihe8"]
+script = ExtResource("9_w56q6")
+debug = true
+correctConditions = Array[ExtResource("8_0v13x")]([SubResource("Resource_ixt38")])
+wrongConditions = Array[String](["police", "fire"])
+correctAnim = "Anim_Correct"
+wrongAnim = "Anim_Wrong"
+mumboAnim = "Anim_Mumbo"
+dontKnowAnim = "Anim_DontKnow"
+metadata/_custom_type_script = "uid://nudfku7qhbxq"
 
 [node name="AllMother" type="Node2D"]
 script = ExtResource("1_p5q3o")
@@ -58,6 +77,7 @@ debugging = true
 autostart = false
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("7_q73ni")])
 current_screen = ExtResource("4_u0b1i")
+sentenceComparer = SubResource("Resource_bihe8")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
