@@ -4,7 +4,7 @@ extends AnimationPlayer
 @export var debugging := false
 
 @export_group("Autostart Properties")
-@export var autostart := true
+#@export var autostart := true
 @export var autoloadPack := "Global"
 @export var autoloadScene := "res://AssetPacks/ScenarioShared/Scenario.tscn"
 
@@ -21,45 +21,35 @@ var _current_screen_index := 0
 @export_group("Read Only")
 @export var loaded_elements = {} ## e.g. {SectionName}~{ScreenName}~{ElementName}[br] ## i.e. Intro~Landing~Logo, Intro~Landing~BG1, Intro~Landing~
 @onready var content_parent : Control = get_child(0).get_child(0)
-#var _scene_instance : Node
-signal pack_load_finished
 
 @export var sentenceComparer : SentenceComparer = null
 @export var recentResult := false
 @export var lastSentence := ""
 @export var sentenceAnim := ""
 
+signal pack_load_finished
+
+signal last_sentence_changed(newSentence)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("wot is happening")
-
+	print("[ScreenController] Initialising...")
 	
-	#---------TEMPORARY------------------
+	if !OS.has_feature("editor_runtime"):
+		
+		# Initialise the BridgeManager first
+		BridgeManager._initialise()
+		
+		# Load the shared pack (thus initialising the LoadManager)
+		_load_pack("0_Shared")
+		await pack_load_finished
+		
+		# WARNING > This must be initialised AFTER 0_Shared is loaded
+		LanguageManager._initialise()
+	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
-
-	current_set = screen_sets[0]
-	var animLibrary = current_set.get_screen(0)
-	if debugging: print("[ScreenController] Attempting to add animation library '",animLibrary,"'")
-
-	var library = load(current_set.path+"/Animations/"+animLibrary.resource_name+".tres")
-	if !library:
-		push_error("[ScreenController] ERROR -> No animation library resource_named '",animLibrary.resource_name,"' found! :(")
+	_load_screen_set(0)
 	
-	add_animation_library(animLibrary.resource_name,library)
-	play_animation("Intro/Intro_Load")
-	#---------TEMPORARY-------------------
-	
-	sentenceComparer.compare("I would like fire department")
-	sentenceComparer.compare("I would like ambulance")
-	sentenceComparer.compare("I need the police")
-	
-	if !autostart: return
-	BridgeManager._initialise()
-	#LoadManager._initialise() isn't necessary
-	
-	# WARNING > This should be initialised AFTER 0_Shared is loaded instead
-	LanguageManager._initialise()
-
 
 
 #region Screen Set functions
@@ -76,7 +66,7 @@ func load_next_screen_set():
 ## Load a new screen set, using [b]_name[/b] if possible then falling back on [b]_index[/b] if not
 func load_screen_set(_name:String="",_index:int=0):
 	
-	# unload stuff?
+	# force unload remaining stuff?
 	
 	# Grab the screen set
 	_current_set_index = -1
@@ -92,33 +82,43 @@ func load_screen_set(_name:String="",_index:int=0):
 	else:
 		if debugging: print("[ScreenController] Loading screen set index '",screen_sets[_index].name,"' ",_index,"...")
 		_current_set_index = _index
-	current_set = screen_sets[_current_set_index]
+	#current_set = screen_sets[_current_set_index]
 	
-	# load required packs
-	if debugging: print("[ScreenController] Loading required packs...")
-	for pack in current_set.required_packs:
-		_load_pack(pack)
-		await pack_load_finished
+	_load_screen_set(_current_set_index)
+
+
+func _load_screen_set(index:int):
+	if index >= screen_sets.size():
+		push_error("[ScreenController] ERROR -> ScreenSet index out of range! Cancelling :(")
+		return
+	
+	# Change the current set
+	current_set = screen_sets[index]
+	
+	if !OS.has_feature("editor_runtime"):
+		# load required packs
+		if debugging: print("[ScreenController] Loading required packs...")
+		for pack in current_set.required_packs:
+			_load_pack(pack)
+			await pack_load_finished
 	
 	# load first screen
-	load_screen("",0)
+	load_screen(0)
 	if debugging: print("[ScreenController] Loading required packs...")
 	
-	current_set.get_screen(0)
+	play_animation(current_set.first_anim)
 
-func _load_screen_set():
-	pass
 
 func _load_pack(_filename:String) -> void:
 	if debugging: print("[ScreenController] Attempting to load pack '",_filename,"'...")
-	LoadManager.request_successful.connect(self._autoload_callback)
-	LoadManager.request_skipped.connect(self._autoload_callback)
+	LoadManager.request_successful.connect(_load_pack_callback)
+	LoadManager.request_skipped.connect(_load_pack_callback)
 	LoadManager._load_pack(_filename)
 
 func _load_pack_callback() -> void:	
-	LoadManager.request_successful.disconnect(self._autoload_callback)
-	LoadManager.request_skipped.disconnect(self._autoload_callback)	
-	if debugging: print("[ScreenController] Pack loading complete.")	
+	LoadManager.request_successful.disconnect(_load_pack_callback)
+	LoadManager.request_skipped.disconnect(_load_pack_callback)
+	if debugging: print("[ScreenController] Pack loading complete.")
 	await get_tree().process_frame
 	pack_load_finished.emit()
 
@@ -127,11 +127,21 @@ func _load_pack_callback() -> void:
 
 #region Screen functions
 
-func load_screen(_name:String="",_index:int=0):
-	current_set.screens[0]
+# ADD BACK IN "_name" AS A PROPERTY HERE, LOOK TO LOAD_SCREEN_SET FOR LOGIC
+func load_screen(_index:int=0):
+	
+	var animLibrary = current_set.get_screen(_index)
+	if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
+	add_animation_library(animLibrary.resource_name,animLibrary)
+	
+	#var library = load(current_set.path+"/Animations/"+animLibrary.resource_name+".tres")
+	#if !library:
+		#push_error("[ScreenController] ERROR -> No animation library resource_named '",animLibrary.resource_name,"' found! :(")
+	#current_set.screens[0]
+
 
 func load_next_screen():
-		#---------TEMPORARY------------------
+	#---------TEMPORARY------------------
 	if debugging: print("[ScreenController] Loading the next screen...")
 
 	#current_set = screen_sets[0]
@@ -222,6 +232,7 @@ func destroy_prefab(_key:String):
 
 func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_start_speech_recognition.connect(_start_recognition)
+	last_sentence_changed.connect(prefab.last_sentence_received)
 	
 	prefab.try_create_prefab.connect(create_prefab)
 	prefab.try_destroy_prefab.connect(destroy_prefab)
@@ -234,9 +245,11 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	
 	prefab.try_play_animation.connect(play_animation)
 	prefab.try_queue_animation.connect(queue_animation)
+	
 
 func _unsubscribe(prefab:ScreenPrefab) -> void:	
 	prefab.try_start_speech_recognition.disconnect(_start_recognition)
+	last_sentence_changed.disconnect(prefab.last_sentence_received)
 	
 	prefab.try_create_prefab.disconnect(create_prefab)
 	prefab.try_destroy_prefab.disconnect(destroy_prefab)
@@ -249,7 +262,7 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	
 	prefab.try_play_animation.disconnect(play_animation)
 	prefab.try_queue_animation.disconnect(queue_animation)
-
+	
 
 #endregion
 
@@ -292,13 +305,15 @@ func _on_speech_end():
 
 
 func _on_speech_sentence(newSentence:String) -> void:
-	if debugging: print("[ScreenController] OnSpeechSentence: '",newSentence,"'")	
+	if debugging: print("[ScreenController] OnSpeechSentence: '",newSentence,"'")
 	_disconnect_bridge()
+	recentResult = true
 	lastSentence = newSentence
+	last_sentence_changed.emit(newSentence)
 	_play_sentence_anim()
 
 func _play_sentence_anim() -> void:	
-	sentenceAnim = sentenceComparer.compare(lastSentence)	
+	sentenceAnim = sentenceComparer.compare(lastSentence)
 	play_animation(sentenceAnim)
 
 func _connect_bridge() -> void:

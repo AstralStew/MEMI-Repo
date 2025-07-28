@@ -1,4 +1,4 @@
-res://AssetPacks/0_Shared/Prefabs/bubble.tscn
+res://Base/AllMother.tscn
 res://Base/Scripts/AllMother.gd
 res://Base/Scripts/ScreenController.gd
 res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Thin.tres
@@ -7,15 +7,14 @@ res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres
 res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres
 res://AssetPacks/1_Intro/Animations/Intro_Load.res
 res://AssetPacks/1_Intro/Animations/Landing_3_CallsAreFake.res
+res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres
 res://AssetPacks/1_Intro/Animations/Tutorial_1_LetsTry.res
 res://AssetPacks/1_Intro/Animations/Intro.tres
 res://AssetPacks/0_Shared/ScreenSets/Intro.tres
 res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Thick.tres
-res://Base/Scripts/Bubble.gd
 res://AssetPacks/1_Intro/Prefabs/Intro_Landing_Prefab1.tscn
-res://Base/AllMother.tscn
-res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres
-res://Base/Scripts/SentenceComparer.gd
-res://Base/Scripts/ScreenPrefab.gd
-res://Base/Scripts/BridgeManager.gd
+res://AssetPacks/0_Shared/Prefabs/bubble.tscn
 res://zOld/Old Packs/ScenarioShared/Scenario.tscn
+res://Base/Scripts/ScreenSet.gd
+res://Base/Scripts/ScreenPrefab.gd
+res://Base/Scripts/Bubble.gd

@@ -1,27 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=7 format=3 uid="uid://dwbq0gs5gif60"]
 
-[ext_resource type="Script" uid="uid://s3e3fyrh8rh4" path="res://Base/Scripts/AllMother.gd" id="1_p5q3o"]
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
-[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="4_iu5ba"]
-[ext_resource type="AnimationLibrary" uid="uid://bg24rvmvcfl4u" path="res://AssetPacks/1_Intro/Animations/Intro.tres" id="4_u0b1i"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
-[ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="6_iu5ba"]
-[ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="7_hqape"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="7_q73ni"]
-[ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="8_11gex"]
-[ext_resource type="Resource" uid="uid://dttfein6rjb10" path="res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres" id="8_bihe8"]
-[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="8_qbn4n"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="9_qbn4n"]
-[ext_resource type="Texture2D" uid="uid://bxujeo3eek7mv" path="res://AssetPacks/0_Shared/Fonts/Screenshot 2025-07-07 153138.png" id="12_11gex"]
-[ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="13_q73ni"]
-[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="14_80dkk"]
 
 [node name="AllMother" type="Node2D"]
-script = ExtResource("1_p5q3o")
-autostart = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(220, 478)
@@ -56,10 +42,7 @@ root_node = NodePath("MarginContainer")
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
-autostart = false
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("7_q73ni")])
-current_screen = ExtResource("4_u0b1i")
-sentenceComparer = ExtResource("8_bihe8")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -94,185 +77,3 @@ mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Control" type="Control" parent="ContentCanvas"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Intro_Landing_VB2" type="VBoxContainer" parent="ContentCanvas"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 60.0
-offset_right = 20.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LandingMenu_VB" type="VBoxContainer" parent="ContentCanvas/Intro_Landing_VB2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Logo_VB" type="VBoxContainer" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-
-[node name="Logo_MC" type="MarginContainer" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/Logo_VB"]
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 0
-
-[node name="Logo_TR" type="TextureRect" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/Logo_VB/Logo_MC"]
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 2
-size_flags_vertical = 0
-texture = ExtResource("6_iu5ba")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="LanguageChoice_MC" type="MarginContainer" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB"]
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_constants/margin_bottom = 130
-
-[node name="Labels_VB" type="VBoxContainer" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="English_RTL" type="RichTextLabel" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("7_hqape")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]English[/url]"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-debugging = true
-
-[node name="Arabic_RTL" type="RichTextLabel" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("8_11gex")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]عَرَبِيّ[/url]"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="Dari_RTL" type="RichTextLabel" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(150, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("8_11gex")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]دری[/url]"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="Chinese_RTL" type="RichTextLabel" parent="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB"]
-custom_minimum_size = Vector2(100, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("9_qbn4n")
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[url={1}]汉语[/url]"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_qbn4n")
-
-[node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/Intro_Landing_VB2"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 50
-
-[node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/Intro_Landing_VB2/Explanation_MC"]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="LadLanding1" type="TextureRect" parent="ContentCanvas/Intro_Landing_VB2/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-texture = ExtResource("13_q73ni")
-stretch_mode = 4
-
-[node name="Explanation_RTL" type="RichTextLabel" parent="ContentCanvas/Intro_Landing_VB2/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "dfrgdfgdfgdfg"
-fit_content = true
-custom_effects = [ExtResource("14_80dkk")]
-script = ExtResource("8_qbn4n")
-debugging = true
-
-[node name="Bubble" parent="ContentCanvas/Intro_Landing_VB2/Explanation_MC/Explanation_VB" instance=ExtResource("4_iu5ba")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-_debug = false
-_autoText = "[url={1}]continue[/url]"
-_autoTitle = ""
-old_text = "continue"
-
-[node name="BackgroundCanvas" type="CanvasLayer" parent="."]
-layer = -1
-visible = false
-
-[node name="TextureRect" type="TextureRect" parent="BackgroundCanvas"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
-anchors_preset = -1
-anchor_top = -0.0333333
-anchor_right = 3.33519
-anchor_bottom = 1.0
-offset_left = -237.0
-offset_top = 8.0
-offset_right = -157.0
-offset_bottom = 88.0
-grow_vertical = 0
-pivot_offset = Vector2(40, 40)
-texture = ExtResource("5_eopm5")
-expand_mode = 1
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
-[node name="Screenshot2025-07-07153138" type="TextureRect" parent="."]
-visible = false
-offset_left = -23.0
-offset_top = -39.0
-offset_right = 457.0
-offset_bottom = 1015.0
-texture = ExtResource("12_11gex")
-
-[connection signal="meta_link_1" from="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="ContentCanvas/Intro_Landing_VB2/LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]

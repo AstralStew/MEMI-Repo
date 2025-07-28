@@ -4,7 +4,7 @@ extends Control
 @export var debugging := false
 
 signal try_start_speech_recognition()
-
+signal last_sentence_changed(newSentence)
 
 signal try_load_next_screen()
 signal try_load_screen(_name,_index)
@@ -17,6 +17,8 @@ signal try_destroy_prefab(_key)
 
 signal try_play_animation(_name,_delay)
 signal try_queue_animation(_name,_delay)
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -80,5 +82,13 @@ func load_next_screen_set():
 func load_screen_set(_name:String="",_index:int=0):
 	if debugging: print("[ScreenPrefab] Attempting to load screen set '", _name,"' or failing that, index ", _index)
 	try_load_screen_set.emit(_name,_index)
+
+#endregion
+
+
+#region Speech functions
+
+func last_sentence_received(newSentence:String) -> void:	
+	last_sentence_changed.emit(newSentence)
 
 #endregion

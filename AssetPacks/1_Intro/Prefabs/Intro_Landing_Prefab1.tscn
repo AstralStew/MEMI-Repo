@@ -188,6 +188,7 @@ size_flags_vertical = 4
 _debug = false
 _updateInEditor = false
 min_height = 0
+min_width = 42
 _autoText = "INTRO_LANDING_2_EXPLANATION_B1"
 _autoTitle = ""
 old_text = "continue"
@@ -209,6 +210,7 @@ _autoTitle = "COMMON_YOUSAY"
 _autoTouchHint = true
 old_text = "..."
 
+[connection signal="last_sentence_changed" from="." to="Explanation_MC/Explanation_VB/YouSay_Bubble" method="set_text"]
 [connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
 [connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]

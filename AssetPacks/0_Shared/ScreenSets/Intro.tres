@@ -1,13 +1,12 @@
-[gd_resource type="Resource" script_class="ScreenSet" load_steps=3 format=3 uid="uid://d0tnr6lqh5d6w"]
+[gd_resource type="Resource" script_class="ScreenSet" load_steps=2 format=3 uid="uid://d0tnr6lqh5d6w"]
 
-[ext_resource type="AnimationLibrary" uid="uid://bg24rvmvcfl4u" path="res://AssetPacks/1_Intro/Animations/Intro.tres" id="1_ps4ym"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="2_65hvc"]
 
 [resource]
 resource_name = "Intro"
 script = ExtResource("2_65hvc")
-required_packs = Array[String](["Intro"])
-screens = Array[AnimationLibrary]([ExtResource("1_ps4ym")])
-path = "res://AssetPacks/1_Intro"
+required_packs = Array[String](["1_Intro"])
+screen_paths = Array[String](["res://AssetPacks/1_Intro/Animations/Intro.tres"])
 current_index = 0
+first_anim = &"Intro/Intro_Load"
 metadata/_custom_type_script = "uid://cjxn00ku2l42w"
