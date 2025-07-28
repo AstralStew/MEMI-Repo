@@ -3,6 +3,8 @@ extends Control
 
 @export var debugging := false
 
+signal try_start_speech_recognition()
+
 
 signal try_load_next_screen()
 signal try_load_screen(_name,_index)
@@ -19,6 +21,15 @@ signal try_queue_animation(_name,_delay)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
+
+func start_speech_recognition() -> void:	
+	if debugging: print("[ScreenPrefab] Attempting to start speech recognition...")
+	try_start_speech_recognition.emit()
+
+
+
+
 
 
 

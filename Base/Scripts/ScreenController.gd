@@ -25,7 +25,9 @@ var _current_screen_index := 0
 signal pack_load_finished
 
 @export var sentenceComparer : SentenceComparer = null
-
+@export var recentResult := false
+@export var lastSentence := ""
+@export var sentenceAnim := ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,9 +59,7 @@ func _ready() -> void:
 	
 	# WARNING > This should be initialised AFTER 0_Shared is loaded instead
 	LanguageManager._initialise()
-	
-	
-	
+
 
 
 #region Screen Set functions
@@ -178,6 +178,7 @@ func resume_animation(delay:float=0) -> void:
 
 #endregion
 
+
 #region Content functions
 
 ## Key should be the same name as prefab [br] ## i.e. Intro_Landing_Prefab1, Intro_Landing_Prefab2, etc
@@ -220,6 +221,8 @@ func destroy_prefab(_key:String):
 
 
 func _subscribe(prefab:ScreenPrefab) -> void:
+	prefab.try_start_speech_recognition.connect(_start_recognition)
+	
 	prefab.try_create_prefab.connect(create_prefab)
 	prefab.try_destroy_prefab.connect(destroy_prefab)
 	
@@ -232,7 +235,9 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_play_animation.connect(play_animation)
 	prefab.try_queue_animation.connect(queue_animation)
 
-func _unsubscribe(prefab:ScreenPrefab) -> void:
+func _unsubscribe(prefab:ScreenPrefab) -> void:	
+	prefab.try_start_speech_recognition.disconnect(_start_recognition)
+	
 	prefab.try_create_prefab.disconnect(create_prefab)
 	prefab.try_destroy_prefab.disconnect(destroy_prefab)
 	
@@ -245,10 +250,72 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_play_animation.disconnect(play_animation)
 	prefab.try_queue_animation.disconnect(queue_animation)
 
+
 #endregion
 
 
+#region Speech functions
 
+
+
+func _start_recognition() -> void:
+	if debugging: print("[ScreenController] Starting speech recognition...")	
+	_connect_bridge()
+	BridgeManager._start_recognition()
+
+func _on_speech_start():
+	if debugging: print("[ScreenController] OnSpeechStart...")	
+	recentResult = false
+
+func _on_speech_error():
+	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned, checking blank string.")	
+	_disconnect_bridge()
+	lastSentence = ""
+	_play_sentence_anim()
+
+func _on_speech_end():
+	if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
+	if recentResult:
+		if debugging: print("[ScreenController] OLD recent result was found, ignoring.")
+		return
+	
+	if debugging: print("[ScreenController] OnSpeechEnd waiting for 1 second...")
+	await get_tree().create_timer(1).timeout 
+	if recentResult:
+		if debugging: print("[ScreenController] NEW recent result found, ignoring.")
+		return
+	
+	if debugging: print("[ScreenController] Still no recent result found, checking blank string.")
+	_disconnect_bridge()
+	lastSentence = "" 
+	_play_sentence_anim()
+
+
+func _on_speech_sentence(newSentence:String) -> void:
+	if debugging: print("[ScreenController] OnSpeechSentence: '",newSentence,"'")	
+	_disconnect_bridge()
+	lastSentence = newSentence
+	_play_sentence_anim()
+
+func _play_sentence_anim() -> void:	
+	sentenceAnim = sentenceComparer.compare(lastSentence)	
+	play_animation(sentenceAnim)
+
+func _connect_bridge() -> void:
+	BridgeManager.speech_start.connect(_on_speech_start)
+	BridgeManager.speech_error.connect(_on_speech_error)
+	BridgeManager.speech_end.connect(_on_speech_end)
+	BridgeManager.speech_phrase.connect(_on_speech_sentence)
+
+func _disconnect_bridge() -> void:
+	BridgeManager.speech_start.disconnect(_on_speech_start)
+	BridgeManager.speech_error.disconnect(_on_speech_error)
+	BridgeManager.speech_end.disconnect(_on_speech_end)
+	BridgeManager.speech_phrase.disconnect(_on_speech_sentence)
+
+
+
+#endregion
 
 
 
@@ -290,4 +357,5 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 #func _destroy_scene_instance() -> void:
 	#if debugging: print("[ScreenController] Destroying current scene instance: '",_scene_instance,"'")		
 	#_scene_instance.queue_free()
+
 #endregion

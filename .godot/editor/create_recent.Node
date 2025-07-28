@@ -1,14 +1,14 @@
-HSeparator
+Button
 Control
+TextureRect
+HSeparator
 MarginContainer
 VBoxContainer
 RichTextLabel
 CenterContainer
 AnimationPlayer
-Button
 VSeparator
 HBoxContainer
 ScreenController
 Timer
 Label
-AspectRatioContainer

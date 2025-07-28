@@ -49,7 +49,6 @@ func _start_recognition() -> void:
 	
 	print("[BridgeManager] On Speech Start callback!")
 	speech_start.emit()
-	
 
 func _on_speech_result_callback(_args):
 	print("[BridgeManager] On Speech Result callback!")

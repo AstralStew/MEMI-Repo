@@ -15,10 +15,11 @@ class_name Bubble
 
 @export_group("Optional Autostart")
 @export var _autostart := false
-@export var _autoText := ""
+@export_multiline var _autoText := ""
 @export var _autoTitle := ""
 @export var _autoTitleBelow := false
 @export var _autoColor := Color.WHITE
+@export var _autoTouchHint := false
 
 @export_group("Read Only")
 @export var old_text := ""
@@ -28,7 +29,10 @@ var bubbleText : RichTextLabel
 var bubbleBG : NinePatchRect
 var bubbleTitleTop : Label
 var bubbleTitleBottom : Label
+var bubbleTouchHint : Control
+var bubbleTouchButton : Button
 
+signal touch_input
 signal meta_link_1
 signal meta_link_2
 signal meta_link_3
@@ -42,7 +46,7 @@ signal meta_link_9
 
 func _ready() -> void:
 	_getrefs()
-	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow)
+	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint)
 	
 	# set the label minimum width to 200px
 	#label.custom_minimum_size.x = 200
@@ -60,6 +64,8 @@ func _getrefs() -> void:
 	bubbleBG = bubbleText.get_child(0)
 	bubbleTitleTop = bubbleText.get_child(0).get_child(0)
 	bubbleTitleBottom = bubbleText.get_child(0).get_child(1)
+	bubbleTouchHint = bubbleText.get_child(0).get_child(2)
+	bubbleTouchButton = get_child(1)
 
 #region Editor only
 
@@ -67,8 +73,8 @@ func _process(delta: float) -> void:
 	if _updateInEditor && Engine.is_editor_hint():
 		if bubbleText == null: _getrefs()
 		
-		if _autostart && bubbleText.get_parsed_text() !=_autoText:
-			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow)
+		if _autostart && bubbleText.text !=_autoText:
+			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint)
 		
 		if bubbleText.get_parsed_text() != old_text:
 			if _debug: print("[Bubble] In-editor resize triggered")
@@ -78,9 +84,14 @@ func _process(delta: float) -> void:
 #endregion
 
 
-func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false) -> void:
-	if _debug: print("[Bubble(",name,")] Initialising...")
-	
+
+#region Set properties
+
+func set_text(text:String):
+	bubbleText.text = text
+	if _debug: print("[Bubble] Text set...")	
+
+func set_title(title:String="",titleBelow:bool=false) -> void:
 	if title == "":
 		if _debug: print("[Bubble] No title, skipping...")
 		bubbleTitleTop.visible = false
@@ -96,16 +107,32 @@ func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow
 			bubbleTitleBottom.visible = false
 			bubbleTitleTop.text = title
 			if _debug: print("[Bubble] Top title set...")
-	
-	if bg != Color.WHITE:
-		if _debug: print("[Bubble] BG color set...")
+
+func set_touch(touchHint:bool=false) -> void:
+	if touchHint: 
+		if _debug: print("[Bubble] Touch hint enabled...")
+		bubbleTouchHint.visible = true
+		bubbleTouchButton.visible = true
+	else: 
+		if _debug: print("[Bubble] Touch hint disabled...")
+		bubbleTouchHint.visible = false
+		bubbleTouchButton.visible = false
+
+func set_background(bg:Color=Color.WHITE):
+	if bg != Color.WHITE && _debug: print("[Bubble] BG color set...")
 	# Moved this here to reset just in case? Maybe a dedicated reset anyway
 	bubbleBG.modulate = bg
+
+func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false) -> void:
+	if _debug: print("[Bubble(",name,")] Initialising...")
 	
-	bubbleText.text = text
-	if _debug: print("[Bubble] Text set...")
+	set_text(text)
+	set_title(title,titleBelow)	
+	set_background(bg)
+	set_touch(touchHint)
 	
 	_resize()
+
 
 func _set_size_parametres(_min_height:int,_min_width:int,_max_width:int,_min_char_threshold:int,_max_char_threshold:int):
 	min_height = _min_height
@@ -113,6 +140,9 @@ func _set_size_parametres(_min_height:int,_min_width:int,_max_width:int,_min_cha
 	max_width = _max_width
 	min_char_threshold = _min_char_threshold
 	max_char_threshold = _max_char_threshold
+
+#endregion
+
 
 func _resize() -> void:
 	if _debug: print("[Bubble] Resizing bubble to fit text...")
@@ -133,6 +163,13 @@ func _resize() -> void:
 	if _debug: print("[Bubble] Finished resizing!")
 
 
+
+
+func received_touch_input() -> void:
+	if _debug: print("[Bubble] ReceivedTouchInput, disabling hint and sending touch input...")
+	bubbleTouchButton.visible = false
+	bubbleTouchHint.visible = false
+	touch_input.emit()
 
 #region Meta links
 

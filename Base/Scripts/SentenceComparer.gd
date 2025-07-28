@@ -30,6 +30,8 @@ func compare(sentence:String) -> String:
 	
 	if debug: print("[SentenceComparer] Comparing the sentence '",sentence,"'")
 	
+	if sentence == "": return mumboAnim
+	
 	if correctConditions.size() > 0:
 		for check in correctConditions:
 			if check.resolve(sentence):

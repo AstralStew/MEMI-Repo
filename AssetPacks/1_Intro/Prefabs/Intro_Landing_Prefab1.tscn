@@ -187,10 +187,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 _debug = false
 _updateInEditor = false
-_autostart = true
+min_height = 0
 _autoText = "INTRO_LANDING_2_EXPLANATION_B1"
 _autoTitle = ""
-_autoColor = Color(1, 1, 1, 1)
 old_text = "continue"
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_MC/Explanation_VB"]
@@ -205,15 +204,12 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-min_height = 151
-min_width = 228
-_autostart = true
 _autoText = "..."
 _autoTitle = "COMMON_YOUSAY"
-_autoTitleBelow = true
-_autoColor = Color(1, 1, 1, 1)
+_autoTouchHint = true
 old_text = "..."
 
 [connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
 [connection signal="meta_link_1" from="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" to="LandingMenu_VB/LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
+[connection signal="touch_input" from="Explanation_MC/Explanation_VB/YouSay_Bubble" to="." method="start_speech_recognition"]

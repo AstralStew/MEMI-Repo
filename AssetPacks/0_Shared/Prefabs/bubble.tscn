@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://4k2jk6jxassl"]
+[gd_scene load_steps=7 format=3 uid="uid://4k2jk6jxassl"]
 
 [ext_resource type="Script" uid="uid://pomjtlbypnca" path="res://Base/Scripts/Bubble.gd" id="1_q3shg"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="2_gcy47"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_0a8cw"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="3_0eaqi"]
+[ext_resource type="Texture2D" uid="uid://8dxmcgllnwae" path="res://AssetPacks/0_Shared/Images/Ellipse 2.png" id="5_0qquf"]
+[ext_resource type="Texture2D" uid="uid://dvdo17nw6ffcu" path="res://AssetPacks/0_Shared/Images/pointing_hand.png" id="6_4c031"]
 
 [node name="Bubble" type="MarginContainer"]
 offset_left = 135.0
@@ -19,9 +21,16 @@ theme_override_constants/margin_bottom = 19
 script = ExtResource("1_q3shg")
 _debug = true
 _updateInEditor = true
-_autoText = "[color=green][i]whoa dude[/i]..."
-_autoTitle = "000 SAYS"
-_autoColor = Color(0.333751, 0.501714, 0.490145, 1)
+min_height = 151
+min_width = 228
+max_width = 228
+_autostart = true
+_autoText = "[b]Tap[/b] and [i]say[/i] which
+[color=green]service[/color] you [color=blue]
+[url={www.google.com}]need[/url][/color]
+gdfgdf"
+_autoTitle = "YOU SAY"
+_autoTitleBelow = true
 old_text = "Tap and say which
 service you 
 need
@@ -30,7 +39,7 @@ gdfgdf"
 [node name="BubbleText" type="RichTextLabel" parent="."]
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(180.667, 0)
+custom_minimum_size = Vector2(228, 151)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -71,6 +80,7 @@ patch_margin_right = 24
 patch_margin_bottom = 15
 
 [node name="BubbleTitleTop" type="Label" parent="BubbleText/BubbleBG"]
+visible = false
 layout_mode = 2
 offset_left = 12.0
 offset_top = -31.0
@@ -79,7 +89,7 @@ offset_bottom = -7.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.5)
 theme_override_fonts/font = ExtResource("2_gcy47")
 theme_override_font_sizes/font_size = 16
-text = "BUBBLE_TITLE_TOP"
+text = "000 SAYS"
 autowrap_mode = 3
 uppercase = true
 
@@ -96,9 +106,59 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.5)
 theme_override_fonts/font = ExtResource("2_gcy47")
 theme_override_font_sizes/font_size = 16
-text = "BUBBLE_TITLE_BOTTOM"
+text = "YOU SAY"
 autowrap_mode = 3
 uppercase = true
+
+[node name="BubbleTouchHint" type="Control" parent="BubbleText/BubbleBG"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Circle" type="TextureRect" parent="BubbleText/BubbleBG/BubbleTouchHint"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.667
+offset_top = -43.0
+offset_right = 44.333
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_0qquf")
+expand_mode = 1
+
+[node name="PointingHand" type="TextureRect" parent="BubbleText/BubbleBG/BubbleTouchHint"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -63.0
+offset_right = 51.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_4c031")
+expand_mode = 1
+
+[node name="BubbleTouchButton" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 
 [connection signal="meta_link_1" from="BubbleText" to="." method="_send_meta_link_1"]
 [connection signal="meta_link_2" from="BubbleText" to="." method="_send_meta_link_2"]
@@ -109,3 +169,4 @@ uppercase = true
 [connection signal="meta_link_7" from="BubbleText" to="." method="_send_meta_link_7"]
 [connection signal="meta_link_8" from="BubbleText" to="." method="_send_meta_link_8"]
 [connection signal="meta_link_9" from="BubbleText" to="." method="_send_meta_link_9"]
+[connection signal="pressed" from="BubbleTouchButton" to="." method="received_touch_input"]
