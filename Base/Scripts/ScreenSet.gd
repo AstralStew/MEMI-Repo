@@ -20,13 +20,17 @@ func _init(p_required_packs : Array[String] = [""], p_screen_paths : Array[Strin
 
 func next_screen() -> AnimationLibrary:
 	increment()
-	return _screen_from_index(current_index)
+	if current_index > 0:
+		return _screen_from_index(current_index)
+	else:
+		print("Reached end of screen set, returning null")
+		return null
 
 func get_screen(index:int = 0) -> AnimationLibrary:
 	if index < screen_paths.size():
 		return _screen_from_index(index)
 	else:
-		push_error("[ScreenSet] ERROR -> Provided index out of bounds!")
+		push_error("[ScreenSet] ERROR -> Provided index out of bounds! Returning null")
 		return null
 
 

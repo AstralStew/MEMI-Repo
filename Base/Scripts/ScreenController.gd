@@ -65,8 +65,7 @@ func load_next_screen_set():
 
 ## Load a new screen set, using [b]_name[/b] if possible then falling back on [b]_index[/b] if not
 func load_screen_set(_name:String="",_index:int=0):
-	
-	# force unload remaining stuff?
+	# force unload remaining stuff? nah do it bespoke in the animation
 	
 	# Grab the screen set
 	_current_set_index = -1
@@ -129,36 +128,27 @@ func _load_pack_callback() -> void:
 
 # ADD BACK IN "_name" AS A PROPERTY HERE, LOOK TO LOAD_SCREEN_SET FOR LOGIC
 func load_screen(_index:int=0):
+	if debugging: print("[ScreenController] Loading screen at index ",_index,"...")
 	
 	var animLibrary = current_set.get_screen(_index)
-	if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
-	add_animation_library(animLibrary.resource_name,animLibrary)
-	
-	#var library = load(current_set.path+"/Animations/"+animLibrary.resource_name+".tres")
-	#if !library:
-		#push_error("[ScreenController] ERROR -> No animation library resource_named '",animLibrary.resource_name,"' found! :(")
-	#current_set.screens[0]
+	if animLibrary == null:
+		if debugging: print("[ScreenController] No screen at that index! Cancelling :(")
+	else:
+		if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
+		add_animation_library(animLibrary.resource_name,animLibrary)
 
 
 func load_next_screen():
-	#---------TEMPORARY------------------
 	if debugging: print("[ScreenController] Loading the next screen...")
-
-	#current_set = screen_sets[0]
+	
 	var animLibrary = current_set.next_screen()
-	
-	var library = load(current_set.path+"/Animations/"+animLibrary.resource_name+".tres")
-	if !library:
-		push_error("[ScreenController] ERROR -> No animation library resource_named '",animLibrary.resource_name,"' found! :(")
-	else: 
-		if debugging: print("[ScreenController] Attempting to add animation library '",animLibrary,"'")
+	if animLibrary == null:
+		if debugging: print("[ScreenController] There is no next screen, moving to next screen set...")
+		load_next_screen_set()
+	else:
+		if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
+		add_animation_library(animLibrary.resource_name,animLibrary)
 
-	add_animation_library(animLibrary.resource_name,library)
-	play_animation("Intro_Landing/Intro_Landing_0_Load")
-	#---------TEMPORARY-------------------
-	
-	current_set.next_screen()
-	
 
 #endregion
 
@@ -226,8 +216,13 @@ func destroy_prefab(_key:String):
 	# Destroy the prefab
 	loaded_elements[_key].queue_free()
 	if loaded_elements.erase(_key):
-		if debugging: print("[ScreenController]Prefab at '",_key,"' destroyed.")
+		if debugging: print("[ScreenController] Prefab at '",_key,"' destroyed.")
 
+
+func destroy_all_prefabs():
+	if debugging: print("[ScreenController] Destroying all loaded prefabs...")
+	for key in loaded_elements.keys():
+		destroy_prefab(key)
 
 
 func _subscribe(prefab:ScreenPrefab) -> void:
@@ -343,6 +338,11 @@ func _disconnect_bridge() -> void:
 
 
 #region old
+
+	#var library = load(current_set.path+"/Animations/"+animLibrary.resource_name+".tres")
+	#if !library:
+		#push_error("[ScreenController] ERROR -> No animation library resource_named '",animLibrary.resource_name,"' found! :(")
+	#current_set.screens[0]
 
 	#if autoloadPack != "":
 		#if debugging: print("[ScreenController] Autoloading pack '",autoloadPack,"'")	

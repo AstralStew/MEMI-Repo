@@ -1,6 +1,6 @@
+AnimationLibrary
 SentenceComparer
 RichTextEffect
-AnimationLibrary
 ScreenSet
 FontVariation
 Animation
