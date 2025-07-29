@@ -1,3 +1,4 @@
+HSeparator
 VBoxContainer
 MarginContainer
 CenterContainer
@@ -5,7 +6,6 @@ HBoxContainer
 Button
 Control
 TextureRect
-HSeparator
 RichTextLabel
 AnimationPlayer
 VSeparator

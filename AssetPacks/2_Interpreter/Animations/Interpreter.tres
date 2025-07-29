@@ -5,6 +5,7 @@
 [ext_resource type="Animation" uid="uid://ct3yyvo3e6q7v" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_1_Overview.res" id="3_dio3u"]
 
 [resource]
+resource_name = "Interpreter"
 _data = {
 &"Interpreter_Load": ExtResource("1_mr0eu"),
 &"Interpreter_Unload": ExtResource("2_dio3u"),

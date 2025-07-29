@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ScreenSet" load_steps=2 format=3 uid="uid://3jnx5gje3ilt"]
+
+[ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="1_5mgyl"]
+
+[resource]
+resource_name = "Interpreter"
+script = ExtResource("1_5mgyl")
+required_packs = Array[String](["2_Interpreter"])
+screen_paths = Array[String](["res://AssetPacks/2_Interpreter/Animations/Interpreter.tres"])
+current_index = 0
+first_anim = &"Interpreter/Interpreter_Load"
+metadata/_custom_type_script = "uid://cjxn00ku2l42w"

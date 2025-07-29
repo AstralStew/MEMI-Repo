@@ -17,3 +17,9 @@ res://AssetPacks/1_Intro/Animations/Intro_Unload.res
 res://AssetPacks/2_Interpreter/Prefabs/Interpreter_Prefab1.tscn
 res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
 res://AssetPacks/2_Interpreter/Animations/LetsLearn_1_Overview.res
+res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres
+res://AssetPacks/1_Intro/Animations/Landing_1_LanguageChoice.res
+res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res
+res://AssetPacks/1_Intro/Prefabs/Intro_Landing_Prefab1.tscn
+res://AssetPacks/0_Shared/Prefabs/bubble.tscn
+res://zOld/Old Packs/ScenarioShared/Scenario.tscn
