@@ -15,13 +15,17 @@ INTRO_LANDING_2_EXPLANATION_T3,"[fade_in]Real 000 calls are different, but this 
 با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.
 
 [fade_in]درحالیکه یک تماس واقعی 000 با این متفاوت خواهد بود،[/fade_in]",尽管真正的 000 电话与此不同，
+,,,,
 INTRO_LANDING_2_EXPLANATION_B1,[url={1}]Let's start[/url],,,
+,,,,
 ,,,,
 ,,,,
 INTRO_LANDING_3_CALLSAREFAKE_T1,[fade_in]The calls here are fake.[/fade_in],,,
 INTRO_LANDING_3_CALLSAREFAKE_T2,[fade_in]We will never make a real call.[/fade_in],,,
 INTRO_LANDING_3_CALLSAREFAKE_T3,"[fade_in]You will use your voice to answer questions,[/fade_in]",,,
 INTRO_LANDING_3_CALLSAREFAKE_T4,"You will use your voice to answer questions, [fade_in]but we will never save your voice.[/fade_in]",,,
+,,,,
+,,,,
 ,,,,
 INTRO_TUTORIAL_1_LETSTRY_T1,[fade_in]Let's try it![/fade_in],,,
 INTRO_TUTORIAL_1_LETSTRY_T2,[fade_in]Tap and say [url={1}]‘OK’[/url]🔉[/fade_in],,,
@@ -40,3 +44,59 @@ INTERPRETER_LETSLEARN_1_OVERVIEW_T_NOHELP,Doing a scenario without help!,,,
 ,,,,
 INTERPRETER_LETSLEARN_1_OVERVIEW_B1,[url={1}]Learn the steps[/url],,,
 INTERPRETER_LETSLEARN_1_OVERVIEW_B2,or [url={1}]Skip Steps[/url],,,
+,,,,
+,,,,
+,,,,
+INTERPRETER_LETSLEARN_2_STEP1_T_STEP1,STEP 1,,,
+,,,,
+INTERPRETER_LETSLEARN_2_STEP1_T1,000 ASKS:,,,
+INTERPRETER_LETSLEARN_2_STEP1_T2,"000 ASKS:
+
+[fade_in][url={1}]'Emergency services. Police, Fire, Ambulance?'[/url]🔉[/fade_in]",,,
+INTERPRETER_LETSLEARN_2_STEP1_T3,YOU ANSWER:,,,
+INTERPRETER_LETSLEARN_2_STEP1_T4,"YOU ANSWER:
+
+[fade_in][url={1}]'Police'[/url]🔉, [url={2}]'Fire'[/url]🔉, or [url={3}]'Ambulance'[/url]🔉.
+Say only one service in English.[/fade_in]",,,
+,,,,
+INTERPRETER_LETSLEARN_2_STEP1_B1,[url={2}]STEP 2[/url],,,
+INTERPRETER_LETSLEARN_2_STEP1_B2,[url={1}]Skip Steps[/url],,,
+,,,,
+,,,,
+,,,,
+INTERPRETER_LETSLEARN_3_STEP2_T_STEP2,STEP 2,,,
+,,,,
+INTERPRETER_LETSLEARN_3_STEP2_T1,000 ASKS:,,,
+INTERPRETER_LETSLEARN_3_STEP2_T2,"000 ASKS:
+
+[fade_in][url={2}]'What is the state and town of your emergency?'[/url]🔉[/fade_in]",,,
+INTERPRETER_LETSLEARN_3_STEP2_T3,YOU ANSWER:,,,
+INTERPRETER_LETSLEARN_3_STEP2_T4,"YOU ANSWER:
+
+[fade_in]The area and state of your emergency.
+
+eg: [url={4}]'Dandenong, Victoria'[/url]🔉
+
+eg: [url={5}]'Mildura, Victoria'[/url]🔉[/fade_in]",,,
+,,,,
+INTERPRETER_LETSLEARN_3_STEP2_B1,[url={3}]STEP 3[/url],,,
+,,,,
+,,,,
+,,,,
+INTERPRETER_LETSLEARN_4_STEP3_T_STEP3,STEP 3,,,
+,,,,
+INTERPRETER_LETSLEARN_4_STEP3_T1,[fade_in]Your call will now transfer to a service in your area.[/fade_in],,,
+INTERPRETER_LETSLEARN_4_STEP3_T2,"Your call will now transfer to a service in your area.
+
+[fade_in]When you are connected they will ask you for the address of your emergency.[/fade_in]",,,
+INTERPRETER_LETSLEARN_4_STEP3_T3,"Your call will now transfer to a service in your area.
+
+When you are connected they will ask you for the address of your emergency.  
+
+[fade_in]This is a good time to ask for an interpreter.[/fade_in]",,,
+INTERPRETER_LETSLEARN_4_STEP3_T4,ASK FOR AN INTERPRETER IN ENGLISH:,,,
+INTERPRETER_LETSLEARN_4_STEP3_T5,"ASK FOR AN INTERPRETER IN ENGLISH.  
+
+[fade_in]eg: Say [url={6}]'Interpreter, Hindi'[/url]🔉[/fade_in]",,,
+,,,,
+INTERPRETER_LETSLEARN_4_STEP3_B1,[url={4}]Got it![/url],,,

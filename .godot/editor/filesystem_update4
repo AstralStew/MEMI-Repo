@@ -23,3 +23,8 @@ res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res
 res://AssetPacks/1_Intro/Prefabs/Intro_Landing_Prefab1.tscn
 res://AssetPacks/0_Shared/Prefabs/bubble.tscn
 res://zOld/Old Packs/ScenarioShared/Scenario.tscn
+res://AssetPacks/2_Interpreter/Animations/LetsLearn_2_Steps.res
+res://AssetPacks/2_Interpreter/Animations/LetsLearn_2_Step1.res
+res://Base/Scripts/ScreenPrefab.gd
+res://AssetPacks/2_Interpreter/Animations/LetsLearn_3_Step2.res
+res://AssetPacks/2_Interpreter/Animations/LetsLearn_4_Step3.res

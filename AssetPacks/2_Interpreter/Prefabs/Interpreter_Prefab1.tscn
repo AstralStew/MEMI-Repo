@@ -23,6 +23,7 @@ script = ExtResource("1_crm0k")
 debugging = true
 
 [node name="LetsLearnMenu_MC" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/margin_left = 20
@@ -168,7 +169,7 @@ debugging = true
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -176,15 +177,59 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 15
 
-[node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC/Explanation_VB"]
+[node name="StepSpacer_HSep" type="HSeparator" parent="Explanation_MC/Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Steps_HB" type="HBoxContainer" parent="Explanation_MC/Explanation_VB"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Step1_Bubble" parent="Explanation_MC/Explanation_VB/Steps_HB" instance=ExtResource("12_7hfa7")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "INTERPRETER_LETSLEARN_2_STEP1_T_STEP1"
+_autoTitle = ""
+_autoTitleBelow = false
+old_text = "INTERPRETER_LETSLEARN_2_STEP1_T_STEP1"
+
+[node name="Step2_Bubble" parent="Explanation_MC/Explanation_VB/Steps_HB" instance=ExtResource("12_7hfa7")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "INTERPRETER_LETSLEARN_3_STEP2_T_STEP2"
+_autoTitle = ""
+_autoTitleBelow = false
+old_text = "INTERPRETER_LETSLEARN_3_STEP2_T_STEP2"
+
+[node name="Step3_Bubble" parent="Explanation_MC/Explanation_VB/Steps_HB" instance=ExtResource("12_7hfa7")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "INTERPRETER_LETSLEARN_4_STEP3_T_STEP3"
+_autoTitle = ""
+_autoTitleBelow = false
+old_text = "INTERPRETER_LETSLEARN_4_STEP3_T_STEP3"
+
+[node name="ExplanationLabels_VB" type="VBoxContainer" parent="Explanation_MC/Explanation_VB"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 30
 
-[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB/Explanation_VB"]
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB/ExplanationLabels_VB"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -195,7 +240,7 @@ custom_effects = [ExtResource("10_q2n0l")]
 script = ExtResource("4_shs0b")
 debugging = true
 
-[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB/Explanation_VB"]
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB/ExplanationLabels_VB"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -211,7 +256,13 @@ size_flags_horizontal = 8
 texture = ExtResource("9_ykrfe")
 stretch_mode = 5
 
-[node name="LearnSteps_Bubble" parent="Explanation_MC/Explanation_VB" instance=ExtResource("12_7hfa7")]
+[node name="Buttons_VB" type="VBoxContainer" parent="Explanation_MC"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Confirm_Bubble" parent="Explanation_MC/Buttons_VB" instance=ExtResource("12_7hfa7")]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -219,12 +270,12 @@ size_flags_vertical = 4
 _debug = false
 _updateInEditor = false
 min_height = 0
-min_width = 42
+min_width = 32
 _autoText = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
 _autoTitle = ""
 old_text = "continue"
 
-[node name="SkipSteps_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+[node name="SkipSteps_RTL" type="RichTextLabel" parent="Explanation_MC/Buttons_VB"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -237,4 +288,11 @@ custom_effects = [ExtResource("11_j0i4a")]
 script = ExtResource("4_shs0b")
 debugging = true
 
-[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/LearnSteps_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
+[node name="BottomMargin_HSep" type="HSeparator" parent="Explanation_MC/Buttons_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[connection signal="meta_link_1" from="Explanation_MC/Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_2_Step1"]]
+[connection signal="meta_link_2" from="Explanation_MC/Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_3_Step2"]]
+[connection signal="meta_link_3" from="Explanation_MC/Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_4_Step3"]]

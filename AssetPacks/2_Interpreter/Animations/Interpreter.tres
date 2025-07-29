@@ -1,13 +1,19 @@
-[gd_resource type="AnimationLibrary" load_steps=4 format=3 uid="uid://dcske7brqbmhq"]
+[gd_resource type="AnimationLibrary" load_steps=7 format=3 uid="uid://dcske7brqbmhq"]
 
 [ext_resource type="Animation" uid="uid://dtlhtcvxfc11k" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="1_mr0eu"]
 [ext_resource type="Animation" uid="uid://dbvfvj5epeknn" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="2_dio3u"]
 [ext_resource type="Animation" uid="uid://ct3yyvo3e6q7v" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_1_Overview.res" id="3_dio3u"]
+[ext_resource type="Animation" uid="uid://s3vtijf0g8r3" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_2_Step1.res" id="4_01se2"]
+[ext_resource type="Animation" uid="uid://c336rmu5w5bd0" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_3_Step2.res" id="5_xbldy"]
+[ext_resource type="Animation" uid="uid://cg1co7j0otmob" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_4_Step3.res" id="6_nok7u"]
 
 [resource]
 resource_name = "Interpreter"
 _data = {
 &"Interpreter_Load": ExtResource("1_mr0eu"),
 &"Interpreter_Unload": ExtResource("2_dio3u"),
-&"LetsLearn_1_Overview": ExtResource("3_dio3u")
+&"LetsLearn_1_Overview": ExtResource("3_dio3u"),
+&"LetsLearn_2_Step1": ExtResource("4_01se2"),
+&"LetsLearn_3_Step2": ExtResource("5_xbldy"),
+&"LetsLearn_4_Step3": ExtResource("6_nok7u")
 }
