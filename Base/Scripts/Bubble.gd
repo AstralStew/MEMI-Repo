@@ -122,7 +122,7 @@ func set_touch(touchHint:bool=false) -> void:
 func set_background(bg:Color=Color.WHITE):
 	if bg != Color.WHITE && _debug: print("[Bubble] BG color set...")
 	# Moved this here to reset just in case? Maybe a dedicated reset anyway
-	bubbleBG.modulate = bg
+	bubbleBG.self_modulate = bg
 
 func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false) -> void:
 	if _debug: print("[Bubble(",name,")] Initialising...")
@@ -149,7 +149,7 @@ func _resize() -> void:
 	if _debug: print("[Bubble] Resizing bubble to fit text...")
 	
 	bubbleText.custom_minimum_size = Vector2(max_width,0)
-	await get_tree().process_frame 
+	#await get_tree().process_frame 
 	var max_line_length = 0
 	for i in bubbleText.get_line_count():
 		if _debug: print("[Bubble] Line index = ",i,", range = ", bubbleText.get_line_range(i), "sub = ", bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x)

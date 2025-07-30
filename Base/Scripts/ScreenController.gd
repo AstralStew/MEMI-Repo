@@ -88,7 +88,7 @@ func load_screen_set(_name:String="",_index:int=0):
 			print("[ScreenController] ERROR -> Bad screen set name '",_name,"'! Falling back on index ",_index,"...")
 			_current_set_index = _index
 	else:
-		if debugging: print("[ScreenController] Loading screen set index '",screen_sets[_index].name,"' ",_index,"...")
+		if debugging: print("[ScreenController] Loading screen set index '",screen_sets[_index].resource_name,"' ",_index,"...")
 		_current_set_index = _index
 	#current_set = screen_sets[_current_set_index]
 	
@@ -277,19 +277,24 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 
 #region Speech functions
 
-
-
 func _start_recognition() -> void:
-	if debugging: print("[ScreenController] Starting speech recognition...")	
+	
+	# WARNING -> This allows cheating in the Editor using ABCD keys, see the _input method below
+	if OS.has_feature("editor_runtime"):
+		if debugging: print("[ScreenController] In-Editor, cheating past speech recognition. A = Correct, B = Wrong, C = Mumbo, D = DontKnow")
+		speechCheating = true
+		return
+	
+	if debugging: print("[ScreenController] Starting speech recognition...")
 	_connect_bridge()
 	BridgeManager._start_recognition()
 
 func _on_speech_start():
-	if debugging: print("[ScreenController] OnSpeechStart...")	
+	if debugging: print("[ScreenController] OnSpeechStart...")
 	recentResult = false
 
 func _on_speech_error():
-	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned, checking blank string.")	
+	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned, checking blank string.")
 	_disconnect_bridge()
 	lastSentence = ""
 	_play_sentence_anim()
@@ -320,7 +325,8 @@ func _on_speech_sentence(newSentence:String) -> void:
 	last_sentence_changed.emit(newSentence)
 	_play_sentence_anim()
 
-func _play_sentence_anim() -> void:	
+func _play_sentence_anim() -> void:
+	if debugging: print("[ScreenController] PlaySentenceAnim, last sentence = '",lastSentence,"'")
 	sentenceAnim = sentenceComparer.compare(lastSentence)
 	play_animation(sentenceAnim)
 
@@ -336,6 +342,38 @@ func _disconnect_bridge() -> void:
 	BridgeManager.speech_end.disconnect(_on_speech_end)
 	BridgeManager.speech_phrase.disconnect(_on_speech_sentence)
 
+
+
+# WARNING -> This allows cheating in the Editor using ABCD keys
+var speechCheating := false
+func _input(event):
+	if !OS.has_feature("editor_runtime") || !speechCheating: return
+	if event is InputEventKey:
+		if event.pressed:
+			if event.keycode == KEY_A:
+				print("[ScreenController] SpeechCheating, the A key was pressed! Sending Correct...")
+				speechCheating = false
+				lastSentence = "Cheated: Correct"
+				last_sentence_changed.emit(lastSentence)
+				play_animation(sentenceComparer.correctAnim)
+			elif event.keycode == KEY_B:
+				print("[ScreenController] SpeechCheating, the B key was pressed! Sending Wrong...")
+				speechCheating = false
+				lastSentence = "Cheated: Wrong"
+				last_sentence_changed.emit(lastSentence)
+				play_animation(sentenceComparer.wrongAnim)
+			elif event.keycode == KEY_C:
+				print("[ScreenController] SpeechCheating, the C key was pressed! Sending Mumbo...")
+				speechCheating = false
+				lastSentence = "Cheated: Mumbo"
+				last_sentence_changed.emit(lastSentence)
+				play_animation(sentenceComparer.mumboAnim)
+			elif event.keycode == KEY_D:
+				print("[ScreenController] SpeechCheating, the D key was pressed! Sending DontKnow...")
+				speechCheating = false
+				lastSentence = "Cheated: DontKnow"
+				last_sentence_changed.emit(lastSentence)
+				play_animation(sentenceComparer.dontKnowAnim)
 
 
 #endregion

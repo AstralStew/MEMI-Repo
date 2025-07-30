@@ -1,3 +1,2 @@
-res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres::b59859632b7b0f5c0cfd1fadf3c9c064::1753681448::res://.godot/exported/133200997/export-3f794e143d9605ba47828b78aefb034c-SenCom_Intro_Tutorial_1.res
-res://AssetPacks/1_Intro/Prefabs/Intro_Landing_Prefab1.tscn::091a38f5263a7a40d6aedb19ccf1cf71::1753692708::res://.godot/exported/133200997/export-942e226edcc207bfca3529f8e801a839-Intro_Landing_Prefab1.scn
-res://AssetPacks/1_Intro/Animations/Intro.tres::7d0a2f28fe64dcacb59e258bea715bb3::1753681448::res://.godot/exported/133200997/export-dc359fd84a129b65c28bfc0e38dd60dc-Intro.res
+res://AssetPacks/2_Interpreter/Animations/Interpreter.tres::37a380e484f8367c2550de919351ffbc::1753858638::res://.godot/exported/133200997/export-459e322c5e9955c4b6adc141c37d1607-Interpreter.res
+res://AssetPacks/2_Interpreter/Prefabs/Interpreter_Prefab1.tscn::969d06d21532ea0eb5e71e8a04b48cdc::1753859237::res://.godot/exported/133200997/export-4509e2fc9989a0f678b441c0d435119e-Interpreter_Prefab1.scn

@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=8 format=3 uid="uid://bg24rvmvcfl4u"]
+[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://bg24rvmvcfl4u"]
 
 [ext_resource type="Animation" uid="uid://dpim4otuk8tkk" path="res://AssetPacks/1_Intro/Animations/Intro_Load.res" id="1_svmcn"]
 [ext_resource type="Animation" uid="uid://douvf4gf7l4li" path="res://AssetPacks/1_Intro/Animations/Landing_1_LanguageChoice.res" id="2_a08ag"]
@@ -7,6 +7,7 @@
 [ext_resource type="Animation" uid="uid://dbvgmh76xkqlh" path="res://AssetPacks/1_Intro/Animations/Intro_Unload.res" id="5_e843r"]
 [ext_resource type="Animation" uid="uid://c55hklrpui1qm" path="res://AssetPacks/1_Intro/Animations/Tutorial_1_LetsTry.res" id="6_a08ag"]
 [ext_resource type="Animation" uid="uid://eplqaj12i2n8" path="res://AssetPacks/1_Intro/Animations/Tutorial_1a_Correct.res" id="7_gg8he"]
+[ext_resource type="Animation" uid="uid://dlp40l1q2aav1" path="res://AssetPacks/1_Intro/Animations/Tutorial_1b_Mumbo.res" id="8_a7bqq"]
 
 [resource]
 resource_name = "Intro"
@@ -17,5 +18,6 @@ _data = {
 &"Landing_2_Explanation": ExtResource("3_gg8he"),
 &"Landing_3_CallsAreFake": ExtResource("4_a7bqq"),
 &"Tutorial_1_LetsTry": ExtResource("6_a08ag"),
-&"Tutorial_1a_Correct": ExtResource("7_gg8he")
+&"Tutorial_1a_Correct": ExtResource("7_gg8he"),
+&"Tutorial_1b_Mumbo": ExtResource("8_a7bqq")
 }
