@@ -170,9 +170,9 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
@@ -270,10 +270,11 @@ size_flags_vertical = 4
 _debug = false
 _updateInEditor = false
 min_height = 0
-min_width = 32
+min_width = 42
+max_width = 250
 _autoText = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
 _autoTitle = ""
-old_text = "continue"
+old_text = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Explanation_MC/Buttons_VB"]
 visible = false

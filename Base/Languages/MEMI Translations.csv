@@ -57,6 +57,7 @@ INTERPRETER_LETSLEARN_2_STEP1_T3,YOU ANSWER:,,,
 INTERPRETER_LETSLEARN_2_STEP1_T4,"YOU ANSWER:
 
 [fade_in][url={1}]'Police'[/url]🔉, [url={2}]'Fire'[/url]🔉, or [url={3}]'Ambulance'[/url]🔉.
+
 Say only one service in English.[/fade_in]",,,
 ,,,,
 INTERPRETER_LETSLEARN_2_STEP1_B1,[url={2}]STEP 2[/url],,,
@@ -91,11 +92,11 @@ INTERPRETER_LETSLEARN_4_STEP3_T2,"Your call will now transfer to a service in yo
 [fade_in]When you are connected they will ask you for the address of your emergency.[/fade_in]",,,
 INTERPRETER_LETSLEARN_4_STEP3_T3,"Your call will now transfer to a service in your area.
 
-When you are connected they will ask you for the address of your emergency.  
+When you are connected they will ask you for the address of your emergency.
 
 [fade_in]This is a good time to ask for an interpreter.[/fade_in]",,,
 INTERPRETER_LETSLEARN_4_STEP3_T4,ASK FOR AN INTERPRETER IN ENGLISH:,,,
-INTERPRETER_LETSLEARN_4_STEP3_T5,"ASK FOR AN INTERPRETER IN ENGLISH.  
+INTERPRETER_LETSLEARN_4_STEP3_T5,"ASK FOR AN INTERPRETER IN ENGLISH:
 
 [fade_in]eg: Say [url={6}]'Interpreter, Hindi'[/url]🔉[/fade_in]",,,
 ,,,,

@@ -3,10 +3,17 @@ extends AnimationPlayer
 
 @export var debugging := false
 
+
 @export_group("Autostart Properties")
 #@export var autostart := true
 @export var autoloadPack := "Global"
 @export var autoloadScene := "res://AssetPacks/ScenarioShared/Scenario.tscn"
+
+@export_group("Override Properties")
+@export var overrideStartAnim := false
+@export var overrideAnimIndex := 0
+@export var overrideSpeed := false
+@export var overrideSpeedScale := 1.0
 
 @export_group("Screen Sets")
 @export var screen_sets : Array[ScreenSet] = []
@@ -46,6 +53,8 @@ func _ready() -> void:
 		
 		# WARNING > This must be initialised AFTER 0_Shared is loaded
 		LanguageManager._initialise()
+	
+	if overrideSpeed: speed_scale = overrideSpeedScale
 	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
@@ -101,8 +110,12 @@ func _load_screen_set(index:int):
 			_load_pack(pack)
 			await pack_load_finished
 	
-	# load first screen
-	load_screen(0)
+	# load first screen (unless overriding for testing)
+	if overrideStartAnim:
+		load_screen(overrideAnimIndex)
+	else: 
+		load_screen(0)
+	
 	if debugging: print("[ScreenController] Loading required packs...")
 	
 	play_animation(current_set.first_anim)

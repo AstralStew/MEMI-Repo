@@ -89,7 +89,8 @@ func _process(delta: float) -> void:
 
 func set_text(text:String):
 	bubbleText.text = text
-	if _debug: print("[Bubble] Text set...")	
+	if _debug: print("[Bubble] Text set...")
+	_resize()
 
 func set_title(title:String="",titleBelow:bool=false) -> void:
 	if title == "":
