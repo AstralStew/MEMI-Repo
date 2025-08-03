@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuol3yxw3dl0y"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ykllg"]
+[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="2_rdw4j"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_t2f8j"]
+[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Interpreter.png" id="4_gfus3"]
+[ext_resource type="Texture2D" uid="uid://c4rjvq5urx8jo" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Location.png" id="5_u0lhp"]
+[ext_resource type="Texture2D" uid="uid://73baf83pa3ao" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Questions.png" id="6_dw7sb"]
+[ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
+
+[node name="LetsLearn_Prefab" type="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_ykllg")
+
+[node name="LetsLearnMenu_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LetsLearnTitle_VB" type="VBoxContainer" parent="LetsLearnMenu_VB"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_VB"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "INTERPRETER_LETSLEARN_1_OVERVIEW_T1"
+vertical_alignment = 2
+custom_effects = [ExtResource("2_rdw4j")]
+script = ExtResource("3_t2f8j")
+debugging = true
+
+[node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.01
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Interpreter_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_gfus3")
+stretch_mode = 3
+
+[node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_LETSLEARN_1_OVERVIEW_T_INTERPRETER"
+fit_content = true
+vertical_alignment = 1
+custom_effects = [ExtResource("2_rdw4j")]
+script = ExtResource("3_t2f8j")
+debugging = true
+
+[node name="LetsLearn_Location_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Location_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("5_u0lhp")
+stretch_mode = 3
+
+[node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_LETSLEARN_1_OVERVIEW_T_LOCATION"
+fit_content = true
+vertical_alignment = 1
+custom_effects = [ExtResource("2_rdw4j")]
+script = ExtResource("3_t2f8j")
+debugging = true
+
+[node name="LetsLearn_Questions_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Questions_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("6_dw7sb")
+stretch_mode = 3
+
+[node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_LETSLEARN_1_OVERVIEW_T_QUESTIONS"
+fit_content = true
+vertical_alignment = 1
+custom_effects = [ExtResource("2_rdw4j")]
+script = ExtResource("3_t2f8j")
+debugging = true
+
+[node name="LetsLearn_NoHelp_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="NoHelp_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("7_4q1sm")
+stretch_mode = 3
+
+[node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_LETSLEARN_1_OVERVIEW_T_NOHELP"
+fit_content = true
+vertical_alignment = 1
+custom_effects = [ExtResource("2_rdw4j")]
+script = ExtResource("3_t2f8j")
+debugging = true

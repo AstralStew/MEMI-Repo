@@ -45,9 +45,8 @@ root_node = NodePath("MarginContainer")
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
-overrideSpeed = true
 overrideSpeedScale = 2.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("7_q73ni"), ExtResource("6_0p6sj")])
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("7_q73ni")])
 sentenceComparer = ExtResource("8_hqape")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
@@ -61,34 +60,12 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Content" type="Control" parent="ContentCanvas/ScreenController/MarginContainer"]
+[node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
-
-[node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-modulate = Color(0.792157, 0.717647, 0.65098, 1)
-z_index = -1
-custom_minimum_size = Vector2(800, 1600)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -362.0
-offset_right = 200.0
-offset_bottom = 362.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(40, 40)
-mouse_filter = 2
-texture = ExtResource("5_eopm5")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="OutlineBox" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
 visible = false
-layout_mode = 0
-offset_right = 294.0
-offset_bottom = 169.0
+layout_mode = 2
 texture = ExtResource("9_pih2p")
 draw_center = false
 patch_margin_left = 5
@@ -97,3 +74,23 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
+
+[node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
+modulate = Color(0.792157, 0.717647, 0.65098, 1)
+z_index = -1
+custom_minimum_size = Vector2(800, 1600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -800.0
+offset_right = 400.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+texture = ExtResource("5_eopm5")
+expand_mode = 1

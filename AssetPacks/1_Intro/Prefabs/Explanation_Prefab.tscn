@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://t1mdkoctxe4w"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_rrli2"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_hq51s"]
+[ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="7_2q8xe"]
+[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="8_1p8ap"]
+[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="9_bii6d"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="10_mxo23"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="11_g46fb"]
+[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="12_cbgko"]
+
+[node name="Explanation_Prefab" type="MarginContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_rrli2")
+debugging = true
+
+[node name="Explanation_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LadLanding1" type="TextureRect" parent="Explanation_VB"]
+layout_mode = 2
+texture = ExtResource("7_2q8xe")
+stretch_mode = 4
+
+[node name="LadTutorial1_C" type="Control" parent="Explanation_VB"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LadTutorial1" type="TextureRect" parent="Explanation_VB/LadTutorial1_C"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = -4.0
+offset_right = 461.0
+offset_bottom = 343.0
+texture = ExtResource("8_1p8ap")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("9_bii6d")]
+script = ExtResource("4_hq51s")
+debugging = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("10_mxo23")]
+script = ExtResource("4_hq51s")
+debugging = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("11_g46fb")]
+script = ExtResource("4_hq51s")
+debugging = true
+
+[node name="Continue_Bubble" parent="Explanation_VB" instance=ExtResource("12_cbgko")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+_debug = false
+_updateInEditor = false
+min_height = 0
+min_width = 42
+_autoText = "INTRO_LANDING_2_EXPLANATION_B1"
+_autoTitle = ""
+_autoShape = 1
+old_text = "continue"
+
+[node name="HSeparator" type="HSeparator" parent="Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="YouSay_Bubble" parent="Explanation_VB" instance=ExtResource("12_cbgko")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+_autoText = "..."
+_autoTitle = "COMMON_YOUSAY"
+_autoTouchHint = true
+old_text = "..."
+
+[connection signal="last_sentence_changed" from="." to="Explanation_VB/YouSay_Bubble" method="set_text"]
+[connection signal="meta_link_1" from="Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
+[connection signal="touch_input" from="Explanation_VB/YouSay_Bubble" to="." method="start_speech_recognition"]

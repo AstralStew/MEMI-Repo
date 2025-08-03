@@ -202,7 +202,7 @@ func resume_animation(delay:float=0) -> void:
 #region Content functions
 
 ## Key should be the same name as prefab [br] ## i.e. Intro_Landing_Prefab1, Intro_Landing_Prefab2, etc
-func create_prefab(_key:String,_scene:PackedScene):
+func create_prefab(_key:String,_scene:PackedScene, _parent:Control=content_parent):
 	if debugging: print("[ScreenController] Attemping to create prefab '",_scene,"' + assigning it key '",_key,"'")
 	if loaded_elements.has(_key):
 		print("[ScreenController] ERROR -> Key '",_key,"' already in use! Ignoring.")
@@ -210,7 +210,7 @@ func create_prefab(_key:String,_scene:PackedScene):
 	
 	# Spawn the packed scene
 	var scene = _scene.instantiate()
-	content_parent.add_child(scene)
+	_parent.add_child(scene)
 	
 	# Set its layout mode
 	var scene_as_control := scene as Control

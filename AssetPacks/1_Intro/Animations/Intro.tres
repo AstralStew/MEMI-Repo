@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://bg24rvmvcfl4u"]
+[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://bouuubqgb64je"]
 
 [ext_resource type="Animation" uid="uid://dpim4otuk8tkk" path="res://AssetPacks/1_Intro/Animations/Intro_Load.res" id="1_svmcn"]
 [ext_resource type="Animation" uid="uid://douvf4gf7l4li" path="res://AssetPacks/1_Intro/Animations/Landing_1_LanguageChoice.res" id="2_a08ag"]

@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://ngycpjoeboow"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_apjaa"]
+[ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="2_mytpu"]
+[ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="3_sc42j"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_0nev2"]
+[ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="5_q8pro"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="6_1jkkn"]
+
+[node name="LandingMenu_Prefab" type="VBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_apjaa")
+debugging = true
+
+[node name="Logo_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Logo_MC" type="MarginContainer" parent="Logo_VB"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 0
+
+[node name="Logo_TR" type="TextureRect" parent="Logo_VB/Logo_MC"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_mytpu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LanguageChoice_MC" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_bottom = 130
+
+[node name="Labels_VB" type="VBoxContainer" parent="LanguageChoice_MC"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="English_RTL" type="RichTextLabel" parent="LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_sc42j")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]English[/url]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_0nev2")
+debugging = true
+
+[node name="Arabic_RTL" type="RichTextLabel" parent="LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_q8pro")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]عَرَبِيّ[/url]"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_0nev2")
+
+[node name="Dari_RTL" type="RichTextLabel" parent="LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("5_q8pro")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]دری[/url]"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_0nev2")
+
+[node name="Chinese_RTL" type="RichTextLabel" parent="LanguageChoice_MC/Labels_VB"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_1jkkn")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[url={1}]汉语[/url]"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_0nev2")
+
+[connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
+[connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(1, 0, 0, 1)]]
