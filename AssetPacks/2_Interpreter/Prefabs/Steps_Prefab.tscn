@@ -146,3 +146,6 @@ theme_override_constants/separation = 20
 [connection signal="meta_link_1" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_3_FirstStep"]]
 [connection signal="meta_link_2" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_4_SecondStep"]]
 [connection signal="meta_link_3" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_5_ThirdStep"]]
+[connection signal="meta_link_4" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_Unload"]]
+[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["Interpreter/LetsLearn_2u_Skipped"]]
+[connection signal="meta_link_2" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["Interpreter/LetsLearn_Unload"]]

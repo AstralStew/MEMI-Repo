@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=8 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="7_q73ni"]
-[ext_resource type="Resource" uid="uid://dttfein6rjb10" path="res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres" id="8_hqape"]
 [ext_resource type="Texture2D" uid="uid://bbonymoh5rncf" path="res://AssetPacks/0_Shared/Images/OutlineNineSprite.png" id="9_pih2p"]
 
 [node name="AllMother" type="Node2D"]
@@ -45,9 +43,9 @@ root_node = NodePath("MarginContainer")
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
-overrideSpeedScale = 2.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("7_q73ni")])
-sentenceComparer = ExtResource("8_hqape")
+overrideSpeed = true
+overrideSpeedScale = 3.0
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj")])
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15

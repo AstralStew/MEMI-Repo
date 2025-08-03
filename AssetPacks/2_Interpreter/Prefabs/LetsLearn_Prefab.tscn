@@ -55,10 +55,11 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Interpreter_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_gfus3")
-stretch_mode = 3
+expand_mode = 1
 
 [node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
 layout_mode = 2
@@ -83,10 +84,11 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Location_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("5_u0lhp")
-stretch_mode = 3
+expand_mode = 1
 
 [node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
 layout_mode = 2
@@ -110,10 +112,11 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Questions_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("6_dw7sb")
-stretch_mode = 3
+expand_mode = 1
 
 [node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
 layout_mode = 2
@@ -137,10 +140,11 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="NoHelp_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("7_4q1sm")
-stretch_mode = 3
+expand_mode = 1
 
 [node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
 layout_mode = 2
