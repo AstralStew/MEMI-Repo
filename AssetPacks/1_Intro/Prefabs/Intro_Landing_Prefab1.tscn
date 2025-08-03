@@ -191,6 +191,7 @@ min_height = 0
 min_width = 42
 _autoText = "INTRO_LANDING_2_EXPLANATION_B1"
 _autoTitle = ""
+_autoShape = 1
 old_text = "continue"
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_MC/Explanation_VB"]

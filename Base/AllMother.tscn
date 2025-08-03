@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=10 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="7_q73ni"]
 [ext_resource type="Resource" uid="uid://dttfein6rjb10" path="res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres" id="8_hqape"]
+[ext_resource type="Texture2D" uid="uid://bbonymoh5rncf" path="res://AssetPacks/0_Shared/Images/OutlineNineSprite.png" id="9_pih2p"]
 
 [node name="AllMother" type="Node2D"]
 
@@ -56,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
@@ -82,3 +83,17 @@ mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="OutlineBox" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
+visible = false
+layout_mode = 0
+offset_right = 294.0
+offset_bottom = 169.0
+texture = ExtResource("9_pih2p")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

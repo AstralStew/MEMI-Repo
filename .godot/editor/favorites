@@ -1,7 +1,8 @@
 D:/Paperticket Studios/GODOT/Project MEMI/Exports/
 D:/Paperticket Studios/GODOT/Project MEMI/Exports/Packs/
-res://AssetPacks/1_Intro/Animations/Intro.tres
-res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
-res://AssetPacks/1_Intro/Prefabs/Intro_Landing_Prefab1.tscn
-res://AssetPacks/2_Interpreter/Prefabs/Interpreter_Prefab1.tscn
 res://Base/Languages/
+res://AssetPacks/0_Shared/ScreenSets/
+res://AssetPacks/1_Intro/Animations/Intro.tres
+res://AssetPacks/1_Intro/Prefabs/Intro_Landing_Prefab1.tscn
+res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
+res://AssetPacks/2_Interpreter/Prefabs/Interpreter_Prefab1.tscn

@@ -162,6 +162,13 @@ func load_next_screen():
 		if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
 		add_animation_library(animLibrary.resource_name,animLibrary)
 
+func unload_screen(_name:String):
+	if !has_animation_library(_name):
+		push_error("[ScreenController] ERROR -> Cannot unload screen '",_name,"' (animLibrary), it cannot be found :(")
+		return
+	
+	if debugging: print("[ScreenController] Unloading screen '",_name,"' (animLibrary)")
+	remove_animation_library(_name)
 
 #endregion
 

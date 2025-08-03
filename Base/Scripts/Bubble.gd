@@ -18,6 +18,7 @@ class_name Bubble
 @export_multiline var _autoText := ""
 @export var _autoTitle := ""
 @export var _autoTitleBelow := false
+@export var _autoShape : Constants.BubbleShape = Constants.BubbleShape.Default
 @export var _autoColor := Color.WHITE
 @export var _autoTouchHint := false
 
@@ -46,7 +47,7 @@ signal meta_link_9
 
 func _ready() -> void:
 	_getrefs()
-	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint)
+	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape)
 	
 	# set the label minimum width to 200px
 	#label.custom_minimum_size.x = 200
@@ -74,7 +75,7 @@ func _process(delta: float) -> void:
 		if bubbleText == null: _getrefs()
 		
 		if _autostart && bubbleText.text !=_autoText:
-			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint)
+			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape)
 		
 		if bubbleText.get_parsed_text() != old_text:
 			if _debug: print("[Bubble] In-editor resize triggered")
@@ -89,7 +90,7 @@ func _process(delta: float) -> void:
 
 func set_text(text:String):
 	bubbleText.text = text
-	if _debug: print("[Bubble] Text set...")
+	if _debug: print("[Bubble] Text set to '",text,"'")
 	_resize()
 
 func set_title(title:String="",titleBelow:bool=false) -> void:
@@ -102,12 +103,12 @@ func set_title(title:String="",titleBelow:bool=false) -> void:
 			bubbleTitleTop.visible = false
 			bubbleTitleBottom.visible = true
 			bubbleTitleBottom.text = title
-			if _debug: print("[Bubble] Bottom title set...")
+			if _debug: print("[Bubble] Bottom title set to '",title,"'")
 		else:
 			bubbleTitleTop.visible = true
 			bubbleTitleBottom.visible = false
 			bubbleTitleTop.text = title
-			if _debug: print("[Bubble] Top title set...")
+			if _debug: print("[Bubble] Top title set to '",title,"'")
 
 func set_touch(touchHint:bool=false) -> void:
 	if touchHint: 
@@ -119,17 +120,25 @@ func set_touch(touchHint:bool=false) -> void:
 		bubbleTouchHint.visible = false
 		bubbleTouchButton.visible = false
 
-func set_background(bg:Color=Color.WHITE):
-	if bg != Color.WHITE && _debug: print("[Bubble] BG color set...")
+func set_background(bg:Color=Color.WHITE,shape:Constants.BubbleShape=Constants.BubbleShape.Default):
+	if _debug: print("[Bubble] BG shape set to ",shape,"")
+	# Moved this here to reset just in case? Maybe a dedicated reset anyway
+	match shape:
+		Constants.BubbleShape.Rounded:
+			bubbleBG.texture = load("res://AssetPacks/0_Shared/Images/RoundedNineSprite.png")
+		_:
+			bubbleBG.texture = load("res://AssetPacks/0_Shared/Images/BubbleNineSprite.png")
+		
+	if _debug: print("[Bubble] BG color set to ",bg)
 	# Moved this here to reset just in case? Maybe a dedicated reset anyway
 	bubbleBG.self_modulate = bg
 
-func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false) -> void:
+func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false,shape:Constants.BubbleShape = Constants.BubbleShape.Default) -> void:
 	if _debug: print("[Bubble(",name,")] Initialising...")
 	
 	set_text(text)
 	set_title(title,titleBelow)	
-	set_background(bg)
+	set_background(bg,shape)
 	set_touch(touchHint)
 	
 	_resize()
