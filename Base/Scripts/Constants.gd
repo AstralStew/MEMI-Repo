@@ -6,4 +6,4 @@ enum FontType {Normal, Thick, Thin}
 
 enum CheckType{AND,OR}
 
-enum BubbleShape{Default,Rounded}
+enum BubbleShape{Default,Rounded,DefaultFlip}

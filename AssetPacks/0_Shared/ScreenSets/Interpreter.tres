@@ -6,7 +6,7 @@
 resource_name = "Interpreter"
 script = ExtResource("1_5mgyl")
 required_packs = Array[String](["2_Interpreter"])
-screen_paths = Array[String](["res://AssetPacks/2_Interpreter/Animations/Interpreter.tres"])
+screen_paths = Array[String](["res://AssetPacks/2_Interpreter/Animations/LetsLearn.tres"])
 current_index = 0
-first_anim = &"Interpreter/LetsLearn_Load"
+first_anim = &"LetsLearn/LetsLearn_Load"
 metadata/_custom_type_script = "uid://cjxn00ku2l42w"

@@ -1,23 +1,13 @@
-[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://dcske7brqbmhq"]
+[gd_resource type="AnimationLibrary" load_steps=4 format=3 uid="uid://dcske7brqbmhq"]
 
-[ext_resource type="Animation" uid="uid://ct3yyvo3e6q7v" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_1_Overview.res" id="3_dio3u"]
-[ext_resource type="Animation" uid="uid://s3vtijf0g8r3" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_3_FirstStep.res" id="5_ik00u"]
-[ext_resource type="Animation" uid="uid://c336rmu5w5bd0" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_4_SecondStep.res" id="6_0yd86"]
-[ext_resource type="Animation" uid="uid://dtlhtcvxfc11k" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_Load.res" id="6_ik00u"]
-[ext_resource type="Animation" uid="uid://dbvfvj5epeknn" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_Unload.res" id="7_0yd86"]
-[ext_resource type="Animation" uid="uid://cg1co7j0otmob" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_5_ThirdStep.res" id="7_clmsm"]
-[ext_resource type="Animation" uid="uid://u1cnao25w7vo" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_2_Explanation.res" id="7_ik00u"]
-[ext_resource type="Animation" uid="uid://d01iwjmkuxyn5" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn_2u_Skipped.res" id="8_0yd86"]
+[ext_resource type="Animation" uid="uid://dq2a01ifld7je" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="1_mr0eu"]
+[ext_resource type="Animation" uid="uid://cxamyjl2c7g74" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="2_dio3u"]
+[ext_resource type="Animation" uid="uid://c7l0ra5g3cun" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1_LetsTry.res" id="3_dio3u"]
 
 [resource]
 resource_name = "Interpreter"
 _data = {
-&"LetsLearn_1_Overview": ExtResource("3_dio3u"),
-&"LetsLearn_2_Explanation": ExtResource("7_ik00u"),
-&"LetsLearn_2u_Skipped": ExtResource("8_0yd86"),
-&"LetsLearn_3_FirstStep": ExtResource("5_ik00u"),
-&"LetsLearn_4_SecondStep": ExtResource("6_0yd86"),
-&"LetsLearn_5_ThirdStep": ExtResource("7_clmsm"),
-&"LetsLearn_Load": ExtResource("6_ik00u"),
-&"LetsLearn_Unload": ExtResource("7_0yd86")
+&"Interpreter_1_LetsTry": ExtResource("3_dio3u"),
+&"Interpreter_Load": ExtResource("1_mr0eu"),
+&"Interpreter_Unload": ExtResource("2_dio3u")
 }

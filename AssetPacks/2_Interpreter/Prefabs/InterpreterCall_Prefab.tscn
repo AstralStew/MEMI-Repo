@@ -1,0 +1,433 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmup6q2t00bxk"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
+[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="3_7ltpq"]
+[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="4_kkmuj"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_q6r75"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="6_muhe5"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="7_c3pe2"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="7_t058n"]
+[ext_resource type="Texture2D" uid="uid://d5yh0bb3esgc" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Info.png" id="8_lhgno"]
+[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="8_yiaac"]
+[ext_resource type="Texture2D" uid="uid://bbonymoh5rncf" path="res://AssetPacks/0_Shared/Images/OutlineNineSprite.png" id="9_7ly4h"]
+[ext_resource type="Texture2D" uid="uid://c0ortbqv272ad" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Emergency.png" id="10_38vxp"]
+[ext_resource type="Script" uid="uid://loedrtlvs64f" path="res://Base/Scripts/Description.gd" id="10_lhgno"]
+[ext_resource type="Texture2D" uid="uid://bx3d51dbnrf23" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Location.png" id="11_e2mk7"]
+
+[node name="InterpreterCall_Prefab" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 100
+script = ExtResource("1_ei8ir")
+debugging = true
+
+[node name="Explanation_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LadTutorial1_C" type="Control" parent="Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LadTutorial1" type="TextureRect" parent="Explanation_VB/LadTutorial1_C"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = -4.0
+offset_right = 461.0
+offset_bottom = 343.0
+texture = ExtResource("3_7ltpq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("6_muhe5")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("7_t058n")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Scenario_VB" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="Scenario_Title_MC" type="MarginContainer" parent="Scenario_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="Scenario_Title_L" type="Label" parent="Scenario_VB/Scenario_Title_MC"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("7_c3pe2")
+theme_override_font_sizes/font_size = 16
+text = "INTERPRETER_SCENARIO_T1"
+uppercase = true
+
+[node name="Scenario_Info_MC" type="MarginContainer" parent="Scenario_VB" node_paths=PackedStringArray("descriptionText")]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 80
+script = ExtResource("10_lhgno")
+_debug = true
+_updateInEditor = true
+adjust_top = true
+top_multiplier = 26.0
+top_addition = 5.0
+adjust_bottom = true
+bottom_multiplier = 0.0
+bottom_addition = 80.0
+descriptionText = NodePath("Info_C/Info_TR/Info_RTL")
+
+[node name="Info_C" type="Control" parent="Scenario_VB/Scenario_Info_MC"]
+layout_mode = 2
+
+[node name="Info_TR" type="TextureRect" parent="Scenario_VB/Scenario_Info_MC/Info_C"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(80, 83)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 83.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(40, 41.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_lhgno")
+expand_mode = 1
+
+[node name="Info_RTL" type="RichTextLabel" parent="Scenario_VB/Scenario_Info_MC/Info_C/Info_TR"]
+visible = false
+z_as_relative = false
+clip_contents = false
+custom_minimum_size = Vector2(195, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.14
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_right = 186.0
+offset_bottom = -15.385
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(-22, 60)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_SCENARIO_T2"
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_kkmuj")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Info_NPR" type="NinePatchRect" parent="Scenario_VB/Scenario_Info_MC/Info_C/Info_TR/Info_RTL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_7ly4h")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Scenario_Emergency_MC" type="MarginContainer" parent="Scenario_VB" node_paths=PackedStringArray("descriptionText")]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 80
+script = ExtResource("10_lhgno")
+_debug = true
+_updateInEditor = true
+adjust_top = true
+top_multiplier = 26.0
+top_addition = 5.0
+adjust_bottom = true
+bottom_multiplier = 0.0
+bottom_addition = 80.0
+descriptionText = NodePath("Emergency_C/Emergency_TR/Emergency_RTL")
+
+[node name="Emergency_C" type="Control" parent="Scenario_VB/Scenario_Emergency_MC"]
+layout_mode = 2
+
+[node name="Emergency_TR" type="TextureRect" parent="Scenario_VB/Scenario_Emergency_MC/Emergency_C"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(80, 83)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 83.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(40, 41.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_38vxp")
+expand_mode = 1
+
+[node name="Emergency_RTL" type="RichTextLabel" parent="Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR"]
+visible = false
+z_as_relative = false
+clip_contents = false
+custom_minimum_size = Vector2(195, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.14
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_right = 186.0
+offset_bottom = -15.385
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(-22, 60)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_SCENARIO_T3"
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_kkmuj")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Emergency_NPR" type="NinePatchRect" parent="Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_7ly4h")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Scenario_Location_MC3" type="MarginContainer" parent="Scenario_VB" node_paths=PackedStringArray("descriptionText")]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 80
+script = ExtResource("10_lhgno")
+_debug = true
+_updateInEditor = true
+adjust_top = true
+top_multiplier = 26.0
+top_addition = 5.0
+adjust_bottom = true
+bottom_multiplier = 0.0
+bottom_addition = 80.0
+descriptionText = NodePath("Location_C/Location_TR/Location_RTL")
+
+[node name="Location_C" type="Control" parent="Scenario_VB/Scenario_Location_MC3"]
+layout_mode = 2
+
+[node name="Location_TR" type="TextureRect" parent="Scenario_VB/Scenario_Location_MC3/Location_C"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(80, 83)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 83.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(40, 41.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("11_e2mk7")
+expand_mode = 1
+
+[node name="Location_RTL" type="RichTextLabel" parent="Scenario_VB/Scenario_Location_MC3/Location_C/Location_TR"]
+visible = false
+z_as_relative = false
+clip_contents = false
+custom_minimum_size = Vector2(195, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.14
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_right = 186.0
+offset_bottom = -15.385
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(-22, 60)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_SCENARIO_T4"
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_kkmuj")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Location_NPR" type="NinePatchRect" parent="Scenario_VB/Scenario_Location_MC3/Location_C/Location_TR/Location_RTL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_7ly4h")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="YouSay_Bubble" parent="." instance=ExtResource("8_yiaac")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 0
+_autoText = "..."
+_autoTitle = "COMMON_YOUSAY"
+_autoTouchHint = true
+old_text = "..."
+
+[node name="Buttons_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="Continue_Bubble" parent="Buttons_VB" instance=ExtResource("8_yiaac")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+_debug = false
+_updateInEditor = false
+min_height = 0
+min_width = 42
+_autoText = "INTRO_LANDING_2_EXPLANATION_B1"
+_autoTitle = ""
+_autoShape = 1
+old_text = "continue"
+
+[node name="HSeparator" type="HSeparator" parent="Buttons_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Comments_VB" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = -1
+alignment = 2
+
+[node name="Comment_Bubble" parent="Comments_VB" instance=ExtResource("8_yiaac")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 30
+min_height = 42
+min_width = 150
+max_width = 210
+_autoText = "They always ask this question first"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 2
+old_text = "They always ask this question first"
+
+[node name="Comments_C" type="Control" parent="Comments_VB"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="LadComment1" type="TextureRect" parent="Comments_VB/Comments_C"]
+custom_minimum_size = Vector2(220, 505.5)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -78.0
+offset_right = 40.0
+offset_bottom = 427.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_7ltpq")
+expand_mode = 1
+
+[connection signal="last_sentence_changed" from="." to="YouSay_Bubble" method="set_text"]
+[connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Info_MC/Info_C/Info_TR/Info_RTL" to="Scenario_VB/Scenario_Info_MC" method="set_margins_from_lines"]
+[connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="Scenario_VB/Scenario_Emergency_MC" method="set_margins_from_lines"]
+[connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Location_MC3/Location_C/Location_TR/Location_RTL" to="Scenario_VB/Scenario_Location_MC3" method="set_margins_from_lines"]
+[connection signal="touch_input" from="YouSay_Bubble" to="." method="start_speech_recognition"]
+[connection signal="meta_link_1" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]

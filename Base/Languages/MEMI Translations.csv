@@ -33,50 +33,50 @@ INTRO_TUTORIAL_1_LETSTRY_T2,[fade_in]Tap and say [url={1}]‘OK’[/url]🔉[/fa
 ,,,,
 ,,,,
 ,,,,
-INTERPRETER_LETSLEARN_1_OVERVIEW_T1,"Together, let's practise:",,,
-INTERPRETER_LETSLEARN_1_OVERVIEW_T2,Starting with:,,,
+LETSLEARN_1_OVERVIEW_T1,"Together, let's practise:",,,
+LETSLEARN_1_OVERVIEW_T2,Starting with:,,,
 ,,,,
-INTERPRETER_LETSLEARN_1_OVERVIEW_T_INTERPRETER,How to ask for an interpreter,,,
-INTERPRETER_LETSLEARN_1_OVERVIEW_T_LOCATION,How to say where you are in English,,,
-INTERPRETER_LETSLEARN_1_OVERVIEW_T_QUESTIONS,Answering emergency questions in English,,,
-INTERPRETER_LETSLEARN_1_OVERVIEW_T_NOHELP,Doing a scenario without help!,,,
-,,,,
-,,,,
-,,,,
-INTERPRETER_LETSLEARN_2_EXPLANATION_T1,"[fade_in]When you call 000, you can follow three steps to find an interpreter in your language.[/fade_in]",,,
-INTERPRETER_LETSLEARN_2_EXPLANATION_T2,[fade_in]Let's go through them now.[/fade_in],,,
-,,,,
-INTERPRETER_LETSLEARN_2_EXPLANATION_B1,[url={1}]Learn the steps[/url],,,
-INTERPRETER_LETSLEARN_2_EXPLANATION_B2,or [url={1}]Skip Steps[/url],,,
+LETSLEARN_1_OVERVIEW_T_INTERPRETER,How to ask for an interpreter,,,
+LETSLEARN_1_OVERVIEW_T_LOCATION,How to say where you are in English,,,
+LETSLEARN_1_OVERVIEW_T_QUESTIONS,Answering emergency questions in English,,,
+LETSLEARN_1_OVERVIEW_T_NOHELP,Doing a scenario without help!,,,
 ,,,,
 ,,,,
 ,,,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_T_STEP,STEP 1,,,
+LETSLEARN_2_EXPLANATION_T1,"[fade_in]When you call 000, you can follow three steps to find an interpreter in your language.[/fade_in]",,,
+LETSLEARN_2_EXPLANATION_T2,[fade_in]Let's go through them now.[/fade_in],,,
 ,,,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_T1,000 ASKS:,,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_T2,"000 ASKS:
+LETSLEARN_2_EXPLANATION_B1,[url={1}]Learn the steps[/url],,,
+LETSLEARN_2_EXPLANATION_B2,or [url={1}]Skip Steps[/url],,,
+,,,,
+,,,,
+,,,,
+LETSLEARN_3_FIRSTSTEP_T_STEP,STEP 1,,,
+,,,,
+LETSLEARN_3_FIRSTSTEP_T1,000 ASKS:,,,
+LETSLEARN_3_FIRSTSTEP_T2,"000 ASKS:
 
 [fade_in][url={1}]'Emergency services. Police, Fire, Ambulance?'[/url]🔉[/fade_in]",,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_T3,YOU ANSWER:,,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_T4,"YOU ANSWER:
+LETSLEARN_3_FIRSTSTEP_T3,YOU ANSWER:,,,
+LETSLEARN_3_FIRSTSTEP_T4,"YOU ANSWER:
 
 [fade_in][url={1}]'Police'[/url]🔉, [url={2}]'Fire'[/url]🔉, or [url={3}]'Ambulance'[/url]🔉.
 
 Say only one service in English.[/fade_in]",,,
 ,,,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_B1,[url={2}]STEP 2[/url],,,
-INTERPRETER_LETSLEARN_3_FIRSTSTEP_B2,[url={2}]Skip Steps[/url],,,
+LETSLEARN_3_FIRSTSTEP_B1,[url={2}]STEP 2[/url],,,
+LETSLEARN_3_FIRSTSTEP_B2,[url={2}]Skip Steps[/url],,,
 ,,,,
 ,,,,
 ,,,,
-INTERPRETER_LETSLEARN_4_SECONDSTEP_T_STEP,STEP 2,,,
+LETSLEARN_4_SECONDSTEP_T_STEP,STEP 2,,,
 ,,,,
-INTERPRETER_LETSLEARN_4_SECONDSTEP_T1,000 ASKS:,,,
-INTERPRETER_LETSLEARN_4_SECONDSTEP_T2,"000 ASKS:
+LETSLEARN_4_SECONDSTEP_T1,000 ASKS:,,,
+LETSLEARN_4_SECONDSTEP_T2,"000 ASKS:
 
 [fade_in][url={2}]'What is the state and town of your emergency?'[/url]🔉[/fade_in]",,,
-INTERPRETER_LETSLEARN_4_SECONDSTEP_T3,YOU ANSWER:,,,
-INTERPRETER_LETSLEARN_4_SECONDSTEP_T4,"YOU ANSWER:
+LETSLEARN_4_SECONDSTEP_T3,YOU ANSWER:,,,
+LETSLEARN_4_SECONDSTEP_T4,"YOU ANSWER:
 
 [fade_in]The area and state of your emergency.
 
@@ -84,24 +84,24 @@ eg: [url={4}]'Dandenong, Victoria'[/url]🔉
 
 eg: [url={5}]'Mildura, Victoria'[/url]🔉[/fade_in]",,,
 ,,,,
-INTERPRETER_LETSLEARN_4_SECONDSTEP_B1,[url={3}]STEP 3[/url],,,
+LETSLEARN_4_SECONDSTEP_B1,[url={3}]STEP 3[/url],,,
 ,,,,
 ,,,,
 ,,,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_T_STEP,STEP 3,,,
+LETSLEARN_5_THIRDSTEP_T_STEP,STEP 3,,,
 ,,,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_T1,[fade_in]Your call will now transfer to a service in your area.[/fade_in],,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_T2,"Your call will now transfer to a service in your area.
+LETSLEARN_5_THIRDSTEP_T1,[fade_in]Your call will now transfer to a service in your area.[/fade_in],,,
+LETSLEARN_5_THIRDSTEP_T2,"Your call will now transfer to a service in your area.
 
 [fade_in]When you are connected they will ask you for the address of your emergency.[/fade_in]",,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_T3,"Your call will now transfer to a service in your area.
+LETSLEARN_5_THIRDSTEP_T3,"Your call will now transfer to a service in your area.
 
 When you are connected they will ask you for the address of your emergency.
 
 [fade_in]This is a good time to ask for an interpreter.[/fade_in]",,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_T4,ASK FOR AN INTERPRETER IN ENGLISH:,,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_T5,"ASK FOR AN INTERPRETER IN ENGLISH:
+LETSLEARN_5_THIRDSTEP_T4,ASK FOR AN INTERPRETER IN ENGLISH:,,,
+LETSLEARN_5_THIRDSTEP_T5,"ASK FOR AN INTERPRETER IN ENGLISH:
 
 [fade_in]eg: Say [url={6}]'Interpreter, Hindi'[/url]🔉[/fade_in]",,,
 ,,,,
-INTERPRETER_LETSLEARN_5_THIRDSTEP_B1,[url={4}]Got it![/url],,,
+LETSLEARN_5_THIRDSTEP_B1,[url={4}]Got it![/url],,,

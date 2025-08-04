@@ -1,6 +1,5 @@
 @tool 
 extends MarginContainer
-
 class_name Bubble
 
 @export var _debug := false
@@ -124,8 +123,12 @@ func set_background(bg:Color=Color.WHITE,shape:Constants.BubbleShape=Constants.B
 	if _debug: print("[Bubble] BG shape set to ",shape,"")
 	# Moved this here to reset just in case? Maybe a dedicated reset anyway
 	match shape:
+		Constants.BubbleShape.Default:
+			bubbleBG.texture = load("res://AssetPacks/0_Shared/Images/BubbleNineSprite.png")
 		Constants.BubbleShape.Rounded:
 			bubbleBG.texture = load("res://AssetPacks/0_Shared/Images/RoundedNineSprite.png")
+		Constants.BubbleShape.DefaultFlip:
+			bubbleBG.texture = load("res://AssetPacks/0_Shared/Images/BubbleFlipNineSprite.png")
 		_:
 			bubbleBG.texture = load("res://AssetPacks/0_Shared/Images/BubbleNineSprite.png")
 		

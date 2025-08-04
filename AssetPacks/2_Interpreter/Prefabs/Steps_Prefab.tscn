@@ -44,10 +44,10 @@ layout_mode = 2
 min_height = 0
 min_width = 60
 max_width = 100
-_autoText = "INTERPRETER_LETSLEARN_3_FIRSTSTEP_T_STEP"
+_autoText = "LETSLEARN_3_FIRSTSTEP_T_STEP"
 _autoTitle = ""
 _autoTitleBelow = false
-old_text = "INTERPRETER_LETSLEARN_3_FIRSTSTEP_T_STEP"
+old_text = "LETSLEARN_3_FIRSTSTEP_T_STEP"
 
 [node name="Step2_Bubble" parent="Explanation_VB/Steps_HB" instance=ExtResource("8_e0sk5")]
 modulate = Color(1, 1, 1, 0)
@@ -55,10 +55,10 @@ layout_mode = 2
 min_height = 0
 min_width = 60
 max_width = 100
-_autoText = "INTERPRETER_LETSLEARN_4_SECONDSTEP_T_STEP"
+_autoText = "LETSLEARN_4_SECONDSTEP_T_STEP"
 _autoTitle = ""
 _autoTitleBelow = false
-old_text = "INTERPRETER_LETSLEARN_4_SECONDSTEP_T_STEP"
+old_text = "LETSLEARN_4_SECONDSTEP_T_STEP"
 
 [node name="Step3_Bubble" parent="Explanation_VB/Steps_HB" instance=ExtResource("8_e0sk5")]
 modulate = Color(1, 1, 1, 0)
@@ -66,10 +66,10 @@ layout_mode = 2
 min_height = 0
 min_width = 60
 max_width = 100
-_autoText = "INTERPRETER_LETSLEARN_5_THIRDSTEP_T_STEP"
+_autoText = "LETSLEARN_5_THIRDSTEP_T_STEP"
 _autoTitle = ""
 _autoTitleBelow = false
-old_text = "INTERPRETER_LETSLEARN_5_THIRDSTEP_T_STEP"
+old_text = "LETSLEARN_5_THIRDSTEP_T_STEP"
 
 [node name="ExplanationLabels_VB" type="VBoxContainer" parent="Explanation_VB"]
 custom_minimum_size = Vector2(0, 150)
@@ -120,7 +120,7 @@ _updateInEditor = false
 min_height = 0
 min_width = 42
 max_width = 250
-_autoText = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
+_autoText = "LETSLEARN_1_OVERVIEW_B1"
 _autoTitle = ""
 _autoShape = 1
 old_text = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
@@ -131,7 +131,7 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "INTERPRETER_LETSLEARN_2_EXPLANATION_B2"
+text = "LETSLEARN_2_EXPLANATION_B2"
 fit_content = true
 horizontal_alignment = 1
 custom_effects = [ExtResource("10_r76yc")]
@@ -143,9 +143,9 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[connection signal="meta_link_1" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_3_FirstStep"]]
-[connection signal="meta_link_2" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_4_SecondStep"]]
-[connection signal="meta_link_3" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_5_ThirdStep"]]
-[connection signal="meta_link_4" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["Interpreter/LetsLearn_Unload"]]
-[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["Interpreter/LetsLearn_2u_Skipped"]]
-[connection signal="meta_link_2" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["Interpreter/LetsLearn_Unload"]]
+[connection signal="meta_link_1" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_3_FirstStep"]]
+[connection signal="meta_link_2" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_4_SecondStep"]]
+[connection signal="meta_link_3" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_5_ThirdStep"]]
+[connection signal="meta_link_4" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_Unload"]]
+[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_2u_Skipped"]]
+[connection signal="meta_link_2" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_Unload"]]

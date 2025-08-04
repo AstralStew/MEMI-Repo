@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=10 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
+[ext_resource type="AnimationLibrary" uid="uid://dcske7brqbmhq" path="res://AssetPacks/2_Interpreter/Animations/Interpreter.tres" id="3_pih2p"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
+[ext_resource type="PackedScene" uid="uid://dmup6q2t00bxk" path="res://AssetPacks/2_Interpreter/Prefabs/InterpreterCall_Prefab.tscn" id="7_ims8e"]
 [ext_resource type="Texture2D" uid="uid://bbonymoh5rncf" path="res://AssetPacks/0_Shared/Images/OutlineNineSprite.png" id="9_pih2p"]
 
 [node name="AllMother" type="Node2D"]
@@ -40,6 +42,9 @@ layer = 0
 
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
+libraries = {
+&"Interpreter": ExtResource("3_pih2p")
+}
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
@@ -59,6 +64,9 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
+layout_mode = 2
+
+[node name="InterpreterCall_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("7_ims8e")]
 layout_mode = 2
 
 [node name="OutlineBox" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content"]

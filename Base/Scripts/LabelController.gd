@@ -5,6 +5,10 @@ extends RichTextLabel
 @export_group("Text Properties")
 @export var fontType : Constants.FontType = Constants.FontType.Normal
 
+signal text_populated
+signal text_populated_with_text(words)
+signal text_populated_with_lines(number)
+
 @export_group("Translation Properties")
 @export var autopopulate := false
 @export var autokey := ""
@@ -34,6 +38,10 @@ func populate(_newText : String) -> void:
 		_check_font()
 	if debugging: print("[LabelController] Setting text to: '",_newText)
 	text = _newText
+	
+	text_populated.emit()
+	text_populated_with_text.emit(text)
+	text_populated_with_lines.emit(get_line_count())
 
 func translate(_newKey : String) -> void:
 	_check_font()
