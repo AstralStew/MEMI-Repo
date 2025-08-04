@@ -7,6 +7,6 @@ resource_name = "Intro"
 script = ExtResource("2_65hvc")
 required_packs = Array[String](["1_Intro"])
 screen_paths = Array[String](["res://AssetPacks/1_Intro/Animations/Intro.tres"])
+first_anims = Array[StringName]([&"Intro/Intro_Load"])
 current_index = 0
-first_anim = &"Intro/Intro_Load"
 metadata/_custom_type_script = "uid://cjxn00ku2l42w"

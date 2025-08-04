@@ -3,20 +3,20 @@ extends Resource
 
 @export var required_packs : Array[String]
 @export var screen_paths : Array[String]
+@export var first_anims : Array[StringName]
 
 #@export var path := ""
 @export var current_index := 0
 
-@export var first_anim : StringName= ""
-
-func _init(p_required_packs : Array[String] = [""], p_screen_paths : Array[String] = [""], p_current_index : int = 0, p_first_anim : StringName = ""):
+func _init(p_required_packs : Array[String] = [""], p_screen_paths : Array[String] = [""], p_current_index : int = 0, p_first_anims : Array[StringName] = [""]):
 	required_packs = p_required_packs
 	screen_paths = p_screen_paths
 	current_index = p_current_index
-	first_anim = p_first_anim
+	first_anims = p_first_anims
 
 
-
+func first_anim() -> StringName:
+	return first_anims[current_index]
 
 func next_screen() -> AnimationLibrary:
 	increment()

@@ -7,3 +7,6 @@ res://AssetPacks/1_Intro/Prefabs/LandingMenu_Prefab.tscn
 res://AssetPacks/1_Intro/Prefabs/Explanation_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/LetsLearn_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/Steps_Prefab.tscn
+res://AssetPacks/2_Interpreter/Prefabs/InterpreterCall_Prefab.tscn
+res://AssetPacks/1_Intro/Animations/
+res://AssetPacks/2_Interpreter/Animations/

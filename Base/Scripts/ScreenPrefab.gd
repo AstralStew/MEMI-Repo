@@ -6,8 +6,8 @@ extends Control
 signal try_start_speech_recognition()
 signal last_sentence_changed(newSentence)
 
-signal try_load_next_screen()
-signal try_load_screen(_name,_index)
+signal try_load_next_screen(_play_first_anim)
+signal try_load_screen(_index,_play_first_anim)
 
 signal try_load_next_screen_set()
 signal try_load_screen_set(_name,_index)

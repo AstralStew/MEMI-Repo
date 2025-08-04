@@ -28,29 +28,31 @@ theme_override_constants/margin_bottom = 100
 script = ExtResource("1_ei8ir")
 debugging = true
 
-[node name="Explanation_VB" type="VBoxContainer" parent="."]
+[node name="Explanation_MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 70
+
+[node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="LadTutorial1_C" type="Control" parent="Explanation_VB"]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="LadTutorial1_C" type="Control" parent="Explanation_MC/Explanation_VB"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
-[node name="LadTutorial1" type="TextureRect" parent="Explanation_VB/LadTutorial1_C"]
+[node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
 layout_mode = 0
-offset_left = 101.0
-offset_top = -4.0
-offset_right = 461.0
-offset_bottom = 343.0
+offset_left = -155.0
+offset_top = 149.0
+offset_right = 205.0
+offset_bottom = 496.0
 texture = ExtResource("3_7ltpq")
-expand_mode = 1
 stretch_mode = 5
 
-[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
-modulate = Color(1, 1, 1, 0)
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -60,8 +62,7 @@ custom_effects = [ExtResource("6_muhe5")]
 script = ExtResource("5_q6r75")
 debugging = true
 
-[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
-modulate = Color(1, 1, 1, 0)
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -81,7 +82,8 @@ theme_override_constants/separation = 30
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 20
 
 [node name="Scenario_Title_L" type="Label" parent="Scenario_VB/Scenario_Title_MC"]
 layout_mode = 2
@@ -89,7 +91,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.5)
 theme_override_fonts/font = ExtResource("7_c3pe2")
 theme_override_font_sizes/font_size = 16
-text = "INTERPRETER_SCENARIO_T1"
+text = "INTERPRETER_2_SCENARIO_T1"
 uppercase = true
 
 [node name="Scenario_Info_MC" type="MarginContainer" parent="Scenario_VB" node_paths=PackedStringArray("descriptionText")]
@@ -149,7 +151,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
-text = "INTERPRETER_SCENARIO_T2"
+text = "INTERPRETER_2_SCENARIO_T2"
 fit_content = true
 scroll_active = false
 custom_effects = [ExtResource("4_kkmuj")]
@@ -234,7 +236,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
-text = "INTERPRETER_SCENARIO_T3"
+text = "INTERPRETER_2_SCENARIO_T3"
 fit_content = true
 scroll_active = false
 custom_effects = [ExtResource("4_kkmuj")]
@@ -262,7 +264,7 @@ patch_margin_bottom = 5
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Scenario_Location_MC3" type="MarginContainer" parent="Scenario_VB" node_paths=PackedStringArray("descriptionText")]
+[node name="Scenario_Location_MC" type="MarginContainer" parent="Scenario_VB" node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
 theme_override_constants/margin_left = 15
@@ -280,10 +282,10 @@ bottom_multiplier = 0.0
 bottom_addition = 80.0
 descriptionText = NodePath("Location_C/Location_TR/Location_RTL")
 
-[node name="Location_C" type="Control" parent="Scenario_VB/Scenario_Location_MC3"]
+[node name="Location_C" type="Control" parent="Scenario_VB/Scenario_Location_MC"]
 layout_mode = 2
 
-[node name="Location_TR" type="TextureRect" parent="Scenario_VB/Scenario_Location_MC3/Location_C"]
+[node name="Location_TR" type="TextureRect" parent="Scenario_VB/Scenario_Location_MC/Location_C"]
 visible = false
 z_index = 1
 custom_minimum_size = Vector2(80, 83)
@@ -297,7 +299,7 @@ size_flags_vertical = 0
 texture = ExtResource("11_e2mk7")
 expand_mode = 1
 
-[node name="Location_RTL" type="RichTextLabel" parent="Scenario_VB/Scenario_Location_MC3/Location_C/Location_TR"]
+[node name="Location_RTL" type="RichTextLabel" parent="Scenario_VB/Scenario_Location_MC/Location_C/Location_TR"]
 visible = false
 z_as_relative = false
 clip_contents = false
@@ -319,14 +321,14 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
-text = "INTERPRETER_SCENARIO_T4"
+text = "INTERPRETER_2_SCENARIO_T4"
 fit_content = true
 scroll_active = false
 custom_effects = [ExtResource("4_kkmuj")]
 script = ExtResource("5_q6r75")
 debugging = true
 
-[node name="Location_NPR" type="NinePatchRect" parent="Scenario_VB/Scenario_Location_MC3/Location_C/Location_TR/Location_RTL"]
+[node name="Location_NPR" type="NinePatchRect" parent="Scenario_VB/Scenario_Location_MC/Location_C/Location_TR/Location_RTL"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -365,17 +367,17 @@ size_flags_vertical = 8
 alignment = 2
 
 [node name="Continue_Bubble" parent="Buttons_VB" instance=ExtResource("8_yiaac")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 _debug = false
-_updateInEditor = false
 min_height = 0
 min_width = 42
-_autoText = "INTRO_LANDING_2_EXPLANATION_B1"
+_autoText = "INTERPRETER_1_LETSTRY_B1"
 _autoTitle = ""
 _autoShape = 1
-old_text = "continue"
+old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="HSeparator" type="HSeparator" parent="Buttons_VB"]
 visible = false
@@ -428,6 +430,7 @@ expand_mode = 1
 [connection signal="last_sentence_changed" from="." to="YouSay_Bubble" method="set_text"]
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Info_MC/Info_C/Info_TR/Info_RTL" to="Scenario_VB/Scenario_Info_MC" method="set_margins_from_lines"]
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="Scenario_VB/Scenario_Emergency_MC" method="set_margins_from_lines"]
-[connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Location_MC3/Location_C/Location_TR/Location_RTL" to="Scenario_VB/Scenario_Location_MC3" method="set_margins_from_lines"]
+[connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Location_MC/Location_C/Location_TR/Location_RTL" to="Scenario_VB/Scenario_Location_MC" method="set_margins_from_lines"]
 [connection signal="touch_input" from="YouSay_Bubble" to="." method="start_speech_recognition"]
-[connection signal="meta_link_1" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
+[connection signal="meta_link_1" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Interpreter/Interpreter_1u_Repeat"]]
+[connection signal="meta_link_2" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Interpreter/Interpreter_3_Call"]]

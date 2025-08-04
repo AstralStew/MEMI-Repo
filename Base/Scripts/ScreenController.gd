@@ -10,8 +10,8 @@ extends AnimationPlayer
 @export var autoloadScene := "res://AssetPacks/ScenarioShared/Scenario.tscn"
 
 @export_group("Override Properties")
-@export var overrideStartAnim := false
-@export var overrideAnimIndex := 0
+@export var overrideScreen := false
+@export var overrideScreenIndex := 0
 @export var overrideSpeed := false
 @export var overrideSpeedScale := 1.0
 
@@ -111,14 +111,11 @@ func _load_screen_set(index:int):
 			await pack_load_finished
 	
 	# load first screen (unless overriding for testing)
-	if overrideStartAnim:
-		load_screen(overrideAnimIndex)
+	if overrideScreen:
+		load_screen(overrideScreenIndex, true)
 	else: 
-		load_screen(0)
-	
-	if debugging: print("[ScreenController] Loading required packs...")
-	
-	play_animation(current_set.first_anim)
+		load_screen(0, true)
+
 
 
 func _load_pack(_filename:String) -> void:
@@ -140,18 +137,25 @@ func _load_pack_callback() -> void:
 #region Screen functions
 
 # ADD BACK IN "_name" AS A PROPERTY HERE, LOOK TO LOAD_SCREEN_SET FOR LOGIC
-func load_screen(_index:int=0):
+func load_screen(_index:int=0,_play_first_anim:bool=false):
 	if debugging: print("[ScreenController] Loading screen at index ",_index,"...")
 	
 	var animLibrary = current_set.get_screen(_index)
 	if animLibrary == null:
 		if debugging: print("[ScreenController] No screen at that index! Cancelling :(")
 	else:
+		# Tell the current set that we are shifting to that screen!
+		current_set.current_index = _index
+		
 		if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
 		add_animation_library(animLibrary.resource_name,animLibrary)
+		
+		if _play_first_anim:
+			if debugging: print("[ScreenController] Playing first animation: '",current_set.first_anim(),"'")	
+			play_animation(current_set.first_anim())
 
 
-func load_next_screen():
+func load_next_screen(_play_first_anim:bool=false):
 	if debugging: print("[ScreenController] Loading the next screen...")
 	
 	var animLibrary = current_set.next_screen()
@@ -161,6 +165,10 @@ func load_next_screen():
 	else:
 		if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
 		add_animation_library(animLibrary.resource_name,animLibrary)
+		
+		if _play_first_anim:
+			if debugging: print("[ScreenController] Playing first animation: '",current_set.first_anim(),"'")	
+			play_animation(current_set.first_anim())
 
 func unload_screen(_name:String):
 	if !has_animation_library(_name):

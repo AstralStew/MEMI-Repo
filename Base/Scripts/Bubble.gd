@@ -19,6 +19,7 @@ class_name Bubble
 @export var _autoTitleBelow := false
 @export var _autoShape : Constants.BubbleShape = Constants.BubbleShape.Default
 @export var _autoColor := Color.WHITE
+@export var _autoTextColor := Color.BLACK
 @export var _autoTouchHint := false
 
 @export_group("Read Only")
@@ -46,7 +47,7 @@ signal meta_link_9
 
 func _ready() -> void:
 	_getrefs()
-	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape)
+	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape,_autoTextColor)
 	
 	# set the label minimum width to 200px
 	#label.custom_minimum_size.x = 200
@@ -74,7 +75,7 @@ func _process(delta: float) -> void:
 		if bubbleText == null: _getrefs()
 		
 		if _autostart && bubbleText.text !=_autoText:
-			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape)
+			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape,_autoTextColor)
 		
 		if bubbleText.get_parsed_text() != old_text:
 			if _debug: print("[Bubble] In-editor resize triggered")
@@ -87,9 +88,10 @@ func _process(delta: float) -> void:
 
 #region Set properties
 
-func set_text(text:String):
+func set_text(text:String="",textColor=Color.BLACK):
 	bubbleText.text = text
-	if _debug: print("[Bubble] Text set to '",text,"'")
+	bubbleText.add_theme_color_override("default_color",textColor)
+	if _debug: print("[Bubble] Text set to '",text,"' in color '",textColor,"'")
 	_resize()
 
 func set_title(title:String="",titleBelow:bool=false) -> void:
@@ -136,10 +138,10 @@ func set_background(bg:Color=Color.WHITE,shape:Constants.BubbleShape=Constants.B
 	# Moved this here to reset just in case? Maybe a dedicated reset anyway
 	bubbleBG.self_modulate = bg
 
-func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false,shape:Constants.BubbleShape = Constants.BubbleShape.Default) -> void:
+func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false,shape:Constants.BubbleShape = Constants.BubbleShape.Default, textColour:Color=Color.BLACK) -> void:
 	if _debug: print("[Bubble(",name,")] Initialising...")
 	
-	set_text(text)
+	set_text(text,textColour)
 	set_title(title,titleBelow)	
 	set_background(bg,shape)
 	set_touch(touchHint)
