@@ -132,7 +132,7 @@ script = ExtResource("11_341tn")
 debugging = true
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
+modulate = Color(0.792157, 0.717647, 0.65098, 1)
 z_index = -1
 custom_minimum_size = Vector2(800, 1600)
 anchors_preset = 8
