@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=11 format=3 uid="uid://dcske7brqbmhq"]
+[gd_resource type="AnimationLibrary" load_steps=14 format=3 uid="uid://dcske7brqbmhq"]
 
 [ext_resource type="Animation" uid="uid://dq2a01ifld7je" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="1_mr0eu"]
 [ext_resource type="Animation" uid="uid://cxamyjl2c7g74" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="2_dio3u"]
@@ -10,6 +10,9 @@
 [ext_resource type="Animation" uid="uid://dm7ncw6j1uxo7" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4_Question1.res" id="8_rtpxc"]
 [ext_resource type="Animation" uid="uid://bmk46qx0rnppk" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4a_Correct.res" id="9_rtpxc"]
 [ext_resource type="Animation" uid="uid://cegj2cwnuh11m" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4b_Mumbo.res" id="10_2x7na"]
+[ext_resource type="Animation" uid="uid://b5d2mhvone2kr" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5a_Correct.res" id="11_l80j1"]
+[ext_resource type="Animation" uid="uid://pube3qh5kq66" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5b_Mumbo.res" id="12_huugf"]
+[ext_resource type="Animation" uid="uid://cem3gpwgfxx8g" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5_Question2.res" id="13_3xr6q"]
 
 [resource]
 resource_name = "Interpreter"
@@ -22,6 +25,9 @@ _data = {
 &"Interpreter_4_Question1": ExtResource("8_rtpxc"),
 &"Interpreter_4a_Correct": ExtResource("9_rtpxc"),
 &"Interpreter_4b_Mumbo": ExtResource("10_2x7na"),
+&"Interpreter_5_Question2": ExtResource("13_3xr6q"),
+&"Interpreter_5a_Correct": ExtResource("11_l80j1"),
+&"Interpreter_5b_Mumbo": ExtResource("12_huugf"),
 &"Interpreter_Load": ExtResource("1_mr0eu"),
 &"Interpreter_Unload": ExtResource("2_dio3u")
 }
