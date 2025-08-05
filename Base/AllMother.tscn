@@ -1,27 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=12 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
-[ext_resource type="AnimationLibrary" uid="uid://dcske7brqbmhq" path="res://AssetPacks/2_Interpreter/Animations/Interpreter.tres" id="3_pih2p"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://xekgk8iq58k0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres" id="7_ixt38"]
+[ext_resource type="Resource" uid="uid://o3c41cq8nvy0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_PoliceFireAmbulance.tres" id="7_4d5jc"]
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="8_bihe8"]
-[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="9_mfw6p"]
-[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="10_sm636"]
+[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Interpreter.png" id="10_hqape"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="11_341tn"]
-[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="12_58hmj"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="13_4d5jc"]
-[ext_resource type="Script" uid="uid://loedrtlvs64f" path="res://Base/Scripts/Description.gd" id="14_fxh3s"]
-[ext_resource type="Texture2D" uid="uid://d5yh0bb3esgc" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Info.png" id="15_s83ii"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="16_tlsrq"]
-[ext_resource type="Texture2D" uid="uid://bbonymoh5rncf" path="res://AssetPacks/0_Shared/Images/OutlineNineSprite.png" id="17_x7k22"]
-[ext_resource type="Texture2D" uid="uid://c0ortbqv272ad" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Emergency.png" id="18_f0qj7"]
-[ext_resource type="Texture2D" uid="uid://bx3d51dbnrf23" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Location.png" id="19_c1y5l"]
-[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="20_3alyw"]
-[ext_resource type="Texture2D" uid="uid://csf8mlhy8lscb" path="res://AssetPacks/2_Interpreter/Images/Lad_Phone.png" id="21_kku6m"]
 
 [node name="AllMother" type="Node2D"]
 
@@ -55,16 +44,14 @@ layer = 0
 
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
-libraries = {
-&"Interpreter": ExtResource("3_pih2p")
-}
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
-overrideSpeed = true
+overrideScreen = true
+overrideScreenIndex = 1
 overrideSpeedScale = 3.0
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj")])
-sentenceComparer = ExtResource("7_ixt38")
+sentenceComparer = ExtResource("7_4d5jc")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -80,473 +67,68 @@ theme_override_constants/margin_bottom = 20
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
 
-[node name="InterpreterCall_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
+[node name="LetsLearn_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 100
-script = ExtResource("8_bihe8")
-debugging = true
-
-[node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 70
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("8_bihe8")
 
-[node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC"]
-visible = false
+[node name="LetsLearnMenu_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="LetsLearnTitle_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearnTitle_VB"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="LadTutorial1_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="LadTutorial1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB/LadTutorial1_C"]
-layout_mode = 0
-offset_left = -155.0
-offset_top = 149.0
-offset_right = 205.0
-offset_bottom = 496.0
-texture = ExtResource("9_mfw6p")
-stretch_mode = 5
-
-[node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
-layout_mode = 2
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
-fit_content = true
-custom_effects = [ExtResource("10_sm636")]
+text = "LETSLEARN_1_OVERVIEW_T1"
+vertical_alignment = 2
+custom_effects = [ExtResource("16_tlsrq")]
 script = ExtResource("11_341tn")
 debugging = true
 
-[node name="Explanation2_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
+[node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
 layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.01
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Interpreter_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("10_hqape")
+expand_mode = 1
+
+[node name="Interpreter_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-fit_content = true
-custom_effects = [ExtResource("12_58hmj")]
-script = ExtResource("11_341tn")
-debugging = true
-
-[node name="Scenario_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 30
-
-[node name="Scenario_Title_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_bottom = 20
-
-[node name="Scenario_Title_L" type="Label" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Title_MC"]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_fonts/font = ExtResource("13_4d5jc")
-theme_override_font_sizes/font_size = 16
-text = "INTERPRETER_2_SCENARIO_T1"
-uppercase = true
-
-[node name="Scenario_Info_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB" node_paths=PackedStringArray("descriptionText")]
-custom_minimum_size = Vector2(0, 83)
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 80
-script = ExtResource("14_fxh3s")
-_debug = true
-_updateInEditor = true
-adjust_top = true
-top_multiplier = 26.0
-top_addition = 5.0
-adjust_bottom = true
-bottom_multiplier = 0.0
-bottom_addition = 80.0
-descriptionText = NodePath("Info_C/Info_TR/Info_RTL")
-
-[node name="Info_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Info_MC"]
-layout_mode = 2
-
-[node name="Info_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Info_MC/Info_C"]
-z_index = 1
-custom_minimum_size = Vector2(80, 83)
-layout_mode = 2
-offset_right = 80.0
-offset_bottom = 83.0
-pivot_offset = Vector2(40, 41.5)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("15_s83ii")
-expand_mode = 1
-
-[node name="Info_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Info_MC/Info_C/Info_TR"]
-z_as_relative = false
-clip_contents = false
-custom_minimum_size = Vector2(195, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.14
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 76.0
-offset_right = 186.0
-offset_bottom = -15.385
-grow_vertical = 0
-pivot_offset = Vector2(-22, 60)
-size_flags_horizontal = 2
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
-text = "INTERPRETER_2_SCENARIO_T2"
+text = "LETSLEARN_1_OVERVIEW_T_INTERPRETER"
 fit_content = true
-scroll_active = false
+vertical_alignment = 1
 custom_effects = [ExtResource("16_tlsrq")]
 script = ExtResource("11_341tn")
 debugging = true
-
-[node name="Info_NPR" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Info_MC/Info_C/Info_TR/Info_RTL"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -10.0
-offset_right = 14.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-texture = ExtResource("17_x7k22")
-draw_center = false
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[node name="Scenario_Emergency_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB" node_paths=PackedStringArray("descriptionText")]
-custom_minimum_size = Vector2(0, 83)
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 57
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 80
-script = ExtResource("14_fxh3s")
-_debug = true
-_updateInEditor = true
-adjust_top = true
-top_multiplier = 26.0
-top_addition = 5.0
-adjust_bottom = true
-bottom_multiplier = 0.0
-bottom_addition = 80.0
-descriptionText = NodePath("Emergency_C/Emergency_TR/Emergency_RTL")
-
-[node name="Emergency_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Emergency_MC"]
-layout_mode = 2
-
-[node name="Emergency_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Emergency_MC/Emergency_C"]
-z_index = 1
-custom_minimum_size = Vector2(80, 83)
-layout_mode = 2
-offset_right = 80.0
-offset_bottom = 83.0
-pivot_offset = Vector2(40, 41.5)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("18_f0qj7")
-expand_mode = 1
-
-[node name="Emergency_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR"]
-z_as_relative = false
-clip_contents = false
-custom_minimum_size = Vector2(195, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.14
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 76.0
-offset_right = 186.0
-offset_bottom = -15.385
-grow_vertical = 0
-pivot_offset = Vector2(-22, 112)
-size_flags_horizontal = 2
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
-bbcode_enabled = true
-text = "INTERPRETER_2_SCENARIO_T3"
-fit_content = true
-scroll_active = false
-custom_effects = [ExtResource("16_tlsrq")]
-script = ExtResource("11_341tn")
-debugging = true
-
-[node name="Emergency_NPR" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -10.0
-offset_right = 14.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-texture = ExtResource("17_x7k22")
-draw_center = false
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[node name="Scenario_Location_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB" node_paths=PackedStringArray("descriptionText")]
-custom_minimum_size = Vector2(0, 83)
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 80
-script = ExtResource("14_fxh3s")
-_debug = true
-_updateInEditor = true
-adjust_top = true
-top_multiplier = 26.0
-top_addition = 5.0
-adjust_bottom = true
-bottom_multiplier = 0.0
-bottom_addition = 80.0
-descriptionText = NodePath("Location_C/Location_TR/Location_RTL")
-
-[node name="Location_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Location_MC"]
-layout_mode = 2
-
-[node name="Location_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Location_MC/Location_C"]
-z_index = 1
-custom_minimum_size = Vector2(80, 83)
-layout_mode = 2
-offset_right = 80.0
-offset_bottom = 83.0
-pivot_offset = Vector2(40, 41.5)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource("19_c1y5l")
-expand_mode = 1
-
-[node name="Location_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Location_MC/Location_C/Location_TR"]
-z_as_relative = false
-clip_contents = false
-custom_minimum_size = Vector2(195, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.14
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 76.0
-offset_right = 186.0
-offset_bottom = -15.385
-grow_vertical = 0
-pivot_offset = Vector2(-22, 60)
-size_flags_horizontal = 2
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
-bbcode_enabled = true
-text = "INTERPRETER_2_SCENARIO_T4"
-fit_content = true
-scroll_active = false
-custom_effects = [ExtResource("16_tlsrq")]
-script = ExtResource("11_341tn")
-debugging = true
-
-[node name="Location_NPR" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Location_MC/Location_C/Location_TR/Location_RTL"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -10.0
-offset_right = 14.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-texture = ExtResource("17_x7k22")
-draw_center = false
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[node name="Operator_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="Operator_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Operator_C" instance=ExtResource("20_3alyw")]
-layout_mode = 2
-offset_left = 44.0
-offset_top = 140.91
-offset_right = 315.0
-offset_bottom = 229.91
-pivot_offset = Vector2(0, 89)
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 70
-min_height = 0
-min_width = 200
-max_width = 200
-_autoText = ""
-_autoTitle = "COMMON_000SAYS"
-_autoTitleBelow = false
-_autoColor = Color(0.851, 0.851, 0.851, 0.3)
-old_text = ""
-
-[node name="LadPhone" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Operator_C"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -66.555
-offset_top = 96.665
-offset_right = 374.445
-offset_bottom = 560.665
-grow_horizontal = 0
-rotation = -0.349066
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(0, 232)
-texture = ExtResource("21_kku6m")
-expand_mode = 1
-
-[node name="YouSay_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" instance=ExtResource("20_3alyw")]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_top = 250
-_autoText = "..."
-_autoTitle = "COMMON_YOUSAY"
-_autoTouchHint = true
-old_text = "..."
-
-[node name="Buttons_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-layout_mode = 2
-size_flags_vertical = 8
-alignment = 2
-
-[node name="Continue_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Buttons_VB" instance=ExtResource("20_3alyw")]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-_debug = false
-min_height = 0
-min_width = 42
-_autoText = "INTERPRETER_1_LETSTRY_B1"
-_autoTitle = ""
-_autoShape = 1
-old_text = "INTERPRETER_1_LETSTRY_B1"
-
-[node name="HSeparator" type="HSeparator" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Buttons_VB"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="Comments_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-z_index = 1
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="Comment_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Comments_C" instance=ExtResource("20_3alyw")]
-z_index = 1
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -319.714
-offset_top = -104.0
-offset_right = 0.0
-offset_bottom = 3.05176e-05
-grow_horizontal = 0
-grow_vertical = 0
-pivot_offset = Vector2(320, 150)
-size_flags_horizontal = 4
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 30
-min_height = 42
-min_width = 150
-max_width = 210
-_autoText = "They always ask this question first"
-_autoTitle = ""
-_autoTitleBelow = false
-_autoShape = 2
-old_text = "They always ask this question first"
-
-[node name="LadComment1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Comments_C"]
-z_index = 2
-custom_minimum_size = Vector2(220, 505.5)
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -80.0
-offset_right = 40.0
-offset_bottom = 425.5
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("9_mfw6p")
-expand_mode = 1
-
-[node name="Overlay" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Comments_C"]
-modulate = Color(0, 0, 0, 0)
-z_index = 1
-custom_minimum_size = Vector2(220, 505.5)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -854.0
-offset_top = -1270.0
-offset_right = 506.0
-offset_bottom = 449.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("5_eopm5")
-expand_mode = 1
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
 modulate = Color(0.792157, 0.717647, 0.65098, 1)
@@ -567,12 +149,3 @@ pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
-
-[connection signal="last_sentence_changed" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/YouSay_Bubble" method="set_text"]
-[connection signal="text_populated_with_lines" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Info_MC/Info_C/Info_TR/Info_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Info_MC" method="set_margins_from_lines"]
-[connection signal="text_populated_with_lines" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Emergency_MC" method="set_margins_from_lines"]
-[connection signal="text_populated_with_lines" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Location_MC/Location_C/Location_TR/Location_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Scenario_VB/Scenario_Location_MC" method="set_margins_from_lines"]
-[connection signal="touch_input" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Operator_C/Operator_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" method="start_speech_recognition"]
-[connection signal="touch_input" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/YouSay_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" method="start_speech_recognition"]
-[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Buttons_VB/Continue_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" method="play_animation" binds= ["Interpreter/Interpreter_1u_Repeat"]]
-[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Buttons_VB/Continue_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" method="play_animation" binds= ["Interpreter/Interpreter_3_Call"]]

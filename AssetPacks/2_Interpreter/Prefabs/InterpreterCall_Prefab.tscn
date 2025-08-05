@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dmup6q2t00bxk"]
+[gd_scene load_steps=19 format=3 uid="uid://dmup6q2t00bxk"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
 [ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="3_7ltpq"]
@@ -13,8 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://c0ortbqv272ad" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Emergency.png" id="10_38vxp"]
 [ext_resource type="Script" uid="uid://loedrtlvs64f" path="res://Base/Scripts/Description.gd" id="10_lhgno"]
 [ext_resource type="Texture2D" uid="uid://bx3d51dbnrf23" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Location.png" id="11_e2mk7"]
+[ext_resource type="Script" uid="uid://pomjtlbypnca" path="res://Base/Scripts/Bubble.gd" id="13_04xjp"]
 [ext_resource type="Texture2D" uid="uid://csf8mlhy8lscb" path="res://AssetPacks/2_Interpreter/Images/Lad_Phone.png" id="14_7ly4h"]
+[ext_resource type="Texture2D" uid="uid://8dxmcgllnwae" path="res://AssetPacks/0_Shared/Images/Ellipse 2.png" id="15_1tbva"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="15_38vxp"]
+[ext_resource type="Texture2D" uid="uid://dvdo17nw6ffcu" path="res://AssetPacks/0_Shared/Images/pointing_hand.png" id="16_wvcp0"]
 
 [node name="InterpreterCall_Prefab" type="MarginContainer"]
 anchors_preset = 15
@@ -357,27 +360,155 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Operator_Bubble" parent="Operator_C" instance=ExtResource("8_yiaac")]
+[node name="Operator_Bubble" type="MarginContainer" parent="Operator_C"]
 visible = false
-layout_mode = 2
-offset_left = 44.0
-offset_top = 0.0
-offset_right = 315.0
-offset_bottom = 89.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -10.0
+offset_right = 319.0
+offset_bottom = 214.0
+grow_vertical = 0
 scale = Vector2(1e-05, 1e-05)
-pivot_offset = Vector2(0, 89)
+pivot_offset = Vector2(0, 224)
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 70
-min_height = 0
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
+script = ExtResource("13_04xjp")
+_debug = true
+_updateInEditor = true
 min_width = 200
 max_width = 200
-_autoText = ""
+_autostart = true
 _autoTitle = "COMMON_000SAYS"
-_autoTitleBelow = false
 _autoColor = Color(0.851, 0.851, 0.851, 0.3)
-old_text = ""
+
+[node name="BubbleText" type="RichTextLabel" parent="Operator_C/Operator_Bubble"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_c3pe2")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_q6r75")
+
+[node name="BubbleBG" type="NinePatchRect" parent="Operator_C/Operator_Bubble/BubbleText"]
+self_modulate = Color(0.851, 0.851, 0.851, 0.3)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 13.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("15_38vxp")
+patch_margin_left = 24
+patch_margin_top = 20
+patch_margin_right = 24
+patch_margin_bottom = 15
+
+[node name="BubbleTitleTop" type="Label" parent="Operator_C/Operator_Bubble/BubbleText/BubbleBG"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = -31.0
+offset_right = 192.0
+offset_bottom = -7.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("7_c3pe2")
+theme_override_font_sizes/font_size = 16
+text = "COMMON_000SAYS"
+autowrap_mode = 3
+uppercase = true
+
+[node name="BubbleTitleBottom" type="Label" parent="Operator_C/Operator_Bubble/BubbleText/BubbleBG"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 192.0
+offset_bottom = 55.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("7_c3pe2")
+theme_override_font_sizes/font_size = 16
+text = "YOU SAY"
+autowrap_mode = 3
+uppercase = true
+
+[node name="BubbleTouchHint" type="Control" parent="Operator_C/Operator_Bubble/BubbleText/BubbleBG"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Circle" type="TextureRect" parent="Operator_C/Operator_Bubble/BubbleText/BubbleBG/BubbleTouchHint"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.667
+offset_top = -43.0
+offset_right = 44.333
+offset_bottom = 45.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("15_1tbva")
+expand_mode = 1
+
+[node name="PointingHand" type="TextureRect" parent="Operator_C/Operator_Bubble/BubbleText/BubbleBG/BubbleTouchHint"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -63.0
+offset_right = 51.0
+offset_bottom = 52.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("16_wvcp0")
+expand_mode = 1
+
+[node name="BubbleTouchButton" type="Button" parent="Operator_C/Operator_Bubble"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 
 [node name="LadPhone" type="TextureRect" parent="Operator_C"]
 layout_mode = 1
@@ -385,9 +516,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -499.0
-offset_top = 164.0
+offset_top = 64.0
 offset_right = -58.0
-offset_bottom = 628.0
+offset_bottom = 528.0
 grow_horizontal = 0
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(0, 232)
@@ -431,6 +562,7 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Comments_C" type="Control" parent="."]
+visible = false
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 8
@@ -508,6 +640,16 @@ expand_mode = 1
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="Scenario_VB/Scenario_Emergency_MC" method="set_margins_from_lines"]
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Location_MC/Location_C/Location_TR/Location_RTL" to="Scenario_VB/Scenario_Location_MC" method="set_margins_from_lines"]
 [connection signal="touch_input" from="Operator_C/Operator_Bubble" to="." method="start_speech_recognition"]
+[connection signal="meta_link_1" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="Operator_C/Operator_Bubble/BubbleText" to="Operator_C/Operator_Bubble" method="_send_meta_link_9"]
+[connection signal="pressed" from="Operator_C/Operator_Bubble/BubbleTouchButton" to="Operator_C/Operator_Bubble" method="received_touch_input"]
 [connection signal="touch_input" from="YouSay_Bubble" to="." method="start_speech_recognition"]
 [connection signal="meta_link_1" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Interpreter/Interpreter_1u_Repeat"]]
 [connection signal="meta_link_2" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Interpreter/Interpreter_3_Call"]]

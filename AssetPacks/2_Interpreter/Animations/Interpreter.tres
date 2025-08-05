@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=10 format=3 uid="uid://dcske7brqbmhq"]
+[gd_resource type="AnimationLibrary" load_steps=11 format=3 uid="uid://dcske7brqbmhq"]
 
 [ext_resource type="Animation" uid="uid://dq2a01ifld7je" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="1_mr0eu"]
 [ext_resource type="Animation" uid="uid://cxamyjl2c7g74" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="2_dio3u"]
@@ -7,69 +7,9 @@
 [ext_resource type="Animation" uid="uid://b2y2c4wbgrdip" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1b_Mumbo.res" id="5_ik00u"]
 [ext_resource type="Animation" uid="uid://jcof8mfplpyw" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_2_Scenario.res" id="6_0yd86"]
 [ext_resource type="Animation" uid="uid://dnmk0my88i0aw" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_3_Call.res" id="7_ik00u"]
-[ext_resource type="Animation" uid="uid://bmk46qx0rnppk" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_3a_Correct.res" id="8_clmsm"]
-
-[sub_resource type="Animation" id="Animation_0yd86"]
-resource_name = "Interpreter_3b_Mumbo"
-length = 4.0
-step = 0.25
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3.75),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["Interpreter/Interpreter_3_Call", 0.0, &"Question"],
-"method": &"play_animation"
-}]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Content/InterpreterCall_Prefab/Comments_C/Comment_Bubble")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["INTERPRETER_3_CALL_C5_MUMBO"],
-"method": &"set_text"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Content/InterpreterCall_Prefab/YouSay_Bubble:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(3, 3.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Content/InterpreterCall_Prefab/YouSay_Bubble")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.5, 3.25),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [Color(0.18, 0.18, 0.18, 1)],
-"method": &"set_background"
-}, {
-"args": ["...", "COMMON_YOUSAY", Color(1, 1, 1, 1), true, true],
-"method": &"_set_properties"
-}]
-}
+[ext_resource type="Animation" uid="uid://dm7ncw6j1uxo7" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4_Question1.res" id="8_rtpxc"]
+[ext_resource type="Animation" uid="uid://bmk46qx0rnppk" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4a_Correct.res" id="9_rtpxc"]
+[ext_resource type="Animation" uid="uid://cegj2cwnuh11m" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4b_Mumbo.res" id="10_2x7na"]
 
 [resource]
 resource_name = "Interpreter"
@@ -79,8 +19,9 @@ _data = {
 &"Interpreter_1b_Mumbo": ExtResource("5_ik00u"),
 &"Interpreter_2_Scenario": ExtResource("6_0yd86"),
 &"Interpreter_3_Call": ExtResource("7_ik00u"),
-&"Interpreter_3a_Correct": ExtResource("8_clmsm"),
-&"Interpreter_3b_Mumbo": SubResource("Animation_0yd86"),
+&"Interpreter_4_Question1": ExtResource("8_rtpxc"),
+&"Interpreter_4a_Correct": ExtResource("9_rtpxc"),
+&"Interpreter_4b_Mumbo": ExtResource("10_2x7na"),
 &"Interpreter_Load": ExtResource("1_mr0eu"),
 &"Interpreter_Unload": ExtResource("2_dio3u")
 }
