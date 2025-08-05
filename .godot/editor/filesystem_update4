@@ -24,3 +24,4 @@ res://AssetPacks/2_Interpreter/Animations/Interpreter_4b_Mumbo.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_4_Question1.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_1a_Correct.res
 res://AssetPacks/2_Interpreter/Animations/LetsLearn.tres
+res://Base/Scripts/AudioPlayer.gd
