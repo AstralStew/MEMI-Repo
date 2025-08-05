@@ -183,13 +183,21 @@ func unload_screen(_name:String):
 
 #region Animation functions
 
-func play_animation(animName:String,delay:float=0) -> void:
+func play_animation(animName:String,delay:float=0,marker:StringName="") -> void:
 	if !has_animation(animName):
 		push_error("[ScreenController] ERROR -> No animation with name '",animName,"' found! :(")
 		return
+	
+	if marker != "":
+		print("[ScreenController] Playing animation '",animName,"' at marker '",marker,"' after ",delay," second delay.")
+		if delay>0: await get_tree().create_timer(delay).timeout  
+		play_section_with_markers(animName,marker)
+		return
+	
 	print("[ScreenController] Playing animation '",animName,"' after ",delay," second delay.")
 	if delay>0: await get_tree().create_timer(delay).timeout  
 	play(animName)
+
 
 func queue_animation(animName:String, delay:float=0) -> void:
 	if !has_animation(animName):
