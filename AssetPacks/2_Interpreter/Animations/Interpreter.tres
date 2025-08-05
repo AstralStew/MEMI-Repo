@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=14 format=3 uid="uid://dcske7brqbmhq"]
+[gd_resource type="AnimationLibrary" load_steps=19 format=3 uid="uid://dcske7brqbmhq"]
 
 [ext_resource type="Animation" uid="uid://dq2a01ifld7je" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="1_mr0eu"]
 [ext_resource type="Animation" uid="uid://cxamyjl2c7g74" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="2_dio3u"]
@@ -13,6 +13,11 @@
 [ext_resource type="Animation" uid="uid://b5d2mhvone2kr" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5a_Correct.res" id="11_l80j1"]
 [ext_resource type="Animation" uid="uid://pube3qh5kq66" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5b_Mumbo.res" id="12_huugf"]
 [ext_resource type="Animation" uid="uid://cem3gpwgfxx8g" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5_Question2.res" id="13_3xr6q"]
+[ext_resource type="Animation" uid="uid://b8c683y53sxcg" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6a_Correct.res" id="14_g7x0c"]
+[ext_resource type="Animation" uid="uid://ba7ia5ctr0320" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6_Question3.res" id="16_18fg0"]
+[ext_resource type="Animation" uid="uid://1g371l7w11jy" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6c_Mumbo.res" id="16_pyuc3"]
+[ext_resource type="Animation" uid="uid://cquginyex40gq" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6b_Wrong.res" id="17_bmlt5"]
+[ext_resource type="Animation" uid="uid://d4gjxdaxs2p4v" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_7_YouDidIt.res" id="18_7o8mv"]
 
 [resource]
 resource_name = "Interpreter"
@@ -28,6 +33,11 @@ _data = {
 &"Interpreter_5_Question2": ExtResource("13_3xr6q"),
 &"Interpreter_5a_Correct": ExtResource("11_l80j1"),
 &"Interpreter_5b_Mumbo": ExtResource("12_huugf"),
+&"Interpreter_6_Question3": ExtResource("16_18fg0"),
+&"Interpreter_6a_Correct": ExtResource("14_g7x0c"),
+&"Interpreter_6b_Wrong": ExtResource("17_bmlt5"),
+&"Interpreter_6c_Mumbo": ExtResource("16_pyuc3"),
+&"Interpreter_7_YouDidIt": ExtResource("18_7o8mv"),
 &"Interpreter_Load": ExtResource("1_mr0eu"),
 &"Interpreter_Unload": ExtResource("2_dio3u")
 }

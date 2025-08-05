@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=5 format=3 uid="uid://b235aresx03bd"]
+
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_0d7le"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_in52n"]
+
+[sub_resource type="Resource" id="Resource_ixt38"]
+script = ExtResource("1_0d7le")
+checkType = 0
+phrases = Array[String](["Interpreter"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[sub_resource type="Resource" id="Resource_0d7le"]
+script = ExtResource("1_0d7le")
+checkType = 1
+phrases = Array[String](["Vietnamese", "Greek", "Punjabi", "Italian", "Cantonese", "Hindi", "Spanish", "Turkish", "Karen", "Rohinga", "Burmese", "Kirundi", "Lao", "Hazaraghi", "Khmer", "Assyrian", "Hmong", "Thai", "Min Nan", "Swahili", "Albanian", "Tongan", "Bislama", "Pashto", "Bosanian", "Persian", "Serbian", "Croatian", "Macedonian", "Zomi", "Chin Haka", "Wu", "Hakka", "Tibetan", "Dan", "Timorese", "Kurdish", "Mongolian", "Uygur", "Georgian", "Korean", "Sinhalese", "Tamil", "Urdu", "Indonesian", "Maltese", "French", "German", "Portugese", "Nepali", "Japanese", "Samoan", "Bengali", "Gujarati", "Elvish", "Klingon"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[resource]
+script = ExtResource("2_in52n")
+debug = false
+correctConditions = Array[ExtResource("1_0d7le")]([SubResource("Resource_ixt38"), SubResource("Resource_0d7le")])
+wrongConditions = Array[String](["Melbourne", "Victoria", "Interpreter"])
+correctAnim = "Interpreter/Interpreter_6a_Correct"
+wrongAnim = "Interpreter/Interpreter_6b_Wrong"
+mumboAnim = "Interpreter/Interpreter_6c_Mumbo"
+dontKnowAnim = "Interpreter/Interpreter_6c_Mumbo"
+metadata/_custom_type_script = "uid://nudfku7qhbxq"

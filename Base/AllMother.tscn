@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://o3c41cq8nvy0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_PoliceFireAmbulance.tres" id="7_4d5jc"]
+[ext_resource type="Resource" uid="uid://xekgk8iq58k0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres" id="7_ixt38"]
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="8_bihe8"]
 [ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Interpreter.png" id="10_hqape"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="11_341tn"]
@@ -52,7 +52,7 @@ overrideScreen = true
 overrideScreenIndex = 1
 overrideSpeedScale = 3.0
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj")])
-sentenceComparer = ExtResource("7_4d5jc")
+sentenceComparer = ExtResource("7_ixt38")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15

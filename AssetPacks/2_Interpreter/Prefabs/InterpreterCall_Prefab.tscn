@@ -34,12 +34,12 @@ script = ExtResource("1_ei8ir")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 70
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 15
 
@@ -68,6 +68,28 @@ script = ExtResource("5_q6r75")
 debugging = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("7_t058n")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("7_t058n")]
+script = ExtResource("5_q6r75")
+debugging = true
+
+[node name="Explanation4_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -540,6 +562,7 @@ old_text = "..."
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_constants/separation = 20
 alignment = 2
 
 [node name="Continue_Bubble" parent="Buttons_VB" instance=ExtResource("8_yiaac")]
@@ -554,6 +577,20 @@ _autoText = "INTERPRETER_1_LETSTRY_B1"
 _autoTitle = ""
 _autoShape = 1
 old_text = "INTERPRETER_1_LETSTRY_B1"
+
+[node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_7_YOUDIDIT_B2"
+fit_content = true
+horizontal_alignment = 1
+custom_effects = [ExtResource("7_t058n")]
+script = ExtResource("5_q6r75")
+debugging = true
 
 [node name="HSeparator" type="HSeparator" parent="Buttons_VB"]
 visible = false

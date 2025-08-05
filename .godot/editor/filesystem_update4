@@ -29,3 +29,9 @@ res://AssetPacks/2_Interpreter/Animations/Interpreter_5a_Correct.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_5b_Mumbo.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_5_Question2.res
 res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_StateAndTown.tres
+res://AssetPacks/2_Interpreter/Animations/Interpreter_6_Question3.res
+res://AssetPacks/2_Interpreter/Animations/Interpreter_6a_Correct.res
+res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres
+res://AssetPacks/2_Interpreter/Animations/Interpreter_6b_Wrong.res
+res://AssetPacks/2_Interpreter/Animations/Interpreter_7_YouDidIt.res
+res://AssetPacks/2_Interpreter/Animations/Interpreter_1_LetsTry.res
