@@ -21,18 +21,28 @@ theme_override_constants/margin_bottom = 19
 script = ExtResource("1_q3shg")
 _debug = true
 _updateInEditor = true
+min_height = 151
+min_width = 228
 max_width = 228
 min_char_threshold = 6
 _autostart = true
-_autoText = "fefffw ww ww"
+_autoText = "[b]Tap[/b] and [i]say[/i] which
+[color=green]service[/color] you [color=blue]
+[url={www.google.com}]need[/url][/color]
+gdfgdf
+"
 _autoTitle = "YOU SAY"
 _autoTitleBelow = true
-old_text = "fefffw ww ww"
+old_text = "Tap and say which
+service you 
+need
+gdfgdf
+"
 
 [node name="BubbleText" type="RichTextLabel" parent="."]
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(42, 0)
+custom_minimum_size = Vector2(228, 151)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -41,7 +51,11 @@ theme_override_fonts/normal_font = ExtResource("2_gcy47")
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
-text = "fefffw ww ww"
+text = "[b]Tap[/b] and [i]say[/i] which
+[color=green]service[/color] you [color=blue]
+[url={www.google.com}]need[/url][/color]
+gdfgdf
+"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false

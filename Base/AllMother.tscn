@@ -1,17 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=9 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
+[ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://xekgk8iq58k0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres" id="7_ixt38"]
-[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="8_bihe8"]
-[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Interpreter.png" id="10_hqape"]
-[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="11_341tn"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
-[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="16_tlsrq"]
 
 [node name="AllMother" type="Node2D"]
 
@@ -48,11 +44,9 @@ root_node = NodePath("MarginContainer")
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
-overrideScreen = true
 overrideScreenIndex = 1
 overrideSpeedScale = 3.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj")])
-sentenceComparer = ExtResource("7_ixt38")
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj")])
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -67,69 +61,6 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
-
-[node name="LetsLearn_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-script = ExtResource("8_bihe8")
-
-[node name="LetsLearnMenu_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="LetsLearnTitle_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearnTitle_VB"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-bbcode_enabled = true
-text = "LETSLEARN_1_OVERVIEW_T1"
-vertical_alignment = 2
-custom_effects = [ExtResource("16_tlsrq")]
-script = ExtResource("11_341tn")
-debugging = true
-
-[node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
-layout_mode = 2
-size_flags_vertical = 4
-size_flags_stretch_ratio = 0.01
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Interpreter_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
-custom_minimum_size = Vector2(68, 68)
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("10_hqape")
-expand_mode = 1
-
-[node name="Interpreter_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
-bbcode_enabled = true
-text = "LETSLEARN_1_OVERVIEW_T_INTERPRETER"
-fit_content = true
-vertical_alignment = 1
-custom_effects = [ExtResource("16_tlsrq")]
-script = ExtResource("11_341tn")
-debugging = true
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
 modulate = Color(0.792157, 0.717647, 0.65098, 1)

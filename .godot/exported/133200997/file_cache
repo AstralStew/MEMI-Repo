@@ -1,2 +1,10 @@
-res://AssetPacks/2_Interpreter/Animations/Interpreter.tres::37a380e484f8367c2550de919351ffbc::1753858638::res://.godot/exported/133200997/export-459e322c5e9955c4b6adc141c37d1607-Interpreter.res
-res://AssetPacks/2_Interpreter/Prefabs/Interpreter_Prefab1.tscn::969d06d21532ea0eb5e71e8a04b48cdc::1753859237::res://.godot/exported/133200997/export-4509e2fc9989a0f678b441c0d435119e-Interpreter_Prefab1.scn
+res://Base/RichTextEffects/RichTextGhost.tres::49812db318a4820dc73e7a40cd060bba::1751965959::res://.godot/exported/133200997/export-84b20169b1a64da5b65dc690cecfc334-RichTextGhost.res
+res://Base/RichTextEffects/RichTextHide.tres::085312fc399485f1b68d1d6a437e82bd::1751966341::res://.godot/exported/133200997/export-2f7d37cef4e478e54ba255e72fa1e0e6-RichTextHide.res
+res://Base/RichTextEffects/RichTextPulse.tres::e108eabf21ad6e84756b24224ca0a407::1751966412::res://.godot/exported/133200997/export-9d2292e3c411c9731269a39a85670788-RichTextPulse.res
+res://Base/RichTextEffects/RichTextMatrix.tres::d2d9fff6f3359efae5f2d8819b0f22be::1751966362::res://.godot/exported/133200997/export-f9a10d9e706fda1323d33cadc27b741a-RichTextMatrix.res
+res://Base/RichTextEffects/RichTextFadeIn.tres::bf27280881e26abf5e37fba6b6b4ee0b::1752550930::res://.godot/exported/133200997/export-f55de1164d99bb26031654262ef529a3-RichTextFadeIn.res
+res://Base/RichTextEffects/RichTextFadeIn2.tres::d4822d6f9193769f8162c85681eb0026::1752550975::res://.godot/exported/133200997/export-0c5aca141e6ae8914502a285e79cc0fa-RichTextFadeIn2.res
+res://Base/AllMother.tscn::1b3e69b89320d9f21365b0b0d29cfd42::1754441847::res://.godot/exported/133200997/export-5bb8eecede7e61f313799ced7e5b6f6a-AllMother.scn
+res://AssetPacks/0_Shared/ScreenSets/Intro.tres::250c8b6669bd57e69771cd637b37133e::1754441303::res://.godot/exported/133200997/export-1544e5677b56734160649e3d5b52179d-Intro.res
+res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres::2c118b11f1daf0311c818a48101f35e9::1754441252::res://.godot/exported/133200997/export-51dc807ab2c79629d313c1479cba7e45-Interpreter.res
+res://Base/RichTextEffects/RichTextFadeIn3.tres::8597debf47cbf9d3f2ad15da4e103986::1752552417::res://.godot/exported/133200997/export-fcab838698c5797cd492a4d14aefbc70-RichTextFadeIn3.res

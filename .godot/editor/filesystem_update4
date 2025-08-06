@@ -1,4 +1,4 @@
-res://Base/AllMother.tscn
+res://AssetPacks/0_Shared/Prefabs/bubble.tscn
 res://Base/Scripts/ScreenController.gd
 res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres
 res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres
@@ -7,15 +7,10 @@ res://AssetPacks/0_Shared/Fonts/NotoSansSC-Thin.tres
 res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres
 res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres
 res://Base/Scripts/AllMother.gd
+res://Base/AllMother.tscn
+res://AssetPacks/0_Shared/ScreenSets/Intro.tres
 res://AssetPacks/1_Intro/Prefabs/LandingMenu_Prefab.tscn
 res://AssetPacks/1_Intro/Prefabs/Explanation_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/LetsLearn_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/Steps_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/InterpreterCall_Prefab.tscn
-res://AssetPacks/0_Shared/Prefabs/bubble.tscn
-res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_StateAndTown.tres
-res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres
-res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_PoliceFireAmbulance.tres
-res://AssetPacks/2_Interpreter/Animations/Interpreter_6c_Mumbo.res
-res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
-res://Base/Scripts/Bubble.gd
