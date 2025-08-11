@@ -62,6 +62,7 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_0a8cw")
+debugging = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="BubbleText"]
 z_index = -1

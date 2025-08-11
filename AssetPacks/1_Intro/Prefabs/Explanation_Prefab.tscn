@@ -51,6 +51,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
@@ -62,6 +63,7 @@ script = ExtResource("4_hq51s")
 debugging = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -72,6 +74,7 @@ script = ExtResource("4_hq51s")
 debugging = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -87,13 +90,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 _debug = false
-_updateInEditor = false
 min_height = 0
 min_width = 100
 _autoText = "INTRO_LANDING_2_EXPLANATION_B1"
 _autoTitle = ""
 _autoShape = 1
-old_text = "continue"
+old_text = "INTRO_LANDING_2_EXPLANATION_B1"
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_VB"]
 visible = false
@@ -114,4 +116,5 @@ old_text = "..."
 
 [connection signal="last_sentence_changed" from="." to="Explanation_VB/YouSay_Bubble" method="set_text"]
 [connection signal="meta_link_1" from="Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
+[connection signal="meta_link_2" from="Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Tutorial_1_LetsTry"]]
 [connection signal="touch_input" from="Explanation_VB/YouSay_Bubble" to="." method="start_speech_recognition"]

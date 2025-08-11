@@ -11,6 +11,7 @@ extends AnimationPlayer
 
 @export_group("Override Properties")
 @export var overrideDeactivate := false
+@export var overrideAnswerCheating := false
 @export var overrideScreen := false
 @export var overrideScreenIndex := 0
 @export var overrideSpeed := false
@@ -305,8 +306,9 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 func _start_recognition() -> void:
 	
 	# WARNING -> This allows cheating in the Editor using ABCD keys, see the _input method below
-	if OS.has_feature("editor_runtime"):
-		if debugging: print("[ScreenController] In-Editor, cheating past speech recognition. A = Correct, B = Wrong, C = Mumbo, D = DontKnow")
+	#if OS.has_feature("editor_runtime"):
+	if overrideAnswerCheating:
+		if debugging: print("[ScreenController] OverrideAnswerCheating. Cheat past speech recognition: A = Correct, B = Wrong, C = Mumbo, D = DontKnow")
 		speechCheating = true
 		return
 	
@@ -372,7 +374,7 @@ func _disconnect_bridge() -> void:
 # WARNING -> This allows cheating in the Editor using ABCD keys
 var speechCheating := false
 func _input(event):
-	if !OS.has_feature("editor_runtime") || !speechCheating: return
+	if !speechCheating: return
 	if event is InputEventKey:
 		if event.pressed:
 			if event.keycode == KEY_A:

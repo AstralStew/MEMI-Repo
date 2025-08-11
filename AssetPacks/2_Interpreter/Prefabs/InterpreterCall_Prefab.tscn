@@ -557,7 +557,6 @@ theme_override_constants/margin_top = 0
 _autoText = "..."
 _autoTitle = "COMMON_YOUSAY"
 _autoTouchHint = true
-old_text = "..."
 
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -576,7 +575,6 @@ min_width = 100
 _autoText = "INTERPRETER_1_LETSTRY_B1"
 _autoTitle = ""
 _autoShape = 1
-old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
 visible = false
@@ -632,7 +630,6 @@ _autoText = "They always ask this question first"
 _autoTitle = ""
 _autoTitleBelow = false
 _autoShape = 2
-old_text = "They always ask this question first"
 
 [node name="LadComment1" type="TextureRect" parent="Comments_C"]
 z_index = 2

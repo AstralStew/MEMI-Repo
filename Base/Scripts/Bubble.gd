@@ -26,7 +26,7 @@ class_name Bubble
 @export var old_text := ""
 
 # Private variables
-var bubbleText : RichTextLabel
+var bubbleText : LabelController
 var bubbleBG : NinePatchRect
 var bubbleTitleTop : Label
 var bubbleTitleBottom : Label
@@ -75,7 +75,13 @@ func _process(delta: float) -> void:
 		if bubbleText == null: _getrefs()
 		
 		if _autostart && bubbleText.text !=_autoText:
-			_set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape,_autoTextColor)
+			if _debug: print("[Bubble(",name,")] Initialising...")
+			bubbleText.text = _autoText
+			bubbleText.add_theme_color_override("default_color",_autoTextColor)
+			if _debug: print("[Bubble] Text set to '",_autoText,"' in color '",_autoTextColor,"'")	
+			set_title(_autoTitle,_autoTitleBelow)	
+			set_background(_autoColor,_autoShape)
+			set_touch(_autoTouchHint)
 		
 		if bubbleText.get_parsed_text() != old_text:
 			if _debug: print("[Bubble] In-editor resize triggered")
@@ -89,7 +95,7 @@ func _process(delta: float) -> void:
 #region Set properties
 
 func set_text(text:String="",textColor=Color.BLACK):
-	bubbleText.text = text
+	bubbleText.populate(text)
 	bubbleText.add_theme_color_override("default_color",textColor)
 	if _debug: print("[Bubble] Text set to '",text,"' in color '",textColor,"'")
 	_resize()
@@ -138,10 +144,18 @@ func set_background(bg:Color=Color.WHITE,shape:Constants.BubbleShape=Constants.B
 	# Moved this here to reset just in case? Maybe a dedicated reset anyway
 	bubbleBG.self_modulate = bg
 
+func set_colours(bgColour:Color=Color.WHITE,textColour=Color.BLACK):
+	bubbleText.add_theme_color_override("default_color",textColour)
+	bubbleBG.self_modulate = bgColour
+	if _debug: print("[Bubble] BG colour set to '",bgColour,"', text colour set to '",textColour,"'")
+
 func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false,shape:Constants.BubbleShape = Constants.BubbleShape.Default, textColour:Color=Color.BLACK) -> void:
 	if _debug: print("[Bubble(",name,")] Initialising...")
 	
-	set_text(text,textColour)
+	bubbleText.populate(text)
+	bubbleText.add_theme_color_override("default_color",textColour)
+	if _debug: print("[Bubble] Text set to '",text,"' in color '",textColour,"'")
+	
 	set_title(title,titleBelow)	
 	set_background(bg,shape)
 	set_touch(touchHint)

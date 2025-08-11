@@ -1,3 +1,4 @@
+class_name LabelController
 extends RichTextLabel
 
 @export var debugging := false
@@ -45,7 +46,7 @@ func populate(_newText : String) -> void:
 	if _newText != "":
 		_check_font()
 	if debugging: print("[LabelController] Setting text to: '",_newText)
-	text = _newText.replacen("{speaker}",_get_speaker_string())
+	text = tr(_newText).replacen("{speaker}",_get_speaker_string())
 	
 	text_populated.emit()
 	text_populated_with_text.emit(text)
@@ -67,7 +68,9 @@ func resize(_newSize:int) -> void:
 
 
 func _get_speaker_string() -> String:
+	if debugging: print("[LabelController] Getting speaker string, size string = ",str(current_size + 4))
 	var sizeString = str(current_size + 4)
+	if debugging: print("[LabelController] Returning [img=b,b," + sizeString + "x" + sizeString + "]" + SPEAKER_PATH + "[/img]")
 	return "[img=b,b," + sizeString + "x" + sizeString + "]" + SPEAKER_PATH + "[/img]"
 
 

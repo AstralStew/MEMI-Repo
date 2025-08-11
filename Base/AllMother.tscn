@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="7_pih2p"]
+[ext_resource type="Resource" uid="uid://dttfein6rjb10" path="res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres" id="7_pih2p"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
 
 [node name="AllMother" type="Node2D"]
@@ -45,10 +45,11 @@ root_node = NodePath("MarginContainer")
 autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
 script = ExtResource("4_eopm5")
 debugging = true
-overrideDeactivate = true
+overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideSpeedScale = 3.0
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj")])
+sentenceComparer = ExtResource("7_pih2p")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -63,27 +64,6 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-text = "asdasd"
-script = ExtResource("7_pih2p")
-
-[node name="Timer1" type="Timer" parent="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel"]
-one_shot = true
-autostart = true
-
-[node name="Timer2" type="Timer" parent="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel"]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
-[node name="Timer3" type="Timer" parent="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel"]
-wait_time = 6.0
-one_shot = true
-autostart = true
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
 modulate = Color(0.792157, 0.717647, 0.65098, 1)
@@ -107,7 +87,3 @@ expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController"]
 script = ExtResource("14_h0d2r")
-
-[connection signal="timeout" from="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel/Timer1" to="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel" method="populate" binds= ["[b]Hello[/b], Here is my icon:{speaker} 'Interpreter'"]]
-[connection signal="timeout" from="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel/Timer2" to="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel" method="resize" binds= [23]]
-[connection signal="timeout" from="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel/Timer3" to="ContentCanvas/ScreenController/MarginContainer/Content/RichTextLabel" method="populate" binds= ["And again:{speaker} 'Melbourne'"]]
