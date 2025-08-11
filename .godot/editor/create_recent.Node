@@ -1,3 +1,5 @@
+Timer
+RichTextLabel
 Control
 AudioStreamPlayer
 MarginContainer
@@ -9,6 +11,5 @@ HSeparator
 CenterContainer
 Button
 TextureRect
-RichTextLabel
 AnimationPlayer
 ScreenController

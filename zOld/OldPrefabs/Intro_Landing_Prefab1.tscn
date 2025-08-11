@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c5ec3pp2an2ar"]
 
-[ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="1_a8uuy"]
+[ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://zOld/Old Other/Logo_en.png" id="1_a8uuy"]
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_dttgg"]
 [ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="2_d7wrp"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_g7nwq"]

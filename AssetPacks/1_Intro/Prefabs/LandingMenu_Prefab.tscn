@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ngycpjoeboow"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_apjaa"]
-[ext_resource type="Texture2D" uid="uid://daaq36kguq7as" path="res://AssetPacks/1_Intro/Images/Logo_en.png" id="2_mytpu"]
+[ext_resource type="Texture2D" uid="uid://q7wdx763ouxh" path="res://AssetPacks/1_Intro/Images/Memi_logo.png" id="2_o3ejb"]
 [ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="3_sc42j"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_0nev2"]
 [ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="5_q8pro"]
@@ -36,7 +36,7 @@ theme_override_constants/margin_bottom = 0
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("2_mytpu")
+texture = ExtResource("2_o3ejb")
 expand_mode = 1
 stretch_mode = 4
 

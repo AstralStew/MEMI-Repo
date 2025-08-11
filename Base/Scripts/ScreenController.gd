@@ -10,6 +10,7 @@ extends AnimationPlayer
 @export var autoloadScene := "res://AssetPacks/ScenarioShared/Scenario.tscn"
 
 @export_group("Override Properties")
+@export var overrideDeactivate := false
 @export var overrideScreen := false
 @export var overrideScreenIndex := 0
 @export var overrideSpeed := false
@@ -40,6 +41,7 @@ signal last_sentence_changed(newSentence)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if overrideDeactivate: return
 	print("[ScreenController] Initialising...")
 	
 	if !OS.has_feature("editor_runtime"):

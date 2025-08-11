@@ -13,6 +13,8 @@ signal text_populated_with_lines(number)
 @export var autopopulate := false
 @export var autokey := ""
 
+var current_size := 0
+
 signal meta_link_1
 signal meta_link_2
 signal meta_link_3
@@ -23,12 +25,18 @@ signal meta_link_7
 signal meta_link_8
 signal meta_link_9
 
+const SPEAKER_PATH := "res://AssetPacks/0_Shared/Images/SpeakerIcon.png"
 
 
 func _ready() -> void:
 	meta_clicked.connect(_link_clicked)
 	
+	# Register any custom emojis
+	#var speakerPath = load("res://AssetPacks/0_Shared/Images/SpeakerIcon.png")
+	#add_image(speakerPath, 16, 16, Color(1, 1, 1, 1), 0, Rect2(), "speaker")
+	
 	if autopopulate: populate(autokey)
+	current_size = 18
 
 
 
@@ -37,7 +45,7 @@ func populate(_newText : String) -> void:
 	if _newText != "":
 		_check_font()
 	if debugging: print("[LabelController] Setting text to: '",_newText)
-	text = _newText
+	text = _newText.replacen("{speaker}",_get_speaker_string())
 	
 	text_populated.emit()
 	text_populated_with_text.emit(text)
@@ -52,9 +60,15 @@ func translate(_newKey : String) -> void:
 func resize(_newSize:int) -> void:
 	if debugging: print("[LabelController] Setting font size to ",_newSize)
 	add_theme_font_size_override("normal_font_size",_newSize)
+	current_size = _newSize
 
 
 
+
+
+func _get_speaker_string() -> String:
+	var sizeString = str(current_size + 4)
+	return "[img=b,b," + sizeString + "x" + sizeString + "]" + SPEAKER_PATH + "[/img]"
 
 
 func _check_font() -> void:
