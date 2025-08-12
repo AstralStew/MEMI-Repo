@@ -47,7 +47,15 @@ signal meta_link_9
 
 func _ready() -> void:
 	_getrefs()
-	if _autostart: _set_properties(_autoText,_autoTitle,_autoColor,_autoTitleBelow,_autoTouchHint,_autoShape,_autoTextColor)
+	if _autostart: 
+		if _debug: print("[Bubble(",name,")] Initialising...")
+		bubbleText.text = _autoText
+		bubbleText.add_theme_color_override("default_color",_autoTextColor)
+		if _debug: print("[Bubble] Text set to '",_autoText,"' in color '",_autoTextColor,"'")	
+		set_title(_autoTitle,_autoTitleBelow)	
+		set_background(_autoColor,_autoShape)
+		set_touch(_autoTouchHint)
+		_resize()
 	
 	# set the label minimum width to 200px
 	#label.custom_minimum_size.x = 200
@@ -75,7 +83,7 @@ func _process(delta: float) -> void:
 		if bubbleText == null: _getrefs()
 		
 		if _autostart && bubbleText.text !=_autoText:
-			if _debug: print("[Bubble(",name,")] Initialising...")
+			if _debug: print("[Bubble(",name,")] Processing...")
 			bubbleText.text = _autoText
 			bubbleText.add_theme_color_override("default_color",_autoTextColor)
 			if _debug: print("[Bubble] Text set to '",_autoText,"' in color '",_autoTextColor,"'")	
@@ -150,7 +158,7 @@ func set_colours(bgColour:Color=Color.WHITE,textColour=Color.BLACK):
 	if _debug: print("[Bubble] BG colour set to '",bgColour,"', text colour set to '",textColour,"'")
 
 func _set_properties(text:String,title:String="",bg:Color=Color.WHITE,titleBelow:bool=false,touchHint:bool=false,shape:Constants.BubbleShape = Constants.BubbleShape.Default, textColour:Color=Color.BLACK) -> void:
-	if _debug: print("[Bubble(",name,")] Initialising...")
+	if _debug: print("[Bubble(",name,")] Setting properties...")
 	
 	bubbleText.populate(text)
 	bubbleText.add_theme_color_override("default_color",textColour)

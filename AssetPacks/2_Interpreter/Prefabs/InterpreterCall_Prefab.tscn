@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmup6q2t00bxk"]
+[gd_scene load_steps=20 format=3 uid="uid://dmup6q2t00bxk"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
-[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="3_7ltpq"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="2_1tbva"]
+[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://zOld/Old Other/Lad_Tutorial_1.png" id="3_7ltpq"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="4_kkmuj"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_q6r75"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="6_muhe5"]
@@ -49,15 +50,18 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 0
 offset_left = -155.0
-offset_top = 149.0
+offset_top = 110.0
 offset_right = 205.0
-offset_bottom = 496.0
-texture = ExtResource("3_7ltpq")
+offset_bottom = 510.0
+texture = ExtResource("2_1tbva")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -68,6 +72,7 @@ script = ExtResource("5_q6r75")
 debugging = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -79,6 +84,7 @@ debugging = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -90,6 +96,7 @@ debugging = true
 
 [node name="Explanation4_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -557,6 +564,7 @@ theme_override_constants/margin_top = 0
 _autoText = "..."
 _autoTitle = "COMMON_YOUSAY"
 _autoTouchHint = true
+old_text = "..."
 
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -575,6 +583,7 @@ min_width = 100
 _autoText = "INTERPRETER_1_LETSTRY_B1"
 _autoTitle = ""
 _autoShape = 1
+old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
 visible = false
@@ -630,6 +639,7 @@ _autoText = "They always ask this question first"
 _autoTitle = ""
 _autoTitleBelow = false
 _autoShape = 2
+old_text = "They always ask this question first"
 
 [node name="LadComment1" type="TextureRect" parent="Comments_C"]
 z_index = 2

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://t1mdkoctxe4w"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_rrli2"]
+[ext_resource type="Texture2D" uid="uid://cxef2jho4augu" path="res://AssetPacks/1_Intro/Images/LadHalf_TryAgain.png" id="2_cuaqi"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="3_cuaqi"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_hq51s"]
-[ext_resource type="Texture2D" uid="uid://nrsn4wj2h8au" path="res://AssetPacks/1_Intro/Images/Lad_Landing_1.png" id="7_2q8xe"]
-[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png" id="8_1p8ap"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="9_bii6d"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="10_mxo23"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="11_g46fb"]
@@ -30,8 +30,10 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="LadLanding1" type="TextureRect" parent="Explanation_VB"]
+custom_minimum_size = Vector2(0, 121)
 layout_mode = 2
-texture = ExtResource("7_2q8xe")
+texture = ExtResource("2_cuaqi")
+expand_mode = 1
 stretch_mode = 4
 
 [node name="LadTutorial1_C" type="Control" parent="Explanation_VB"]
@@ -46,7 +48,7 @@ offset_left = 101.0
 offset_top = -4.0
 offset_right = 461.0
 offset_bottom = 343.0
-texture = ExtResource("8_1p8ap")
+texture = ExtResource("3_cuaqi")
 expand_mode = 1
 stretch_mode = 5
 

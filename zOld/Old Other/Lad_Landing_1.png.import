@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vjxx2hispj77"
-path="res://.godot/imported/Lad_Tutorial_1.png-a7a8cbba9f91955703be5a82630b04ba.ctex"
+uid="uid://nrsn4wj2h8au"
+path="res://.godot/imported/Lad_Landing_1.png-010979bd4155125fbecfbe1a4e3708b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetPacks/1_Intro/Images/Lad_Tutorial_1.png"
-dest_files=["res://.godot/imported/Lad_Tutorial_1.png-a7a8cbba9f91955703be5a82630b04ba.ctex"]
+source_file="res://zOld/Old Other/Lad_Landing_1.png"
+dest_files=["res://.godot/imported/Lad_Landing_1.png-010979bd4155125fbecfbe1a4e3708b1.ctex"]
 
 [params]
 
