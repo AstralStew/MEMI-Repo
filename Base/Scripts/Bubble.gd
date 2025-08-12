@@ -102,10 +102,12 @@ func _process(delta: float) -> void:
 
 #region Set properties
 
-func set_text(text:String="",textColor=Color.BLACK):
+func set_text(text:String="",textColor=Color.FUCHSIA):
 	bubbleText.populate(text)
-	bubbleText.add_theme_color_override("default_color",textColor)
-	if _debug: print("[Bubble] Text set to '",text,"' in color '",textColor,"'")
+	if textColor != Color.FUCHSIA:
+		bubbleText.add_theme_color_override("default_color",textColor)
+		if _debug: print("[Bubble] Text set to '",text,"' in color '",textColor,"'")
+	elif _debug: print("[Bubble] Text set to '",text,"'")
 	_resize()
 
 func set_title(title:String="",titleBelow:bool=false) -> void:

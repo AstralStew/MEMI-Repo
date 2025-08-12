@@ -1,7 +1,7 @@
 AnimationLibrary
+Animation
 SentenceComparer
 RichTextEffect
 ScreenSet
 FontVariation
-Animation
 Theme

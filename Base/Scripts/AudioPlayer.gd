@@ -33,7 +33,7 @@ func play_stream(_stream:AudioStream,_volume:float=1.0) -> void:
 			
 			streams[_stream.resource_path] = players[i]
 			players[i].finished.connect(_remove_stream_on_end)
-			break
+			return
 	push_error("[AudioPlayer] Could not find an unused AudioStreamPlayer! Cancelling. :( )")
 
 func stop_stream(_stream:AudioStream) -> void:
@@ -41,7 +41,9 @@ func stop_stream(_stream:AudioStream) -> void:
 	
 	if streams.has(_stream.resource_path):
 		if debugging: print("[AudioPlayer] Stopping AudioStreamPlayer '",streams[_stream.resource_path],"'.")
+		streams[_stream.resource_path].finished.disconnect(_remove_stream_on_end)
 		streams[_stream.resource_path].stop()
+		streams.erase(_stream.resource_path)
 
 func _remove_stream_on_end() -> void:
 	if debugging: print("[AudioPlayer] Finished() signal recieved, removing streams that aren't playing...")

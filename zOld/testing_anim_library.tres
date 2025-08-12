@@ -1,0 +1,8 @@
+[gd_resource type="AnimationLibrary" load_steps=2 format=3 uid="uid://cyvq3qggqisyd"]
+
+[ext_resource type="Animation" uid="uid://cvftpdfd3xyl3" path="res://zOld/testing_animation.tres" id="1_pjl2g"]
+
+[resource]
+_data = {
+&"testing_animation": ExtResource("1_pjl2g")
+}

@@ -1,16 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=10 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
-[ext_resource type="AnimationLibrary" uid="uid://dcske7brqbmhq" path="res://AssetPacks/2_Interpreter/Animations/Interpreter.tres" id="3_s83ii"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://xekgk8iq58k0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres" id="8_tlsrq"]
-[ext_resource type="PackedScene" uid="uid://cuol3yxw3dl0y" path="res://AssetPacks/2_Interpreter/Prefabs/LetsLearn_Prefab.tscn" id="9_u0b1i"]
-[ext_resource type="PackedScene" uid="uid://dmup6q2t00bxk" path="res://AssetPacks/2_Interpreter/Prefabs/InterpreterCall_Prefab.tscn" id="10_11gex"]
+[ext_resource type="Resource" uid="uid://b235aresx03bd" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres" id="8_s83ii"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
 
 [node name="AllMother" type="Node2D"]
@@ -45,17 +42,14 @@ layer = 0
 
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
-libraries = {
-&"Interpreter": ExtResource("3_s83ii")
-}
-autoplay = "Intro_S_Landing/Intro_S_Landing_0_Load"
+autoplay = "testing_anim_library/testing_animation"
 script = ExtResource("4_eopm5")
 debugging = true
 overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideSpeedScale = 3.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj")])
-sentenceComparer = ExtResource("8_tlsrq")
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("5_qbn4n")])
+sentenceComparer = ExtResource("8_s83ii")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -69,13 +63,6 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
-layout_mode = 2
-
-[node name="LetsLearn_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("9_u0b1i")]
-modulate = Color(1, 1, 1, 1)
-layout_mode = 2
-
-[node name="InterpreterCall_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("10_11gex")]
 layout_mode = 2
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
@@ -99,5 +86,5 @@ texture = ExtResource("5_eopm5")
 expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController"]
-max_polyphony = 3
 script = ExtResource("14_h0d2r")
+debugging = true

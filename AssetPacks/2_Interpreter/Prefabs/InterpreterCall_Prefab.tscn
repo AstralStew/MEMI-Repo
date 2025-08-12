@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="2_1tbva"]
-[ext_resource type="Texture2D" uid="uid://vjxx2hispj77" path="res://zOld/Old Other/Lad_Tutorial_1.png" id="3_7ltpq"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="4_kkmuj"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_q6r75"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="6_muhe5"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://8dxmcgllnwae" path="res://AssetPacks/0_Shared/Images/Ellipse 2.png" id="15_1tbva"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="15_38vxp"]
 [ext_resource type="Texture2D" uid="uid://dvdo17nw6ffcu" path="res://AssetPacks/0_Shared/Images/pointing_hand.png" id="16_wvcp0"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="19_1tbva"]
 
 [node name="InterpreterCall_Prefab" type="MarginContainer"]
 anchors_preset = 15
@@ -416,6 +416,7 @@ max_width = 200
 _autostart = true
 _autoTitle = "COMMON_000SAYS"
 _autoColor = Color(0.851, 0.851, 0.851, 0.3)
+_autoTextColor = Color(1, 1, 1, 1)
 
 [node name="BubbleText" type="RichTextLabel" parent="Operator_C/Operator_Bubble"]
 self_modulate = Color(1, 1, 1, 0)
@@ -425,7 +426,7 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("7_c3pe2")
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
@@ -433,7 +434,6 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
-horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_q6r75")
 
@@ -634,7 +634,7 @@ theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 30
 min_height = 42
 min_width = 150
-max_width = 210
+max_width = 220
 _autoText = "They always ask this question first"
 _autoTitle = ""
 _autoTitleBelow = false
@@ -650,13 +650,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -180.0
+offset_left = -200.0
 offset_top = 180.0
-offset_right = 40.0
-offset_bottom = 685.5
+offset_right = 120.0
+offset_bottom = 780.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("3_7ltpq")
+texture = ExtResource("19_1tbva")
 expand_mode = 1
 
 [node name="Overlay" type="TextureRect" parent="Comments_C"]
