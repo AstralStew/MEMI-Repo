@@ -1,7 +1,7 @@
+AudioStreamPlayer
+Timer
 AnimatedSprite2D
 TextureRect
-Timer
-AudioStreamPlayer
 Node
 RichTextLabel
 Control

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=12 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
+[ext_resource type="SpriteFrames" uid="uid://bpcx2wbksnhjw" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres" id="8_hqape"]
 [ext_resource type="Resource" uid="uid://b235aresx03bd" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres" id="8_s83ii"]
+[ext_resource type="SpriteFrames" uid="uid://w783o0yqf21v" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres" id="9_11gex"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
 
 [node name="AllMother" type="Node2D"]
@@ -64,6 +66,14 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
+
+[node name="AnimatedSprite2D Bub" type="AnimatedSprite2D" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
+position = Vector2(199, 160)
+sprite_frames = ExtResource("8_hqape")
+
+[node name="AnimatedSprite2D Dots" type="AnimatedSprite2D" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
+position = Vector2(199, 160)
+sprite_frames = ExtResource("9_11gex")
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
 modulate = Color(0.156863, 0.0901961, 0.141176, 1)

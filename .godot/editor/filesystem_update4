@@ -14,3 +14,8 @@ res://AssetPacks/2_Interpreter/Prefabs/LetsLearn_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/Steps_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/InterpreterCall_Prefab.tscn
 res://AssetPacks/0_Shared/Prefabs/bubble.tscn
+res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres
+res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres
+res://Base/Scripts/TapBubble.gd
+res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn
+res://Base/Scripts/LabelController.gd
