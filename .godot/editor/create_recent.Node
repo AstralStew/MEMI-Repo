@@ -1,3 +1,5 @@
+AnimatedSprite2D
+TextureRect
 Timer
 AudioStreamPlayer
 Node
@@ -10,5 +12,3 @@ HBoxContainer
 NinePatchRect
 HSeparator
 CenterContainer
-Button
-TextureRect

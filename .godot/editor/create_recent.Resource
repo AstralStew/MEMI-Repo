@@ -1,3 +1,4 @@
+SpriteFrames
 AnimationLibrary
 Animation
 SentenceComparer
