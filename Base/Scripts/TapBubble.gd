@@ -24,18 +24,19 @@ class_name TapBubble
 @export var bubble_fade_trans := Tween.TransitionType.TRANS_LINEAR
 
 @export_group("Correct")
-@export var correct_colour := Color.GREEN
+@export var correct_colour := Color("98d67e")
 @export var correct_size := 1.025
 @export var correct_inout := 0.075
-@export var correct_ease := Tween.EaseType.EASE_IN_OUT
+@export var correct_ease := Tween.EaseType.EASE_OUT_IN
 @export var correct_trans := Tween.TransitionType.TRANS_LINEAR
 
 @export_group("Incorrect")
-@export var incorrect_colour := Color.DIM_GRAY
+@export var incorrect_colour := Color("2e2e2e")
 @export var incorrect_size := 0.99
-@export var incorrect_inout := 0.075
-@export var incorrect_ease := Tween.EaseType.EASE_IN_OUT
-@export var incorrect_trans := Tween.TransitionType.TRANS_LINEAR
+@export var incorrect_inout := 0.165
+@export var incorrect_ease := Tween.EaseType.EASE_OUT
+@export var incorrect_trans := Tween.TransitionType.TRANS_BOUNCE
+@export var incorrect_pause := 1.5
 
 @export_group("Recieve Touch")
 @export var receive_touch_size := 0.985
@@ -111,7 +112,10 @@ func _ready() -> void:
 		bubbleText.scale = Vector2.ZERO
 		modulate = Color(1,1,1,0)
 		
-		reset()
+		bubbleText.text =_auto_text
+		_set_title(_auto_title)
+		_set_colours(_auto_bg_colour,_auto_text_colour)
+		_set_touch_hint(_auto_touch_hint)
 		
 		#bubbleText.text =_auto_text
 		#_set_title(_auto_title)
@@ -126,6 +130,8 @@ func _getrefs() -> void:
 	speakingDots = bubbleBG.get_child(2)
 	bubbleTouchButton = get_child(1)
 	bubbleTouchAudio = get_child(2)
+	
+	
 
 
 
@@ -155,6 +161,7 @@ func _process(delta: float) -> void:
 func pop_in() -> void:
 	if _debug: print("[TapBubble(",name,")] NOTE -> Popping in!")
 	reset()
+	visible = true
 	
 	# resize + fade
 	_resize_bubble(true,bubble_resize_in,bubble_resize_ease,bubble_resize_trans)
@@ -172,6 +179,7 @@ func pop_out() -> void:
 	
 	# fade out bubble (no resize)
 	_fade_bubble(false,bubble_fade_out,bubble_fade_ease,bubble_fade_trans)
+	bubble_fade.tween_callback(set.bind("visible",false))
 
 func activate_touch_input() -> void:
 	if _debug: print("[TapBubble(",name,")] NOTE -> Player is answering - activating speaking dots...")
@@ -216,7 +224,7 @@ func incorrect() -> void:
 	bubbleTouchAudio.play()
 	
 	# reset after a second
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(incorrect_pause).timeout
 	reset()
 	
 	# re-activate touch
@@ -228,6 +236,7 @@ func incorrect() -> void:
 
 func reset() -> void:
 	_set_properties(_auto_text,_auto_title,_auto_bg_colour,_auto_text_colour,_auto_touch_hint)
+	
 
 #endregion
 
