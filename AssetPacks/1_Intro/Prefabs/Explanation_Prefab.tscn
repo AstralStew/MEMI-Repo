@@ -109,7 +109,6 @@ theme_override_constants/separation = 40
 [node name="TapBubble" parent="Explanation_VB" instance=ExtResource("9_20iug")]
 visible = false
 layout_mode = 2
-incorrect_pause = 1.5
 
 [connection signal="last_sentence_changed" from="." to="Explanation_VB/TapBubble" method="answer"]
 [connection signal="meta_link_1" from="Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]

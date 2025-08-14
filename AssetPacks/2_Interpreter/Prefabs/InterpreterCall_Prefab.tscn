@@ -569,7 +569,6 @@ old_text = "..."
 
 [node name="TapBubble" parent="." instance=ExtResource("19_wvcp0")]
 layout_mode = 2
-incorrect_pause = 1.5
 
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2

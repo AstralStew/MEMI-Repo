@@ -37,7 +37,6 @@ default_tap_hint = ExtResource("5_bhybv")
 pop_in_sound = ExtResource("3_pejn0")
 correct_sound = ExtResource("4_xuxd2")
 incorrect_sound = ExtResource("5_pejn0")
-incorrect_pause = null
 _autostart = true
 _auto_title = "COMMON_YOUSAY"
 

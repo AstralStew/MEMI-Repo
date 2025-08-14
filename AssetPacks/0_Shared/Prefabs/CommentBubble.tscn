@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=3 uid="uid://hx51s1lp8rc7"]
+
+[ext_resource type="Script" uid="uid://c3t06j2b43f6x" path="res://Base/Scripts/CommentBubble.gd" id="1_fm8n2"]
+[ext_resource type="AudioStream" uid="uid://bkddpxkmadygq" path="res://AssetPacks/0_Shared/Audio/CommentPop.mp3" id="2_dr52n"]
+[ext_resource type="Texture2D" uid="uid://cn011c2on2sb" path="res://AssetPacks/0_Shared/Images/BubbleFlipNineSprite.png" id="5_x5m08"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="6_eeoid"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="7_oqbe8"]
+
+[node name="CommentBubble" type="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -269.0
+offset_right = -96.0
+offset_bottom = -163.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 19
+script = ExtResource("1_fm8n2")
+_debug = true
+_updateInEditor = true
+pop_in_sound = ExtResource("2_dr52n")
+comment_resize_d = 0.3
+comment_resize_t = 10
+comment_text_in_d = 0.1
+_autostart = true
+_auto_text = "Tes 13"
+_old_text = "Tes 13"
+
+[node name="MarginText" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BubbleText" type="RichTextLabel" parent="MarginText"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(76, 10)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_eeoid")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "Tes 13"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_oqbe8")
+debugging = true
+metadata/_edit_group_ = true
+
+[node name="BubbleProxy" type="BoxContainer" parent="."]
+custom_minimum_size = Vector2(116, 67)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="BubbleBG" type="NinePatchRect" parent="BubbleProxy"]
+z_index = -1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_x5m08")
+patch_margin_left = 24
+patch_margin_top = 20
+patch_margin_right = 24
+patch_margin_bottom = 15
+
+[node name="BubbleTitle" type="Label" parent="BubbleProxy/BubbleBG"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 192.0
+offset_bottom = 55.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("6_eeoid")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+uppercase = true
+
+[node name="BubbleAudio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="meta_link_1" from="MarginText/BubbleText" to="." method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="MarginText/BubbleText" to="." method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="MarginText/BubbleText" to="." method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="MarginText/BubbleText" to="." method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="MarginText/BubbleText" to="." method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="MarginText/BubbleText" to="." method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="MarginText/BubbleText" to="." method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="MarginText/BubbleText" to="." method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="MarginText/BubbleText" to="." method="_send_meta_link_9"]
