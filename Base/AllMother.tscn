@@ -8,9 +8,8 @@
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://b235aresx03bd" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres" id="8_tlsrq"]
+[ext_resource type="Resource" uid="uid://xekgk8iq58k0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres" id="8_x7k22"]
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="9_f0qj7"]
-[ext_resource type="Texture2D" uid="uid://bwv8ec2rkdr7s" path="res://AssetPacks/1_Intro/Images/Lad_ThumbsUp.png" id="10_c1y5l"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="11_3alyw"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="12_kku6m"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="13_hrcfs"]
@@ -26,10 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://8dxmcgllnwae" path="res://AssetPacks/0_Shared/Images/Ellipse 2.png" id="23_dto2j"]
 [ext_resource type="Texture2D" uid="uid://dvdo17nw6ffcu" path="res://AssetPacks/0_Shared/Images/pointing_hand.png" id="24_lxd4l"]
 [ext_resource type="Texture2D" uid="uid://csf8mlhy8lscb" path="res://AssetPacks/2_Interpreter/Images/Lad_Phone.png" id="25_8bgth"]
+[ext_resource type="PackedScene" uid="uid://bkef61xvbqi35" path="res://AssetPacks/0_Shared/Prefabs/OperatorBubble.tscn" id="25_tlsrq"]
 [ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="26_8wirx"]
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="27_heh3n"]
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="28_20xqg"]
-[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="28_tlsrq"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="29_ym3tl"]
 
 [node name="AllMother" type="Node2D"]
 
@@ -73,9 +73,10 @@ overrideResetHierarchy = true
 overrideAnswerCheating = true
 overrideScreen = true
 overrideScreenIndex = 1
-overrideSpeedScale = 3.0
+overrideSpeed = true
+overrideSpeedScale = 2.0
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("5_qbn4n")])
-sentenceComparer = ExtResource("8_tlsrq")
+sentenceComparer = ExtResource("8_x7k22")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -112,7 +113,6 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="LadTutorial1_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -124,7 +124,7 @@ offset_left = -155.0
 offset_top = 110.0
 offset_right = 205.0
 offset_bottom = 510.0
-texture = ExtResource("10_c1y5l")
+texture = ExtResource("29_ym3tl")
 expand_mode = 1
 stretch_mode = 5
 
@@ -151,6 +151,7 @@ script = ExtResource("12_kku6m")
 debugging = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -162,6 +163,7 @@ script = ExtResource("12_kku6m")
 debugging = true
 
 [node name="Explanation4_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -173,6 +175,7 @@ script = ExtResource("12_kku6m")
 debugging = true
 
 [node name="Scenario_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 30
@@ -443,12 +446,12 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="Operator_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="Operator_Bubble" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Operator_C"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -595,6 +598,13 @@ visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
+[node name="OperatorBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Operator_C" instance=ExtResource("25_tlsrq")]
+layout_mode = 1
+offset_left = 43.565
+offset_top = 27.74
+offset_right = 308.565
+offset_bottom = 133.74
+
 [node name="LadPhone" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Operator_C"]
 layout_mode = 1
 anchors_preset = 1
@@ -624,7 +634,6 @@ old_text = "..."
 
 [node name="TapBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" instance=ExtResource("27_heh3n")]
 layout_mode = 2
-theme_override_constants/margin_top = 125
 
 [node name="Buttons_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
 layout_mode = 2
@@ -633,7 +642,6 @@ theme_override_constants/separation = 20
 alignment = 2
 
 [node name="Continue_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Buttons_VB" instance=ExtResource("26_8wirx")]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -667,7 +675,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 
 [node name="Comments_C" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-visible = false
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 8
@@ -717,8 +724,7 @@ offset_right = 120.0
 offset_bottom = 470.0
 grow_horizontal = 0
 grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("28_tlsrq")
+texture = ExtResource("29_ym3tl")
 expand_mode = 1
 
 [node name="CommentBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Comments_C/LadComment1" instance=ExtResource("28_20xqg")]
@@ -735,11 +741,11 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 pivot_offset = Vector2(156, 106)
-max_char_threshold = 25
 _auto_text = ""
 _old_text = ""
 
 [node name="Overlay" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Comments_C"]
+visible = false
 modulate = Color(0, 0, 0, 0)
 custom_minimum_size = Vector2(220, 505.5)
 layout_mode = 1
@@ -758,8 +764,8 @@ texture = ExtResource("5_eopm5")
 expand_mode = 1
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
-z_index = -1
+modulate = Color(0.792157, 0.717647, 0.65098, 1)
+z_index = -5
 custom_minimum_size = Vector2(800, 1600)
 anchors_preset = 8
 anchor_left = 0.5

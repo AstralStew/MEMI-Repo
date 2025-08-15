@@ -35,3 +35,5 @@ res://AssetPacks/2_Interpreter/Animations/Interpreter_6a_Correct.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_6_Question3.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_6c_Mumbo.res
 res://AssetPacks/2_Interpreter/Animations/Interpreter_6b_Wrong.res
+res://AssetPacks/0_Shared/Prefabs/OperatorBubble.tscn
+res://Base/Scripts/OperatorBubble.gd
