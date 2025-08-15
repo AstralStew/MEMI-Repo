@@ -103,7 +103,6 @@ script = ExtResource("9_f0qj7")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 70
@@ -131,7 +130,7 @@ stretch_mode = 5
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Explanation_MC/Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 fit_content = true
@@ -610,11 +609,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -66.555
-offset_right = 374.445
-offset_bottom = 464.0
+offset_left = -499.0
+offset_top = 64.0
+offset_right = -58.0
+offset_bottom = 528.0
 grow_horizontal = 0
-rotation = -0.349066
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(0, 232)
 texture = ExtResource("25_8bgth")
@@ -634,6 +633,7 @@ old_text = "..."
 
 [node name="TapBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab" instance=ExtResource("27_heh3n")]
 layout_mode = 2
+_current_touch_hint = 0
 
 [node name="Buttons_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab"]
 layout_mode = 2
@@ -642,7 +642,7 @@ theme_override_constants/separation = 20
 alignment = 2
 
 [node name="Continue_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/InterpreterCall_Prefab/Buttons_VB" instance=ExtResource("26_8wirx")]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -719,9 +719,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -130.0
+offset_top = 180.0
 offset_right = 120.0
-offset_bottom = 470.0
+offset_bottom = 780.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("29_ym3tl")

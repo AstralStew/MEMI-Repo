@@ -8,7 +8,6 @@ class_name TapBubble
 
 @export_group("References")
 @export var default_tap_hint : SpriteFrames = null
-@export var slim_tap_hint : SpriteFrames = null
 @export var pop_in_sound : AudioStream = null
 @export var correct_sound : AudioStream = null
 @export var incorrect_sound : AudioStream = null
@@ -51,6 +50,14 @@ class_name TapBubble
 @export var touch_hint_fade_out := 0.1
 @export var touch_hint_ease := Tween.EaseType.EASE_IN_OUT
 @export var touch_hint_trans := Tween.TransitionType.TRANS_LINEAR
+@export var pulse_in := 0.25
+@export var pulse_out := 0.25
+#@export var bubble_resize_out := 1.0
+@export var pulse_in_ease := Tween.EaseType.EASE_IN
+@export var pulse_out_ease := Tween.EaseType.EASE_OUT
+@export var pulse_in_trans := Tween.TransitionType.TRANS_LINEAR
+@export var pulse_out_trans := Tween.TransitionType.TRANS_LINEAR
+@export var pulse_size := 1.015
 
 @export_group("Speaking Dots")
 @export var speaking_dots_fade_in := 0.25
@@ -65,6 +72,9 @@ class_name TapBubble
 @export var _auto_bg_colour := Color.WHITE
 @export var _auto_text_colour := Color.BLACK
 @export var _auto_touch_hint : TouchHint = TouchHint.Default
+
+@export_group("Read Only")
+@export var _current_touch_hint : TouchHint = TouchHint.Default
 
 #@export_group("Size Parametres")
 #@export var min_height := 151
@@ -111,6 +121,7 @@ func _ready() -> void:
 		
 		bubbleText.scale = Vector2.ZERO
 		modulate = Color(1,1,1,0)
+		_current_touch_hint = TouchHint.Default
 		
 		bubbleText.text =_auto_text
 		_set_title(_auto_title)
@@ -182,13 +193,27 @@ func pop_out() -> void:
 	bubble_fade.tween_callback(set.bind("visible",false))
 
 func activate_touch_input() -> void:
-	if _debug: print("[TapBubble(",name,")] NOTE -> Player is answering - activating speaking dots...")
+	if _debug: print("[TapBubble(",name,")] NOTE -> Ready to answer - activating touch hint...")
+	
+	await get_tree().create_timer(0.5).timeout
 	
 	# turn on button to allow tapping
 	bubbleTouchButton.visible = true
 	
 	# fade in touch hint
-	_fade_touch_hint(true, touch_hint_fade_in,touch_hint_ease,touch_hint_trans)
+	match _current_touch_hint:
+		TouchHint.Default:
+			if _debug: print("[TapBubble(",name,")] TouchHint.Default - Turning on touch hint...")
+			_fade_touch_hint(true, touch_hint_fade_in,touch_hint_ease,touch_hint_trans)
+		TouchHint.Slim:
+			if _debug: print("[TapBubble(",name,")] TouchHint.Slim - Pulsing...")
+			#_resize_background(correct_size,correct_inout,correct_ease,correct_trans)
+			#background_resize.tween_callback(_resize_background.bind(1.0,correct_inout,correct_ease,correct_trans))
+			_pulse_background()
+		TouchHint.Keep:
+			push_error("[TapBubble(",name,")] ERROR -> CurrentTouchHint is on Keep! Shouldn't be possible. Ignoring :(")
+		_:
+			push_error("[TapBubble(",name,")] ERROR -> No matching touch hint! Shouldn't be possible. Ignoring :(")
 
 func answer(_text:String) -> void:	
 	if _debug: print("[TapBubble(",name,")] NOTE -> Answer received! Setting text...")
@@ -248,10 +273,14 @@ func _received_touch_input() -> void:
 	if _debug: print("[TapBubble(",name,")] ReceivedTouchInput. Disabling hint, enabling speaking dots, and sending touch input...")
 	bubbleTouchButton.visible = false
 	bubbleText.text = ""
-	_fade_touch_hint(false,touch_hint_fade_out,touch_hint_ease,touch_hint_trans)
+	
+	if _current_touch_hint == TouchHint.Default:
+		_fade_touch_hint(false,touch_hint_fade_out,touch_hint_ease,touch_hint_trans)
+	elif _current_touch_hint == TouchHint.Slim:
+		_pulse_background_finish()
 	_fade_speaking_dots(true,speaking_dots_fade_in,speaking_dots_ease,speaking_dots_trans)
 	_resize_background(receive_touch_size,receive_touch_inout,receive_touch_ease,receive_touch_trans)
-	background_resize.tween_callback(_resize_background.bind(1.0,receive_touch_inout,receive_touch_ease,receive_touch_trans))	
+	background_resize.tween_callback(_resize_background.bind(1.0,receive_touch_inout,receive_touch_ease,receive_touch_trans))
 	
 	touch_input.emit()
 
@@ -303,15 +332,19 @@ func _set_touch_hint(_touchHint:TouchHint) -> void:
 		TouchHint.Default:
 			if _debug: print("[TapBubble(",name,")] Setting touch hint to ",_touchHint)
 			bubbleTapHint.sprite_frames = default_tap_hint
+			_current_touch_hint = TouchHint.Default
 		TouchHint.Slim:
 			if _debug: print("[TapBubble(",name,")] Setting touch hint to ",_touchHint)
-			bubbleTapHint.sprite_frames = slim_tap_hint
+			#bubbleTapHint.sprite_frames = slim_tap_hint
+			_current_touch_hint = TouchHint.Slim
+			pass
 		TouchHint.Keep:	
 			if _debug: print("[TapBubble(",name,")] Setting touch hint to ",_touchHint," (i.e. Ignoring)")
 			pass # ignore when set to Keep
 		_:
 			push_error("[TapBubble(",name,")] ERROR -> No matching touch hint! Shouldn't be possible. Setting to Default.")
 			bubbleTapHint.sprite_frames = default_tap_hint
+			_current_touch_hint = TouchHint.Default
 
 
 #endregion
@@ -347,11 +380,27 @@ func _fade_bubble(_active:bool,_duration:float,_ease:Tween.EaseType,_transition:
 
 var background_resize
 func _resize_background(_target_size:float,_duration:float,_ease:Tween.EaseType,_transition:Tween.TransitionType) -> void:
+	print("resize")
 	if background_resize:
 		background_resize.kill()
 	background_resize = create_tween()
 	
 	background_resize.tween_property(bubbleBG, "scale", Vector2(_target_size,_target_size), _duration).set_ease(_ease).set_trans(_transition)
+
+var background_pulse
+func _pulse_background() -> void:
+	if background_pulse:
+		background_pulse.kill()
+	_pulsing()
+	background_pulse = create_tween().set_loops()
+	background_pulse.tween_callback(_pulsing).set_delay(1)
+
+func _pulsing() -> void:
+	_resize_background(pulse_size,pulse_in,pulse_in_ease,pulse_in_trans)
+	background_resize.tween_callback(self._resize_background.bind(1,pulse_out,pulse_out_ease,pulse_out_trans))
+
+func _pulse_background_finish() -> void:
+	background_pulse.kill()
 
 var background_fade
 func _fade_background(_colour:Color,_duration:float,_ease:Tween.EaseType,_transition:Tween.TransitionType) -> void:
@@ -360,6 +409,7 @@ func _fade_background(_colour:Color,_duration:float,_ease:Tween.EaseType,_transi
 	background_fade = create_tween()
 	
 	background_fade.tween_property(bubbleBG, "self_modulate", _colour, _duration).set_ease(_ease).set_trans(_transition)
+
 
 
 var touch_hint_fade
