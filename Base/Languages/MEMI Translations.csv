@@ -105,10 +105,13 @@ INTERPRETER_2_SCENARIO_T2,You find your father on the floor.,,,
 INTERPRETER_2_SCENARIO_T3,"He is not waking up, and you’re not sure if he’s breathing. You need an ambulance.",,,
 INTERPRETER_2_SCENARIO_T4,"His house is in Dandenong, Victoria.",,,
 ,,,,
-INTERPRETER_2_SCENARIO_B1,[url={2}]DIal 000[/url],,,
+INTERPRETER_2_SCENARIO_B1,[url={2}]Dial 000[/url],,,
 ,,,,
 ,,,,
 ,,,,
+INTERPRETER_3_CALL_O1,"You have dialled emergency 000
+
+Your call is being connected...",,,
 ,,,,
 INTERPRETER_3_CALL_C1,"Remember this is not a real call.
 
@@ -116,10 +119,6 @@ And we don't record your voice.",,,
 INTERPRETER_3_CALL_C2,"This message is pre-recorded.
 
 You do not need to respond.",,,
-,,,,
-INTERPRETER_3_CALL_O1,"You have dialled emergency 000
-
-Your call is being connected...",,,
 ,,,,
 ,,,,
 ,,,,
