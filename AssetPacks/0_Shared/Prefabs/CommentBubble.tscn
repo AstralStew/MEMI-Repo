@@ -29,9 +29,15 @@ script = ExtResource("1_fm8n2")
 _debug = true
 _updateInEditor = true
 pop_in_sound = ExtResource("2_dr52n")
+bg_border_size = 35.0
 comment_resize_d = 0.3
 comment_resize_t = 10
 comment_text_in_d = 0.1
+pop_out_text_e = 1
+pop_out_resize_e = 1
+pop_out_bg_fade_d = 0.15
+pop_out_bg_fade_e = 1
+pop_out_bg_fade_t = 5
 _autostart = true
 _auto_text = "Tes 13"
 _old_text = "Tes 13"
@@ -67,10 +73,12 @@ debugging = true
 metadata/_edit_group_ = true
 
 [node name="BubbleProxy" type="BoxContainer" parent="."]
+z_index = -1
 custom_minimum_size = Vector2(116, 67)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="BubbleBG" type="NinePatchRect" parent="BubbleProxy"]
 z_index = -1

@@ -14,7 +14,7 @@ class_name CommentBubble
 @export var min_width := 60
 @export var max_width := 228
 @export var min_char_threshold := 4
-@export var max_char_threshold := 25
+@export var max_char_threshold := 22 #25
 @export var bg_border_size := 40.0
 
 @export_group("Pop In")
@@ -366,7 +366,9 @@ func _fade_background(_colour:Color,_duration:float,_ease:Tween.EaseType,_transi
 func _resize(_doTween:bool=true) -> void:
 	if _debug: print("[CommentBubble(",name,")] Resizing bubble to fit text...")
 	
-	bubbleText.custom_minimum_size = Vector2(1000,0)
+	#bubbleText.custom_minimum_size = Vector2(1000,0)
+	#bubbleText.custom_minimum_size = Vector2(max_width + 20,0)
+	bubbleText.custom_minimum_size = Vector2(max_width,0)
 	
 	await get_tree().process_frame 
 		

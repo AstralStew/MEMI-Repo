@@ -236,7 +236,10 @@ func incorrect() -> void:
 
 func reset() -> void:
 	_set_properties(_auto_text,_auto_title,_auto_bg_colour,_auto_text_colour,_auto_touch_hint)
-	
+	bubbleTapHint.modulate = Color(1,1,1,0)
+	bubbleTapHint.stop()
+	speakingDots.modulate = Color(1,1,1,0)
+	speakingDots.stop()
 
 #endregion
 

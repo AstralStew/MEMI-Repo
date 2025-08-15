@@ -11,6 +11,7 @@ extends AnimationPlayer
 
 @export_group("Override Properties")
 @export var overrideDeactivate := false
+@export var overrideResetHierarchy := false
 @export var overrideAnswerCheating := false
 @export var overrideScreen := false
 @export var overrideScreenIndex := 0
@@ -43,6 +44,15 @@ signal last_sentence_changed(newSentence)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if overrideDeactivate: return
+	if overrideResetHierarchy:
+		print("[ScreenController] WARNING -> OverrideResetHierarchy! Destroying children + libraries...")
+		for child in get_child(0).get_child(0).get_children():
+			print("[ScreenController] OverrideResetHierarchy - Destroying child: '",child,"'.")
+			child.queue_free()
+		for library in get_animation_library_list():
+			print("[ScreenController] OverrideResetHierarchy - Removing library: '",library,"'.")
+			remove_animation_library(library)
+	
 	print("[ScreenController] Initialising...")
 	
 	if !OS.has_feature("editor_runtime"):
