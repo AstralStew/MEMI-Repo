@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_hq51s"]
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="9_20iug"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="9_bii6d"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Shared/Prefabs/ButtonBubble.tscn" id="9_name7"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="10_mxo23"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="11_g46fb"]
-[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="12_cbgko"]
 
 [node name="Explanation_Prefab" type="MarginContainer"]
 visible = false
@@ -87,18 +87,15 @@ custom_effects = [ExtResource("11_g46fb")]
 script = ExtResource("4_hq51s")
 debugging = true
 
-[node name="Continue_Bubble" parent="Explanation_VB" instance=ExtResource("12_cbgko")]
+[node name="ContinueButton" parent="Explanation_VB" instance=ExtResource("9_name7")]
 visible = false
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-_debug = false
-min_height = 0
-min_width = 100
-_autoText = "INTRO_LANDING_2_EXPLANATION_B1"
-_autoTitle = ""
-_autoShape = 1
-old_text = "INTRO_LANDING_2_EXPLANATION_B1"
+max_char_threshold = 25
+bg_border_size = 10.0
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+click_text_colour = Color(0.8, 0.8, 0.8, 1)
+_auto_text = "INTRO_LANDING_2_EXPLANATION_B1"
+_old_text = "INTRO_LANDING_2_EXPLANATION_B1"
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_VB"]
 visible = false
@@ -109,16 +106,8 @@ theme_override_constants/separation = 40
 [node name="TapBubble" parent="Explanation_VB" instance=ExtResource("9_20iug")]
 visible = false
 layout_mode = 2
-pulse_in = null
-pulse_out = null
-pulse_in_ease = null
-pulse_out_ease = null
-pulse_in_trans = null
-pulse_out_trans = null
-pulse_size = null
-_current_touch_hint = null
 
 [connection signal="last_sentence_changed" from="." to="Explanation_VB/TapBubble" method="answer"]
-[connection signal="meta_link_1" from="Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Landing_3_CallsAreFake"]]
-[connection signal="meta_link_2" from="Explanation_VB/Continue_Bubble" to="." method="play_animation" binds= ["Intro/Tutorial_1_LetsTry"]]
+[connection signal="meta_link_1" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Landing_3_CallsAreFake"]]
+[connection signal="meta_link_2" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1_LetsTry"]]
 [connection signal="touch_input" from="Explanation_VB/TapBubble" to="." method="start_speech_recognition"]

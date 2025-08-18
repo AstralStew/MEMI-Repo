@@ -85,6 +85,7 @@ patch_margin_right = 24
 patch_margin_bottom = 15
 
 [node name="BubbleTitleTop" type="Label" parent="BubbleText/BubbleBG"]
+visible = false
 layout_mode = 2
 offset_left = 12.0
 offset_top = -31.0

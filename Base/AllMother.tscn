@@ -1,14 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=19 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
+[ext_resource type="AnimationLibrary" uid="uid://cmgi5g7iph88u" path="res://AssetPacks/2_Interpreter/Animations/LetsLearn.tres" id="3_u0b1i"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Shared/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres" id="6_0p6sj"]
-[ext_resource type="Resource" uid="uid://xekgk8iq58k0" path="res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres" id="8_x7k22"]
+[ext_resource type="Resource" uid="uid://dttfein6rjb10" path="res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres" id="8_ixt38"]
+[ext_resource type="PackedScene" uid="uid://cuol3yxw3dl0y" path="res://AssetPacks/2_Interpreter/Prefabs/LetsLearn_Prefab.tscn" id="9_0v13x"]
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="10_mfw6p"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="14_4d5jc"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="15_fxh3s"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="15_w56q6"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="16_s83ii"]
+[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="17_tlsrq"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Shared/Prefabs/ButtonBubble.tscn" id="18_x7k22"]
 
 [node name="AllMother" type="Node2D"]
 
@@ -42,14 +51,18 @@ layer = 0
 
 [node name="ScreenController" type="AnimationPlayer" parent="ContentCanvas"]
 root_node = NodePath("MarginContainer")
+libraries = {
+&"LetsLearn": ExtResource("3_u0b1i")
+}
 autoplay = "testing_anim_library/testing_animation"
 script = ExtResource("4_eopm5")
 debugging = true
+overrideResetHierarchy = true
 overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideSpeedScale = 2.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj")])
-sentenceComparer = ExtResource("8_x7k22")
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("5_qbn4n")])
+sentenceComparer = ExtResource("8_ixt38")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 anchors_preset = 15
@@ -64,6 +77,176 @@ theme_override_constants/margin_bottom = 20
 
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
+
+[node name="LetsLearn_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("9_0v13x")]
+layout_mode = 2
+
+[node name="Steps_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+script = ExtResource("10_mfw6p")
+debugging = true
+
+[node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="StepSpacer_HSep" type="HSeparator" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Steps_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB"]
+layout_mode = 2
+alignment = 1
+
+[node name="Step1_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/Steps_HB" instance=ExtResource("17_tlsrq")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "LETSLEARN_3_FIRSTSTEP_T_STEP"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 1
+old_text = "LETSLEARN_3_FIRSTSTEP_T_STEP"
+
+[node name="Step2_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/Steps_HB" instance=ExtResource("17_tlsrq")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "LETSLEARN_4_SECONDSTEP_T_STEP"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 1
+old_text = "LETSLEARN_4_SECONDSTEP_T_STEP"
+
+[node name="Step3_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/Steps_HB" instance=ExtResource("17_tlsrq")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "LETSLEARN_5_THIRDSTEP_T_STEP"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 1
+old_text = "LETSLEARN_5_THIRDSTEP_T_STEP"
+
+[node name="ExplanationLabels_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/ExplanationLabels_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("15_fxh3s")]
+script = ExtResource("14_4d5jc")
+debugging = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/ExplanationLabels_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("16_s83ii")]
+script = ExtResource("14_4d5jc")
+debugging = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/ExplanationLabels_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("15_fxh3s")]
+script = ExtResource("14_4d5jc")
+debugging = true
+
+[node name="Explanation4_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB/ExplanationLabels_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("16_s83ii")]
+script = ExtResource("14_4d5jc")
+debugging = true
+
+[node name="LadLetsLearn_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Explanation_VB"]
+visible = false
+custom_minimum_size = Vector2(200, 375.5)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("15_w56q6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buttons_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Confirm_Bubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB" instance=ExtResource("17_tlsrq")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+_debug = false
+_updateInEditor = false
+min_height = 0
+min_width = 100
+max_width = 250
+_autoText = "LETSLEARN_1_OVERVIEW_B1"
+_autoTitle = ""
+_autoShape = 1
+old_text = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
+
+[node name="ConfirmBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB" instance=ExtResource("18_x7k22")]
+layout_mode = 2
+bg_border_size = 10.0
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+click_text_colour = Color(0.8, 0.8, 0.8, 1)
+
+[node name="SkipSteps_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "LETSLEARN_2_EXPLANATION_B2"
+fit_content = true
+horizontal_alignment = 1
+custom_effects = [ExtResource("16_s83ii")]
+script = ExtResource("14_4d5jc")
+debugging = true
+
+[node name="BottomMargin_HSep" type="HSeparator" parent="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
 modulate = Color(0.792157, 0.717647, 0.65098, 1)
@@ -88,3 +271,14 @@ expand_mode = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController"]
 script = ExtResource("14_h0d2r")
 debugging = true
+
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/Confirm_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= ["LetsLearn/LetsLearn_3_FirstStep"]]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/Confirm_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= ["LetsLearn/LetsLearn_4_SecondStep"]]
+[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/Confirm_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= ["LetsLearn/LetsLearn_5_ThirdStep"]]
+[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/Confirm_Bubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= ["LetsLearn/LetsLearn_6_FinishSteps"]]
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/ConfirmBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= [&"LetsLearn/LetsLearn_3_FirstStep"]]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/ConfirmBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= [&"LetsLearn/LetsLearn_4_SecondStep"]]
+[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/ConfirmBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= [&"LetsLearn/LetsLearn_5_ThirdStep"]]
+[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/ConfirmBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= [&"LetsLearn/LetsLearn_6_FinishSteps"]]
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/SkipSteps_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= ["LetsLearn/LetsLearn_2u_Skipped"]]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab/Buttons_VB/SkipSteps_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/Steps_Prefab" method="play_animation" binds= ["LetsLearn/LetsLearn_Unload"]]

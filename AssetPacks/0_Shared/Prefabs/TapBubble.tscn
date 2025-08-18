@@ -43,7 +43,6 @@ pulse_out_trans = 5
 _autostart = true
 _auto_title = "COMMON_YOUSAY"
 _auto_touch_hint = 2
-_current_touch_hint = 2
 
 [node name="BubbleText" type="RichTextLabel" parent="."]
 z_index = 1

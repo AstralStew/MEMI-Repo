@@ -37,6 +37,8 @@ var _current_screen_index := 0
 @export var lastSentence := ""
 @export var sentenceAnim := ""
 
+#@export var audioStreamPlayer : AudioPlayer = null
+
 signal pack_load_finished
 
 signal last_sentence_changed(newSentence)
@@ -68,6 +70,8 @@ func _ready() -> void:
 		LanguageManager._initialise()
 	
 	if overrideSpeed: speed_scale = overrideSpeedScale
+	
+	#audioStreamPlayer = get_child(2)
 	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
@@ -227,6 +231,13 @@ func resume_animation(delay:float=0) -> void:
 
 #endregion
 
+##region Audio functions
+#
+#func play_stream(_stream:AudioStream,_volume:float=1.0) -> void:
+	#if audioStreamPlayer != null:
+		#audioStreamPlayer.play_stream(_stream,_volume)
+#
+##endregion 
 
 #region Content functions
 
@@ -290,6 +301,8 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_play_animation.connect(play_animation)
 	prefab.try_queue_animation.connect(queue_animation)
 	
+	#prefab.try_play_stream.connect(play_stream)
+	
 
 func _unsubscribe(prefab:ScreenPrefab) -> void:	
 	prefab.try_start_speech_recognition.disconnect(_start_recognition)
@@ -306,6 +319,8 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	
 	prefab.try_play_animation.disconnect(play_animation)
 	prefab.try_queue_animation.disconnect(queue_animation)
+	
+	#prefab.try_play_stream.disconnect(play_stream)
 	
 
 #endregion
