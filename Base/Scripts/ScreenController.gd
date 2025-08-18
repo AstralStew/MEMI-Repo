@@ -4,6 +4,9 @@ extends AnimationPlayer
 @export var debugging := false
 
 
+@export var startRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/RecordingStart.mp3"
+@export var stopRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/RecordingStop.mp3"
+
 @export_group("Autostart Properties")
 #@export var autostart := true
 @export var autoloadPack := "Global"
@@ -15,8 +18,10 @@ extends AnimationPlayer
 @export var overrideAnswerCheating := false
 @export var overrideScreen := false
 @export var overrideScreenIndex := 0
-@export var overrideSpeed := false
-@export var overrideSpeedScale := 1.0
+@export var overrideAnimSpeed := false
+@export var overrideAnimSpeedScale := 1.0
+@export var overrideTimeScale := false
+@export var overrideTimeScaleFactor := 1.0
 
 @export_group("Screen Sets")
 @export var screen_sets : Array[ScreenSet] = []
@@ -37,7 +42,7 @@ var _current_screen_index := 0
 @export var lastSentence := ""
 @export var sentenceAnim := ""
 
-#@export var audioStreamPlayer : AudioPlayer = null
+@export var audioStreamPlayer : AudioPlayer = null
 
 signal pack_load_finished
 
@@ -69,13 +74,14 @@ func _ready() -> void:
 		# WARNING > This must be initialised AFTER 0_Shared is loaded
 		LanguageManager._initialise()
 	
-	if overrideSpeed: speed_scale = overrideSpeedScale
+	if overrideAnimSpeed: speed_scale = overrideAnimSpeedScale
 	
-	#audioStreamPlayer = get_child(2)
+	audioStreamPlayer = get_child(2)
 	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
-	
+
+
 
 
 #region Screen Set functions
@@ -231,13 +237,22 @@ func resume_animation(delay:float=0) -> void:
 
 #endregion
 
-##region Audio functions
-#
-#func play_stream(_stream:AudioStream,_volume:float=1.0) -> void:
-	#if audioStreamPlayer != null:
-		#audioStreamPlayer.play_stream(_stream,_volume)
-#
-##endregion 
+#region Audio functions
+
+func play_stream(_stream:AudioStream,_volume:float=1.0) -> void:
+	if audioStreamPlayer != null:
+		print("[ScreenController] Playing audio stream '",_stream,"' at volume ",_volume)
+		audioStreamPlayer.play_stream(_stream,_volume)
+
+func play_stream_from_path(_path:StringName,_volume:float=1.0) -> void:
+	if audioStreamPlayer != null:
+		var _stream : AudioStream = load(_path)
+		if _stream == null:
+			push_error("[ScreenController] ERROR -> Could not find audio stream! Cancelling :(")
+			return
+		play_stream(_stream,_volume)
+
+#endregion 
 
 #region Content functions
 
@@ -301,7 +316,7 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_play_animation.connect(play_animation)
 	prefab.try_queue_animation.connect(queue_animation)
 	
-	#prefab.try_play_stream.connect(play_stream)
+	prefab.try_play_stream_from_path.connect(play_stream_from_path)
 	
 
 func _unsubscribe(prefab:ScreenPrefab) -> void:	
@@ -320,7 +335,7 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_play_animation.disconnect(play_animation)
 	prefab.try_queue_animation.disconnect(queue_animation)
 	
-	#prefab.try_play_stream.disconnect(play_stream)
+	prefab.try_play_stream_from_path.disconnect(play_stream_from_path)
 	
 
 #endregion
@@ -335,6 +350,9 @@ func _start_recognition() -> void:
 	if overrideAnswerCheating:
 		if debugging: print("[ScreenController] OverrideAnswerCheating. Cheat past speech recognition: A = Correct, B = Wrong, C = Mumbo, D = DontKnow")
 		speechCheating = true
+		# Play sound
+		if !OS.has_feature("web_android"):
+			play_stream_from_path(startRecordingStreamPath)
 		return
 	
 	if debugging: print("[ScreenController] Starting speech recognition...")
@@ -344,12 +362,18 @@ func _start_recognition() -> void:
 func _on_speech_start():
 	if debugging: print("[ScreenController] OnSpeechStart...")
 	recentResult = false
+	# Play sound
+	if !OS.has_feature("web_android"):
+		play_stream_from_path(startRecordingStreamPath)
 
 func _on_speech_error():
 	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned, checking blank string.")
 	_disconnect_bridge()
 	lastSentence = ""
 	_play_sentence_anim()
+	# Play sound
+	if !OS.has_feature("web_android"):
+		play_stream_from_path(stopRecordingStreamPath)
 
 func _on_speech_end():
 	if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
@@ -367,6 +391,9 @@ func _on_speech_end():
 	_disconnect_bridge()
 	lastSentence = "" 
 	_play_sentence_anim()
+	# Play sound
+	if !OS.has_feature("web_android"):
+		play_stream_from_path(stopRecordingStreamPath)
 
 
 func _on_speech_sentence(newSentence:String) -> void:
@@ -376,6 +403,9 @@ func _on_speech_sentence(newSentence:String) -> void:
 	lastSentence = newSentence
 	last_sentence_changed.emit(newSentence)
 	_play_sentence_anim()
+	# Play sound
+	if !OS.has_feature("web_android"):
+		play_stream_from_path(stopRecordingStreamPath)
 
 func _play_sentence_anim() -> void:
 	if debugging: print("[ScreenController] PlaySentenceAnim, last sentence = '",lastSentence,"'")
@@ -399,33 +429,52 @@ func _disconnect_bridge() -> void:
 # WARNING -> This allows cheating in the Editor using ABCD keys
 var speechCheating := false
 func _input(event):
-	if !speechCheating: return
+	if !speechCheating && !overrideTimeScale: return
 	if event is InputEventKey:
-		if event.pressed:
+		if event.pressed && speechCheating:
 			if event.keycode == KEY_A:
 				print("[ScreenController] SpeechCheating, the A key was pressed! Sending Correct...")
 				speechCheating = false
 				lastSentence = "Cheated: Correct"
 				last_sentence_changed.emit(lastSentence)
 				play_animation(sentenceComparer.correctAnim)
+				# Play sound
+				if !OS.has_feature("web_android"):
+					play_stream_from_path(stopRecordingStreamPath)
 			elif event.keycode == KEY_B:
 				print("[ScreenController] SpeechCheating, the B key was pressed! Sending Wrong...")
 				speechCheating = false
 				lastSentence = "Cheated: Wrong"
 				last_sentence_changed.emit(lastSentence)
 				play_animation(sentenceComparer.wrongAnim)
+				# Play sound
+				if !OS.has_feature("web_android"):
+					play_stream_from_path(stopRecordingStreamPath)
 			elif event.keycode == KEY_C:
 				print("[ScreenController] SpeechCheating, the C key was pressed! Sending Mumbo...")
 				speechCheating = false
 				lastSentence = "Cheated: Mumbo"
 				last_sentence_changed.emit(lastSentence)
 				play_animation(sentenceComparer.mumboAnim)
+				# Play sound
+				if !OS.has_feature("web_android"):
+					play_stream_from_path(stopRecordingStreamPath)
 			elif event.keycode == KEY_D:
 				print("[ScreenController] SpeechCheating, the D key was pressed! Sending DontKnow...")
 				speechCheating = false
 				lastSentence = "Cheated: DontKnow"
 				last_sentence_changed.emit(lastSentence)
 				play_animation(sentenceComparer.dontKnowAnim)
+				# Play sound
+				if !OS.has_feature("web_android"):
+					play_stream_from_path(stopRecordingStreamPath)
+		elif overrideTimeScale:
+			if event.pressed && event.keycode == KEY_F && !event.is_echo():
+				print("[ScreenController] TimeCheating, the F key was pressed! Fastforwarding...")
+				Engine.time_scale = overrideTimeScaleFactor
+			elif !event.pressed && event.keycode == KEY_F:
+				print("[ScreenController] TimeCheating, the F key was released! Normal speed.")
+				Engine.time_scale = 1.0
 
 
 #endregion

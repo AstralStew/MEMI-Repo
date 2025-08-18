@@ -18,7 +18,7 @@ signal try_destroy_prefab(_key)
 signal try_play_animation(_name,_delay)
 signal try_queue_animation(_name,_delay)
 
-#signal try_play_stream(_stream,_delay)
+signal try_play_stream_from_path(_path)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,14 +47,14 @@ func queue_animation(animName:String, delay:float=0) -> void:
 
 #endregion
 
-##region Audio functions
-#
-#
-#func play_stream(_stream,_volume) -> void:	
-	#if debugging: print("[ScreenPrefab] Attempting to play stream '",_stream,"' at volume", _volume)
-	#try_play_stream.emit(_stream,_volume)
-#
-##endregion
+#region Audio functions
+
+
+func play_stream(_path) -> void:	
+	if debugging: print("[ScreenPrefab] Attempting to play stream at path '",_path,"'")
+	try_play_stream_from_path.emit(_path)
+
+#endregion
 
 #region Prefab functions
 
@@ -104,4 +104,8 @@ func last_sentence_received(newSentence:String) -> void:
 
 
 func _on_continue_button_meta_link_2(extra_arg_0: StringName) -> void:
+	pass # Replace with function body.
+
+
+func _on_comment_bubble_meta_link_4(extra_arg_0: StringName) -> void:
 	pass # Replace with function body.

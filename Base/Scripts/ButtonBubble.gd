@@ -83,10 +83,12 @@ func _ready() -> void:
 	if _autostart: 
 		if _debug: print("[Bubble(",name,")] Initialising...")
 		
+		bubbleText.text =_auto_text
+		_resize()
+		
 		bubbleText.scale = Vector2.ZERO
 		modulate = Color(1,1,1,0)
 		
-		bubbleText.text =_auto_text
 		#_set_colours(_auto_bg_colour,_auto_text_colour)
 		
 

@@ -91,9 +91,7 @@ debugging = true
 visible = false
 layout_mode = 2
 max_char_threshold = 25
-bg_border_size = 10.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
-click_text_colour = Color(0.8, 0.8, 0.8, 1)
 _auto_text = "INTRO_LANDING_2_EXPLANATION_B1"
 _old_text = "INTRO_LANDING_2_EXPLANATION_B1"
 
@@ -108,6 +106,7 @@ visible = false
 layout_mode = 2
 
 [connection signal="last_sentence_changed" from="." to="Explanation_VB/TapBubble" method="answer"]
+[connection signal="meta_link_1" from="Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
 [connection signal="meta_link_1" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Landing_3_CallsAreFake"]]
 [connection signal="meta_link_2" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1_LetsTry"]]
 [connection signal="touch_input" from="Explanation_VB/TapBubble" to="." method="start_speech_recognition"]

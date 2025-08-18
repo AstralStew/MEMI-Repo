@@ -143,26 +143,9 @@ size_flags_vertical = 8
 theme_override_constants/separation = 20
 alignment = 2
 
-[node name="Confirm_Bubble" parent="Buttons_VB" instance=ExtResource("8_e0sk5")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-_debug = false
-_updateInEditor = false
-min_height = 0
-min_width = 100
-max_width = 250
-_autoText = "LETSLEARN_1_OVERVIEW_B1"
-_autoTitle = ""
-_autoShape = 1
-old_text = "INTERPRETER_LETSLEARN_1_OVERVIEW_B1"
-
 [node name="ConfirmBubble" parent="Buttons_VB" instance=ExtResource("7_c4len")]
 layout_mode = 2
-bg_border_size = 10.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
-click_text_colour = Color(0.8, 0.8, 0.8, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
 visible = false
@@ -182,10 +165,14 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[connection signal="meta_link_1" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_3_FirstStep"]]
-[connection signal="meta_link_2" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_4_SecondStep"]]
-[connection signal="meta_link_3" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_5_ThirdStep"]]
-[connection signal="meta_link_4" from="Buttons_VB/Confirm_Bubble" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_6_FinishSteps"]]
+[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/02_intro_policefireambo.mp3"]]
+[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/03-intro-stateandtown.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/police.mp3"]]
+[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/firefighter.mp3"]]
+[connection signal="meta_link_3" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/ambulance.mp3"]]
+[connection signal="meta_link_4" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
+[connection signal="meta_link_5" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
+[connection signal="meta_link_6" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/interpreter.mp3"]]
 [connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_3_FirstStep"]]
 [connection signal="meta_link_2" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_4_SecondStep"]]
 [connection signal="meta_link_3" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_5_ThirdStep"]]

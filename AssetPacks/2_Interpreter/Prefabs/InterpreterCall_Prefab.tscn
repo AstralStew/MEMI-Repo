@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dmup6q2t00bxk"]
+[gd_scene load_steps=24 format=3 uid="uid://dmup6q2t00bxk"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="2_1tbva"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="19_1tbva"]
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="19_wvcp0"]
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="20_8jw3a"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Shared/Prefabs/ButtonBubble.tscn" id="21_iio1i"]
 
 [node name="InterpreterCall_Prefab" type="MarginContainer"]
 anchors_preset = 15
@@ -586,22 +587,14 @@ size_flags_vertical = 8
 theme_override_constants/separation = 20
 alignment = 2
 
-[node name="Continue_Bubble" parent="Buttons_VB" instance=ExtResource("8_yiaac")]
-modulate = Color(1, 1, 1, 0)
+[node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("21_iio1i")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-_debug = false
-min_height = 0
-min_width = 100
-_autoText = "INTERPRETER_1_LETSTRY_B1"
-_autoTitle = ""
-_autoShape = 1
-old_text = "INTERPRETER_1_LETSTRY_B1"
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+_auto_text = "INTERPRETER_1_LETSTRY_B1"
+_old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
@@ -617,7 +610,7 @@ debugging = true
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 50
 
 [node name="Comments_C" type="Control" parent="."]
 visible = false
@@ -625,35 +618,6 @@ z_index = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-
-[node name="Comment_Bubble" parent="Comments_C" instance=ExtResource("8_yiaac")]
-visible = false
-z_index = 1
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -315.714
-offset_top = -104.0
-offset_right = 0.0
-offset_bottom = 3.05176e-05
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(1e-05, 1e-05)
-pivot_offset = Vector2(320, 150)
-size_flags_horizontal = 4
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 30
-min_height = 42
-min_width = 150
-max_width = 220
-_autoText = "They always ask this question first"
-_autoTitle = ""
-_autoTitleBelow = false
-_autoShape = 2
-old_text = "They always ask this question first"
 
 [node name="LadComment1" type="TextureRect" parent="Comments_C"]
 z_index = 2
@@ -710,6 +674,7 @@ texture = ExtResource("15_38vxp")
 expand_mode = 1
 
 [connection signal="last_sentence_changed" from="." to="TapBubble" method="answer"]
+[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Info_MC/Info_C/Info_TR/Info_RTL" to="Scenario_VB/Scenario_Info_MC" method="set_margins_from_lines"]
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="Scenario_VB/Scenario_Emergency_MC" method="set_margins_from_lines"]
 [connection signal="text_populated_with_lines" from="Scenario_VB/Scenario_Location_MC/Location_C/Location_TR/Location_RTL" to="Scenario_VB/Scenario_Location_MC" method="set_margins_from_lines"]
@@ -726,5 +691,9 @@ expand_mode = 1
 [connection signal="pressed" from="Operator_C/Operator_Bubble/BubbleTouchButton" to="Operator_C/Operator_Bubble" method="received_touch_input"]
 [connection signal="touch_input" from="YouSay_Bubble" to="." method="start_speech_recognition"]
 [connection signal="touch_input" from="TapBubble" to="." method="start_speech_recognition"]
-[connection signal="meta_link_1" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Interpreter/Interpreter_1u_Repeat"]]
-[connection signal="meta_link_2" from="Buttons_VB/Continue_Bubble" to="." method="play_animation" binds= ["Interpreter/Interpreter_3_Call"]]
+[connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
+[connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
+[connection signal="meta_link_1" from="Comments_C/LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/ambulance.mp3"]]
+[connection signal="meta_link_2" from="Comments_C/LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
+[connection signal="meta_link_3" from="Comments_C/LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
+[connection signal="meta_link_4" from="Comments_C/LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/interpreter.mp3"]]
