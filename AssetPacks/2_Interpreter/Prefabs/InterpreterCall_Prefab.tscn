@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dmup6q2t00bxk"]
+[gd_scene load_steps=27 format=3 uid="uid://dmup6q2t00bxk"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="2_1tbva"]
@@ -27,8 +27,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qk448"]
 shader = ExtResource("2_8oxnu")
+shader_parameter/target_texture = ExtResource("2_1tbva")
 shader_parameter/weight = 0.0
-shader_parameter/epsilon = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oxnu"]
+shader = ExtResource("2_8oxnu")
+shader_parameter/weight = 0.0
 
 [node name="InterpreterCall_Prefab" type="MarginContainer"]
 anchors_preset = 15
@@ -628,6 +632,7 @@ size_flags_vertical = 8
 
 [node name="LadComment1" type="TextureRect" parent="Comments_C"]
 z_index = 2
+material = SubResource("ShaderMaterial_8oxnu")
 custom_minimum_size = Vector2(220, 505.5)
 layout_mode = 1
 anchors_preset = 6

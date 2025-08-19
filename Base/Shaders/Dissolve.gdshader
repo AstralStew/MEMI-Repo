@@ -1,7 +1,7 @@
 shader_type canvas_item;
 uniform sampler2D target_texture;
 uniform float weight: hint_range(0, 1);
-uniform float epsilon = 0.01f;
+const float epsilon = 0.01f;
 
 // NOTE -> Necessary to fix MODULATE not working on parent???
 varying vec4 v_vertex_color;

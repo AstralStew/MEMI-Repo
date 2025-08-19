@@ -14,7 +14,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fgxit"]
 shader = ExtResource("3_name7")
 shader_parameter/weight = 0.0
-shader_parameter/epsilon = 0.01
 
 [node name="Explanation_Prefab" type="MarginContainer"]
 visible = false

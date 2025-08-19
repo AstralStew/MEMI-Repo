@@ -1,11 +1,4 @@
-res://AssetPacks/0_Shared/ScreenSets/Interpreter.tres::2c118b11f1daf0311c818a48101f35e9::1755513441::res://.godot/exported/133200997/export-51dc807ab2c79629d313c1479cba7e45-Interpreter.res
-res://AssetPacks/0_Shared/ScreenSets/Intro.tres::250c8b6669bd57e69771cd637b37133e::1755513441::res://.godot/exported/133200997/export-1544e5677b56734160649e3d5b52179d-Intro.res
-res://Base/RichTextEffects/RichTextGhost.tres::49812db318a4820dc73e7a40cd060bba::1751965959::res://.godot/exported/133200997/export-84b20169b1a64da5b65dc690cecfc334-RichTextGhost.res
-res://Base/RichTextEffects/RichTextHide.tres::085312fc399485f1b68d1d6a437e82bd::1751966341::res://.godot/exported/133200997/export-2f7d37cef4e478e54ba255e72fa1e0e6-RichTextHide.res
-res://Base/RichTextEffects/RichTextPulse.tres::e108eabf21ad6e84756b24224ca0a407::1751966412::res://.godot/exported/133200997/export-9d2292e3c411c9731269a39a85670788-RichTextPulse.res
-res://Base/RichTextEffects/RichTextMatrix.tres::d2d9fff6f3359efae5f2d8819b0f22be::1751966362::res://.godot/exported/133200997/export-f9a10d9e706fda1323d33cadc27b741a-RichTextMatrix.res
-res://Base/RichTextEffects/RichTextFadeIn.tres::bf27280881e26abf5e37fba6b6b4ee0b::1752550930::res://.godot/exported/133200997/export-f55de1164d99bb26031654262ef529a3-RichTextFadeIn.res
-res://Base/RichTextEffects/RichTextFadeIn2.tres::d4822d6f9193769f8162c85681eb0026::1752550975::res://.godot/exported/133200997/export-0c5aca141e6ae8914502a285e79cc0fa-RichTextFadeIn2.res
-res://Base/AllMother.tscn::3c7ea16cc8c4804eff373750f0de3a46::1755517712::res://.godot/exported/133200997/export-5bb8eecede7e61f313799ced7e5b6f6a-AllMother.scn
-res://Base/RichTextEffects/RichTextFadeIn3.tres::8597debf47cbf9d3f2ad15da4e103986::1752552417::res://.godot/exported/133200997/export-fcab838698c5797cd492a4d14aefbc70-RichTextFadeIn3.res
-res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres::fc7cf6a66bec1e60343b412a1debc269::1755513441::res://.godot/exported/133200997/export-5472563642d595f7d56dec4f662e36cb-SenCom_Intepreter_LetsTry.res
+res://AssetPacks/1_Intro/Prefabs/Explanation_Prefab.tscn::2eb727045de4da3fabde515f89369989::1755587505::res://.godot/exported/133200997/export-b439f410dc6340c9d3523f62c55eee5c-Explanation_Prefab.scn
+res://AssetPacks/1_Intro/Animations/Intro.tres::f9d063f5ecbcca1c9d31a45209fbf85e::1755584334::res://.godot/exported/133200997/export-dc359fd84a129b65c28bfc0e38dd60dc-Intro.res
+res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres::78c35ba7a4668e49e2bb9942d84fb1a4::1755576090::res://.godot/exported/133200997/export-3f794e143d9605ba47828b78aefb034c-SenCom_Intro_Tutorial_1.res
+res://AssetPacks/1_Intro/Prefabs/LandingMenu_Prefab.tscn::bf0410d62b5a1baff60432fd27ded4d0::1755587505::res://.godot/exported/133200997/export-03a9be1a0d7959d23c72db9722b77c44-LandingMenu_Prefab.scn
