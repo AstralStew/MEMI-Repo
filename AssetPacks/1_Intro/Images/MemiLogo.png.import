@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q7wdx763ouxh"
-path="res://.godot/imported/Memi_logo.png-aa83f8458dccfc730fe6880a5c39c770.ctex"
+uid="uid://co2v4yweffik8"
+path="res://.godot/imported/MemiLogo.png-f6d89c6a4259617ff306e3296ddfdbd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetPacks/1_Intro/Images/Memi_logo.png"
-dest_files=["res://.godot/imported/Memi_logo.png-aa83f8458dccfc730fe6880a5c39c770.ctex"]
+source_file="res://AssetPacks/1_Intro/Images/MemiLogo.png"
+dest_files=["res://.godot/imported/MemiLogo.png-f6d89c6a4259617ff306e3296ddfdbd0.ctex"]
 
 [params]
 

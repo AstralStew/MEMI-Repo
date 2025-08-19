@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ngycpjoeboow"]
+[gd_scene load_steps=8 format=3 uid="uid://ngycpjoeboow"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_apjaa"]
-[ext_resource type="Texture2D" uid="uid://q7wdx763ouxh" path="res://AssetPacks/1_Intro/Images/Memi_logo.png" id="2_o3ejb"]
+[ext_resource type="Texture2D" uid="uid://co2v4yweffik8" path="res://AssetPacks/1_Intro/Images/MemiLogo.png" id="2_eghh1"]
+[ext_resource type="Texture2D" uid="uid://d13he36umlg53" path="res://AssetPacks/1_Intro/Images/LogoText_en.png" id="3_bdlfr"]
 [ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Shared/Fonts/NotoSansEN-Normal.tres" id="3_sc42j"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_0nev2"]
 [ext_resource type="FontVariation" uid="uid://c0p3njv41cxcr" path="res://AssetPacks/0_Shared/Fonts/NotoSansArabic-Normal.tres" id="5_q8pro"]
@@ -19,26 +20,30 @@ size_flags_vertical = 3
 script = ExtResource("1_apjaa")
 debugging = true
 
-[node name="Logo_VB" type="VBoxContainer" parent="."]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-
-[node name="Logo_MC" type="MarginContainer" parent="Logo_VB"]
+[node name="Logo_MC" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_constants/margin_left = 100
+theme_override_constants/margin_left = 105
 theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 0
 
-[node name="Logo_TR" type="TextureRect" parent="Logo_VB/Logo_MC"]
-custom_minimum_size = Vector2(0, 300)
+[node name="Logo_VB" type="VBoxContainer" parent="Logo_MC"]
+custom_minimum_size = Vector2(189, 300)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("2_o3ejb")
-expand_mode = 1
-stretch_mode = 4
+
+[node name="Logo_TR" type="TextureRect" parent="Logo_MC/Logo_VB"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("2_eghh1")
+expand_mode = 5
+
+[node name="LogoText_TR" type="TextureRect" parent="Logo_MC/Logo_VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("3_bdlfr")
+expand_mode = 3
 
 [node name="LanguageChoice_MC" type="MarginContainer" parent="."]
 layout_mode = 2

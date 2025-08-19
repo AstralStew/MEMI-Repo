@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dmup6q2t00bxk"]
+[gd_scene load_steps=26 format=3 uid="uid://dmup6q2t00bxk"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="2_1tbva"]
+[ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_8oxnu"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="4_kkmuj"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_q6r75"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="6_muhe5"]
@@ -23,6 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="19_wvcp0"]
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="20_8jw3a"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Shared/Prefabs/ButtonBubble.tscn" id="21_iio1i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk448"]
+shader = ExtResource("2_8oxnu")
+shader_parameter/weight = 0.0
+shader_parameter/epsilon = 0.01
 
 [node name="InterpreterCall_Prefab" type="MarginContainer"]
 anchors_preset = 15
@@ -54,6 +60,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
+material = SubResource("ShaderMaterial_qk448")
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 0
 offset_left = -155.0

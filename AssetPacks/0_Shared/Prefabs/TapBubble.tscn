@@ -113,6 +113,7 @@ position = Vector2(127.5, 85)
 sprite_frames = ExtResource("6_u73pc")
 
 [node name="BubbleTouchButton" type="Button" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 

@@ -205,11 +205,13 @@ func activate_touch_input() -> void:
 		TouchHint.Default:
 			if _debug: print("[TapBubble(",name,")] TouchHint.Default - Turning on touch hint...")
 			_fade_touch_hint(true, touch_hint_fade_in,touch_hint_ease,touch_hint_trans)
+			# turn on button to allow tapping
+			#touch_hint_fade.tween_callback(bubbleTouchButton.set.bind("visible",true))
 		TouchHint.Slim:
 			if _debug: print("[TapBubble(",name,")] TouchHint.Slim - Pulsing...")
-			#_resize_background(correct_size,correct_inout,correct_ease,correct_trans)
-			#background_resize.tween_callback(_resize_background.bind(1.0,correct_inout,correct_ease,correct_trans))
 			_pulse_background()
+			# turn on button to allow tapping
+			#background_resize.tween_callback(bubbleTouchButton.set.bind("visible",true))
 		TouchHint.Keep:
 			push_error("[TapBubble(",name,")] ERROR -> CurrentTouchHint is on Keep! Shouldn't be possible. Ignoring :(")
 		_:
