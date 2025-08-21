@@ -35,7 +35,7 @@ var _current_screen_index := 0
 
 @export_group("Read Only")
 @export var loaded_elements = {} ## e.g. {SectionName}~{ScreenName}~{ElementName}[br] ## i.e. Intro~Landing~Logo, Intro~Landing~BG1, Intro~Landing~
-@onready var content_parent : Control = get_child(0).get_child(0)
+@onready var content_parent : String = "MarginContainer/Content" #get_child(0).get_child(0)
 
 @export var sentenceComparer : SentenceComparer = null
 @export var recentResult := false
@@ -49,7 +49,7 @@ signal pack_load_finished
 signal last_sentence_changed(newSentence)
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _enter_tree() -> void:
 	if overrideDeactivate: return
 	if overrideResetHierarchy:
 		print("[ScreenController] WARNING -> OverrideResetHierarchy! Destroying children + libraries...")
@@ -257,23 +257,33 @@ func play_stream_from_path(_path:StringName,_volume:float=1.0) -> void:
 #region Content functions
 
 ## Key should be the same name as prefab [br] ## i.e. Intro_Landing_Prefab1, Intro_Landing_Prefab2, etc
-func create_prefab(_key:String,_scene:PackedScene, _parent:Control=content_parent):
+func create_prefab(_key:String,_scene:PackedScene, _parent:String=content_parent):
 	if debugging: print("[ScreenController] Attemping to create prefab '",_scene,"' + assigning it key '",_key,"'")
 	if loaded_elements.has(_key):
-		print("[ScreenController] ERROR -> Key '",_key,"' already in use! Ignoring.")
+		push_error("[ScreenController] ERROR -> Key '",_key,"' already in use! Ignoring.")
 		return
 	
 	# Spawn the packed scene
 	var scene = _scene.instantiate()
-	_parent.add_child(scene)
+	scene.name = _key
+	get_node(_parent).add_child(scene)
 	
-	# Set its layout mode
-	var scene_as_control := scene as Control
-	scene_as_control.set_anchors_preset(Control.PRESET_FULL_RECT)
-	
-	# Like + Subscribe
-	_subscribe(scene as ScreenPrefab)
+	if _parent == content_parent:
+		print("[ScreenController] Prefab is directly under 'Content', must be a ScreenPrefab! Liking + subscribing.")
 		
+		# Set its layout mode
+		var scene_as_control := scene as Control
+		scene_as_control.set_anchors_preset(Control.PRESET_FULL_RECT)
+			
+		# Like + Subscribe for screen prefab functions
+		_subscribe(scene as ScreenPrefab)
+	
+	# Like + Subscribe for speech recognition
+	if scene is TapBubble:
+		print("[ScreenController] Prefab is a TapBubble! Liking + subscribing.")
+		scene.touch_input.connect(_start_recognition)
+		last_sentence_changed.connect(scene.answer)
+	
 	# Add it to the dictionary
 	loaded_elements[_key] = scene
 	

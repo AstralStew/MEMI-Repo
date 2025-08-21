@@ -142,10 +142,17 @@ func _getrefs() -> void:
 	bubbleTouchButton = get_child(1)
 	bubbleTouchAudio = get_child(2)
 	
-	
+	## Connect tapping bubble to speech recognition
+	## NOTE -> Immediate parent must be screen prefab for this to work
+	#var parent = get_parent()
+	#if parent && parent is ScreenPrefab:
+		#touch_input.connect(parent.start_speech_recognition)
+		#parent.last_sentence_changed.connect(answer)
 
-
-
+#func _exit_tree() -> void:
+	#if touch_input.has_connections():
+		#for connection in touch_input.get_connections():
+			#touch_input.disconnect(connection.callable)
 
 func _process(delta: float) -> void:
 	if _updateInEditor && Engine.is_editor_hint():

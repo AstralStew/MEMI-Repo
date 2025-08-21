@@ -196,11 +196,25 @@ func pop_out() -> void:
 func comment(_text:String) -> void:	
 	if _debug: print("[OperatorBubble(",name,")] NOTE -> Changing comment to '",_text,"'!")
 	
-	_fade_text(false,comment_text_out_d,comment_text_out_e,comment_text_out_t)
-	text_fade.tween_callback(_set_text.bind(_text))
-	text_fade.tween_callback(_resize)
-	await get_tree().create_timer(comment_resize_d).timeout
-	_fade_text(true,comment_text_in_d,comment_text_in_e,comment_text_in_t)
+	#_fade_text(false,comment_text_out_d,comment_text_out_e,comment_text_out_t)
+	#text_fade.tween_callback(_set_text.bind(_text))
+	#text_fade.tween_callback(_resize)
+	#await get_tree().create_timer(comment_resize_d).timeout
+	#_fade_text(true,comment_text_in_d,comment_text_in_e,comment_text_in_t)
+	
+	_set_text(_text)
+	_resize(false)
+	visible = true
+	await get_tree().create_timer(0.1).timeout
+	
+	# resize + fade
+	_resize_bubble(true,pop_in_resize_d,pop_in_resize_e,pop_in_resize_t)
+	_fade_bubble(true,pop_in_bg_fade_d,pop_in_bg_fade_e,pop_in_bg_fade_t)
+		
+	# fade in text
+	await get_tree().create_timer(pop_in_bg_fade_d).timeout
+	_fade_text(true,pop_in_text_d,pop_in_text_e,pop_in_text_t)
+
 
 func reset() -> void:
 	_set_properties(_auto_text,_auto_title,_auto_bg_colour,_auto_text_colour)

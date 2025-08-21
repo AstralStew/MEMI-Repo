@@ -1,6 +1,7 @@
 Control
-TextureRect
 Timer
+AnimationPlayer
+TextureRect
 MarginContainer
 BoxContainer
 CenterContainer
@@ -11,4 +12,3 @@ RichTextLabel
 VBoxContainer
 VSeparator
 HBoxContainer
-NinePatchRect

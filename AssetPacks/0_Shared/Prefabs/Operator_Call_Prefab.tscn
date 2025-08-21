@@ -1,0 +1,165 @@
+[gd_scene load_steps=10 format=3 uid="uid://cce2hen3g0oa5"]
+
+[ext_resource type="Script" uid="uid://dfeg25adqeao3" path="res://Base/Scripts/OperatorCall.gd" id="1_gldab"]
+[ext_resource type="Animation" uid="uid://0amm5801duvd" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Start.res" id="3_2r4mj"]
+[ext_resource type="Animation" uid="uid://beepoy8uv8ds0" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Shrink1.res" id="4_vs7f7"]
+[ext_resource type="Animation" uid="uid://jhjdsab4pys4" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Shrink2.res" id="5_vaf2q"]
+[ext_resource type="Animation" uid="uid://c7fexxq4y5n6p" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Finish.res" id="6_84skm"]
+[ext_resource type="PackedScene" uid="uid://bkef61xvbqi35" path="res://AssetPacks/0_Shared/Prefabs/OperatorBubble.tscn" id="15_fq350"]
+[ext_resource type="Texture2D" uid="uid://csf8mlhy8lscb" path="res://AssetPacks/2_Interpreter/Images/Lad_Phone.png" id="16_uvi4p"]
+
+[sub_resource type="Animation" id="Animation_gldab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LadPhone:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-499, 64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LadPhone:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LadPhone:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("./OperatorPivot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 233)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LadPhone:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6c3yb"]
+_data = {
+&"Operator_Call_Finish": ExtResource("6_84skm"),
+&"Operator_Call_Shrink1": ExtResource("4_vs7f7"),
+&"Operator_Call_Shrink2": ExtResource("5_vaf2q"),
+&"Operator_Call_Start": ExtResource("3_2r4mj"),
+&"RESET": SubResource("Animation_gldab")
+}
+
+[node name="Operator_Call_Prefab" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_gldab")
+
+[node name="OperatorPivot" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 45.0
+offset_top = 233.0
+offset_right = 45.0
+offset_bottom = 233.0
+
+[node name="OperatorBubble" parent="OperatorPivot" instance=ExtResource("15_fq350")]
+layout_mode = 1
+offset_top = -111.0
+offset_right = 185.0
+pivot_offset = Vector2(0, 111)
+min_width = 100
+
+[node name="LadPhone" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_top = 64.0
+offset_right = 339.0
+offset_bottom = 528.0
+grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(0, 232)
+texture = ExtResource("16_uvi4p")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6c3yb")
+}
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 4
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+process_mode = 4
+wait_time = 7.0
+one_shot = true
+
+[node name="Timer5" type="Timer" parent="."]
+process_mode = 4
+wait_time = 11.0
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
+process_mode = 4
+wait_time = 20.0
+one_shot = true
+
+[node name="Timer4" type="Timer" parent="."]
+process_mode = 4
+wait_time = 26.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="AnimationPlayer" method="play" binds= ["Operator_Call_Start"]]
+[connection signal="timeout" from="Timer2" to="AnimationPlayer" method="play" binds= ["Operator_Call_Shrink1"]]
+[connection signal="timeout" from="Timer5" to="OperatorPivot/OperatorBubble" method="comment" binds= ["This is a test of the Operator Bubble, jfc I wish this was easier!"]]
+[connection signal="timeout" from="Timer3" to="AnimationPlayer" method="play" binds= ["Operator_Call_Shrink2"]]
+[connection signal="timeout" from="Timer4" to="AnimationPlayer" method="play" binds= ["Operator_Call_Finish"]]

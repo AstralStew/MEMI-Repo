@@ -1,0 +1,490 @@
+[gd_scene load_steps=14 format=3 uid="uid://cy5l5ur5io04e"]
+
+[ext_resource type="Script" uid="uid://ccgjhwn385tow" path="res://Base/Scripts/Scenario.gd" id="1_3io74"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="1_y64yp"]
+[ext_resource type="Script" uid="uid://loedrtlvs64f" path="res://Base/Scripts/Description.gd" id="2_3io74"]
+[ext_resource type="Texture2D" uid="uid://d5yh0bb3esgc" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Info.png" id="3_hbp8f"]
+[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="4_fn724"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_qm50f"]
+[ext_resource type="Texture2D" uid="uid://bbonymoh5rncf" path="res://AssetPacks/0_Shared/Images/OutlineNineSprite.png" id="6_jk61s"]
+[ext_resource type="Texture2D" uid="uid://c0ortbqv272ad" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Emergency.png" id="7_3bgki"]
+[ext_resource type="Texture2D" uid="uid://bx3d51dbnrf23" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Location.png" id="8_r5kik"]
+[ext_resource type="Animation" uid="uid://dslmvecgk6v8d" path="res://AssetPacks/0_Shared/Animations/Scenario_Info_Finish.res" id="9_brljr"]
+[ext_resource type="Animation" uid="uid://duphfqvy2bjdc" path="res://AssetPacks/0_Shared/Animations/Scenario_Info_Start.res" id="10_n0kto"]
+
+[sub_resource type="Animation" id="Animation_3io74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scenario_Title_MC:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scenario_Info_MC/Info_C/Info_TR:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scenario_Info_MC/Info_C/Info_TR:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scenario_Info_MC/Info_C/Info_TR/Info_RTL:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scenario_Info_MC/Info_C/Info_TR/Info_RTL:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scenario_Emergency_MC/Emergency_C/Emergency_TR:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scenario_Emergency_MC/Emergency_C/Emergency_TR:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Scenario_Location_MC/Location_C/Location_TR:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Scenario_Location_MC/Location_C/Location_TR:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Scenario_Location_MC/Location_C/Location_TR/Location_RTL:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Scenario_Location_MC/Location_C/Location_TR/Location_RTL:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath(".:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v32wr"]
+_data = {
+&"RESET": SubResource("Animation_3io74"),
+&"Scenario_Info_Finish": ExtResource("9_brljr"),
+&"Scenario_Info_Start": ExtResource("10_n0kto")
+}
+
+[node name="Scenario_Info_Prefab" type="VBoxContainer"]
+visible = false
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+script = ExtResource("1_3io74")
+debugging = true
+
+[node name="Scenario_Title_MC" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 20
+
+[node name="Scenario_Title_L" type="Label" parent="Scenario_Title_MC"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("1_y64yp")
+theme_override_font_sizes/font_size = 16
+text = " Scenario Title here"
+uppercase = true
+
+[node name="Scenario_Info_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 80
+script = ExtResource("2_3io74")
+_debug = true
+_updateInEditor = true
+adjust_top = true
+top_multiplier = 26.0
+top_addition = 5.0
+adjust_bottom = true
+bottom_multiplier = 0.0
+bottom_addition = 80.0
+descriptionText = NodePath("Info_C/Info_TR/Info_RTL")
+
+[node name="Info_C" type="Control" parent="Scenario_Info_MC"]
+layout_mode = 2
+
+[node name="Info_TR" type="TextureRect" parent="Scenario_Info_MC/Info_C"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(80, 83)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 83.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(40, 41.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3_hbp8f")
+expand_mode = 1
+
+[node name="Info_RTL" type="RichTextLabel" parent="Scenario_Info_MC/Info_C/Info_TR"]
+visible = false
+z_as_relative = false
+clip_contents = false
+custom_minimum_size = Vector2(195, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.14
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_right = 186.0
+offset_bottom = -15.385
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(-22, 34)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = " Scenario Info here"
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_fn724")]
+script = ExtResource("5_qm50f")
+debugging = true
+
+[node name="Info_NPR" type="NinePatchRect" parent="Scenario_Info_MC/Info_C/Info_TR/Info_RTL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_jk61s")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Scenario_Emergency_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 80
+script = ExtResource("2_3io74")
+_debug = true
+_updateInEditor = true
+adjust_top = true
+top_multiplier = 26.0
+top_addition = 5.0
+adjust_bottom = true
+bottom_multiplier = 0.0
+bottom_addition = 80.0
+descriptionText = NodePath("Emergency_C/Emergency_TR/Emergency_RTL")
+
+[node name="Emergency_C" type="Control" parent="Scenario_Emergency_MC"]
+layout_mode = 2
+
+[node name="Emergency_TR" type="TextureRect" parent="Scenario_Emergency_MC/Emergency_C"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(80, 83)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 83.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(40, 41.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_3bgki")
+expand_mode = 1
+
+[node name="Emergency_RTL" type="RichTextLabel" parent="Scenario_Emergency_MC/Emergency_C/Emergency_TR"]
+visible = false
+z_as_relative = false
+clip_contents = false
+custom_minimum_size = Vector2(195, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.14
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_right = 186.0
+offset_bottom = -15.385
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(-22, 34)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = " Scenario Emergency here"
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_fn724")]
+script = ExtResource("5_qm50f")
+debugging = true
+
+[node name="Emergency_NPR" type="NinePatchRect" parent="Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_jk61s")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Scenario_Location_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 80
+script = ExtResource("2_3io74")
+_debug = true
+_updateInEditor = true
+adjust_top = true
+top_multiplier = 26.0
+top_addition = 5.0
+adjust_bottom = true
+bottom_multiplier = 0.0
+bottom_addition = 80.0
+descriptionText = NodePath("Location_C/Location_TR/Location_RTL")
+
+[node name="Location_C" type="Control" parent="Scenario_Location_MC"]
+layout_mode = 2
+
+[node name="Location_TR" type="TextureRect" parent="Scenario_Location_MC/Location_C"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(80, 83)
+layout_mode = 2
+offset_right = 80.0
+offset_bottom = 83.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(40, 41.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("8_r5kik")
+expand_mode = 1
+
+[node name="Location_RTL" type="RichTextLabel" parent="Scenario_Location_MC/Location_C/Location_TR"]
+visible = false
+z_as_relative = false
+clip_contents = false
+custom_minimum_size = Vector2(195, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.14
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_right = 186.0
+offset_bottom = -15.385
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(-22, 60)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "Scenario Location here"
+fit_content = true
+scroll_active = false
+custom_effects = [ExtResource("4_fn724")]
+script = ExtResource("5_qm50f")
+debugging = true
+
+[node name="Location_NPR" type="NinePatchRect" parent="Scenario_Location_MC/Location_C/Location_TR/Location_RTL"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_jk61s")
+draw_center = false
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v32wr")
+}
+
+[connection signal="text_populated_with_lines" from="Scenario_Info_MC/Info_C/Info_TR/Info_RTL" to="Scenario_Info_MC" method="set_margins_from_lines"]
+[connection signal="text_populated_with_lines" from="Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="Scenario_Emergency_MC" method="set_margins_from_lines"]
+[connection signal="text_populated_with_lines" from="Scenario_Location_MC/Location_C/Location_TR/Location_RTL" to="Scenario_Location_MC" method="set_margins_from_lines"]
