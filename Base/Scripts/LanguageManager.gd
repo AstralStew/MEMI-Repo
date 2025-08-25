@@ -10,7 +10,7 @@ var arNormalFont : FontVariation = null
 var prsNormalFont : FontVariation = null
 var zhNormalFont : FontVariation = null
 
-const FONT_PATH := "res://AssetPacks/0_Shared/Fonts/"
+const FONT_PATH := "res://AssetPacks/0_Prerequisite/Fonts/"
 const EN_PREFIX := "NotoSansEN"
 const AR_PREFIX := "NotoSansArabic"
 const PRS_PREFIX := "NotoSansArabic"

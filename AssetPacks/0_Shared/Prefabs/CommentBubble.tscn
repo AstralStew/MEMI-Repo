@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://hx51s1lp8rc7"]
 
 [ext_resource type="Script" uid="uid://c3t06j2b43f6x" path="res://Base/Scripts/CommentBubble.gd" id="1_fm8n2"]
-[ext_resource type="AudioStream" uid="uid://bkddpxkmadygq" path="res://AssetPacks/0_Shared/Audio/CommentPop.mp3" id="2_dr52n"]
+[ext_resource type="AudioStream" uid="uid://bkddpxkmadygq" path="res://AssetPacks/0_Shared/Audio/SFX/CommentPop.mp3" id="2_dr52n"]
 [ext_resource type="Texture2D" uid="uid://cn011c2on2sb" path="res://AssetPacks/0_Shared/Images/BubbleFlipNineSprite.png" id="5_x5m08"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="6_eeoid"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="6_eeoid"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="7_oqbe8"]
 
 [node name="CommentBubble" type="MarginContainer"]

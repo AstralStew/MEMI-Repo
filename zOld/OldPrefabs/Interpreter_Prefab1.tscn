@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://3kj7svumidhu" path="res://AssetPacks/2_Interpreter/Images/Lad_LetsLearn_1.png" id="9_ykrfe"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="10_q2n0l"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="11_j0i4a"]
-[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://AssetPacks/0_Shared/Prefabs/bubble.tscn" id="12_7hfa7"]
+[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://zOld/OldPrefabs/bubble.tscn" id="12_7hfa7"]
 
 [node name="Interpreter_Prefab1" type="VBoxContainer"]
 anchors_preset = 15

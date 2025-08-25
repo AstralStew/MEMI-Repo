@@ -75,7 +75,7 @@ grow_vertical = 0
 texture = ExtResource("20_o5b0k")
 expand_mode = 1
 
-[connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/ambulance.mp3"]]
-[connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
-[connection signal="meta_link_3" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Fail.mp3"]]
-[connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/interpreter.mp3"]]
+[connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/ambulance.mp3"]]
+[connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3"]]
+[connection signal="meta_link_3" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3"]]
+[connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/interpreter.mp3"]]

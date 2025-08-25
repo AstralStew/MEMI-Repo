@@ -26,7 +26,7 @@ signal meta_link_7
 signal meta_link_8
 signal meta_link_9
 
-const SPEAKER_PATH := "res://AssetPacks/0_Shared/Images/SpeakerIcon.png"
+const SPEAKER_PATH := "res://AssetPacks/0_Prerequisite/Images/SpeakerIcon.png"
 
 
 func _ready() -> void:

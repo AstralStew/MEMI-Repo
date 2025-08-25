@@ -4,8 +4,8 @@ extends AnimationPlayer
 @export var debugging := false
 
 
-@export var startRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/RecordingStart.mp3"
-@export var stopRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/RecordingStop.mp3"
+@export var startRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/SFX/RecordingStart.mp3"
+@export var stopRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/SFX/RecordingStop.mp3"
 
 @export_group("Autostart Properties")
 #@export var autostart := true
@@ -269,17 +269,17 @@ func create_prefab(_key:String,_scene:PackedScene, _parent:String=content_parent
 	get_node(_parent).add_child(scene)
 	
 	if _parent == content_parent:
-		print("[ScreenController] Prefab is directly under 'Content', must be a ScreenPrefab! Liking + subscribing.")
+		print("[ScreenController] Prefab is directly under 'Content', setting anchor presets")
 		
 		# Set its layout mode
 		var scene_as_control := scene as Control
 		scene_as_control.set_anchors_preset(Control.PRESET_FULL_RECT)
-			
-		# Like + Subscribe for screen prefab functions
-		_subscribe(scene as ScreenPrefab)
 	
 	# Like + Subscribe for speech recognition
-	if scene is TapBubble:
+	if scene is ScreenPrefab:
+		print("[ScreenController] Prefab is a ScreenPrefab! Liking + subscribing.")
+		_subscribe(scene as ScreenPrefab)
+	elif scene is TapBubble:
 		print("[ScreenController] Prefab is a TapBubble! Liking + subscribing.")
 		scene.touch_input.connect(_start_recognition)
 		last_sentence_changed.connect(scene.answer)
@@ -296,7 +296,14 @@ func destroy_prefab(_key:String):
 		return
 	
 	# Blocked + Unsubscribed
-	_unsubscribe(loaded_elements[_key] as ScreenPrefab)
+	var scene = loaded_elements[_key]
+	if scene is ScreenPrefab:
+		print("[ScreenController] Prefab is a ScreenPrefab, unliking + unsubscribing.")
+		_unsubscribe(loaded_elements[_key] as ScreenPrefab)
+	elif scene is TapBubble:
+		print("[ScreenController] Prefab is a TapBubble! Liking + subscribing.")
+		scene.touch_input.disconnect(_start_recognition)
+		last_sentence_changed.disconnect(scene.answer)
 	
 	# Destroy the prefab
 	loaded_elements[_key].queue_free()

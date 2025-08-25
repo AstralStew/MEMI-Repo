@@ -1,9 +1,9 @@
 [gd_resource type="Animation" load_steps=5 format=3 uid="uid://cvftpdfd3xyl3"]
 
-[ext_resource type="AudioStream" uid="uid://ffu4t3lwtw8a" path="res://AssetPacks/0_Shared/Audio/PhoneRing.wav" id="1_qamdp"]
-[ext_resource type="AudioStream" uid="uid://bcnnav7bbqcpn" path="res://AssetPacks/2_Interpreter/Audio/01-intro-prerecord.mp3" id="2_jrjqb"]
-[ext_resource type="AudioStream" uid="uid://dyum4rl0atpj" path="res://AssetPacks/0_Shared/Audio/CorrectAnswer.mp3" id="3_afr84"]
-[ext_resource type="AudioStream" uid="uid://bhac500wlnpp4" path="res://AssetPacks/2_Interpreter/Audio/03-intro-stateandtown.mp3" id="4_fla40"]
+[ext_resource type="AudioStream" uid="uid://ffu4t3lwtw8a" path="res://AssetPacks/0_Shared/Audio/SFX/PhoneRing.wav" id="1_qamdp"]
+[ext_resource type="AudioStream" uid="uid://bcnnav7bbqcpn" path="res://AssetPacks/0_Shared/Audio/Operator/01-intro-prerecord.mp3" id="2_jrjqb"]
+[ext_resource type="AudioStream" uid="uid://dyum4rl0atpj" path="res://AssetPacks/0_Shared/Audio/SFX/CorrectAnswer.mp3" id="3_afr84"]
+[ext_resource type="AudioStream" uid="uid://bhac500wlnpp4" path="res://AssetPacks/2_Interpreter/Audio/Operator/03-intro-stateandtown.mp3" id="4_fla40"]
 
 [resource]
 length = 30.0

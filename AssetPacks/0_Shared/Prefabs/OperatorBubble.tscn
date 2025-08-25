@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkef61xvbqi35"]
 
 [ext_resource type="Script" uid="uid://b1hp3ct6pev0b" path="res://Base/Scripts/OperatorBubble.gd" id="1_38p7n"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Shared/Fonts/NotoSansSC-Normal.tres" id="3_13c48"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_13c48"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="4_38p7n"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_nwthh"]
 

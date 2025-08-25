@@ -1,0 +1,118 @@
+[gd_scene load_steps=12 format=3 uid="uid://t1mdkoctxe4w"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_2600o"]
+[ext_resource type="Texture2D" uid="uid://cxef2jho4augu" path="res://AssetPacks/1_Intro/Images/LadHalf_TryAgain.png" id="2_7pmus"]
+[ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="3_buipk"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="4_n1lxh"]
+[ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="5_vxyf7"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="6_ul74m"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="7_2xniy"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="8_845x7"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="9_44eh0"]
+[ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="10_n5fai"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgxit"]
+shader = ExtResource("3_buipk")
+shader_parameter/weight = 0.0
+
+[node name="1_Explanation_Prefab" type="MarginContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_2600o")
+debugging = true
+
+[node name="Explanation_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LadLanding1" type="TextureRect" parent="Explanation_VB"]
+custom_minimum_size = Vector2(0, 121)
+layout_mode = 2
+texture = ExtResource("2_7pmus")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LadTutorial1_C" type="Control" parent="Explanation_VB"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LadTutorial1" type="TextureRect" parent="Explanation_VB/LadTutorial1_C"]
+material = SubResource("ShaderMaterial_fgxit")
+layout_mode = 0
+offset_left = 101.0
+offset_top = -4.0
+offset_right = 461.0
+offset_bottom = 343.0
+texture = ExtResource("4_n1lxh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("5_vxyf7")]
+script = ExtResource("6_ul74m")
+debugging = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("7_2xniy")]
+script = ExtResource("6_ul74m")
+debugging = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("8_845x7")]
+script = ExtResource("6_ul74m")
+debugging = true
+
+[node name="ContinueButton" parent="Explanation_VB" instance=ExtResource("9_44eh0")]
+visible = false
+layout_mode = 2
+max_char_threshold = 25
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+_auto_text = "INTRO_LANDING_2_EXPLANATION_B1"
+_old_text = "INTRO_LANDING_2_EXPLANATION_B1"
+
+[node name="HSeparator" type="HSeparator" parent="Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TapBubble" parent="Explanation_VB" instance=ExtResource("10_n5fai")]
+visible = false
+layout_mode = 2
+
+[connection signal="last_sentence_changed" from="." to="Explanation_VB/TapBubble" method="answer"]
+[connection signal="meta_link_1" from="Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Landing_3_CallsAreFake"]]
+[connection signal="meta_link_2" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1_LetsTry"]]
+[connection signal="touch_input" from="Explanation_VB/TapBubble" to="." method="start_speech_recognition"]

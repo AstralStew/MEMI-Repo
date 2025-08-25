@@ -1,12 +1,13 @@
 D:/Paperticket Studios/GODOT/Project MEMI/Exports/
 D:/Paperticket Studios/GODOT/Project MEMI/Exports/Packs/
 res://Base/Languages/
-res://AssetPacks/0_Shared/ScreenSets/
-res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
-res://AssetPacks/1_Intro/Prefabs/LandingMenu_Prefab.tscn
-res://AssetPacks/1_Intro/Prefabs/Explanation_Prefab.tscn
-res://AssetPacks/2_Interpreter/Prefabs/LetsLearn_Prefab.tscn
-res://AssetPacks/2_Interpreter/Prefabs/Steps_Prefab.tscn
-res://AssetPacks/2_Interpreter/Prefabs/InterpreterCall_Prefab.tscn
+res://AssetPacks/0_Prerequisite/ScreenSets/
 res://AssetPacks/1_Intro/Animations/
 res://AssetPacks/2_Interpreter/Animations/
+res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
+res://AssetPacks/1_Intro/Prefabs/1_LandingMenu_Prefab.tscn
+res://AssetPacks/1_Intro/Prefabs/1_Explanation_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/LetsLearn_Prefab.tscn
+res://AssetPacks/2_Interpreter/Prefabs/2_Steps_Prefab.tscn
+res://AssetPacks/2_Interpreter/Prefabs/2_Comments_Prefab.tscn
+res://AssetPacks/2_Interpreter/Prefabs/2_Explanation_Prefab.tscn

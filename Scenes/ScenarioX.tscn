@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://d0jvp4gltggw3"]
 
-[ext_resource type="Theme" uid="uid://c81wtsb6phq0w" path="res://AssetPacks/0_Shared/Theme/memi_theme.tres" id="1_185ed"]
+[ext_resource type="Theme" uid="uid://c81wtsb6phq0w" path="res://AssetPacks/0_Prerequisite/Theme/memi_theme.tres" id="1_185ed"]
 [ext_resource type="Script" uid="uid://bnfxt1udjslg3" path="res://Base/Scripts/TranslatedLabel.gd" id="2_28oh4"]
 [ext_resource type="Script" uid="uid://slj3083jgm76" path="res://Base/Scripts/SignalHelper.gd" id="3_yenoo"]
 [ext_resource type="Texture2D" uid="uid://bx1jjwed4jg0h" path="res://zOld/Old Other/chevron left.png" id="4_3rlvv"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030857.png" id="7_2f7qa"]
 [ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030820.png" id="8_dcwtr"]
 [ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030941.png" id="9_qqjwn"]
-[ext_resource type="FontFile" uid="uid://blkv3mscjotfu" path="res://AssetPacks/0_Shared/Fonts/Bases/Roboto-Italic-VariableFont.ttf" id="10_ovvd7"]
+[ext_resource type="FontFile" uid="uid://blkv3mscjotfu" path="res://AssetPacks/0_Prerequisite/Fonts/Bases/Roboto-Italic-VariableFont.ttf" id="10_ovvd7"]
 [ext_resource type="Texture2D" uid="uid://cvk4rv3cxbtqh" path="res://zOld/Old Packs/ScenarioShared/Images/phone_in_hand.png" id="11_w14o3"]
 [ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://Base/Images/lil_guy.png" id="12_uxn35"]
 

@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://f1fu6kifcv0p"]
+
+[ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="1_bcwoe"]
+[ext_resource type="AudioStream" uid="uid://cphmoblobbbs4" path="res://AssetPacks/0_Prerequisite/Audio/ButtonClick.wav" id="2_gasvt"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_hlj1k"]
+[ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="4_7oxlh"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_sf7od"]
+[ext_resource type="Texture2D" uid="uid://c120qtk1dr1aw" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowOnlyNineSprite.png" id="6_gasvt"]
+
+[node name="ButtonBubble" type="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = -95.0
+offset_right = 136.5
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(136.5, 95)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
+script = ExtResource("1_bcwoe")
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("2_gasvt")
+min_height = 0
+min_width = 60
+max_char_threshold = 24
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
+
+[node name="BubbleText" type="RichTextLabel" parent="."]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hlj1k")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_sf7od")
+debugging = true
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="BubbleText"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -5.0
+offset_right = 15.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52.5, 19)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_7oxlh")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="BubbleText/BubbleBG"]
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.21053
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(56.5, 23.0001)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_gasvt")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="."]
+
+[connection signal="meta_link_1" from="BubbleText" to="." method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="BubbleText" to="." method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="BubbleText" to="." method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="BubbleText" to="." method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="BubbleText" to="." method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="BubbleText" to="." method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="BubbleText" to="." method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="BubbleText" to="." method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="BubbleText" to="." method="_send_meta_link_9"]

@@ -1,0 +1,181 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3talsc3cfdjt"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_xoyxg"]
+[ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://zOld/OldPrefabs/bubble.tscn" id="2_bk8o8"]
+[ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="3_5jv4b"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_kqmik"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_ykmd4"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="6_77r6p"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="7_pjkio"]
+
+[node name="2_Steps_Prefab" type="MarginContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_xoyxg")
+debugging = true
+
+[node name="Explanation_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="StepSpacer_HSep" type="HSeparator" parent="Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Steps_HB" type="HBoxContainer" parent="Explanation_VB"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Step1_Bubble" parent="Explanation_VB/Steps_HB" instance=ExtResource("2_bk8o8")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "LETSLEARN_3_FIRSTSTEP_T_STEP"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 1
+old_text = "LETSLEARN_3_FIRSTSTEP_T_STEP"
+
+[node name="Step2_Bubble" parent="Explanation_VB/Steps_HB" instance=ExtResource("2_bk8o8")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "LETSLEARN_4_SECONDSTEP_T_STEP"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 1
+old_text = "LETSLEARN_4_SECONDSTEP_T_STEP"
+
+[node name="Step3_Bubble" parent="Explanation_VB/Steps_HB" instance=ExtResource("2_bk8o8")]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+min_height = 0
+min_width = 60
+max_width = 100
+_autoText = "LETSLEARN_5_THIRDSTEP_T_STEP"
+_autoTitle = ""
+_autoTitleBelow = false
+_autoShape = 1
+old_text = "LETSLEARN_5_THIRDSTEP_T_STEP"
+
+[node name="ExplanationLabels_VB" type="VBoxContainer" parent="Explanation_VB"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB/ExplanationLabels_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("3_5jv4b")]
+script = ExtResource("4_kqmik")
+debugging = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB/ExplanationLabels_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("5_ykmd4")]
+script = ExtResource("4_kqmik")
+debugging = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB/ExplanationLabels_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("3_5jv4b")]
+script = ExtResource("4_kqmik")
+debugging = true
+
+[node name="Explanation4_RTL" type="RichTextLabel" parent="Explanation_VB/ExplanationLabels_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+custom_effects = [ExtResource("5_ykmd4")]
+script = ExtResource("4_kqmik")
+debugging = true
+
+[node name="LadLetsLearn_TR" type="TextureRect" parent="Explanation_VB"]
+custom_minimum_size = Vector2(200, 375.5)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("6_77r6p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buttons_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="ConfirmBubble" parent="Buttons_VB" instance=ExtResource("7_pjkio")]
+layout_mode = 2
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "LETSLEARN_2_EXPLANATION_B2"
+fit_content = true
+horizontal_alignment = 1
+custom_effects = [ExtResource("5_ykmd4")]
+script = ExtResource("4_kqmik")
+debugging = true
+
+[node name="BottomMargin_HSep" type="HSeparator" parent="Buttons_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/Operator/02_intro_policefireambo.mp3"]]
+[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/Operator/03-intro-stateandtown.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/police.mp3"]]
+[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/firefighter.mp3"]]
+[connection signal="meta_link_3" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/ambulance.mp3"]]
+[connection signal="meta_link_4" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3"]]
+[connection signal="meta_link_5" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3"]]
+[connection signal="meta_link_6" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/interpreter.mp3"]]
+[connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_3_FirstStep"]]
+[connection signal="meta_link_2" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_4_SecondStep"]]
+[connection signal="meta_link_3" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_5_ThirdStep"]]
+[connection signal="meta_link_4" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_6_FinishSteps"]]
+[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_2u_Skipped"]]
+[connection signal="meta_link_2" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_Unload"]]
