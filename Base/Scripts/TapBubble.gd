@@ -50,6 +50,7 @@ class_name TapBubble
 @export var touch_hint_fade_out := 0.1
 @export var touch_hint_ease := Tween.EaseType.EASE_IN_OUT
 @export var touch_hint_trans := Tween.TransitionType.TRANS_LINEAR
+@export var pulse_start_delay := 3.0
 @export var pulse_in := 0.25
 @export var pulse_out := 0.25
 #@export var bubble_resize_out := 1.0
@@ -136,9 +137,9 @@ func _ready() -> void:
 func _getrefs() -> void:	
 	bubbleText = get_child(0)
 	bubbleBG = bubbleText.get_child(0)
-	bubbleTitle = bubbleBG.get_child(0)
-	bubbleTapHint = bubbleBG.get_child(1)
-	speakingDots = bubbleBG.get_child(2)
+	bubbleTitle = bubbleText.get_child(1) #bubbleTitle = bubbleBG.get_child(0)
+	bubbleTapHint = bubbleBG.get_child(0)
+	speakingDots = bubbleBG.get_child(1)
 	bubbleTouchButton = get_child(1)
 	bubbleTouchAudio = get_child(2)
 	
@@ -282,7 +283,6 @@ func _received_touch_input() -> void:
 	if _debug: print("[TapBubble(",name,")] ReceivedTouchInput. Disabling hint, enabling speaking dots, and sending touch input...")
 	bubbleTouchButton.visible = false
 	bubbleText.text = ""
-	
 	if _current_touch_hint == TouchHint.Default:
 		_fade_touch_hint(false,touch_hint_fade_out,touch_hint_ease,touch_hint_trans)
 	elif _current_touch_hint == TouchHint.Slim:
@@ -389,27 +389,34 @@ func _fade_bubble(_active:bool,_duration:float,_ease:Tween.EaseType,_transition:
 
 var background_resize
 func _resize_background(_target_size:float,_duration:float,_ease:Tween.EaseType,_transition:Tween.TransitionType) -> void:
-	print("resize")
+	#print("resize")
 	if background_resize:
 		background_resize.kill()
 	background_resize = create_tween()
 	
 	background_resize.tween_property(bubbleBG, "scale", Vector2(_target_size,_target_size), _duration).set_ease(_ease).set_trans(_transition)
 
+var is_pulsing = false
 var background_pulse
 func _pulse_background() -> void:
 	if background_pulse:
 		background_pulse.kill()
-	_pulsing()
-	background_pulse = create_tween().set_loops()
-	background_pulse.tween_callback(_pulsing).set_delay(1)
+	is_pulsing = true
+	await get_tree().create_timer(pulse_start_delay).timeout  
+	if is_pulsing:
+		_pulsing()
+		background_pulse = create_tween().set_loops()
+		background_pulse.tween_callback(_pulsing).set_delay(1)
 
 func _pulsing() -> void:
 	_resize_background(pulse_size,pulse_in,pulse_in_ease,pulse_in_trans)
 	background_resize.tween_callback(self._resize_background.bind(1,pulse_out,pulse_out_ease,pulse_out_trans))
 
 func _pulse_background_finish() -> void:
-	background_pulse.kill()
+	is_pulsing = false
+	if background_pulse:
+		background_pulse.kill()
+
 
 var background_fade
 func _fade_background(_colour:Color,_duration:float,_ease:Tween.EaseType,_transition:Tween.TransitionType) -> void:

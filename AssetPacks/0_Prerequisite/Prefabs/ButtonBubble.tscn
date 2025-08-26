@@ -28,7 +28,6 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 21
 theme_override_constants/margin_bottom = 19
 script = ExtResource("1_bcwoe")
-_debug = true
 _updateInEditor = true
 click_sound = ExtResource("2_gasvt")
 min_height = 0
@@ -59,7 +58,6 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_sf7od")
-debugging = true
 metadata/_edit_group_ = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="BubbleText"]

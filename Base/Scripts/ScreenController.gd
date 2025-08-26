@@ -68,10 +68,10 @@ func _enter_tree() -> void:
 		BridgeManager._initialise()
 		
 		# Load the shared pack (thus initialising the LoadManager)
-		_load_pack("0_Shared")
+		_load_pack("0_Prerequisite")
 		await pack_load_finished
 		
-		# WARNING > This must be initialised AFTER 0_Shared is loaded
+		# WARNING > This must be initialised AFTER 0_Prerequisite is loaded
 		LanguageManager._initialise()
 	
 	if overrideAnimSpeed: speed_scale = overrideAnimSpeedScale
@@ -360,6 +360,12 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 
 #region Speech functions
 
+func set_sentence_comparer(_sentenceComparer:SentenceComparer):
+		if debugging: print("[ScreenController] Setting new Sentence Comparer ('",_sentenceComparer,"') and resetting its total attempts.")
+		sentenceComparer = _sentenceComparer
+		sentenceComparer.reset_attempts()
+	
+
 func _start_recognition() -> void:
 	
 	# WARNING -> This allows cheating in the Editor using ABCD keys, see the _input method below
@@ -450,40 +456,35 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed && speechCheating:
 			if event.keycode == KEY_A:
-				print("[ScreenController] SpeechCheating, the A key was pressed! Sending Correct...")
 				speechCheating = false
+				print("[ScreenController] SpeechCheating, the A key was pressed! Sending Correct...")
 				lastSentence = "Cheated: Correct"
 				last_sentence_changed.emit(lastSentence)
 				play_animation(sentenceComparer.correctAnim)
-				# Play sound
-				if !OS.has_feature("web_android"):
-					play_stream_from_path(stopRecordingStreamPath)
+				play_stream_from_path(stopRecordingStreamPath)
 			elif event.keycode == KEY_B:
-				print("[ScreenController] SpeechCheating, the B key was pressed! Sending Wrong...")
 				speechCheating = false
-				lastSentence = "Cheated: Wrong"
-				last_sentence_changed.emit(lastSentence)
-				play_animation(sentenceComparer.wrongAnim)
-				# Play sound
-				if !OS.has_feature("web_android"):
+				if !check_attempts_while_cheating():
+					print("[ScreenController] SpeechCheating, the B key was pressed! Sending Wrong...")
+					lastSentence = "Cheated: Wrong"
+					last_sentence_changed.emit(lastSentence)
+					play_animation(sentenceComparer.wrongAnim)
 					play_stream_from_path(stopRecordingStreamPath)
 			elif event.keycode == KEY_C:
-				print("[ScreenController] SpeechCheating, the C key was pressed! Sending Mumbo...")
 				speechCheating = false
-				lastSentence = "Cheated: Mumbo"
-				last_sentence_changed.emit(lastSentence)
-				play_animation(sentenceComparer.mumboAnim)
-				# Play sound
-				if !OS.has_feature("web_android"):
+				if !check_attempts_while_cheating():
+					print("[ScreenController] SpeechCheating, the C key was pressed! Sending Mumbo...")
+					lastSentence = "Cheated: Mumbo"
+					last_sentence_changed.emit(lastSentence)
+					play_animation(sentenceComparer.mumboAnim)
 					play_stream_from_path(stopRecordingStreamPath)
 			elif event.keycode == KEY_D:
-				print("[ScreenController] SpeechCheating, the D key was pressed! Sending DontKnow...")
 				speechCheating = false
-				lastSentence = "Cheated: DontKnow"
-				last_sentence_changed.emit(lastSentence)
-				play_animation(sentenceComparer.dontKnowAnim)
-				# Play sound
-				if !OS.has_feature("web_android"):
+				if !check_attempts_while_cheating():
+					print("[ScreenController] SpeechCheating, the D key was pressed! Sending DontKnow...")
+					lastSentence = "Cheated: DontKnow"
+					last_sentence_changed.emit(lastSentence)
+					play_animation(sentenceComparer.dontKnowAnim)
 					play_stream_from_path(stopRecordingStreamPath)
 		elif overrideTimeScale:
 			if event.pressed && event.keycode == KEY_F && !event.is_echo():
@@ -493,6 +494,18 @@ func _input(event):
 				print("[ScreenController] TimeCheating, the F key was released! Normal speed.")
 				Engine.time_scale = 1.0
 
+func check_attempts_while_cheating() -> bool:
+	if sentenceComparer.attempts > -1:
+		sentenceComparer.attempts -= 1
+		if sentenceComparer.attempts <= 0:
+			if debugging: print("[SentenceComparer] SpeechCheating, ran out of attempts! Sending GiveUp instead...")
+			lastSentence = "Cheated: GiveUp"
+			last_sentence_changed.emit(lastSentence)
+			play_animation(sentenceComparer.giveUpAnim)
+			play_stream_from_path(stopRecordingStreamPath)
+			return true
+		if debugging: print("[SentenceComparer] SpeechCheating, attempts remaining before GiveUp: ",sentenceComparer.attempts)
+	return false
 
 #endregion
 

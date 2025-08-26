@@ -110,9 +110,10 @@ theme_override_constants/separation = 40
 [node name="TapBubble" parent="Explanation_VB" instance=ExtResource("10_n5fai")]
 visible = false
 layout_mode = 2
+pulse_start_delay = 3.0
 
 [connection signal="last_sentence_changed" from="." to="Explanation_VB/TapBubble" method="answer"]
-[connection signal="meta_link_1" from="Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/OK.mp3"]]
 [connection signal="meta_link_1" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Landing_3_CallsAreFake"]]
 [connection signal="meta_link_2" from="Explanation_VB/ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1_LetsTry"]]
 [connection signal="touch_input" from="Explanation_VB/TapBubble" to="." method="start_speech_recognition"]

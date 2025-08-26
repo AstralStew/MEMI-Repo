@@ -3,6 +3,7 @@ extends Node
 #var HOST_URL := "https://www.paperticketstudios.com/godot/projectmemi/"
 
 signal request_started()
+signal request_started_with(file)
 
 signal request_successful()
 signal request_successful_with(file)
@@ -19,10 +20,10 @@ var packsURL = ""
 var audioURL = ""
 
 func _set_paths():
-	print("[LoadManager] Setting hostURL, packsURL, audioURL for the first time.")
 	hostURL = BridgeManager.folderURL
 	packsURL = hostURL + "Packs/"
 	audioURL = hostURL + "Audio/"
+	print("[LoadManager] Setting hostURL ('",hostURL,"'), packsURL ('",packsURL,"'), audioURL ('",audioURL,"') for the first time.")
 
 
 func _load_mp3(filename:StringName):
@@ -39,6 +40,7 @@ func _load_pack(_filename:String):
 	if hostURL == "": _set_paths()
 	
 	request_started.emit()
+	request_started_with.emit(_filename)
 	
 	# Check if we've already tried _filename with a previous HTTPRequest
 	for child in get_children():

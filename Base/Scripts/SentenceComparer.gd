@@ -14,22 +14,32 @@ class_name SentenceComparer extends Resource
 @export var wrongAnim := ""
 @export var mumboAnim := ""
 @export var dontKnowAnim := ""
+@export var giveUpAnim := ""
+@export var total_attempts = -1
+
+var attempts = 0
 
 
-func _init(_debug:=false, _correctConditions:Array[PhraseCheck] = [],_wrongConditions:Array[String] = [],_correctAnim := "",_wrongAnim := "",_mumboAnim := "",_dontKnowAnim := "") -> void:
+func _init(_debug:=false, _correctConditions:Array[PhraseCheck] = [],_wrongConditions:Array[String] = [],_correctAnim := "",_wrongAnim := "",_mumboAnim := "",_dontKnowAnim := "",_giveUpAnim:="", _total_attempts := 4) -> void:
 	debug = _debug
 	correctConditions = _correctConditions
 	wrongConditions = _wrongConditions
 	correctAnim = _correctAnim
 	wrongAnim = _wrongAnim
-	dontKnowAnim = _dontKnowAnim
 	mumboAnim = _mumboAnim
+	dontKnowAnim = _dontKnowAnim
+	giveUpAnim = _giveUpAnim
+	total_attempts = _total_attempts
+	attempts = 0
 
-func compare(sentence:String) -> String:	
+func reset_attempts() -> void:
+	attempts = total_attempts
+
+func compare(sentence:String) -> String:
 	var correctCount = 0
 	
 	if debug: print("[SentenceComparer] Comparing the sentence '",sentence,"'")
-	
+		
 	if sentence == "": return mumboAnim
 	
 	if correctConditions.size() > 0:
@@ -40,6 +50,13 @@ func compare(sentence:String) -> String:
 			if debug: print("[SentenceComparer] Correct conditions found! Returning correctAnim ('",correctAnim,"')")
 			return correctAnim
 	else: if debug: print("[SentenceComparer] WARNING -> Missing correct conditions on compare. Bit weird, but skipping...")
+	
+	if attempts > -1:
+		# ^ this is to make sure we can still do infinite tries when teaching
+		attempts -= 1
+		if attempts <= 0:
+				if debug: print("[SentenceComparer] NOTE -> Ran out of attempts! Returning giveUpAnim ('",giveUpAnim,"')")
+				return giveUpAnim
 	
 	if wrongConditions.size() > 0:
 		for phrase in wrongConditions:

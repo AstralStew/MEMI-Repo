@@ -2,13 +2,13 @@ extends Node
 
 
 # Get the `window` object, where globally defined functions are
-@onready var window = JavaScriptBridge.get_interface("window")
+var window = null # JavaScriptBridge.get_interface("window")
 
 # Get the `recognition` object defined in the header
-@onready var recognition = JavaScriptBridge.get_interface("recognition")
+var recognition = null # JavaScriptBridge.get_interface("recognition")
 
 # Get the `pageURL` object defined in the header
-@onready var pageURL : String = ""
+var pageURL : String = ""
 @onready var folderURL : String = ""
 
 # Here we create a reference to the functions below
@@ -27,6 +27,11 @@ signal speech_error()
 
 # Called in ScreenController _ready()
 func _initialise() -> void:
+	
+	window = JavaScriptBridge.get_interface("window")
+	recognition = JavaScriptBridge.get_interface("recognition")
+	
+	#print("[BridgeManager] recognition =", recognition)
 	recognition.onresult = _speech_result_callback_ref
 	recognition.onspeechend = _speech_end_callback_ref
 	recognition.onnomatch = _speech_nomatch_callback_ref

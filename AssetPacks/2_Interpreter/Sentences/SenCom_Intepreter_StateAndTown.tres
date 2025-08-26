@@ -18,4 +18,6 @@ correctAnim = "Interpreter/Interpreter_5a_Correct"
 wrongAnim = "Interpreter/Interpreter_5b_Mumbo"
 mumboAnim = "Interpreter/Interpreter_5b_Mumbo"
 dontKnowAnim = "Interpreter/Interpreter_5b_Mumbo"
+giveUpAnim = "Interpreter/Interpreter_5c_GiveUp"
+total_attempts = 4
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

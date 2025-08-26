@@ -21,7 +21,6 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 19
 script = ExtResource("1_38p7n")
-_debug = true
 _updateInEditor = true
 min_width = 60
 max_width = 210
@@ -55,7 +54,6 @@ scroll_active = false
 shortcut_keys_enabled = false
 vertical_alignment = 1
 script = ExtResource("4_nwthh")
-debugging = true
 metadata/_edit_group_ = true
 
 [node name="BubbleProxy" type="BoxContainer" parent="."]

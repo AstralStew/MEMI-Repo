@@ -31,12 +31,13 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 21
 theme_override_constants/margin_bottom = 19
 script = ExtResource("1_bhybv")
-_debug = true
 _updateInEditor = true
 default_tap_hint = ExtResource("5_bhybv")
 pop_in_sound = ExtResource("3_pejn0")
 correct_sound = ExtResource("4_xuxd2")
 incorrect_sound = ExtResource("5_pejn0")
+incorrect_pause = 2.0
+pulse_start_delay = null
 pulse_out = 0.35
 pulse_in_trans = 5
 pulse_out_trans = 5
@@ -62,7 +63,6 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_nikhr")
-debugging = true
 metadata/_edit_group_ = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="BubbleText"]
@@ -86,23 +86,6 @@ patch_margin_top = 20
 patch_margin_right = 24
 patch_margin_bottom = 15
 
-[node name="BubbleTitle" type="Label" parent="BubbleText/BubbleBG"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 4.0
-offset_right = 192.0
-offset_bottom = 55.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_fonts/font = ExtResource("2_u73pc")
-theme_override_font_sizes/font_size = 16
-text = "COMMON_YOUSAY"
-autowrap_mode = 3
-uppercase = true
-
 [node name="BubbleTapHint" type="AnimatedSprite2D" parent="BubbleText/BubbleBG"]
 position = Vector2(144.5, 113)
 sprite_frames = ExtResource("5_bhybv")
@@ -111,6 +94,23 @@ sprite_frames = ExtResource("5_bhybv")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(127.5, 85)
 sprite_frames = ExtResource("6_u73pc")
+
+[node name="BubbleTitle" type="Label" parent="BubbleText"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 12.0
+offset_right = 178.0
+offset_bottom = 63.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_fonts/font = ExtResource("2_u73pc")
+theme_override_font_sizes/font_size = 16
+text = "COMMON_YOUSAY"
+autowrap_mode = 3
+uppercase = true
 
 [node name="BubbleTouchButton" type="Button" parent="."]
 visible = false
