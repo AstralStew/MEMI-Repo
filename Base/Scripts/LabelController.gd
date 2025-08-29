@@ -36,8 +36,8 @@ func _ready() -> void:
 	#var speakerPath = load("res://AssetPacks/0_Shared/Images/SpeakerIcon.png")
 	#add_image(speakerPath, 16, 16, Color(1, 1, 1, 1), 0, Rect2(), "speaker")
 	
+	current_size = 20
 	if autopopulate: populate(autokey)
-	current_size = 18
 
 
 
@@ -46,7 +46,9 @@ func populate(_newText : String) -> void:
 	if _newText != "":
 		_check_font()
 	if debugging: print("[LabelController] Setting text to: '",_newText)
-	text = tr(_newText).replacen("{speaker}",_get_speaker_string())
+	#text = tr(_newText).replacen("{speaker}",_get_speaker_string())
+	
+	text = tr(_newText).replacen("<~","[color=00000000].[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] "+ _get_speaker_string())
 	
 	text_populated.emit()
 	text_populated_with_text.emit(text)
@@ -62,7 +64,6 @@ func resize(_newSize:int) -> void:
 	if debugging: print("[LabelController] Setting font size to ",_newSize)
 	add_theme_font_size_override("normal_font_size",_newSize)
 	current_size = _newSize
-
 
 
 

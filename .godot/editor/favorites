@@ -8,7 +8,10 @@ res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
 res://AssetPacks/1_Intro/Prefabs/1_LandingMenu_Prefab.tscn
 res://AssetPacks/1_Intro/Prefabs/1_Explanation_Prefab.tscn
 res://AssetPacks/0_Shared/Prefabs/LetsLearn_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/Operator_Call_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/Scenario_Info_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/2_Steps_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/2_Comments_Prefab.tscn
 res://AssetPacks/2_Interpreter/Prefabs/2_Explanation_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn
 res://zOld/OldPrefabs/LLCheat.tscn

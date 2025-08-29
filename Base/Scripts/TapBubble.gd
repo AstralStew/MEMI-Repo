@@ -258,8 +258,9 @@ func incorrect() -> void:
 	bubbleTouchAudio.stream = incorrect_sound
 	bubbleTouchAudio.play()
 	
-	# reset after a second
+	# reset after a second IF we haven't popped out in the meantime
 	await get_tree().create_timer(incorrect_pause).timeout
+	if !visible: return
 	reset()
 	
 	# re-activate touch

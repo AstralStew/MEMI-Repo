@@ -37,7 +37,6 @@ pop_in_sound = ExtResource("3_pejn0")
 correct_sound = ExtResource("4_xuxd2")
 incorrect_sound = ExtResource("5_pejn0")
 incorrect_pause = 2.0
-pulse_start_delay = null
 pulse_out = 0.35
 pulse_in_trans = 5
 pulse_out_trans = 5

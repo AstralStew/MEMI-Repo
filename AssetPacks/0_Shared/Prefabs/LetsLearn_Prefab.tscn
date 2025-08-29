@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
 
 [node name="LetsLearn_Prefab" type="MarginContainer"]
-modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,27 +49,28 @@ debugging = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 4
-size_flags_stretch_ratio = 0.01
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Interpreter_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 4
 texture = ExtResource("4_gfus3")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+custom_minimum_size = Vector2(180, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
 text = "LETSLEARN_1_OVERVIEW_T_INTERPRETER"
-fit_content = true
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
@@ -86,19 +86,22 @@ alignment = 1
 [node name="Location_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
 texture = ExtResource("5_u0lhp")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+custom_minimum_size = Vector2(180, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
+size_flags_vertical = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
 text = "LETSLEARN_1_OVERVIEW_T_LOCATION"
-fit_content = true
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
@@ -114,19 +117,22 @@ alignment = 1
 [node name="Questions_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
 texture = ExtResource("6_dw7sb")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+custom_minimum_size = Vector2(180, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
+size_flags_vertical = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
 text = "LETSLEARN_1_OVERVIEW_T_QUESTIONS"
-fit_content = true
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
@@ -142,19 +148,22 @@ alignment = 1
 [node name="NoHelp_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 4
 texture = ExtResource("7_4q1sm")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+custom_minimum_size = Vector2(180, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
+size_flags_vertical = 4
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
 text = "LETSLEARN_1_OVERVIEW_T_NOHELP"
-fit_content = true
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")

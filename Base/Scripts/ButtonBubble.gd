@@ -11,12 +11,15 @@ class_name ButtonBubble
 @export var click_sound : AudioStream = null
 
 @export_group("Size Parametres")
-@export var min_height := 10
-@export var min_width := 42
+@export var min_height := 0
+@export var min_width := 100
 @export var max_width := 228
 @export var min_char_threshold := 4
 @export var max_char_threshold := 22
-@export var bg_border_size := 10.0
+@export var bg_border_size := 5.0
+@export var bg_border_hscale := 1.0
+@export var bg_border_vscale := 1.25
+@export var bg_border_curve : Curve = preload("res://Base/BorderCurve.tres")
 
 @export_group("Pop")
 @export var pop_in_resize_in := 0.25
@@ -98,7 +101,7 @@ func _getrefs() -> void:
 	bubbleShadow = bubbleBG.get_child(0)
 	bubbleTouchAudio = get_child(1)
 	
-	
+	bg_border_curve = preload("res://Base/BorderCurve.tres")
 
 
 
@@ -287,6 +290,15 @@ func _resize() -> void:
 	
 	bubbleText.custom_minimum_size = Vector2(min_size,min_height)
 	#bubbleBG.custom_minimum_size = bubbleText.size + (Vector2.ONE * bg_border_size)
+	bubbleBG.offset_left = -bg_border_size * bg_border_hscale
+	bubbleBG.offset_top = (-bg_border_size - (bg_border_size / 2.5)) * bg_border_vscale
+	bubbleBG.offset_right = bg_border_size * bg_border_hscale
+	bubbleBG.offset_bottom = bg_border_size * bg_border_vscale
+	bubbleShadow.anchor_bottom = 1.12 - 0.08 * bg_border_curve.sample(remap(bg_border_vscale, 1, 10, 0, 1))
+	
+	#vscale = 1, anchor = 1.12
+	#vscale = 10, anchor = 1.04
+	# 1.2 - vscale * 0.1
 	
 	await get_tree().process_frame 
 	

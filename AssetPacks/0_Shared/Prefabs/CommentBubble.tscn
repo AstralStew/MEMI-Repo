@@ -67,6 +67,7 @@ scroll_active = false
 shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
+meta_underlined = false
 script = ExtResource("7_oqbe8")
 metadata/_edit_group_ = true
 
