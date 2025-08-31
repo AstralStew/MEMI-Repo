@@ -385,35 +385,48 @@ func _start_recognition() -> void:
 
 func _on_speech_start():
 	if debugging: print("[ScreenController] OnSpeechStart...")
-	recentResult = false
+	#recentResult = false
 	# Play sound
 	if !OS.has_feature("web_android"):
 		play_stream_from_path(startRecordingStreamPath)
 
+func _on_speech_end():
+	if debugging: print("[ScreenController] OnSpeechEnd (does nothing now?)")
+	#if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
+	#if recentResult:
+		#if debugging: print("[ScreenController] OLD recent result was found, ignoring.")
+		#return
+	#
+	#if debugging: print("[ScreenController] OnSpeechEnd waiting for 1 second...")
+	#await get_tree().create_timer(1).timeout 
+	#if recentResult:
+		#if debugging: print("[ScreenController] NEW recent result found, ignoring.")
+		#return
+	
+	#if debugging: print("[ScreenController] Still no recent result found, checking blank string.")
+	#if _bridge_connected: _disconnect_bridge()
+	#lastSentence = "" 
+	#_play_sentence_anim()
+	## Play sound
+	#if !OS.has_feature("web_android"):
+		#play_stream_from_path(stopRecordingStreamPath)
+
+
 func _on_speech_error():
 	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned, checking blank string.")
-	_disconnect_bridge()
+	if _bridge_connected: _disconnect_bridge()
 	lastSentence = ""
+	last_sentence_changed.emit("")
 	_play_sentence_anim()
 	# Play sound
 	if !OS.has_feature("web_android"):
 		play_stream_from_path(stopRecordingStreamPath)
 
-func _on_speech_end():
-	if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
-	if recentResult:
-		if debugging: print("[ScreenController] OLD recent result was found, ignoring.")
-		return
-	
-	if debugging: print("[ScreenController] OnSpeechEnd waiting for 1 second...")
-	await get_tree().create_timer(1).timeout 
-	if recentResult:
-		if debugging: print("[ScreenController] NEW recent result found, ignoring.")
-		return
-	
-	if debugging: print("[ScreenController] Still no recent result found, checking blank string.")
-	_disconnect_bridge()
-	lastSentence = "" 
+func _on_speech_nomatch():
+	if debugging: printerr("[ScreenController] ERROR -> OnSpeechNoMatch returned, checking blank string.")
+	if _bridge_connected: _disconnect_bridge()
+	lastSentence = ""
+	last_sentence_changed.emit("")
 	_play_sentence_anim()
 	# Play sound
 	if !OS.has_feature("web_android"):
@@ -422,8 +435,8 @@ func _on_speech_end():
 
 func _on_speech_sentence(newSentence:String) -> void:
 	if debugging: print("[ScreenController] OnSpeechSentence: '",newSentence,"'")
-	_disconnect_bridge()
-	recentResult = true
+	if _bridge_connected: _disconnect_bridge()
+	#recentResult = true
 	lastSentence = newSentence
 	last_sentence_changed.emit(newSentence)
 	_play_sentence_anim()
@@ -436,15 +449,20 @@ func _play_sentence_anim() -> void:
 	sentenceAnim = sentenceComparer.compare(lastSentence)
 	play_animation(sentenceAnim)
 
+var _bridge_connected := false
 func _connect_bridge() -> void:
+	_bridge_connected = true
 	BridgeManager.speech_start.connect(_on_speech_start)
 	BridgeManager.speech_error.connect(_on_speech_error)
+	BridgeManager.speech_nomatch.connect(_on_speech_nomatch)
 	BridgeManager.speech_end.connect(_on_speech_end)
 	BridgeManager.speech_phrase.connect(_on_speech_sentence)
 
 func _disconnect_bridge() -> void:
+	_bridge_connected = false
 	BridgeManager.speech_start.disconnect(_on_speech_start)
 	BridgeManager.speech_error.disconnect(_on_speech_error)
+	BridgeManager.speech_nomatch.disconnect(_on_speech_nomatch)
 	BridgeManager.speech_end.disconnect(_on_speech_end)
 	BridgeManager.speech_phrase.disconnect(_on_speech_sentence)
 

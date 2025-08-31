@@ -18,9 +18,15 @@ var _speech_end_callback_ref = JavaScriptBridge.create_callback(_on_speech_end_c
 var _speech_nomatch_callback_ref = JavaScriptBridge.create_callback(_on_speech_nomatch_callback)
 var _speech_error_callback_ref = JavaScriptBridge.create_callback(_on_speech_error_callback)
 
+var _audio_start_callback_ref = JavaScriptBridge.create_callback(_on_audio_start_callback)
+var _audio_end_callback_ref = JavaScriptBridge.create_callback(_on_audio_end_callback)
+var _sound_start_callback_ref = JavaScriptBridge.create_callback(_on_sound_start_callback)
+var _sound_end_callback_ref = JavaScriptBridge.create_callback(_on_sound_end_callback)
+
 # These signals tell objects what transpired from the callbacks above
 signal speech_start()
 signal speech_phrase(phrase)
+signal speech_nomatch()
 signal speech_end()
 signal speech_error()
 
@@ -56,22 +62,39 @@ func _start_recognition() -> void:
 	speech_start.emit()
 
 func _on_speech_result_callback(_args):
-	print("[BridgeManager] On Speech Result callback!")
+	print("[BridgeManager] On Speech Result callback...")
 	var js_event = _args[0]
 	var phrase = js_event.results[0][0].transcript;
 	#var confidence = js_event.results[0][0].confidence;
-	print("[BridgeManager] Phrase received: " + phrase)
-	#print('[BridgeManager]Confidence: ' + confidence)
+	print("[BridgeManager] Phrase received: ", phrase)
 	speech_phrase.emit(phrase)
 
 func _on_speech_end_callback(_args):
-	print("[BridgeManager] On Speech End callback!")	
+	print("[BridgeManager] On Speech End callback!")
 	speech_end.emit()
 
 func _on_speech_nomatch_callback(_args):
 	# Don't think we'll ever get this
-	print("[BridgeManager] On Speech No Match callback!")	
+	# NOPE I stand corrected, this should be an error
+	print("[BridgeManager] On Speech No Match callback!")
+	speech_nomatch.emit()
 
 func _on_speech_error_callback(_args):
-	print("[BridgeManager] On Speech Error callback!")	
+	print("[BridgeManager] On Speech Error callback...")
+	var js_event = _args[0]
+	var error = js_event.error;
+	var message = js_event.message;
+	print("[BridgeManager] Error Type: '", error,"', message = '",message,"'")
 	speech_error.emit()
+
+func _on_audio_start_callback(_args):
+	print("[BridgeManager] On Audio Start callback.")
+
+func _on_audio_end_callback(_args):
+	print("[BridgeManager] On Audio End callback.")
+
+func _on_sound_start_callback(_args):
+	print("[BridgeManager] On Sound Start callback.")
+
+func _on_sound_end_callback(_args):
+	print("[BridgeManager] On Sound End callback.")

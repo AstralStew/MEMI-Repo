@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
 
 [node name="LetsLearn_Prefab" type="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,6 +33,7 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_VB"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 0

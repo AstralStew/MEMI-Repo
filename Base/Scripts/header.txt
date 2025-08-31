@@ -5,6 +5,95 @@
 var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
+var pageURL = window.location.href;
+var folderURL = pageURL.replace(/[^/]*$/, '');
+
+<!-- Setup Speech Recognition -->
+
+var recognition = new SpeechRecognition();
+//var speechRecognitionList = new SpeechGrammarList(); // unused
+recognition.continuous = false;
+recognition.lang = "en-AU";
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+<!-- Functions -->
+
+function startRecognition() {
+  console.log("[HEADER] Trying to start recognition!");  
+  recognition.start();
+}
+
+
+<!-- Callbacks -->
+
+recognition.onstart = () => {
+  console.log("[HEADER] Speech recognition started!");
+}
+
+recognition.onresult = () => {
+  // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
+  // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
+  // It has a getter so it can be accessed like an array
+  // The first [0] returns the SpeechRecognitionResult at the last position.
+  // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
+  // These also have getters so they can be accessed like arrays.
+  // The second [0] returns the SpeechRecognitionAlternative at position 0.
+  // We then return the transcript property of the SpeechRecognitionAlternative object
+  var result = event.results[0][0].transcript;
+  // CONTACT GODOT HERE
+  console.log("[HEADER] Result: ", result);
+  console.log("[HEADER] Confidence: ", event.results[0][0].confidence);
+}
+
+recognition.addEventListener("audiostart", () => {
+  console.log("[HEADER] AudioStart!");
+});
+recognition.addEventListener("audioend", () => {
+  console.log("[HEADER] AudioEnd!");
+});
+recognition.addEventListener("soundstart", () => {
+  console.log("[HEADER] SoundStart!");
+});
+recognition.addEventListener("soundend", () => {
+  console.log("[HEADER] SoundEnd!");
+});
+
+recognition.addEventListener("end", () => {
+  console.log("[HEADER] Speech recognition ended.");
+});
+
+recognition.addEventListener("nomatch", () => {
+  console.error("[HEADER] No match detected!");
+});
+
+recognition.addEventListener("error", () => {
+  console.error("[HEADER] Speech recognition error detected: ${event.error}");
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________
+
+
+<script>
+
+<!-- Define variables -->
+
+var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
 //var words = [ 'police' , 'fire' , 'ambulance'];
 
 var pageURL = window.location.href;

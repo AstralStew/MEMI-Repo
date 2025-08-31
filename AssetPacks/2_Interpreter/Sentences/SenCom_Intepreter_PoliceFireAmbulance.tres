@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]
 script = ExtResource("2_s5kdm")
-debug = false
+debug = true
 correctConditions = Array[ExtResource("1_lw33k")]([SubResource("Resource_ixt38")])
 wrongConditions = Array[String](["Police", "Fire"])
 correctAnim = "Interpreter/Interpreter_4a_Correct"

@@ -44,7 +44,7 @@ func compare(sentence:String) -> String:
 	
 	if correctConditions.size() > 0:
 		for check in correctConditions:
-			if check.resolve(sentence):
+			if check.resolve(sentence,debug):
 				correctCount += 1
 		if correctCount == correctConditions.size():
 			if debug: print("[SentenceComparer] Correct conditions found! Returning correctAnim ('",correctAnim,"')")
