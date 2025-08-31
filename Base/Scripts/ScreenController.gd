@@ -63,6 +63,7 @@ func _enter_tree() -> void:
 	print("[ScreenController] Initialising...")
 	
 	if !OS.has_feature("editor_runtime"):
+		print("[ScreenController] NOT running in Editor, initialising web stuff...")
 		
 		# Initialise the BridgeManager first
 		BridgeManager._initialise()

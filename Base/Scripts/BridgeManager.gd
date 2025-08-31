@@ -31,7 +31,7 @@ func _initialise() -> void:
 	window = JavaScriptBridge.get_interface("window")
 	recognition = JavaScriptBridge.get_interface("recognition")
 	
-	#print("[BridgeManager] recognition =", recognition)
+	print("[BridgeManager] window = '", window,"', recognition ='", recognition,"'")
 	recognition.onresult = _speech_result_callback_ref
 	recognition.onspeechend = _speech_end_callback_ref
 	recognition.onnomatch = _speech_nomatch_callback_ref
@@ -60,7 +60,7 @@ func _on_speech_result_callback(_args):
 	var js_event = _args[0]
 	var phrase = js_event.results[0][0].transcript;
 	#var confidence = js_event.results[0][0].confidence;
-	print("[BridgeManager]Phrase received: " + phrase)
+	print("[BridgeManager] Phrase received: " + phrase)
 	#print('[BridgeManager]Confidence: ' + confidence)
 	speech_phrase.emit(phrase)
 
