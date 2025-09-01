@@ -5,6 +5,7 @@ extends RichTextLabel
 
 @export_group("Text Properties")
 @export var fontType : Constants.FontType = Constants.FontType.Normal
+@export var lightSpeakerIcon := false
 
 signal text_populated
 signal text_populated_with_text(words)
@@ -26,7 +27,8 @@ signal meta_link_7
 signal meta_link_8
 signal meta_link_9
 
-const SPEAKER_PATH := "res://AssetPacks/0_Prerequisite/Images/SpeakerIcon.png"
+const DARK_SPEAKER_PATH := "res://AssetPacks/0_Prerequisite/Images/SpeakerIconDark.png"
+const LIGHT_SPEAKER_PATH := "res://AssetPacks/0_Prerequisite/Images/SpeakerIconLight.png"
 
 
 func _ready() -> void:
@@ -71,8 +73,10 @@ func resize(_newSize:int) -> void:
 func _get_speaker_string() -> String:
 	if debugging: print("[LabelController] Getting speaker string, size string = ",str(current_size + 4))
 	var sizeString = str(current_size + 4)
-	if debugging: print("[LabelController] Returning [img=b,b," + sizeString + "x" + sizeString + "]" + SPEAKER_PATH + "[/img]")
-	return "[img=b,b," + sizeString + "x" + sizeString + "]" + SPEAKER_PATH + "[/img]"
+	var speakerPath  = LIGHT_SPEAKER_PATH if lightSpeakerIcon else DARK_SPEAKER_PATH
+	if debugging: print("[LabelController] Returning [img=b,b," + sizeString + "x" + sizeString + "]" + speakerPath + "[/img]")
+	return "[img=b,b," + sizeString + "x" + sizeString + "]" + speakerPath + "[/img]"
+	
 
 
 func _check_font() -> void:

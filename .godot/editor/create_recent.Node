@@ -1,10 +1,10 @@
+TextureRect
 LabelController
 RichTextLabel
 Label
 Timer
 Control
 AnimationPlayer
-TextureRect
 MarginContainer
 BoxContainer
 CenterContainer
@@ -12,4 +12,3 @@ AudioStreamPlayer
 AnimatedSprite2D
 Node
 VBoxContainer
-VSeparator

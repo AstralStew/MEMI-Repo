@@ -19,15 +19,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
 script = ExtResource("1_xoyxg")
 debugging = true
 
 [node name="Explanation_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 15
 
@@ -39,6 +38,7 @@ layout_mode = 2
 [node name="Steps_HB" type="HBoxContainer" parent="Explanation_VB"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = -10
 alignment = 1
 
@@ -148,6 +148,7 @@ min_width = 60
 max_width = 85
 max_char_threshold = 24
 bg_border_hscale = 2.0
+bg_border_vscale = 1.0
 click_size = 0.9
 click_inout = 0.05
 click_ease = 2
@@ -209,7 +210,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 92.0923)
+pivot_offset = Vector2(56.5, 92.0921)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_7aqd4")
@@ -237,6 +238,7 @@ min_width = 60
 max_width = 85
 max_char_threshold = 24
 bg_border_hscale = 2.0
+bg_border_vscale = 1.0
 click_size = 0.9
 click_inout = 0.05
 click_ease = 2
@@ -298,7 +300,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 92.0923)
+pivot_offset = Vector2(56.5, 92.0921)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_7aqd4")
@@ -311,8 +313,9 @@ metadata/_edit_use_anchors_ = true
 [node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="Explanation_VB/Steps_HB/Step3_Bubble"]
 
 [node name="ExplanationLabels_VB" type="VBoxContainer" parent="Explanation_VB"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 15
 
@@ -436,7 +439,7 @@ theme_override_constants/separation = 20
 [connection signal="meta_link_4" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_dandenongvictoria.mp3"]]
 [connection signal="meta_link_5" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_milduravictoria.mp3"]]
 [connection signal="meta_link_6" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step3_interepreterhindi.mp3"]]
-[connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_3_FirstStep"]]
+[connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_2a_Continue"]]
 [connection signal="meta_link_2" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_4_SecondStep"]]
 [connection signal="meta_link_3" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_5_ThirdStep"]]
 [connection signal="meta_link_4" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_6_FinishSteps"]]

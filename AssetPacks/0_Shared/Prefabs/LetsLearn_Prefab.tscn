@@ -61,7 +61,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 texture = ExtResource("4_gfus3")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
 custom_minimum_size = Vector2(180, 125)
@@ -92,7 +92,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 texture = ExtResource("5_u0lhp")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
 custom_minimum_size = Vector2(180, 125)
@@ -123,7 +123,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 texture = ExtResource("6_dw7sb")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
 custom_minimum_size = Vector2(180, 125)
@@ -154,7 +154,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 texture = ExtResource("7_4q1sm")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
 custom_minimum_size = Vector2(180, 125)

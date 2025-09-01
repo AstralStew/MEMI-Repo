@@ -205,7 +205,7 @@ _data = {
 [node name="Scenario_Info_Prefab" type="VBoxContainer"]
 visible = false
 size_flags_vertical = 0
-theme_override_constants/separation = 30
+theme_override_constants/separation = 35
 script = ExtResource("1_3io74")
 debugging = true
 
@@ -228,7 +228,7 @@ uppercase = true
 [node name="Scenario_Info_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
-theme_override_constants/margin_left = 15
+theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
@@ -313,7 +313,7 @@ axis_stretch_vertical = 2
 [node name="Scenario_Emergency_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
-theme_override_constants/margin_left = 15
+theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
@@ -398,7 +398,7 @@ axis_stretch_vertical = 2
 [node name="Scenario_Location_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
-theme_override_constants/margin_left = 15
+theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80

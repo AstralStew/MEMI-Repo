@@ -85,6 +85,7 @@ fit_content = true
 meta_underlined = false
 script = ExtResource("6_ul74m")
 debugging = true
+lightSpeakerIcon = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -98,6 +99,7 @@ fit_content = true
 meta_underlined = false
 script = ExtResource("6_ul74m")
 debugging = true
+lightSpeakerIcon = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -111,6 +113,7 @@ fit_content = true
 meta_underlined = false
 script = ExtResource("6_ul74m")
 debugging = true
+lightSpeakerIcon = true
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_VB"]
 visible = false
@@ -121,6 +124,8 @@ theme_override_constants/separation = 40
 [node name="TapBubble" parent="Explanation_VB" instance=ExtResource("10_n5fai")]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_top = 19
+theme_override_constants/margin_bottom = 40
 
 [node name="ContinueButton" parent="." instance=ExtResource("9_44eh0")]
 layout_mode = 2
