@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy5l5ur5io04e"]
+[gd_scene load_steps=15 format=3 uid="uid://cy5l5ur5io04e"]
 
 [ext_resource type="Script" uid="uid://ccgjhwn385tow" path="res://Base/Scripts/Scenario.gd" id="1_3io74"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="1_y64yp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bx3d51dbnrf23" path="res://AssetPacks/0_Shared/Images/ScenarioIcon_Location.png" id="8_r5kik"]
 [ext_resource type="Animation" uid="uid://dslmvecgk6v8d" path="res://AssetPacks/0_Shared/Animations/Scenario_Info_Finish.res" id="9_brljr"]
 [ext_resource type="Animation" uid="uid://duphfqvy2bjdc" path="res://AssetPacks/0_Shared/Animations/Scenario_Info_Start.res" id="10_n0kto"]
+[ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="12_hbp8f"]
 
 [sub_resource type="Animation" id="Animation_3io74"]
 length = 0.001
@@ -228,7 +229,6 @@ uppercase = true
 [node name="Scenario_Info_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
-theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
@@ -313,7 +313,6 @@ axis_stretch_vertical = 2
 [node name="Scenario_Emergency_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
-theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
@@ -398,7 +397,6 @@ axis_stretch_vertical = 2
 [node name="Scenario_Location_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
-theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
@@ -484,6 +482,10 @@ axis_stretch_vertical = 2
 libraries = {
 &"": SubResource("AnimationLibrary_v32wr")
 }
+
+[node name="AudioStreamPlayer" type="Node" parent="."]
+script = ExtResource("12_hbp8f")
+number_of_players = 1
 
 [connection signal="text_populated_with_lines" from="Scenario_Info_MC/Info_C/Info_TR/Info_RTL" to="Scenario_Info_MC" method="set_margins_from_lines"]
 [connection signal="text_populated_with_lines" from="Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL" to="Scenario_Emergency_MC" method="set_margins_from_lines"]

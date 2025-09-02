@@ -5,7 +5,7 @@
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_hlj1k"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="4_7oxlh"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_sf7od"]
-[ext_resource type="Texture2D" uid="uid://c120qtk1dr1aw" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowOnlyNineSprite.png" id="6_gasvt"]
+[ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="6_f330p"]
 
 [node name="ButtonBubble" type="MarginContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -93,7 +93,7 @@ grow_vertical = 2
 pivot_offset = Vector2(66.5, 23)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("6_gasvt")
+texture = ExtResource("6_f330p")
 patch_margin_left = 20
 patch_margin_top = 19
 patch_margin_right = 20

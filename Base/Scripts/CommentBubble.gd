@@ -365,7 +365,6 @@ func _fade_background(_colour:Color,_duration:float,_ease:Tween.EaseType,_transi
 #endregion
 
 
-
 func _resize(_doTween:bool=true) -> void:
 	if _debug: print("[CommentBubble(",name,")] Resizing bubble to fit text...")
 	
@@ -374,13 +373,34 @@ func _resize(_doTween:bool=true) -> void:
 	bubbleText.custom_minimum_size = Vector2(max_width,0)
 	
 	await get_tree().process_frame 
-		
-	var max_line_length = 0
-	for i in bubbleText.get_line_count():
-		if _debug: print("[CommentBubble(",name,")] Line index = ",i,", range = ", bubbleText.get_line_range(i), ", sub = ", bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x)
-		max_line_length = maxi(bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x, max_line_length)
 	
-	var min_size = clamp(remap(max_line_length,min_char_threshold,max_char_threshold,min_width,max_width),min_width,max_width)
+	var max_line_length := 0
+	var img_count := 0
+	var range := 0
+	var line_length := 0
+	var font = bubbleText.get_font() if !Engine.is_editor_hint() else get_theme_default_font()    #LanguageManager.get_normal_font()
+	var parsed_text = bubbleText.get_parsed_text()
+	var current_size = bubbleText.get_current_size() if !Engine.is_editor_hint() else 18
+	for i in bubbleText.get_line_count():
+		#var substring = bubbleText.get_parsed_text().substr(bubbleText.get_line_range(i).x,bubbleText.get_line_range(i).y-bubbleText.get_line_range(i).x)
+		#print("SUBSTRING = ",substring)
+		range = bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x
+		line_length = 0
+		if _debug: print ("[CommentBubble(",name,")] Line index = ",i)
+		for char in parsed_text.substr(bubbleText.get_line_range(i).x, range):
+			#font.get_char_size(char.unicode_at(0),bubbleText.current_size)
+			line_length += font.get_char_size(char.unicode_at(0),current_size).x
+			if _debug: print("[CommentBubble(",name,")] Char = '",char,"', unicode = ",char.unicode_at(0),", size = ",font.get_char_size(char.unicode_at(0),18))
+		if _debug: print ("[CommentBubble(",name,")] Normal line length = ",line_length)
+		img_count = parsed_text.count("`", bubbleText.get_line_range(i).x ,bubbleText.get_line_range(i).y)
+		if _debug: print("[CommentBubble(",name,")] Line index = ",i,", range = ", bubbleText.get_line_range(i),", sub = ", range, ", img_count = ", img_count)
+		#max_line_length = maxi(bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x + (img_count*2), max_line_length)
+		line_length += img_count * 10
+		max_line_length = maxi(line_length, max_line_length)
+		if _debug: print ("[CommentBubble(",name,")] Post IMG line length = ",line_length)
+	
+	#var min_size = clamp(remap(max_line_length,min_char_threshold,max_char_threshold,min_width,max_width),min_width,max_width)
+	var min_size = clamp(max_line_length + 10,min_width,max_width)
 	
 	if _debug: print("[CommentBubble(",name,")] Get_line_count() = ",bubbleText.get_line_count(),"max_line_length = ",max_line_length,", min_size = ",min_size)
 	

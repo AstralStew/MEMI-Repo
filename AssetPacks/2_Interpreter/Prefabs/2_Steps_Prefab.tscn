@@ -65,13 +65,13 @@ click_ease = 2
 unclick_inout = 0.14
 unclick_ease = 1
 _autostart = true
-_auto_text = "LETSLEARN_3_FIRSTSTEP_T_STEP"
-_old_text = "LETSLEARN_3_FIRSTSTEP_T_STEP"
+_auto_text = "LEARNSTEPS_3_FIRSTSTEP_T_STEP"
+_old_text = "LEARNSTEPS_3_FIRSTSTEP_T_STEP"
 
 [node name="BubbleText" type="RichTextLabel" parent="Explanation_VB/Steps_HB/Step1_Bubble"]
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(78.75, 0)
+custom_minimum_size = Vector2(77.5, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -80,7 +80,7 @@ theme_override_fonts/normal_font = ExtResource("3_77r6p")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "LETSLEARN_3_FIRSTSTEP_T_STEP"
+text = "LEARNSTEPS_3_FIRSTSTEP_T_STEP"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -101,7 +101,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -120,7 +120,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_7aqd4")
@@ -155,13 +155,13 @@ click_ease = 2
 unclick_inout = 0.14
 unclick_ease = 1
 _autostart = true
-_auto_text = "LETSLEARN_4_SECONDSTEP_T_STEP"
-_old_text = "LETSLEARN_4_SECONDSTEP_T_STEP"
+_auto_text = "LEARNSTEPS_4_SECONDSTEP_T_STEP"
+_old_text = "LEARNSTEPS_4_SECONDSTEP_T_STEP"
 
 [node name="BubbleText" type="RichTextLabel" parent="Explanation_VB/Steps_HB/Step2_Bubble"]
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(78.75, 0)
+custom_minimum_size = Vector2(77.5, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -170,7 +170,7 @@ theme_override_fonts/normal_font = ExtResource("3_77r6p")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "LETSLEARN_4_SECONDSTEP_T_STEP"
+text = "LEARNSTEPS_4_SECONDSTEP_T_STEP"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -186,12 +186,12 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -10.0
-offset_top = -8.75
+offset_top = -7.0
 offset_right = 10.0
-offset_bottom = 6.25
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 82.5)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -205,12 +205,12 @@ z_index = -2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.11627
+anchor_bottom = 1.12
 offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 92.0921)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_7aqd4")
@@ -245,13 +245,13 @@ click_ease = 2
 unclick_inout = 0.14
 unclick_ease = 1
 _autostart = true
-_auto_text = "LETSLEARN_5_THIRDSTEP_T_STEP"
-_old_text = "LETSLEARN_5_THIRDSTEP_T_STEP"
+_auto_text = "LEARNSTEPS_5_THIRDSTEP_T_STEP"
+_old_text = "LEARNSTEPS_5_THIRDSTEP_T_STEP"
 
 [node name="BubbleText" type="RichTextLabel" parent="Explanation_VB/Steps_HB/Step3_Bubble"]
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(78.75, 0)
+custom_minimum_size = Vector2(77.5, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -260,7 +260,7 @@ theme_override_fonts/normal_font = ExtResource("3_77r6p")
 theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
-text = "LETSLEARN_5_THIRDSTEP_T_STEP"
+text = "LEARNSTEPS_5_THIRDSTEP_T_STEP"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -276,12 +276,12 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -10.0
-offset_top = -8.75
+offset_top = -7.0
 offset_right = 10.0
-offset_bottom = 6.25
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 82.5)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -295,12 +295,12 @@ z_index = -2
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.11627
+anchor_bottom = 1.12
 offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 92.0921)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_7aqd4")
@@ -392,7 +392,7 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "LETSLEARN_2_EXPLANATION_B2"
+text = "LEARNSTEPS_2_EXPLANATION_B2"
 fit_content = true
 horizontal_alignment = 1
 custom_effects = [ExtResource("5_ykmd4")]
@@ -439,9 +439,9 @@ theme_override_constants/separation = 20
 [connection signal="meta_link_4" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_dandenongvictoria.mp3"]]
 [connection signal="meta_link_5" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_milduravictoria.mp3"]]
 [connection signal="meta_link_6" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step3_interepreterhindi.mp3"]]
-[connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_2a_Continue"]]
-[connection signal="meta_link_2" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_4_SecondStep"]]
-[connection signal="meta_link_3" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_5_ThirdStep"]]
-[connection signal="meta_link_4" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LetsLearn/LetsLearn_6_FinishSteps"]]
-[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_2u_Skipped"]]
-[connection signal="meta_link_2" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LetsLearn/LetsLearn_Unload"]]
+[connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_2a_Continue"]]
+[connection signal="meta_link_2" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_4_SecondStep"]]
+[connection signal="meta_link_3" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_5_ThirdStep"]]
+[connection signal="meta_link_4" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_6_FinishSteps"]]
+[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LearnSteps/LearnSteps_2u_Skipped"]]
+[connection signal="meta_link_2" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= ["LearnSteps/LearnSteps_Unload"]]

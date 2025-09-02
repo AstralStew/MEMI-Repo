@@ -39,17 +39,16 @@ func compare(sentence:String) -> String:
 	var correctCount = 0
 	
 	if debug: print("[SentenceComparer] Comparing the sentence '",sentence,"'")
-		
-	if sentence == "": return mumboAnim
 	
-	if correctConditions.size() > 0:
-		for check in correctConditions:
-			if check.resolve(sentence,debug):
-				correctCount += 1
-		if correctCount == correctConditions.size():
-			if debug: print("[SentenceComparer] Correct conditions found! Returning correctAnim ('",correctAnim,"')")
-			return correctAnim
-	else: if debug: print("[SentenceComparer] WARNING -> Missing correct conditions on compare. Bit weird, but skipping...")
+	if sentence != "":
+		if correctConditions.size() > 0:
+			for check in correctConditions:
+				if check.resolve(sentence,debug):
+					correctCount += 1
+			if correctCount == correctConditions.size():
+				if debug: print("[SentenceComparer] Correct conditions found! Returning correctAnim ('",correctAnim,"')")
+				return correctAnim
+		else: if debug: print("[SentenceComparer] WARNING -> Missing correct conditions on compare. Bit weird, but skipping...")
 	
 	if attempts > -1:
 		# ^ this is to make sure we can still do infinite tries when teaching
@@ -58,16 +57,17 @@ func compare(sentence:String) -> String:
 				if debug: print("[SentenceComparer] NOTE -> Ran out of attempts! Returning giveUpAnim ('",giveUpAnim,"')")
 				return giveUpAnim
 	
-	if wrongConditions.size() > 0:
-		for phrase in wrongConditions:
-			if sentence.containsn(phrase):
-				if debug: print("[SentenceComparer] Wrong conditions found! Returning wrongAnim ('",wrongAnim,"')")
-				return wrongAnim
-	else: if debug: print("[SentenceComparer] No wrong conditions on compare. Skipping...")
-	
-	if sentence.containsn("don't know") || sentence.containsn("do not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
-		if debug: print("[SentenceComparer] User said 'I don't know'! Returning dontKnowAnim ('",dontKnowAnim,"')")
-		return dontKnowAnim
+	if sentence != "":
+		if wrongConditions.size() > 0:
+			for phrase in wrongConditions:
+				if sentence.containsn(phrase):
+					if debug: print("[SentenceComparer] Wrong conditions found! Returning wrongAnim ('",wrongAnim,"')")
+					return wrongAnim
+		else: if debug: print("[SentenceComparer] No wrong conditions on compare. Skipping...")
+		
+		if sentence.containsn("don't know") || sentence.containsn("do not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
+			if debug: print("[SentenceComparer] User said 'I don't know'! Returning dontKnowAnim ('",dontKnowAnim,"')")
+			return dontKnowAnim
 	
 	if debug: print("[SentenceComparer] No matches found! Returning mumboAnim ('",mumboAnim,"')")
 	return mumboAnim

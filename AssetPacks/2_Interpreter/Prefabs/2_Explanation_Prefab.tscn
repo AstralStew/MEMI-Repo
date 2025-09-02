@@ -29,8 +29,8 @@ debugging = true
 [node name="Explanation_MC" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 70
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 55
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
 layout_mode = 2
@@ -43,12 +43,12 @@ size_flags_vertical = 8
 
 [node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
 material = SubResource("ShaderMaterial_qk448")
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(0, 430)
 layout_mode = 0
 offset_left = -155.0
-offset_top = 110.0
+offset_top = 66.0
 offset_right = 205.0
-offset_bottom = 510.0
+offset_bottom = 496.0
 texture = ExtResource("3_yvkd7")
 expand_mode = 1
 stretch_mode = 5
@@ -57,7 +57,7 @@ stretch_mode = 5
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
@@ -69,7 +69,7 @@ lightSpeakerIcon = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
@@ -82,7 +82,7 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
@@ -95,7 +95,7 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
@@ -113,6 +113,8 @@ alignment = 2
 layout_mode = 2
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
+_auto_bg_colour = Color(1, 1, 1, 0.3)
+_auto_text_colour = Color(0.157, 0.09, 0.141, 0.6)
 _old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]

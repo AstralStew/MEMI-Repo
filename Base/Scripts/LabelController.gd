@@ -50,7 +50,8 @@ func populate(_newText : String) -> void:
 	if debugging: print("[LabelController] Setting text to: '",_newText)
 	#text = tr(_newText).replacen("{speaker}",_get_speaker_string())
 	
-	text = tr(_newText).replacen("<~","[color=00000000].[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] "+ _get_speaker_string())
+	#text = tr(_newText).replacen("<~","[color=00000000].[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] "+ _get_speaker_string())
+	text = tr(_newText).replacen("<~"," [bgcolor=F7A420C2]").replacen("~>","[/bgcolor][color=00000000]`[/color]"+ _get_speaker_string()).dedent()
 	
 	text_populated.emit()
 	text_populated_with_text.emit(text)
@@ -84,6 +85,11 @@ func _check_font() -> void:
 		LanguageManager._initialise()
 	add_theme_font_override("normal_font",LanguageManager.get_normal_font())
 
+func get_font() -> Font:
+	return LanguageManager.get_normal_font()
+
+func get_current_size() -> int:
+	return current_size
 
 # `meta` is of Variant type, so convert it to a String to avoid script errors at run-time.
 func _link_clicked(meta):

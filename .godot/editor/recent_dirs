@@ -1,17 +1,17 @@
-res://AssetPacks/2_Interpreter/Animations
-res://AssetPacks/1_Intro/Animations
 D:/Paperticket Studios/GODOT/Project MEMI/Exports/Packs
 D:/Paperticket Studios/GODOT/Project MEMI/Exports
-res://Base
-res://zOld/OldPrefabs
+res://AssetPacks/1_Intro/Animations
+res://AssetPacks/2_Interpreter/Animations
 res://AssetPacks/0_Shared/Animations
+res://Base/Scripts
+res://zOld/OldPrefabs
+res://Base
 res://Base/Shaders
 res://AssetPacks/0_Shared/SpriteSheets
 res://zOld
 res://AssetPacks/1_Intro/Images
 res://AssetPacks/1_Intro/Sentences
 res://AssetPacks/1_Intro/Prefabs
-res://Base/Scripts
 res://Base/Languages
 res://
 res://Scenes

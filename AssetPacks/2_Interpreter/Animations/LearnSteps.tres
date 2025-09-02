@@ -1,0 +1,27 @@
+[gd_resource type="AnimationLibrary" load_steps=11 format=3 uid="uid://cmgi5g7iph88u"]
+
+[ext_resource type="Animation" uid="uid://ct3yyvo3e6q7v" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_1_Overview.res" id="1_n0hit"]
+[ext_resource type="Animation" uid="uid://cpo0vnegvqgk1" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_2a_Continue.res" id="2_pbh4l"]
+[ext_resource type="Animation" uid="uid://u1cnao25w7vo" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_2_Explanation.res" id="3_qsmcs"]
+[ext_resource type="Animation" uid="uid://d01iwjmkuxyn5" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_2u_Skipped.res" id="4_t15i0"]
+[ext_resource type="Animation" uid="uid://c336rmu5w5bd0" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_4_SecondStep.res" id="5_vge8b"]
+[ext_resource type="Animation" uid="uid://s3vtijf0g8r3" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_3_FirstStep.res" id="6_7gl8u"]
+[ext_resource type="Animation" uid="uid://ctcv7x33on38a" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_6_FinishSteps.res" id="7_cer5s"]
+[ext_resource type="Animation" uid="uid://cg1co7j0otmob" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_5_ThirdStep.res" id="8_b572e"]
+[ext_resource type="Animation" uid="uid://dtlhtcvxfc11k" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_Load.res" id="9_nyir1"]
+[ext_resource type="Animation" uid="uid://dbvfvj5epeknn" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps_Unload.res" id="10_qeo3e"]
+
+[resource]
+resource_name = "LearnSteps"
+_data = {
+&"LearnSteps_1_Overview": ExtResource("1_n0hit"),
+&"LearnSteps_2_Explanation": ExtResource("3_qsmcs"),
+&"LearnSteps_2a_Continue": ExtResource("2_pbh4l"),
+&"LearnSteps_2u_Skipped": ExtResource("4_t15i0"),
+&"LearnSteps_3_FirstStep": ExtResource("6_7gl8u"),
+&"LearnSteps_4_SecondStep": ExtResource("5_vge8b"),
+&"LearnSteps_5_ThirdStep": ExtResource("8_b572e"),
+&"LearnSteps_6_FinishSteps": ExtResource("7_cer5s"),
+&"LearnSteps_Load": ExtResource("9_nyir1"),
+&"LearnSteps_Unload": ExtResource("10_qeo3e")
+}
