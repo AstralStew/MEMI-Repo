@@ -62,6 +62,7 @@ root_node = NodePath("MarginContainer")
 autoplay = "testing_anim_library/testing_animation"
 script = ExtResource("4_eopm5")
 debugging = true
+overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideTimeScale = true
 overrideTimeScaleFactor = 5.0
@@ -87,42 +88,75 @@ theme_override_constants/margin_bottom = 20
 [node name="Content" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer"]
 layout_mode = 2
 
-[node name="Background" type="TextureRect" parent="ContentCanvas/ScreenController"]
+[node name="Background" type="Control" parent="ContentCanvas/ScreenController"]
 modulate = Color(0.156863, 0.0901961, 0.141176, 1)
 z_index = -5
-custom_minimum_size = Vector2(3200, 3200)
+custom_minimum_size = Vector2(440, 956)
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -800.0
-offset_right = 400.0
-offset_bottom = 800.0
+offset_left = -220.0
+offset_top = -478.0
+offset_right = 220.0
+offset_bottom = 478.0
 grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+
+[node name="BGMaskLeft" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(0, 3200)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -1122.0
+offset_bottom = 1122.0
+grow_vertical = 2
+texture = ExtResource("18_0v13x")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BGBlockLeft" type="TextureRect" parent="ContentCanvas/ScreenController/Background/BGMaskLeft"]
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -3200.0
+offset_top = -1600.0
+offset_bottom = 1600.0
 grow_vertical = 2
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="BGMaskLeft" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
+[node name="BGMaskRight" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
 z_index = 1
 z_as_relative = false
+custom_minimum_size = Vector2(0, 3200)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.490625
-anchor_right = 0.490625
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_right = -168.0
-grow_horizontal = 2
+offset_top = -1122.0
+offset_right = 32.0
+offset_bottom = 1122.0
+grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("18_0v13x")
 expand_mode = 1
+flip_h = true
 
-[node name="BGBlockLeft" type="TextureRect" parent="ContentCanvas/ScreenController/Background/BGMaskLeft"]
+[node name="BGBlockRight" type="TextureRect" parent="ContentCanvas/ScreenController/Background/BGMaskRight"]
 custom_minimum_size = Vector2(3200, 3200)
 layout_mode = 1
 anchors_preset = 6
@@ -130,9 +164,8 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -3232.0
 offset_top = -1600.0
-offset_right = -32.0
+offset_right = 3200.0
 offset_bottom = 1600.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -140,28 +173,33 @@ pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="BGMaskRight" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
+[node name="BGMaskBottom" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
+visible = false
 z_index = 1
 z_as_relative = false
+custom_minimum_size = Vector2(0, 3200)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.509375
-anchor_right = 0.509375
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 167.0
-offset_right = 199.0
+offset_left = 1820.0
+offset_top = -42.0
+offset_right = 1412.0
+offset_bottom = 3158.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+rotation = 1.5708
 texture = ExtResource("18_0v13x")
 expand_mode = 1
 flip_h = true
-metadata/_edit_use_anchors_ = true
 
-[node name="BGBlockRight" type="TextureRect" parent="ContentCanvas/ScreenController/Background/BGMaskRight"]
+[node name="BGBlockBottom" type="TextureRect" parent="ContentCanvas/ScreenController/Background/BGMaskBottom"]
 custom_minimum_size = Vector2(3200, 3200)
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -169,12 +207,33 @@ anchor_bottom = 0.5
 offset_top = -1600.0
 offset_right = 3200.0
 offset_bottom = 1600.0
+grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 texture = ExtResource("5_eopm5")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="BGBackground" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
+z_index = -5
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1600.0
+offset_top = -1600.0
+offset_right = 1600.0
+offset_bottom = 1600.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+texture = ExtResource("5_eopm5")
+expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController"]
 script = ExtResource("14_h0d2r")

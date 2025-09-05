@@ -41,7 +41,6 @@ expand_mode = 1
 
 [node name="CommentBubble" parent="LadComment1" instance=ExtResource("19_shnuh")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1

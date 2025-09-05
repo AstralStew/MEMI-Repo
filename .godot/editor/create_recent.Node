@@ -1,3 +1,5 @@
+MarginContainer
+Control
 Timer
 AnimationPlayer
 Node
@@ -6,8 +8,6 @@ TextureRect
 LabelController
 RichTextLabel
 Label
-Control
-MarginContainer
 BoxContainer
 CenterContainer
 AnimatedSprite2D

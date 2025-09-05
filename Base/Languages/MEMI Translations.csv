@@ -114,12 +114,12 @@ INTERPRETER_2_SCENARIO_B1,[url={2}]Dial 000[/url],,,
 INTERPRETER_3_CALL_O1,"You have dialled emergency 000.
 Your call is being connected...",,,
 ,,,,
-INTERPRETER_3_CALL_C1,"[b]Remember this
-is not a real call.[/b]
+INTERPRETER_3_CALL_C1,"Remember this
+is not a real call.
 We don't record
 your voice.",,,
-INTERPRETER_3_CALL_C2,"[b]This message is
-pre-recorded.[/b]
+INTERPRETER_3_CALL_C2,"This message is
+pre-recorded.
 You do not need
 to respond.",,,
 ,,,,

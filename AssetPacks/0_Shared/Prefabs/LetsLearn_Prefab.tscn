@@ -47,32 +47,38 @@ custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
 
-[node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
-modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 125)
+[node name="LetsLearn_Interpreter_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 layout_mode = 2
+theme_override_constants/margin_left = 36
+
+[node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_constants/separation = 0
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Interpreter_TR2" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+[node name="Interpreter_TR2" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-size_flags_stretch_ratio = 0.25
+size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_gfus3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Interpreter_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
-custom_minimum_size = Vector2(68, 68)
+[node name="Interpreter_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 0
 texture = ExtResource("4_gfus3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_HB"]
+[node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -86,13 +92,20 @@ custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
 
-[node name="LetsLearn_Location_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
-custom_minimum_size = Vector2(0, 125)
+[node name="LetsLearn_Location_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 layout_mode = 2
+theme_override_constants/margin_left = 36
+
+[node name="LetsLearn_Location_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_Location_MC"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Interpreter_TR3" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+[node name="Interpreter_TR3" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -101,14 +114,16 @@ texture = ExtResource("4_gfus3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Location_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+[node name="Location_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 0
 texture = ExtResource("5_u0lhp")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_HB"]
+[node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -122,13 +137,20 @@ custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
 
-[node name="LetsLearn_Questions_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
-custom_minimum_size = Vector2(0, 125)
+[node name="LetsLearn_Questions_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 layout_mode = 2
+theme_override_constants/margin_left = 36
+
+[node name="LetsLearn_Questions_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Interpreter_TR4" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+[node name="Interpreter_TR4" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -137,14 +159,16 @@ texture = ExtResource("4_gfus3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Questions_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+[node name="Questions_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 0
 texture = ExtResource("6_dw7sb")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_HB"]
+[node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
@@ -158,13 +182,20 @@ custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
 
-[node name="LetsLearn_NoHelp_HB" type="HBoxContainer" parent="LetsLearnMenu_VB"]
-custom_minimum_size = Vector2(0, 125)
+[node name="LetsLearn_NoHelp_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 layout_mode = 2
+theme_override_constants/margin_left = 36
+
+[node name="LetsLearn_NoHelp_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Interpreter_TR5" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+[node name="Interpreter_TR5" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -173,14 +204,16 @@ texture = ExtResource("4_gfus3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="NoHelp_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+[node name="NoHelp_TR" type="TextureRect" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 0
 texture = ExtResource("7_4q1sm")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_HB"]
+[node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2

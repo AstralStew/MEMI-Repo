@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="7_oqbe8"]
 
 [node name="CommentBubble" type="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
