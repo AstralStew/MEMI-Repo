@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q7wdx763ouxh"
-path="res://.godot/imported/MemiLogo_En.png-f656a0336af4b52b14a39bb1e4a6f645.ctex"
+uid="uid://c5k5lgkntbdrq"
+path="res://.godot/imported/SpeakingDotsOLD.png-640a95c826ed495da1959fcfd8da1581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetPacks/0_Prerequisite/Images/MemiLogo_En.png"
-dest_files=["res://.godot/imported/MemiLogo_En.png-f656a0336af4b52b14a39bb1e4a6f645.ctex"]
+source_file="res://zOld/Old Other/SpeakingDotsOLD.png"
+dest_files=["res://.godot/imported/SpeakingDotsOLD.png-640a95c826ed495da1959fcfd8da1581.ctex"]
 
 [params]
 

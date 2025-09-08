@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1hjoq475ykua"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_d4hcx"]
+[ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_6l0e5"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="3_gjxry"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_am75m"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="5_shmvb"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="6_nfdmr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk448"]
+shader = ExtResource("2_6l0e5")
+shader_parameter/weight = 0.0
+
+[node name="2_Explanation_Prefab" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 100
+script = ExtResource("1_d4hcx")
+debugging = true
+
+[node name="Explanation_MC" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 55
+
+[node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LadTutorial1_C" type="Control" parent="Explanation_MC/Explanation_VB"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
+material = SubResource("ShaderMaterial_qk448")
+custom_minimum_size = Vector2(0, 430)
+layout_mode = 0
+offset_left = -155.0
+offset_top = 66.0
+offset_right = 205.0
+offset_bottom = 496.0
+texture = ExtResource("3_gjxry")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("4_am75m")
+debugging = true
+lightSpeakerIcon = true
+
+[node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("4_am75m")
+debugging = true
+lightSpeakerIcon = true
+
+[node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("4_am75m")
+debugging = true
+lightSpeakerIcon = true
+
+[node name="Explanation4_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+fit_content = true
+meta_underlined = false
+script = ExtResource("4_am75m")
+debugging = true
+lightSpeakerIcon = true
+
+[node name="Buttons_VB" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("5_shmvb")]
+layout_mode = 2
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+_auto_text = "INTERPRETER_1_LETSTRY_B1"
+_auto_bg_colour = Color(1, 1, 1, 0.3)
+_auto_text_colour = Color(0.157, 0.09, 0.141, 0.6)
+_old_text = "INTERPRETER_1_LETSTRY_B1"
+
+[node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.5)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "INTERPRETER_7_YOUDIDIT_B2"
+fit_content = true
+horizontal_alignment = 1
+custom_effects = [ExtResource("6_nfdmr")]
+script = ExtResource("4_am75m")
+debugging = true
+
+[node name="HSeparator" type="HSeparator" parent="Buttons_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/yes.mp3"]]
+[connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
+[connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]

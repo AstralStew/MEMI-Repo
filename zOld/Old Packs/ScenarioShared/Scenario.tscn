@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvk4rv3cxbtqh" path="res://zOld/Old Packs/ScenarioShared/Images/phone_in_hand.png" id="5_mvdbq"]
 [ext_resource type="Script" uid="uid://chdkpq4cliq4k" path="res://zOld/OldScripts/PhraseComparer.gd" id="5_t6eor"]
 [ext_resource type="AnimationLibrary" uid="uid://vdykkbad66bt" path="res://zOld/Old Packs/Scenario1/Animations/AnimLibrary_Scenario1.res" id="5_tbbjf"]
-[ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://Base/Images/lil_guy.png" id="12_livnf"]
+[ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://zOld/Old Other/lil_guy.png" id="12_livnf"]
 [ext_resource type="Script" uid="uid://bnfxt1udjslg3" path="res://Base/Scripts/TranslatedLabel.gd" id="12_mt6i1"]
 [ext_resource type="Script" uid="uid://dn6ymiyj68jvq" path="res://Base/Scripts/Counter.gd" id="12_ut65h"]
 [ext_resource type="Script" uid="uid://slj3083jgm76" path="res://Base/Scripts/SignalHelper.gd" id="14_umc6w"]

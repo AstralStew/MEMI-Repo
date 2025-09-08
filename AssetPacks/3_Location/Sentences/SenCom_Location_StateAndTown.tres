@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=5 format=3 uid="uid://dtyl3citn5oqv"]
+
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_kviyu"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_jx10s"]
+
+[sub_resource type="Resource" id="Resource_b1u8h"]
+script = ExtResource("1_kviyu")
+checkType = 0
+phrases = Array[String](["Shepparton"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[sub_resource type="Resource" id="Resource_ga2p5"]
+script = ExtResource("1_kviyu")
+checkType = 1
+phrases = Array[String](["Victoria", "Vic"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[resource]
+script = ExtResource("2_jx10s")
+debug = true
+correctConditions = Array[ExtResource("1_kviyu")]([SubResource("Resource_b1u8h"), SubResource("Resource_ga2p5")])
+wrongConditions = Array[String]([])
+correctAnim = "Location/Location_5a_Correct"
+wrongAnim = "Location/Location_5b_Mumbo"
+mumboAnim = "Location/Location_5b_Mumbo"
+dontKnowAnim = "Location/Location_5b_Mumbo"
+giveUpAnim = "Location/Location_5c_GiveUp"
+total_attempts = 4
+metadata/_custom_type_script = "uid://nudfku7qhbxq"

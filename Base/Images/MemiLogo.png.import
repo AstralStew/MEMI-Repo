@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://co2v4yweffik8"
-path="res://.godot/imported/MemiLogo.png-f8d65009b7de607b60b59c461094535a.ctex"
+path="res://.godot/imported/MemiLogo.png-de123a9f194a7eb3d03853e00f820d5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetPacks/0_Prerequisite/Images/MemiLogo.png"
-dest_files=["res://.godot/imported/MemiLogo.png-f8d65009b7de607b60b59c461094535a.ctex"]
+source_file="res://Base/Images/MemiLogo.png"
+dest_files=["res://.godot/imported/MemiLogo.png-de123a9f194a7eb3d03853e00f820d5d.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

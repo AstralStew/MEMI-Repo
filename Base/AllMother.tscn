@@ -62,7 +62,6 @@ root_node = NodePath("MarginContainer")
 autoplay = "testing_anim_library/testing_animation"
 script = ExtResource("4_eopm5")
 debugging = true
-overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideTimeScale = true
 overrideTimeScaleFactor = 5.0
@@ -70,6 +69,7 @@ screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource
 sentenceComparer = ExtResource("10_58hmj")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
+texture_filter = 4
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5

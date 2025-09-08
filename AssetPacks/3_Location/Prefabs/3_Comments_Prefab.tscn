@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw6st8a35qf1b"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_tgnnp"]
+[ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_f4hpk"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="3_pqgb8"]
+[ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="4_0vleq"]
+[ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_toe8d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oxnu"]
+shader = ExtResource("2_f4hpk")
+shader_parameter/weight = 0.0
+
+[node name="2_Comments_Prefab" type="Control"]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_tgnnp")
+debugging = true
+
+[node name="LadComment1" type="TextureRect" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_8oxnu")
+custom_minimum_size = Vector2(220, 505.5)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 180.0
+offset_right = 120.0
+offset_bottom = 780.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_pqgb8")
+expand_mode = 1
+
+[node name="CommentBubble" parent="LadComment1" instance=ExtResource("4_0vleq")]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.373
+anchor_top = 0.2
+anchor_right = 0.373
+anchor_bottom = 0.2
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+pivot_offset = Vector2(156, 106)
+_auto_text = ""
+_old_text = ""
+
+[node name="Overlay" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0)
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1614.0
+offset_top = -1839.0
+offset_right = 1586.0
+offset_bottom = 1361.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_toe8d")
+expand_mode = 1
+
+[connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_ambulance.mp3"]]
+[connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/Victoria.mp3"]]
+[connection signal="meta_link_3" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/Dandenong.mp3"]]
+[connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/interpreter.mp3"]]

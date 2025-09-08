@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" path="res://zOld/OldImages/Screenshot 2025-03-23 030941.png" id="9_qqjwn"]
 [ext_resource type="FontFile" uid="uid://blkv3mscjotfu" path="res://AssetPacks/0_Prerequisite/Fonts/Bases/Roboto-Italic-VariableFont.ttf" id="10_ovvd7"]
 [ext_resource type="Texture2D" uid="uid://cvk4rv3cxbtqh" path="res://zOld/Old Packs/ScenarioShared/Images/phone_in_hand.png" id="11_w14o3"]
-[ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://Base/Images/lil_guy.png" id="12_uxn35"]
+[ext_resource type="Texture2D" uid="uid://e6cricatu1gr" path="res://zOld/Old Other/lil_guy.png" id="12_uxn35"]
 
 [node name="ScenarioX" type="Node2D"]
 

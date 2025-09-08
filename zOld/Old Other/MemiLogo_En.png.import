@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e6cricatu1gr"
-path="res://.godot/imported/lil_guy.png-41b464e01f74ae3e5f4ec0856bdea9df.ctex"
+uid="uid://q7wdx763ouxh"
+path="res://.godot/imported/MemiLogo_En.png-401df93787bf22c447d6ba22357b8162.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Base/Images/lil_guy.png"
-dest_files=["res://.godot/imported/lil_guy.png-41b464e01f74ae3e5f4ec0856bdea9df.ctex"]
+source_file="res://zOld/Old Other/MemiLogo_En.png"
+dest_files=["res://.godot/imported/MemiLogo_En.png-401df93787bf22c447d6ba22357b8162.ctex"]
 
 [params]
 

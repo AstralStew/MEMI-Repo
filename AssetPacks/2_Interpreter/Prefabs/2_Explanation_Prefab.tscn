@@ -9,7 +9,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qk448"]
 shader = ExtResource("2_pritx")
-shader_parameter/target_texture = ExtResource("3_yvkd7")
 shader_parameter/weight = 0.0
 
 [node name="2_Explanation_Prefab" type="MarginContainer"]

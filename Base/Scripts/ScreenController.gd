@@ -407,7 +407,7 @@ func _on_speech_end():
 	if _bridge_connected: _disconnect_bridge()
 	recentResult = true
 	lastSentence = "" 
-	last_sentence_changed.emit("")
+	last_sentence_changed.emit("?")
 	_play_sentence_anim()
 	# Play sound
 	if !OS.has_feature("web_android"):
@@ -419,7 +419,7 @@ func _on_speech_error():
 	if _bridge_connected: _disconnect_bridge()
 	recentResult = true
 	lastSentence = ""
-	last_sentence_changed.emit("")
+	last_sentence_changed.emit("?")
 	_play_sentence_anim()
 	# Play sound
 	if !OS.has_feature("web_android"):
@@ -430,7 +430,7 @@ func _on_speech_nomatch():
 	if _bridge_connected: _disconnect_bridge()
 	recentResult = true
 	lastSentence = ""
-	last_sentence_changed.emit("")
+	last_sentence_changed.emit("?")
 	_play_sentence_anim()
 	# Play sound
 	if !OS.has_feature("web_android"):

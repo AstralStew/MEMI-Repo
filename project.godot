@@ -17,9 +17,9 @@ warnings/check_invalid_track_paths=false
 config/name="Project MEMI"
 run/main_scene="uid://dwbq0gs5gif60"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="uid://e6cricatu1gr"
-config/icon="uid://e6cricatu1gr"
+boot_splash/bg_color=Color(0.156863, 0.0901961, 0.141176, 1)
+boot_splash/image="uid://co2v4yweffik8"
+config/icon="uid://co2v4yweffik8"
 boot_splash/defaults/default_clear_color=Color(1, 1, 1, 1)
 
 [autoload]
@@ -35,6 +35,10 @@ window/size/viewport_height=956
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SpritesheetGenerator/plugin.cfg")
 
 [input]
 
