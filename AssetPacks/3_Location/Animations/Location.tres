@@ -1,49 +1,47 @@
-[gd_resource type="AnimationLibrary" load_steps=22 format=3 uid="uid://fjo5xkrra3dm"]
+[gd_resource type="AnimationLibrary" load_steps=21 format=3 uid="uid://fjo5xkrra3dm"]
 
-[ext_resource type="Animation" uid="uid://c7l0ra5g3cun" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1_LetsTry.res" id="1_r81lb"]
-[ext_resource type="Animation" uid="uid://byxjykmyuc34b" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1a_Correct.res" id="2_erc0m"]
-[ext_resource type="Animation" uid="uid://b2y2c4wbgrdip" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1b_Mumbo.res" id="3_8b6g0"]
-[ext_resource type="Animation" uid="uid://jcof8mfplpyw" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_2_Scenario.res" id="4_abijq"]
-[ext_resource type="Animation" uid="uid://dnmk0my88i0aw" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_3_Call.res" id="5_fek1n"]
-[ext_resource type="Animation" uid="uid://dm7ncw6j1uxo7" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4_Question1.res" id="6_ap810"]
-[ext_resource type="Animation" uid="uid://bmk46qx0rnppk" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4a_Correct.res" id="7_jnw6r"]
-[ext_resource type="Animation" uid="uid://cegj2cwnuh11m" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4b_Mumbo.res" id="8_stwj0"]
-[ext_resource type="Animation" uid="uid://dxht672tkeufc" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_4c_GiveUp.res" id="9_kvcjj"]
-[ext_resource type="Animation" uid="uid://cem3gpwgfxx8g" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5_Question2.res" id="10_j1w5u"]
-[ext_resource type="Animation" uid="uid://b5d2mhvone2kr" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5a_Correct.res" id="11_p05go"]
-[ext_resource type="Animation" uid="uid://pube3qh5kq66" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5b_Mumbo.res" id="12_ehls0"]
-[ext_resource type="Animation" uid="uid://uypax7haa1vr" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5c_GiveUp.res" id="13_7nmdg"]
-[ext_resource type="Animation" uid="uid://ba7ia5ctr0320" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6_Question3.res" id="14_tof8f"]
-[ext_resource type="Animation" uid="uid://b8c683y53sxcg" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6a_Correct.res" id="15_d882w"]
-[ext_resource type="Animation" uid="uid://cquginyex40gq" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6b_Wrong.res" id="16_1g4k4"]
-[ext_resource type="Animation" uid="uid://1g371l7w11jy" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6c_Mumbo.res" id="17_f7doa"]
-[ext_resource type="Animation" uid="uid://crj2dwo56pywc" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6d_GiveUp.res" id="18_aj4q8"]
-[ext_resource type="Animation" uid="uid://d4gjxdaxs2p4v" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_7_YouDidIt.res" id="19_2l4yk"]
-[ext_resource type="Animation" uid="uid://dq2a01ifld7je" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="20_m3p5c"]
-[ext_resource type="Animation" uid="uid://cxamyjl2c7g74" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="21_ai4y6"]
+[ext_resource type="Animation" uid="uid://6h7817ke8nvo" path="res://AssetPacks/3_Location/Animations/Location_1_LetsTry.res" id="3_o377b"]
+[ext_resource type="Animation" uid="uid://bl0hxq52bf581" path="res://AssetPacks/3_Location/Animations/Location_2_Scenario.res" id="4_jxc3k"]
+[ext_resource type="Animation" uid="uid://ch0ss6bhra85b" path="res://AssetPacks/3_Location/Animations/Location_3_Call.res" id="5_bcbsm"]
+[ext_resource type="Animation" uid="uid://xgkmwanesook" path="res://AssetPacks/3_Location/Animations/Location_4a_Correct.res" id="6_2wy50"]
+[ext_resource type="Animation" uid="uid://bckj7wvorvkko" path="res://AssetPacks/3_Location/Animations/Location_4b_Mumbo.res" id="7_3q26v"]
+[ext_resource type="Animation" uid="uid://x4tknsk0r6vl" path="res://AssetPacks/3_Location/Animations/Location_4c_GiveUp.res" id="8_lfkhl"]
+[ext_resource type="Animation" uid="uid://bdb14sq2pkw28" path="res://AssetPacks/3_Location/Animations/Location_4_Question1.res" id="9_517e1"]
+[ext_resource type="Animation" uid="uid://dbedyb5egv0rv" path="res://AssetPacks/3_Location/Animations/Location_5a_Correct.res" id="10_xlhaj"]
+[ext_resource type="Animation" uid="uid://hce0pdn1ra12" path="res://AssetPacks/3_Location/Animations/Location_5b_Mumbo.res" id="11_b17o1"]
+[ext_resource type="Animation" uid="uid://6pmwsqouvwp2" path="res://AssetPacks/3_Location/Animations/Location_5c_GiveUp.res" id="12_olxgs"]
+[ext_resource type="Animation" uid="uid://cdurtppsl07vk" path="res://AssetPacks/3_Location/Animations/Location_5_Question2.res" id="13_q52dd"]
+[ext_resource type="Animation" uid="uid://21knwvaen56d" path="res://AssetPacks/3_Location/Animations/Location_6a_Correct.res" id="14_0qr4d"]
+[ext_resource type="Animation" uid="uid://gns8jbc2evm5" path="res://AssetPacks/3_Location/Animations/Location_6b_Wrong.res" id="15_ykxvs"]
+[ext_resource type="Animation" uid="uid://bg8150byaruuf" path="res://AssetPacks/3_Location/Animations/Location_6c_Mumbo.res" id="16_xydjj"]
+[ext_resource type="Animation" uid="uid://c6c7rhxahp6av" path="res://AssetPacks/3_Location/Animations/Location_6d_GiveUp.res" id="17_hmjxi"]
+[ext_resource type="Animation" uid="uid://bxcge3mjm7yni" path="res://AssetPacks/3_Location/Animations/Location_6_Question3.res" id="18_yxmmj"]
+[ext_resource type="Animation" uid="uid://b22o2k65xomxg" path="res://AssetPacks/3_Location/Animations/Location_7_YouDidIt.res" id="19_xg5to"]
+[ext_resource type="Animation" uid="uid://1qp2mj21se8m" path="res://AssetPacks/3_Location/Animations/Location_1a_Fade.res" id="20_pyt7l"]
+[ext_resource type="Animation" uid="uid://ddewfqcrtxvl8" path="res://AssetPacks/3_Location/Animations/Location_Load.res" id="20_x6elf"]
+[ext_resource type="Animation" uid="uid://dko2plluqha55" path="res://AssetPacks/3_Location/Animations/Location_Unload.res" id="21_jlgua"]
 
 [resource]
-resource_name = "Interpreter"
+resource_name = "Location"
 _data = {
-&"Interpreter_1_LetsTry": ExtResource("1_r81lb"),
-&"Interpreter_1a_Correct": ExtResource("2_erc0m"),
-&"Interpreter_1b_Mumbo": ExtResource("3_8b6g0"),
-&"Interpreter_2_Scenario": ExtResource("4_abijq"),
-&"Interpreter_3_Call": ExtResource("5_fek1n"),
-&"Interpreter_4_Question1": ExtResource("6_ap810"),
-&"Interpreter_4a_Correct": ExtResource("7_jnw6r"),
-&"Interpreter_4b_Mumbo": ExtResource("8_stwj0"),
-&"Interpreter_4c_GiveUp": ExtResource("9_kvcjj"),
-&"Interpreter_5_Question2": ExtResource("10_j1w5u"),
-&"Interpreter_5a_Correct": ExtResource("11_p05go"),
-&"Interpreter_5b_Mumbo": ExtResource("12_ehls0"),
-&"Interpreter_5c_GiveUp": ExtResource("13_7nmdg"),
-&"Interpreter_6_Question3": ExtResource("14_tof8f"),
-&"Interpreter_6a_Correct": ExtResource("15_d882w"),
-&"Interpreter_6b_Wrong": ExtResource("16_1g4k4"),
-&"Interpreter_6c_Mumbo": ExtResource("17_f7doa"),
-&"Interpreter_6d_GiveUp": ExtResource("18_aj4q8"),
-&"Interpreter_7_YouDidIt": ExtResource("19_2l4yk"),
-&"Interpreter_Load": ExtResource("20_m3p5c"),
-&"Interpreter_Unload": ExtResource("21_ai4y6")
+&"Location_1_LetsTry": ExtResource("3_o377b"),
+&"Location_1a_Fade": ExtResource("20_pyt7l"),
+&"Location_2_Scenario": ExtResource("4_jxc3k"),
+&"Location_3_Call": ExtResource("5_bcbsm"),
+&"Location_4_Question1": ExtResource("9_517e1"),
+&"Location_4a_Correct": ExtResource("6_2wy50"),
+&"Location_4b_Mumbo": ExtResource("7_3q26v"),
+&"Location_4c_GiveUp": ExtResource("8_lfkhl"),
+&"Location_5_Question2": ExtResource("13_q52dd"),
+&"Location_5a_Correct": ExtResource("10_xlhaj"),
+&"Location_5b_Mumbo": ExtResource("11_b17o1"),
+&"Location_5c_GiveUp": ExtResource("12_olxgs"),
+&"Location_6_Question3": ExtResource("18_yxmmj"),
+&"Location_6a_Correct": ExtResource("14_0qr4d"),
+&"Location_6b_Wrong": ExtResource("15_ykxvs"),
+&"Location_6c_Mumbo": ExtResource("16_xydjj"),
+&"Location_6d_GiveUp": ExtResource("17_hmjxi"),
+&"Location_7_YouDidIt": ExtResource("19_xg5to"),
+&"Location_Load": ExtResource("20_x6elf"),
+&"Location_Unload": ExtResource("21_jlgua")
 }

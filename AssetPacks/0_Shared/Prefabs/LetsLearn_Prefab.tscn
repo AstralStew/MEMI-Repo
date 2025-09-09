@@ -10,7 +10,6 @@
 [ext_resource type="AnimationLibrary" uid="uid://bsutrsh0o2oko" path="res://AssetPacks/0_Shared/Animations/LetsLearn.tres" id="8_6yl00"]
 
 [node name="LetsLearn_Prefab" type="MarginContainer"]
-modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +33,8 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_VB"]
-custom_minimum_size = Vector2(0, 150)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -52,7 +52,6 @@ layout_mode = 2
 theme_override_constants/margin_left = 36
 
 [node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -93,11 +92,11 @@ script = ExtResource("3_t2f8j")
 debugging = true
 
 [node name="LetsLearn_Location_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0.3)
 layout_mode = 2
 theme_override_constants/margin_left = 36
 
 [node name="LetsLearn_Location_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_Location_MC"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -138,11 +137,11 @@ script = ExtResource("3_t2f8j")
 debugging = true
 
 [node name="LetsLearn_Questions_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0.3)
 layout_mode = 2
 theme_override_constants/margin_left = 36
 
 [node name="LetsLearn_Questions_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -183,11 +182,11 @@ script = ExtResource("3_t2f8j")
 debugging = true
 
 [node name="LetsLearn_NoHelp_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0.3)
 layout_mode = 2
 theme_override_constants/margin_left = 36
 
 [node name="LetsLearn_NoHelp_HB" type="HBoxContainer" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4

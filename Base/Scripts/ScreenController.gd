@@ -317,6 +317,14 @@ func destroy_all_prefabs():
 	for key in loaded_elements.keys():
 		destroy_prefab(key)
 
+func destroy_all_prefabs_except(_protected:PackedStringArray):
+	if debugging: print("[ScreenController] Destroying all loaded prefabs EXCEPT the following: ",_protected,"...")
+	for key in loaded_elements.keys():
+		if !_protected.has(key):
+			destroy_prefab(key)
+		elif debugging:
+			print("[ScreenController] Prefab '",key,"' was NOT destroyed ;) ...")
+
 
 func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_start_speech_recognition.connect(_start_recognition)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv0gkn5xyfhn1"]
+[gd_scene load_steps=9 format=3 uid="uid://cv0gkn5xyfhn1"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_84asj"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_pritx"]
+[ext_resource type="Texture2D" uid="uid://bwv8ec2rkdr7s" path="res://AssetPacks/1_Intro/Images/Lad_ThumbsUp.png" id="3_8xwae"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="3_yvkd7"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_jbdvx"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="6_yos7i"]
@@ -9,7 +10,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qk448"]
 shader = ExtResource("2_pritx")
-shader_parameter/weight = 0.0
+shader_parameter/target_texture = ExtResource("3_8xwae")
+shader_parameter/weight = 1.0
 
 [node name="2_Explanation_Prefab" type="MarginContainer"]
 anchors_preset = 15
@@ -139,3 +141,4 @@ theme_override_constants/separation = 50
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/yes.mp3"]]
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
+[connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]

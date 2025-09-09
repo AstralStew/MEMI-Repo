@@ -10,7 +10,7 @@
 shader = ExtResource("2_f4hpk")
 shader_parameter/weight = 0.0
 
-[node name="2_Comments_Prefab" type="Control"]
+[node name="3_Comments_Prefab" type="Control"]
 visible = false
 z_index = 2
 layout_mode = 3

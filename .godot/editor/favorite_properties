@@ -1,6 +1,6 @@
 [CanvasItem]
 
-properties=PackedStringArray("modulate", "visible")
+properties=PackedStringArray("modulate", "visible", "self_modulate")
 
 [MarginContainer]
 

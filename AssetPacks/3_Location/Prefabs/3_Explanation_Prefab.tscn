@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_d4hcx"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_6l0e5"]
-[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="3_gjxry"]
+[ext_resource type="Texture2D" uid="uid://bghw73stsxlsq" path="res://AssetPacks/3_Location/Images/Lad_Postbox.png" id="3_4vxws"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_am75m"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="5_shmvb"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="6_nfdmr"]
@@ -11,7 +11,7 @@
 shader = ExtResource("2_6l0e5")
 shader_parameter/weight = 0.0
 
-[node name="2_Explanation_Prefab" type="MarginContainer"]
+[node name="3_Explanation_Prefab" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,11 +44,12 @@ size_flags_vertical = 8
 material = SubResource("ShaderMaterial_qk448")
 custom_minimum_size = Vector2(0, 430)
 layout_mode = 0
-offset_left = -155.0
-offset_top = 66.0
-offset_right = 205.0
-offset_bottom = 496.0
-texture = ExtResource("3_gjxry")
+offset_left = -135.0
+offset_top = 46.0
+offset_right = 225.0
+offset_bottom = 476.0
+pivot_offset = Vector2(756, 327)
+texture = ExtResource("3_4vxws")
 expand_mode = 1
 stretch_mode = 5
 
@@ -111,10 +112,6 @@ alignment = 2
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("5_shmvb")]
 layout_mode = 2
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
-_auto_text = "INTERPRETER_1_LETSTRY_B1"
-_auto_bg_colour = Color(1, 1, 1, 0.3)
-_auto_text_colour = Color(0.157, 0.09, 0.141, 0.6)
-_old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
 visible = false
@@ -136,6 +133,5 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/yes.mp3"]]
-[connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
-[connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
+[connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Location/Location_1a_Fade"]]
+[connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Location/Location_3_Call"]]
