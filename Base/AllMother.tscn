@@ -21,7 +21,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://bsutrsh0o2oko" path="res://AssetPacks/0_Shared/Animations/LetsLearn.tres" id="15_c1y5l"]
 [ext_resource type="Texture2D" uid="uid://dqjndrvvyh0vc" path="res://AssetPacks/0_Prerequisite/Images/BackgroundFade.png" id="18_0v13x"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="18_fxh3s"]
-[ext_resource type="Texture2D" uid="uid://bghw73stsxlsq" path="res://AssetPacks/3_Location/Images/Lad_Postbox.png" id="19_s83ii"]
+[ext_resource type="Texture2D" uid="uid://dipqmjlfmuv5q" path="res://AssetPacks/1_Intro/Images/Lad_Yay.png" id="19_fxh3s"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="20_tlsrq"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="21_x7k22"]
 [ext_resource type="PackedScene" uid="uid://cy5l5ur5io04e" path="res://AssetPacks/0_Shared/Prefabs/Scenario_Info_Prefab.tscn" id="22_f0qj7"]
@@ -92,7 +92,7 @@ overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideTimeScale = true
 overrideTimeScaleFactor = 5.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("8_s83ii"), ExtResource("5_qbn4n"), ExtResource("6_0p6sj")])
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii")])
 sentenceComparer = ExtResource("10_58hmj")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
@@ -118,16 +118,16 @@ layout_mode = 2
 [node name="LetsLearn_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 script = ExtResource("8_58hmj")
 
 [node name="LetsLearnMenu_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 7
+theme_override_constants/separation = 0
 alignment = 1
 
 [node name="LetsLearnTitle_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
@@ -136,7 +136,7 @@ size_flags_vertical = 0
 
 [node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearnTitle_VB"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 80.0295)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -150,8 +150,9 @@ script = ExtResource("10_fxh3s")
 debugging = true
 
 [node name="LetsLearn_Interpreter_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 36
+theme_override_constants/margin_left = 0
 
 [node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_MC"]
 layout_mode = 2
@@ -194,9 +195,8 @@ script = ExtResource("10_fxh3s")
 debugging = true
 
 [node name="LetsLearn_Location_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 0
+theme_override_constants/margin_left = 36
 
 [node name="LetsLearn_Location_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Location_MC"]
 layout_mode = 2
@@ -216,7 +216,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Location_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
-custom_minimum_size = Vector2(116.637, 116.637)
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -263,7 +263,6 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Questions_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
-custom_minimum_size = Vector2(116.637, 116.637)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -308,7 +307,6 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="NoHelp_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
-custom_minimum_size = Vector2(116.637, 116.637)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -364,12 +362,12 @@ size_flags_vertical = 8
 material = SubResource("ShaderMaterial_qk448")
 custom_minimum_size = Vector2(0, 430)
 layout_mode = 0
-offset_left = -135.0
-offset_top = 46.0
-offset_right = 225.0
-offset_bottom = 476.0
+offset_left = -155.0
+offset_top = 110.0
+offset_right = 205.0
+offset_bottom = 540.0
 pivot_offset = Vector2(756, 327)
-texture = ExtResource("19_s83ii")
+texture = ExtResource("19_fxh3s")
 expand_mode = 1
 stretch_mode = 5
 
@@ -437,6 +435,7 @@ _auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -464,7 +463,7 @@ layout_mode = 2
 [node name="TapBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" instance=ExtResource("24_3alyw")]
 layout_mode = 2
 theme_override_constants/margin_top = 50
-incorrect_pause = 4.0
+incorrect_pause = 2.5
 
 [node name="3_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" instance=ExtResource("25_kku6m")]
 layout_mode = 2

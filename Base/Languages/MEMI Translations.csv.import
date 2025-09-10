@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://sp5fp8pyjvqc"
+uid="uid://b0frp2jed145c"
 
 [deps]
 
-files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation"]
+files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation", "res://Base/Languages/MEMI Translations.ENGLISH SCRIPT TO GIVE TO TRANSLATORS.translation"]
 
 source_file="res://Base/Languages/MEMI Translations.csv"
-dest_files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation"]
+dest_files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation", "res://Base/Languages/MEMI Translations.ENGLISH SCRIPT TO GIVE TO TRANSLATORS.translation"]
 
 [params]
 

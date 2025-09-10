@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=21 format=3 uid="uid://fjo5xkrra3dm"]
+[gd_resource type="AnimationLibrary" load_steps=25 format=3 uid="uid://fjo5xkrra3dm"]
 
 [ext_resource type="Animation" uid="uid://6h7817ke8nvo" path="res://AssetPacks/3_Location/Animations/Location_1_LetsTry.res" id="3_o377b"]
 [ext_resource type="Animation" uid="uid://bl0hxq52bf581" path="res://AssetPacks/3_Location/Animations/Location_2_Scenario.res" id="4_jxc3k"]
@@ -12,14 +12,18 @@
 [ext_resource type="Animation" uid="uid://6pmwsqouvwp2" path="res://AssetPacks/3_Location/Animations/Location_5c_GiveUp.res" id="12_olxgs"]
 [ext_resource type="Animation" uid="uid://cdurtppsl07vk" path="res://AssetPacks/3_Location/Animations/Location_5_Question2.res" id="13_q52dd"]
 [ext_resource type="Animation" uid="uid://21knwvaen56d" path="res://AssetPacks/3_Location/Animations/Location_6a_Correct.res" id="14_0qr4d"]
-[ext_resource type="Animation" uid="uid://gns8jbc2evm5" path="res://AssetPacks/3_Location/Animations/Location_6b_Wrong.res" id="15_ykxvs"]
-[ext_resource type="Animation" uid="uid://bg8150byaruuf" path="res://AssetPacks/3_Location/Animations/Location_6c_Mumbo.res" id="16_xydjj"]
-[ext_resource type="Animation" uid="uid://c6c7rhxahp6av" path="res://AssetPacks/3_Location/Animations/Location_6d_GiveUp.res" id="17_hmjxi"]
 [ext_resource type="Animation" uid="uid://bxcge3mjm7yni" path="res://AssetPacks/3_Location/Animations/Location_6_Question3.res" id="18_yxmmj"]
-[ext_resource type="Animation" uid="uid://b22o2k65xomxg" path="res://AssetPacks/3_Location/Animations/Location_7_YouDidIt.res" id="19_xg5to"]
+[ext_resource type="Animation" uid="uid://qmct7mnn410c" path="res://AssetPacks/3_Location/Animations/Location_7a_Correct.res" id="19_jxc3k"]
+[ext_resource type="Animation" uid="uid://sejq8670qmqc" path="res://AssetPacks/3_Location/Animations/Location_7b_Wrong.res" id="20_bcbsm"]
 [ext_resource type="Animation" uid="uid://1qp2mj21se8m" path="res://AssetPacks/3_Location/Animations/Location_1a_Fade.res" id="20_pyt7l"]
 [ext_resource type="Animation" uid="uid://ddewfqcrtxvl8" path="res://AssetPacks/3_Location/Animations/Location_Load.res" id="20_x6elf"]
+[ext_resource type="Animation" uid="uid://ciphvlm2cixar" path="res://AssetPacks/3_Location/Animations/Location_7c_Mumbo.res" id="21_2wy50"]
 [ext_resource type="Animation" uid="uid://dko2plluqha55" path="res://AssetPacks/3_Location/Animations/Location_Unload.res" id="21_jlgua"]
+[ext_resource type="Animation" uid="uid://emc14rubo2t4" path="res://AssetPacks/3_Location/Animations/Location_7d_GiveUp.res" id="22_3q26v"]
+[ext_resource type="Animation" uid="uid://c6c7rhxahp6av" path="res://AssetPacks/3_Location/Animations/Location_6c_GiveUp.res" id="23_jxc3k"]
+[ext_resource type="Animation" uid="uid://bclryat87yi4g" path="res://AssetPacks/3_Location/Animations/Location_7_Question4.res" id="23_lfkhl"]
+[ext_resource type="Animation" uid="uid://b22o2k65xomxg" path="res://AssetPacks/3_Location/Animations/Location_8_YouDidIt.res" id="24_517e1"]
+[ext_resource type="Animation" uid="uid://gns8jbc2evm5" path="res://AssetPacks/3_Location/Animations/Location_6b_Mumbo.res" id="24_bcbsm"]
 
 [resource]
 resource_name = "Location"
@@ -38,10 +42,14 @@ _data = {
 &"Location_5c_GiveUp": ExtResource("12_olxgs"),
 &"Location_6_Question3": ExtResource("18_yxmmj"),
 &"Location_6a_Correct": ExtResource("14_0qr4d"),
-&"Location_6b_Wrong": ExtResource("15_ykxvs"),
-&"Location_6c_Mumbo": ExtResource("16_xydjj"),
-&"Location_6d_GiveUp": ExtResource("17_hmjxi"),
-&"Location_7_YouDidIt": ExtResource("19_xg5to"),
+&"Location_6b_Mumbo": ExtResource("24_bcbsm"),
+&"Location_6c_GiveUp": ExtResource("23_jxc3k"),
+&"Location_7_Question4": ExtResource("23_lfkhl"),
+&"Location_7a_Correct": ExtResource("19_jxc3k"),
+&"Location_7b_Wrong": ExtResource("20_bcbsm"),
+&"Location_7c_Mumbo": ExtResource("21_2wy50"),
+&"Location_7d_GiveUp": ExtResource("22_3q26v"),
+&"Location_8_YouDidIt": ExtResource("24_517e1"),
 &"Location_Load": ExtResource("20_x6elf"),
 &"Location_Unload": ExtResource("21_jlgua")
 }

@@ -1,251 +1,293 @@
-string key,en,ar,prs,zh
-COMMON_YOUSAY,YOU SAY,,,
-COMMON_000SAYS,000 SAYS,,,
-COMMON_GREAT,Great,,,
-COMMON_TRYAGAIN,Try again,,,
-COMMON_CONTINUE,[url={1}]continue[/url],,,
-,,,,
-,,,,
-LETSLEARN_OVERVIEW_1,"Together, let's practise:",,,
-LETSLEARN_OVERVIEW_2,Starting with:,,,
-,,,,
-LETSLEARN_INTERPRETER,Asking for an interpreter,,,
-LETSLEARN_LOCATION,Saying where you are in English,,,
-LETSLEARN_QUESTIONS,Answering emergency questions in English,,,
-LETSLEARN_NOHELP,Making a call without help!,,,
+string key,en,ar,prs,zh,ENGLISH SCRIPT TO GIVE TO TRANSLATORS
+COMMON_YOUSAY,YOU SAY,أنت تقول,,,YOU SAY
+COMMON_000SAYS,000 SAYS, 000 تقول,,,000 SAYS
+COMMON_GREAT,Great,عظيم!,,,Great
+COMMON_TRYAGAIN,Try again,حاول ثانيةً,,,Try again
+COMMON_CONTINUE,[url={1}]continue[/url],[url={1}]لنواصل[/url],,,[url={1}]continue[/url]
+,,,,,
+,,,,,
+LETSLEARN_OVERVIEW_1,"Together, let's practise:",معا، دعونا نمارس:,,,"Together, let's practise:"
+LETSLEARN_OVERVIEW_2,Starting with:,"بدءا من:
+",,,Starting with:
+,,,,,
+LETSLEARN_INTERPRETER,Asking for an interpreter,طلب مترجم,,,Asking for an interpreter
+LETSLEARN_LOCATION,Saying where you are in English,قول مكانك باللغة الإنجليزية,,,Saying where you are in English
+LETSLEARN_QUESTIONS,Answering emergency questions in English,الإجابة على أسئلة الطوارئ باللغة الإنجليزية,,,Answering emergency questions in English
+LETSLEARN_NOHELP,Making a call without help!,إجراء مكالمة دون مساعدة!,,,Making a call without help!
 LETSLEARN_BONUS,"Bonus scenario:
-A common medical emergency",,,
-,,,,
-,,,,
-,,,,
-,,,,
-INTRO_LANDING_2_EXPLANATION_T1,Let’s practise calling 000 in an emergency.,دعونا نتدرب على الاتصال بالرقم 000 في حالة الطوارئ.,[fade_in] بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.[/fade_in],[fade_in]让我们练习一下紧急情况下拨打000。
-INTRO_LANDING_2_EXPLANATION_T2,I will help you step by step using example situations. ,[fade_in]باستخدام سيناريوهات المثال، سأرشدك خلال بضعة آلاف من المكالمات خطوة بخطوة.," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
+Medical emergency","سيناريو المكافأة:
+الطوارئ الطبية",,,"Bonus scenario:
+Medical emergency"
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+INTRO_LANDING_2_EXPLANATION_T1,Let’s practise calling 000 in an emergency.,"لنتدرّب على الاتصال بالرقم 000
+",[fade_in] بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.[/fade_in],[fade_in]让我们练习一下紧急情况下拨打000。,Let’s practise calling 000 in an emergency.
+INTRO_LANDING_2_EXPLANATION_T2,I will help you step by step using example situations. ,سأساعدك خطوة بخطوة باستخدام مواقف نموذجية.," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
 
-[fade_in]با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.[/fade_in]",使用示例场景，我将逐步指导您完成几千个呼叫。
-INTRO_LANDING_2_EXPLANATION_T3,"Real 000 calls are different, but this practice will help you in a real emergency.",[fade_in]على الرغم من أن المكالمة الحقيقية 000 ستكون مختلفة عن هذه،," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
+[fade_in]با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.[/fade_in]",使用示例场景，我将逐步指导您完成几千个呼叫。,I will help you step by step using example situations. 
+INTRO_LANDING_2_EXPLANATION_T3,"Real 000 calls are different, but this practice will help you in a real emergency.",تختلف مكالمات 000 الحقيقية، ولكن هذه الممارسة سوف تساعدك في حالة الطوارئ الحقيقية.," بیایید در یک حالت اضطراری تماس گرفتن با 000 را تمرین کنیم.
 
 با استفاده از سناریوهای مثالی من شما را از طریق چند 000 تماس قدم به قدم راهنمایی خواهم کرد.
 
-[fade_in]درحالیکه یک تماس واقعی 000 با این متفاوت خواهد بود،[/fade_in]",尽管真正的 000 电话与此不同，
-,,,,
-INTRO_LANDING_2_EXPLANATION_B1,[url={1}]Let's start[/url],,,
-,,,,
-,,,,
-,,,,
-INTRO_LANDING_3_CALLSAREFAKE_T1,We will not make a real call.,,,
-INTRO_LANDING_3_CALLSAREFAKE_T2,"You will use your voice to answer questions, but we will never save your voice.",,,
-,,,,
-INTRO_LANDING_3_CALLSAREFAKE_B1,[url={2}]continue[/url],,,
-,,,,
-,,,,
-,,,,
-INTRO_TUTORIAL_1_LETSTRY_T1,Let's try it!,,,
-INTRO_TUTORIAL_1_LETSTRY_T2,Tap and say [url={1}]<~OK~>[/url],,,
-,,,,
-,,,,
-,,,,
-LEARNSTEPS_2_EXPLANATION_T1,"When you call 000, you can follow three steps to get an interpreter in your language.",,,
-LEARNSTEPS_2_EXPLANATION_T2,Let's go through them now.,,,
-,,,,
-LEARNSTEPS_2_EXPLANATION_B1,[url={1}]Learn the steps[/url],,,
-LEARNSTEPS_2_EXPLANATION_B2,or [url={1}]Skip Steps[/url],,,
-,,,,
-,,,,
-,,,,
-LEARNSTEPS_3_FIRSTSTEP_T_STEP,STEP 1,,,
-,,,,
-LEARNSTEPS_3_FIRSTSTEP_T1,000 ASKS:,,,
-LEARNSTEPS_3_FIRSTSTEP_T2,"[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]",,,
-LEARNSTEPS_3_FIRSTSTEP_T3,YOU ANSWER:,,,
+[fade_in]درحالیکه یک تماس واقعی 000 با این متفاوت خواهد بود،[/fade_in]",尽管真正的 000 电话与此不同，,"Real 000 calls are different, but this practice will help you in a real emergency."
+,,,,,
+INTRO_LANDING_2_EXPLANATION_B1,[url={1}]Let's start[/url],[url={1}]يلا[/url],[url={1}]يلا[/url],[url={1}]يلا[/url],[url={1}]Let's start[/url]
+,,,,,
+,,,,,
+,,,,,
+INTRO_LANDING_3_CALLSAREFAKE_T1,We will not make a real call.,لن نقوم بإجراء مكالمة حقيقية.,,,We will not make a real call.
+INTRO_LANDING_3_CALLSAREFAKE_T2,"You will use your voice to answer questions, but we will never save your voice.",سوف تستخدم صوتك للإجابة على الأسئلة، ولكننا لن نحفظ صوتك أبدًا.,,,"You will use your voice to answer questions, but we will never save your voice."
+,,,,,
+INTRO_LANDING_3_CALLSAREFAKE_B1,[url={2}]continue[/url],[url={2}]لنواصل[/url],,,[url={2}]continue[/url]
+,,,,,
+,,,,,
+,,,,,
+INTRO_TUTORIAL_1_LETSTRY_T1,Let's try it!,دعونا نحاول ذلك,,,Let's try it!
+INTRO_TUTORIAL_1_LETSTRY_T2,Tap and say [url={1}]<~OK~>[/url],انقر وقل [url={1}]<~OK~>[/url],,,Tap and say [url={1}]<~OK~>[/url]
+,,,,,
+,,,,,
+,,,,,
+LEARNSTEPS_2_EXPLANATION_T1,"When you call 000, you can follow three steps to get an interpreter in your language.",عند الاتصال بالرقم 000، يمكنك اتباع ثلاث خطوات للحصول على مترجم بلغتك.,,,"When you call 000, you can follow three steps to get an interpreter in your language."
+LEARNSTEPS_2_EXPLANATION_T2,Let's go through them now.,دعونا نمر عليهم الآن.,,,Let's go through them now.
+,,,,,
+LEARNSTEPS_2_EXPLANATION_B1,[url={1}]Learn the steps[/url],[url={1}]تعرف على الخطوات[/url],,,[url={1}]Learn the steps[/url]
+LEARNSTEPS_2_EXPLANATION_B2,or [url={1}]Skip Steps[/url],or [url={1}]Skip Steps[/url],,,or [url={1}]Skip Steps[/url]
+,,,,,
+,,,,,
+,,,,,
+LEARNSTEPS_3_FIRSTSTEP_T_STEP,STEP 1,الخطوة 1,,,STEP 1
+,,,,,
+LEARNSTEPS_3_FIRSTSTEP_T1,000 ASKS:,000 يسأل:,,,000 ASKS:
+LEARNSTEPS_3_FIRSTSTEP_T2,"[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]","[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]",,,"[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]
+Emergency. Police fire of ambulance?"
+LEARNSTEPS_3_FIRSTSTEP_T3,YOU ANSWER:,أنت تجيب:,,,YOU ANSWER:
 LEARNSTEPS_3_FIRSTSTEP_T4,"[url={1}]<~Police~>[/url], [url={2}]<~Fire~>[/url], or [url={3}]<~Ambulance~>[/url].
 
-Say only one service in English.","[url={1}]<~Police~>[/url], [url={2}]<~Fire~>[/url], or [url={3}]<~Ambulance~>[/url].
+Say only one service in English.","[url={1}]<~Police~>[/url], [url={2}]<~Fire~>[/url], or [url={3}]<~Ambulance.~>[/url]
 
-Say only one service in English.",,
-,,,,
-LEARNSTEPS_3_FIRSTSTEP_B1,[url={2}]STEP 2[/url],,,
-LEARNSTEPS_3_FIRSTSTEP_B2,[url={2}]Skip Steps[/url],,,
-,,,,
-,,,,
-,,,,
-LEARNSTEPS_4_SECONDSTEP_T_STEP,STEP 2,,,
-,,,,
-LEARNSTEPS_4_SECONDSTEP_T1,000 ASKS:,,,
-LEARNSTEPS_4_SECONDSTEP_T2,[url={2}]<~What state and town is the emergency in?~>[/url],,,
-LEARNSTEPS_4_SECONDSTEP_T3,YOU ANSWER:,,,
+قل خدمة واحدة فقط باللغة الإنجليزية",,,"[url={1}]<~Police~>[/url], Police [url={2}]<~Fire~>[/url], Fire or [url={3}]<~Ambulance~>[/url] Ambulance.
+
+Say only one service in English."
+,,,,,
+LEARNSTEPS_3_FIRSTSTEP_B1,[url={2}]STEP 2[/url],[url={2}] الخطوة 2[/url],,,[url={2}]STEP 2[/url]
+LEARNSTEPS_3_FIRSTSTEP_B2,[url={2}]Skip Steps[/url],[url={2}]تخطي الخطوات[/url],,,[url={2}]Skip Steps[/url]
+,,,,,
+,,,,,
+,,,,,
+LEARNSTEPS_4_SECONDSTEP_T_STEP,STEP 2,الخطوة 2,,,STEP 2
+,,,,,
+LEARNSTEPS_4_SECONDSTEP_T1,000 ASKS:,000 يسأل:,,,000 ASKS:
+LEARNSTEPS_4_SECONDSTEP_T2,[url={2}]<~What state and town is the emergency in?~>[/url],[url={2}]<~What state and town is the emergency in?~>[/url],,,"[url={2}]<~What state and town is the emergency in?~>[/url]
+What state and town is the emergency in?"
+LEARNSTEPS_4_SECONDSTEP_T3,YOU ANSWER:,أنت تجيب:,,,YOU ANSWER:
 LEARNSTEPS_4_SECONDSTEP_T4,"The area and state of your emergency.
 
 eg: [url={4}]<~Dandenong, Victoria~>[/url]
 
-eg: [url={5}]<~Mildura, Victoria~>[/url]",,,
-,,,,
-LEARNSTEPS_4_SECONDSTEP_B1,[url={3}]STEP 3[/url],,,
-,,,,
-,,,,
-,,,,
-LEARNSTEPS_5_THIRDSTEP_T_STEP,STEP 3,,,
-,,,,
-LEARNSTEPS_5_THIRDSTEP_T1,Your call will now transfer to a service in your area.,,,
-LEARNSTEPS_5_THIRDSTEP_T2,When you are connected they will ask you for the address of your emergency.,,,
-LEARNSTEPS_5_THIRDSTEP_T3,This is a good time to ask for an interpreter.,,,
+eg: [url={5}]<~Mildura, Victoria~>[/url]","قل لهماسم المدينة والولاية حيثُ تسكن.
+
+مثلًا: [url={4}]<~Dandenong, Victoria~>[/url]
+
+مثلًا: [url={5}]<~Mildura, Victoria~>[/url]",,,"The area and state of your emergency.
+
+eg: [url={4}]<~Dandenong, Victoria~>[/url]
+
+eg: [url={5}]<~Mildura, Victoria~>[/url]"
+,,,,,
+LEARNSTEPS_4_SECONDSTEP_B1,[url={3}]STEP 3[/url],[url={3}] الخطوة 3[/url],,,[url={3}]STEP 3[/url]
+,,,,,
+,,,,,
+,,,,,
+LEARNSTEPS_5_THIRDSTEP_T_STEP,STEP 3,الخطوة 3,,,STEP 3
+,,,,,
+LEARNSTEPS_5_THIRDSTEP_T1,Your call will now transfer to a service in your area.,سيتم الآن تحويل مكالمتك إلى إحدى الخدمات في منطقتك,,,Your call will now transfer to a service in your area.
+LEARNSTEPS_5_THIRDSTEP_T2,When you are connected they will ask you for the address of your emergency.,عندما تكون متصلاً، سيطلبون منك عنوان الطوارئ الخاص بك,,,When you are connected they will ask you for the address of your emergency.
+LEARNSTEPS_5_THIRDSTEP_T3,This is a good time to ask for an interpreter.,هذا هو الوقت المناسب لطلب مترجم.,,,This is a good time to ask for an interpreter.
 LEARNSTEPS_5_THIRDSTEP_T4,"ASK FOR AN INTERPRETER IN ENGLISH:
 
-eg: Say [url={6}]<~Interpreter, Hindi~>[/url]",,,
-,,,,
-LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],,,
-,,,,
-,,,,
-,,,,
-INTERPRETER_1_LETSTRY_T1,"Let’s try a practice 000 call, and you can ask for an interpreter in three steps.",,,
-INTERPRETER_1_LETSTRY_T2,Ready? Tap and say [url={1}]<~Yes~>[/url],,,
-,,,,
-INTERPRETER_1_LETSTRY_B1,[url={1}]See steps again[/url],,,
-,,,,
-,,,,
-,,,,
-INTERPRETER_2_SCENARIO_T1,SCENARIO,,,
-INTERPRETER_2_SCENARIO_T2,You find your father on the floor.,,,
-INTERPRETER_2_SCENARIO_T3,"He is not waking up, and you’re not sure if he’s breathing. You need an ambulance.",,,
-INTERPRETER_2_SCENARIO_T4,"His house is in Springvale, Victoria.",,,
-,,,,
-INTERPRETER_2_SCENARIO_B1,[url={2}]Dial 000[/url],,,
-,,,,
-,,,,
-,,,,
+eg: Say [url={6}]<~Interpreter, Hindi~>[/url]","اطلب مترجمًا باللغة الإنجليزية:
+
+مثلًا: [url={6}]<~Interpreter, Hindi~>[/url]",,,"ASK FOR AN INTERPRETER IN ENGLISH:
+
+eg: Say [url={6}]<~Interpreter, Hindi~>[/url]"
+,,,,,
+LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],[url={4}]أفهم![/url],,,[url={4}]Got it![/url]
+,,,,,
+,,,,,
+,,,,,
+INTERPRETER_1_LETSTRY_T1,"Let’s try a practice 000 call, and you can ask for an interpreter in three steps.",دعنا نحاول إجراء مكالمة 000 تدريبية، ويمكنك طلب مترجم في ثلاث خطوات.,,,"Let’s try a practice 000 call, and you can ask for an interpreter in three steps."
+INTERPRETER_1_LETSTRY_T2,Ready? Tap and say [url={1}]<~Yes~>[/url],مستعد؟ انقر وقل [url={1}]<~Yes~>[/url],,,Ready? Tap and say [url={1}]<~Yes~>[/url]
+,,,,,
+INTERPRETER_1_LETSTRY_B1,[url={1}]See steps again[/url],[url={1}]انظر الخطوات مرة أخرى[/url],,,[url={1}]See steps again[/url]
+,,,,,
+,,,,,
+,,,,,
+INTERPRETER_2_SCENARIO_T1,SCENARIO,سيناريو,,,SCENARIO
+INTERPRETER_2_SCENARIO_T2,You find your father on the floor.,تجد والدك على الأرض.,,,You find your father on the floor.
+INTERPRETER_2_SCENARIO_T3,"He is not waking up, and you’re not sure if he’s breathing. You need an ambulance.",إنه لا يستيقظ، وأنت لست متأكدًا من أنه يتنفس. أنت بحاجة إلى سيارة إسعاف.,,,"He is not waking up, and you’re not sure if he’s breathing. You need an ambulance."
+INTERPRETER_2_SCENARIO_T4,"His house is in Springvale, Victoria.","يقع منزله في Springvale, Victoria",,,"His house is in Springvale, Victoria."
+,,,,,
+INTERPRETER_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اتصل بالرقم 000[/url],,,[url={2}]Dial 000[/url]
+,,,,,
+,,,,,
+,,,,,
 INTERPRETER_3_CALL_O1,"You have dialled emergency 000.
-Your call is being connected...",,,
-,,,,
+Your call is being connected...","You have dialled emergency 000.
+Your call is being connected...",,,"You have dialled emergency 000.
+Your call is being connected..."
+,,,,,
 INTERPRETER_3_CALL_C1,"Remember this
 is not a real call.
 We don't record
-your voice.",,,
+your voice.","تذكر أن هذه ليست مكالمة حقيقية.
+لا نسجل صوتك.",,,"Remember this
+is not a real call.
+We don't record
+your voice."
 INTERPRETER_3_CALL_C2,"This message is
 pre-recorded.
 You do not need
-to respond.",,,
-,,,,
-,,,,
-,,,,
-INTERPRETER_4_QUESTION1_O1,"Emergency: police, fire, or ambulance?",,,
-,,,,
-INTERPRETER_4_QUESTION1_C1,They always ask this question first.,,,
+to respond.","هذه رسالة مسجلة مسبقًا. تقول: ""لقد اتصلت برقم الطوارئ 000.
+ جاري تحويل مكالمتك."" لا داعي لقول ""رنين"".",,,This is an automatic message. It says: “You have dialled emergency 000. Your call is being connected.” You don’t need to respond.
+,,,,,
+,,,,,
+,,,,,
+INTERPRETER_4_QUESTION1_O1,"Emergency: police, fire, or ambulance?","Emergency: police, fire, or ambulance?",,,"Emergency: police, fire, or ambulance?"
+,,,,,
+INTERPRETER_4_QUESTION1_C1,They always ask this question first.,"إنهم يسألون هذا السؤال دائمًا أولاً
+وهذا يعني: أتريد الشرطة أم الإطفاء أم الإسعاف؟ 
+يقول: [url={3}]<~Fire~>[/url] [url={2}]<~Police~>[/url], أو [url={1}]<~Ambulance~>[/url]",,,"They always ask this question first. 
+"
 INTERPRETER_4_QUESTION1_C2,"Tap and say
-[url={1}]<~Ambulance~>[/url]",,,
-INTERPRETER_4_QUESTION1_CC,Well done!,,,
+[url={1}]<~Ambulance~>[/url]",مستعد؟ انقر وقل [url={1}]<~Ambulance~>[/url],,,"Tap and say
+[url={1}]<~Police~>[/url], Police [url={2}]<~Fire~>[/url], Fire or [url={3}]<~Ambulance~>[/url] Ambulance"
+INTERPRETER_4_QUESTION1_CC,Well done!,برافو!,,,Well done!
 INTERPRETER_4_QUESTION1_CM,"You need an
-[url={1}]<~Ambulance~>[/url]",,,
-INTERPRETER_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,,,
-,,,,
-,,,,
-,,,,
-INTERPRETER_5_QUESTION2_O1,What state and town is the emergency in?,,,
-,,,,
+[url={1}]<~Ambulance~>[/url]",أنت بحاجة إلى [url={1}]<~Ambulance~>[/url],,,"You need an
+[url={1}]<~Ambulance~>[/url]"
+INTERPRETER_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,لنكمل. تدرب على نطقك لاحقًا.,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+INTERPRETER_5_QUESTION2_O1,What state and town is the emergency in?,What state and town is the emergency in?,,,What state and town is the emergency in?
+,,,,,
 INTERPRETER_5_QUESTION2_C1,"The state is [url={2}]<~Victoria~>[/url]
-and the town is [url={3}]<~Springvale~>[/url]",,,
-INTERPRETER_5_QUESTION2_CC,Excellent!,,,
-INTERPRETER_5_QUESTION2_CM,"Not quite right, try again. ",,,
-INTERPRETER_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,,,
-,,,,
-,,,,
-,,,,
+and the town is [url={3}]<~Springvale~>[/url]","الضاحية والولاية التي فيها الحالة الطارئة
+الدولة هي: [url={2}]<~Victoria~>[/url]
+والمدينة هي: [url={3}]<~Springvale~>[/url]",,,"The state is [url={2}]<~Victoria~>[/url]
+and the town is [url={3}]<~Springvale~>[/url]"
+INTERPRETER_5_QUESTION2_CC,Excellent!,ممتاز!,,,Excellent!
+INTERPRETER_5_QUESTION2_CM,"Not quite right, try again. ",حاول ثانيةً,,,"Not quite right, try again. "
+INTERPRETER_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,لنكمل. تدرب على نطقك لاحقًا.,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
 INTERPRETER_6_QUESTION3_O1,"Connecting you to ambulance,
-Springvale, Victoria",,,
-INTERPRETER_6_QUESTION3_O2,"Emergency services, where do you need the ambulance?",,,
-INTERPRETER_6_QUESTION3_O3,Connecting you to an interpreter. Please hold.,,,
-,,,,
-INTERPRETER_6_QUESTION3_C1,They are connecting you to a service in your area.,,,
-INTERPRETER_6_QUESTION3_C2,Practise asking for an interpreter now.,,,
-INTERPRETER_6_QUESTION3_C3,Say [url={4}]<~Interpreter~>[/url] and the language you speak in English.,,,
-INTERPRETER_6_QUESTION3_CC,Fantastic!,,,
-INTERPRETER_6_QUESTION3_CW,Try again.,,,
-INTERPRETER_6_QUESTION3_CM,They can't understand you,,,
-INTERPRETER_6_QUESTION3_CG,Let’s keep going. Practice your pronunciation later.,,,
-,,,,
-,,,,
-,,,,
-INTERPRETER_7_YOUDIDIT_T1,You did it!,,,
-INTERPRETER_7_YOUDIDIT_T2,Stay on the call until the interpreter arrives.,,,
-INTERPRETER_7_YOUDIDIT_T3,They will ask you questions in your language so that emergency services can help you.,,,
-INTERPRETER_7_YOUDIDIT_T4,You now know how to call 000 if you need help in an emergency in Australia.,,,
-,,,,
-INTERPRETER_7_YOUDIDIT_B1, [url={3}]Next scenario[/url],,,
-INTERPRETER_7_YOUDIDIT_B2, [url={1}]Try again[/url],,,
-,,,,
-,,,,
-,,,,
-LOCATION_1_LETSTRY_T1,Let’s practice giving the address of the emergency in English.,,,
-LOCATION_1_LETSTRY_T2,Then we’ll ask for an interpreter again.,,,
-,,,,
-LOCATION_1_LETSTRY_B1,[url={1}]Let's try it[/url],,,
-,,,,
-,,,,
-,,,,
-LOCATION_2_SCENARIO_T1,SCENARIO,,,
-LOCATION_2_SCENARIO_T2,You are visiting your aunt. She has sudden chest pain and is dizzy.,,,
-LOCATION_2_SCENARIO_T3,She is having a heart attack. You need to call 000.,,,
-LOCATION_2_SCENARIO_T4,"Her address is 278 Main Street, Shepparton, VIC.",,,
-,,,,
-LOCATION_2_SCENARIO_B1,[url={2}]Dial 000[/url],,,
-,,,,
-,,,,
-,,,,
+Springvale, Victoria","Connecting you to ambulance,
+Springvale, Victoria",,,"Connecting you to ambulance,
+Springvale, Victoria"
+INTERPRETER_6_QUESTION3_O2,"Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?",,,"Emergency services, where do you need the ambulance?"
+INTERPRETER_6_QUESTION3_O3,Connecting you to an interpreter. Please hold.,Connecting you to an interpreter. Please hold.,,,Connecting you to an interpreter. Please hold.
+,,,,,
+INTERPRETER_6_QUESTION3_C1,They are connecting you to a service in your area.,إنهم يقومون بربطك بخدمة في منطقتك.,,,They are connecting you to a service in your area.
+INTERPRETER_6_QUESTION3_C2,Practise asking for an interpreter now.,تدرب على طلب مترجم الآن.,,,Practise asking for an interpreter now.
+INTERPRETER_6_QUESTION3_C3,Say [url={4}]<~Interpreter~>[/url] and the language you speak in English.,يقول: [url={4}]<~Interpreter~>[/url] واللغة التي تتحدثها باللغة الإنجليزية.,,,Say [url={4}]<~Interpreter~>[/url] and the language you speak in English.
+INTERPRETER_6_QUESTION3_CC,Fantastic!,رائع!,,,Fantastic!
+INTERPRETER_6_QUESTION3_CW,Try again.,حاول ثانيةً,,,Try again.
+INTERPRETER_6_QUESTION3_CM,They can't understand you,لا يمكنهم فهمك.,,,They can't understand you
+INTERPRETER_6_QUESTION3_CG,Let’s keep going. Practice your pronunciation later.,لنكمل. تدرب على نطقك لاحقًا.,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+INTERPRETER_7_YOUDIDIT_T1,You did it!,لقد نجحت!,,,You did it!
+INTERPRETER_7_YOUDIDIT_T2,Stay on the call until the interpreter arrives.,ابقى على المكالمة حتى وصول المترجم.,,,Stay on the call until the interpreter arrives.
+INTERPRETER_7_YOUDIDIT_T3,They will ask you questions in your language so that emergency services can help you.,سيطرحون عليك أسئلة بلغتك حتى تتمكن خدمات الطوارئ من مساعدتك.,,,They will ask you questions in your language so that emergency services can help you.
+INTERPRETER_7_YOUDIDIT_T4,You now know how to call 000 if you need help in an emergency in Australia.,أنت تعرف الآن كيفية الاتصال بالرقم 000 إذا كنت بحاجة إلى المساعدة في حالة الطوارئ في أستراليا.,,,You now know how to call 000 if you need help in an emergency in Australia.
+,,,,,
+INTERPRETER_7_YOUDIDIT_B1, [url={3}]Next scenario[/url], [url={3}]السيناريو التالي[/url],,, [url={3}]Next scenario[/url]
+INTERPRETER_7_YOUDIDIT_B2, [url={1}]Try again[/url], [url={1}]حاول ثانيةً[/url],,, [url={1}]Try again[/url]
+,,,,,
+,,,,,
+,,,,,
+LOCATION_1_LETSTRY_T1,Let’s practice giving the address of the emergency in English.,دعونا نتدرب على إعطاء عنوان الطوارئ باللغة الإنجليزية.,,,Let’s practice giving the address of the emergency in English.
+LOCATION_1_LETSTRY_T2,Then we’ll ask for an interpreter again.,ثم سنطلب مترجمًا مرة أخرى.,,,Then we’ll ask for an interpreter again.
+,,,,,
+LOCATION_1_LETSTRY_B1,[url={1}]Let's go[/url],[url={1}]يلا[/url],,,[url={1}]Let's try it[/url]
+,,,,,
+,,,,,
+,,,,,
+LOCATION_2_SCENARIO_T1,SCENARIO,,,,SCENARIO
+LOCATION_2_SCENARIO_T2,You are visiting your aunt. She has sudden chest pain and is dizzy.,,,,You are visiting your aunt. She has sudden chest pain and is dizzy.
+LOCATION_2_SCENARIO_T3,She is having a heart attack. You need to call 000.,,,,She is having a heart attack. You need to call 000.
+LOCATION_2_SCENARIO_T4,"Her address is 278 Main Street, Shepparton, VIC.",,,,"Her address is 278 Main Street, Shepparton, VIC."
+,,,,,
+LOCATION_2_SCENARIO_B1,[url={2}]Dial 000[/url],,,,[url={2}]Dial 000[/url]
+,,,,,
+,,,,,
+,,,,,
 LOCATION_3_CALL_O1,"You have dialled emergency 000.
-Your call is being connected...",,,
-,,,,
-LOCATION_3_CALL_C1,You will never need to respond to this pre-recorded message.,,,
-,,,,
-,,,,
-,,,,
-LOCATION_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ",,,
-,,,,
-LOCATION_4_QUESTION1_C1,Say in English which service you need.,,,
-LOCATION_4_QUESTION1_C2,Check the scenario here!,,,
-LOCATION_4_QUESTION1_CC,Perfect,,,
+Your call is being connected...",,,,"You have dialled emergency 000.
+Your call is being connected..."
+,,,,,
+LOCATION_3_CALL_C1,You will never need to respond to this pre-recorded message.,لن تحتاج أبدًا إلى الرد على هذه الرسالة المسجلة مسبقًا.,,,You will never need to respond to this pre-recorded message.
+,,,,,
+,,,,,
+,,,,,
+LOCATION_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ",,,,"Emergency. Police, Fire or Ambulance? "
+,,,,,
+LOCATION_4_QUESTION1_C1,Say in English which service you need.,,,,Say in English which service you need.
+LOCATION_4_QUESTION1_C2,Check the scenario here!,,,,Check the scenario here!
+LOCATION_4_QUESTION1_CC,Perfect,,,,Perfect
 LOCATION_4_QUESTION1_CM,"You need an
-[url={1}]<~Ambulance~>[/url]",,,
-LOCATION_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,,,
-,,,,
-,,,,
-,,,,
-LOCATION_5_QUESTION2_O1,What state and town is the emergency in?,,,
-,,,,
-LOCATION_5_QUESTION2_C1,Tell them your state and town,,,
-LOCATION_5_QUESTION2_CC,Excellent!,,,
+[url={1}]<~Ambulance~>[/url]",,,,"You need an
+[url={1}]<~Ambulance~>[/url]"
+LOCATION_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+LOCATION_5_QUESTION2_O1,What state and town is the emergency in?,,,,What state and town is the emergency in?
+,,,,,
+LOCATION_5_QUESTION2_C1,Tell them your state and town,,,,Tell them your state and town
+LOCATION_5_QUESTION2_CC,Excellent!,,,,Excellent!
 LOCATION_5_QUESTION2_CM,"The state is [url={2}]<~Victoria~>[/url]
-and the town is [url={3}]<~Shepparton~>[/url]",,,
-LOCATION_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,,,
-,,,,
-,,,,
-,,,,
+and the town is [url={3}]<~Shepparton~>[/url]",,,,"The state is [url={2}]<~Victoria~>[/url]
+and the town is [url={3}]<~Shepparton~>[/url]"
+LOCATION_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
 LOCATION_6_QUESTION3_O1,"Connecting you to ambulance,
-Shepparton, Victoria",,,
-LOCATION_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?",,,
-,,,,
-LOCATION_6_QUESTION3_C1,They are connecting you to a service in your area.,,,
-LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]",,,
-LOCATION_6_QUESTION3_CC,Great! 000 knows where your emergency is.,,,
-LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]",,,
-LOCATION_6_QUESTION3_CG,Let’s keep going. Practice your pronunciation later.,,,
-,,,,
-,,,,
-,,,,
-LOCATION_7_QUESTION4_O1,What is your emergency?,,,
-LOCATION_7_QUESTION4_O2,An interpreter will be here soon. Please hold.,,,
-,,,,
-LOCATION_7_QUESTION4_C1,Let’s practice asking for an interpreter again.,,,
-LOCATION_7_QUESTION4_C2,Say [url={4}]<~Interpreter~>[/url] and the language you speak in English.,,,
-LOCATION_7_QUESTION4_CC,Well done!,,,
-LOCATION_7_QUESTION4_CW,Try again.,,,
-LOCATION_7_QUESTION4_CM,They can't understand you,,,
-LOCATION_7_QUESTION4_CG,Let’s keep going. Practice your pronunciation later.,,,
-.,,,,
-,,,,
-,,,,
-LOCATION_8_YOUDIDIT_T1,You did it!,,,
-LOCATION_8_YOUDIDIT_T2,Stay on the call until the interpreter arrives.,,,
-LOCATION_8_YOUDIDIT_T3,They will ask you questions in your language so that emergency services can help you.,,,
-LOCATION_8_YOUDIDIT_T4,You now know how to call 000 if you need help in an emergency in Australia.,,,
-,,,,
-LOCATION_8_YOUDIDIT_B1, [url={3}]Next scenario[/url],,,
-LOCATION_8_YOUDIDIT_B2, [url={1}]Try again[/url],,,
+Shepparton, Victoria",,,,"Connecting you to ambulance,
+Shepparton, Victoria"
+LOCATION_6_QUESTION3_O2,"Emergency services, where do you need the ambulance?",,,,"Emergency services, what address do you need the ambulance?"
+,,,,,
+LOCATION_6_QUESTION3_C1,They are connecting you to a service in your area.,,,,They are connecting you to a service in your area.
+LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]",,,,"Say the address of your emergency: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+LOCATION_6_QUESTION3_CC,Great! 000 knows where your emergency is.,,,,Great! 000 knows where your emergency is.
+LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]",,,,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+LOCATION_6_QUESTION3_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+LOCATION_7_QUESTION4_O1,What is your emergency?,,,,What is your emergency?
+LOCATION_7_QUESTION4_O2,An interpreter will be here soon. Please hold.,,,,An interpreter will be here soon. Please hold.
+,,,,,
+LOCATION_7_QUESTION4_C1,Let’s practice asking for an interpreter again.,,,,Let’s practice asking for an interpreter again.
+LOCATION_7_QUESTION4_C2,Say [url={5}]<~Interpreter~>[/url] and the language you speak in English.,,,,Say [url={4}]<~Interpreter~>[/url] and the language you speak in English.
+LOCATION_7_QUESTION4_CC,Well done!,,,,Well done!
+LOCATION_7_QUESTION4_CW,Try again.,,,,Try again.
+LOCATION_7_QUESTION4_CM,They can't understand you,,,,They can't understand you
+LOCATION_7_QUESTION4_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+.,,,,,
+,,,,,
+,,,,,
+LOCATION_8_YOUDIDIT_T1,You did it!,,,,You did it!
+LOCATION_8_YOUDIDIT_T2,You now know how:,,,,Stay on the call until the interpreter arrives.
+LOCATION_8_YOUDIDIT_T3,"- a 000 phone call begins
+- to share your location in English",,,,They will ask you questions in your language so that emergency services can help you.
+LOCATION_8_YOUDIDIT_T4,- and to ask for an interpreter,,,,You now know how to call 000 if you need help in an emergency in Australia.
+,,,,,
+LOCATION_8_YOUDIDIT_B1, [url={3}]Next scenario[/url],,,, [url={3}]Next scenario[/url]
+LOCATION_8_YOUDIDIT_B2, [url={1}]Try again[/url],,,, [url={1}]Try again[/url]

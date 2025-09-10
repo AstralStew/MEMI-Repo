@@ -88,5 +88,6 @@ grow_vertical = 2
 
 [connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_ambulance.mp3"]]
 [connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/Victoria.mp3"]]
-[connection signal="meta_link_3" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/Dandenong.mp3"]]
-[connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/interpreter.mp3"]]
+[connection signal="meta_link_3" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/3_Location/Audio/Pronounce/Shepparton.mp3"]]
+[connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/3_Location/Audio/Pronounce/278mainroad.mp3"]]
+[connection signal="meta_link_5" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/interpreter.mp3"]]
