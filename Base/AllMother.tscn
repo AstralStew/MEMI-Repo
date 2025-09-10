@@ -92,7 +92,7 @@ overrideAnswerCheating = true
 overrideScreenIndex = 1
 overrideTimeScale = true
 overrideTimeScaleFactor = 5.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("5_qbn4n")])
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("8_s83ii"), ExtResource("5_qbn4n"), ExtResource("6_0p6sj")])
 sentenceComparer = ExtResource("10_58hmj")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
@@ -127,7 +127,7 @@ script = ExtResource("8_58hmj")
 [node name="LetsLearnMenu_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 0
+theme_override_constants/separation = 7
 alignment = 1
 
 [node name="LetsLearnTitle_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
@@ -136,6 +136,7 @@ size_flags_vertical = 0
 
 [node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearnTitle_VB"]
 modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 80.0295)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -149,9 +150,8 @@ script = ExtResource("10_fxh3s")
 debugging = true
 
 [node name="LetsLearn_Interpreter_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 0
+theme_override_constants/margin_left = 36
 
 [node name="LetsLearn_Interpreter_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_MC"]
 layout_mode = 2
@@ -171,6 +171,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Interpreter_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB"]
+custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -193,8 +194,9 @@ script = ExtResource("10_fxh3s")
 debugging = true
 
 [node name="LetsLearn_Location_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 36
+theme_override_constants/margin_left = 0
 
 [node name="LetsLearn_Location_HB" type="HBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Location_MC"]
 layout_mode = 2
@@ -214,7 +216,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Location_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
-custom_minimum_size = Vector2(68, 68)
+custom_minimum_size = Vector2(116.637, 116.637)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -261,6 +263,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Questions_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
+custom_minimum_size = Vector2(116.637, 116.637)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -305,6 +308,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="NoHelp_TR" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
+custom_minimum_size = Vector2(116.637, 116.637)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
@@ -370,6 +374,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 19
@@ -381,6 +386,7 @@ debugging = true
 lightSpeakerIcon = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 19
@@ -458,9 +464,9 @@ layout_mode = 2
 [node name="TapBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" instance=ExtResource("24_3alyw")]
 layout_mode = 2
 theme_override_constants/margin_top = 50
+incorrect_pause = 4.0
 
 [node name="3_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" instance=ExtResource("25_kku6m")]
-visible = true
 layout_mode = 2
 
 [node name="Background" type="Control" parent="ContentCanvas/ScreenController"]

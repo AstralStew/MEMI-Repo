@@ -31,7 +31,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(45, 233)]
+"values": [Vector2(55, 233)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -100,9 +100,9 @@ size_flags_vertical = 0
 
 [node name="OperatorPivot" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 45.0
+offset_left = 55.0
 offset_top = 233.0
-offset_right = 45.0
+offset_right = 55.0
 offset_bottom = 233.0
 
 [node name="OperatorBubble" parent="OperatorPivot" instance=ExtResource("15_fq350")]

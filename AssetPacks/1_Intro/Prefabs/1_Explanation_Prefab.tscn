@@ -75,6 +75,7 @@ stretch_mode = 5
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(275, 0)
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -90,6 +91,7 @@ lightSpeakerIcon = true
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(275, 0)
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -104,6 +106,7 @@ lightSpeakerIcon = true
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(275, 0)
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)

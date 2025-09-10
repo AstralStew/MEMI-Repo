@@ -113,3 +113,6 @@ script = ExtResource("5_6u7k4")
 
 [connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
 [connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(0.596078, 0.839216, 0.494118, 1)]]
+[connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/Arabic_RTL" to="." method="set_language" binds= [1]]
+[connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/Arabic_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
+[connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/Arabic_RTL" to="LanguageChoice_MC/Labels_VB/Arabic_RTL" method="set_modulate" binds= [Color(0.596078, 0.839216, 0.494118, 1)]]

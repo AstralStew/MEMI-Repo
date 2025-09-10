@@ -21,7 +21,7 @@ func _initialise() -> void:
 	
 	_load_fonts()
 	
-	_set_language(currentLanguage)	
+	set_language(currentLanguage)
 	#_get_language_text("SX_TEST")
 
 
@@ -39,15 +39,15 @@ func _get_language_text(key: String) -> String:
 
 
 
-func _set_language (lang: Constants.LanguageCode) -> void:
+func set_language (lang: Constants.LanguageCode) -> void:
 	var language = Constants.LanguageCode.keys()[lang]
-	TranslationServer.set_locale(language)	
+	TranslationServer.set_locale(language)
 	currentLanguage = lang
 	if debugging: print("[LanguageManager] Set language to: ",currentLanguage)
 
 func _cycle_language() -> void:
 	currentLanguage = (currentLanguage + 1) % Constants.LanguageCode.size()
-	_set_language(currentLanguage)
+	set_language(currentLanguage)
 
 
 func get_normal_font() -> FontVariation:

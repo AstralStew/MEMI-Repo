@@ -84,6 +84,19 @@ func _check_font() -> void:
 	if LanguageManager.enNormalFont == null:
 		LanguageManager._initialise()
 	add_theme_font_override("normal_font",LanguageManager.get_normal_font())
+	
+	match (LanguageManager.currentLanguage):
+		Constants.LanguageCode.en:
+			text_direction = Control.TEXT_DIRECTION_LTR
+			#layout_direction
+		Constants.LanguageCode.ar:
+			text_direction = Control.TEXT_DIRECTION_RTL
+		Constants.LanguageCode.prs:
+			text_direction = Control.TEXT_DIRECTION_RTL
+		Constants.LanguageCode.zh:
+			text_direction = Control.TEXT_DIRECTION_LTR
+		_:
+			push_error("[LabelController] ERROR -> Bad language code! Should not be possible :(")
 
 func get_font() -> Font:
 	return LanguageManager.get_normal_font()

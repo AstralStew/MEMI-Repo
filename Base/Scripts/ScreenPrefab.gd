@@ -103,9 +103,11 @@ func last_sentence_received(newSentence:String) -> void:
 #endregion
 
 
-func _on_continue_button_meta_link_2(extra_arg_0: StringName) -> void:
-	pass # Replace with function body.
 
+#region Language function
 
-func _on_comment_bubble_meta_link_4(extra_arg_0: StringName) -> void:
-	pass # Replace with function body.
+func set_language(_lang:Constants.LanguageCode) -> void:
+	if debugging: print("[ScreenPrefab] Attempting to set language to '",_lang,"'")
+	LanguageManager.set_language(_lang)
+
+#endregion
