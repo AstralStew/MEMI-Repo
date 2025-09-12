@@ -16,6 +16,7 @@ extends AnimationPlayer
 @export var overrideDeactivate := false
 @export var overrideResetHierarchy := false
 @export var overrideAnswerCheating := false
+@export var overrideLanguageSwitching := false
 @export var overrideScreen := false
 @export var overrideScreenIndex := 0
 @export var overrideAnimSpeed := false
@@ -483,7 +484,7 @@ func _disconnect_bridge() -> void:
 # WARNING -> This allows cheating in the Editor using ABCD keys
 var speechCheating := false
 func _input(event):
-	if !speechCheating && !overrideTimeScale: return
+	if !speechCheating && !overrideTimeScale && !overrideLanguageSwitching: return
 	if event is InputEventKey:
 		if event.pressed && speechCheating:
 			if event.keycode == KEY_A:
@@ -517,13 +518,17 @@ func _input(event):
 					last_sentence_changed.emit(lastSentence)
 					play_animation(sentenceComparer.dontKnowAnim)
 					play_stream_from_path(stopRecordingStreamPath)
-		elif overrideTimeScale:
+		if event.pressed && overrideLanguageSwitching:
+			if event.keycode == KEY_L:
+				print("[ScreenController] LanguageSwitching, the L key was pressed! Changing language...")
+				LanguageManager.cycle_language()
+		if overrideTimeScale:
 			if event.pressed && event.keycode == KEY_F && !event.is_echo():
 				print("[ScreenController] TimeCheating, the F key was pressed! Fastforwarding...")
 				Engine.time_scale = overrideTimeScaleFactor
 			elif !event.pressed && event.keycode == KEY_F:
 				print("[ScreenController] TimeCheating, the F key was released! Normal speed.")
-				Engine.time_scale = 1.0
+				Engine.time_scale = 1.0 
 
 func check_attempts_while_cheating() -> bool:
 	if sentenceComparer.attempts > -1:

@@ -16,6 +16,8 @@ const AR_PREFIX := "NotoSansArabic"
 const PRS_PREFIX := "NotoSansArabic"
 const ZH_PREFIX := "NotoSansSC"
 
+signal language_changed
+
 # Called in ScreenController _ready()
 func _initialise() -> void:
 	
@@ -43,9 +45,10 @@ func set_language (lang: Constants.LanguageCode) -> void:
 	var language = Constants.LanguageCode.keys()[lang]
 	TranslationServer.set_locale(language)
 	currentLanguage = lang
+	language_changed.emit()
 	if debugging: print("[LanguageManager] Set language to: ",currentLanguage)
 
-func _cycle_language() -> void:
+func cycle_language() -> void:
 	currentLanguage = (currentLanguage + 1) % Constants.LanguageCode.size()
 	set_language(currentLanguage)
 
@@ -67,3 +70,8 @@ func get_normal_font() -> FontVariation:
 		_:
 			if debugging: print("[LanguageManager] ERROR -> Bad CurrentLanguage! Impossible?!? >:O")
 			return null
+
+func is_RTL() -> bool:
+	if currentLanguage == Constants.LanguageCode.ar || currentLanguage == Constants.LanguageCode.prs:
+		return true
+	return false

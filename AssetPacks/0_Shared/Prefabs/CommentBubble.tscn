@@ -54,6 +54,7 @@ theme_override_constants/margin_bottom = 17
 z_index = 1
 clip_contents = false
 custom_minimum_size = Vector2(183, 10)
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -91,6 +92,7 @@ patch_margin_bottom = 15
 
 [node name="BubbleTitle" type="Label" parent="BubbleProxy/BubbleBG"]
 visible = false
+layout_direction = 1
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

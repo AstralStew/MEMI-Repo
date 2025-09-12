@@ -8,4 +8,4 @@ properties=PackedStringArray("theme_override_constants/margin_left", "theme_over
 
 [Control]
 
-properties=PackedStringArray("size_flags_horizontal", "size_flags_vertical", "size_flags_stretch_ratio", "custom_minimum_size")
+properties=PackedStringArray("size_flags_horizontal", "size_flags_vertical", "size_flags_stretch_ratio", "custom_minimum_size", "layout_direction")

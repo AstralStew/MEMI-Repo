@@ -41,6 +41,7 @@ self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 clip_contents = false
 custom_minimum_size = Vector2(60, 10)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -54,6 +55,7 @@ scroll_active = false
 shortcut_keys_enabled = false
 vertical_alignment = 1
 script = ExtResource("4_nwthh")
+change_font = false
 metadata/_edit_group_ = true
 
 [node name="BubbleProxy" type="BoxContainer" parent="."]

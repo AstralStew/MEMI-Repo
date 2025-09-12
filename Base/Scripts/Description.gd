@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 #endregion
 
 
-func _getrefs() -> void:	
+func _getrefs() -> void:
 	descriptionText = get_child(0).get_child(0).get_child(0)
 
 func set_margins_from_lines(lines:int=descriptionText.get_line_count()) -> void:
@@ -53,4 +53,7 @@ func set_margins_from_lines(lines:int=descriptionText.get_line_count()) -> void:
 	if adjust_top: add_theme_constant_override("margin_top",(_lines - min_lines) * top_multiplier + top_addition)
 	if adjust_bottom: add_theme_constant_override("margin_bottom",(_lines - min_lines) * bottom_multiplier + bottom_addition)
 	
-	descriptionText.pivot_offset.y = descriptionText.size.y + 8
+	if is_layout_rtl():
+		descriptionText.pivot_offset = Vector2(descriptionText.size.x, descriptionText.size.y + 8)
+	else:
+		descriptionText.pivot_offset = Vector2(0, descriptionText.size.y + 8)

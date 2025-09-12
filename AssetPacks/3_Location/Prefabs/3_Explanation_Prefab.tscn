@@ -29,10 +29,11 @@ debugging = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 55
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
+custom_minimum_size = Vector2(305, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/separation = 15
 
 [node name="LadTutorial1_C" type="Control" parent="Explanation_MC/Explanation_VB"]
@@ -132,6 +133,11 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
+
+[node name="LeftAligned_C" type="MarginContainer" parent="."]
+layout_direction = 2
+layout_mode = 2
+mouse_filter = 2
 
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Location/Location_1a_Fade"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Location/Location_3_Call"]]

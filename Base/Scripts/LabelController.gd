@@ -12,10 +12,12 @@ signal text_populated_with_text(words)
 signal text_populated_with_lines(number)
 
 @export_group("Translation Properties")
+@export var change_font := true
 @export var autopopulate := false
 @export var autokey := ""
 
 var current_size := 0
+var last_text_code := ""
 
 signal meta_link_1
 signal meta_link_2
@@ -38,20 +40,38 @@ func _ready() -> void:
 	#var speakerPath = load("res://AssetPacks/0_Shared/Images/SpeakerIcon.png")
 	#add_image(speakerPath, 16, 16, Color(1, 1, 1, 1), 0, Rect2(), "speaker")
 	
+	last_text_code = text
+	text_direction = Control.TEXT_DIRECTION_INHERITED
+	
 	current_size = 20
 	if autopopulate: populate(autokey)
+	
+	subscribe_to_language_manager()
 
+func subscribe_to_language_manager() -> void:
+	await LanguageManager != null
+	LanguageManager.language_changed.connect(switch_language)
 
+func switch_language() -> void:
+	_check_font()
+	populate(last_text_code)
 
 
 func populate(_newText : String) -> void:
+	last_text_code = _newText
+	
 	if _newText != "":
 		_check_font()
 	if debugging: print("[LabelController] Setting text to: '",_newText)
-	#text = tr(_newText).replacen("{speaker}",_get_speaker_string())
 	
+	#text = tr(_newText).replacen("{speaker}",_get_speaker_string())
 	#text = tr(_newText).replacen("<~","[color=00000000].[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] "+ _get_speaker_string())
-	text = tr(_newText).replacen("<~"," [bgcolor=F7A420C2]").replacen("~>","[/bgcolor][color=00000000]`[/color]"+ _get_speaker_string()).dedent()
+	
+	# Make sure speaker is always on the right
+	if is_layout_rtl():
+		text = tr(_newText).replacen("<~",_get_speaker_string() + "[color=00000000]`[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] ").dedent()
+	else:
+		text = tr(_newText).replacen("<~"," [bgcolor=F7A420C2]").replacen("~>","[/bgcolor][color=00000000]`[/color]" + _get_speaker_string()).dedent()
 	
 	text_populated.emit()
 	text_populated_with_text.emit(text)
@@ -77,29 +97,35 @@ func _get_speaker_string() -> String:
 	var speakerPath  = LIGHT_SPEAKER_PATH if lightSpeakerIcon else DARK_SPEAKER_PATH
 	if debugging: print("[LabelController] Returning [img=b,b," + sizeString + "x" + sizeString + "]" + speakerPath + "[/img]")
 	return "[img=b,b," + sizeString + "x" + sizeString + "]" + speakerPath + "[/img]"
-	
 
 
 func _check_font() -> void:
 	if LanguageManager.enNormalFont == null:
 		LanguageManager._initialise()
-	add_theme_font_override("normal_font",LanguageManager.get_normal_font())
+	if change_font: 
+		add_theme_font_override("normal_font",LanguageManager.get_normal_font())
+	else:
+		add_theme_font_override("normal_font",LanguageManager.enNormalFont)
 	
-	match (LanguageManager.currentLanguage):
-		Constants.LanguageCode.en:
-			text_direction = Control.TEXT_DIRECTION_LTR
-			#layout_direction
-		Constants.LanguageCode.ar:
-			text_direction = Control.TEXT_DIRECTION_RTL
-		Constants.LanguageCode.prs:
-			text_direction = Control.TEXT_DIRECTION_RTL
-		Constants.LanguageCode.zh:
-			text_direction = Control.TEXT_DIRECTION_LTR
-		_:
-			push_error("[LabelController] ERROR -> Bad language code! Should not be possible :(")
+	#match (LanguageManager.currentLanguage):
+		#Constants.LanguageCode.en:
+			#text_direction = Control.TEXT_DIRECTION_LTR
+			##layout_direction
+		#Constants.LanguageCode.ar:
+			#text_direction = Control.TEXT_DIRECTION_RTL
+		#Constants.LanguageCode.prs:
+			#text_direction = Control.TEXT_DIRECTION_RTL
+		#Constants.LanguageCode.zh:
+			#text_direction = Control.TEXT_DIRECTION_LTR
+		#_:
+			#push_error("[LabelController] ERROR -> Bad language code! Should not be possible :(")
 
 func get_font() -> Font:
-	return LanguageManager.get_normal_font()
+	if change_font: 
+		return LanguageManager.get_normal_font()
+	else:
+		return LanguageManager.enNormalFont
+
 
 func get_current_size() -> int:
 	return current_size

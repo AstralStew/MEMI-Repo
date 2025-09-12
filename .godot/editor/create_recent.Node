@@ -1,6 +1,7 @@
-Timer
 MarginContainer
 Control
+Container
+Timer
 AnimationPlayer
 Node
 AudioStreamPlayer
@@ -11,4 +12,3 @@ Label
 BoxContainer
 CenterContainer
 AnimatedSprite2D
-VBoxContainer
