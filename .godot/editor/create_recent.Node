@@ -1,8 +1,9 @@
+AudioPlayer
+AnimationPlayer
 MarginContainer
 Control
 Container
 Timer
-AnimationPlayer
 Node
 AudioStreamPlayer
 TextureRect

@@ -1,5 +1,5 @@
-SpriteFrames
 AnimationLibrary
+SpriteFrames
 Animation
 SentenceComparer
 RichTextEffect

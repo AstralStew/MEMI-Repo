@@ -1,0 +1,10 @@
+[gd_resource type="AnimationLibrary" load_steps=3 format=3 uid="uid://js1h803y7ls2"]
+
+[ext_resource type="Animation" uid="uid://cje8ta44kfgqs" path="res://AssetPacks/1_Intro/Animations/Menu_Start.res" id="1_u4t77"]
+[ext_resource type="Animation" uid="uid://c8uedrsrf2emx" path="res://AssetPacks/1_Intro/Animations/Menu_Shrink.res" id="2_scn5f"]
+
+[resource]
+_data = {
+&"Menu_Shrink": ExtResource("2_scn5f"),
+&"Menu_Start": ExtResource("1_u4t77")
+}
