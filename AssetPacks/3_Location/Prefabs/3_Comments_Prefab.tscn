@@ -52,6 +52,9 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 pivot_offset = Vector2(156, 106)
+ar_multiplier = null
+prs_multiplier = null
+zh_multiplier = null
 _auto_text = ""
 _old_text = ""
 

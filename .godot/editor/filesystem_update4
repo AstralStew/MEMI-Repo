@@ -52,3 +52,5 @@ res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres
 res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
 res://AssetPacks/2_Interpreter/Animations/Interpreter_4_Question1.res
 res://AssetPacks/2_Interpreter/Animations/LearnSteps_2u_Skipped.res
+res://Base/Scripts/CommentBubble.gd
+res://AssetPacks/0_Prerequisite/Fonts/NotoSansArabic-Normal.tres

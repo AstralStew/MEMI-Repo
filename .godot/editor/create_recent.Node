@@ -1,9 +1,9 @@
+Timer
 AudioPlayer
 AnimationPlayer
 MarginContainer
 Control
 Container
-Timer
 Node
 AudioStreamPlayer
 TextureRect
@@ -12,4 +12,3 @@ RichTextLabel
 Label
 BoxContainer
 CenterContainer
-AnimatedSprite2D

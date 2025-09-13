@@ -5,6 +5,8 @@ class_name CommentBubble
 
 @export var _debug := false
 @export var _updateInEditor := false
+#@export var overrideLanguage := false
+#@export var overrideLanguageIndex := 0
 
 @export_group("References")
 @export var pop_in_sound : AudioStream = null
@@ -16,6 +18,17 @@ class_name CommentBubble
 @export var min_char_threshold := 4
 @export var max_char_threshold := 22 #25
 @export var bg_border_size := 40.0
+@export var ar_multiplier:= 1.0
+@export var prs_multiplier:= 1.0
+@export var zh_multiplier:= 1.0
+
+
+#@export_group("Margin Parametres")
+#@export var root_margin_left := 24
+#@export var root_margin_right := 16
+#@export var child_margin_left := 0
+#@export var child_margin_right := 17
+
 
 @export_group("Pop In")
 @export var pop_in_text_d = 0.25
@@ -368,6 +381,7 @@ func _fade_background(_colour:Color,_duration:float,_ease:Tween.EaseType,_transi
 func _resize(_doTween:bool=true) -> void:
 	if _debug: print("[CommentBubble(",name,")] Resizing bubble to fit text...")
 	
+	
 	#bubbleText.custom_minimum_size = Vector2(1000,0)
 	#bubbleText.custom_minimum_size = Vector2(max_width + 20,0)
 	bubbleText.custom_minimum_size = Vector2(max_width,0)
@@ -381,28 +395,72 @@ func _resize(_doTween:bool=true) -> void:
 	var font = bubbleText.get_font() if !Engine.is_editor_hint() else get_theme_default_font()    #LanguageManager.get_normal_font()
 	var parsed_text = bubbleText.get_parsed_text()
 	var current_size = bubbleText.get_current_size() if !Engine.is_editor_hint() else 18
+	
+	var current_mult = 1.0
+	#var child : MarginContainer = get_child(0)
+	#if overrideLanguage:
+		#LanguageManager.currentLanguage = overrideLanguageIndex
+	match (LanguageManager.currentLanguage):
+		Constants.LanguageCode.en:
+			pass
+			#add_theme_constant_override("margin_left",root_margin_left)
+			#add_theme_constant_override("margin_right",root_margin_right)
+			#child.add_theme_constant_override("margin_left",child_margin_left)
+			#child.add_theme_constant_override("margin_right",child_margin_right)
+		Constants.LanguageCode.ar:
+			current_mult *= ar_multiplier
+			#add_theme_constant_override("margin_left",root_margin_right)
+			#add_theme_constant_override("margin_right",root_margin_left)
+			#child.add_theme_constant_override("margin_left",child_margin_right)
+			#child.add_theme_constant_override("margin_right",child_margin_left)
+		Constants.LanguageCode.prs:
+			current_mult *= prs_multiplier
+			#add_theme_constant_override("margin_left",root_margin_right)
+			#add_theme_constant_override("margin_right",root_margin_left)
+			#child.add_theme_constant_override("margin_left",child_margin_right)
+			#child.add_theme_constant_override("margin_right",child_margin_left)
+		Constants.LanguageCode.zh:
+			current_mult *= zh_multiplier
+			#add_theme_constant_override("margin_left",root_margin_left)
+			#add_theme_constant_override("margin_right",root_margin_right)
+			#child.add_theme_constant_override("margin_left",child_margin_left)
+			#child.add_theme_constant_override("margin_right",child_margin_right)
+	print ("[CommentBubble(",name,")] Current language = ",LanguageManager.currentLanguage,", multiplier = ",current_mult)
+	
 	for i in bubbleText.get_line_count():
 		#var substring = bubbleText.get_parsed_text().substr(bubbleText.get_line_range(i).x,bubbleText.get_line_range(i).y-bubbleText.get_line_range(i).x)
 		#print("SUBSTRING = ",substring)
 		range = bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x
 		line_length = 0
 		if _debug: print ("[CommentBubble(",name,")] Line index = ",i)
-		for char in parsed_text.substr(bubbleText.get_line_range(i).x, range):
+		#for char in parsed_text.substr(bubbleText.get_line_range(i).x, range):
 			#font.get_char_size(char.unicode_at(0),bubbleText.current_size)
-			line_length += font.get_char_size(char.unicode_at(0),current_size).x
-			if _debug: print("[CommentBubble(",name,")] Char = '",char,"', unicode = ",char.unicode_at(0),", size = ",font.get_char_size(char.unicode_at(0),18))
+			#line_length += font.get_char_size(char.unicode_at(0),current_size).x			
+			#if _debug: print("[CommentBubble(",name,")] Char = '",char,"', unicode = ",char.unicode_at(0),", size = ",font.get_char_size(char.unicode_at(0),18))
+		
+		#if _debug: print ("[CommentBubble(",name,")] ParsedText.Substr = '",parsed_text,"', ")
+		
+		line_length += font.get_string_size(parsed_text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,bubbleText.current_size,bubbleText.justification_flags,TextServer.DIRECTION_AUTO,TextServer.ORIENTATION_HORIZONTAL).x
+		
+		
 		if _debug: print ("[CommentBubble(",name,")] Normal line length = ",line_length)
 		img_count = parsed_text.count("`", bubbleText.get_line_range(i).x ,bubbleText.get_line_range(i).y)
 		if _debug: print("[CommentBubble(",name,")] Line index = ",i,", range = ", bubbleText.get_line_range(i),", sub = ", range, ", img_count = ", img_count)
 		#max_line_length = maxi(bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x + (img_count*2), max_line_length)
+		
+		#line_length *= current_mult
+		
 		line_length += img_count * 10
 		max_line_length = maxi(line_length, max_line_length)
 		if _debug: print ("[CommentBubble(",name,")] Post IMG line length = ",line_length)
-	
+		
 	#var min_size = clamp(remap(max_line_length,min_char_threshold,max_char_threshold,min_width,max_width),min_width,max_width)
-	var min_size = clamp(max_line_length + 10,min_width,max_width)
+	#var min_size = clamp(max_line_length + 10,min_width,max_width)
+	var min_size = clamp(max_line_length,min_width,max_width)
 	
-	if _debug: print("[CommentBubble(",name,")] Get_line_count() = ",bubbleText.get_line_count(),"max_line_length = ",max_line_length,", min_size = ",min_size)
+	
+	
+	if _debug: print("[CommentBubble(",name,")] Get_line_count() = ",bubbleText.get_line_count(),", max_line_length = ",max_line_length,", min_size = ",min_size)
 	
 	bubbleText.custom_minimum_size = Vector2(min_size,min_height)
 	
@@ -414,7 +472,6 @@ func _resize(_doTween:bool=true) -> void:
 	else:
 		if _debug: print("[CommentBubble(",name,")] NOTE -> Ignoring Tween! Fast setting background instead.")
 		bubbleProxy.custom_minimum_size = bubbleText.size + (Vector2.ONE * bg_border_size)
-	
 	
 	bubbleText.pivot_offset = bubbleText.size / 2
 	pivot_offset = size
@@ -430,6 +487,10 @@ func set_sizes(_min_height:int,_min_width:int,_max_width:int,_min_char_threshold
 	min_char_threshold = _min_char_threshold
 	max_char_threshold = _max_char_threshold
 
+
+func testing() -> void:
+	LanguageManager._initialise()
+	LanguageManager.set_language(Constants.LanguageCode.ar)
 
 #region Meta links
 
