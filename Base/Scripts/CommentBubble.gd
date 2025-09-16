@@ -119,6 +119,16 @@ func _ready() -> void:
 		
 	#bubbleBG.pivot_offset = bubbleBG.size / 2
 	
+	match LanguageManager.currentLanguage:
+		Constants.LanguageCode.en:
+			bubbleText.layout_direction = Control.LAYOUT_DIRECTION_LTR
+		Constants.LanguageCode.ar:
+			bubbleText.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.prs:
+			bubbleText.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.zh:
+			bubbleText.layout_direction = Control.LAYOUT_DIRECTION_LTR
+	
 	if _autostart: 
 		if _debug: print("[Bubble(",name,")] Initialising...")
 		
@@ -488,9 +498,6 @@ func set_sizes(_min_height:int,_min_width:int,_max_width:int,_min_char_threshold
 	max_char_threshold = _max_char_threshold
 
 
-func testing() -> void:
-	LanguageManager._initialise()
-	LanguageManager.set_language(Constants.LanguageCode.ar)
 
 #region Meta links
 

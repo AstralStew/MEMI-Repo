@@ -13,7 +13,6 @@ shader_parameter/weight = 0.0
 [node name="2_Comments_Prefab" type="Control"]
 visible = false
 z_index = 2
-layout_direction = 2
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 8
@@ -53,10 +52,6 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-pivot_offset = Vector2(156, 106)
-ar_multiplier = null
-prs_multiplier = null
-zh_multiplier = null
 _auto_text = ""
 _old_text = ""
 

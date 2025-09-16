@@ -40,11 +40,22 @@ func _get_language_text(key: String) -> String:
 	return tr(key)
 
 
+@onready var content : Control = get_node("/root/AllMother/ContentCanvas/ScreenController/MarginContainer/Content")
 
 func set_language (lang: Constants.LanguageCode) -> void:
+	if debugging: print("[LanguageManager] Content: ",content)
 	var language = Constants.LanguageCode.keys()[lang]
 	TranslationServer.set_locale(language)
 	currentLanguage = lang
+	match(lang):
+		Constants.LanguageCode.en:
+			content.layout_direction = Control.LAYOUT_DIRECTION_LTR
+		Constants.LanguageCode.ar:
+			content.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.prs:
+			content.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.zh:
+			content.layout_direction = Control.LAYOUT_DIRECTION_LTR
 	language_changed.emit()
 	if debugging: print("[LanguageManager] Set language to: ",currentLanguage)
 
@@ -75,3 +86,5 @@ func is_RTL() -> bool:
 	if currentLanguage == Constants.LanguageCode.ar || currentLanguage == Constants.LanguageCode.prs:
 		return true
 	return false
+
+	

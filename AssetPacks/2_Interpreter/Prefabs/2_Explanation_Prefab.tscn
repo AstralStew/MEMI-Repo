@@ -124,6 +124,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("7_28ad4")]
 layout_mode = 2
+final_scale = 1.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
 _auto_bg_colour = Color(1, 1, 1, 0.3)
@@ -143,6 +144,8 @@ horizontal_alignment = 1
 custom_effects = [ExtResource("6_yos7i")]
 script = ExtResource("5_jbdvx")
 debugging = true
+autopopulate = true
+autokey = "INTERPRETER_7_YOUDIDIT_B2"
 
 [node name="HSeparator" type="HSeparator" parent="Buttons_VB"]
 visible = false

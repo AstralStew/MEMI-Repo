@@ -91,7 +91,7 @@ enum TouchHint{Default,Slim,Keep}
 # Private variables
 var bubbleText : LabelController
 var bubbleBG : NinePatchRect
-var bubbleTitle : Label
+var bubbleTitle : LabelLiteController
 var bubbleTapHint : AnimatedSprite2D
 var speakingDots : AnimatedSprite2D
 var bubbleTouchButton : Button
@@ -117,6 +117,16 @@ func _ready() -> void:
 	bubbleText.pivot_offset = bubbleText.size / 2
 	bubbleBG.pivot_offset = bubbleBG.size / 2
 	
+	match LanguageManager.currentLanguage:
+		Constants.LanguageCode.en:
+			bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_LTR
+		Constants.LanguageCode.ar:
+			bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.prs:
+			bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.zh:
+			bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_LTR
+	
 	if _autostart: 
 		if _debug: print("[Bubble(",name,")] Initialising...")
 		
@@ -124,7 +134,8 @@ func _ready() -> void:
 		modulate = Color(1,1,1,0)
 		_current_touch_hint = TouchHint.Default
 		
-		bubbleText.text =_auto_text
+		if Engine.is_editor_hint(): bubbleText.text =_auto_text
+		else: bubbleText.populate(_auto_text)
 		_set_title(_auto_title)
 		_set_colours(_auto_bg_colour,_auto_text_colour)
 		_set_touch_hint(_auto_touch_hint)
@@ -316,7 +327,10 @@ func _set_text(_text:String=""):
 	if _debug: print("[TapBubble(",name,")] Text set to '",_text,"'")
 
 func _set_title(_title:String="") -> void:
-	bubbleTitle.text = _title
+	if Engine.is_editor_hint():
+		bubbleTitle.text = _title
+	else: 
+		bubbleTitle.populate(_title)
 	if _debug: print("[TapBubble(",name,")] Title set to '",_title,"'")
 
 

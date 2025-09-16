@@ -91,7 +91,6 @@ flip_when_RTL = true
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(275, 0)
-layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -107,7 +106,6 @@ lightSpeakerIcon = true
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(275, 0)
-layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -122,7 +120,6 @@ lightSpeakerIcon = true
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(275, 0)
-layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -150,6 +147,7 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_vertical = 8
 max_char_threshold = 25
+final_scale = 1.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTRO_LANDING_2_EXPLANATION_B1"
 _old_text = "INTRO_LANDING_2_EXPLANATION_B1"

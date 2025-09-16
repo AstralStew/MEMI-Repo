@@ -8,3 +8,6 @@ variation_opentype = {
 2003072104: 100,
 2003265652: 700
 }
+variation_embolden = 0.5
+spacing_top = -8
+spacing_bottom = -8

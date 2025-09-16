@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkef61xvbqi35"]
+[gd_scene load_steps=6 format=3 uid="uid://bkef61xvbqi35"]
 
 [ext_resource type="Script" uid="uid://b1hp3ct6pev0b" path="res://Base/Scripts/OperatorBubble.gd" id="1_38p7n"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_13c48"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="4_38p7n"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_nwthh"]
+[ext_resource type="Script" uid="uid://6rg0nde078ut" path="res://Base/Scripts/LabelLiteController.gd" id="5_u6od1"]
 
 [node name="OperatorBubble" type="MarginContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -89,6 +90,10 @@ theme_override_font_sizes/font_size = 16
 text = "COMMON_000SAYS"
 autowrap_mode = 3
 uppercase = true
+script = ExtResource("5_u6od1")
+default_size = 16
+autopopulate = true
+autokey = "COMMON_000SAYS"
 
 [node name="BubbleAudio" type="AudioStreamPlayer" parent="."]
 

@@ -388,6 +388,7 @@ alignment = 2
 
 [node name="ConfirmBubble" parent="Buttons_VB" instance=ExtResource("7_pjkio")]
 layout_mode = 2
+final_scale = 1.0
 click_bg_colour = Color(0.157, 0.09, 0.141, 0.8)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
@@ -397,12 +398,13 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "LEARNSTEPS_2_EXPLANATION_B2"
 fit_content = true
 horizontal_alignment = 1
 custom_effects = [ExtResource("5_ykmd4")]
 script = ExtResource("4_kqmik")
 debugging = true
+autopopulate = true
+autokey = "LEARNSTEPS_2_EXPLANATION_B2"
 
 [node name="BottomMargin_HSep" type="HSeparator" parent="Buttons_VB"]
 modulate = Color(1, 1, 1, 0)

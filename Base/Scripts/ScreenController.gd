@@ -17,6 +17,7 @@ extends AnimationPlayer
 @export var overrideResetHierarchy := false
 @export var overrideAnswerCheating := false
 @export var overrideLanguageSwitching := false
+@export var overrideLanguageIndex := 0
 @export var overrideScreen := false
 @export var overrideScreenIndex := 0
 @export var overrideAnimSpeed := false
@@ -77,6 +78,7 @@ func _enter_tree() -> void:
 		LanguageManager._initialise()
 	
 	if overrideAnimSpeed: speed_scale = overrideAnimSpeedScale
+	if overrideLanguageSwitching: LanguageManager.set_language(overrideLanguageIndex)
 	
 	audioStreamPlayer = get_child(2)
 	
@@ -214,12 +216,12 @@ func play_animation(animName:String,delay:float=0,marker:StringName="") -> void:
 		return
 	
 	if marker != "":
-		print("[ScreenController] Playing animation '",animName,"' at marker '",marker,"' after ",delay," second delay.")
+		if debugging: print("[ScreenController] Playing animation '",animName,"' at marker '",marker,"' after ",delay," second delay.")
 		if delay>0: await get_tree().create_timer(delay).timeout  
 		play_section_with_markers(animName,marker)
 		return
 	
-	print("[ScreenController] Playing animation '",animName,"' after ",delay," second delay.")
+	if debugging: print("[ScreenController] Playing animation '",animName,"' after ",delay," second delay.")
 	if delay>0: await get_tree().create_timer(delay).timeout  
 	play(animName)
 
@@ -228,14 +230,28 @@ func queue_animation(animName:String, delay:float=0) -> void:
 	if !has_animation(animName):
 		push_error("[ScreenController] ERROR -> No animation with name '",animName,"' found! :(")
 		return		
-	print("[ScreenController] Queuing animation '",animName,"' after ",delay," second delay.")
+	if debugging: print("[ScreenController] Queuing animation '",animName,"' after ",delay," second delay.")
 	await get_tree().create_timer(delay).timeout
 	queue(animName)
 
 func resume_animation(delay:float=0) -> void:
-	print("[ScreenController] Resuming animation after ",delay," second delay.")
+	if debugging: print("[ScreenController] Resuming animation after ",delay," second delay.")
 	if delay>0: await get_tree().create_timer(delay).timeout  
 	play()
+
+func set_anim_speed(speed:float = 1.0) -> void:
+	if debugging: print("[ScreenController] Setting animation speed scale to: ",speed)
+	speed_scale = speed
+
+func reset_anim_speed() -> void:
+	speed_scale = 1.0
+
+func quicken_for_en(speed:float) -> void:
+	if LanguageManager.currentLanguage == Constants.LanguageCode.en:
+		if debugging: print("[ScreenController] English detected; Setting speed to ",speed)
+		speed_scale = speed
+	elif debugging: print("[ScreenController] No English detected, keeping speed at: ",speed_scale)
+
 
 #endregion
 
@@ -243,7 +259,7 @@ func resume_animation(delay:float=0) -> void:
 
 func play_stream(_stream:AudioStream,_volume:float=1.0) -> void:
 	if audioStreamPlayer != null:
-		print("[ScreenController] Playing audio stream '",_stream,"' at volume ",_volume)
+		if debugging: print("[ScreenController] Playing audio stream '",_stream,"' at volume ",_volume)
 		audioStreamPlayer.play_stream(_stream,_volume)
 
 func play_stream_from_path(_path:StringName,_volume:float=1.0) -> void:

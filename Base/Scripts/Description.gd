@@ -57,3 +57,4 @@ func set_margins_from_lines(lines:int=descriptionText.get_line_count()) -> void:
 		descriptionText.pivot_offset = Vector2(descriptionText.size.x, descriptionText.size.y + 8)
 	else:
 		descriptionText.pivot_offset = Vector2(0, descriptionText.size.y + 8)
+	if _debug: print("[Description] Text pivot = ", descriptionText.pivot_offset)

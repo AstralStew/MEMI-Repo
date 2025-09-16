@@ -1,3 +1,4 @@
+LabelController
 Timer
 AudioPlayer
 AnimationPlayer
@@ -7,7 +8,6 @@ Container
 Node
 AudioStreamPlayer
 TextureRect
-LabelController
 RichTextLabel
 Label
 BoxContainer

@@ -20,6 +20,7 @@ class_name ButtonBubble
 @export var bg_border_hscale := 1.0
 @export var bg_border_vscale := 1.25
 @export var bg_border_curve : Curve = preload("res://Base/BorderCurve.tres")
+@export var final_scale := 1.0
 
 @export_group("Pop")
 @export var pop_in_resize_in := 0.25
@@ -86,7 +87,10 @@ func _ready() -> void:
 	if _autostart: 
 		if _debug: print("[Bubble(",name,")] Initialising...")
 		
-		bubbleText.text =_auto_text
+		if Engine.is_editor_hint():
+			bubbleText.text =_auto_text
+		else:
+			bubbleText.populate(_auto_text)
 		_resize()
 		
 		bubbleText.scale = Vector2.ZERO
@@ -158,7 +162,7 @@ func click() -> void:
 	_fade_background(click_bg_colour,click_inout,click_ease,Tween.TransitionType.TRANS_LINEAR)
 	_set_text_colour(click_text_colour)
 	_resize_text(click_size,click_inout,click_ease,click_trans)
-	text_resize.tween_callback(_resize_text.bind(1.0,unclick_inout,unclick_ease,unclick_trans))
+	text_resize.tween_callback(_resize_text.bind(1.0 * final_scale,unclick_inout,unclick_ease,unclick_trans))
 	
 	# play sound
 	bubbleTouchAudio.stream = click_sound
@@ -222,7 +226,7 @@ func _resize_bubble(_active:bool,_duration:float,_ease:Tween.EaseType,_transitio
 	bubble_resize = create_tween()
 	
 	if _active:
-		bubble_resize.tween_property(bubbleText, "scale", Vector2.ONE, _duration).from(Vector2.ZERO).set_ease(_ease).set_trans(_transition)
+		bubble_resize.tween_property(bubbleText, "scale", Vector2.ONE * final_scale, _duration).from(Vector2.ZERO).set_ease(_ease).set_trans(_transition)
 		#touch_hint_fade.tween_callback(bubbleTouchButton.set.bind("visible",true))
 	else: 
 		bubble_resize.tween_property(bubbleText, "scale", Vector2.ZERO, _duration).from(Vector2.ONE).set_ease(_ease).set_trans(_transition)
@@ -233,7 +237,7 @@ func _resize_text(_target_size:float,_duration:float,_ease:Tween.EaseType,_trans
 		text_resize.kill()
 	text_resize = create_tween()
 	
-	text_resize.tween_property(bubbleText, "scale", Vector2(_target_size,_target_size), _duration).set_ease(_ease).set_trans(_transition)
+	text_resize.tween_property(bubbleText, "scale", Vector2(_target_size,_target_size) * final_scale, _duration).set_ease(_ease).set_trans(_transition)
 
 
 var bubble_fade
@@ -358,3 +362,10 @@ func _send_meta_link_9():
 	meta_link_9.emit()
 
 #endregion
+
+
+func check_meta_link_from_button() -> void:
+	if bubbleText.text.contains("{"):
+		if _debug: print("[ButtonBubble(",name,")] Button clicked, sending link '",bubbleText.text.substr(bubbleText.text.findn("{"),2),"'...")
+		bubbleText._link_clicked(bubbleText.text.substr(bubbleText.text.findn("{"),3))
+	elif _debug: print("[ButtonBubble(",name,")] Button clicked but no '{' detected, ignoring.")

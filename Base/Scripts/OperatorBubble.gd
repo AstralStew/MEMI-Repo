@@ -82,7 +82,7 @@ var marginText : MarginContainer
 var bubbleText : LabelController
 var bubbleProxy : Control
 var bubbleBG : NinePatchRect
-var bubbleTitle : Label
+var bubbleTitle : LabelLiteController
 var bubbleAudio : AudioStreamPlayer
 
 #signal meta_link_1
@@ -102,6 +102,16 @@ func _ready() -> void:
 	_getrefs()
 		
 	#bubbleBG.pivot_offset = bubbleBG.size / 2
+		
+	#match LanguageManager.currentLanguage:
+		#Constants.LanguageCode.en:
+			#bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_LTR
+		#Constants.LanguageCode.ar:
+			#bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		#Constants.LanguageCode.prs:
+			#bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		#Constants.LanguageCode.zh:
+			#bubbleTitle.layout_direction = Control.LAYOUT_DIRECTION_LTR
 	
 	if _autostart: 
 		if _debug: print("[Bubble(",name,")] Initialising...")
@@ -294,7 +304,10 @@ func _set_text(_text:String=""):
 	if _debug: print("[OperatorBubble(",name,")] Text set to '",_text,"'")
 
 func _set_title(_title:String="") -> void:
-	bubbleTitle.text = _title
+	if Engine.is_editor_hint():
+		bubbleTitle.text = _title
+	else:
+		bubbleTitle.populate(_title)
 	if _debug: print("[OperatorBubble(",name,")] Title set to '",_title,"'")
 
 

@@ -5,6 +5,7 @@ extends RichTextLabel
 
 @export_group("Text Properties")
 @export var fontType : Constants.FontType = Constants.FontType.Normal
+@export var default_size := 19
 @export var lightSpeakerIcon := false
 
 signal text_populated
@@ -43,7 +44,7 @@ func _ready() -> void:
 	last_text_code = text
 	text_direction = Control.TEXT_DIRECTION_INHERITED
 	
-	current_size = 20
+	current_size = default_size
 	if autopopulate: populate(autokey)
 	
 	subscribe_to_language_manager()
@@ -104,8 +105,8 @@ func _check_font() -> void:
 		LanguageManager._initialise()
 	if change_font: 
 		add_theme_font_override("normal_font",LanguageManager.get_normal_font())
-	else:
-		add_theme_font_override("normal_font",LanguageManager.enNormalFont)
+	#else:
+		#add_theme_font_override("normal_font",LanguageManager.enNormalFont)
 	
 	#match (LanguageManager.currentLanguage):
 		#Constants.LanguageCode.en:
