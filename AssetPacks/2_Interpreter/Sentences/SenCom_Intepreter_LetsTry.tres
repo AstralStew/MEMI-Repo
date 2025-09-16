@@ -5,7 +5,6 @@
 
 [sub_resource type="Resource" id="Resource_ixt38"]
 script = ExtResource("1_o1rg3")
-checkType = 0
 phrases = Array[String](["Yes"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
@@ -13,11 +12,8 @@ metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 script = ExtResource("2_m6ufo")
 debug = true
 correctConditions = Array[ExtResource("1_o1rg3")]([SubResource("Resource_ixt38")])
-wrongConditions = Array[String]([])
 correctAnim = "Interpreter/Interpreter_1a_Correct"
 wrongAnim = "Interpreter/Interpreter_1b_Mumbo"
 mumboAnim = "Interpreter/Interpreter_1b_Mumbo"
 dontKnowAnim = "Interpreter/Interpreter_1b_Mumbo"
-giveUpAnim = ""
-total_attempts = -1
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

@@ -11,13 +11,9 @@ metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]
 script = ExtResource("2_1wkpf")
-debug = false
 correctConditions = Array[ExtResource("1_najtm")]([SubResource("Resource_ixt38")])
-wrongConditions = Array[String]([])
 correctAnim = "Intro/Tutorial_1a_Correct"
 wrongAnim = "Intro/Tutorial_1b_Mumbo"
 mumboAnim = "Intro/Tutorial_1b_Mumbo"
 dontKnowAnim = "Intro/Tutorial_1b_Mumbo"
-giveUpAnim = ""
-total_attempts = -1
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

@@ -5,7 +5,6 @@
 
 [sub_resource type="Resource" id="Resource_ixt38"]
 script = ExtResource("1_0d7le")
-checkType = 0
 phrases = Array[String](["Interpreter"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://dmup6q2t00bxk"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ei8ir"]
-[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="2_1tbva"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="2_1tbva"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_8oxnu"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="4_kkmuj"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_q6r75"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://csf8mlhy8lscb" path="res://zOld/Old Other/Lad_Phone.png" id="14_7ly4h"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="15_38vxp"]
 [ext_resource type="PackedScene" uid="uid://bkef61xvbqi35" path="res://AssetPacks/0_Shared/Prefabs/OperatorBubble.tscn" id="17_pprxh"]
-[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="19_1tbva"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="19_1tbva"]
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="19_wvcp0"]
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="20_8jw3a"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="21_iio1i"]

@@ -246,6 +246,13 @@ func set_anim_speed(speed:float = 1.0) -> void:
 func reset_anim_speed() -> void:
 	speed_scale = 1.0
 
+
+func non_en_speed(speed:float) -> void:
+	if LanguageManager.currentLanguage != Constants.LanguageCode.en:
+		if debugging: print("[ScreenController] Non-English detected; Setting speed to ",speed)
+		speed_scale = speed
+	elif debugging: print("[ScreenController] English detected, keeping speed at: ",speed_scale)
+
 func quicken_for_en(speed:float) -> void:
 	if LanguageManager.currentLanguage == Constants.LanguageCode.en:
 		if debugging: print("[ScreenController] English detected; Setting speed to ",speed)

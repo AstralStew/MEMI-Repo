@@ -1,4 +1,3 @@
-@tool 
 extends TextureRect
 class_name TextureController
 
@@ -15,7 +14,6 @@ func _ready() -> void:
 	
 	if auto_check:
 		flip_h = flip_when_RTL && is_layout_rtl();
-		
 	
 	subscribe_to_language_manager()
 
@@ -27,15 +25,6 @@ func subscribe_to_language_manager() -> void:
 func switch_language() -> void:
 	flip_h = flip_when_RTL && is_layout_rtl();
 
-
-#region Editor only
-
-func _process(delta: float) -> void:
-	if _updateInEditor && Engine.is_editor_hint():
-		if auto_check:
-			flip_h = flip_when_RTL && is_layout_rtl();
-
-#endregion
 
 
 var fading_to_image

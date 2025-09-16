@@ -178,11 +178,9 @@ INTERPRETER_4_QUESTION1_C1,They always ask this question first.,"إنهم يسأ
 Police [url={1}]<~Police~>[/url]
 Fire [url={2}]<~Fire~>[/url]
 or Ambulance? [url={3}]<~Ambulance~>[/url]"
-INTERPRETER_4_QUESTION1_C2,"Tap and say
-[url={3}]<~Ambulance~>[/url]",مستعد؟ انقر وقل [url={3}]<~Ambulance~>[/url],ضربه بزنید و بگویید:  [url={3}]<~Ambulance~>[/url],点击并说：[url={3}]<~Ambulance~>[/url],Tap and say [url={3}]<~Ambulance~>[/url]
+INTERPRETER_4_QUESTION1_C2,Tap and say [url={3}]<~Ambulance~>[/url],مستعد؟ انقر وقل [url={3}]<~Ambulance~>[/url],ضربه بزنید و بگویید:  [url={3}]<~Ambulance~>[/url],点击并说：[url={3}]<~Ambulance~>[/url],Tap and say [url={3}]<~Ambulance~>[/url]
 INTERPRETER_4_QUESTION1_CC,Well done!,برافو!,آفرین!,好吧，别！,Well done!
-INTERPRETER_4_QUESTION1_CM,"You need an
-[url={3}]<~Ambulance~>[/url]",أنت بحاجة إلى [url={3}]<~Ambulance~>[/url],شما نیاز دارید: [url={3}]<~Ambulance~>[/url],"你需要：
+INTERPRETER_4_QUESTION1_CM,You need an [url={3}]<~Ambulance~>[/url],أنت بحاجة إلى [url={3}]<~Ambulance~>[/url],شما نیاز دارید: [url={3}]<~Ambulance~>[/url],"你需要：
 [url={3}]<~Ambulance~>[/url]","You need an
 [url={3}]<~Ambulance~>[/url]"
 INTERPRETER_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,لنكمل. تدرب على نطقك لاحقًا.,بیایید ادامه دهیم. تلفظ خود را بعداً تمرین کنید.,继续吧。稍后练习一下发音。,Let’s keep going. Practice your pronunciation later.
@@ -202,7 +200,7 @@ and the town is [url={5}]<~Springvale~>[/url]","وطلبوا معرفة الول
 State [url={4}]<~Victoria~>[/url]
 Town [url={5}]<~Springvale~>[/url]"
 INTERPRETER_5_QUESTION2_CC,Excellent!,ممتاز!,,出色的！,Excellent!
-INTERPRETER_5_QUESTION2_CM,"Tell them the <b>state and town.</b> [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","أخبرهم عن الولاية والمدينة. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","ایالت و شهر را به آنها بگویید. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","告诉他们州和城镇 [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","Tell them the state and town. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]"
+INTERPRETER_5_QUESTION2_CM,"Tell them the state and town. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","أخبرهم عن الولاية والمدينة. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","ایالت و شهر را به آنها بگویید. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","告诉他们州和城镇 [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","Tell them the state and town. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]"
 INTERPRETER_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,لنكمل. تدرب على نطقك لاحقًا.,بیایید ادامه دهیم. تلفظ خود را بعداً تمرین کنید.,继续吧。稍后练习一下发音。,Let’s keep going. Practice your pronunciation later.
 ,,,,,
 ,,,,,
@@ -234,6 +232,12 @@ INTERPRETER_7_YOUDIDIT_T4,You now know how to call 000 if you need help in an em
 INTERPRETER_7_YOUDIDIT_B1, [url={3}]Next scenario[/url], [url={3}]السيناريو التالي[/url],,, [url={3}]Next scenario[/url]
 INTERPRETER_7_YOUDIDIT_B2, [url={1}]Try again[/url], [url={1}]حاول ثانيةً[/url],,, [url={1}]Try again[/url]
 ,,,,,
+,Keep practising,,,,
+,Learn how to say you language in English,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
 ,,,,,
 ,,,,,
 LOCATION_1_LETSTRY_T1,Let’s practice giving the address of the emergency in English.,دعونا نتدرب على إعطاء عنوان الطوارئ باللغة الإنجليزية.,,,Let’s practice giving the address of the emergency in English.
@@ -245,8 +249,8 @@ LOCATION_1_LETSTRY_B1,[url={1}]Let's go[/url],[url={1}]يلا[/url],,,[url={1}]L
 ,,,,,
 LOCATION_2_SCENARIO_T1,SCENARIO,,,,SCENARIO
 LOCATION_2_SCENARIO_T2,You are visiting your aunt. She has sudden chest pain and is dizzy.,,,,You are visiting your aunt. She has sudden chest pain and is dizzy.
-LOCATION_2_SCENARIO_T3,She is having a heart attack. You need Medical help.,,,,She is having a heart attack. You need to call 000.
-LOCATION_2_SCENARIO_T4,"Her address is 278 Main Street, Shepparton, VIC.",,,,"Her address is 278 Main Street, Shepparton, VIC."
+LOCATION_2_SCENARIO_T3,She is having a heart attack. She needs urgent medical help.,,,,She is having a heart attack. You need to call 000.
+LOCATION_2_SCENARIO_T4,"She lives at 278 Main Road, Shepparton, VIC.",,,,"Her address is 278 Main Street, Shepparton, VIC."
 ,,,,,
 LOCATION_2_SCENARIO_B1,[url={2}]Dial 000[/url],,,,[url={2}]Dial 000[/url]
 ,,,,,
@@ -268,8 +272,7 @@ LOCATION_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ","Emergency. Pol
 LOCATION_4_QUESTION1_C1,Say in English which service you need.,,,,Say in English which service you need.
 LOCATION_4_QUESTION1_C2,Check the scenario here!,,,,Check the scenario here!
 LOCATION_4_QUESTION1_CC,Perfect,,,,Perfect
-LOCATION_4_QUESTION1_CM,"You need an
-[url={1}]<~Ambulance~>[/url]",,,,"You need an
+LOCATION_4_QUESTION1_CM,You need an [url={1}]<~Ambulance~>[/url],,,,"You need an
 [url={1}]<~Ambulance~>[/url]"
 LOCATION_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
 ,,,,,
@@ -299,7 +302,7 @@ LOCATION_6_QUESTION3_O2,"Emergency services, where do you need the ambulance?","
 LOCATION_6_QUESTION3_C1,They are connecting you to a service in your area.,,,,They are connecting you to a service in your area.
 LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~2-7-8 Main Street, Shepparton~>[/url]",,,,"Say the address of your emergency: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
 LOCATION_6_QUESTION3_CC,Great! 000 knows where your emergency is.,,,,Great! 000 knows where your emergency is.
-LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~2-7-8 Main Street, Shepparton~>[/url]",,,,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~2-7-8 Main Road, Shepparton~>[/url]",,,,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
 LOCATION_6_QUESTION3_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
 ,,,,,
 ,,,,,
@@ -310,9 +313,7 @@ LOCATION_7_QUESTION4_O2,An interpreter will be here soon. Please hold.,An interp
 LOCATION_7_QUESTION4_C1,Let’s practice asking for an interpreter again.,,,,Let’s practice asking for an interpreter again.
 LOCATION_7_QUESTION4_C2,Say [url={5}]<~Interpreter~>[/url] and the language you speak in English.,,,,Say [url={4}]<~Interpreter~>[/url] and the language you speak in English.
 LOCATION_7_QUESTION4_CC,Well done!,,,,Well done!
-LOCATION_7_QUESTION4_CW,"What language do you need an interpreter for?
-Say [url={5}]<~Interpreter~>[/url] and your language",,,,"What language do you need an interpreter for?
-Say [url={5}]<~Interpreter~>[/url] and your language"
+LOCATION_7_QUESTION4_CW,Don't forget your language!,,,,Don't forget your language!
 LOCATION_7_QUESTION4_CM,They can't understand you,,,,They can't understand you
 LOCATION_7_QUESTION4_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
 .,,,,,
@@ -326,3 +327,305 @@ LOCATION_8_YOUDIDIT_T5,- and to ask for an interpreter,,,,You now know how to ca
 ,,,,,
 LOCATION_8_YOUDIDIT_B1, [url={3}]Next scenario[/url],,,, [url={3}]Next scenario[/url]
 LOCATION_8_YOUDIDIT_B2, [url={1}]Try again[/url],,,, [url={1}]Try again[/url]
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_1_LETSTRY_T1,Answer as many questions as you can in English.,,,,
+QUESTIONS_1_LETSTRY_T2,"If you don’t understand something, you can say [url={X}<~I don’t understand~>[/url]",,,,
+,,,,,
+QUESTIONS_1_LETSTRY_B1, [url={X}]Let's begin[/url],,,,
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_2_SCENARIO_T1,SCENARIO,,,,
+QUESTIONS_2_SCENARIO_T2,You are at a children’s party. The neighbour starts shouting at everyone.,,,,
+QUESTIONS_2_SCENARIO_T3,He is drunk and is kicking the fence. He says he will break into the party.,,,,
+QUESTIONS_2_SCENARIO_T4,"The address is 3 High Street Doreen, VIC",,,,
+,,,,,
+QUESTIONS_2_SCENARIO_B1,[url={X}]Dial 000[/url],,,,
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_3_CALL_O1,"You have dialled emergency 000.
+Your call is being connected...",,,,
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? "
+,,,,,
+QUESTIONS_4_QUESTION1_C1,Say in English which service you need.,,,,Say in English which service you need.
+,,,,,
+QUESTIONS_4_QUESTION1_CC,Perfect! The police can help if you feel threatened.,,,,Perfect
+QUESTIONS_4_QUESTION1_CM,You need the [url={X}]<~Police~>[/url],,,,"You need an
+[url={1}]<~Ambulance~>[/url]"
+QUESTIONS_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_5_QUESTION2_O1,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?
+,,,,,
+QUESTIONS_5_QUESTION2_C1,Tell them your state and town,,,,Tell them your state and town
+QUESTIONS_5_QUESTION2_CC,Correct.,,,,Excellent!
+QUESTIONS_5_QUESTION2_CM,"The state is [url={X}]<~Victoria~>[/url], 
+and the town is [url={X}]<~Doreen~>[/url]",,,,"The state is [url={2}]<~Victoria~>[/url]
+and the town is [url={3}]<~Shepparton~>[/url]"
+QUESTIONS_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_6_QUESTION3_O1,"Connecting you to the Police,
+Doreen, Victoria.","Connecting you to ambulance,
+Shepparton, Victoria","Connecting you to ambulance,
+Shepparton, Victoria","Connecting you to ambulance,
+Shepparton, Victoria","Connecting you to ambulance,
+Shepparton, Victoria"
+QUESTIONS_6_QUESTION3_O2,"Emergency services, where do you need the Police?","Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?","Emergency services, what address do you need the ambulance?"
+,,,,,
+QUESTIONS_6_QUESTION3_C1,They are connecting you to a service in your area.,,,,They are connecting you to a service in your area.
+QUESTIONS_6_QUESTION3_C2,Say the address of your emergency now.,,,,"Say the address of your emergency: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+QUESTIONS_6_QUESTION3_CC,Nice.,,,,Great! 000 knows where your emergency is.
+QUESTIONS_6_QUESTION3_CM,Try again. Check the address here.,,,,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+QUESTIONS_6_QUESTION3_CG,The address is 3 High Street Doreen. Let's keep going.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,I can call an Intrepreter to help. What language?,,,,
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,They asked if you want an interpreter. Tell them your language in English
+,,,,,
+PLAYER SAYS LANGUAGE CORRECT - 000 OPERATOR SAYS,Conntecting you to an Interpreter. Stay on the phone.,,,,
+HOST ENCOURAGES PLAYER:,Good idea! It's always OK to ask for an interpreter.,,,,
+,,,,,
+PLAYER MUMBO - 000 OPERATOR SAYS,Say the language you speak in English.,,,,
+PLAYER GIVE UP - 000 OPERATOR SAYS,They can't understand you. Practice your pronunciation and try again.,,,,
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_7_QUESTION4_O1,Why do you need the police?,What is your emergency?,What is your emergency?,What is your emergency?,Why do you need the police?
+,,,,,
+QUESTIONS_7_QUESTION4_C1,Tell them why you need help,,,,They asked you why you need the police. 
+QUESTIONS_7_QUESTION4_C2,Explain your emergency.,,,,Explain your emergency.
+QUESTIONS_7_QUESTION4_CC,Great job!,,,,Well done!
+QUESTIONS_7_QUESTION4_CW,Try again.,,,,Don't forget your language!
+QUESTIONS_7_QUESTION4_CM,"Try saying words like: [url={X}]<~Neighbour,~>[/url] [url={X}]<~drunk,~>[/url] and [url={X}]<~violent.~>[/url]",,,,They can't understand you
+QUESTIONS_7_QUESTION4_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,I can call an Intrepreter to help. What language?,,,,
+"HOST TRANSLATES FOR AR, PR, ZH: ",They asked if you want an interpreter. Tell them your language in English,,,,
+,,,,,
+PLAYER SAYS LANGUAGE CORRECT - 000 OPERATOR SAYS,Conntecting you to an Interpreter. Stay on the phone.,,,,
+HOST ENCOURAGES PLAYER:,Good idea! It's always OK to ask for an interpreter.,,,,
+,,,,,
+PLAYER MUMBO - 000 OPERATOR SAYS,Say the language you speak in English.,,,,
+PLAYER GIVE UP - 000 OPERATOR SAYS,They can't understand you. Practice your pronunciation and try again.,,,,
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_8_QUESTION5_O1,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?
+,,,,,
+QUESTIONS_8_QUESTION5_C1,-,,,,They asked if there has been any violence?
+QUESTIONS_8_QUESTION5_C2,You can answer yes or no.,,,,You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
+QUESTIONS_8_QUESTION5_CC,Correct.,,,,Correct.
+QUESTIONS_8_QUESTION5_CW,They kicked the fence. This is violence. Try again,,,,They kicked the fence. This is violence. Try again
+QUESTIONS_8_QUESTION5_CM,You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url],,,,You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
+QUESTIONS_8_QUESTION5_CG,Let’s keep going and see what other questions could ask. ,,,,Let’s keep going and see what other questions could ask. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,Next question
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_11_QUESTION6_O1,Do they have a weapon?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Do they have a weapon?
+,,,,,
+QUESTIONS_9_QUESTION6_C1,-,,,,Do they have a weapon?
+QUESTIONS_9_QUESTION6_CC,Well done!,,,,Well done!
+QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon (like a knife or a bat) so the answer is [url={X}]<~no.~>[/url],,,,He doesn’t have a weapon (like a knife or a bat) so the answer is [url={X}]<~no.~>[/url]
+QUESTIONS_9_QUESTION6_CM,They can't understand you.  ,,,,They can't understand you.  
+QUESTIONS_9_QUESTION6_CG,Let’s keep going and see what other questions could ask. ,,,,Let’s keep going and see what other questions could ask. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,Next question
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_10_QUESTION6_O1,Do you need an ambulance?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Do you need an ambulance?
+,,,,,
+QUESTIONS_10_QUESTION6_C1,-,,,,Do you need an ambulance?
+QUESTIONS_10_QUESTION6_CC,Nice.,,,,Nice.
+QUESTIONS_10_QUESTION6_CW,No one is hurt. You don't need an ambulance.,,,,No one is hurt. You don't need an ambulance.
+QUESTIONS_10_QUESTION6_CM,They can't understand you.  ,,,,They can't understand you.  
+QUESTIONS_10_QUESTION6_CG,No one is hurt. The answer is [url={X}]<~no~>[/url] you don't need an ambulance. ,,,,No one is hurt. The answer is [url={X}]<~no~>[/url] you don't need an ambulance. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,Next question
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_10_QUESTION7_O1,Are there children present?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Are there children present?
+,,,,,
+QUESTIONS_11_QUESTION7_C1,-,,,,-
+QUESTIONS_11_QUESTION7_CC,Great job!,,,,Great job!
+QUESTIONS_11_QUESTION7_CW,There are children at the party. You can say [url={X}]<~yes~>[/url],,,,There are children at the party. You can say [url={X}]<~yes~>[/url]
+QUESTIONS_11_QUESTION7_CM,They can't understand you.  ,,,,They can't understand you.  
+QUESTIONS_11_QUESTION7_CG,There are children at the party. The answer is [url={X}]<~yes.~>[/url],,,,No one is hurt. The answer is [url={X}]<~no~>[/url] you don't need an ambulance. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",You have done well to get this far!,,,,You have done well to get this far!
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_12_YOUDIDIT_T1,Good work!,,,,Good work!
+QUESTIONS_12_YOUDIDIT_T2,000 will continue to ask questions about your emergency.,,,,000 will continue to ask questions about your emergency.
+QUESTIONS_12_YOUDIDIT_T3,The questions will be specific to your emergency situation.,,,,The questions will be specific to your emergency situation.
+QUESTIONS_12_YOUDIDIT_T4,Listen to the instructions and stay calm.,,,,Listen to the instructions and stay calm.
+,,,,,
+QUESTIONS_12_YOUDIDIT_B1, [url={X}]Continue[/url],,,, [url={X}]Continue[/url]
+QUESTIONS_12_YOUDIDIT_B2, [url={X}]Try again[/url],,,, [url={X}]Try again[/url]
+,,,,,
+,,,,,
+,,,,,
+NOHELP_1_LETSTRY_T1,You’re doing great!,,,,
+NOHELP_1_LETSTRY_T2,Let's see if you can do a call without my help.,,,,
+,,,,,
+NOHELP_1_LETSTRY_B1, [url={X}]I can do it![/url],,,,
+,,,,,
+,,,,,
+,,,,,
+NOHELP_2_SCENARIO_T1,SCENARIO,,,,
+NOHELP_2_SCENARIO_T2,Your smoke alarm is beeping. The kitchen is full of smoke.,,,,
+NOHELP_2_SCENARIO_T3,"You wake your children, go outside together, and call 000.",,,,
+NOHELP_2_SCENARIO_T4,"You live at 123 Main Road, Morwell, VIC.",,,,
+,,,,,
+NOHELP_2_SCENARIO_B1,[url={X}]Dial 000[/url],,,,
+,,,,,
+,,,,,
+,,,,,
+QUESTIONS_3_CALL_O1,"You have dialled emergency 000.
+Your call is being connected...",,,,
+,,,,,
+,,,,,
+,,,,,
+NOHELP_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? "
+,,,,,
+NOHELP_4_QUESTION1_C1,Say in English which service you need.,,,,Say in English which service you need.
+,,,,,
+NOHELP_4_QUESTION1_CC,Perfect! The police can help if you feel threatened.,,,,Perfect
+NOHELP_4_QUESTION1_CM,You need the [url={X}]<~Police~>[/url],,,,"You need an
+[url={1}]<~Ambulance~>[/url]"
+NOHELP_4_QUESTION1_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+NOHELP_5_QUESTION2_O1,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?
+,,,,,
+NOHELP_5_QUESTION2_C1,Tell them your state and town,,,,Tell them your state and town
+NOHELP_5_QUESTION2_CC,Correct.,,,,Excellent!
+NOHELP_5_QUESTION2_CM,"The state is [url={X}]<~Victoria~>[/url], 
+and the town is [url={X}]<~Doreen~>[/url]",,,,"The state is [url={2}]<~Victoria~>[/url]
+and the town is [url={3}]<~Shepparton~>[/url]"
+NOHELP_5_QUESTION2_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+,,,,,
+,,,,,
+NOHELP_6_QUESTION3_O1,"Connecting you to the Police,
+Doreen, Victoria.","Connecting you to ambulance,
+Shepparton, Victoria","Connecting you to ambulance,
+Shepparton, Victoria","Connecting you to ambulance,
+Shepparton, Victoria","Connecting you to ambulance,
+Shepparton, Victoria"
+NOHELP_6_QUESTION3_O2,"Emergency services, where do you need the Police?","Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?","Emergency services, what address do you need the ambulance?"
+,,,,,
+NOHELP_6_QUESTION3_C1,They are connecting you to a service in your area.,,,,They are connecting you to a service in your area.
+NOHELP_6_QUESTION3_C2,Say the address of your emergency now.,,,,"Say the address of your emergency: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+NOHELP_6_QUESTION3_CC,Nice.,,,,Great! 000 knows where your emergency is.
+NOHELP_6_QUESTION3_CM,Try again. Check the address here.,,,,"Try again: [url={4}]<~2-7-8 Main street, Shepparton~>[/url]"
+NOHELP_6_QUESTION3_CG,The address is 3 High Street Doreen. Let's keep going.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,I can call an Intrepreter to help. What language?,,,,
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,They asked if you want an interpreter. Tell them your language in English
+,,,,,
+PLAYER SAYS LANGUAGE CORRECT - 000 OPERATOR SAYS,Conntecting you to an Interpreter. Stay on the phone.,,,,
+HOST ENCOURAGES PLAYER:,Good idea! It's always OK to ask for an interpreter.,,,,
+,,,,,
+PLAYER MUMBO - 000 OPERATOR SAYS,Say the language you speak in English.,,,,
+PLAYER GIVE UP - 000 OPERATOR SAYS,They can't understand you. Practice your pronunciation and try again.,,,,
+,,,,,
+,,,,,
+,,,,,
+NOHELP_7_QUESTION4_O1,Why do you need the police?,What is your emergency?,What is your emergency?,What is your emergency?,Why do you need the police?
+,,,,,
+NOHELP_7_QUESTION4_C1,Tell them why you need help,,,,They asked you why you need the police. 
+NOHELP_7_QUESTION4_C2,Explain your emergency.,,,,Explain your emergency.
+NOHELP_7_QUESTION4_CC,Great job!,,,,Well done!
+NOHELP_7_QUESTION4_CW,Try again.,,,,Don't forget your language!
+NOHELP_7_QUESTION4_CM,"Try saying words like: [url={X}]<~Neighbour,~>[/url] [url={X}]<~drunk,~>[/url] and [url={X}]<~violent.~>[/url]",,,,They can't understand you
+NOHELP_7_QUESTION4_CG,Let’s keep going. Practice your pronunciation later.,,,,Let’s keep going. Practice your pronunciation later.
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,I can call an Intrepreter to help. What language?,,,,
+"HOST TRANSLATES FOR AR, PR, ZH: ",They asked if you want an interpreter. Tell them your language in English,,,,
+,,,,,
+PLAYER SAYS LANGUAGE CORRECT - 000 OPERATOR SAYS,Conntecting you to an Interpreter. Stay on the phone.,,,,
+HOST ENCOURAGES PLAYER:,Good idea! It's always OK to ask for an interpreter.,,,,
+,,,,,
+PLAYER MUMBO - 000 OPERATOR SAYS,Say the language you speak in English.,,,,
+PLAYER GIVE UP - 000 OPERATOR SAYS,They can't understand you. Practice your pronunciation and try again.,,,,
+,,,,,
+,,,,,
+,,,,,
+NOHELP_8_QUESTION5_O1,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?
+,,,,,
+NOHELP_8_QUESTION5_C1,-,,,,They asked if there has been any violence?
+NOHELP_8_QUESTION5_C2,You can answer yes or no.,,,,You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
+NOHELP_8_QUESTION5_CC,Correct.,,,,Correct.
+NOHELP_8_QUESTION5_CW,They kicked the fence. This is violence. Try again,,,,They kicked the fence. This is violence. Try again
+NOHELP_8_QUESTION5_CM,You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url],,,,You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
+NOHELP_8_QUESTION5_CG,Let’s keep going and see what other questions could ask. ,,,,Let’s keep going and see what other questions could ask. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,Next question
+,,,,,
+,,,,,
+,,,,,
+NOHELP_11_QUESTION6_O1,Do they have a weapon?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Do they have a weapon?
+,,,,,
+NOHELP_9_QUESTION6_C1,-,,,,Do they have a weapon?
+NOHELP_9_QUESTION6_CC,Well done!,,,,Well done!
+NOHELP_9_QUESTION6_CW,He doesn’t have a weapon (like a knife or a bat) so the answer is [url={X}]<~no.~>[/url],,,,He doesn’t have a weapon (like a knife or a bat) so the answer is [url={X}]<~no.~>[/url]
+NOHELP_9_QUESTION6_CM,They can't understand you.  ,,,,They can't understand you.  
+NOHELP_9_QUESTION6_CG,Let’s keep going and see what other questions could ask. ,,,,Let’s keep going and see what other questions could ask. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,Next question
+,,,,,
+,,,,,
+,,,,,
+NOHELP_10_QUESTION6_O1,Do you need an ambulance?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Do you need an ambulance?
+,,,,,
+NOHELP_10_QUESTION6_C1,-,,,,Do you need an ambulance?
+NOHELP_10_QUESTION6_CC,Nice.,,,,Nice.
+NOHELP_10_QUESTION6_CW,No one is hurt. You don't need an ambulance.,,,,No one is hurt. You don't need an ambulance.
+NOHELP_10_QUESTION6_CM,They can't understand you.  ,,,,They can't understand you.  
+NOHELP_10_QUESTION6_CG,No one is hurt. The answer is [url={X}]<~no~>[/url] you don't need an ambulance. ,,,,No one is hurt. The answer is [url={X}]<~no~>[/url] you don't need an ambulance. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",-,,,,Next question
+,,,,,
+,,,,,
+,,,,,
+NOHELP_10_QUESTION7_O1,Are there children present?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,Are there children present?
+,,,,,
+NOHELP_11_QUESTION7_C1,-,,,,-
+NOHELP_11_QUESTION7_CC,Great job!,,,,Great job!
+NOHELP_11_QUESTION7_CW,There are children at the party. You can say [url={X}]<~yes~>[/url],,,,There are children at the party. You can say [url={X}]<~yes~>[/url]
+NOHELP_11_QUESTION7_CM,They can't understand you.  ,,,,They can't understand you.  
+NOHELP_11_QUESTION7_CG,There are children at the party. The answer is [url={X}]<~yes.~>[/url],,,,No one is hurt. The answer is [url={X}]<~no~>[/url] you don't need an ambulance. 
+,,,,,
+PLAYER SAYS I DON'T KNOW - 000 OPERATOR SAYS,Next question,,,,Next question
+"HOST TRANSLATES FOR AR, PR, ZH: ",You have done well to get this far!,,,,You have done well to get this far!
+,,,,,
+,,,,,
+,,,,,
+NOHELP_12_YOUDIDIT_T1,Good work!,,,,Good work!
+NOHELP_12_YOUDIDIT_T2,000 will continue to ask questions about your emergency.,,,,000 will continue to ask questions about your emergency.
+NOHELP_12_YOUDIDIT_T3,The questions will be specific to your emergency situation.,,,,The questions will be specific to your emergency situation.
+NOHELP_12_YOUDIDIT_T4,Listen to the instructions and stay calm.,,,,Listen to the instructions and stay calm.
+,,,,,
+NOHELP_12_YOUDIDIT_B1, [url={X}]Continue[/url],,,, [url={X}]Continue[/url]
+NOHELP_12_YOUDIDIT_B2, [url={X}]Try again[/url],,,, [url={X}]Try again[/url]

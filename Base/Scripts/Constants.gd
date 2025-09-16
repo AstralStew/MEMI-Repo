@@ -4,6 +4,8 @@ enum LanguageCode {en, ar, prs, zh}
 
 enum FontType {Normal, Thick, Thin}
 
-enum CheckType{AND,OR}
+enum CheckType {AND,OR}
 
-enum BubbleShape{Default,Rounded,DefaultFlip}
+enum BubbleShape {Default,Rounded,DefaultFlip}
+
+enum CharacterPoses {HalfTryAgain,Explain,Point,Talking,ThumbsUp,Yay,Postbox}

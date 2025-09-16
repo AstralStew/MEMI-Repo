@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://73baf83pa3ao" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Questions.png" id="6_obaay"]
 [ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_NoHelp.png" id="7_1p0j3"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="9_t6fup"]
-[ext_resource type="Texture2D" uid="uid://3kj7svumidhu" path="res://AssetPacks/2_Interpreter/Images/Lad_LetsLearn_1.png" id="9_ykrfe"]
+[ext_resource type="Texture2D" uid="uid://3kj7svumidhu" path="res://zOld/Lad_LetsLearn_1.png" id="9_ykrfe"]
 [ext_resource type="RichTextEffect" uid="uid://bvl0th5qdb5ld" path="res://Base/RichTextEffects/RichTextFadeIn2.tres" id="10_q2n0l"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="11_j0i4a"]
 [ext_resource type="PackedScene" uid="uid://4k2jk6jxassl" path="res://zOld/OldPrefabs/bubble.tscn" id="12_7hfa7"]

@@ -169,6 +169,13 @@ func _process(delta: float) -> void:
 
 func pop_in(_text:String, _stream:AudioStream = null) -> void:
 	if _debug: print("[OperatorBubble(",name,")] NOTE -> Popping in with '",_text,"'!")
+	
+	# play sound first (as it takes a little bit to start)
+	if _stream:
+		bubbleAudio.stream = _stream
+		bubbleAudio.play()
+	
+	
 	_set_text(_text)
 	_resize(false)
 	visible = true
@@ -178,10 +185,6 @@ func pop_in(_text:String, _stream:AudioStream = null) -> void:
 	_resize_bubble(true,pop_in_resize_d,pop_in_resize_e,pop_in_resize_t)
 	_fade_bubble(true,pop_in_bg_fade_d,pop_in_bg_fade_e,pop_in_bg_fade_t)
 	
-	# play sound
-	if _stream:
-		bubbleAudio.stream = _stream
-		bubbleAudio.play()
 	
 	# fade in text
 	await get_tree().create_timer(pop_in_bg_fade_d).timeout

@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1hjoq475ykua"]
+[gd_scene load_steps=9 format=3 uid="uid://b1hjoq475ykua"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_d4hcx"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_6l0e5"]
-[ext_resource type="Texture2D" uid="uid://bghw73stsxlsq" path="res://AssetPacks/3_Location/Images/Lad_Postbox.png" id="3_4vxws"]
-[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_Intro/Images/Lad_Talking.png" id="3_64jcu"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="3_64jcu"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_am75m"]
-[ext_resource type="Script" uid="uid://cjbuyki1fumwx" path="res://Base/Scripts/TextureController.gd" id="5_6rkpc"]
+[ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="5_6rkpc"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="5_shmvb"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="6_nfdmr"]
 
@@ -57,13 +56,12 @@ offset_right = 50.0
 offset_bottom = 430.0
 grow_horizontal = 2
 pivot_offset = Vector2(756, 327)
-texture = ExtResource("3_4vxws")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_6rkpc")
+auto_pose = 6
 _updateInEditor = true
 auto_check = true
-flip_when_RTL = true
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 modulate = Color(1, 1, 1, 0)

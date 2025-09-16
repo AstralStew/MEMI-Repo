@@ -11,7 +11,6 @@ metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [sub_resource type="Resource" id="Resource_ixt38"]
 script = ExtResource("1_l0t7o")
-checkType = 0
 phrases = Array[String](["Main Street", "Shepparton"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
@@ -19,7 +18,6 @@ metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 script = ExtResource("2_eicwq")
 debug = true
 correctConditions = Array[ExtResource("1_l0t7o")]([SubResource("Resource_iq2f7"), SubResource("Resource_ixt38")])
-wrongConditions = Array[String]([])
 correctAnim = "Location/Location_6a_Correct"
 wrongAnim = "Location/Location_6b_Mumbo"
 mumboAnim = "Location/Location_6b_Mumbo"

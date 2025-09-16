@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3talsc3cfdjt"]
+[gd_scene load_steps=10 format=3 uid="uid://c3talsc3cfdjt"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_xoyxg"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="2_ykmd4"]
@@ -7,9 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="5_pjkio"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_ykmd4"]
 [ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="6_5jv4b"]
-[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_Intro/Images/Lad_Explain.png" id="6_77r6p"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="7_pjkio"]
-[ext_resource type="Script" uid="uid://cjbuyki1fumwx" path="res://Base/Scripts/TextureController.gd" id="8_kqmik"]
+[ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="8_kqmik"]
 
 [node name="2_Steps_Prefab" type="MarginContainer"]
 visible = false
@@ -102,7 +101,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -121,7 +120,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_5jv4b")
@@ -192,7 +191,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 96)
+pivot_offset = Vector2(49.375, 96)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -211,7 +210,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 107.52)
+pivot_offset = Vector2(53.375, 107.520004)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_5jv4b")
@@ -282,7 +281,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -301,7 +300,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_5jv4b")
@@ -372,13 +371,11 @@ debugging = true
 custom_minimum_size = Vector2(200, 375.5)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("6_77r6p")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("8_kqmik")
-_updateInEditor = true
+debugging = true
 auto_check = true
-flip_when_RTL = true
 
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
