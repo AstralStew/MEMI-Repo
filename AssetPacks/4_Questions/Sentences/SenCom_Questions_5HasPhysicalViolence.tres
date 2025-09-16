@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=4 format=3 uid="uid://c6von53plysnl"]
+
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_e2eag"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_jw5bl"]
+
+[sub_resource type="Resource" id="Resource_rqgly"]
+script = ExtResource("1_e2eag")
+phrases = Array[String](["Yes"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[resource]
+script = ExtResource("2_jw5bl")
+correctConditions = Array[ExtResource("1_e2eag")]([SubResource("Resource_rqgly")])
+wrongConditions = Array[String](["No"])
+correctAnim = "Questions/Questions_8a_Correct"
+wrongAnim = "Questions/Questions_8b_Wrong"
+mumboAnim = "Questions/Questions_8c_Mumbo"
+dontKnowAnim = "Questions/Questions_8d_DontKnow"
+giveUpAnim = "Questions/Questions_8e_GiveUp"
+total_attempts = 2
+metadata/_custom_type_script = "uid://nudfku7qhbxq"

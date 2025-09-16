@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=10 format=3 uid="uid://bsutrsh0o2oko"]
+[gd_resource type="AnimationLibrary" load_steps=14 format=3 uid="uid://bsutrsh0o2oko"]
 
 [ext_resource type="Animation" uid="uid://bkkwrja3yqeke" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Start.res" id="2_6if0b"]
 [ext_resource type="Animation" uid="uid://dmu66dke32pc3" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Shrink.res" id="3_6if0b"]
@@ -9,6 +9,10 @@
 [ext_resource type="Animation" uid="uid://blas1c4a8jcvj" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Location_Complete.res" id="7_nta02"]
 [ext_resource type="Animation" uid="uid://cgmqwoh6v1yvu" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Location_Expand.res" id="8_rxwbk"]
 [ext_resource type="Animation" uid="uid://dlgosxpoic7va" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Location_Shrink.res" id="9_gddb8"]
+[ext_resource type="Animation" uid="uid://dipa8hxmt3jrp" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Complete.res" id="10_1o5y2"]
+[ext_resource type="Animation" uid="uid://daoodhlomdutf" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Expand.res" id="11_b1716"]
+[ext_resource type="Animation" uid="uid://bahepqb5jejmh" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Shrink.res" id="12_ugyne"]
+[ext_resource type="Animation" uid="uid://bnqxj2cbgen4k" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Start.res" id="13_bp1ss"]
 
 [resource]
 resource_name = "LetsLearn"
@@ -21,5 +25,9 @@ _data = {
 &"LetsLearn_Location_Expand": ExtResource("8_rxwbk"),
 &"LetsLearn_Location_Shrink": ExtResource("9_gddb8"),
 &"LetsLearn_Location_Start": ExtResource("6_ruw2q"),
-&"LetsLearn_Overview": ExtResource("3_45k31")
+&"LetsLearn_Overview": ExtResource("3_45k31"),
+&"LetsLearn_Questions_Complete": ExtResource("10_1o5y2"),
+&"LetsLearn_Questions_Expand": ExtResource("11_b1716"),
+&"LetsLearn_Questions_Shrink": ExtResource("12_ugyne"),
+&"LetsLearn_Questions_Start": ExtResource("13_bp1ss")
 }

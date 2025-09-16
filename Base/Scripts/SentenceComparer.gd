@@ -63,11 +63,16 @@ func compare(sentence:String) -> String:
 				if sentence.containsn(phrase):
 					if debug: print("[SentenceComparer] Wrong conditions found! Returning wrongAnim ('",wrongAnim,"')")
 					return wrongAnim
-		else: if debug: print("[SentenceComparer] No wrong conditions on compare. Skipping...")
 		
 		if sentence.containsn("don't know") || sentence.containsn("do not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
 			if debug: print("[SentenceComparer] User said 'I don't know'! Returning dontKnowAnim ('",dontKnowAnim,"')")
 			return dontKnowAnim
+		
+		for check in correctConditions:
+				if check.checkType == Constants.CheckType.MIN3 && check.count < 3:
+					if debug: print("[SentenceComparer] No wrong, but < 3 count on MIN3 correct condition! Returning wrongAnim ('",wrongAnim,"')")
+					return wrongAnim
+		if debug: print("[SentenceComparer] No wrong conditions on compare. Skipping...")
 	
 	if debug: print("[SentenceComparer] No matches found! Returning mumboAnim ('",mumboAnim,"')")
 	return mumboAnim

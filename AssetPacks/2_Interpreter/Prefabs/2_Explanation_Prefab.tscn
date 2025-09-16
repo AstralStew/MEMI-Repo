@@ -60,6 +60,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_85imk")
 auto_pose = 3
+current_pose = 3
 debugging = true
 auto_check = true
 

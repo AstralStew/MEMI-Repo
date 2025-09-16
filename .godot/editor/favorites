@@ -6,6 +6,7 @@ res://AssetPacks/0_Shared/Animations/
 res://AssetPacks/1_Intro/Animations/
 res://AssetPacks/2_Interpreter/Animations/
 res://AssetPacks/3_Location/Animations/
+res://AssetPacks/4_Questions/Animations/
 res://AssetPacks/2_Interpreter/Animations/Interpreter.tres
 res://AssetPacks/1_Intro/Prefabs/1_LandingMenu_Prefab.tscn
 res://AssetPacks/1_Intro/Prefabs/1_Explanation_Prefab.tscn
@@ -18,4 +19,6 @@ res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn
 res://AssetPacks/2_Interpreter/Prefabs/2_Comments_Prefab.tscn
 res://AssetPacks/3_Location/Prefabs/3_Explanation_Prefab.tscn
 res://AssetPacks/3_Location/Prefabs/3_Comments_Prefab.tscn
+res://AssetPacks/4_Questions/Prefabs/4_Explanation_Prefab.tscn
+res://AssetPacks/4_Questions/Prefabs/4_Comments_Prefab.tscn
 res://zOld/OldPrefabs/LLCheat.tscn

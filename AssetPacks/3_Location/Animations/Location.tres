@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=25 format=3 uid="uid://fjo5xkrra3dm"]
+[gd_resource type="AnimationLibrary" load_steps=26 format=3 uid="uid://fjo5xkrra3dm"]
 
 [ext_resource type="Animation" uid="uid://6h7817ke8nvo" path="res://AssetPacks/3_Location/Animations/Location_1_LetsTry.res" id="3_o377b"]
 [ext_resource type="Animation" uid="uid://bl0hxq52bf581" path="res://AssetPacks/3_Location/Animations/Location_2_Scenario.res" id="4_jxc3k"]
@@ -24,6 +24,7 @@
 [ext_resource type="Animation" uid="uid://bclryat87yi4g" path="res://AssetPacks/3_Location/Animations/Location_7_Question4.res" id="23_lfkhl"]
 [ext_resource type="Animation" uid="uid://b22o2k65xomxg" path="res://AssetPacks/3_Location/Animations/Location_8_YouDidIt.res" id="24_517e1"]
 [ext_resource type="Animation" uid="uid://gns8jbc2evm5" path="res://AssetPacks/3_Location/Animations/Location_6b_Mumbo.res" id="24_bcbsm"]
+[ext_resource type="Animation" uid="uid://bag4180a1p25s" path="res://AssetPacks/3_Location/Animations/Location_8a_Fade.res" id="25_bcbsm"]
 
 [resource]
 resource_name = "Location"
@@ -50,6 +51,7 @@ _data = {
 &"Location_7c_Mumbo": ExtResource("21_2wy50"),
 &"Location_7d_GiveUp": ExtResource("22_3q26v"),
 &"Location_8_YouDidIt": ExtResource("24_517e1"),
+&"Location_8a_Fade": ExtResource("25_bcbsm"),
 &"Location_Load": ExtResource("20_x6elf"),
 &"Location_Unload": ExtResource("21_jlgua")
 }

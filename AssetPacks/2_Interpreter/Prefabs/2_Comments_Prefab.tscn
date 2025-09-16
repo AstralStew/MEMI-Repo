@@ -38,6 +38,7 @@ grow_horizontal = 0
 grow_vertical = 2
 expand_mode = 1
 script = ExtResource("4_3iybb")
+current_pose = 1
 debugging = true
 auto_check = true
 

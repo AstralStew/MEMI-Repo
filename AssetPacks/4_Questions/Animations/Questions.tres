@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=25 format=3 uid="uid://cj6bvcuhrusno"]
+[gd_resource type="AnimationLibrary" load_steps=53 format=3 uid="uid://cj6bvcuhrusno"]
 
 [ext_resource type="Animation" uid="uid://dswg3ca1gbhfc" path="res://AssetPacks/4_Questions/Animations/Questions_1_LetsTry.res" id="1_uv5nk"]
 [ext_resource type="Animation" uid="uid://dkge7vjt046ax" path="res://AssetPacks/4_Questions/Animations/Questions_1a_Fade.res" id="2_bytrc"]
@@ -21,35 +21,91 @@
 [ext_resource type="Animation" uid="uid://cnxfvje0r5vk8" path="res://AssetPacks/4_Questions/Animations/Questions_7b_Wrong.res" id="19_i3vbk"]
 [ext_resource type="Animation" uid="uid://bbkn6u2y6lbuo" path="res://AssetPacks/4_Questions/Animations/Questions_7c_Mumbo.res" id="20_2pvlu"]
 [ext_resource type="Animation" uid="uid://d0k51ydwurnc5" path="res://AssetPacks/4_Questions/Animations/Questions_7d_GiveUp.res" id="21_7hatb"]
-[ext_resource type="Animation" uid="uid://bf31fug4wsl4g" path="res://AssetPacks/4_Questions/Animations/Questions_8_YouDidIt.res" id="22_juub2"]
 [ext_resource type="Animation" uid="uid://bybgalfaucabd" path="res://AssetPacks/4_Questions/Animations/Questions_Load.res" id="23_7kxwe"]
 [ext_resource type="Animation" uid="uid://ispt3djy41ct" path="res://AssetPacks/4_Questions/Animations/Questions_Unload.res" id="24_10vvo"]
+[ext_resource type="Animation" uid="uid://bf31fug4wsl4g" path="res://AssetPacks/4_Questions/Animations/Questions_12_YouDidIt.res" id="24_oqf53"]
+[ext_resource type="Animation" uid="uid://bb3nm3uk2qye1" path="res://AssetPacks/4_Questions/Animations/Questions_8a_Correct.res" id="25_d46pn"]
+[ext_resource type="Animation" uid="uid://drfxa6ijpkrhx" path="res://AssetPacks/4_Questions/Animations/Questions_8b_Wrong.res" id="26_rurdy"]
+[ext_resource type="Animation" uid="uid://bkhdvtm7a2smi" path="res://AssetPacks/4_Questions/Animations/Questions_8c_Mumbo.res" id="27_fc2ey"]
+[ext_resource type="Animation" uid="uid://dq5v4xcoxx8dr" path="res://AssetPacks/4_Questions/Animations/Questions_8d_DontKnow.res" id="28_ds363"]
+[ext_resource type="Animation" uid="uid://bljorm6bi4fia" path="res://AssetPacks/4_Questions/Animations/Questions_8e_GiveUp.res" id="29_mgrs7"]
+[ext_resource type="Animation" uid="uid://bxp5ppt5goo2e" path="res://AssetPacks/4_Questions/Animations/Questions_8_Question5.res" id="30_y5p5m"]
+[ext_resource type="Animation" uid="uid://bayfuski46lrl" path="res://AssetPacks/4_Questions/Animations/Questions_9a_Correct.res" id="31_8iyu0"]
+[ext_resource type="Animation" uid="uid://bwj5otlmi5j40" path="res://AssetPacks/4_Questions/Animations/Questions_9b_Wrong.res" id="32_m4jia"]
+[ext_resource type="Animation" uid="uid://cocbe5citi2oi" path="res://AssetPacks/4_Questions/Animations/Questions_9c_Mumbo.res" id="33_1l4o0"]
+[ext_resource type="Animation" uid="uid://d070na0ud1fw4" path="res://AssetPacks/4_Questions/Animations/Questions_9d_DontKnow.res" id="34_2yu4k"]
+[ext_resource type="Animation" uid="uid://b3wmk5q8524x2" path="res://AssetPacks/4_Questions/Animations/Questions_9e_GiveUp.res" id="35_4x7s4"]
+[ext_resource type="Animation" uid="uid://dwtt4wowjl3k7" path="res://AssetPacks/4_Questions/Animations/Questions_9_Question6.res" id="36_0b683"]
+[ext_resource type="Animation" uid="uid://deic4vngycdkh" path="res://AssetPacks/4_Questions/Animations/Questions_10a_Correct.res" id="37_6j302"]
+[ext_resource type="Animation" uid="uid://em4hvgbwhnoi" path="res://AssetPacks/4_Questions/Animations/Questions_10b_Wrong.res" id="38_hs4p7"]
+[ext_resource type="Animation" uid="uid://crr1nixmpspus" path="res://AssetPacks/4_Questions/Animations/Questions_10c_Mumbo.res" id="39_448jn"]
+[ext_resource type="Animation" uid="uid://6dfb0i4ow5fq" path="res://AssetPacks/4_Questions/Animations/Questions_10d_DontKnow.res" id="40_5x120"]
+[ext_resource type="Animation" uid="uid://c5upxlallynfg" path="res://AssetPacks/4_Questions/Animations/Questions_10e_GiveUp.res" id="41_0grqi"]
+[ext_resource type="Animation" uid="uid://dgut0svotidut" path="res://AssetPacks/4_Questions/Animations/Questions_10_Question7.res" id="42_ywl75"]
+[ext_resource type="Animation" uid="uid://crbei8kvn3csd" path="res://AssetPacks/4_Questions/Animations/Questions_11a_Correct.res" id="43_p7xde"]
+[ext_resource type="Animation" uid="uid://dwj25liw0k1t7" path="res://AssetPacks/4_Questions/Animations/Questions_11b_Wrong.res" id="44_fqjxr"]
+[ext_resource type="Animation" uid="uid://b2rkre0nxx15r" path="res://AssetPacks/4_Questions/Animations/Questions_11c_Mumbo.res" id="45_3ppuj"]
+[ext_resource type="Animation" uid="uid://cmr6girulvqxt" path="res://AssetPacks/4_Questions/Animations/Questions_11d_DontKnow.res" id="46_u5i5d"]
+[ext_resource type="Animation" uid="uid://300tif3bacjb" path="res://AssetPacks/4_Questions/Animations/Questions_11e_GiveUp.res" id="47_fedd5"]
+[ext_resource type="Animation" uid="uid://sd2mipqivhru" path="res://AssetPacks/4_Questions/Animations/Questions_11_Question8.res" id="48_lrkbk"]
+[ext_resource type="Animation" uid="uid://dm3clp0x0f4qu" path="res://AssetPacks/4_Questions/Animations/Questions_Da_Correct.res" id="49_fedd5"]
+[ext_resource type="Animation" uid="uid://ixjgw4s7kgpm" path="res://AssetPacks/4_Questions/Animations/Questions_D_Interpreter.res" id="50_lrkbk"]
+[ext_resource type="Animation" uid="uid://dusrcjcikjskd" path="res://AssetPacks/4_Questions/Animations/Questions_Db_Mumbo.res" id="51_56y58"]
+[ext_resource type="Animation" uid="uid://c487ilialocsg" path="res://AssetPacks/4_Questions/Animations/Questions_Dc_GiveUp.res" id="52_n01ie"]
 
 [resource]
-resource_name = "Location"
+resource_name = "Questions"
 _data = {
-&"Location_1_LetsTry": ExtResource("1_uv5nk"),
-&"Location_1a_Fade": ExtResource("2_bytrc"),
-&"Location_2_Scenario": ExtResource("3_oqqvc"),
-&"Location_3_Call": ExtResource("4_03d8o"),
-&"Location_4_Question1": ExtResource("5_5gfqg"),
-&"Location_4a_Correct": ExtResource("6_5pyuu"),
-&"Location_4b_Mumbo": ExtResource("7_ujuff"),
-&"Location_4c_GiveUp": ExtResource("8_grqpo"),
-&"Location_5_Question2": ExtResource("9_nojbx"),
-&"Location_5a_Correct": ExtResource("10_61ulx"),
-&"Location_5b_Mumbo": ExtResource("11_gmluv"),
-&"Location_5c_GiveUp": ExtResource("12_8lh4h"),
-&"Location_6_Question3": ExtResource("13_b43ao"),
-&"Location_6a_Correct": ExtResource("14_70dc2"),
-&"Location_6b_Mumbo": ExtResource("15_6nkgp"),
-&"Location_6c_GiveUp": ExtResource("16_70cgv"),
-&"Location_7_Question4": ExtResource("17_iqwbo"),
-&"Location_7a_Correct": ExtResource("18_dsytv"),
-&"Location_7b_Wrong": ExtResource("19_i3vbk"),
-&"Location_7c_Mumbo": ExtResource("20_2pvlu"),
-&"Location_7d_GiveUp": ExtResource("21_7hatb"),
-&"Location_8_YouDidIt": ExtResource("22_juub2"),
-&"Location_Load": ExtResource("23_7kxwe"),
-&"Location_Unload": ExtResource("24_10vvo")
+&"Questions_10_Question7": ExtResource("42_ywl75"),
+&"Questions_10a_Correct": ExtResource("37_6j302"),
+&"Questions_10b_Wrong": ExtResource("38_hs4p7"),
+&"Questions_10c_Mumbo": ExtResource("39_448jn"),
+&"Questions_10d_DontKnow": ExtResource("40_5x120"),
+&"Questions_10e_GiveUp": ExtResource("41_0grqi"),
+&"Questions_11_Question8": ExtResource("48_lrkbk"),
+&"Questions_11a_Correct": ExtResource("43_p7xde"),
+&"Questions_11b_Wrong": ExtResource("44_fqjxr"),
+&"Questions_11c_Mumbo": ExtResource("45_3ppuj"),
+&"Questions_11d_DontKnow": ExtResource("46_u5i5d"),
+&"Questions_11e_GiveUp": ExtResource("47_fedd5"),
+&"Questions_12_YouDidIt": ExtResource("24_oqf53"),
+&"Questions_1_LetsTry": ExtResource("1_uv5nk"),
+&"Questions_1a_Fade": ExtResource("2_bytrc"),
+&"Questions_2_Scenario": ExtResource("3_oqqvc"),
+&"Questions_3_Call": ExtResource("4_03d8o"),
+&"Questions_4_Question1": ExtResource("5_5gfqg"),
+&"Questions_4a_Correct": ExtResource("6_5pyuu"),
+&"Questions_4b_Mumbo": ExtResource("7_ujuff"),
+&"Questions_4c_GiveUp": ExtResource("8_grqpo"),
+&"Questions_5_Question2": ExtResource("9_nojbx"),
+&"Questions_5a_Correct": ExtResource("10_61ulx"),
+&"Questions_5b_Mumbo": ExtResource("11_gmluv"),
+&"Questions_5c_GiveUp": ExtResource("12_8lh4h"),
+&"Questions_6_Question3": ExtResource("13_b43ao"),
+&"Questions_6a_Correct": ExtResource("14_70dc2"),
+&"Questions_6b_Mumbo": ExtResource("15_6nkgp"),
+&"Questions_6c_GiveUp": ExtResource("16_70cgv"),
+&"Questions_7_Question4": ExtResource("17_iqwbo"),
+&"Questions_7a_Correct": ExtResource("18_dsytv"),
+&"Questions_7b_Wrong": ExtResource("19_i3vbk"),
+&"Questions_7c_Mumbo": ExtResource("20_2pvlu"),
+&"Questions_7d_GiveUp": ExtResource("21_7hatb"),
+&"Questions_8_Question5": ExtResource("30_y5p5m"),
+&"Questions_8a_Correct": ExtResource("25_d46pn"),
+&"Questions_8b_Wrong": ExtResource("26_rurdy"),
+&"Questions_8c_Mumbo": ExtResource("27_fc2ey"),
+&"Questions_8d_DontKnow": ExtResource("28_ds363"),
+&"Questions_8e_GiveUp": ExtResource("29_mgrs7"),
+&"Questions_9_Question6": ExtResource("36_0b683"),
+&"Questions_9a_Correct": ExtResource("31_8iyu0"),
+&"Questions_9b_Wrong": ExtResource("32_m4jia"),
+&"Questions_9c_Mumbo": ExtResource("33_1l4o0"),
+&"Questions_9d_DontKnow": ExtResource("34_2yu4k"),
+&"Questions_9e_GiveUp": ExtResource("35_4x7s4"),
+&"Questions_D_Interpreter": ExtResource("50_lrkbk"),
+&"Questions_Da_Correct": ExtResource("49_fedd5"),
+&"Questions_Db_Mumbo": ExtResource("51_56y58"),
+&"Questions_Dc_GiveUp": ExtResource("52_n01ie"),
+&"Questions_Load": ExtResource("23_7kxwe"),
+&"Questions_Unload": ExtResource("24_10vvo")
 }

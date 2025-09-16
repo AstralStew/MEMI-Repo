@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://t3b4csj1ti70"]
+
+[ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_x8qaa"]
+[ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_du42e"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="3_1tb38"]
+[ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="3_t84jx"]
+[ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="4_iwfmj"]
+[ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eqker"]
+[ext_resource type="PackedScene" uid="uid://yerl174fjbm5" path="res://AssetPacks/0_Shared/Prefabs/ScenarioButton.tscn" id="6_ibhmy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oxnu"]
+shader = ExtResource("2_du42e")
+shader_parameter/weight = 0.0
+
+[node name="4_Comments_Prefab" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 8
+script = ExtResource("1_x8qaa")
+debugging = true
+
+[node name="LadComment1" type="TextureRect" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_8oxnu")
+custom_minimum_size = Vector2(220, 505.5)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 180.0
+offset_right = 120.0
+offset_bottom = 780.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_1tb38")
+expand_mode = 1
+script = ExtResource("3_t84jx")
+current_pose = 1
+debugging = true
+auto_check = true
+
+[node name="CommentBubble" parent="LadComment1" instance=ExtResource("4_iwfmj")]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.373
+anchor_top = 0.2
+anchor_right = 0.373
+anchor_bottom = 0.2
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+_auto_text = ""
+_old_text = ""
+
+[node name="Overlay" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0)
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1614.0
+offset_top = -1839.0
+offset_right = 1586.0
+offset_bottom = 1361.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_eqker")
+expand_mode = 1
+
+[node name="ScenarioButton" parent="." instance=ExtResource("6_ibhmy")]
+z_index = -1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_vertical = 2
+
+[connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_ambulance.mp3"]]
+[connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/Victoria.mp3"]]
+[connection signal="meta_link_3" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/3_Location/Audio/Pronounce/Shepparton.mp3"]]
+[connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/3_Location/Audio/Pronounce/278mainroad.mp3"]]
+[connection signal="meta_link_5" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/interpreter.mp3"]]

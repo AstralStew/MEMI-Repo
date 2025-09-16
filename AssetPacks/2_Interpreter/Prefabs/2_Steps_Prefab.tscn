@@ -374,6 +374,7 @@ size_flags_horizontal = 8
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("8_kqmik")
+current_pose = 1
 debugging = true
 auto_check = true
 

@@ -60,6 +60,7 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_6rkpc")
 auto_pose = 6
+current_pose = 6
 _updateInEditor = true
 auto_check = true
 
@@ -166,3 +167,4 @@ mouse_filter = 2
 
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Location/Location_1a_Fade"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Location/Location_3_Call"]]
+[connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Location/Location_8a_Fade"]]
