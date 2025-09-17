@@ -1,0 +1,83 @@
+[gd_resource type="AnimationLibrary" load_steps=39 format=3 uid="uid://lokawride8x7"]
+
+[ext_resource type="Animation" uid="uid://r0k8h6v526gw" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_1_LetsTry.res" id="14_8h7tw"]
+[ext_resource type="Animation" uid="uid://bqq7h6mua6xpl" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_1a_Fade.res" id="15_kpfug"]
+[ext_resource type="Animation" uid="uid://dtx3assg2xiu4" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_2_Scenario.res" id="16_83vvv"]
+[ext_resource type="Animation" uid="uid://bm3tfjh832uqd" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_3_Call.res" id="17_17yvw"]
+[ext_resource type="Animation" uid="uid://bw8l4d13t485i" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_4_Question1.res" id="18_dp7nr"]
+[ext_resource type="Animation" uid="uid://dy4xiu8d88ea6" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_4a_Correct.res" id="19_04pln"]
+[ext_resource type="Animation" uid="uid://bs1dv4fjd1br" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_4b_Mumbo.res" id="20_u15v8"]
+[ext_resource type="Animation" uid="uid://deu8ehxe3hqow" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_4c_GiveUp.res" id="21_fpkxt"]
+[ext_resource type="Animation" uid="uid://nvcb1geohdlw" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_5_Question2.res" id="22_72tmn"]
+[ext_resource type="Animation" uid="uid://dl0hbuopxc2wj" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_5a_Correct.res" id="23_pd24q"]
+[ext_resource type="Animation" uid="uid://bujyu70xdlap5" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_5b_Mumbo.res" id="24_ak3ho"]
+[ext_resource type="Animation" uid="uid://b13uafi3cag81" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_5c_GiveUp.res" id="25_fqhn7"]
+[ext_resource type="Animation" uid="uid://cdoyi3576kuns" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_6_Question3.res" id="26_d8lpt"]
+[ext_resource type="Animation" uid="uid://m6nd6iy3rreq" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_6a_Correct.res" id="27_l4cdv"]
+[ext_resource type="Animation" uid="uid://u13q6efv367o" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_6b_Mumbo.res" id="28_b74h3"]
+[ext_resource type="Animation" uid="uid://c3l0y2i3vifk6" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_6c_GiveUp.res" id="29_44swk"]
+[ext_resource type="Animation" uid="uid://cyec6kblq7tji" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_7_Question4.res" id="30_168nd"]
+[ext_resource type="Animation" uid="uid://cw2lx0cm2o5q1" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_7b_Mumbo.res" id="30_maqic"]
+[ext_resource type="Animation" uid="uid://dpfip6f3jm2pp" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_7a_Correct.res" id="31_dbbkf"]
+[ext_resource type="Animation" uid="uid://bll50nip3w0fm" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_7c_DontKnow.res" id="31_rgkec"]
+[ext_resource type="Animation" uid="uid://c7v7gb4yxwtts" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_8b_Mumbo.res" id="33_a45w7"]
+[ext_resource type="Animation" uid="uid://br3u6qrehao" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_8c_DontKnow.res" id="34_4nif4"]
+[ext_resource type="Animation" uid="uid://bimfdqg8slepj" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_7d_GiveUp.res" id="34_no7ck"]
+[ext_resource type="Animation" uid="uid://djmnh8ajkc61o" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_8d_GiveUp.res" id="35_dkxul"]
+[ext_resource type="Animation" uid="uid://capd7ng8qrhem" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_8_Question5.res" id="35_iioys"]
+[ext_resource type="Animation" uid="uid://cy4hd4byqfomm" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9b_Mumbo.res" id="36_bsm4c"]
+[ext_resource type="Animation" uid="uid://5acnghbkplj2" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_8a_Correct.res" id="36_nr84f"]
+[ext_resource type="Animation" uid="uid://ogl5f56ukslo" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9c_DontKnow.res" id="37_rdpf5"]
+[ext_resource type="Animation" uid="uid://b6rovjmj0v7f6" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9d_GiveUp.res" id="38_gfbpx"]
+[ext_resource type="Animation" uid="uid://b5cxvsr5c1gk8" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_10_YouDidIt.res" id="39_4nif4"]
+[ext_resource type="Animation" uid="uid://xo6smendi2e8" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9_Question6.res" id="41_p74l7"]
+[ext_resource type="Animation" uid="uid://0s5tbpwat5l4" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9a_Correct.res" id="42_xtsod"]
+[ext_resource type="Animation" uid="uid://dwsdmk66a5x0h" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_D_Interpreter.res" id="47_nbsre"]
+[ext_resource type="Animation" uid="uid://2w7h21tcai0c" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_Da_Correct.res" id="48_3r5ta"]
+[ext_resource type="Animation" uid="uid://dopnvhmpq8li8" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_Db_Mumbo.res" id="49_cy88h"]
+[ext_resource type="Animation" uid="uid://bvs54jk8pgu5y" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_Dc_GiveUp.res" id="50_vqn0y"]
+[ext_resource type="Animation" uid="uid://dhoxhldm8ynaa" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_Load.res" id="51_vvjlu"]
+[ext_resource type="Animation" uid="uid://chopqvxwamrmq" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_Unload.res" id="52_puy0s"]
+
+[resource]
+resource_name = "NoHelp"
+_data = {
+&"NoHelp_10_YouDidIt": ExtResource("39_4nif4"),
+&"NoHelp_1_LetsTry": ExtResource("14_8h7tw"),
+&"NoHelp_1a_Fade": ExtResource("15_kpfug"),
+&"NoHelp_2_Scenario": ExtResource("16_83vvv"),
+&"NoHelp_3_Call": ExtResource("17_17yvw"),
+&"NoHelp_4_Question1": ExtResource("18_dp7nr"),
+&"NoHelp_4a_Correct": ExtResource("19_04pln"),
+&"NoHelp_4b_Mumbo": ExtResource("20_u15v8"),
+&"NoHelp_4c_GiveUp": ExtResource("21_fpkxt"),
+&"NoHelp_5_Question2": ExtResource("22_72tmn"),
+&"NoHelp_5a_Correct": ExtResource("23_pd24q"),
+&"NoHelp_5b_Mumbo": ExtResource("24_ak3ho"),
+&"NoHelp_5c_GiveUp": ExtResource("25_fqhn7"),
+&"NoHelp_6_Question3": ExtResource("26_d8lpt"),
+&"NoHelp_6a_Correct": ExtResource("27_l4cdv"),
+&"NoHelp_6b_Mumbo": ExtResource("28_b74h3"),
+&"NoHelp_6c_GiveUp": ExtResource("29_44swk"),
+&"NoHelp_7_Question4": ExtResource("30_168nd"),
+&"NoHelp_7a_Correct": ExtResource("31_dbbkf"),
+&"NoHelp_7b_Mumbo": ExtResource("30_maqic"),
+&"NoHelp_7c_DontKnow": ExtResource("31_rgkec"),
+&"NoHelp_7d_GiveUp": ExtResource("34_no7ck"),
+&"NoHelp_8_Question5": ExtResource("35_iioys"),
+&"NoHelp_8a_Correct": ExtResource("36_nr84f"),
+&"NoHelp_8b_Mumbo": ExtResource("33_a45w7"),
+&"NoHelp_8c_DontKnow": ExtResource("34_4nif4"),
+&"NoHelp_8d_GiveUp": ExtResource("35_dkxul"),
+&"NoHelp_9_Question6": ExtResource("41_p74l7"),
+&"NoHelp_9a_Correct": ExtResource("42_xtsod"),
+&"NoHelp_9b_Mumbo": ExtResource("36_bsm4c"),
+&"NoHelp_9c_DontKnow": ExtResource("37_rdpf5"),
+&"NoHelp_9d_GiveUp": ExtResource("38_gfbpx"),
+&"NoHelp_D_Interpreter": ExtResource("47_nbsre"),
+&"NoHelp_Da_Correct": ExtResource("48_3r5ta"),
+&"NoHelp_Db_Mumbo": ExtResource("49_cy88h"),
+&"NoHelp_Dc_GiveUp": ExtResource("50_vqn0y"),
+&"NoHelp_Load": ExtResource("51_vvjlu"),
+&"NoHelp_Unload": ExtResource("52_puy0s")
+}

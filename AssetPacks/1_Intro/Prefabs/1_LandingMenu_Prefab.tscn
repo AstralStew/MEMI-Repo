@@ -6,7 +6,7 @@
 [ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansEN-Normal.tres" id="4_8fq5h"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_6u7k4"]
 [ext_resource type="FontVariation" uid="uid://b1a7uj4tpvfim" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansArabic-Thick.tres" id="6_vocb5"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="7_btwqi"]
+[ext_resource type="FontVariation" uid="uid://htqgths0uc7b" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Thick.tres" id="7_vocb5"]
 [ext_resource type="AnimationLibrary" uid="uid://js1h803y7ls2" path="res://AssetPacks/1_Intro/Animations/Menu.tres" id="8_vocb5"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="9_8fq5h"]
 
@@ -256,7 +256,7 @@ custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
-theme_override_fonts/normal_font = ExtResource("7_btwqi")
+theme_override_fonts/normal_font = ExtResource("7_vocb5")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 scroll_active = false
@@ -266,7 +266,7 @@ meta_underlined = false
 script = ExtResource("5_6u7k4")
 change_font = false
 autopopulate = true
-autokey = "[b][url={1}]汉语[/url][/b]"
+autokey = "[url={1}]汉语[/url]"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -279,6 +279,7 @@ script = ExtResource("9_8fq5h")
 number_of_players = 1
 metadata/_custom_type_script = "uid://b7xlve576cyge"
 
+[connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="." method="set_language" binds= [0]]
 [connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="." method="play_animation" binds= ["Intro/Landing_2_Explanation"]]
 [connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/English_RTL" to="LanguageChoice_MC/Labels_VB/English_RTL" method="set_modulate" binds= [Color(0.596078, 0.839216, 0.494118, 1)]]
 [connection signal="meta_link_1" from="LanguageChoice_MC/Labels_VB/Arabic_RTL" to="." method="set_language" binds= [1]]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ScreenSet" load_steps=2 format=3 uid="uid://bwglm45wctgq"]
+
+[ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="1_ybihd"]
+
+[resource]
+resource_name = "NoHelp"
+script = ExtResource("1_ybihd")
+required_packs = Array[String](["0_Shared", "5_NoHelp"])
+screen_paths = Array[String](["res://AssetPacks/5_NoHelp/Animations/NoHelp.tres"])
+first_anims = Array[StringName]([&"NoHelp/NoHelp_Load"])
+metadata/_custom_type_script = "uid://cjxn00ku2l42w"

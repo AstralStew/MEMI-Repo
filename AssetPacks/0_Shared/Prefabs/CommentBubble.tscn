@@ -27,7 +27,6 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 19
 script = ExtResource("1_fm8n2")
-_debug = true
 _updateInEditor = true
 pop_in_sound = ExtResource("2_dr52n")
 max_width = 245
@@ -55,7 +54,7 @@ theme_override_constants/margin_bottom = 17
 z_index = 1
 clip_contents = false
 custom_minimum_size = Vector2(77, 10)
-layout_direction = 1
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -70,7 +69,6 @@ shortcut_keys_enabled = false
 vertical_alignment = 1
 meta_underlined = false
 script = ExtResource("7_oqbe8")
-debugging = true
 metadata/_edit_group_ = true
 
 [node name="BubbleProxy" type="BoxContainer" parent="."]

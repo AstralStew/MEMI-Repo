@@ -5,7 +5,5 @@
 [resource]
 base_font = ExtResource("1_p1tml")
 variation_opentype = {
-2003265652: 700
+2003265652: 550
 }
-spacing_top = -50
-spacing_bottom = -50

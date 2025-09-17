@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=14 format=3 uid="uid://bsutrsh0o2oko"]
+[gd_resource type="AnimationLibrary" load_steps=18 format=3 uid="uid://bsutrsh0o2oko"]
 
 [ext_resource type="Animation" uid="uid://bkkwrja3yqeke" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Start.res" id="2_6if0b"]
 [ext_resource type="Animation" uid="uid://dmu66dke32pc3" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Shrink.res" id="3_6if0b"]
@@ -13,6 +13,10 @@
 [ext_resource type="Animation" uid="uid://daoodhlomdutf" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Expand.res" id="11_b1716"]
 [ext_resource type="Animation" uid="uid://bahepqb5jejmh" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Shrink.res" id="12_ugyne"]
 [ext_resource type="Animation" uid="uid://bnqxj2cbgen4k" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Questions_Start.res" id="13_bp1ss"]
+[ext_resource type="Animation" uid="uid://c4sra084v6yr4" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Complete.res" id="14_b6d4g"]
+[ext_resource type="Animation" uid="uid://craxtjne42fee" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Expand.res" id="15_364jm"]
+[ext_resource type="Animation" uid="uid://c5bd71mat6d1p" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Shrink.res" id="16_krpm5"]
+[ext_resource type="Animation" uid="uid://cepcvybmmswrj" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Start.res" id="17_hf8ld"]
 
 [resource]
 resource_name = "LetsLearn"
@@ -25,6 +29,10 @@ _data = {
 &"LetsLearn_Location_Expand": ExtResource("8_rxwbk"),
 &"LetsLearn_Location_Shrink": ExtResource("9_gddb8"),
 &"LetsLearn_Location_Start": ExtResource("6_ruw2q"),
+&"LetsLearn_NoHelp_Complete": ExtResource("14_b6d4g"),
+&"LetsLearn_NoHelp_Expand": ExtResource("15_364jm"),
+&"LetsLearn_NoHelp_Shrink": ExtResource("16_krpm5"),
+&"LetsLearn_NoHelp_Start": ExtResource("17_hf8ld"),
 &"LetsLearn_Overview": ExtResource("3_45k31"),
 &"LetsLearn_Questions_Complete": ExtResource("10_1o5y2"),
 &"LetsLearn_Questions_Expand": ExtResource("11_b1716"),

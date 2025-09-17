@@ -186,6 +186,9 @@ func _process(delta: float) -> void:
 func pop_in(_text:String) -> void:
 	if _debug: print("[CommentBubble(",name,")] NOTE -> Popping in with '",_text,"'!")
 	
+	#if _text == "n/a":
+		#if _debug: print("[CommentBubble(",name,")] NOTE -> Text = 'n/a', cancelling pop in!")
+	
 	_set_text(_text)
 	_resize(false)
 	visible = true

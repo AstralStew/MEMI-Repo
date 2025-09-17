@@ -260,6 +260,8 @@ func correct() -> void:
 func incorrect() -> void:
 	if _debug: print("[TapBubble(",name,")] NOTE -> Incorrect answer. Setting to grey...")
 	
+	bubbleText.add_theme_color_override("default_color", Color.WHITE)
+	
 	# fade to incorrect colour + resize background twice to bounce
 	_fade_background(incorrect_colour,incorrect_inout,incorrect_ease,Tween.TransitionType.TRANS_LINEAR)
 	_resize_background(incorrect_size,incorrect_inout,incorrect_ease,incorrect_trans)

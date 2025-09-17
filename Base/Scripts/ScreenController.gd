@@ -46,6 +46,9 @@ var _current_screen_index := 0
 
 @export var audioStreamPlayer : AudioPlayer = null
 
+signal activate_exit
+signal deactivate_exit
+
 signal pack_load_finished
 
 signal last_sentence_changed(newSentence)
@@ -77,13 +80,69 @@ func _enter_tree() -> void:
 		# WARNING > This must be initialised AFTER 0_Prerequisite is loaded
 		LanguageManager._initialise()
 	
-	if overrideAnimSpeed: speed_scale = overrideAnimSpeedScale
-	if overrideLanguageSwitching: LanguageManager.set_language(overrideLanguageIndex)
 	
 	audioStreamPlayer = get_child(2)
 	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
+
+func _ready() -> void:
+	if overrideAnimSpeed: speed_scale = overrideAnimSpeedScale
+	if overrideLanguageSwitching: LanguageManager.set_language(overrideLanguageIndex)
+
+#region Menu functions
+
+func activate_exit_button():
+	if debugging: print("[ScreenController] Activating exit button")
+	activate_exit.emit()
+
+func deactivate_exit_button():
+	if debugging: print("[ScreenController] Deactivating exit button")
+	deactivate_exit.emit()
+
+
+func reset_to_start():
+	
+	pause()
+	
+	#deactivate_exit_button()
+	
+	if debugging: print("[ScreenController] RESET TO START -> Fading Content + background colour")
+	
+	# fade out content
+	var fade_tween = create_tween()
+	var content = get_node(content_parent) as Control
+	var background = get_node("Background") as Control
+	fade_tween.tween_property(content, "modulate", Color(0,0,0,0), 0.35).set_trans(Tween.TRANS_QUAD)
+	fade_tween.tween_property(background, "modulate", Color(0.157, 0.09, 0.141, 1.0), 0.35).set_trans(Tween.TRANS_QUAD)
+	await get_tree().create_timer(0.5).timeout   
+	
+	fade_tween.kill()
+	stop()
+	
+	if debugging: print("[ScreenController] RESET TO START -> Destroying prefabs + screens")
+	
+	# unload all prefabs + screens
+	destroy_all_prefabs()
+	unload_all_screens()
+	
+	await get_tree().process_frame
+	
+	# reset screen set
+	_current_set_index = 0
+	current_set = screen_sets[0]
+	
+	await get_tree().process_frame
+	
+	# load screen 0
+	load_screen(0, true)
+	
+	content.modulate = Color(1,1,1,1)
+	if debugging: print("[ScreenController] RESET TO START -> Finished resetting to start.")
+
+
+
+#endregion
 
 
 
@@ -205,6 +264,11 @@ func unload_screen(_name:String):
 	if debugging: print("[ScreenController] Unloading screen '",_name,"' (animLibrary)")
 	remove_animation_library(_name)
 
+func unload_all_screens():
+	if debugging: print("[ScreenController] Unloading all screens...")
+	for screen in get_animation_library_list():
+		unload_screen(screen)
+
 #endregion
 
 
@@ -224,6 +288,14 @@ func play_animation(animName:String,delay:float=0,marker:StringName="") -> void:
 	if debugging: print("[ScreenController] Playing animation '",animName,"' after ",delay," second delay.")
 	if delay>0: await get_tree().create_timer(delay).timeout  
 	play(animName)
+
+func play_marker(marker:StringName) -> void:
+	if debugging: print("[ScreenController] Playing marker '",marker,"'")
+	play_section_with_markers(current_animation,marker)
+
+func play_between(start_marker:StringName,end_marker:StringName) -> void:
+	if debugging: print("[ScreenController] Playing between markers '",start_marker,"' and '",end_marker,"'")
+	play_section_with_markers(current_animation,start_marker,end_marker)
 
 
 func queue_animation(animName:String, delay:float=0) -> void:
@@ -247,6 +319,9 @@ func reset_anim_speed() -> void:
 	speed_scale = 1.0
 
 
+
+
+
 func non_en_speed(speed:float) -> void:
 	if LanguageManager.currentLanguage != Constants.LanguageCode.en:
 		if debugging: print("[ScreenController] Non-English detected; Setting speed to ",speed)
@@ -258,6 +333,16 @@ func quicken_for_en(speed:float) -> void:
 		if debugging: print("[ScreenController] English detected; Setting speed to ",speed)
 		speed_scale = speed
 	elif debugging: print("[ScreenController] No English detected, keeping speed at: ",speed_scale)
+
+
+func lang_split(english_start:StringName,english_end:StringName,non_english_start:StringName,non_english_end:StringName):
+	if LanguageManager.currentLanguage == Constants.LanguageCode.en:
+		if debugging: print("[ScreenController] Language splitting to English markers...")
+		play_between(english_start,english_end)
+	else:
+		if debugging: print("[ScreenController] Language splitting to non-English markers...")
+		play_between(non_english_start,non_english_end)
+
 
 
 #endregion
@@ -368,6 +453,9 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	
 	prefab.try_play_stream_from_path.connect(play_stream_from_path)
 	
+	prefab.try_activate_exit.connect(activate_exit_button)
+	prefab.try_deactivate_exit.connect(deactivate_exit_button)
+	
 
 func _unsubscribe(prefab:ScreenPrefab) -> void:	
 	prefab.try_start_speech_recognition.disconnect(_start_recognition)
@@ -386,6 +474,9 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_queue_animation.disconnect(queue_animation)
 	
 	prefab.try_play_stream_from_path.disconnect(play_stream_from_path)
+	
+	prefab.try_activate_exit.disconnect(activate_exit_button)
+	prefab.try_deactivate_exit.disconnect(deactivate_exit_button)
 	
 
 #endregion

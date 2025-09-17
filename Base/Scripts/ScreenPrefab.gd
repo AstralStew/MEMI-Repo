@@ -20,6 +20,9 @@ signal try_queue_animation(_name,_delay)
 
 signal try_play_stream_from_path(_path)
 
+signal try_activate_exit
+signal try_deactivate_exit
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -32,6 +35,18 @@ func start_speech_recognition() -> void:
 
 
 
+
+#region Animation functions
+
+func activate_exit() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to activate exit...")
+	try_activate_exit.emit()
+
+func deactivate_exit() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to deactivate exit...")
+	try_deactivate_exit.emit()
+
+#endregion
 
 
 

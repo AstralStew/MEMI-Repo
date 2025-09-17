@@ -127,7 +127,6 @@ scale = Vector2(0.990001, 0.990001)
 size_flags_horizontal = 0
 size_flags_vertical = 8
 script = ExtResource("1_bmojb")
-_debug = true
 _updateInEditor = true
 _info_default_icon = ExtResource("4_o0ic6")
 _info_highlight_icon = ExtResource("3_lkcc5")

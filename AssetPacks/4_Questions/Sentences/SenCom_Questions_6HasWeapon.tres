@@ -17,5 +17,5 @@ wrongAnim = "Questions/Questions_9b_Wrong"
 mumboAnim = "Questions/Questions_9c_Mumbo"
 dontKnowAnim = "Questions/Questions_9d_DontKnow"
 giveUpAnim = "Questions/Questions_9e_GiveUp"
-total_attempts = 2
+total_attempts = 3
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

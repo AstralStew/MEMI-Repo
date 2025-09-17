@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=53 format=3 uid="uid://cj6bvcuhrusno"]
+[gd_resource type="AnimationLibrary" load_steps=54 format=3 uid="uid://cj6bvcuhrusno"]
 
 [ext_resource type="Animation" uid="uid://dswg3ca1gbhfc" path="res://AssetPacks/4_Questions/Animations/Questions_1_LetsTry.res" id="1_uv5nk"]
 [ext_resource type="Animation" uid="uid://dkge7vjt046ax" path="res://AssetPacks/4_Questions/Animations/Questions_1a_Fade.res" id="2_bytrc"]
@@ -52,6 +52,7 @@
 [ext_resource type="Animation" uid="uid://ixjgw4s7kgpm" path="res://AssetPacks/4_Questions/Animations/Questions_D_Interpreter.res" id="50_lrkbk"]
 [ext_resource type="Animation" uid="uid://dusrcjcikjskd" path="res://AssetPacks/4_Questions/Animations/Questions_Db_Mumbo.res" id="51_56y58"]
 [ext_resource type="Animation" uid="uid://c487ilialocsg" path="res://AssetPacks/4_Questions/Animations/Questions_Dc_GiveUp.res" id="52_n01ie"]
+[ext_resource type="Animation" uid="uid://cimnyn8fmk8i5" path="res://AssetPacks/4_Questions/Animations/Questions_12a_Fade.res" id="53_lrkbk"]
 
 [resource]
 resource_name = "Questions"
@@ -69,6 +70,7 @@ _data = {
 &"Questions_11d_DontKnow": ExtResource("46_u5i5d"),
 &"Questions_11e_GiveUp": ExtResource("47_fedd5"),
 &"Questions_12_YouDidIt": ExtResource("24_oqf53"),
+&"Questions_12a_Fade": ExtResource("53_lrkbk"),
 &"Questions_1_LetsTry": ExtResource("1_uv5nk"),
 &"Questions_1a_Fade": ExtResource("2_bytrc"),
 &"Questions_2_Scenario": ExtResource("3_oqqvc"),
