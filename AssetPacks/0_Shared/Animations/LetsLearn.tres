@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=18 format=3 uid="uid://bsutrsh0o2oko"]
+[gd_resource type="AnimationLibrary" load_steps=22 format=3 uid="uid://bsutrsh0o2oko"]
 
 [ext_resource type="Animation" uid="uid://bkkwrja3yqeke" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Start.res" id="2_6if0b"]
 [ext_resource type="Animation" uid="uid://dmu66dke32pc3" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Shrink.res" id="3_6if0b"]
@@ -17,10 +17,18 @@
 [ext_resource type="Animation" uid="uid://craxtjne42fee" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Expand.res" id="15_364jm"]
 [ext_resource type="Animation" uid="uid://c5bd71mat6d1p" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Shrink.res" id="16_krpm5"]
 [ext_resource type="Animation" uid="uid://cepcvybmmswrj" path="res://AssetPacks/0_Shared/Animations/LetsLearn_NoHelp_Start.res" id="17_hf8ld"]
+[ext_resource type="Animation" uid="uid://w886vg0a3gp2" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Complete.res" id="18_7nnxk"]
+[ext_resource type="Animation" uid="uid://bwev0qxpq41ab" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Expand.res" id="19_wdugt"]
+[ext_resource type="Animation" uid="uid://c8p24usie5vlf" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Shrink.res" id="20_wkt8h"]
+[ext_resource type="Animation" uid="uid://cqwj13p0h0bte" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Start.res" id="21_60i7w"]
 
 [resource]
 resource_name = "LetsLearn"
 _data = {
+&"LetsLearn_Bonus_Complete": ExtResource("18_7nnxk"),
+&"LetsLearn_Bonus_Expand": ExtResource("19_wdugt"),
+&"LetsLearn_Bonus_Shrink": ExtResource("20_wkt8h"),
+&"LetsLearn_Bonus_Start": ExtResource("21_60i7w"),
 &"LetsLearn_Interpreter_Complete": ExtResource("5_1q7h5"),
 &"LetsLearn_Interpreter_Expand": ExtResource("4_2xv03"),
 &"LetsLearn_Interpreter_Shrink": ExtResource("3_6if0b"),

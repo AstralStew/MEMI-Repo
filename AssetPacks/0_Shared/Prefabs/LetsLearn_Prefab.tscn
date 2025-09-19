@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuol3yxw3dl0y"]
+[gd_scene load_steps=12 format=3 uid="uid://cuol3yxw3dl0y"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ykllg"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="2_rdw4j"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://73baf83pa3ao" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Questions.png" id="6_dw7sb"]
 [ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
 [ext_resource type="AnimationLibrary" uid="uid://bsutrsh0o2oko" path="res://AssetPacks/0_Shared/Animations/LetsLearn.tres" id="8_6yl00"]
+[ext_resource type="Texture2D" uid="uid://cpdhaku0p0onc" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Bonus.png" id="8_fyvdw"]
 
 [sub_resource type="Animation" id="Animation_6yl00"]
 length = 0.001
@@ -386,34 +387,46 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_TR:custom_minimum_size")
+tracks/31/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:visible")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Vector2(125, 125)]
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:modulate")
+tracks/32/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_TR:custom_minimum_size")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(125, 125)]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:visible")
+tracks/33/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:modulate")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -635,7 +648,7 @@ custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
-texture = ExtResource("7_4q1sm")
+texture = ExtResource("8_fyvdw")
 expand_mode = 1
 stretch_mode = 4
 
@@ -653,7 +666,7 @@ custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
 autopopulate = true
-autokey = "LETSLEARN_NOHELP"
+autokey = "LETSLEARN_BONUS"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

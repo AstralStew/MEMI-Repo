@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=4 format=3 uid="uid://v1ocj2au1hbm"]
+
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_4s7ws"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_oeo2b"]
+
+[sub_resource type="Resource" id="Resource_rjt12"]
+script = ExtResource("1_4s7ws")
+phrases = Array[String](["Ambulance"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[resource]
+script = ExtResource("2_oeo2b")
+correctConditions = Array[ExtResource("1_4s7ws")]([SubResource("Resource_rjt12")])
+wrongConditions = Array[String](["Police", "Fire"])
+correctAnim = "Bonus/Bonus_4a_Correct"
+wrongAnim = "Bonus/Bonus_4b_Mumbo"
+mumboAnim = "Bonus/Bonus_4b_Mumbo"
+dontKnowAnim = "Bonus/Bonus_4b_Mumbo"
+giveUpAnim = "Bonus/Bonus_4c_GiveUp"
+total_attempts = 3
+metadata/_custom_type_script = "uid://nudfku7qhbxq"

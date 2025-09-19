@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=4 format=3 uid="uid://cd6msxmuvyr0c"]
+
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_nhcqa"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_uyxrc"]
+
+[sub_resource type="Resource" id="Resource_nhcqa"]
+script = ExtResource("1_nhcqa")
+checkType = 1
+phrases = Array[String](["4", "Four", "For"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[resource]
+script = ExtResource("2_uyxrc")
+correctConditions = Array[ExtResource("1_nhcqa")]([SubResource("Resource_nhcqa")])
+correctAnim = "Bonus/Bonus_10a_Correct"
+wrongAnim = "Bonus/Bonus_10b_Mumbo"
+mumboAnim = "Bonus/Bonus_10b_Mumbo"
+dontKnowAnim = "Bonus/Bonus_10c_DontKnow"
+giveUpAnim = "Bonus/Bonus_10d_GiveUp"
+total_attempts = 3
+metadata/_custom_type_script = "uid://nudfku7qhbxq"

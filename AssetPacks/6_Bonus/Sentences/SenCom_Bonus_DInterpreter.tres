@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=4 format=3 uid="uid://bl88yjdu5dm8n"]
+
+[ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_m6r46"]
+[ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_6onwf"]
+
+[sub_resource type="Resource" id="Resource_ufmmt"]
+script = ExtResource("1_m6r46")
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[resource]
+script = ExtResource("2_6onwf")
+correctConditions = Array[ExtResource("1_m6r46")]([SubResource("Resource_ufmmt")])
+correctAnim = "Bonus/Bonus_Da_Correct"
+wrongAnim = "Bonus/Bonus_Db_Mumbo"
+mumboAnim = "Bonus/Bonus_Db_Mumbo"
+dontKnowAnim = "Bonus/Bonus_Db_Mumbo"
+giveUpAnim = "Bonus/Bonus_Dc_GiveUp"
+total_attempts = 3
+metadata/_custom_type_script = "uid://nudfku7qhbxq"
