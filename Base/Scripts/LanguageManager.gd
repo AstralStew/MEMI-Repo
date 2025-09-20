@@ -47,15 +47,16 @@ func set_language (lang: Constants.LanguageCode) -> void:
 	var language = Constants.LanguageCode.keys()[lang]
 	TranslationServer.set_locale(language)
 	currentLanguage = lang
-	match(lang):
-		Constants.LanguageCode.en:
-			content.layout_direction = Control.LAYOUT_DIRECTION_LTR
-		Constants.LanguageCode.ar:
-			content.layout_direction = Control.LAYOUT_DIRECTION_RTL
-		Constants.LanguageCode.prs:
-			content.layout_direction = Control.LAYOUT_DIRECTION_RTL
-		Constants.LanguageCode.zh:
-			content.layout_direction = Control.LAYOUT_DIRECTION_LTR
+	if content != null:
+		match(lang):
+			Constants.LanguageCode.en:
+				content.layout_direction = Control.LAYOUT_DIRECTION_LTR
+			Constants.LanguageCode.ar:
+				content.layout_direction = Control.LAYOUT_DIRECTION_RTL
+			Constants.LanguageCode.prs:
+				content.layout_direction = Control.LAYOUT_DIRECTION_RTL
+			Constants.LanguageCode.zh:
+				content.layout_direction = Control.LAYOUT_DIRECTION_LTR
 	language_changed.emit()
 	if debugging: print("[LanguageManager] Set language to: ",currentLanguage)
 

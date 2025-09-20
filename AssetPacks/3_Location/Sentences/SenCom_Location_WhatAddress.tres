@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SentenceComparer" load_steps=5 format=3 uid="uid://bsd4h4a4msyw0"]
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=6 format=3 uid="uid://bsd4h4a4msyw0"]
 
 [ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_l0t7o"]
 [ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_eicwq"]
@@ -6,18 +6,24 @@
 [sub_resource type="Resource" id="Resource_iq2f7"]
 script = ExtResource("1_l0t7o")
 checkType = 1
-phrases = Array[String](["278", "2 7 8", "2-7-8"])
+phrases = Array[String](["8", "Eight", "Ate"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [sub_resource type="Resource" id="Resource_ixt38"]
 script = ExtResource("1_l0t7o")
-phrases = Array[String](["Main Road", "Shepparton"])
+phrases = Array[String](["Main", "Shepparton"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[sub_resource type="Resource" id="Resource_6yecj"]
+script = ExtResource("1_l0t7o")
+checkType = 1
+phrases = Array[String](["Road", "Rd"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]
 script = ExtResource("2_eicwq")
 debug = true
-correctConditions = Array[ExtResource("1_l0t7o")]([SubResource("Resource_iq2f7"), SubResource("Resource_ixt38")])
+correctConditions = Array[ExtResource("1_l0t7o")]([SubResource("Resource_iq2f7"), SubResource("Resource_ixt38"), SubResource("Resource_6yecj")])
 correctAnim = "Location/Location_6a_Correct"
 wrongAnim = "Location/Location_6b_Mumbo"
 mumboAnim = "Location/Location_6b_Mumbo"

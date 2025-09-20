@@ -17,7 +17,7 @@ func _ready() -> void:
 func set_description(_title:String,_info:String,_emergency:String,_location:String):
 	if debugging: print("[Scenario] Setting description: Title = ",_title,", Info = ",_info,", Emergency = ",_emergency,", Location = ",_location,"")
 	
-	if Engine.is_editor_hint(): title_L.text = _title
+	if Engine.is_editor_hint() || OS.has_feature("editor_runtime"): title_L.text = _title
 	else: title_L.populate(_title)
 	
 	info_L.populate(_info) 

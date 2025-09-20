@@ -53,6 +53,10 @@ func set_margins_from_lines(lines:int=descriptionText.get_line_count()) -> void:
 	if adjust_top: add_theme_constant_override("margin_top",(_lines - min_lines) * top_multiplier + top_addition)
 	if adjust_bottom: add_theme_constant_override("margin_bottom",(_lines - min_lines) * bottom_multiplier + bottom_addition)
 	
+	#await get_tree().create_timer(0.69).timeout 
+	
+	if _debug: print("[Description] Size = ",descriptionText.size.y)
+
 	if is_layout_rtl():
 		descriptionText.pivot_offset = Vector2(descriptionText.size.x, descriptionText.size.y + 8)
 	else:
