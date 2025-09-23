@@ -5,7 +5,7 @@
 [resource]
 resource_name = "Bonus"
 script = ExtResource("1_0y56b")
-required_packs = Array[String](["0_Shared", "6_Bonus"])
+required_packs = Array[String](["0_Shared", "1_Intro", "6_Bonus"])
 screen_paths = Array[String](["res://AssetPacks/6_Bonus/Animations/Bonus.tres"])
 first_anims = Array[StringName]([&"Bonus/Bonus_Load"])
 metadata/_custom_type_script = "uid://cjxn00ku2l42w"

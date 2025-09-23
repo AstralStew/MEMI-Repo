@@ -23,6 +23,7 @@ signal try_play_stream_from_path(_path)
 signal try_activate_exit
 signal try_deactivate_exit
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -119,10 +120,25 @@ func last_sentence_received(newSentence:String) -> void:
 
 
 
-#region Language function
+#region Language functions
 
 func set_language(_lang:Constants.LanguageCode) -> void:
-	if debugging: print("[ScreenPrefab] Attempting to set language to '",_lang,"'")
+	if debugging: print("[ScreenPrefab] Attempting to set language to '",_lang,"'...")
 	LanguageManager.set_language(_lang)
+
+#endregion
+
+
+
+#region Globals functions
+
+func unlock_menu() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to unlock the final menu...")
+	LoadManager.unlock_menu(true)
+
+
+
+
+
 
 #endregion

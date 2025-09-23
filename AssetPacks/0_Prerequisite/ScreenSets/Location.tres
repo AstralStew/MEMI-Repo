@@ -5,8 +5,7 @@
 [resource]
 resource_name = "Location"
 script = ExtResource("1_si3um")
-required_packs = Array[String](["0_Shared", "3_Location"])
+required_packs = Array[String](["0_Shared", "1_Intro", "3_Location"])
 screen_paths = Array[String](["res://AssetPacks/3_Location/Animations/Location.tres"])
 first_anims = Array[StringName]([&"Location/Location_Load"])
-current_index = 0
 metadata/_custom_type_script = "uid://cjxn00ku2l42w"

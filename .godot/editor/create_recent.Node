@@ -1,6 +1,7 @@
-Timer
-Control
 MarginContainer
+HSeparator
+Control
+Timer
 CharacterController
 LabelController
 AudioPlayer
@@ -11,4 +12,3 @@ AudioStreamPlayer
 TextureRect
 RichTextLabel
 Label
-BoxContainer

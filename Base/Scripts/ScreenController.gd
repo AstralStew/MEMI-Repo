@@ -16,6 +16,7 @@ extends AnimationPlayer
 @export var overrideDeactivate := false
 @export var overrideResetHierarchy := false
 @export var overrideAnswerCheating := false
+@export var overrideMenuUnlocked := false
 @export var overrideLanguageSwitching := false
 @export var overrideLanguageIndex := 0
 @export var overrideScreen := false
@@ -45,6 +46,7 @@ var _current_screen_index := 0
 @export var sentenceAnim := ""
 
 @export var audioStreamPlayer : AudioPlayer = null
+
 
 signal activate_exit
 signal deactivate_exit
@@ -80,6 +82,7 @@ func _enter_tree() -> void:
 		# WARNING > This must be initialised AFTER 0_Prerequisite is loaded
 		LanguageManager._initialise()
 	
+	LoadManager.menu_unlocked = overrideMenuUnlocked
 	
 	audioStreamPlayer = get_child(2)
 	
@@ -151,6 +154,12 @@ func reset_to_start():
 
 
 func load_next_screen_set():
+	
+	if LoadManager.menu_unlocked:
+		if debugging: print("[ScreenController] MENU UNLOCKED -> Going back the menu instead of next screen set!")
+		load_screen_set("FinalMenu")
+		return
+	
 	if debugging: print("[ScreenController] Attempting to load next screen set (",_current_set_index + 1,")")
 	if _current_set_index + 1 < screen_sets.size():
 		load_screen_set("",_current_set_index + 1)
@@ -310,6 +319,17 @@ func resume_animation(delay:float=0) -> void:
 	if debugging: print("[ScreenController] Resuming animation after ",delay," second delay.")
 	if delay>0: await get_tree().create_timer(delay).timeout  
 	play()
+
+
+#func play_unless_menu_unlocked(animName:String,delay:float=0,marker:StringName="") -> void:
+	#if menu_unlocked || overrideMenuUnlocked:
+		#if debugging: print("[ScreenController] MENU UNLOCKED > Going back the menu.")
+		#play_animation(animName,delay,marker)
+		#return
+	#
+	#if debugging: print("[ScreenController] MENU LOCKED > Moving forward...")
+	#play_animation(animName,delay,marker)
+
 
 func set_anim_speed(speed:float = 1.0) -> void:
 	if debugging: print("[ScreenController] Setting animation speed scale to: ",speed)
@@ -658,6 +678,54 @@ func check_attempts_while_cheating() -> bool:
 	return false
 
 #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

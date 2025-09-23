@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cce2hen3g0oa5"]
 
 [ext_resource type="Animation" uid="uid://0amm5801duvd" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Start.res" id="3_2r4mj"]
-[ext_resource type="Texture2D" uid="uid://csejogycwg2o8" path="res://AssetPacks/2_Interpreter/Images/Lad_Phone.png" id="3_gldab"]
+[ext_resource type="Texture2D" uid="uid://csejogycwg2o8" path="res://AssetPacks/0_Shared/Images/Lad_Phone.png" id="3_gldab"]
 [ext_resource type="Animation" uid="uid://beepoy8uv8ds0" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Shrink1.res" id="4_vs7f7"]
 [ext_resource type="Animation" uid="uid://jhjdsab4pys4" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Shrink2.res" id="5_vaf2q"]
 [ext_resource type="Animation" uid="uid://c7fexxq4y5n6p" path="res://AssetPacks/0_Shared/Animations/Operator_Call_Finish.res" id="6_84skm"]

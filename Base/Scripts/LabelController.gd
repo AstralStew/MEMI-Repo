@@ -92,6 +92,17 @@ func resize(_newSize:int) -> void:
 
 
 
+func populate_by_unlock_status(_unlocked_path:StringName,_fallback:StringName) -> void:
+	if LoadManager.menu_unlocked:
+		if debugging: print("[LabelController] POPULATE ON UNLOCK STATUS -> Menu unlocked! Text = ",_unlocked_path)
+		populate(_unlocked_path)
+	else:
+		if debugging: print("[LabelController] POPULATE ON UNLOCK STATUS -> Menu still locked! Text = ",_fallback)
+		populate(_fallback)
+
+
+
+
 func _get_speaker_string() -> String:
 	if debugging: print("[LabelController] Getting speaker string, size string = ",str(current_size + 4))
 	var sizeString = str(current_size + 4)

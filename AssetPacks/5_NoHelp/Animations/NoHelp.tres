@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=39 format=3 uid="uid://lokawride8x7"]
+[gd_resource type="AnimationLibrary" load_steps=40 format=3 uid="uid://lokawride8x7"]
 
 [ext_resource type="Animation" uid="uid://r0k8h6v526gw" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_1_LetsTry.res" id="14_8h7tw"]
 [ext_resource type="Animation" uid="uid://bqq7h6mua6xpl" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_1a_Fade.res" id="15_kpfug"]
@@ -30,6 +30,7 @@
 [ext_resource type="Animation" uid="uid://ogl5f56ukslo" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9c_DontKnow.res" id="37_rdpf5"]
 [ext_resource type="Animation" uid="uid://b6rovjmj0v7f6" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9d_GiveUp.res" id="38_gfbpx"]
 [ext_resource type="Animation" uid="uid://b5cxvsr5c1gk8" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_10_YouDidIt.res" id="39_4nif4"]
+[ext_resource type="Animation" uid="uid://dupo4bl3m7m3p" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_10a_Fade.res" id="39_rgkec"]
 [ext_resource type="Animation" uid="uid://xo6smendi2e8" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9_Question6.res" id="41_p74l7"]
 [ext_resource type="Animation" uid="uid://0s5tbpwat5l4" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_9a_Correct.res" id="42_xtsod"]
 [ext_resource type="Animation" uid="uid://dwsdmk66a5x0h" path="res://AssetPacks/5_NoHelp/Animations/NoHelp_D_Interpreter.res" id="47_nbsre"]
@@ -43,6 +44,7 @@
 resource_name = "NoHelp"
 _data = {
 &"NoHelp_10_YouDidIt": ExtResource("39_4nif4"),
+&"NoHelp_10a_Fade": ExtResource("39_rgkec"),
 &"NoHelp_1_LetsTry": ExtResource("14_8h7tw"),
 &"NoHelp_1a_Fade": ExtResource("15_kpfug"),
 &"NoHelp_2_Scenario": ExtResource("16_83vvv"),

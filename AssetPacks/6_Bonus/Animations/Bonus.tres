@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=44 format=3 uid="uid://br01xyeysgu6u"]
+[gd_resource type="AnimationLibrary" load_steps=45 format=3 uid="uid://br01xyeysgu6u"]
 
 [ext_resource type="Animation" uid="uid://cifesk0muibi5" path="res://AssetPacks/6_Bonus/Animations/Bonus_1a_Fade.res" id="1_ij1vl"]
 [ext_resource type="Animation" uid="uid://bjatvx5up5p0l" path="res://AssetPacks/6_Bonus/Animations/Bonus_1_LetsTry.res" id="2_e0wjv"]
@@ -43,6 +43,7 @@
 [ext_resource type="Animation" uid="uid://d21piaiytyqpj" path="res://AssetPacks/6_Bonus/Animations/Bonus_D_Interpreter.res" id="41_74mpp"]
 [ext_resource type="Animation" uid="uid://vnjkyynfnji2" path="res://AssetPacks/6_Bonus/Animations/Bonus_Load.res" id="42_f5ftb"]
 [ext_resource type="Animation" uid="uid://epr4vbdymsow" path="res://AssetPacks/6_Bonus/Animations/Bonus_Unload.res" id="43_3cd63"]
+[ext_resource type="Animation" uid="uid://baklfdcs25sq7" path="res://AssetPacks/6_Bonus/Animations/Bonus_11a_Fade.res" id="44_e0wjv"]
 
 [resource]
 resource_name = "Bonus"
@@ -53,6 +54,7 @@ _data = {
 &"Bonus_10c_DontKnow": ExtResource("34_cp857"),
 &"Bonus_10d_GiveUp": ExtResource("35_ybof4"),
 &"Bonus_11_YouDidIt": ExtResource("37_hhv2y"),
+&"Bonus_11a_Fade": ExtResource("44_e0wjv"),
 &"Bonus_1_LetsTry": ExtResource("2_e0wjv"),
 &"Bonus_1a_Fade": ExtResource("1_ij1vl"),
 &"Bonus_2_Scenario": ExtResource("3_2a4yw"),

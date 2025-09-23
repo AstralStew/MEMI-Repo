@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_q5ugy"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="2_4cosu"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_w11uq"]
-[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Interpreter.png" id="4_ii2ch"]
+[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/0_Shared/Images/LetsLearn_Interpreter.png" id="4_ii2ch"]
 
 [node name="LLCheat" type="MarginContainer"]
 size_flags_vertical = 4

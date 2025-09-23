@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl72oa0xa7h1o"]
+[gd_scene load_steps=8 format=3 uid="uid://dl72oa0xa7h1o"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_gl8uy"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_ee6p8"]
-[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="3_e3x1s"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="4_2r0x4"]
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="5_chuk2"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="6_k2kg1"]
@@ -36,7 +35,6 @@ offset_right = 120.0
 offset_bottom = 780.0
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("3_e3x1s")
 expand_mode = 1
 script = ExtResource("4_2r0x4")
 current_pose = 1

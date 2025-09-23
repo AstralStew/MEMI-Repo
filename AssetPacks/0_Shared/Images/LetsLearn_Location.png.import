@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpdhaku0p0onc"
-path="res://.godot/imported/LetsLearn_Bonus.png-2043289d69a84add9c5ee2071ee1ad6b.ctex"
+uid="uid://c4rjvq5urx8jo"
+path="res://.godot/imported/LetsLearn_Location.png-9b15d5c84dc9fdc8789b2149fdf484b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://AssetPacks/2_Interpreter/Images/LetsLearn_Bonus.png"
-dest_files=["res://.godot/imported/LetsLearn_Bonus.png-2043289d69a84add9c5ee2071ee1ad6b.ctex"]
+source_file="res://AssetPacks/0_Shared/Images/LetsLearn_Location.png"
+dest_files=["res://.godot/imported/LetsLearn_Location.png-9b15d5c84dc9fdc8789b2149fdf484b9.ctex"]
 
 [params]
 

@@ -5,7 +5,7 @@
 [resource]
 resource_name = "NoHelp"
 script = ExtResource("1_ybihd")
-required_packs = Array[String](["0_Shared", "5_NoHelp"])
+required_packs = Array[String](["0_Shared", "1_Intro", "5_NoHelp"])
 screen_paths = Array[String](["res://AssetPacks/5_NoHelp/Animations/NoHelp.tres"])
 first_anims = Array[StringName]([&"NoHelp/NoHelp_Load"])
 metadata/_custom_type_script = "uid://cjxn00ku2l42w"

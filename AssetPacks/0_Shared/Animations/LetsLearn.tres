@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=22 format=3 uid="uid://bsutrsh0o2oko"]
+[gd_resource type="AnimationLibrary" load_steps=28 format=3 uid="uid://bsutrsh0o2oko"]
 
 [ext_resource type="Animation" uid="uid://bkkwrja3yqeke" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Start.res" id="2_6if0b"]
 [ext_resource type="Animation" uid="uid://dmu66dke32pc3" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Interpreter_Shrink.res" id="3_6if0b"]
@@ -21,6 +21,12 @@
 [ext_resource type="Animation" uid="uid://bwev0qxpq41ab" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Expand.res" id="19_wdugt"]
 [ext_resource type="Animation" uid="uid://c8p24usie5vlf" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Shrink.res" id="20_wkt8h"]
 [ext_resource type="Animation" uid="uid://cqwj13p0h0bte" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Bonus_Start.res" id="21_60i7w"]
+[ext_resource type="Animation" uid="uid://dpctrlwgpcwrl" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Final_Start.res" id="22_wcbx3"]
+[ext_resource type="Animation" uid="uid://bwcwxqhlok4aj" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Final_SelectBonus.res" id="23_om1nj"]
+[ext_resource type="Animation" uid="uid://dgdepk5m43ov2" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Final_SelectInterpreter.res" id="24_qclv8"]
+[ext_resource type="Animation" uid="uid://b2a4t0hk0is2c" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Final_SelectLocation.res" id="25_uc47w"]
+[ext_resource type="Animation" uid="uid://beiu73mbwan8o" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Final_SelectNoHelp.res" id="26_17qo2"]
+[ext_resource type="Animation" uid="uid://cmcwbdwd3ob1e" path="res://AssetPacks/0_Shared/Animations/LetsLearn_Final_SelectQuestions.res" id="27_gt5r0"]
 
 [resource]
 resource_name = "LetsLearn"
@@ -29,6 +35,12 @@ _data = {
 &"LetsLearn_Bonus_Expand": ExtResource("19_wdugt"),
 &"LetsLearn_Bonus_Shrink": ExtResource("20_wkt8h"),
 &"LetsLearn_Bonus_Start": ExtResource("21_60i7w"),
+&"LetsLearn_Final_SelectBonus": ExtResource("23_om1nj"),
+&"LetsLearn_Final_SelectInterpreter": ExtResource("24_qclv8"),
+&"LetsLearn_Final_SelectLocation": ExtResource("25_uc47w"),
+&"LetsLearn_Final_SelectNoHelp": ExtResource("26_17qo2"),
+&"LetsLearn_Final_SelectQuestions": ExtResource("27_gt5r0"),
+&"LetsLearn_Final_Start": ExtResource("22_wcbx3"),
 &"LetsLearn_Interpreter_Complete": ExtResource("5_1q7h5"),
 &"LetsLearn_Interpreter_Expand": ExtResource("4_2xv03"),
 &"LetsLearn_Interpreter_Shrink": ExtResource("3_6if0b"),

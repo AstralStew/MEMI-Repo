@@ -1,0 +1,11 @@
+[gd_resource type="AnimationLibrary" load_steps=3 format=3 uid="uid://i3saku3oqkm7"]
+
+[ext_resource type="Animation" uid="uid://bi3x30s8jn08" path="res://AssetPacks/0_Shared/Animations/FinalMenu_Load.tres" id="1_b8mrv"]
+[ext_resource type="Animation" uid="uid://bb5bbvnv82k3m" path="res://AssetPacks/0_Shared/Animations/FinalMenu_1_Selection.tres" id="2_w73eo"]
+
+[resource]
+resource_name = "FinalMenu"
+_data = {
+&"FinalMenu_1_Selection": ExtResource("2_w73eo"),
+&"FinalMenu_Load": ExtResource("1_b8mrv")
+}

@@ -19,6 +19,11 @@ var hostURL = ""
 var packsURL = "" 
 var audioURL = ""
 
+
+
+var menu_unlocked := false
+
+
 func _set_paths():
 	hostURL = BridgeManager.folderURL
 	packsURL = hostURL + "Packs/"
@@ -88,3 +93,14 @@ func _http_request_completed_callback(result, response_code, headers, body):
 		push_error("[HTTPLoader] HTTP request from '",packsURL+filename,"' failed with response code: ", response_code)
 		request_error.emit()
 		request_error_with.emit(filename)
+
+
+#region globals
+
+func unlock_menu(_unlocked:bool=true) -> void:
+	print("[LoadManager] ","Unlocked menu!" if _unlocked else "Locked menu!")
+	menu_unlocked = _unlocked
+
+
+
+#endregion

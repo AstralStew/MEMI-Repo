@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuol3yxw3dl0y"]
+[gd_scene load_steps=14 format=3 uid="uid://cuol3yxw3dl0y"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ykllg"]
 [ext_resource type="RichTextEffect" uid="uid://bgkjiglchibw" path="res://Base/RichTextEffects/RichTextFadeIn.tres" id="2_rdw4j"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_t2f8j"]
-[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Interpreter.png" id="4_gfus3"]
-[ext_resource type="Texture2D" uid="uid://c4rjvq5urx8jo" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Location.png" id="5_u0lhp"]
-[ext_resource type="Texture2D" uid="uid://73baf83pa3ao" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Questions.png" id="6_dw7sb"]
-[ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
+[ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/0_Shared/Images/LetsLearn_Interpreter.png" id="4_gfus3"]
+[ext_resource type="Texture2D" uid="uid://c4rjvq5urx8jo" path="res://AssetPacks/0_Shared/Images/LetsLearn_Location.png" id="5_u0lhp"]
+[ext_resource type="Texture2D" uid="uid://73baf83pa3ao" path="res://AssetPacks/0_Shared/Images/LetsLearn_Questions.png" id="6_dw7sb"]
+[ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/0_Shared/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
 [ext_resource type="AnimationLibrary" uid="uid://bsutrsh0o2oko" path="res://AssetPacks/0_Shared/Animations/LetsLearn.tres" id="8_6yl00"]
-[ext_resource type="Texture2D" uid="uid://cpdhaku0p0onc" path="res://AssetPacks/2_Interpreter/Images/LetsLearn_Bonus.png" id="8_fyvdw"]
+[ext_resource type="Texture2D" uid="uid://cpdhaku0p0onc" path="res://AssetPacks/0_Shared/Images/LetsLearn_Bonus.png" id="8_fyvdw"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="10_mw025"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="11_t673h"]
 
 [sub_resource type="Animation" id="Animation_6yl00"]
 length = 0.001
@@ -39,398 +41,518 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_VB/LetsLearnTitle_RTL:modulate")
+tracks/2/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB:theme_override_constants/separation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_VB/LetsLearnTitle_RTL:custom_minimum_size")
+tracks/3/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB/LetsLearnTitle_RTL:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB/LetsLearnTitle_RTL:custom_minimum_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 0,
 "values": [Vector2(0, 150)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB/LetsLearnExplanation_RTL:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB/LetsLearnExplanation_RTL:custom_minimum_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0.0333334),
 "transitions": PackedFloat32Array(-2),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC:theme_override_constants/margin_left")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [36]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC:theme_override_constants/margin_right")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [36]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB/Interpreter_TR:custom_minimum_size")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Vector2(125, 125)]
-}
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB/Interpreter_RTL:modulate")
+tracks/8/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC:theme_override_constants/margin_left")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [36]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB/Interpreter_RTL:visible")
+tracks/9/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC:theme_override_constants/margin_right")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [36]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC:theme_override_constants/margin_left")
+tracks/10/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB/Interpreter_TR:custom_minimum_size")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 1,
-"values": [36]
+"update": 0,
+"values": [Vector2(125, 125)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC:theme_override_constants/margin_right")
+tracks/11/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB/Interpreter_RTL:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 1,
-"values": [36]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC:modulate")
+tracks/12/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB/Interpreter_RTL:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB/Location_TR:custom_minimum_size")
+tracks/13/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC:theme_override_constants/margin_left")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Vector2(125, 125)]
+"update": 1,
+"values": [36]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB/Location_RTL:modulate")
+tracks/14/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC:theme_override_constants/margin_right")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [36]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB/Location_RTL:visible")
+tracks/15/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC:theme_override_constants/margin_left")
+tracks/16/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB/Location_TR:custom_minimum_size")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 1,
-"values": [36]
+"update": 0,
+"values": [Vector2(125, 125)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC:theme_override_constants/margin_right")
+tracks/17/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB/Location_RTL:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 1,
-"values": [36]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC:modulate")
+tracks/18/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB/Location_RTL:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB/Questions_TR:custom_minimum_size")
+tracks/19/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC:theme_override_constants/margin_left")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Vector2(125, 125)]
+"update": 1,
+"values": [36]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB/Questions_RTL:modulate")
+tracks/20/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC:theme_override_constants/margin_right")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [36]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB/Questions_RTL:visible")
+tracks/21/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC:modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC:theme_override_constants/margin_left")
+tracks/22/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB/Questions_TR:custom_minimum_size")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 1,
-"values": [36]
+"update": 0,
+"values": [Vector2(125, 125)]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC:theme_override_constants/margin_right")
+tracks/23/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB/Questions_RTL:modulate")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 1,
-"values": [36]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC:modulate")
+tracks/24/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB/Questions_RTL:visible")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB/NoHelp_TR:custom_minimum_size")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Vector2(125, 125)]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB/NoHelp_RTL:modulate")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB/NoHelp_RTL:visible")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:theme_override_constants/margin_left")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC:theme_override_constants/margin_left")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 1,
 "values": [36]
 }
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:theme_override_constants/margin_right")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC:theme_override_constants/margin_right")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 1,
 "values": [36]
 }
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:modulate")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB/NoHelp_TR:custom_minimum_size")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(125, 125)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB/NoHelp_RTL:modulate")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB/NoHelp_RTL:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:visible")
+tracks/31/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:theme_override_constants/margin_left")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(-2),
 "update": 1,
-"values": [false]
+"values": [36]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_TR:custom_minimum_size")
+tracks/32/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:theme_override_constants/margin_right")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
-"update": 0,
-"values": [Vector2(125, 125)]
+"update": 1,
+"values": [36]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:modulate")
+tracks/33/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:modulate")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(-2),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:visible")
+tracks/34/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC:visible")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": [false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_TR:custom_minimum_size")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector2(125, 125)]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:modulate")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_RTL:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [true]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("LetsLearnMenu_VB/LetsLearnButtons_VB:visible")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("LetsLearnMenu_VB/LetsLearnButtons_VB:modulate")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("LetsLearnMenu_VB/LetsLearn_Bonus_MC/BonusButton:visible")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("LetsLearnMenu_VB/LetsLearn_NoHelp_MC/NoHelpButton:visible")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("LetsLearnMenu_VB/LetsLearn_Questions_MC/QuestionsButton:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("LetsLearnMenu_VB/LetsLearn_Location_MC/LocationButton:visible")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("LetsLearnMenu_VB/LetsLearn_Interpreter_MC/InterpreterButton:visible")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fyvdw"]
@@ -443,6 +565,7 @@ modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -458,11 +581,17 @@ size_flags_vertical = 4
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="LetsLearnTitle_VB" type="VBoxContainer" parent="LetsLearnMenu_VB"]
+[node name="LetsLearnTitle_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_right = 36
+
+[node name="LetsLearnTitle_VB" type="VBoxContainer" parent="LetsLearnMenu_VB/LetsLearnTitle_MC"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/separation = 0
 
-[node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_VB"]
+[node name="LetsLearnTitle_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 0
@@ -470,12 +599,28 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
+text = "All skills complete!"
+scroll_active = false
 vertical_alignment = 2
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
 autopopulate = true
 autokey = "LETSLEARN_OVERVIEW_1"
+
+[node name="LetsLearnExplanation_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+text = "Practise any scenario here again."
+fit_content = true
+meta_underlined = false
+script = ExtResource("3_t2f8j")
+debugging = true
+lightSpeakerIcon = true
 
 [node name="LetsLearn_Interpreter_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -504,16 +649,27 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
 bbcode_enabled = true
 text = "asd asd asd "
+scroll_active = false
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "LETSLEARN_INTERPRETER"
+
+[node name="InterpreterButton" type="Button" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = true
 
 [node name="LetsLearn_Location_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -542,16 +698,27 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
 bbcode_enabled = true
 text = "as dasd asd as da sd"
+scroll_active = false
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "LETSLEARN_LOCATION"
+
+[node name="LocationButton" type="Button" parent="LetsLearnMenu_VB/LetsLearn_Location_MC"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = true
 
 [node name="LetsLearn_Questions_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -580,16 +747,27 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
 bbcode_enabled = true
 text = "asd asd asd asd "
+scroll_active = false
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "LETSLEARN_QUESTIONS"
+
+[node name="QuestionsButton" type="Button" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = true
 
 [node name="LetsLearn_NoHelp_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -618,16 +796,27 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
 bbcode_enabled = true
 text = "asd asd as das d"
+scroll_active = false
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "LETSLEARN_NOHELP"
+
+[node name="NoHelpButton" type="Button" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = true
 
 [node name="LetsLearn_Bonus_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 visible = false
@@ -657,19 +846,71 @@ custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 22
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
 bbcode_enabled = true
 text = "asd asd as das d"
+scroll_active = false
 vertical_alignment = 1
 custom_effects = [ExtResource("2_rdw4j")]
 script = ExtResource("3_t2f8j")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "LETSLEARN_BONUS"
+
+[node name="BonusButton" type="Button" parent="LetsLearnMenu_VB/LetsLearn_Bonus_MC"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="LetsLearnButtons_VB" type="VBoxContainer" parent="LetsLearnMenu_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Spacer" type="HSeparator" parent="LetsLearnMenu_VB/LetsLearnButtons_VB"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Share_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnButtons_VB"]
+self_modulate = Color(1, 1, 1, 0.5)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "FINALMENU_1_SELECTION_B2"
+fit_content = true
+horizontal_alignment = 1
+custom_effects = [ExtResource("10_mw025")]
+script = ExtResource("3_t2f8j")
+debugging = true
+autopopulate = true
+autokey = "FINALMENU_1_SELECTION_B2"
+
+[node name="ExitButton" parent="LetsLearnMenu_VB/LetsLearnButtons_VB" instance=ExtResource("11_t673h")]
+layout_mode = 2
+final_scale = 1.0
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+_auto_bg_colour = Color(0.156863, 0.0901961, 0.141176, 1)
+_auto_text_colour = Color(1, 1, 1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_fyvdw"),
 &"LetsLearn": ExtResource("8_6yl00")
 }
+
+[connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_Interpreter_MC/InterpreterButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectInterpreter"]]
+[connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_Location_MC/LocationButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectLocation"]]
+[connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_Questions_MC/QuestionsButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectQuestions"]]
+[connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/NoHelpButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectNoHelp"]]
+[connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_Bonus_MC/BonusButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectBonus"]]

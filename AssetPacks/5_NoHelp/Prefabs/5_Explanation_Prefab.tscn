@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cb8ehg6sdt4x7"]
+[gd_scene load_steps=9 format=3 uid="uid://cb8ehg6sdt4x7"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_2cxax"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_o8obp"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="3_o5vbj"]
-[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="4_lj4mc"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="4_rc6yd"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_pwvre"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="6_w68al"]
@@ -15,6 +14,7 @@ shader_parameter/target_texture = ExtResource("3_o5vbj")
 shader_parameter/weight = 0.0
 
 [node name="5_Explanation_Prefab" type="MarginContainer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -57,7 +57,6 @@ offset_right = 50.0
 offset_bottom = 430.0
 grow_horizontal = 2
 pivot_offset = Vector2(756, 327)
-texture = ExtResource("4_lj4mc")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("4_rc6yd")
@@ -140,3 +139,5 @@ mouse_filter = 2
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/idontunderstand.mp3"]]
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"NoHelp/NoHelp_1a_Fade"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["NoHelp/NoHelp_3_Call"]]
+[connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"NoHelp/NoHelp_10a_Fade"]]
+[connection signal="meta_link_9" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"NoHelp/NoHelp_10a_Fade"]]

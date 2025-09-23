@@ -148,6 +148,22 @@ func pop_in(_text:String) -> void:
 	#bubbleTouchAudio.stream = pop_in_sound
 	#bubbleTouchAudio.play()
 
+
+func pop_in_by_unlock_status(_unlocked_text:StringName,_fallback:StringName) -> void:
+	if _debug: print("[ButtonBubble(",name,")] NOTE -> Popping in!")
+
+	_set_colours(_auto_bg_colour, _auto_text_colour)
+	if LoadManager.menu_unlocked: _set_text(_unlocked_text)
+	else: _set_text(_fallback)
+	_resize()
+	visible = true
+	await get_tree().create_timer(0.1).timeout
+	
+	# resize + fade
+	_resize_bubble(true,pop_in_resize_in,pop_in_resize_ease,pop_in_resize_trans)
+	_fade_bubble(true,pop_in_fade,pop_in_fade_ease,pop_in_fade_trans)
+
+
 func pop_out() -> void:
 	if _debug: print("[ButtonBubble(",name,")] NOTE -> Popping out!")
 	

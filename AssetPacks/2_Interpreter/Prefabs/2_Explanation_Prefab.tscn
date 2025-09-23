@@ -160,3 +160,4 @@ mouse_filter = 2
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]
+[connection signal="meta_link_9" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_7a_Fade"]]
