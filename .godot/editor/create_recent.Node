@@ -1,6 +1,7 @@
+Control
+VBoxContainer
 MarginContainer
 HSeparator
-Control
 Timer
 CharacterController
 LabelController
@@ -11,4 +12,3 @@ Node
 AudioStreamPlayer
 TextureRect
 RichTextLabel
-Label

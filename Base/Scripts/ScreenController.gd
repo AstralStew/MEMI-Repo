@@ -104,9 +104,60 @@ func deactivate_exit_button():
 	deactivate_exit.emit()
 
 
-func reset_to_start():
+func reset_scenario():
 	
 	pause()
+	
+	#deactivate_exit_button()
+	
+	if debugging: print("[ScreenController] RESET SCENARIO -> Fading Content + background colour")
+	
+	# fade out content
+	var fade_tween = create_tween()
+	var content = get_node(content_parent) as Control
+	var background = get_node("Background") as Control
+	fade_tween.tween_property(content, "modulate", Color(0,0,0,0), 0.35).set_trans(Tween.TRANS_QUAD)
+	#fade_tween.tween_property(background, "modulate", Color(0.157, 0.09, 0.141, 1.0), 0.35).set_trans(Tween.TRANS_QUAD)
+	await get_tree().create_timer(0.5).timeout   
+	
+	fade_tween.kill()
+	stop()
+	
+	if debugging: print("[ScreenController] RESET SCENARIO -> Destroying prefabs + screens")
+	
+	# unload all prefabs + screens
+	destroy_all_prefabs_except(["LetsLearn_Prefab"])
+	
+	await get_tree().process_frame
+	
+	var _learn_menu : Control = loaded_elements.get("LetsLearn_Prefab") 
+	if _learn_menu != null:
+		var anim = _learn_menu.find_child("AnimationPlayer") as AnimationPlayer
+		#anim.play("LetsLearn/LetsLearn_Final_Start",-1,0,true)
+		#await get_tree().process_frame
+		anim.play("LetsLearn/LetsLearn_Reset_"+current_set.resource_name,-1,1,false)
+		#await get_tree().process_frame
+	
+	
+	# reset screen set
+	_current_set_index = 0
+	#current_set = screen_sets[0]
+	
+	await get_tree().process_frame
+	
+	# load screen 0
+	load_screen(0, true)
+	
+	if fade_tween: fade_tween.kill()
+	fade_tween = create_tween()
+	fade_tween.tween_property(content, "modulate", Color(1,1,1,1), 0.35).set_trans(Tween.TRANS_QUAD)
+	
+	if debugging: print("[ScreenController] RESET SCENARIO -> Finished resetting to start.")
+
+
+func reset_to_start():
+	
+	#pause()
 	
 	#deactivate_exit_button()
 	
@@ -142,8 +193,6 @@ func reset_to_start():
 	
 	content.modulate = Color(1,1,1,1)
 	if debugging: print("[ScreenController] RESET TO START -> Finished resetting to start.")
-
-
 
 #endregion
 

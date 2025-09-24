@@ -1,11 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=30 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="1_5usye"]
+[ext_resource type="Script" uid="uid://cd84o1fnsjeo0" path="res://Base/Scripts/ExitMenu.gd" id="1_mfw6p"]
 [ext_resource type="AudioStream" uid="uid://cphmoblobbbs4" path="res://AssetPacks/0_Prerequisite/Audio/ButtonClick.wav" id="2_mn8u3"]
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_fkmet"]
+[ext_resource type="Texture2D" uid="uid://co2v4yweffik8" path="res://Base/Images/MemiLogo.png" id="3_sm636"]
+[ext_resource type="Texture2D" uid="uid://d13he36umlg53" path="res://AssetPacks/0_Prerequisite/Images/LogoText_en.png" id="4_341tn"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
+[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_58hmj"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="5_dto2j"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
@@ -19,6 +23,8 @@
 [ext_resource type="Resource" uid="uid://cu62raoj8oe5j" path="res://AssetPacks/0_Prerequisite/ScreenSets/Questions.tres" id="9_x7k22"]
 [ext_resource type="Resource" uid="uid://bqwr46uxw4a0o" path="res://AssetPacks/0_Prerequisite/ScreenSets/Bonus.tres" id="12_a4bpb"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
+[ext_resource type="AnimationLibrary" uid="uid://fjo5xkrra3dm" path="res://AssetPacks/3_Location/Animations/Location.tres" id="15_fxh3s"]
+[ext_resource type="AnimationLibrary" uid="uid://lokawride8x7" path="res://AssetPacks/5_NoHelp/Animations/NoHelp.tres" id="16_s83ii"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="16_x7k22"]
 [ext_resource type="Texture2D" uid="uid://dqjndrvvyh0vc" path="res://AssetPacks/0_Prerequisite/Images/BackgroundFade.png" id="18_0v13x"]
 [ext_resource type="Resource" uid="uid://xp88hbj2xa1" path="res://AssetPacks/0_Prerequisite/ScreenSets/FinalMenu.tres" id="19_fw3jg"]
@@ -35,18 +41,166 @@ position_smoothing_enabled = true
 
 [node name="MenuCanvas" type="CanvasLayer" parent="."]
 
-[node name="TopBar_MC" type="Control" parent="MenuCanvas"]
+[node name="ExitMenu_MC" type="Control" parent="MenuCanvas" node_paths=PackedStringArray("exit_button", "overlay", "menu")]
+process_mode = 3
 layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -220.0
-offset_right = 220.0
-offset_bottom = 60.0
-grow_horizontal = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+script = ExtResource("1_mfw6p")
+exit_button = NodePath("ExitButton_BB")
+overlay = NodePath("Overlay")
+menu = NodePath("SlidingMenu")
+debugging = true
+overlay_colour = Color(0, 0, 0, 0.35000002)
+slide_in_ease = 0
+slide_in_transition = 11
+slide_in_menu_pos = Vector2(-478, 0)
+slide_out_transition = 11
+slide_out_menu_pos = Vector2(32, 0)
+fade_overlay_duration = 0.15
+fade_overlay_transition = 0
 
-[node name="ExitButton_BB" type="MarginContainer" parent="MenuCanvas/TopBar_MC"]
+[node name="Overlay" type="TextureRect" parent="MenuCanvas/ExitMenu_MC"]
 visible = false
+modulate = Color(0, 0, 0, 0)
+z_index = -1
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1814.0
+offset_top = -1103.0
+offset_right = 1386.0
+offset_bottom = 2097.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_eopm5")
+expand_mode = 1
+
+[node name="SlidingMenu" type="Control" parent="MenuCanvas/ExitMenu_MC"]
+custom_minimum_size = Vector2(440, 956)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 32.0
+offset_right = 544.0
+offset_bottom = 956.0
+
+[node name="Background" type="TextureRect" parent="MenuCanvas/ExitMenu_MC/SlidingMenu"]
+modulate = Color(0.91764706, 0.8901961, 0.827451, 1)
+z_index = -1
+custom_minimum_size = Vector2(440, 1912)
+layout_mode = 0
+offset_top = -478.0
+offset_right = 512.0
+offset_bottom = 1434.0
+texture = ExtResource("5_eopm5")
+expand_mode = 1
+
+[node name="Logo_MC" type="MarginContainer" parent="MenuCanvas/ExitMenu_MC/SlidingMenu"]
+layout_mode = 1
+offset_left = 44.0
+offset_top = 13.0
+offset_right = 181.0
+offset_bottom = 78.0
+size_flags_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 36
+
+[node name="Logo_VB" type="VBoxContainer" parent="MenuCanvas/ExitMenu_MC/SlidingMenu/Logo_MC"]
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Logo_TR" type="TextureRect" parent="MenuCanvas/ExitMenu_MC/SlidingMenu/Logo_MC/Logo_VB"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("3_sm636")
+expand_mode = 5
+
+[node name="LogoText_TR" type="TextureRect" parent="MenuCanvas/ExitMenu_MC/SlidingMenu/Logo_MC/Logo_VB"]
+visible = false
+modulate = Color(0.157, 0.09000003, 0.14100003, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("4_341tn")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuCanvas/ExitMenu_MC/SlidingMenu"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -450.0
+offset_top = 131.0
+offset_right = -67.0
+offset_bottom = 295.0
+grow_horizontal = 0
+theme_override_constants/separation = 15
+
+[node name="Restart_RTL" type="RichTextLabel" parent="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.5)
+custom_minimum_size = Vector2(383.065, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "MENU_RESTART"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+custom_effects = [ExtResource("5_58hmj")]
+script = ExtResource("16_x7k22")
+debugging = true
+autopopulate = true
+autokey = "MENU_RESTART"
+
+[node name="HardRestart_RTL" type="RichTextLabel" parent="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.5)
+custom_minimum_size = Vector2(383.065, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "MENU_HARDRESTART"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+custom_effects = [ExtResource("5_58hmj")]
+script = ExtResource("16_x7k22")
+debugging = true
+autopopulate = true
+autokey = "MENU_HARDRESTART"
+
+[node name="HardExit_RTL" type="RichTextLabel" parent="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.5)
+custom_minimum_size = Vector2(383.065, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "MENU_HARDEXIT"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+custom_effects = [ExtResource("5_58hmj")]
+script = ExtResource("16_x7k22")
+debugging = true
+autopopulate = true
+autokey = "MENU_HARDEXIT"
+
+[node name="ExitButton_BB" type="MarginContainer" parent="MenuCanvas/ExitMenu_MC"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -66,18 +220,22 @@ theme_override_constants/margin_bottom = 15
 script = ExtResource("1_5usye")
 _debug = true
 click_sound = ExtResource("2_mn8u3")
+min_width = 60
 max_char_threshold = 24
 bg_border_size = 1.0
-click_bg_colour = Color(1, 1, 1, 1)
+click_bg_colour = Color(1, 1, 1, 0.1)
 click_text_colour = Color(0, 0, 0, 1)
 click_size = 0.9
 click_inout = 0.05
 click_ease = 2
 unclick_inout = 0.14
 unclick_ease = 1
+_autostart = true
+_auto_text = "MENU_EXIT"
+_auto_bg_colour = Color(1, 1, 1, 0.1)
 _old_text = "COMMON_EXIT"
 
-[node name="BubbleText" type="RichTextLabel" parent="MenuCanvas/TopBar_MC/ExitButton_BB"]
+[node name="BubbleText" type="RichTextLabel" parent="MenuCanvas/ExitMenu_MC/ExitButton_BB"]
 z_index = 1
 clip_contents = false
 custom_minimum_size = Vector2(159.8, 0)
@@ -98,7 +256,7 @@ vertical_alignment = 1
 script = ExtResource("16_x7k22")
 metadata/_edit_group_ = true
 
-[node name="BubbleBG" type="NinePatchRect" parent="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText"]
+[node name="BubbleBG" type="NinePatchRect" parent="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText"]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -120,7 +278,8 @@ patch_margin_top = 19
 patch_margin_right = 20
 patch_margin_bottom = 19
 
-[node name="BubbleShadow" type="NinePatchRect" parent="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText/BubbleBG"]
+[node name="BubbleShadow" type="NinePatchRect" parent="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText/BubbleBG"]
+modulate = Color(1, 1, 1, 0.5)
 z_index = -2
 layout_mode = 1
 anchors_preset = -1
@@ -140,7 +299,7 @@ patch_margin_right = 20
 patch_margin_bottom = 27
 metadata/_edit_use_anchors_ = true
 
-[node name="ScenarioTouchButton" type="Button" parent="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText/BubbleBG"]
+[node name="ScenarioTouchButton" type="Button" parent="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText/BubbleBG"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -151,7 +310,7 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 flat = true
 
-[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="MenuCanvas/TopBar_MC/ExitButton_BB"]
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="MenuCanvas/ExitMenu_MC/ExitButton_BB"]
 
 [node name="[TexRec] LoadingCircle" type="TextureRect" parent="MenuCanvas"]
 anchors_preset = 2
@@ -193,6 +352,8 @@ layer = 0
 root_node = NodePath("MarginContainer")
 libraries = {
 &"Bonus": ExtResource("9_lxd4l"),
+&"Location": ExtResource("15_fxh3s"),
+&"NoHelp": ExtResource("16_s83ii"),
 &"Questions": ExtResource("9_bqdsp")
 }
 autoplay = "testing_anim_library/testing_animation"
@@ -204,7 +365,7 @@ overrideLanguageIndex = 1
 overrideScreenIndex = 1
 overrideTimeScale = true
 overrideTimeScaleFactor = 10.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("19_fw3jg"), ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb")])
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb"), ExtResource("19_fw3jg"), ExtResource("5_qbn4n")])
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 texture_filter = 4
@@ -228,7 +389,7 @@ layout_direction = 1
 layout_mode = 2
 
 [node name="Background" type="Control" parent="ContentCanvas/ScreenController"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
+modulate = Color(0.7921569, 0.7176471, 0.6509804, 1)
 z_index = -5
 custom_minimum_size = Vector2(440, 956)
 layout_direction = 2
@@ -316,7 +477,6 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BGMaskBottom" type="TextureRect" parent="ContentCanvas/ScreenController/Background"]
-visible = false
 z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(0, 3200)
@@ -378,17 +538,22 @@ expand_mode = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController"]
 script = ExtResource("14_h0d2r")
 
-[connection signal="meta_link_1" from="MenuCanvas/TopBar_MC/ExitButton_BB" to="ContentCanvas/ScreenController" method="reset_to_start"]
-[connection signal="meta_link_1" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_1"]
-[connection signal="meta_link_2" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_2"]
-[connection signal="meta_link_3" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_3"]
-[connection signal="meta_link_4" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_4"]
-[connection signal="meta_link_5" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_5"]
-[connection signal="meta_link_6" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_6"]
-[connection signal="meta_link_7" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_7"]
-[connection signal="meta_link_8" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_8"]
-[connection signal="meta_link_9" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="_send_meta_link_9"]
-[connection signal="pressed" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="pop_out"]
-[connection signal="pressed" from="MenuCanvas/TopBar_MC/ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="check_meta_link_from_button"]
-[connection signal="activate_exit" from="ContentCanvas/ScreenController" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="pop_in" binds= [&"COMMON_EXIT"]]
-[connection signal="deactivate_exit" from="ContentCanvas/ScreenController" to="MenuCanvas/TopBar_MC/ExitButton_BB" method="pop_out"]
+[connection signal="meta_link_1" from="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer/Restart_RTL" to="MenuCanvas/ExitMenu_MC" method="slide_out"]
+[connection signal="meta_link_1" from="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer/Restart_RTL" to="ContentCanvas/ScreenController" method="reset_scenario"]
+[connection signal="meta_link_1" from="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer/HardRestart_RTL" to="MenuCanvas/ExitMenu_MC" method="slide_out"]
+[connection signal="meta_link_1" from="MenuCanvas/ExitMenu_MC/SlidingMenu/VBoxContainer/HardRestart_RTL" to="ContentCanvas/ScreenController" method="reset_to_start"]
+[connection signal="meta_link_1" from="MenuCanvas/ExitMenu_MC/ExitButton_BB" to="MenuCanvas/ExitMenu_MC" method="slide_in"]
+[connection signal="meta_link_2" from="MenuCanvas/ExitMenu_MC/ExitButton_BB" to="MenuCanvas/ExitMenu_MC" method="slide_out"]
+[connection signal="meta_link_1" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="_send_meta_link_9"]
+[connection signal="pressed" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="pop_out"]
+[connection signal="pressed" from="MenuCanvas/ExitMenu_MC/ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="check_meta_link_from_button"]
+[connection signal="activate_exit" from="ContentCanvas/ScreenController" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="pop_in" binds= [&"COMMON_EXIT"]]
+[connection signal="deactivate_exit" from="ContentCanvas/ScreenController" to="MenuCanvas/ExitMenu_MC/ExitButton_BB" method="pop_out"]
