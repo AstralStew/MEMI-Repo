@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3talsc3cfdjt"]
+[gd_scene load_steps=11 format=3 uid="uid://c3talsc3cfdjt"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_xoyxg"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="2_ykmd4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="5_pjkio"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_ykmd4"]
 [ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="6_5jv4b"]
+[ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="7_kqmik"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="7_pjkio"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="8_kqmik"]
 
@@ -371,6 +372,7 @@ debugging = true
 custom_minimum_size = Vector2(200, 375.5)
 layout_mode = 2
 size_flags_horizontal = 8
+texture = ExtResource("7_kqmik")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("8_kqmik")
@@ -386,7 +388,6 @@ alignment = 2
 
 [node name="ConfirmBubble" parent="Buttons_VB" instance=ExtResource("7_pjkio")]
 layout_mode = 2
-final_scale = 1.0
 click_bg_colour = Color(0.157, 0.09, 0.141, 0.8)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
@@ -436,14 +437,14 @@ theme_override_constants/separation = 20
 [connection signal="meta_link_7" from="Explanation_VB/Steps_HB/Step3_Bubble/BubbleText" to="Explanation_VB/Steps_HB/Step3_Bubble" method="_send_meta_link_7"]
 [connection signal="meta_link_8" from="Explanation_VB/Steps_HB/Step3_Bubble/BubbleText" to="Explanation_VB/Steps_HB/Step3_Bubble" method="_send_meta_link_8"]
 [connection signal="meta_link_9" from="Explanation_VB/Steps_HB/Step3_Bubble/BubbleText" to="Explanation_VB/Steps_HB/Step3_Bubble" method="_send_meta_link_9"]
-[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_emergencyfpa.mp3"]]
-[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_whatstateandtown.mp3"]]
-[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_police.mp3"]]
-[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_fire.mp3"]]
-[connection signal="meta_link_3" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step1_ambulance.mp3"]]
-[connection signal="meta_link_4" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_dandenongvictoria.mp3"]]
-[connection signal="meta_link_5" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step2_milduravictoria.mp3"]]
-[connection signal="meta_link_6" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/step3_interepreterhindi.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_STEPS_emergencyfpa.mp3"]]
+[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_STEPS_whatstateandtown.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_police.mp3"]]
+[connection signal="meta_link_2" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_fire.mp3"]]
+[connection signal="meta_link_3" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ambulance.mp3"]]
+[connection signal="meta_link_4" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_STEPS_dandenongvic.mp3"]]
+[connection signal="meta_link_5" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_STEPS_milduravic.mp3"]]
+[connection signal="meta_link_6" from="Explanation_VB/ExplanationLabels_VB/Explanation4_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_STEPS_interpreterhindi.mp3"]]
 [connection signal="meta_link_1" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_2a_Continue"]]
 [connection signal="meta_link_2" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_4_SecondStep"]]
 [connection signal="meta_link_3" from="Buttons_VB/ConfirmBubble" to="." method="play_animation" binds= [&"LearnSteps/LearnSteps_5_ThirdStep"]]

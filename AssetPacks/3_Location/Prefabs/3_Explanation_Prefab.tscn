@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1hjoq475ykua"]
+[gd_scene load_steps=10 format=3 uid="uid://b1hjoq475ykua"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_d4hcx"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_6l0e5"]
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="3_64jcu"]
+[ext_resource type="Texture2D" uid="uid://bghw73stsxlsq" path="res://AssetPacks/1_CharacterEn/CharacterEn_Postbox.png" id="4_6rkpc"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_am75m"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="5_6rkpc"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="5_shmvb"]
@@ -57,6 +58,7 @@ offset_right = 50.0
 offset_bottom = 430.0
 grow_horizontal = 2
 pivot_offset = Vector2(756, 327)
+texture = ExtResource("4_6rkpc")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_6rkpc")
@@ -131,7 +133,6 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("5_shmvb")]
 layout_mode = 2
-final_scale = 1.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
@@ -165,3 +166,4 @@ mouse_filter = 2
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Location/Location_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Location/Location_8a_Fade"]]
 [connection signal="meta_link_9" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Location/Location_8a_Fade"]]
+[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="reset_scenario"]

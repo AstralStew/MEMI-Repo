@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv0gkn5xyfhn1"]
+[gd_scene load_steps=10 format=3 uid="uid://cv0gkn5xyfhn1"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_84asj"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_pritx"]
 [ext_resource type="Texture2D" uid="uid://bwv8ec2rkdr7s" path="res://AssetPacks/1_CharacterEn/CharacterEn_ThumbsUp.png" id="3_8xwae"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="4_85imk"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="5_85imk"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_jbdvx"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="6_yos7i"]
@@ -56,6 +57,7 @@ offset_left = -100.0
 offset_right = 100.0
 offset_bottom = 430.0
 grow_horizontal = 2
+texture = ExtResource("4_85imk")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_85imk")
@@ -122,7 +124,6 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("7_28ad4")]
 layout_mode = 2
-final_scale = 1.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
 _auto_bg_colour = Color(1, 1, 1, 0.3)
@@ -156,8 +157,9 @@ layout_direction = 2
 layout_mode = 2
 mouse_filter = 2
 
-[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/yes.mp3"]]
+[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_yes.mp3"]]
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]
 [connection signal="meta_link_9" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_7a_Fade"]]
+[connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="reset_scenario"]

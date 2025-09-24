@@ -24,6 +24,9 @@ signal try_activate_exit
 signal try_deactivate_exit
 
 
+signal try_reset_to_start
+signal try_reset_scenario
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -34,7 +37,13 @@ func start_speech_recognition() -> void:
 	try_start_speech_recognition.emit()
 
 
+func reset_to_start() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to reset to start...")
+	try_reset_to_start.emit()
 
+func reset_scenario() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to reset scenario...")
+	try_reset_scenario.emit()
 
 
 #region Animation functions

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://t1mdkoctxe4w"]
+[gd_scene load_steps=10 format=3 uid="uid://t1mdkoctxe4w"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_2600o"]
 [ext_resource type="Texture2D" uid="uid://cxef2jho4augu" path="res://AssetPacks/1_CharacterEn/CharacterEn_HalfTryAgain.png" id="2_7pmus"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="3_buipk"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="3_oi34b"]
+[ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="5_3n3tr"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="6_ul74m"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="9_44eh0"]
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="10_n5fai"]
@@ -46,6 +47,7 @@ offset_left = -100.0
 offset_right = 100.0
 offset_bottom = 207.0
 grow_horizontal = 2
+texture = ExtResource("2_7pmus")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("3_oi34b")
@@ -78,6 +80,7 @@ offset_left = -180.0
 offset_right = 180.0
 offset_bottom = 347.0
 grow_horizontal = 2
+texture = ExtResource("5_3n3tr")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("3_oi34b")
@@ -145,13 +148,12 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_vertical = 8
 max_char_threshold = 25
-final_scale = 1.0
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTRO_LANDING_2_EXPLANATION_B1"
 _old_text = "INTRO_LANDING_2_EXPLANATION_B1"
 
 [connection signal="last_sentence_changed" from="." to="Explanation_VB/TapBubble" method="answer"]
-[connection signal="meta_link_1" from="Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/Pronounce/OK.mp3"]]
+[connection signal="meta_link_1" from="Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/1_Intro/Audio/P1_INTRO_ok.mp3"]]
 [connection signal="touch_input" from="Explanation_VB/TapBubble" to="." method="start_speech_recognition"]
 [connection signal="meta_link_1" from="ContinueButton" to="." method="play_animation" binds= [&"Intro/Landing_3_CallsAreFake"]]
 [connection signal="meta_link_2" from="ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1_LetsTry"]]

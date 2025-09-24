@@ -1,3 +1,4 @@
+class_name ExitMenu 
 extends Node
 
 
@@ -31,13 +32,29 @@ extends Node
 @export var fade_overlay_transition := Tween.TransitionType.TRANS_BOUNCE
 
 @export_group("READ ONLY")
-@export var is_dark = false
+@export var text_is_dark = true
+
+signal try_reset_scenario
+signal try_reset_to_start
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	overlay.modulate = Color(overlay_colour,0)
-	await get_tree().create_timer(5).timeout 
+	await get_tree().create_timer(0.1).timeout 
 	exit_button.pop_in(exit_text)
+
+
+
+func reset_scenario() -> void:
+	if debugging: print("[ExitMenu] Attempting to reset scenario...")
+	try_reset_scenario.emit()
+
+func reset_to_start() -> void:
+	if debugging: print("[ExitMenu] Attempting to reset to start...")
+	try_reset_to_start.emit()
+
+
 
 
 func slide_in() -> void:
@@ -49,6 +66,11 @@ func slide_in() -> void:
 	_slide_menu(slide_in_menu_pos,slide_in_duration,slide_in_ease,slide_in_transition)
 	
 	await get_tree().create_timer(0.3,true,false).timeout 
+	
+	if !text_is_dark:
+		exit_button._set_text_colour(dark_button_text_colour)
+		exit_button._auto_text_colour = dark_button_text_colour
+	
 	exit_button.pop_in(back_text)
 	
 	#_fade_button(Color(1,1,1,0),0.1,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
@@ -64,6 +86,11 @@ func slide_out() -> void:
 	_slide_menu(slide_out_menu_pos,slide_out_duration,slide_out_ease,slide_out_transition)
 	
 	await get_tree().create_timer(0.3,true,false).timeout 
+	
+	if !text_is_dark:
+		exit_button._set_text_colour(light_button_text_colour)
+		exit_button._auto_text_colour = light_button_text_colour
+	
 	exit_button.pop_in(exit_text)
 	
 	#_fade_button(Color(1,1,1,0),0.1,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR)
@@ -71,17 +98,38 @@ func slide_out() -> void:
 	#fading_button.tween_callback(_fade_button.bind(Color(1,1,1,1),0.1,Tween.EaseType.EASE_IN_OUT,Tween.TransitionType.TRANS_LINEAR))
 	#fading_button.tween_callback(get_tree().set.bind("paused",false))
 
-func switch_colours(_dark:bool=false) -> void:
-	if _dark == is_dark:
-		push_warning("[ExitMenu] WARNING -> Was already ","dark" if _dark else "light","! Ignoring.")
+func switch_colours(_make_text_dark:bool=false) -> void:
+	if _make_text_dark == text_is_dark:
+		push_warning("[ExitMenu] WARNING -> Text is already ","dark" if _make_text_dark else "light","! Ignoring.")
 		return
-	elif debugging: print("[ExitMenu] Switching to ","dark" if _dark else "light...")
+	elif debugging: print("[ExitMenu] Switching to ","dark" if _make_text_dark else "light", " text...")
 	
-	is_dark = _dark
-	if is_dark:
+	if _make_text_dark:
 		exit_button._set_text_colour(dark_button_text_colour)
+		exit_button._auto_text_colour = dark_button_text_colour
 	else:
 		exit_button._set_text_colour(light_button_text_colour)
+		exit_button._auto_text_colour = light_button_text_colour
+	
+	text_is_dark = _make_text_dark
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

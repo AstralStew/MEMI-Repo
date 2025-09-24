@@ -48,8 +48,7 @@ var _current_screen_index := 0
 @export var audioStreamPlayer : AudioPlayer = null
 
 
-signal activate_exit
-signal deactivate_exit
+signal switched_backgrounds
 
 signal pack_load_finished
 
@@ -96,12 +95,18 @@ func _ready() -> void:
 #region Menu functions
 
 func activate_exit_button():
-	if debugging: print("[ScreenController] Activating exit button")
-	activate_exit.emit()
+	push_error("[ScreenController] ERROR - DEPRECATED - Activating exit button")
+	#activate_exit.emit()
 
 func deactivate_exit_button():
-	if debugging: print("[ScreenController] Deactivating exit button")
-	deactivate_exit.emit()
+	push_error("[ScreenController] ERROR - DEPRECATED - Deactivating exit button")
+	#deactivate_exit.emit()
+
+func announce_switched_backgrounds():
+	if debugging: print("[ScreenController] Proudly (manually) announcing we switched backgrounds :)")
+	switched_backgrounds.emit()
+
+
 
 
 func reset_scenario():
@@ -460,12 +465,17 @@ func create_prefab(_key:String,_scene:PackedScene, _parent:String=content_parent
 	
 	# Like + Subscribe for speech recognition
 	if scene is ScreenPrefab:
-		print("[ScreenController] Prefab is a ScreenPrefab! Liking + subscribing.")
+		print("[ScreenController] CREATE PREFAB -> Prefab is a ScreenPrefab! Liking + subscribing.")
 		_subscribe(scene as ScreenPrefab)
 	elif scene is TapBubble:
-		print("[ScreenController] Prefab is a TapBubble! Liking + subscribing.")
+		print("[ScreenController] CREATE PREFAB -> Prefab is a TapBubble! Liking + subscribing.")
 		scene.touch_input.connect(_start_recognition)
 		last_sentence_changed.connect(scene.answer)
+	elif scene is ExitMenu:
+		print("[ScreenController] CREATE PREFAB -> Prefab is an ExitMenu! Liking + subscribing.")
+		scene.try_reset_scenario.connect(reset_scenario)
+		scene.try_reset_to_start.connect(reset_to_start)
+		switched_backgrounds.connect(scene.switch_colours)
 	
 	# Add it to the dictionary
 	loaded_elements[_key] = scene
@@ -481,12 +491,17 @@ func destroy_prefab(_key:String):
 	# Blocked + Unsubscribed
 	var scene = loaded_elements[_key]
 	if scene is ScreenPrefab:
-		print("[ScreenController] Prefab is a ScreenPrefab, unliking + unsubscribing.")
+		print("[ScreenController] DESTROY PREFAB -> Prefab is a ScreenPrefab, unliking + unsubscribing.")
 		_unsubscribe(loaded_elements[_key] as ScreenPrefab)
 	elif scene is TapBubble:
-		print("[ScreenController] Prefab is a TapBubble! Liking + subscribing.")
+		print("[ScreenController] DESTROY PREFAB -> Prefab is a TapBubble, unliking + unsubscribing.")
 		scene.touch_input.disconnect(_start_recognition)
 		last_sentence_changed.disconnect(scene.answer)
+	elif scene is ExitMenu:
+		print("[ScreenController] DESTROY PREFAB -> Prefab is an ExitMenu, unliking + unsubscribing.")
+		scene.try_reset_scenario.disconnect(reset_scenario)
+		scene.try_reset_to_start.disconnect(reset_to_start)
+		switched_backgrounds.disconnect(scene.switch_colours)
 	
 	# Destroy the prefab
 	loaded_elements[_key].queue_free()
@@ -529,6 +544,9 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_activate_exit.connect(activate_exit_button)
 	prefab.try_deactivate_exit.connect(deactivate_exit_button)
 	
+	prefab.try_reset_to_start.connect(reset_to_start)
+	prefab.try_reset_scenario.connect(reset_scenario)
+	
 
 func _unsubscribe(prefab:ScreenPrefab) -> void:	
 	prefab.try_start_speech_recognition.disconnect(_start_recognition)
@@ -551,6 +569,8 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_activate_exit.disconnect(activate_exit_button)
 	prefab.try_deactivate_exit.disconnect(deactivate_exit_button)
 	
+	prefab.try_reset_to_start.disconnect(reset_to_start)
+	prefab.try_reset_scenario.disconnect(reset_scenario)
 
 #endregion
 
