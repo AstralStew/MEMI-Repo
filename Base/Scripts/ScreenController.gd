@@ -133,26 +133,24 @@ func reset_scenario():
 	var _learn_menu : Control = loaded_elements.get("LetsLearn_Prefab") 
 	if _learn_menu != null:
 		var anim = _learn_menu.find_child("AnimationPlayer") as AnimationPlayer
-		#anim.play("LetsLearn/LetsLearn_Final_Start",-1,0,true)
-		#await get_tree().process_frame
-		anim.play("LetsLearn/LetsLearn_Reset_"+current_set.resource_name,-1,1,false)
-		#await get_tree().process_frame
+		if current_set.resource_name == "Interpreter":
+			anim.play("RESET")
+		else: anim.play("LetsLearn/LetsLearn_Reset_"+current_set.resource_name)
 	
-	
-	# reset screen set
-	_current_set_index = 0
-	#current_set = screen_sets[0]
 	
 	await get_tree().process_frame
 	
 	# load screen 0
-	load_screen(0, true)
+	if current_set.resource_name != "Interpreter":
+		load_screen(0, true,"Skip_Start")
+	else:
+		load_screen(0, true)
 	
 	if fade_tween: fade_tween.kill()
 	fade_tween = create_tween()
 	fade_tween.tween_property(content, "modulate", Color(1,1,1,1), 0.35).set_trans(Tween.TRANS_QUAD)
 	
-	if debugging: print("[ScreenController] RESET SCENARIO -> Finished resetting to start.")
+	if debugging: print("[ScreenController] RESET SCENARIO -> Finished resetting scenario.")
 
 
 func reset_to_start():
@@ -217,7 +215,7 @@ func load_next_screen_set():
 
 
 ## Load a new screen set, using [b]_name[/b] if possible then falling back on [b]_index[/b] if not
-func load_screen_set(_name:String="",_index:int=0):
+func load_screen_set(_name:String="",_index:int=0, _skip_start:bool = false):
 	# force unload remaining stuff? nah do it bespoke in the animation
 	
 	# Grab the screen set
@@ -236,10 +234,10 @@ func load_screen_set(_name:String="",_index:int=0):
 		_current_set_index = _index
 	#current_set = screen_sets[_current_set_index]
 	
-	_load_screen_set(_current_set_index)
+	_load_screen_set(_current_set_index,_skip_start)
 
 
-func _load_screen_set(index:int):
+func _load_screen_set(index:int, _skip_start:bool = false):
 	if index >= screen_sets.size():
 		push_error("[ScreenController] ERROR -> ScreenSet index out of range! Cancelling :(")
 		return
@@ -256,9 +254,9 @@ func _load_screen_set(index:int):
 	
 	# load first screen (unless overriding for testing)
 	if overrideScreen:
-		load_screen(overrideScreenIndex, true)
+		load_screen(overrideScreenIndex if overrideScreen else 0, true, "Skip_Start" if _skip_start else "")
 	else: 
-		load_screen(0, true)
+		load_screen(0, true, "Skip_Start" if _skip_start else "")
 
 
 
@@ -281,7 +279,7 @@ func _load_pack_callback() -> void:
 #region Screen functions
 
 # ADD BACK IN "_name" AS A PROPERTY HERE, LOOK TO LOAD_SCREEN_SET FOR LOGIC
-func load_screen(_index:int=0,_play_first_anim:bool=false):
+func load_screen(_index:int=0,_play_first_anim:bool=false, _optional_marker:String=""):
 	if debugging: print("[ScreenController] Loading screen at index ",_index,"...")
 	
 	var animLibrary = current_set.get_screen(_index)
@@ -291,12 +289,18 @@ func load_screen(_index:int=0,_play_first_anim:bool=false):
 		# Tell the current set that we are shifting to that screen!
 		current_set.current_index = _index
 		
-		if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
-		add_animation_library(animLibrary.resource_name,animLibrary)
+		if !has_animation_library(animLibrary.resource_name):
+			if debugging: print("[ScreenController] Attempting to load screen '",animLibrary,"' (animLibrary)")
+			add_animation_library(animLibrary.resource_name,animLibrary)
+		elif debugging: print("[ScreenController] Skipping loading screen '",animLibrary,"' (animLibrary) as it already exists here!")
 		
 		if _play_first_anim:
-			if debugging: print("[ScreenController] Playing first animation: '",current_set.first_anim(),"'")	
-			play_animation(current_set.first_anim())
+			if _optional_marker == null:
+				if debugging: print("[ScreenController] Playing first animation: '",current_set.first_anim(),"'")
+				play_animation(current_set.first_anim())
+			else:
+				if debugging: print("[ScreenController] Playing first animation: '",current_set.first_anim(),"' at marker '",_optional_marker,"'")
+				play_animation(current_set.first_anim(),0,_optional_marker)
 
 
 func load_next_screen(_play_first_anim:bool=false):

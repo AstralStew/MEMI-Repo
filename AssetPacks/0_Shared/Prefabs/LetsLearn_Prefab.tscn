@@ -574,6 +574,7 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 script = ExtResource("1_ykllg")
+debugging = true
 
 [node name="LetsLearnMenu_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
