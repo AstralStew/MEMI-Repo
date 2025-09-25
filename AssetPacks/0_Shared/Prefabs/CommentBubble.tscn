@@ -59,8 +59,8 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
 bbcode_enabled = true
 text = "vvvvvdd"
 fit_content = true
@@ -69,6 +69,7 @@ shortcut_keys_enabled = false
 vertical_alignment = 1
 meta_underlined = false
 script = ExtResource("7_oqbe8")
+default_size = 22
 metadata/_edit_group_ = true
 
 [node name="BubbleProxy" type="BoxContainer" parent="."]

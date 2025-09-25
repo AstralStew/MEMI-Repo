@@ -401,12 +401,29 @@ func _resize(_doTween:bool=true) -> void:
 	
 	await get_tree().process_frame 
 		
-	var max_line_length = 0
-	for i in bubbleText.get_line_count():
-		if _debug: print("[OperatorBubble(",name,")] Line index = ",i,", range = ", bubbleText.get_line_range(i), ", sub = ", bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x)
-		max_line_length = maxi(bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x, max_line_length)
+	#var max_line_length = 0
+	#for i in bubbleText.get_line_count():
+		#if _debug: print("[OperatorBubble(",name,")] Line index = ",i,", range = ", bubbleText.get_line_range(i), ", sub = ", bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x)
+		#max_line_length = maxi(bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x, max_line_length)
+	#
+	#var min_size = clamp(remap(max_line_length,min_char_threshold,max_char_threshold,min_width,max_width),min_width,max_width)
+	#
 	
-	var min_size = clamp(remap(max_line_length,min_char_threshold,max_char_threshold,min_width,max_width),min_width,max_width)
+	# Copied from TapBubble, above works
+	var font = bubbleText.get_font() if !Engine.is_editor_hint() else get_theme_default_font()
+	var max_line_length = 0
+	var range := 0
+	var line_length := 0
+	for i in bubbleText.get_line_count():
+		if _debug: print("[OperatorBubble(",name,")] Min size = ",bubbleText.custom_minimum_size,", Line index = ",i,", range = ", bubbleText.get_line_range(i), ", sub = ", bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x)
+		range = bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x
+		line_length = 10
+		if _debug: print ("[OperatorBubble(",name,")] Line index = ",i)		
+		line_length += font.get_string_size(bubbleText.text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,bubbleText.current_size,bubbleText.justification_flags,TextServer.DIRECTION_LTR,TextServer.ORIENTATION_HORIZONTAL).x
+		if _debug: print ("[OperatorBubble(",name,")] Normal line length = ",line_length)
+		max_line_length = maxi(line_length, max_line_length)
+	var min_size = clamp(max_line_length,min_width,max_width)
+	
 	
 	if _debug: print("[OperatorBubble(",name,")] Get_line_count() = ",bubbleText.get_line_count(),"max_line_length = ",max_line_length,", min_size = ",min_size)
 	
@@ -426,6 +443,10 @@ func _resize(_doTween:bool=true) -> void:
 	pivot_offset = Vector2(0,size.y)
 	
 	if _debug: print("[OperatorBubble(",name,")] Finished resizing!")
+	
+	
+	
+
 
 
 

@@ -21,9 +21,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 40
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 100
 script = ExtResource("1_84asj")
 debugging = true
@@ -31,7 +31,7 @@ debugging = true
 [node name="Explanation_MC" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 0
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
@@ -70,24 +70,26 @@ auto_check = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("5_jbdvx")
 debugging = true
+default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("5_jbdvx")
 debugging = true
+default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
@@ -95,12 +97,13 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("5_jbdvx")
 debugging = true
+default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation4_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
@@ -108,12 +111,13 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("5_jbdvx")
 debugging = true
+default_size = 22
 lightSpeakerIcon = true
 
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
@@ -135,7 +139,7 @@ visible = false
 self_modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "INTERPRETER_7_YOUDIDIT_B2"
 fit_content = true
@@ -143,6 +147,7 @@ horizontal_alignment = 1
 custom_effects = [ExtResource("6_yos7i")]
 script = ExtResource("5_jbdvx")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "INTERPRETER_7_YOUDIDIT_B2"
 

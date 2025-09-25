@@ -110,17 +110,18 @@ layout_mode = 1
 offset_top = -111.0
 offset_right = 185.0
 pivot_offset = Vector2(0, 111)
-min_width = 100
+_debug = true
+max_width = 255
 
 [node name="LadPhone" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -161.1
-offset_top = 8.89
-offset_right = 652.9
-offset_bottom = 619.89
+offset_left = -650.0
+offset_top = 30.0
+offset_right = 164.0
+offset_bottom = 641.0
 grow_horizontal = 0
 rotation = -0.174533
 scale = Vector2(0.7, 0.7)

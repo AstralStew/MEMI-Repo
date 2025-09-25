@@ -95,13 +95,13 @@ custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("6_ul74m")
 debugging = true
+default_size = 28
 lightSpeakerIcon = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_VB"]
@@ -110,12 +110,13 @@ custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("6_ul74m")
 debugging = true
+default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_VB"]
@@ -124,12 +125,13 @@ custom_minimum_size = Vector2(275, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("6_ul74m")
 debugging = true
+default_size = 22
 lightSpeakerIcon = true
 
 [node name="HSeparator" type="HSeparator" parent="Explanation_VB"]

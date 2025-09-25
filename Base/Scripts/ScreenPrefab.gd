@@ -15,7 +15,9 @@ signal try_load_screen_set(_name,_index,_skip_start)
 signal try_create_prefab(_key,_scene)
 signal try_destroy_prefab(_key)
 
+signal try_play
 signal try_play_animation(_name,_delay)
+signal try_play_animation_marker(_name,_delay,_marker)
 signal try_queue_animation(_name,_delay)
 
 signal try_play_stream_from_path(_path)
@@ -26,6 +28,8 @@ signal try_deactivate_exit
 
 signal try_reset_to_start
 signal try_reset_scenario
+
+var screen_controller : ScreenController
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,13 +66,22 @@ func deactivate_exit() -> void:
 
 #region Animation functions
 
+func play() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to play current animation")	
+	try_play.emit()
+
 func play_animation(animName:String,delay:float=0) -> void:
 	if debugging: print("[ScreenPrefab] Attempting to play animation '",animName,"'")
 	try_play_animation.emit(animName,delay)
 
+func play_animation_marker(animName:String,delay:float=0,marker:StringName="") -> void:
+	if debugging: print("[ScreenPrefab] Attempting to play animation '",animName,"' at marker '",marker,"'")
+	try_play_animation_marker.emit(animName,delay,marker)
+
 func queue_animation(animName:String, delay:float=0) -> void:
 	if debugging: print("[ScreenPrefab] Attempting to queue animation '",animName,"'")
 	try_queue_animation.emit(animName,delay)
+
 
 #endregion
 

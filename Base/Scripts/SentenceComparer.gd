@@ -53,9 +53,11 @@ func compare(sentence:String) -> String:
 	if attempts > -1:
 		# ^ this is to make sure we can still do infinite tries when teaching
 		attempts -= 1
-		if attempts <= 0:
-				if debug: print("[SentenceComparer] NOTE -> Ran out of attempts! Returning giveUpAnim ('",giveUpAnim,"')")
+		#if attempts <= 0:
+		if attempts == 0:
+				if debug: print("[SentenceComparer] NOTE -> Ran out of attempts! Returning giveUpAnim ('",giveUpAnim,"') ONCE")
 				return giveUpAnim
+		elif debug: print("[SentenceComparer] NOTE -> ",attempts," attempts remaining...")
 	
 	if sentence != "":
 		if wrongConditions.size() > 0:

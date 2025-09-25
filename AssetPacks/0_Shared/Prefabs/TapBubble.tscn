@@ -1,7 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bqsbhg5xhd1r5"]
 
 [ext_resource type="Script" uid="uid://rqiwxsunuq01" path="res://Base/Scripts/TapBubble.gd" id="1_bhybv"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="2_u73pc"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_nikhr"]
 [ext_resource type="AudioStream" uid="uid://hqreq6ndpamt" path="res://AssetPacks/0_Shared/Audio/SFX/PlayerSpeechBubble.mp3" id="3_pejn0"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="4_pejn0"]
@@ -9,9 +8,11 @@
 [ext_resource type="SpriteFrames" uid="uid://bpcx2wbksnhjw" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres" id="5_bhybv"]
 [ext_resource type="AudioStream" uid="uid://rrjiytnyr08k" path="res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3" id="5_pejn0"]
 [ext_resource type="SpriteFrames" uid="uid://dfuomdfndmiwr" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres" id="6_u73pc"]
+[ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansEN-Normal.tres" id="6_xuxd2"]
 [ext_resource type="Script" uid="uid://6rg0nde078ut" path="res://Base/Scripts/LabelLiteController.gd" id="10_xuxd2"]
 
 [node name="TapBubble" type="MarginContainer"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,9 +54,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_u73pc")
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_fonts/normal_font = ExtResource("6_xuxd2")
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
@@ -63,6 +63,8 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_nikhr")
+default_size = 22
+change_font = false
 metadata/_edit_group_ = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="BubbleText"]
@@ -103,17 +105,17 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = -2.0
-offset_top = 12.0
+offset_top = 9.0
 offset_right = 178.0
-offset_bottom = 63.0
+offset_bottom = 68.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "COMMON_YOUSAY"
 autowrap_mode = 3
 uppercase = true
 script = ExtResource("10_xuxd2")
-default_size = 16
+default_size = 20
 
 [node name="BubbleTouchButton" type="Button" parent="."]
 visible = false

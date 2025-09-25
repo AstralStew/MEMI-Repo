@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lxd7xq8wr4o0"]
+[gd_scene load_steps=11 format=3 uid="uid://lxd7xq8wr4o0"]
 
 [ext_resource type="Script" uid="uid://cd84o1fnsjeo0" path="res://Base/Scripts/ExitMenu.gd" id="1_akotq"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="2_1uj2y"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="6_m5nfr"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="7_h2hgb"]
 [ext_resource type="AudioStream" uid="uid://cphmoblobbbs4" path="res://AssetPacks/0_Prerequisite/Audio/ButtonClick.wav" id="8_wljyb"]
-[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="9_vulks"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="10_digka"]
 [ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="11_ao6ln"]
 
@@ -126,7 +125,7 @@ self_modulate = Color(1, 1, 1, 0.5)
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "MENU_RESTART"
 fit_content = true
@@ -135,6 +134,7 @@ horizontal_alignment = 2
 custom_effects = [ExtResource("5_bqoff")]
 script = ExtResource("6_m5nfr")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "MENU_RESTART"
 
@@ -143,7 +143,7 @@ self_modulate = Color(1, 1, 1, 0.5)
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "MENU_HARDRESTART"
 fit_content = true
@@ -152,6 +152,7 @@ horizontal_alignment = 2
 custom_effects = [ExtResource("5_bqoff")]
 script = ExtResource("6_m5nfr")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "MENU_HARDRESTART"
 
@@ -160,7 +161,7 @@ self_modulate = Color(1, 1, 1, 0.5)
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "MENU_HARDEXIT"
 fit_content = true
@@ -169,6 +170,7 @@ horizontal_alignment = 2
 custom_effects = [ExtResource("5_bqoff")]
 script = ExtResource("6_m5nfr")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "MENU_HARDEXIT"
 
@@ -217,9 +219,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("9_vulks")
 theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "MENU_EXIT"
 fit_content = true
@@ -228,6 +228,7 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_m5nfr")
+default_size = 20
 metadata/_edit_group_ = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="ExitButton_BB/BubbleText"]
@@ -286,10 +287,10 @@ flat = true
 
 [node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="ExitButton_BB"]
 
-[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="reset_scenario"]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="slide_out"]
-[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="reset_to_start"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="reset_scenario"]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="slide_out"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="reset_to_start"]
 [connection signal="meta_link_1" from="ExitButton_BB" to="." method="slide_in"]
 [connection signal="meta_link_2" from="ExitButton_BB" to="." method="slide_out"]
 [connection signal="meta_link_1" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_1"]

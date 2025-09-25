@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw6st8a35qf1b"]
+[gd_scene load_steps=11 format=3 uid="uid://dw6st8a35qf1b"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_tgnnp"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_f4hpk"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="4_0vleq"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="4_cof65"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_toe8d"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="8_msnqm"]
+[ext_resource type="Script" uid="uid://c65kea35dsj4f" path="res://Base/Scripts/NextButton.gd" id="9_dkt07"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8oxnu"]
 shader = ExtResource("2_f4hpk")
@@ -52,10 +54,10 @@ anchor_left = 0.373
 anchor_top = 0.2
 anchor_right = 0.373
 anchor_bottom = 0.2
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -139.36
+offset_top = -85.0
+offset_right = 12.639999
+offset_bottom = 15.0
 _auto_text = ""
 _old_text = ""
 
@@ -85,10 +87,33 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -50.0
-offset_top = -50.0
+offset_top = -25.0
 offset_right = 100.0
-offset_bottom = 100.0
+offset_bottom = 125.0
 grow_vertical = 2
+
+[node name="NextButton" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("8_msnqm")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -386.0
+offset_top = -50.0
+offset_right = -113.0
+offset_bottom = 140.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.9, 0.9)
+script = ExtResource("9_dkt07")
+parent = NodePath("..")
+give_up_anim = &""
+click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+_auto_text = "[url=1]Next question[/url]"
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_old_text = "Next question"
 
 [connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ambulance.mp3"]]
 [connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_victoria.mp3"]]

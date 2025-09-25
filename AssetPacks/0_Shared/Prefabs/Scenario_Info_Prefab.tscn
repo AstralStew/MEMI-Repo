@@ -214,34 +214,35 @@ debugging = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 100
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 20
 
 [node name="Scenario_Title_L" type="Label" parent="Scenario_Title_MC"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.5)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 22
 text = " Scenario Title here"
 uppercase = true
 script = ExtResource("3_fn724")
-default_size = 16
+default_size = 22
 
 [node name="Scenario_Info_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+theme_override_constants/margin_left = -15
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_right = -15
 theme_override_constants/margin_bottom = 80
 script = ExtResource("2_3io74")
 _debug = true
 _updateInEditor = true
 adjust_top = true
-top_multiplier = 26.0
-top_addition = 5.0
+top_multiplier = 30.0
+top_addition = 10.0
 adjust_bottom = true
 bottom_multiplier = 0.0
-bottom_addition = 80.0
+bottom_addition = 85.0
 descriptionText = NodePath("Info_C/Info_TR/Info_RTL")
 
 [node name="Info_C" type="Control" parent="Scenario_Info_MC"]
@@ -265,7 +266,7 @@ expand_mode = 1
 visible = false
 z_as_relative = false
 clip_contents = false
-custom_minimum_size = Vector2(195, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.14
@@ -280,8 +281,7 @@ pivot_offset = Vector2(0, 34)
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = " Scenario Info here"
 fit_content = true
@@ -289,6 +289,7 @@ scroll_active = false
 custom_effects = [ExtResource("4_fn724")]
 script = ExtResource("5_qm50f")
 debugging = true
+default_size = 22
 
 [node name="Info_NPR" type="NinePatchRect" parent="Scenario_Info_MC/Info_C/Info_TR/Info_RTL"]
 layout_mode = 1
@@ -314,18 +315,19 @@ axis_stretch_vertical = 2
 [node name="Scenario_Emergency_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+theme_override_constants/margin_left = -15
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_right = -15
 theme_override_constants/margin_bottom = 80
 script = ExtResource("2_3io74")
 _debug = true
 _updateInEditor = true
 adjust_top = true
-top_multiplier = 26.0
-top_addition = 5.0
+top_multiplier = 30.0
+top_addition = 10.0
 adjust_bottom = true
 bottom_multiplier = 0.0
-bottom_addition = 80.0
+bottom_addition = 85.0
 descriptionText = NodePath("Emergency_C/Emergency_TR/Emergency_RTL")
 
 [node name="Emergency_C" type="Control" parent="Scenario_Emergency_MC"]
@@ -349,7 +351,7 @@ expand_mode = 1
 visible = false
 z_as_relative = false
 clip_contents = false
-custom_minimum_size = Vector2(195, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.14
@@ -364,8 +366,7 @@ pivot_offset = Vector2(0, 60)
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = " Scenario Emergency here"
 fit_content = true
@@ -373,6 +374,7 @@ scroll_active = false
 custom_effects = [ExtResource("4_fn724")]
 script = ExtResource("5_qm50f")
 debugging = true
+default_size = 22
 
 [node name="Emergency_NPR" type="NinePatchRect" parent="Scenario_Emergency_MC/Emergency_C/Emergency_TR/Emergency_RTL"]
 layout_mode = 1
@@ -398,18 +400,19 @@ axis_stretch_vertical = 2
 [node name="Scenario_Location_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+theme_override_constants/margin_left = -15
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_right = -15
 theme_override_constants/margin_bottom = 80
 script = ExtResource("2_3io74")
 _debug = true
 _updateInEditor = true
 adjust_top = true
-top_multiplier = 26.0
-top_addition = 5.0
+top_multiplier = 30.0
+top_addition = 10.0
 adjust_bottom = true
 bottom_multiplier = 0.0
-bottom_addition = 80.0
+bottom_addition = 85.0
 descriptionText = NodePath("Location_C/Location_TR/Location_RTL")
 
 [node name="Location_C" type="Control" parent="Scenario_Location_MC"]
@@ -433,7 +436,7 @@ expand_mode = 1
 visible = false
 z_as_relative = false
 clip_contents = false
-custom_minimum_size = Vector2(195, 0)
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.14
@@ -448,8 +451,7 @@ pivot_offset = Vector2(0, 60)
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 18
-theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "Scenario Location here"
 fit_content = true

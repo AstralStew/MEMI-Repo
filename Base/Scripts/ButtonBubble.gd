@@ -53,7 +53,7 @@ class_name ButtonBubble
 
 
 
-@export_group("Read Only")
+@export_group("READ ONLY")
 @export var _old_text := ""
 
 

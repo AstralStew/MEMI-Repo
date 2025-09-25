@@ -524,6 +524,9 @@ func destroy_all_prefabs_except(_protected:PackedStringArray):
 
 
 func _subscribe(prefab:ScreenPrefab) -> void:
+	
+	prefab.screen_controller = self
+	
 	prefab.try_start_speech_recognition.connect(_start_recognition)
 	last_sentence_changed.connect(prefab.last_sentence_received)
 	
@@ -536,7 +539,9 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_load_screen_set.connect(load_screen_set)
 	prefab.try_load_next_screen_set.connect(load_next_screen_set)
 	
+	prefab.try_play.connect(play)
 	prefab.try_play_animation.connect(play_animation)
+	prefab.try_play_animation_marker.connect(play_animation)
 	prefab.try_queue_animation.connect(queue_animation)
 	
 	prefab.try_play_stream_from_path.connect(play_stream_from_path)
@@ -561,7 +566,9 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	prefab.try_load_screen_set.disconnect(load_screen_set)
 	prefab.try_load_next_screen_set.disconnect(load_next_screen_set)
 	
+	prefab.try_play.disconnect(play)
 	prefab.try_play_animation.disconnect(play_animation)
+	prefab.try_play_animation_marker.disconnect(play_animation)
 	prefab.try_queue_animation.disconnect(queue_animation)
 	
 	prefab.try_play_stream_from_path.disconnect(play_stream_from_path)
@@ -740,7 +747,7 @@ func _input(event):
 func check_attempts_while_cheating() -> bool:
 	if sentenceComparer.attempts > -1:
 		sentenceComparer.attempts -= 1
-		if sentenceComparer.attempts <= 0:
+		if sentenceComparer.attempts == 0:
 			if debugging: print("[SentenceComparer] SpeechCheating, ran out of attempts! Sending GiveUp instead...")
 			lastSentence = "Cheated: GiveUp"
 			last_sentence_changed.emit(lastSentence)

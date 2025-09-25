@@ -22,9 +22,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 40
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 100
 script = ExtResource("1_d4hcx")
 debugging = true
@@ -32,10 +32,10 @@ debugging = true
 [node name="Explanation_MC" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 30
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
-custom_minimum_size = Vector2(305, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 15
@@ -53,9 +53,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 2.0
-offset_left = -150.0
-offset_right = 50.0
-offset_bottom = 430.0
+offset_left = -65.0
+offset_top = 10.0
+offset_right = 135.0
+offset_bottom = 440.0
 grow_horizontal = 2
 pivot_offset = Vector2(756, 327)
 texture = ExtResource("4_6rkpc")
@@ -71,59 +72,64 @@ auto_check = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("4_am75m")
 debugging = true
+default_size = 22
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("4_am75m")
 debugging = true
+default_size = 22
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("4_am75m")
 debugging = true
+default_size = 22
 
 [node name="Explanation4_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("4_am75m")
 debugging = true
+default_size = 22
 
 [node name="Explanation5_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("4_am75m")
 debugging = true
+default_size = 22
 
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -140,7 +146,7 @@ visible = false
 self_modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "LOCATION_8_YOUDIDIT_B2"
 fit_content = true
@@ -148,6 +154,7 @@ horizontal_alignment = 1
 custom_effects = [ExtResource("6_nfdmr")]
 script = ExtResource("4_am75m")
 debugging = true
+default_size = 22
 autopopulate = true
 autokey = "INTERPRETER_7_YOUDIDIT_B2"
 

@@ -78,7 +78,7 @@ func set_text(_text:String):
 
 func pop_in() -> void:
 	if _debug: print("[ScenarioButton] Popping in.")
-	animator_AP.play("ScenarioButton_Start")
+	if !visible: animator_AP.play("ScenarioButton_Start")
 
 
 func pop_out() -> void:
@@ -88,7 +88,7 @@ func pop_out() -> void:
 		animator_AP.play("ScenarioButton_Minimise")
 		await get_tree().create_timer(animator_AP.get_animation("ScenarioButton_Minimise").length).timeout
 	if _debug: print("[ScenarioButton] Text hidden, finishing.")
-	animator_AP.play("ScenarioButton_Finish")
+	if visible: animator_AP.play("ScenarioButton_Finish")
 
 
 func toggle() -> void:

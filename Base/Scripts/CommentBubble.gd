@@ -463,7 +463,7 @@ func _resize(_doTween:bool=true) -> void:
 		
 		#line_length *= current_mult
 		
-		line_length += img_count * 10
+		line_length += img_count * 20
 		max_line_length = maxi(line_length, max_line_length)
 		if _debug: print ("[CommentBubble(",name,")] Post IMG line length = ",line_length)
 		
