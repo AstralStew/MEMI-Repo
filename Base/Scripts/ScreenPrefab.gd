@@ -35,11 +35,27 @@ var screen_controller : ScreenController
 func _ready() -> void:
 	pass
 
+#region Bridging functions
 
 func start_speech_recognition() -> void:	
 	if debugging: print("[ScreenPrefab] Attempting to start speech recognition...")
 	try_start_speech_recognition.emit()
 
+func exit_normal() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to exit normally...")
+	BridgeManager.exit_normal()
+
+func exit_quick() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to exit quickly...")
+	BridgeManager.exit_quick()
+
+func share_experience() -> void:
+	if debugging: print("[ScreenPrefab] Attempting to share experience...")
+	BridgeManager.share_experience()
+
+#endregion
+
+#region Scenario functions
 
 func reset_to_start() -> void:
 	if debugging: print("[ScreenPrefab] Attempting to reset to start...")
@@ -49,6 +65,7 @@ func reset_scenario() -> void:
 	if debugging: print("[ScreenPrefab] Attempting to reset scenario...")
 	try_reset_scenario.emit()
 
+#endregion
 
 #region Animation functions
 

@@ -211,7 +211,10 @@ func pop_in(_text:String) -> void:
 	# fade in text
 	await get_tree().create_timer(pop_in_bg_fade_d).timeout
 	_fade_text(true,pop_in_text_d,pop_in_text_e,pop_in_text_t)
-	
+
+func pop_in_if_not_english(_text:String) -> void:
+	if LanguageManager.currentLanguage != Constants.LanguageCode.en:
+		pop_in(_text)
 
 
 func pop_out() -> void:

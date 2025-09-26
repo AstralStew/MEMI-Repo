@@ -128,6 +128,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("7_28ad4")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
 _auto_bg_colour = Color(1, 1, 1, 0.3)
@@ -163,7 +164,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_yes.mp3"]]
-[connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Repeat"]]
+[connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="reset_scenario"]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]
 [connection signal="meta_link_9" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_7a_Fade"]]

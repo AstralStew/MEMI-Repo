@@ -1,5 +1,5 @@
 class_name ExitMenu 
-extends Node
+extends Control
 
 
 @export var exit_button:ButtonBubble
@@ -22,11 +22,13 @@ extends Node
 @export var slide_in_duration := 0.25
 @export var slide_in_ease := Tween.EaseType.EASE_IN_OUT
 @export var slide_in_transition := Tween.TransitionType.TRANS_BOUNCE
-@export var slide_in_menu_pos := Vector2(0,0)
+@export var slide_in_menu_ltr_pos := Vector2(-478,0)
+@export var slide_in_menu_rtl_pos := Vector2(0,0)
 @export var slide_out_duration := 0.25
 @export var slide_out_ease := Tween.EaseType.EASE_OUT
 @export var slide_out_transition := Tween.TransitionType.TRANS_BOUNCE
-@export var slide_out_menu_pos := Vector2(0,0)
+@export var slide_out_menu_ltr_pos := Vector2(32,0)
+@export var slide_out_menu_rtl_pos := Vector2(0,0)
 @export var fade_overlay_duration := 0.25
 @export var fade_overlay_ease := Tween.EaseType.EASE_OUT
 @export var fade_overlay_transition := Tween.TransitionType.TRANS_BOUNCE
@@ -40,6 +42,12 @@ signal try_reset_to_start
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	if LanguageManager.is_RTL():
+		layout_direction = Control.LAYOUT_DIRECTION_RTL
+	else:
+		layout_direction = Control.LAYOUT_DIRECTION_LTR
+	
 	overlay.modulate = Color(overlay_colour,0)
 	await get_tree().create_timer(0.1).timeout 
 	exit_button.pop_in(exit_text)
@@ -55,6 +63,14 @@ func reset_to_start() -> void:
 	try_reset_to_start.emit()
 
 
+func exit_normal() -> void:
+	if debugging: print("[ExitMenu] EXIT NORMAL -> Attempting to exit normally...")
+	BridgeManager.exit_normal()
+
+func exit_quick() -> void:
+	if debugging: print("[ExitMenu] EXIT QUICK  Attempting to exit quickly...")
+	BridgeManager.exit_quick()
+
 
 
 func slide_in() -> void:
@@ -63,8 +79,8 @@ func slide_in() -> void:
 	
 	overlay.visible = true
 	_fade_overlay(overlay_colour,fade_overlay_duration,fade_overlay_ease,fade_overlay_transition)
-	_slide_menu(slide_in_menu_pos,slide_in_duration,slide_in_ease,slide_in_transition)
-	
+	if LanguageManager.is_RTL(): _slide_menu(slide_in_menu_rtl_pos,slide_in_duration,slide_in_ease,slide_in_transition)
+	else: _slide_menu(slide_in_menu_ltr_pos,slide_in_duration,slide_in_ease,slide_in_transition)
 	await get_tree().create_timer(0.3,true,false).timeout 
 	
 	if !text_is_dark:
@@ -83,7 +99,8 @@ func slide_out() -> void:
 	
 	_fade_overlay(Color(overlay_colour,0),fade_overlay_duration,fade_overlay_ease,fade_overlay_transition)
 	fading_overlay.tween_callback(overlay.set.bind("visible",false))
-	_slide_menu(slide_out_menu_pos,slide_out_duration,slide_out_ease,slide_out_transition)
+	if LanguageManager.is_RTL(): _slide_menu(slide_out_menu_rtl_pos,slide_out_duration,slide_out_ease,slide_out_transition)
+	else: _slide_menu(slide_out_menu_ltr_pos,slide_out_duration,slide_out_ease,slide_out_transition)
 	
 	await get_tree().create_timer(0.3,true,false).timeout 
 	

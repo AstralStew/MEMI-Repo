@@ -40,23 +40,29 @@ func _get_language_text(key: String) -> String:
 	return tr(key)
 
 
-@onready var content : Control = get_node("/root/AllMother/ContentCanvas/ScreenController/MarginContainer/Content")
-
 func set_language (lang: Constants.LanguageCode) -> void:
-	if debugging: print("[LanguageManager] Content: ",content)
+	var content : Control = get_node("/root/AllMother/ContentCanvas/ScreenController/MarginContainer/Content")
+	var exit_menu : Control = get_node("/root/AllMother/MenuCanvas/ExitMenu")
+	if debugging: print("[LanguageManager] Content: ",content,", ExitMenu:",exit_menu)
 	var language = Constants.LanguageCode.keys()[lang]
+	
 	TranslationServer.set_locale(language)
 	currentLanguage = lang
-	if content != null:
-		match(lang):
-			Constants.LanguageCode.en:
-				content.layout_direction = Control.LAYOUT_DIRECTION_LTR
-			Constants.LanguageCode.ar:
-				content.layout_direction = Control.LAYOUT_DIRECTION_RTL
-			Constants.LanguageCode.prs:
-				content.layout_direction = Control.LAYOUT_DIRECTION_RTL
-			Constants.LanguageCode.zh:
-				content.layout_direction = Control.LAYOUT_DIRECTION_LTR
+
+	match(lang):
+		Constants.LanguageCode.en:
+			if content != null: content.layout_direction = Control.LAYOUT_DIRECTION_LTR
+			if exit_menu != null: exit_menu.layout_direction = Control.LAYOUT_DIRECTION_LTR
+		Constants.LanguageCode.ar:
+			if content != null: content.layout_direction = Control.LAYOUT_DIRECTION_RTL
+			if exit_menu != null: exit_menu.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.prs:
+			if content != null: content.layout_direction = Control.LAYOUT_DIRECTION_RTL
+			if exit_menu != null: exit_menu.layout_direction = Control.LAYOUT_DIRECTION_RTL
+		Constants.LanguageCode.zh:
+			if content != null: content.layout_direction = Control.LAYOUT_DIRECTION_LTR
+			if exit_menu != null: exit_menu.layout_direction = Control.LAYOUT_DIRECTION_LTR
+	
 	language_changed.emit()
 	if debugging: print("[LanguageManager] Set language to: ",currentLanguage)
 

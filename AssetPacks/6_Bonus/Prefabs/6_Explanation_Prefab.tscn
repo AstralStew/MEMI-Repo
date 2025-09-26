@@ -112,6 +112,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("7_scqq1")]
 layout_mode = 2
+always_pop_out_on_click = false
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
@@ -144,4 +145,5 @@ mouse_filter = 2
 
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Bonus/Bonus_1a_Fade"]]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Bonus/Bonus_3_Call"]]
+[connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="share_experience"]
 [connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="play_animation" binds= [&"Bonus/Bonus_11a_Fade"]]

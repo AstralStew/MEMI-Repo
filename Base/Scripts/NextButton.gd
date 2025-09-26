@@ -21,6 +21,8 @@ func pop_in(_text:String) -> void:
 	setup_next()
 	super.pop_in(_text)
 
+
+
 func click() -> void:
 	if _debug: print("[NextBubble(",name,")] Attempting to play '",give_up_anim,"' at marker 'next_question'")
 	parent.screen_controller.play_animation(give_up_anim,0,"next_question")

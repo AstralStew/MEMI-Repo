@@ -6,6 +6,8 @@ class_name ButtonBubble
 @export var _debug := false
 @export var _updateInEditor := false
 
+@export var always_pop_out_on_click := true
+
 @export_group("References")
 #@export var pop_in_sound : AudioStream = null
 @export var click_sound : AudioStream = null
@@ -165,6 +167,9 @@ func pop_in_by_unlock_status(_unlocked_text:StringName,_fallback:StringName) -> 
 
 
 func pop_out() -> void:
+	#if !visible:
+		#if _debug: push_warning("[ButtonBubble(",name,")] NOTE -> Not visible, cancelling pop out!")
+		#return
 	if _debug: print("[ButtonBubble(",name,")] NOTE -> Popping out!")
 	
 	# fade out bubble (no resize)
@@ -344,38 +349,47 @@ func _resize() -> void:
 func _send_meta_link_1():
 	click()
 	meta_link_1.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_2():
 	click()
 	meta_link_2.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_3():
 	click()
 	meta_link_3.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_4():
 	click()
 	meta_link_4.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_5():
 	click()
 	meta_link_5.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_6():
 	click()
 	meta_link_6.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_7():
 	click()
 	meta_link_7.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_8():
 	click()
 	meta_link_8.emit()
+	if always_pop_out_on_click: pop_out()
 
 func _send_meta_link_9():
 	click()
 	meta_link_9.emit()
+	if always_pop_out_on_click: pop_out()
 
 #endregion
 

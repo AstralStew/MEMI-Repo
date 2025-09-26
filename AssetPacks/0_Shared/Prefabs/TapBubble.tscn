@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://rqiwxsunuq01" path="res://Base/Scripts/TapBubble.gd" id="1_bhybv"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_nikhr"]
-[ext_resource type="AudioStream" uid="uid://hqreq6ndpamt" path="res://AssetPacks/0_Shared/Audio/SFX/PlayerSpeechBubble.mp3" id="3_pejn0"]
+[ext_resource type="AudioStream" uid="uid://dycpfe6eca0pj" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_BubbleHostPopin.mp3" id="3_xuxd2"]
+[ext_resource type="AudioStream" uid="uid://doohqn16eey6a" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_AnswerCorrect.mp3" id="4_16d4k"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="4_pejn0"]
-[ext_resource type="AudioStream" uid="uid://dyum4rl0atpj" path="res://AssetPacks/0_Shared/Audio/SFX/CorrectAnswer.mp3" id="4_xuxd2"]
 [ext_resource type="SpriteFrames" uid="uid://bpcx2wbksnhjw" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres" id="5_bhybv"]
-[ext_resource type="AudioStream" uid="uid://rrjiytnyr08k" path="res://AssetPacks/0_Shared/Audio/SFX/Fail.mp3" id="5_pejn0"]
+[ext_resource type="AudioStream" uid="uid://clmmqa5m0cnr4" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_AnswerFail.mp3" id="5_ddfbp"]
 [ext_resource type="SpriteFrames" uid="uid://dfuomdfndmiwr" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres" id="6_u73pc"]
 [ext_resource type="FontVariation" uid="uid://moj6bdpymsgf" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansEN-Normal.tres" id="6_xuxd2"]
 [ext_resource type="Script" uid="uid://6rg0nde078ut" path="res://Base/Scripts/LabelLiteController.gd" id="10_xuxd2"]
@@ -35,9 +35,9 @@ theme_override_constants/margin_bottom = 19
 script = ExtResource("1_bhybv")
 _updateInEditor = true
 default_tap_hint = ExtResource("5_bhybv")
-pop_in_sound = ExtResource("3_pejn0")
-correct_sound = ExtResource("4_xuxd2")
-incorrect_sound = ExtResource("5_pejn0")
+pop_in_sound = ExtResource("3_xuxd2")
+correct_sound = ExtResource("4_16d4k")
+incorrect_sound = ExtResource("5_ddfbp")
 incorrect_pause = 2.0
 pulse_out = 0.35
 pulse_in_trans = 5

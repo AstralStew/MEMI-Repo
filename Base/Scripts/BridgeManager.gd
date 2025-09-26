@@ -46,12 +46,45 @@ func _initialise() -> void:
 	pageURL = JavaScriptBridge.eval("pageURL;")
 	folderURL = JavaScriptBridge.eval("folderURL;")
 	print("[BridgeManager] PageURL = ",pageURL," , FolderURL = ",folderURL)	
+		
+	
+	LoadManager.request_started.connect(loading_started)
+	LoadManager.request_error.connect(loading_finished)
+	LoadManager.request_failed.connect(loading_finished)
+	LoadManager.request_successful.connect(loading_finished)
 
 
-func _test_javascript() -> void:	
+
+
+func _test_javascript() -> void:
 	print("[BridgeManager] Testing javascript...")
 	# Direct way of doing calls
 	JavaScriptBridge.eval("""alert("Hello from Godot!") """);
+
+
+
+func loading_started() -> void:
+	print("[BridgeManager] Announcing that we're loading stuff...")
+	window.loadingStarted()
+
+func loading_finished() -> void:
+	print("[BridgeManager] Announcing that we've finished loading stuff...")
+	window.loadingFinished()
+
+func exit_normal() -> void:
+	print("[BridgeManager] Announcing that we wanna exit...")
+	window.exitNormal()
+
+func exit_quick() -> void:
+	print("[BridgeManager] Announcing that we wanna exit quickly...")
+	window.exitQuick()
+
+func share_experience() -> void:
+	print("[BridgeManager] Announcing that we wanna share the experience...")
+	window.shareExperience()
+
+
+
 
 func _start_recognition() -> void:	
 	print("[BridgeManager] Attempting to start recognition...")

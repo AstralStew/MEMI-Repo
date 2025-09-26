@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://f1fu6kifcv0p"]
 
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="1_bcwoe"]
-[ext_resource type="AudioStream" uid="uid://cphmoblobbbs4" path="res://AssetPacks/0_Prerequisite/Audio/ButtonClick.wav" id="2_gasvt"]
+[ext_resource type="AudioStream" uid="uid://p2xm1xq3wbwp" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_ButtonClick.mp3" id="2_f330p"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_hlj1k"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="4_7oxlh"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_sf7od"]
@@ -30,7 +30,8 @@ theme_override_constants/margin_bottom = 19
 script = ExtResource("1_bcwoe")
 _debug = true
 _updateInEditor = true
-click_sound = ExtResource("2_gasvt")
+always_pop_out_on_click = null
+click_sound = ExtResource("2_f330p")
 max_char_threshold = 24
 click_size = 0.9
 click_inout = 0.05
@@ -124,4 +125,3 @@ flat = true
 [connection signal="meta_link_8" from="BubbleText" to="." method="_send_meta_link_8"]
 [connection signal="meta_link_9" from="BubbleText" to="." method="_send_meta_link_9"]
 [connection signal="pressed" from="BubbleText/BubbleBG/ScenarioTouchButton" to="." method="check_meta_link_from_button"]
-[connection signal="pressed" from="BubbleText/BubbleBG/ScenarioTouchButton" to="." method="pop_out"]

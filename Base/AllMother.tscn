@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=58 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="AnimationLibrary" uid="uid://br01xyeysgu6u" path="res://AssetPacks/6_Bonus/Animations/Bonus.tres" id="3_3alyw"]
@@ -8,6 +8,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://cj6bvcuhrusno" path="res://AssetPacks/4_Questions/Animations/Questions.tres" id="4_cd02o"]
 [ext_resource type="Script" uid="uid://d3g1rtmb2n2rp" path="res://Base/Scripts/ScreenController.gd" id="4_eopm5"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eopm5"]
+[ext_resource type="AnimationLibrary" uid="uid://bouuubqgb64je" path="res://AssetPacks/1_Intro/Animations/Intro.tres" id="5_heh3n"]
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="AnimationLibrary" uid="uid://fjo5xkrra3dm" path="res://AssetPacks/3_Location/Animations/Location.tres" id="5_lxd4l"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Prerequisite/ScreenSets/Intro.tres" id="5_qbn4n"]
@@ -735,6 +736,7 @@ root_node = NodePath("MarginContainer")
 libraries = {
 &"Bonus": ExtResource("3_3alyw"),
 &"Interpreter": ExtResource("3_hrcfs"),
+&"Intro": ExtResource("5_heh3n"),
 &"Location": ExtResource("5_lxd4l"),
 &"NoHelp": ExtResource("4_5usye"),
 &"Questions": ExtResource("4_cd02o")
@@ -742,10 +744,12 @@ libraries = {
 autoplay = "testing_anim_library/testing_animation"
 script = ExtResource("4_eopm5")
 debugging = true
+startRecordingStreamPath = &"res://AssetPacks/0_Shared/Audio/S0_SHARED_MicOn.mp3"
+stopRecordingStreamPath = &"res://AssetPacks/0_Shared/Audio/S0_SHARED_MicOff.mp3"
 overrideResetHierarchy = true
 overrideAnswerCheating = true
 overrideMenuUnlocked = true
-overrideLanguageIndex = 1
+overrideLanguageIndex = 3
 overrideScreenIndex = 3
 overrideTimeScale = true
 overrideTimeScaleFactor = 10.0
@@ -1105,6 +1109,7 @@ autokey = "FINALMENU_1_SELECTION_B2"
 
 [node name="ExitButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/LetsLearn_Prefab/LetsLearnMenu_VB/LetsLearnButtons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_bg_colour = Color(0.156863, 0.0901961, 0.141176, 1)
 _auto_text_colour = Color(1, 1, 1, 1)
@@ -1201,7 +1206,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("26_5usye")
@@ -1220,7 +1225,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("27_mn8u3")
@@ -1291,7 +1296,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 96)
+pivot_offset = Vector2(49.375, 96)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("26_5usye")
@@ -1310,7 +1315,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 107.520004)
+pivot_offset = Vector2(53.375, 107.520004)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("27_mn8u3")
@@ -1381,7 +1386,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("26_5usye")
@@ -1400,7 +1405,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("27_mn8u3")
@@ -1494,6 +1499,7 @@ alignment = 2
 
 [node name="ConfirmBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Steps_Prefab/Buttons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.157, 0.09, 0.141, 0.8)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Steps_Prefab/Buttons_VB"]
@@ -1523,15 +1529,14 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 40
 script = ExtResource("13_kku6m")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 0
 
 [node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Explanation_MC"]
@@ -1567,7 +1572,6 @@ debugging = true
 auto_check = true
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Explanation_MC/Explanation_VB"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -1628,6 +1632,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
 _auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
@@ -1664,7 +1669,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="2_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C" instance=ExtResource("28_x2bhh")]
-visible = true
 layout_mode = 2
 
 [node name="Operator_Call_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C" instance=ExtResource("28_20xqg")]
@@ -1683,15 +1687,14 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 40
 script = ExtResource("13_kku6m")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/6_Explanation_Prefab"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 20
 
 [node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/6_Explanation_Prefab/Explanation_MC"]
 custom_minimum_size = Vector2(265, 0)
@@ -1771,6 +1774,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/6_Explanation_Prefab/Buttons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
 _auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
@@ -1812,6 +1816,7 @@ layout_mode = 2
 theme_override_constants/margin_bottom = -30
 
 [node name="6_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/6_Explanation_Prefab/LeftAligned_C" instance=ExtResource("30_fw3jg")]
+visible = false
 layout_mode = 2
 
 [node name="Scenario_Info_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/6_Explanation_Prefab" instance=ExtResource("31_54nga")]
@@ -1824,15 +1829,14 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 40
 script = ExtResource("13_kku6m")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 20
 
 [node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/Explanation_MC"]
 custom_minimum_size = Vector2(265, 0)
@@ -1868,7 +1872,6 @@ _updateInEditor = true
 auto_check = true
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/Explanation_MC/Explanation_VB"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -1925,6 +1928,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/Buttons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
 _auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
@@ -1965,6 +1969,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="4_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/LeftAligned_C" instance=ExtResource("42_8wirx")]
+visible = false
 layout_mode = 2
 
 [node name="Scenario_Info_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab" instance=ExtResource("31_54nga")]
@@ -1977,15 +1982,14 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 40
 script = ExtResource("13_kku6m")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/5_Explanation_Prefab"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 60
+theme_override_constants/margin_top = 20
 
 [node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/5_Explanation_Prefab/Explanation_MC"]
 custom_minimum_size = Vector2(265, 0)
@@ -2021,7 +2025,6 @@ _updateInEditor = true
 auto_check = true
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/5_Explanation_Prefab/Explanation_MC/Explanation_VB"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -2065,6 +2068,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/5_Explanation_Prefab/Buttons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
 _auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
@@ -2105,6 +2109,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="5_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/5_Explanation_Prefab/LeftAligned_C" instance=ExtResource("43_heh3n")]
+visible = false
 layout_mode = 2
 
 [node name="Scenario_Info_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/5_Explanation_Prefab" instance=ExtResource("31_54nga")]
@@ -2122,6 +2127,7 @@ script = ExtResource("13_kku6m")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
@@ -2229,6 +2235,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB" instance=ExtResource("22_fkmet")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
 _auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)

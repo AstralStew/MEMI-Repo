@@ -205,15 +205,9 @@ func _link_clicked(meta):
 			meta_link_16.emit()
 		_:
 			if debugging: print("[LabelController] ERROR -> No match, bad meta link! :(")
-		
-		#match meta:
-		#"{www.google.com}": print("durp")
-		#"www.google.com":
-			#print("success!")
-			#OS.shell_open(str(meta))
-		#"{1}":print("this is a bracketed one")
-		#"_func_name":print("_func_name_called")
 
-
-func _on_meta_link_1(extra_arg_0: Color) -> void:
-	pass # Replace with function body.
+func check_meta_link_from_button() -> void:
+	if text.contains("{"):
+		if debugging: print("[LabelController(",name,")] Sending meta link '",text.substr(text.findn("{"),2),"' via external button...")
+		_link_clicked(text.substr(text.findn("{"),3))
+	else: push_warning("[LabelController(",name,")] Checked meta link via external button but no '{' detected, ignoring.")

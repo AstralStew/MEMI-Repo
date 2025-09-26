@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="6_m5nfr"]
 [ext_resource type="Texture2D" uid="uid://cwux8n10vsic6" path="res://AssetPacks/0_Shared/Images/quick_exit.png" id="7_akotq"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="7_h2hgb"]
-[ext_resource type="AudioStream" uid="uid://cphmoblobbbs4" path="res://AssetPacks/0_Prerequisite/Audio/ButtonClick.wav" id="8_wljyb"]
+[ext_resource type="AudioStream" uid="uid://p2xm1xq3wbwp" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_ButtonClick.mp3" id="9_akotq"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="10_digka"]
 [ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="11_ao6ln"]
 
@@ -31,9 +31,8 @@ dark_button_text_colour = Color(0, 0, 0, 1)
 overlay_colour = Color(0, 0, 0, 0.35000002)
 slide_in_ease = 0
 slide_in_transition = 11
-slide_in_menu_pos = Vector2(-478, 0)
 slide_out_transition = 11
-slide_out_menu_pos = Vector2(32, 0)
+slide_out_menu_rtl_pos = Vector2(-544, 0)
 fade_overlay_duration = 0.15
 fade_overlay_transition = 0
 
@@ -177,6 +176,7 @@ autokey = "MENU_HARDEXIT"
 
 [node name="QuickExit_RTL" type="RichTextLabel" parent="SlidingMenu"]
 clip_contents = false
+layout_direction = 2
 layout_mode = 0
 offset_left = 122.0
 offset_top = 359.0
@@ -196,7 +196,7 @@ script = ExtResource("6_m5nfr")
 debugging = true
 default_size = 22
 autopopulate = true
-autokey = "MENU_HARDEXIT"
+autokey = "MENU_QUICKEXIT"
 
 [node name="TextureRect" type="TextureRect" parent="SlidingMenu/QuickExit_RTL"]
 z_index = -1
@@ -214,6 +214,17 @@ texture = ExtResource("7_akotq")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="QuickExitTouchButton" type="Button" parent="SlidingMenu/QuickExit_RTL/TextureRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
 [node name="ExitButton_BB" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
@@ -225,17 +236,17 @@ offset_left = -174.54001
 offset_right = 15.26004
 offset_bottom = 60.0
 grow_horizontal = 0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.85, 0.85)
 pivot_offset = Vector2(94.900024, 30)
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 script = ExtResource("7_h2hgb")
 _debug = true
-click_sound = ExtResource("8_wljyb")
+click_sound = ExtResource("9_akotq")
 min_width = 60
 max_char_threshold = 24
 bg_border_size = 1.0
@@ -327,10 +338,13 @@ flat = true
 
 [node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="ExitButton_BB"]
 
-[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="slide_out"]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="reset_scenario"]
-[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="slide_out"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="slide_out"]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="reset_to_start"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="slide_out"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardExit_RTL" to="." method="exit_normal"]
+[connection signal="meta_link_1" from="SlidingMenu/QuickExit_RTL" to="." method="exit_quick"]
+[connection signal="pressed" from="SlidingMenu/QuickExit_RTL/TextureRect/QuickExitTouchButton" to="SlidingMenu/QuickExit_RTL" method="check_meta_link_from_button"]
 [connection signal="meta_link_1" from="ExitButton_BB" to="." method="slide_in"]
 [connection signal="meta_link_2" from="ExitButton_BB" to="." method="slide_out"]
 [connection signal="meta_link_1" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_1"]

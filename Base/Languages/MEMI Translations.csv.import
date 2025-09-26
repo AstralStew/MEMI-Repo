@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://bgesiy4eqo5rn"
+uid="uid://bk114c2a7ttkw"
 
 [deps]
 
-files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation", "res://Base/Languages/MEMI Translations.en foreign language script.translation"]
+files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation", "res://Base/Languages/MEMI Translations.en foreign language script when different from en.translation"]
 
 source_file="res://Base/Languages/MEMI Translations.csv"
-dest_files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation", "res://Base/Languages/MEMI Translations.en foreign language script.translation"]
+dest_files=["res://Base/Languages/MEMI Translations.en.translation", "res://Base/Languages/MEMI Translations.ar.translation", "res://Base/Languages/MEMI Translations.prs.translation", "res://Base/Languages/MEMI Translations.zh.translation", "res://Base/Languages/MEMI Translations.en foreign language script when different from en.translation"]
 
 [params]
 
