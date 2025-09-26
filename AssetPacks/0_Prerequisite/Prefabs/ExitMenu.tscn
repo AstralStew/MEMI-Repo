@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lxd7xq8wr4o0"]
+[gd_scene load_steps=12 format=3 uid="uid://lxd7xq8wr4o0"]
 
 [ext_resource type="Script" uid="uid://cd84o1fnsjeo0" path="res://Base/Scripts/ExitMenu.gd" id="1_akotq"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="2_1uj2y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d13he36umlg53" path="res://AssetPacks/0_Prerequisite/Images/LogoText_en.png" id="4_i7hc6"]
 [ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_bqoff"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="6_m5nfr"]
+[ext_resource type="Texture2D" uid="uid://cwux8n10vsic6" path="res://AssetPacks/0_Shared/Images/quick_exit.png" id="7_akotq"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="7_h2hgb"]
 [ext_resource type="AudioStream" uid="uid://cphmoblobbbs4" path="res://AssetPacks/0_Prerequisite/Audio/ButtonClick.wav" id="8_wljyb"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="10_digka"]
@@ -121,7 +122,6 @@ grow_horizontal = 0
 theme_override_constants/separation = 15
 
 [node name="Restart_RTL" type="RichTextLabel" parent="SlidingMenu/VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0.5)
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -132,6 +132,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 2
 custom_effects = [ExtResource("5_bqoff")]
+meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
 default_size = 22
@@ -139,7 +140,6 @@ autopopulate = true
 autokey = "MENU_RESTART"
 
 [node name="HardRestart_RTL" type="RichTextLabel" parent="SlidingMenu/VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0.5)
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -150,6 +150,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 2
 custom_effects = [ExtResource("5_bqoff")]
+meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
 default_size = 22
@@ -157,7 +158,6 @@ autopopulate = true
 autokey = "MENU_HARDRESTART"
 
 [node name="HardExit_RTL" type="RichTextLabel" parent="SlidingMenu/VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0.5)
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -168,11 +168,51 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 2
 custom_effects = [ExtResource("5_bqoff")]
+meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
 default_size = 22
 autopopulate = true
 autokey = "MENU_HARDEXIT"
+
+[node name="QuickExit_RTL" type="RichTextLabel" parent="SlidingMenu"]
+clip_contents = false
+layout_mode = 0
+offset_left = 122.0
+offset_top = 359.0
+offset_right = 322.0
+offset_bottom = 389.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "MENU_QUICKEXIT"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [ExtResource("5_bqoff")]
+meta_underlined = false
+script = ExtResource("6_m5nfr")
+debugging = true
+default_size = 22
+autopopulate = true
+autokey = "MENU_HARDEXIT"
+
+[node name="TextureRect" type="TextureRect" parent="SlidingMenu/QuickExit_RTL"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.115051
+offset_top = -29.0
+offset_right = 41.93805
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_akotq")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ExitButton_BB" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -1,3 +1,4 @@
+TextureRect
 Control
 VBoxContainer
 MarginContainer
@@ -10,5 +11,4 @@ AnimationPlayer
 Container
 Node
 AudioStreamPlayer
-TextureRect
 RichTextLabel

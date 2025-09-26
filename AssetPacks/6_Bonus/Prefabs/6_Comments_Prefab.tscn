@@ -121,3 +121,6 @@ _old_text = "Next question"
 [connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/6_Bonus/Audio/P6_BONUS_childbleeding.mp3"]]
 [connection signal="meta_link_5" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_yes.mp3"]]
 [connection signal="meta_link_6" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/6_Bonus/Audio/P6_BONUS_four.mp3"]]
+[connection signal="meta_link_7" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_arabic.mp3"]]
+[connection signal="meta_link_8" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_dari.mp3"]]
+[connection signal="meta_link_9" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_mandarin.mp3"]]

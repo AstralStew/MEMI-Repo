@@ -29,6 +29,13 @@ signal meta_link_6
 signal meta_link_7
 signal meta_link_8
 signal meta_link_9
+signal meta_link_10
+signal meta_link_11
+signal meta_link_12
+signal meta_link_13
+signal meta_link_14
+signal meta_link_15
+signal meta_link_16
 
 const DARK_SPEAKER_PATH := "res://AssetPacks/0_Prerequisite/Images/SpeakerIconDark.png"
 const LIGHT_SPEAKER_PATH := "res://AssetPacks/0_Prerequisite/Images/SpeakerIconLight.png"
@@ -175,6 +182,27 @@ func _link_clicked(meta):
 		"{9}":
 			if debugging: print("[LabelController] Sending meta 9 signal...")
 			meta_link_9.emit()
+		"{10}":
+			if debugging: print("[LabelController] Sending meta 10 signal...")
+			meta_link_10.emit()
+		"{11}":
+			if debugging: print("[LabelController] Sending meta 11 signal...")
+			meta_link_11.emit()
+		"{12}":
+			if debugging: print("[LabelController] Sending meta 12 signal...")
+			meta_link_12.emit()
+		"{13}":
+			if debugging: print("[LabelController] Sending meta 13 signal...")
+			meta_link_13.emit()
+		"{14}":
+			if debugging: print("[LabelController] Sending meta 14 signal...")
+			meta_link_14.emit()
+		"{15}":
+			if debugging: print("[LabelController] Sending meta 15 signal...")
+			meta_link_15.emit()
+		"{16}":
+			if debugging: print("[LabelController] Sending meta 16 signal...")
+			meta_link_16.emit()
 		_:
 			if debugging: print("[LabelController] ERROR -> No match, bad meta link! :(")
 		

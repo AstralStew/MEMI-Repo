@@ -110,7 +110,13 @@ signal meta_link_6
 signal meta_link_7
 signal meta_link_8
 signal meta_link_9
-
+signal meta_link_10
+signal meta_link_11
+signal meta_link_12
+signal meta_link_13
+signal meta_link_14
+signal meta_link_15
+signal meta_link_16
 
 #region Initialisation
 
@@ -530,5 +536,26 @@ func _send_meta_link_8():
 
 func _send_meta_link_9():
 	meta_link_9.emit()
+
+func _send_meta_link_10():
+	meta_link_10.emit()
+
+func _send_meta_link_11():
+	meta_link_11.emit()
+
+func _send_meta_link_12():
+	meta_link_12.emit()
+
+func _send_meta_link_13():
+	meta_link_13.emit()
+
+func _send_meta_link_14():
+	meta_link_14.emit()
+
+func _send_meta_link_15():
+	meta_link_15.emit()
+
+func _send_meta_link_16():
+	meta_link_16.emit()
 
 #endregion

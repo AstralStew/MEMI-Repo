@@ -102,7 +102,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -121,7 +121,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_5jv4b")
@@ -192,7 +192,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 96)
+pivot_offset = Vector2(49.375, 96)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -211,7 +211,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 107.520004)
+pivot_offset = Vector2(53.375, 107.520004)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_5jv4b")
@@ -282,7 +282,7 @@ offset_right = 10.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(52.5, 81)
+pivot_offset = Vector2(49.375, 81)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("5_pjkio")
@@ -301,7 +301,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(56.5, 90.72)
+pivot_offset = Vector2(53.375, 90.72)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_5jv4b")
@@ -333,11 +333,11 @@ debugging = true
 auto_check = true
 
 [node name="ExplanationLabels_VB" type="VBoxContainer" parent="Explanation_VB"]
-custom_minimum_size = Vector2(300, 150)
+custom_minimum_size = Vector2(305, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_constants/separation = 15
+theme_override_constants/separation = 20
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="Explanation_VB/ExplanationLabels_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -419,7 +419,7 @@ autokey = "LEARNSTEPS_2_EXPLANATION_B2"
 [node name="BottomMargin_HSep" type="HSeparator" parent="Buttons_VB"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [connection signal="meta_link_1" from="Explanation_VB/Steps_HB/Step1_Bubble/BubbleText" to="Explanation_VB/Steps_HB/Step1_Bubble" method="_send_meta_link_1"]
 [connection signal="meta_link_2" from="Explanation_VB/Steps_HB/Step1_Bubble/BubbleText" to="Explanation_VB/Steps_HB/Step1_Bubble" method="_send_meta_link_2"]
