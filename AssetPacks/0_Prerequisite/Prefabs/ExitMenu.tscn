@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://lxd7xq8wr4o0"]
+[gd_scene load_steps=11 format=3 uid="uid://lxd7xq8wr4o0"]
 
 [ext_resource type="Script" uid="uid://cd84o1fnsjeo0" path="res://Base/Scripts/ExitMenu.gd" id="1_akotq"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="2_1uj2y"]
 [ext_resource type="Texture2D" uid="uid://co2v4yweffik8" path="res://Base/Images/MemiLogo.png" id="3_tx561"]
 [ext_resource type="Texture2D" uid="uid://d13he36umlg53" path="res://AssetPacks/0_Prerequisite/Images/LogoText_en.png" id="4_i7hc6"]
-[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_bqoff"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="6_m5nfr"]
 [ext_resource type="Texture2D" uid="uid://cwux8n10vsic6" path="res://AssetPacks/0_Shared/Images/quick_exit.png" id="7_akotq"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="7_h2hgb"]
@@ -130,7 +129,6 @@ text = "MENU_RESTART"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 2
-custom_effects = [ExtResource("5_bqoff")]
 meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
@@ -148,7 +146,6 @@ text = "MENU_HARDRESTART"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 2
-custom_effects = [ExtResource("5_bqoff")]
 meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
@@ -166,7 +163,6 @@ text = "MENU_HARDEXIT"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 2
-custom_effects = [ExtResource("5_bqoff")]
 meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
@@ -190,7 +186,6 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
-custom_effects = [ExtResource("5_bqoff")]
 meta_underlined = false
 script = ExtResource("6_m5nfr")
 debugging = true
@@ -237,7 +232,7 @@ offset_right = 15.26004
 offset_bottom = 60.0
 grow_horizontal = 0
 scale = Vector2(0.85, 0.85)
-pivot_offset = Vector2(94.900024, 30)
+pivot_offset = Vector2(94.900024, 36.5)
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_constants/margin_left = 15
@@ -356,5 +351,5 @@ flat = true
 [connection signal="meta_link_7" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_7"]
 [connection signal="meta_link_8" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_8"]
 [connection signal="meta_link_9" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_9"]
-[connection signal="pressed" from="ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="ExitButton_BB" method="check_meta_link_from_button"]
 [connection signal="pressed" from="ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="ExitButton_BB" method="pop_out"]
+[connection signal="pressed" from="ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="ExitButton_BB" method="check_meta_link_from_button"]

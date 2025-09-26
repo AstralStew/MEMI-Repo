@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3talsc3cfdjt"]
+[gd_scene load_steps=10 format=3 uid="uid://c3talsc3cfdjt"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_xoyxg"]
 [ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="2_ykmd4"]
 [ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="3_77r6p"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_kqmik"]
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="5_pjkio"]
-[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="5_ykmd4"]
 [ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="6_5jv4b"]
 [ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="7_kqmik"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="7_pjkio"]
@@ -398,6 +397,7 @@ alignment = 2
 
 [node name="ConfirmBubble" parent="Buttons_VB" instance=ExtResource("7_pjkio")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.157, 0.09, 0.141, 0.8)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
@@ -409,7 +409,6 @@ theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 fit_content = true
 horizontal_alignment = 1
-custom_effects = [ExtResource("5_ykmd4")]
 script = ExtResource("4_kqmik")
 debugging = true
 default_size = 22

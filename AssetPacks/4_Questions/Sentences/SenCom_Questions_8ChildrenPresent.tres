@@ -5,13 +5,14 @@
 
 [sub_resource type="Resource" id="Resource_rqgly"]
 script = ExtResource("1_jfke2")
-phrases = Array[String](["Yes"])
+checkType = 1
+phrases = Array[String](["Yes", "Yep", "Yeah", "Yup"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]
 script = ExtResource("2_cxfa8")
 correctConditions = Array[ExtResource("1_jfke2")]([SubResource("Resource_rqgly")])
-wrongConditions = Array[String](["No"])
+wrongConditions = Array[String](["No", "Nope", "Nah", "Not"])
 correctAnim = "Questions/Questions_11a_Correct"
 wrongAnim = "Questions/Questions_11b_Wrong"
 mumboAnim = "Questions/Questions_11c_Mumbo"

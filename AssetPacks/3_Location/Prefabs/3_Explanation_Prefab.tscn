@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1hjoq475ykua"]
+[gd_scene load_steps=9 format=3 uid="uid://b1hjoq475ykua"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_d4hcx"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_6l0e5"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="4_am75m"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="5_6rkpc"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="5_shmvb"]
-[ext_resource type="RichTextEffect" uid="uid://cl08kjpofuevw" path="res://Base/RichTextEffects/RichTextFadeIn3.tres" id="6_nfdmr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c1y5l"]
 shader = ExtResource("2_6l0e5")
@@ -139,6 +138,7 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("5_shmvb")]
 layout_mode = 2
+always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
@@ -151,7 +151,6 @@ bbcode_enabled = true
 text = "LOCATION_8_YOUDIDIT_B2"
 fit_content = true
 horizontal_alignment = 1
-custom_effects = [ExtResource("6_nfdmr")]
 script = ExtResource("4_am75m")
 debugging = true
 default_size = 22

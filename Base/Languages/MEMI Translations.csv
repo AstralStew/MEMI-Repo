@@ -236,7 +236,7 @@ INTERPRETER_7_YOUDIDIT_ALT1,Good start!,تدرّب باستمرار!,تمرین 
 INTERPRETER_7_YOUDIDIT_ALT2,Stay on the call until the interpreter arrives.,انتظر على الخط إلى أن يوصّل المُترجم.,تا آمدن ترجمان به روی خط صبر کنید.,在电话上等翻译加入。,Stay on the call until the interpreter arrives.
 INTERPRETER_7_YOUDIDIT_ALT3,Keep practicing the English words for interpreter and the language you speak. ,"تعلّم كيف تنطق كلمة ""العربية"" بالإنجليزي.","یاد بگیرید که چگونه بگویید دری را به انگلیسی تلفظ کنید
 ",学习如何用英语说普通话 - Mandarin,"Learn how to say ""YOUR LANGUAGE"" in English"
-INTERPRETER_7_YOUDIDIT_ALT4,,,,,Practicing the English pronunciation for interpreter and Arabic/Dari/Mandrain
+INTERPRETER_7_YOUDIDIT_ALT4, ,,,,Practicing the English pronunciation for interpreter and Arabic/Dari/Mandrain
 , ,,,,
 ,,,,,
 ,,,,,
@@ -451,7 +451,7 @@ QUESTIONS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤا�
 QUESTIONS_9_QUESTION6_O1,Do they have a weapon?,Do they have a weapon?,Do they have a weapon?,Do they have a weapon?,
 QUESTIONS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-QUESTIONS_9_QUESTION6_C1,,هل يحمل سلاح؟,آیا آنها یک اسلحه دارند؟,他们是否有武器？,Do they have a weapon?
+QUESTIONS_9_QUESTION6_C1, ,هل يحمل سلاح؟,آیا آنها یک اسلحه دارند؟,他们是否有武器？,Do they have a weapon?
 QUESTIONS_9_QUESTION6_CC,Well done!,أحسنت!,آفرین!,很好！,
 QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon (like a knife or a bat) so the answer is [url={10}]<~no.~>[/url],إنه لا يحمل سلاحًا (كسكين أو مضرب) فالإجابة هي: [url={8}]<~no.~>[/url],او کدام اسلحه (مانند یک چاقو یا یک میله چوب) ندارد پس جواب [url={8}]<~no.~>[/url] است,他没有武器（比如刀或棍），所以回答 [url={8}]<~no.~>[/url],
 QUESTIONS_9_QUESTION6_CM,"He missed your answer, please try again. ",,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
@@ -463,7 +463,7 @@ QUESTIONS_9_QUESTION6_CD,It's OK if you can't answer every question.,السؤا�
 QUESTIONS_10_QUESTION7_O1,Do you need an ambulance?,Do you need an ambulance?,Do you need an ambulance?,Do you need an ambulance?,
 QUESTIONS_10_QUESTION7_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-QUESTIONS_10_QUESTION7_C1,,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Do you need an ambulance?
+QUESTIONS_10_QUESTION7_C1, ,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Do you need an ambulance?
 QUESTIONS_10_QUESTION7_CC,Nice.,جميل.,عالی,好。,Nice.
 QUESTIONS_10_QUESTION7_CW,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.","ليس هناك أحدًا متأذي، [url={8}]<~No,~>[/url] فأنت لا تحتاج إلى الإسعاف.","کسی مجروح نشده است. [url={8}]<~No,~>[/url] شما به یک امبولانس نیاز ندارید.","没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。","No one is hurt. [url={8}]<~No,~>[/url] you don't need an ambulance."
 QUESTIONS_10_QUESTION7_CM,"He missed your answer, please try again. ",ليس باستطاعتهم فهمك.,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
@@ -474,7 +474,7 @@ QUESTIONS_10_QUESTION7_CD,It's OK if you can't answer every question.,السؤا
 ,,,,,
 QUESTIONS_11_QUESTION8_O1,Are there children present?,Are there children present?,Are there children present?,Are there children present?,
 ,,,,,
-QUESTIONS_11_QUESTION8_C1,,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Are there children present?
+QUESTIONS_11_QUESTION8_C1, ,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Are there children present?
 QUESTIONS_11_QUESTION8_CC,Great job!,عظيم!,خوب انجام دادید!,很好！,Great job!
 QUESTIONS_11_QUESTION8_CW,[url={9}]<~Yes~>[/url] there are children at the party. ,هناك أطفال في الاحتفال، بإمكانك قول: [url={7}]<~yes.~>[/url],دراین مهمانی اطفال شامل است. شما می توانید بگویید  [url={7}]<~yes.~>[/url],派对上有儿童，你可以说 [url={7}]<~yes.~>[/url],There are children at the party. You can say [url={7}]<~yes.~>[/url]
 QUESTIONS_11_QUESTION8_CM,"He missed your answer, please try again. ",ليس باستطاعتهم فهمك.,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
@@ -671,7 +671,7 @@ BONUS_7_QUESTION4_CG,[url={4}]<~A child is bleeding from the head.~>[/url],"لق
 BONUS_8_QUESTION5_O1,Is she breathing?,Is she breathing?,Is she breathing?,Is she breathing?,
 BONUS_8_QUESTION5_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-BONUS_8_QUESTION6_C1,,سألوك: هل تتنفّس؟,آنها پرسیدند: آیا او نفس میکشد؟,他们问：她有呼吸吗？,They asked: Is she breathing?
+BONUS_8_QUESTION6_C1, ,سألوك: هل تتنفّس؟,آنها پرسیدند: آیا او نفس میکشد؟,他们问：她有呼吸吗？,They asked: Is she breathing?
 BONUS_8_QUESTION5_CG,"[url={5}]<~Yes,~>[/url] she is breathing.","[url={5}]<~Yes,~>[/url] أنها تتنفّس.","[url={5}]<~Yes,~>[/url] او نفس میکشد.","[url={5}]<~Yes,~>[/url] 她有呼吸",
 BONUS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,Next question
 ,,,,,
@@ -680,7 +680,7 @@ BONUS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال ا
 BONUS_9_QUESTION6_O1,Is she awake?,Is she awake?,Is she awake?,Is she awake?,
 BONUS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-BONUS_9_QUESTION6_C1,,لقد سألوك: هل هي صاحية؟ ,آنها پرسیدند: آیا او بیدار است؟,他们问：她有意识吗？,They asked: Is she awake?
+BONUS_9_QUESTION6_C1, ,لقد سألوك: هل هي صاحية؟ ,آنها پرسیدند: آیا او بیدار است؟,他们问：她有意识吗？,They asked: Is she awake?
 BONUS_9_QUESTION6_CG,"[url={5}]<~Yes,~>[/url] she is awake."," [url={5}]<~Yes,~>[/url]  إنها صاحية.","[url={5}]<~Yes,~>[/url]  او بیدار است.",她有意识。,
 BONUS_8_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,
 ,,,,,
@@ -688,7 +688,7 @@ BONUS_8_QUESTION6_CD,It's OK if you can't answer every question.,السؤال ا
 ,,,,,
 BONUS_10_QUESTION7_O1,How old is she?,How old is she?,How old is she?,How old is she?,
 ,,,,,
-BONUS_9_QUESTION7_C1,,سألوك: كم عمرها؟,آنها پرسیدند: او چند ساله است؟,他们问：她多大？,They asked: How old is she?
+BONUS_9_QUESTION7_C1, ,سألوك: كم عمرها؟,آنها پرسیدند: او چند ساله است؟,他们问：她多大？,They asked: How old is she?
 BONUS_10_QUESTION7_CG,She is [url={6}]<~four.~>[/url] You've done well to get this far!,عمرها 4 سنوات [url={6}]<~four~>[/url]  لقد أحسنت في أنك وصلت إلى هذه المرحلة.,او چهار ساله است [url={6}]<~four~>[/url]  شما خوب انجام داده اید تا به اینجا رسیده اید!,她4岁。[url={6}]<~four.~>[/url] 到现在为止你都做得很好！,She is four. You've done well to get this far!
 BONUS_10_QUESTION7_CD,You've done well to get this far!,أحسنت في أنك وصلت إلى هذه المرحلة., شما خوب انجام داده اید تا به اینجا رسیده اید!,到现在为止你都做得很好！,You've done well to get this far!
 ,,,,,

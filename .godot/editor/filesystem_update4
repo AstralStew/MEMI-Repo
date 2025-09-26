@@ -37,3 +37,13 @@ res://AssetPacks/3_Location/Sentences/SenCom_Location_WhatAddress.tres
 res://AssetPacks/3_Location/Sentences/SenCom_Location_WhatEmergency.tres
 res://Base/AllMother.tscn
 res://AssetPacks/2_Interpreter/Prefabs/2_Explanation_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/LetsLearn_Prefab.tscn
+res://AssetPacks/2_Interpreter/Prefabs/2_Steps_Prefab.tscn
+res://AssetPacks/3_Location/Prefabs/3_Explanation_Prefab.tscn
+res://AssetPacks/4_Questions/Prefabs/4_Explanation_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/Scenario_Info_Prefab.tscn
+res://AssetPacks/0_Shared/Prefabs/ScenarioButton.tscn
+res://AssetPacks/0_Prerequisite/Prefabs/ExitMenu.tscn
+res://AssetPacks/5_NoHelp/Prefabs/5_Explanation_Prefab.tscn
+res://Base/Scripts/header.txt
+res://AssetPacks/2_Interpreter/Animations/Interpreter_1_LetsTry.res

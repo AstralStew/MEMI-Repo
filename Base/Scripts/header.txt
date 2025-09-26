@@ -29,7 +29,7 @@ function loadingFinished() {
   // Hook into here to hide the above 
 }
 
-function exit_normal() {
+function exitNormal() {
   console.log("[HEADER] User is trying to exit normally.");  
   // Hook into here to goto landing page
 }
@@ -45,6 +45,10 @@ function shareExperience() {
 }
 
 
+function startRecognition() {
+  console.log("[HEADER] Trying to start recognition!");  
+  recognition.start();
+}
 
 <!-- Callbacks -->
 
