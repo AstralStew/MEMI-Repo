@@ -61,7 +61,26 @@ func _test_javascript() -> void:
 	# Direct way of doing calls
 	JavaScriptBridge.eval("""alert("Hello from Godot!") """);
 
-
+#
+#func _test_A_callback(_args) -> void:
+	#var num = 0
+	#for arg in _args:
+		#print("[TEST A] arg #",num," =",arg)
+		#num += 1
+	## Get the first argument
+	#var js_event = _args[0]
+	#print("[TEST A] js_event = ",js_event)
+	#
+#
+#func _test_B_callback(_args) -> void:
+	#var num = 0
+	#for arg in _args:
+		#print("[TEST B] arg #",num," =",arg)
+		#num += 1
+	## Get the first argument
+	#var js_event = _args[0]
+	#print("[TEST B] js_event = ",js_event)
+	
 
 func loading_started() -> void:
 	print("[BridgeManager] Announcing that we're loading stuff...")
@@ -94,13 +113,38 @@ func _start_recognition() -> void:
 	print("[BridgeManager] On Speech Start callback!")
 	speech_start.emit()
 
+func _stop_recognition() -> void:
+	window.stopRecognition()
+
 func _on_speech_result_callback(_args):
+	#print("[BridgeManager] On Speech Result callback...")
+	#var js_event = _args[0]
+	#var phrase = js_event.results[0][0].transcript;
+	##var confidence = js_event.results[0][0].confidence;
+	#print("[BridgeManager] Phrase received: ", phrase)
+	#speech_phrase.emit(phrase)
 	print("[BridgeManager] On Speech Result callback...")
-	var js_event = _args[0]
-	var phrase = js_event.results[0][0].transcript;
-	#var confidence = js_event.results[0][0].confidence;
-	print("[BridgeManager] Phrase received: ", phrase)
-	speech_phrase.emit(phrase)
+	
+	await get_tree().process_frame
+	
+	var js_results = """
+	function getLastResults() {
+		return lastResultsJoined;
+	}
+	getLastResults();
+	"""
+	
+	var last_results = JavaScriptBridge.eval(js_results)
+	print("[BridgeManager] Last Results = ", last_results)
+	for phrase in last_results.split("|"):
+		print("[BridgeManager] Phrase received: ", phrase)
+	
+	##NEED THIS
+	#speech_phrase.emit(phrase)
+	
+	
+
+
 
 func _on_speech_end_callback(_args):
 	print("[BridgeManager] On Speech End callback!")

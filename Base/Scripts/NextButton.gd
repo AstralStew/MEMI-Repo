@@ -28,6 +28,6 @@ func click() -> void:
 	parent.screen_controller.play_animation(give_up_anim,0,"next_question")
 	super.click()
 
-
-func check_meta_link_from_button() -> void:
-	click()
+#
+#func check_meta_link_from_button() -> void:
+	#click()

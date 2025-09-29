@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5jv046867grj"]
+
+[ext_resource type="Script" uid="uid://cup1dj2h8d1bh" path="res://Base/testing_bridge.gd" id="1_1jmpp"]
+
+[node name="TestingBridge" type="Node"]
+script = ExtResource("1_1jmpp")

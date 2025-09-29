@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_b1u8h"]
 script = ExtResource("1_kviyu")
-phrases = Array[String](["Shepparton"])
+phrases = Array[String](["Shepparton", "Shepperton", "Sheppardton", "Shepperdton", "Shepperdon", "Sheppardon"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [sub_resource type="Resource" id="Resource_ga2p5"]

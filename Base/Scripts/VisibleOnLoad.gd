@@ -1,5 +1,8 @@
 extends Control
 
+
+@export var auto_start := false
+
 @export var debugging := false
 #@export var speed := 1.0
 @export var print_text := false
@@ -7,6 +10,7 @@ extends Control
 var debug_text : Label = null
 
 func _ready() -> void:
+	if !auto_start: return
 	LoadManager.request_started.connect(_start)
 	LoadManager.request_successful.connect(_end)
 	LoadManager.request_skipped.connect(_end)

@@ -3,7 +3,7 @@ COMMON_YOUSAY,YOU SAY,أنت تقول,شما بگویید,你说,
 COMMON_000SAYS,000 SAYS,يقول موظّف 000,000 میگوید,000说,
 COMMON_EXIT,[url={1}]EXIT[/url],[url={1}]أخرج[/url],[url={1}]ترک کنید[/url],[url={1}]退出[/url],
 COMMON_ALLSCENARIOS,[url={9}]All scenarios[/url],,,,
-COMMON_NEXT,Next question,السيناريو التالي,سناریوی بعدی,下一个场景,
+COMMON_NEXT,[url={1}]Continue[/url],تابع,ادامه دهید,继续,
 ,,,,,
 ,,,,,
 ,,,,,
@@ -213,7 +213,7 @@ INTERPRETER_6_QUESTION3_C3,Say [url={6}]<~Interpreter~>[/url] and the language y
  [url={8}]<~Interpreter, Dari~>[/url]","说 
 [url={9}]<~Interpreter, Mandrin~>[/url]","Say [url={7?}]<~Interpreter, LAN. ~>[/url]"
 INTERPRETER_6_QUESTION3_CC,Fantastic!,رائع!,خیلی عالی!,非常好！,Fantastic!
-INTERPRETER_6_QUESTION3_CW,Say the [u]language[/u] you need and [url={6}]<~Interpreter~>[/url],"قل:[url={7}]<~Interpreter, Arabic~>[/url]","بگویید
+INTERPRETER_6_QUESTION3_CW,Say the language you need and [url={6}]<~Interpreter~>[/url],"قل:[url={7}]<~Interpreter, Arabic~>[/url]","بگویید
  [url={8}]<~Interpreter, Dari~>[/url]","说 
 [url={9}]<~Interpreter, Mandarin~>[/url]","Say [url={7?}]<~Interpreter, LAN. ~>[/url]"
 INTERPRETER_6_QUESTION3_CM,"She missed your answer, please try again. ",لا يستطيعون فهمك.,آنها حرف شما را نمی فهمند.,他们听不懂你的话。,They can't understand you.
@@ -228,8 +228,8 @@ INTERPRETER_7_YOUDIDIT_T2,Stay on the call until the interpreter arrives.,انت
 INTERPRETER_7_YOUDIDIT_T3,They will ask questions in your language so that emergency services can help you.,سيسألك المُترجم الأسئلة بلغتك بحيثُ تستطيع خدمات الطوارئ مُساعدتك.,آنها به زبان خود تان از شما سوال خواهند پرسید تا خدمات اضطراری بتوانند به شما کمک کنند.,他们会用普通话问你问题，以便应急服务机构为你提供帮助。,They will ask you questions in your language so that emergency services can help you.
 INTERPRETER_7_YOUDIDIT_T4,You now know how to call 000 if you need help in an emergency in Australia.,تعرف الآن كيف تطلب الطوارئ 000 إن كان لديك حالة طارئة في أستراليا.,حالا شما میدانید که در صورت پیش آمدن شرایط اضطراری در استرالیا چگونه به 000 تماس بگیرید.,你现在知道在澳大利亚遇到紧急情况需要帮助时如何拨打000了。,You now know how to call 000 if you need help in an emergency in Australia.
 ,,,,,
-INTERPRETER_7_YOUDIDIT_B1, [url={3}]Next scenario[/url],السيناريو التالي,سناریوی بعدی,下一个场景,Next scenario
-INTERPRETER_7_YOUDIDIT_B2, [url={1}]Try again[/url],حاول ثانيةً,دوباره تلاش کنید,再试,Try again
+INTERPRETER_7_YOUDIDIT_B1,[url={3}]Continue[/url],[url={3}]تابع[/url],[url={3}]ادامه دهید[/url],[url={3}]继续[/url],Continue
+INTERPRETER_7_YOUDIDIT_B2,[url={1}]Try again[/url],حاول ثانيةً,دوباره تلاش کنید,再试,Try again
 ,,,,,
 ,,,,,
 INTERPRETER_7_YOUDIDIT_ALT1,Good start!,تدرّب باستمرار!,تمرین تان را ادامه دهید.,继续练习！,Good start!
@@ -317,11 +317,11 @@ LOCATION_7_QUESTION4_O1,Why do you need the ambulance?,Why do you need the ambul
 LOCATION_7_QUESTION4_O2,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.
 ,,,,,
 LOCATION_7_QUESTION4_C1,Let’s practice asking for an interpreter again.,لنتدرّب على طلب مُترجم شفهي مرةً ثانية.,بیایید درخواست نمودن یک ترجمان را دوباره تمرین کنیم.,让我们再练一遍要翻译。,Let’s practice asking for an interpreter again.
-LOCATION_7_QUESTION4_C2,Say [url={5}]<~Interpreter~>[/url] and the [b]language[/b] you speak in English.,"قل: [url={7}]<~Interpreter, Arabic.~>[/url]","بگویید [url={8}]<~Interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
+LOCATION_7_QUESTION4_C2,Say [url={5}]<~interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~interpreter, Arabic.~>[/url]","بگویید [url={8}]<~interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
 LOCATION_7_QUESTION4_CC,Well done!,أحسنت!,آفرین!,好！,Well done!
-LOCATION_7_QUESTION4_CW,Don't forget your language!,"قل: [url={7}]<~Interpreter, Arabic.~>[/url]","بگویید [url={8}]<~Interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
+LOCATION_7_QUESTION4_CW,"Say the language you speak in English, and [url={5}]<~interpreter.~>[/url]","قل: [url={7}]<~interpreter, Arabic.~>[/url]","بگویید [url={8}]<~interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
 LOCATION_7_QUESTION4_CM,"He missed your answer, please try again. ",لا يستطيعون فهمك,آنها حرف شما را نمیفهمند,他们听不懂你的话。,They can't understand you
-LOCATION_7_QUESTION4_CG,Say [url={5}]<~Interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~Interpreter, Arabic.~>[/url]","بگویید [url={8}]<~Interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
+LOCATION_7_QUESTION4_CG,Say [url={5}]<~interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~interpreter, Arabic.~>[/url]","بگویید [url={8}]<~Interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
 .,,,,,
 ,,,,,
 ,,,,,
@@ -333,11 +333,11 @@ in English",كيف تُشارك معلومات المكان بالإنجليزي
 LOCATION_8_YOUDIDIT_T5,"- and to ask for an
 interpreter",كيف تطلب مُترجم شفهي,و یک ترجمان درخواست کنید,- 如何要翻译,- and to ask for an interpreter
 ,,,,,
-LOCATION_8_YOUDIDIT_B1, [url={3}]Next scenario[/url],السنيناريو التالي,سناریوی بعدی,下一个场景,Next scenario
+LOCATION_8_YOUDIDIT_B1,[url={3}]Continue[/url],[url={3}]تابع[/url],[url={3}]ادامه دهید[/url],[url={3}]继续[/url],Continue
 LOCATION_8_YOUDIDIT_B2, [url={1}]Try again[/url],حاول ثانيةً,دوباره تلاش کنید,再试,Try again
 ,,,,,
 LOCATION_8_YOUDIDIT_ALT1,Well done,تدرّب باستمرار!,تمرین تان را ادامه دهید.,继续练习！,Keep practising!
-LOCATION_8_YOUDIDIT_ALT2,Repeat this call to practice,راجع هذا السيناريو مرةً ثانية لتتدرّب على إعطاء عنوان بالإنجليزية.,برای تمرین ارائه نمودن یک آدرس به انگلیسی این سناریو را دوباره امتحان کنید.,再用这个场景来练习用英语提供地址。,Try this scenario again to practice giving an address in English.
+LOCATION_8_YOUDIDIT_ALT2,Repeat this call to practice:,راجع هذا السيناريو مرةً ثانية لتتدرّب على إعطاء عنوان بالإنجليزية.,برای تمرین ارائه نمودن یک آدرس به انگلیسی این سناریو را دوباره امتحان کنید.,再用这个场景来练习用英语提供地址。,Try this scenario again to practice giving an address in English.
 LOCATION_8_YOUDIDIT_ALT3,- sharing an address in English,,,,
 LOCATION_8_YOUDIDIT_ALT4,- asking for an interpreter,,,,
 LOCATION_8_YOUDIDIT_ALT5, ,,,,
@@ -411,7 +411,7 @@ QUESTIONS_6_QUESTION3_O2,"Emergency services, where do you need the police?","Em
 ,,,,,
 QUESTIONS_6_QUESTION3_C1,Say the address of your emergency now.,قل عنوان الحالة الطارئة الآن.,حالا آدرس شرایط اضطراری خود را بگویید.,现在说紧急情况的地址,Say the address of your emergency now.
 QUESTIONS_6_QUESTION3_CC,Nice.,جميل,خیلی خوب,好,Nice
-QUESTIONS_6_QUESTION3_CM,Try again. Check the address here.,"العنوان هو: [url={X}]<~3 High Street, Doreen~>[/url]","آدرس این است: [url={X}]<~3 High Street, Doreen~>[/url]","地址是：[url={X}]<~3 High Street, Doreen~>[/url]","The address is: [url={X}]<~3 High Street, Doreen~>[/url]"
+QUESTIONS_6_QUESTION3_CM,Try again. Check the address here.,"العنوان هو: [url={4}]<~3 High Street, Doreen~>[/url]","آدرس این است: [url={4}]<~3 High Street, Doreen~>[/url]","地址是：[url={4}]<~3 High Street, Doreen~>[/url]","The address is: [url={X}]<~3 High Street, Doreen~>[/url]"
 QUESTIONS_6_QUESTION3_CG,"The address is [url={4}]<~3 High Street, Doreen.~>[/url]",العنوان هو: 3 هاي ستريت، دورين، فيكتوريا [3 High Street Doreen]، لنُتابع.,آدرس  3High Street Doreen است. بیایید ادامه دهیم.,地址是3 High Street Doreen。让我们继续。,The address is 3 High Street Doreen. Let's keep going.
 ,,,,,
 ,,,,,
@@ -441,7 +441,7 @@ QUESTIONS_8_QUESTION5_C1,You can answer yes or no.,"لقد سألوك فيما �
 [url={X}]<~yes~>[/url] یا [url={X}]<~no.~>[/url]","他们会问是否出现了暴力事件？
 [url={X}]<~yes~>[/url] 或 [url={X}]<~no.~>[/url]",They asked if there has been any violence?
 QUESTIONS_8_QUESTION5_CC,Correct.,صحيح.,درست.,对。,Correct.
-QUESTIONS_8_QUESTION5_CW,He kicked the fence. This is violence. Try again,لقد ركل السور، وهذا عنف. حاول ثانيةً.,او حصار حویلی را با لگد زد. خشونت صورت گرفته است. دوباره تلاش کنید.,他踢了围栏，这是暴力。再试。,He kicked the fence. This is violence. Try again.
+QUESTIONS_8_QUESTION5_CW,He kicked the fence. This is violence. Try again.,لقد ركل السور، وهذا عنف. حاول ثانيةً.,او حصار حویلی را با لگد زد. خشونت صورت گرفته است. دوباره تلاش کنید.,他踢了围栏，这是暴力。再试。,He kicked the fence. This is violence. Try again.
 QUESTIONS_8_QUESTION5_CM,You can answer [url={9}]<~yes~>[/url] or [url={10}]<~no.~>[/url],باستطاعتك الإجابة: [url={X}]<~yes~>[/url] أو [url={X}]<~no.~>[/url],شما می توانید اینگونه جواب دهید [url={X}]<~yes~>[/url] یا [url={X}]<~no.~>[/url],你可以回答 [url={X}]<~yes~>[/url] 或 [url={X}]<~no.~>[/url],You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
 QUESTIONS_8_QUESTION5_CG,The answer is [url={10}]<~no.~>[/url],الإجابة الصحيحة هي  [url={8}]<~no.~>[/url],جواب درست  [url={8}]<~no.~>[/url] است.,正确回答是 [url={8}]<~no.~>[/url],The answer is [url={8}]<~no.~>[/url]
 QUESTIONS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,Next question
@@ -451,9 +451,9 @@ QUESTIONS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤا�
 QUESTIONS_9_QUESTION6_O1,Do they have a weapon?,Do they have a weapon?,Do they have a weapon?,Do they have a weapon?,
 QUESTIONS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-QUESTIONS_9_QUESTION6_C1, ,هل يحمل سلاح؟,آیا آنها یک اسلحه دارند؟,他们是否有武器？,Do they have a weapon?
+QUESTIONS_9_QUESTION6_C1,"For example a knife, a bat or a gun?",هل يحمل سلاح؟,آیا آنها یک اسلحه دارند؟,他们是否有武器？,Do they have a weapon?
 QUESTIONS_9_QUESTION6_CC,Well done!,أحسنت!,آفرین!,很好！,
-QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon (like a knife or a bat) so the answer is [url={10}]<~no.~>[/url],إنه لا يحمل سلاحًا (كسكين أو مضرب) فالإجابة هي: [url={8}]<~no.~>[/url],او کدام اسلحه (مانند یک چاقو یا یک میله چوب) ندارد پس جواب [url={8}]<~no.~>[/url] است,他没有武器（比如刀或棍），所以回答 [url={8}]<~no.~>[/url],
+QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon. The answer is [url={10}]<~no.~>[/url],إنه لا يحمل سلاحًا (كسكين أو مضرب) فالإجابة هي: [url={8}]<~no.~>[/url],او کدام اسلحه (مانند یک چاقو یا یک میله چوب) ندارد پس جواب [url={8}]<~no.~>[/url] است,他没有武器（比如刀或棍），所以回答 [url={8}]<~no.~>[/url],He doesn’t have a weapon (like a knife or a bat) so the answer is [url={10}]<~no.~>[/url]
 QUESTIONS_9_QUESTION6_CM,"He missed your answer, please try again. ",,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
 QUESTIONS_9_QUESTION6_CG,The answer is [url={10}]<~no.~>[/url],لنُتابع ونرى ما الأسئلة الأخرى التي يمكن أن تُسأل.,بیایید ادامه دهیم و ببینیم چه سوالات دیگری پرسیده خواهند شد.,让我们继续，看看还会问其它什么问题。,Let’s keep going and see what other questions could ask. 
 QUESTIONS_9_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي.,سوال بعدی.,下一个问题。,Next question.
@@ -463,7 +463,7 @@ QUESTIONS_9_QUESTION6_CD,It's OK if you can't answer every question.,السؤا�
 QUESTIONS_10_QUESTION7_O1,Do you need an ambulance?,Do you need an ambulance?,Do you need an ambulance?,Do you need an ambulance?,
 QUESTIONS_10_QUESTION7_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-QUESTIONS_10_QUESTION7_C1, ,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Do you need an ambulance?
+QUESTIONS_10_QUESTION7_C1,Is anyone hurt?,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Do you need an ambulance?
 QUESTIONS_10_QUESTION7_CC,Nice.,جميل.,عالی,好。,Nice.
 QUESTIONS_10_QUESTION7_CW,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.","ليس هناك أحدًا متأذي، [url={8}]<~No,~>[/url] فأنت لا تحتاج إلى الإسعاف.","کسی مجروح نشده است. [url={8}]<~No,~>[/url] شما به یک امبولانس نیاز ندارید.","没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。","No one is hurt. [url={8}]<~No,~>[/url] you don't need an ambulance."
 QUESTIONS_10_QUESTION7_CM,"He missed your answer, please try again. ",ليس باستطاعتهم فهمك.,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
@@ -474,7 +474,7 @@ QUESTIONS_10_QUESTION7_CD,It's OK if you can't answer every question.,السؤا
 ,,,,,
 QUESTIONS_11_QUESTION8_O1,Are there children present?,Are there children present?,Are there children present?,Are there children present?,
 ,,,,,
-QUESTIONS_11_QUESTION8_C1, ,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Are there children present?
+QUESTIONS_11_QUESTION8_C1,You can answer yes or no.,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Are there children present?
 QUESTIONS_11_QUESTION8_CC,Great job!,عظيم!,خوب انجام دادید!,很好！,Great job!
 QUESTIONS_11_QUESTION8_CW,[url={9}]<~Yes~>[/url] there are children at the party. ,هناك أطفال في الاحتفال، بإمكانك قول: [url={7}]<~yes.~>[/url],دراین مهمانی اطفال شامل است. شما می توانید بگویید  [url={7}]<~yes.~>[/url],派对上有儿童，你可以说 [url={7}]<~yes.~>[/url],There are children at the party. You can say [url={7}]<~yes.~>[/url]
 QUESTIONS_11_QUESTION8_CM,"He missed your answer, please try again. ",ليس باستطاعتهم فهمك.,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
@@ -491,29 +491,29 @@ QUESTIONS_12_YOUDIDIT_T4,Listen to the instructions and stay calm.,استمع إ
 QUESTIONS_12_YOUDIDIT_B1,[url={3}]Continue[/url],[url={3}]تابع[/url],[url={3}]ادامه دهید[/url],[url={3}]继续[/url],Continue
 QUESTIONS_12_YOUDIDIT_B2,[url={1}]Try again[/url],[url={1}]حاول ثانيةً[/url],[url={1}]دوباره تلاش کنید[/url],[url={1}]再试[/url],Try again
 ,,,,,
-QUESTIONS_12_YOUDIDIT_ALT1,That was tough!,تدرّب باستمرار!,تمرین تان را ادامه دهید.,继续练习！,Keep practising!
-QUESTIONS_12_YOUDIDIT_ALT2,000 will ask questions about your emergency.,تعلّم كيف تنطق هذه الكلمات بعناية.,با دقت تمرین کنید که این کلمات را چگونه تلفظ کنید.,认真学习如何念这些词。,Learn how to pronounce these words carefully.
-QUESTIONS_12_YOUDIDIT_ALT3,"If you ever get stuck, you can always ask for an interpreter.",أنصح بأن تعيد هذا السيناريو مرةً أخرى.,من توصیه می کنم که این سناریو را دوباره تمرین کنید.,我建议再试一遍这个场景。,I recommend trying this scenario again.
-QUESTIONS_12_YOUDIDIT_ALT4,Great job getting through the questions!,,,,
+QUESTIONS_12_YOUDIDIT_ALT1,Well done,أحسنت,آفرین,好,Well done
+QUESTIONS_12_YOUDIDIT_ALT2,000 will continue to ask questions.,ستتابع الـ000 سؤالك أسئلة عن الحالة الطارئة.,000 به سوالات خود راجع به شرایط اضطراری پیش-آمده ادامه خواهد داد.,000会继续问你与紧急情况有关的问题。,000 will continue to ask questions about your emergency.
+QUESTIONS_12_YOUDIDIT_ALT3,The questions are specific to your emergency.,ستكون الأسئلة محددة بحسب الحالة الطارئة التي لديك.,این سوالات مربوط به شرایط اضطراری شما خواهند بود.,问题会针对你遇到的紧急情况。,The questions will be specific to your emergency situation.
+QUESTIONS_12_YOUDIDIT_ALT4,It's OK if you can't answer every question!,,,,
 ,,,,,
 QUESTIONS_12_YOUDIDIT_DT1,An interpreter will be here soon.,سيوصّل المُترجم قريبًا.,یک ترجمان به زودی اینجا خواهد آمد.,翻译马上就来。,An interpreter will be here soon.
 QUESTIONS_12_YOUDIDIT_DT2,Great work asking for an interpreter.,أحسنت في طلب المُترجم الشفهي.,کار خوبی کردید که یک ترجمان خواستید.,要翻译是对的。,Great work asking for an interpreter.
-QUESTIONS_12_YOUDIDIT_DT3,Try this scenario again if you want to practice answering more questions in English. ,حاول هذا السيناريو مجددًا إن كنت تريد التدرّب على الاتصال دون مُساعدة.,اگر می خواهید یک تماس را بدون کمک انجام دهید این سناریو را دوباره تمرین کنید.,如果你练习打电话时不需要帮助，再试一遍这个场景。,Try this scenario again if you want to practice a call without help. 
+QUESTIONS_12_YOUDIDIT_DT3,Try this call again if you want to practice answering more questions in English. ,حاول هذا السيناريو مجددًا إن كنت تريد التدرّب على الاتصال دون مُساعدة.,اگر می خواهید یک تماس را بدون کمک انجام دهید این سناریو را دوباره تمرین کنید.,如果你练习打电话时不需要帮助，再试一遍这个场景。,Try this scenario again if you want to practice a call without help. 
 QUESTIONS_12_YOUDIDIT_DT4,  ,,,,
 ,,,,,
 ,,,,,
 ,,,,,
 QUESTIONS_D_INTERPRETER_O1,I can call an Intrepreter to help. What language?,باستطاعتي طلب مُترجم شفهي للمساعدة، ما هي اللغة التي تتكلّمها؟,من می توانم برای کمک به یک ترجمان زنگ بزنم. زبانت چیست؟,I can call an Intrepreter to help. What language?,I can call an Intrepreter to help. What language?
-QUESTIONS_D_INTERPRETER_O2,Connecting you to an Interpreter. Stay on the phone.,,شما را به یک ترجمان وصل میکنیم. پشت خط بمانید.,Connecting you to an Interpreter. Stay on the phone.,Connecting you to an Interpreter. Stay on the phone.
+QUESTIONS_D_INTERPRETER_O2,Connecting you to an Interpreter. Stay on the phone please.,,شما را به یک ترجمان وصل میکنیم. پشت خط بمانید.,Connecting you to an Interpreter. Stay on the phone.,Connecting you to an Interpreter. Stay on the phone.
 ,,,,,
-QUESTIONS_D_INTERPRETER_C1,He asked if you want an interpreter. Say your language in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
+QUESTIONS_D_INTERPRETER_C1,Say your language in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 QUESTIONS_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
-QUESTIONS_D_INTERPRETER_CM,She missed your answer. Say your language in English,قل: [url={11}]<~Arabic~>[/url],بگویید [url={12}]<~Dari~>[/url],说 [url={13}]<~Mandarin~>[/url],Say: LAN
+QUESTIONS_D_INTERPRETER_CM,Say your language in English,قل: [url={11}]<~Arabic~>[/url],بگویید [url={12}]<~Dari~>[/url],说 [url={13}]<~Mandarin~>[/url],Say: LAN
 QUESTIONS_D_INTERPRETER_CG,Say the language you speak in English.,قل: [url={11}]<~Arabic~>[/url],بگویید [url={12}]<~Dari~>[/url],说 [url={13}]<~Mandarin~>[/url],Say: LAN
 ,,,,,
 ,,,,,
 ,,,,,
-NOHELP_1_LETSTRY_T1,Let's make this a bit harder,أحسنت العمل!,شما خیلی خوب انجام میدهید!,你做得很好！,You are doing great!
+NOHELP_1_LETSTRY_T1,Ready for a challenge?,أحسنت العمل!,شما خیلی خوب انجام میدهید!,你做得很好！,You are doing great!
 NOHELP_1_LETSTRY_T2,Let's see if you can do a call without my help.,لنرى ما إن كنت تستطيع إكمال مكالمة دون مساعدة.,ببینم اگر بتوانید یک تماس را بدون کمک من انجام دهید.,让我看看你是否能独自打一个电话。,Let's see if you can do a call without my help.
 ,,,,,
 NOHELP_1_LETSTRY_B1, [url={1}]I can do it![/url], [url={1}]أستطيع عمل ذلك![/url], [url={1}]من می توانم![/url], [url={1}]我可以！[/url],I can do it!
@@ -598,16 +598,16 @@ NOHELP_10_YOUDIDIT_ALT3,Practice again to improve your skills. ,تدرّب ثا�
 ,,,,,
 NOHELP_10_YOUDIDIT_DT1,An interpreter will be here soon.,سيوصّل المُترجم قريبًا.,یک ترجمان به زودی اینجا خواهد آمد.,翻译马上就来。,An interpreter will be here soon.
 NOHELP_10_YOUDIDIT_DT2,Great work asking for an interpreter.,أحسنت في طلب المُترجم الشفهي.,کار خوبی کردید که یک ترجمان خواستید.,要翻译是对的。,Great work asking for an interpreter.
-NOHELP_10_YOUDIDIT_DT3,Try this call again if you want to try answering more questions in English. ,حاول هذا السيناريو مجددًا إن كنت تريد التدرّب على الاتصال دون مُساعدة.,اگر می خواهید یک تماس را بدون کمک انجام دهید این سناریو را دوباره تمرین کنید.,如果你练习打电话时不需要帮助，再试一遍这个场景。,Try this scenario again if you want to practice a call without help. 
+NOHELP_10_YOUDIDIT_DT3,Try this call again if you want to practice answering more questions in English. ,حاول هذا السيناريو مجددًا إن كنت تريد التدرّب على الاتصال دون مُساعدة.,اگر می خواهید یک تماس را بدون کمک انجام دهید این سناریو را دوباره تمرین کنید.,如果你练习打电话时不需要帮助，再试一遍这个场景。,Try this scenario again if you want to practice a call without help. 
 ,,,,,
 ,,,,,
 ,,,,,
 NOHELP_D_INTERPRETER_O1,I can call an intrepreter to help. What language?,I can call an intrepreter to help. What language?,I can call an intrepreter to help. What language?,I can call an intrepreter to help. What language?,I can call an Intrepreter to help. What language?
 NOHELP_D_INTERPRETER_O2,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an Interpreter. Stay on the phone.
 ,,,,,
-NOHELP_D_INTERPRETER_C1,She asked if you want an interpreter. Say your language in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
+NOHELP_D_INTERPRETER_C1,Say the language you speak in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 NOHELP_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
-NOHELP_D_INTERPRETER_CM,She missed your answer. Say your language in English,قل: [url={6}]<~Arabic~>[/url],بگویید [url={7}]<~Dari~>[/url],说 [url={8}]<~Mandarin~>[/url],Say the language you speak in English.
+NOHELP_D_INTERPRETER_CM,Say the language you speak in English.,قل: [url={6}]<~Arabic~>[/url],بگویید [url={7}]<~Dari~>[/url],说 [url={8}]<~Mandarin~>[/url],Say the language you speak in English.
 NOHELP_D_INTERPRETER_CG,Say the language you speak in English.,قل: [url={6}]<~Arabic~>[/url],بگویید [url={7}]<~Dari~>[/url],说 [url={8}]<~Mandarin~>[/url],They can't understand you. Practice your pronunciation and try again.
 ,,,,,
 ,,,,,
@@ -659,7 +659,7 @@ BONUS_6_QUESTION3_CG,"The answer is [url={3}]<~9 Clark Street, Epping.~>[/url]",
 ,,,,,
 ,,,,,
 ,,,,,
-BONUS_7_QUESTION4_O1,Why do you need the ambulance,Why do you need the ambulance,Why do you need the ambulance,Why do you need the ambulance,
+BONUS_7_QUESTION4_O1,Why do you need the ambulance?,Why do you need the ambulance?,Why do you need the ambulance?,Why do you need the ambulance?,
 ,,,,,
 BONUS_7_QUESTION4_CG,[url={4}]<~A child is bleeding from the head.~>[/url],"لقد صدمت ابتنك رأسها، وهي تنزف الآن.
 [url={4}]<~A child is bleeding from the head.~>[/url]","سر دخترت به کدام چیزی برخورد کرده است و خونریزی دارد.
@@ -671,7 +671,7 @@ BONUS_7_QUESTION4_CG,[url={4}]<~A child is bleeding from the head.~>[/url],"لق
 BONUS_8_QUESTION5_O1,Is she breathing?,Is she breathing?,Is she breathing?,Is she breathing?,
 BONUS_8_QUESTION5_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-BONUS_8_QUESTION6_C1, ,سألوك: هل تتنفّس؟,آنها پرسیدند: آیا او نفس میکشد؟,他们问：她有呼吸吗？,They asked: Is she breathing?
+BONUS_8_QUESTION6_C1,-,سألوك: هل تتنفّس؟,آنها پرسیدند: آیا او نفس میکشد؟,他们问：她有呼吸吗？,They asked: Is she breathing?
 BONUS_8_QUESTION5_CG,"[url={5}]<~Yes,~>[/url] she is breathing.","[url={5}]<~Yes,~>[/url] أنها تتنفّس.","[url={5}]<~Yes,~>[/url] او نفس میکشد.","[url={5}]<~Yes,~>[/url] 她有呼吸",
 BONUS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,Next question
 ,,,,,
@@ -680,7 +680,7 @@ BONUS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال ا
 BONUS_9_QUESTION6_O1,Is she awake?,Is she awake?,Is she awake?,Is she awake?,
 BONUS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-BONUS_9_QUESTION6_C1, ,لقد سألوك: هل هي صاحية؟ ,آنها پرسیدند: آیا او بیدار است؟,他们问：她有意识吗？,They asked: Is she awake?
+BONUS_9_QUESTION6_C1,-,لقد سألوك: هل هي صاحية؟ ,آنها پرسیدند: آیا او بیدار است؟,他们问：她有意识吗？,They asked: Is she awake?
 BONUS_9_QUESTION6_CG,"[url={5}]<~Yes,~>[/url] she is awake."," [url={5}]<~Yes,~>[/url]  إنها صاحية.","[url={5}]<~Yes,~>[/url]  او بیدار است.",她有意识。,
 BONUS_8_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,
 ,,,,,
@@ -688,18 +688,18 @@ BONUS_8_QUESTION6_CD,It's OK if you can't answer every question.,السؤال ا
 ,,,,,
 BONUS_10_QUESTION7_O1,How old is she?,How old is she?,How old is she?,How old is she?,
 ,,,,,
-BONUS_9_QUESTION7_C1, ,سألوك: كم عمرها؟,آنها پرسیدند: او چند ساله است؟,他们问：她多大？,They asked: How old is she?
+BONUS_9_QUESTION7_C1,-,سألوك: كم عمرها؟,آنها پرسیدند: او چند ساله است؟,他们问：她多大？,They asked: How old is she?
 BONUS_10_QUESTION7_CG,She is [url={6}]<~four.~>[/url] You've done well to get this far!,عمرها 4 سنوات [url={6}]<~four~>[/url]  لقد أحسنت في أنك وصلت إلى هذه المرحلة.,او چهار ساله است [url={6}]<~four~>[/url]  شما خوب انجام داده اید تا به اینجا رسیده اید!,她4岁。[url={6}]<~four.~>[/url] 到现在为止你都做得很好！,She is four. You've done well to get this far!
 BONUS_10_QUESTION7_CD,You've done well to get this far!,أحسنت في أنك وصلت إلى هذه المرحلة., شما خوب انجام داده اید تا به اینجا رسیده اید!,到现在为止你都做得很好！,You've done well to get this far!
 ,,,,,
 ,,,,,
 ,,,,,
 BONUS_11_YOUDIDIT_T1,Congratulations!,مبروك!,تبریک باشد!,恭喜你！,Congratulations!
-BONUS_11_YOUDIDIT_T2,You have all the skills you need to call 000.,لديك الآن جميع المهارات التي تحتاج إليها لتطلب 000,شما تمام مهارت های لازم برای تماس گرفتن با 000 را آموخته اید.,你已经掌握了拨打000所需的所有技巧。,You have all the skills you need to call 000.
-BONUS_11_YOUDIDIT_T3,"Remember, you can ask for an interpreter any time.",تذكر أنه باستطاعتك طلب مُترجم شفهي في أي وقت.,به یاد داشته باشید، هر وقت می توانید یک ترجمان درخواست کنید.,记住，你可以随时要翻译。,"Remember, you can ask for an interpreter any time."
+BONUS_11_YOUDIDIT_T2,You have all the skills you need to call 000 in an emergency. ,لديك الآن جميع المهارات التي تحتاج إليها لتطلب 000,شما تمام مهارت های لازم برای تماس گرفتن با 000 را آموخته اید.,你已经掌握了拨打000所需的所有技巧。,You have all the skills you need to call 000.
+BONUS_11_YOUDIDIT_T3,Tell your family and friends so they can feel confident calling 000 too.,أخبر أسرتك والأصدقاء ما تعلّمته بحيثُ يكون لديهم الثقة في الاتصال بـ000 أيضًا.,به فامیل و دوستان خود نیز بگویید تا آنها نیز به راحتی با 000 تماس بگیرند.,告诉你的家人朋友，这样他们也有信心拨打000。,Tell your family and friends so they can feel confident calling 000 too.
 ,,,,,
-BONUS_11_YOUDIDIT_T4,Share what you’ve learned.,شارك ما تعلّمته اليوم,آموخته های خود را با دیگران شریک کنید.,分享你学会的内容。,Share what you’ve learned.
-BONUS_11_YOUDIDIT_T5,Tell your family and friends so they can feel confident calling 000 too.,أخبر أسرتك والأصدقاء ما تعلّمته بحيثُ يكون لديهم الثقة في الاتصال بـ000 أيضًا.,به فامیل و دوستان خود نیز بگویید تا آنها نیز به راحتی با 000 تماس بگیرند.,告诉你的家人朋友，这样他们也有信心拨打000。,Tell your family and friends so they can feel confident calling 000 too.
+BONUS_11_YOUDIDIT_T4,,,,,Share what you’ve learned.
+BONUS_11_YOUDIDIT_T5,,,,,
 ,,,,,
 BONUS_11_YOUDIDIT_B1, [url={3}]Share Practise Calling 000[/url], [url={3}]شارك التدرّب على الاتصال بـ000[/url], [url={3}]تمرین نمودن تماس با 000 را با دیگران شریک کنید[/url], [url={3}]分享、练习拨打000[/url],Share Practise Calling 000
 BONUS_11_YOUDIDIT_B2, [url={1}]Keep Practising skills[/url], [url={1}]تابع التدرّب على المهارات باستمرار[/url], [url={1}]این مهارت را تمرین کنید[/url], [url={1}]继续练习[/url],Keep practising skills
@@ -710,17 +710,17 @@ BONUS_11_YOUDIDIT_ALT3,Practice again to improve your skills. ,تدرّب ثان
 ,,,,,
 BONUS_11_YOUDIDIT_DT1,An interpreter will be here soon.,سيوصّل المُترجم قريبًا.,یک ترجمان به زودی اینجا خواهد آمد.,翻译马上就来。,An interpreter will be here soon.
 BONUS_11_YOUDIDIT_DT2,Great work asking for an interpreter.,أحسنت في طلب المُترجم الشفهي.,کار خوبی کردید که یک ترجمان خواستید.,要翻译是对的。,Great work asking for an interpreter.
-BONUS_11_YOUDIDIT_DT3,Try this call again if you want to try answering more questions in English. ,حاول هذا السيناريو مجددًا إن كنت تريد التدرّب على الاتصال دون مُساعدة.,اگر می خواهید یک تماس را بدون کمک انجام دهید این سناریو را دوباره تمرین کنید.,如果你练习打电话时不需要帮助，再试一遍这个场景。,Try this scenario again if you want to practice a call without help. 
+BONUS_11_YOUDIDIT_DT3,Try this call again if you want to practice answering more questions in English. ,حاول هذا السيناريو مجددًا إن كنت تريد التدرّب على الاتصال دون مُساعدة.,اگر می خواهید یک تماس را بدون کمک انجام دهید این سناریو را دوباره تمرین کنید.,如果你练习打电话时不需要帮助，再试一遍这个场景。,Try this scenario again if you want to practice a call without help. 
 ,,,,,
 ,,,,,
 ,,,,,
 BONUS_D_INTERPRETER_O1,I can call an intrepreter to help. What language do you need?,I can call an intrepreter to help. What language do you need?,I can call an intrepreter to help. What language do you need?,I can call an intrepreter to help. What language do you need?,I can call an Intrepreter to help. What language?
 BONUS_D_INTERPRETER_O2,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an Interpreter. Stay on the phone.
 ,,,,,
-BONUS_D_INTERPRETER_C1,He asked if you want an interpreter. Say your language in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
+BONUS_D_INTERPRETER_C1,Say the language you speak in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 BONUS_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
 BONUS_D_INTERPRETER_CM,Say the language you speak in English.,قل: [url={7}]<~Arabic~>[/url],بگویید [url={8}]<~Dari~>[/url],说 [url={9}]<~Mandarin~>[/url],say: LAN
-BONUS_D_INTERPRETER_CG,He missed your answer. He needs your language.,قل: [url={7}]<~Arabic~>[/url],بگویید [url={8}]<~Dari~>[/url],说 [url={9}]<~Mandarin~>[/url],They can't understand you. Practice your pronunciation and try again.
+BONUS_D_INTERPRETER_CG,Say the language you speak in English.,قل: [url={7}]<~Arabic~>[/url],بگویید [url={8}]<~Dari~>[/url],说 [url={9}]<~Mandarin~>[/url],They can't understand you. Practice your pronunciation and try again.
 ,,,,,
 ,,,,,
 ,,,,,

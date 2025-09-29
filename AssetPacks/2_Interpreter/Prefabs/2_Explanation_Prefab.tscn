@@ -127,7 +127,6 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("7_28ad4")]
 layout_mode = 2
-always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
 _auto_bg_colour = Color(1, 1, 1, 0.3)

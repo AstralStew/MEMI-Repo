@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://rb6gbttr6pht"]
+[gd_scene load_steps=14 format=3 uid="uid://rb6gbttr6pht"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_8na7o"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_00sis"]
 [ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="3_3iybb"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="4_3iybb"]
-[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="7_x4hm7"]
 [ext_resource type="Script" uid="uid://c65kea35dsj4f" path="res://Base/Scripts/NextButton.gd" id="8_ehlft"]
+[ext_resource type="AudioStream" uid="uid://p2xm1xq3wbwp" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_ButtonClick.mp3" id="8_jod16"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="9_row7c"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="10_i1tkm"]
+[ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="11_sj8bx"]
+[ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="12_o1d7e"]
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="19_shnuh"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="20_o5b0k"]
 
@@ -14,7 +18,6 @@ shader = ExtResource("2_00sis")
 shader_parameter/weight = 0.0
 
 [node name="2_Comments_Prefab" type="Control"]
-visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
@@ -55,9 +58,9 @@ anchor_top = 0.033333335
 anchor_right = 0.46875
 anchor_bottom = 0.2
 offset_left = -18.0
-offset_top = 14.999998
+offset_top = 7.999998
 offset_right = -18.0
-offset_bottom = 15.0
+offset_bottom = 8.0
 _auto_text = ""
 _old_text = ""
 metadata/_edit_use_anchors_ = true
@@ -81,28 +84,122 @@ grow_vertical = 0
 texture = ExtResource("20_o5b0k")
 expand_mode = 1
 
-[node name="NextButton" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("7_x4hm7")]
+[node name="NextButton" type="MarginContainer" parent="." node_paths=PackedStringArray("parent")]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
-offset_left = -386.0
-offset_top = -50.0
-offset_right = -113.0
-offset_bottom = 140.0
+offset_left = -352.8
+offset_top = -8.0
+offset_right = -147.99998
+offset_bottom = 97.0
 grow_horizontal = 0
-grow_vertical = 1
 scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(102.4, 52.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
 script = ExtResource("8_ehlft")
 parent = NodePath("..")
-give_up_anim = &""
-click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
-_auto_text = "[url=1]Next question[/url]"
-_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
-_old_text = "Next question"
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("8_jod16")
+max_char_threshold = 24
+click_bg_colour = Color(0.17923622, 0.17923622, 0.17923622, 0)
+click_text_colour = Color(1, 0.580392, 0, 1)
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
+_auto_text = "COMMON_NEXT"
+_auto_bg_colour = Color(0.59608823, 0.8389701, 0.4945157, 0)
+_auto_text_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_old_text = "COMMON_NEXT"
+
+[node name="BubbleText" type="RichTextLabel" parent="NextButton"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(147, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0.596078, 0.839216, 0.494118, 1)
+theme_override_fonts/normal_font = ExtResource("9_row7c")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "COMMON_NEXT"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_i1tkm")
+default_size = 22
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="NextButton/BubbleText"]
+self_modulate = Color(0.59608823, 0.8389701, 0.4945157, 0)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.75
+offset_right = 5.0
+offset_bottom = 6.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(78.5, 40.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_sj8bx")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="NextButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1162684
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(82.5, 45.20887)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_o1d7e")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="ScenarioTouchButton" type="Button" parent="NextButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="NextButton"]
 
 [connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_police.mp3"]]
 [connection signal="meta_link_2" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_fire.mp3"]]
@@ -110,3 +207,13 @@ _old_text = "Next question"
 [connection signal="meta_link_4" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_victoria.mp3"]]
 [connection signal="meta_link_5" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_INTER_springvale.mp3"]]
 [connection signal="meta_link_6" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreter.mp3"]]
+[connection signal="meta_link_1" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_9"]
+[connection signal="pressed" from="NextButton/BubbleText/BubbleBG/ScenarioTouchButton" to="NextButton" method="check_meta_link_from_button"]

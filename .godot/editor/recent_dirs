@@ -1,11 +1,13 @@
+res://Base
+res://AssetPacks/3_Location/Animations
+res://AssetPacks/2_Interpreter/Animations
+res://AssetPacks/6_Bonus/Animations
+res://AssetPacks/4_Questions/Animations
+res://AssetPacks/5_NoHelp/Animations
+D:/Paperticket Studios/GODOT/Project MEMI/Exports/TestingBridge
 D:/Paperticket Studios/GODOT/Project MEMI/Exports/Packs
 D:/Paperticket Studios/GODOT/Project MEMI/Exports
-res://AssetPacks/6_Bonus/Animations
-res://AssetPacks/2_Interpreter/Animations
 res://AssetPacks/1_Intro/Animations
-res://AssetPacks/3_Location/Animations
-res://AssetPacks/5_NoHelp/Animations
-res://AssetPacks/4_Questions/Animations
 res://AssetPacks/0_Prerequisite/Prefabs
 res://AssetPacks/0_Shared/Animations
 res://AssetPacks/5_NoHelp/Sentences
@@ -13,7 +15,6 @@ res://AssetPacks/4_Questions/Sentences
 res://Base/Images
 res://AssetPacks/0_Shared/SpriteSheets
 res://Base/Scripts
-res://Base
 res://Base/Shaders
 res://AssetPacks/1_Intro/Images
 res://AssetPacks/1_Intro/Sentences

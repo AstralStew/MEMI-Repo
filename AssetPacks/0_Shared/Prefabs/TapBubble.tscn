@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rqiwxsunuq01" path="res://Base/Scripts/TapBubble.gd" id="1_bhybv"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_nikhr"]
-[ext_resource type="AudioStream" uid="uid://dycpfe6eca0pj" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_BubbleHostPopin.mp3" id="3_xuxd2"]
+[ext_resource type="AudioStream" uid="uid://b57bm0yw86163" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_BubbleTapPopin.mp3" id="3_xuxd2"]
 [ext_resource type="AudioStream" uid="uid://doohqn16eey6a" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_AnswerCorrect.mp3" id="4_16d4k"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="4_pejn0"]
 [ext_resource type="SpriteFrames" uid="uid://bpcx2wbksnhjw" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres" id="5_bhybv"]

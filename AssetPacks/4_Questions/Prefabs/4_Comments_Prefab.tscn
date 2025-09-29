@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t3b4csj1ti70"]
+[gd_scene load_steps=15 format=3 uid="uid://t3b4csj1ti70"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_x8qaa"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_du42e"]
@@ -7,8 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="4_iwfmj"]
 [ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="5_eqker"]
 [ext_resource type="PackedScene" uid="uid://yerl174fjbm5" path="res://AssetPacks/0_Shared/Prefabs/ScenarioButton.tscn" id="6_ibhmy"]
-[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="8_f8fag"]
+[ext_resource type="AudioStream" uid="uid://p2xm1xq3wbwp" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_ButtonClick.mp3" id="9_6us6o"]
 [ext_resource type="Script" uid="uid://c65kea35dsj4f" path="res://Base/Scripts/NextButton.gd" id="9_jdsbm"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="10_g6v2i"]
+[ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="11_lhx0u"]
+[ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="12_d3bgm"]
+[ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="13_gf7ve"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8oxnu"]
 shader = ExtResource("2_du42e")
@@ -55,9 +59,9 @@ anchor_top = 0.2
 anchor_right = 0.373
 anchor_bottom = 0.2
 offset_left = -139.36
-offset_top = -85.0
+offset_top = -92.0
 offset_right = 12.639999
-offset_bottom = 33.0
+offset_bottom = 26.0
 _auto_text = ""
 _old_text = ""
 
@@ -92,28 +96,123 @@ offset_right = 100.0
 offset_bottom = 125.0
 grow_vertical = 2
 
-[node name="NextButton" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("8_f8fag")]
+[node name="NextButton" type="MarginContainer" parent="." node_paths=PackedStringArray("parent")]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 0.0
-offset_left = -386.0
-offset_top = -50.0
-offset_right = -113.0
-offset_bottom = 140.0
+offset_left = -352.8
+offset_top = -8.0
+offset_right = -147.99998
+offset_bottom = 97.0
 grow_horizontal = 0
-grow_vertical = 1
 scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(102.4, 52.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
 script = ExtResource("9_jdsbm")
 parent = NodePath("..")
-give_up_anim = &""
-click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
-_auto_text = "[url=1]Next question[/url]"
-_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
-_old_text = "Next question"
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("9_6us6o")
+max_char_threshold = 24
+click_bg_colour = Color(0.59608823, 0.8389701, 0.4945157, 0)
+click_text_colour = Color(1, 0.580392, 0, 1)
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
+_auto_text = "COMMON_NEXT"
+_auto_bg_colour = Color(0.59608823, 0.8389701, 0.4945157, 0)
+_auto_text_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_old_text = "COMMON_NEXT"
+
+[node name="BubbleText" type="RichTextLabel" parent="NextButton"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(159.8, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0.596078, 0.839216, 0.494118, 1)
+theme_override_fonts/normal_font = ExtResource("10_g6v2i")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "COMMON_NEXT"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_lhx0u")
+default_size = 22
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="NextButton/BubbleText"]
+visible = false
+self_modulate = Color(0.59608823, 0.8389701, 0.4945157, 0)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.75
+offset_right = 5.0
+offset_bottom = 6.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(84.9, 40.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_d3bgm")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="NextButton/BubbleText/BubbleBG"]
+visible = false
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1162684
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(88.9, 45.20887)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("13_gf7ve")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="ScenarioTouchButton" type="Button" parent="NextButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="NextButton"]
 
 [connection signal="meta_link_1" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_police.mp3"]]
 [connection signal="meta_link_10" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_no.mp3"]]
@@ -128,3 +227,13 @@ _old_text = "Next question"
 [connection signal="meta_link_7" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/4_Questions/Audio/P4_QUEST_violent.mp3"]]
 [connection signal="meta_link_8" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/4_Questions/Audio/P4_QUEST_theneighbourisdrunk.mp3"]]
 [connection signal="meta_link_9" from="LadComment1/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_yes.mp3"]]
+[connection signal="meta_link_1" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="NextButton/BubbleText" to="NextButton" method="_send_meta_link_9"]
+[connection signal="pressed" from="NextButton/BubbleText/BubbleBG/ScenarioTouchButton" to="NextButton" method="check_meta_link_from_button"]

@@ -30,14 +30,14 @@ func resolve (sentence:String, _debug:bool=false):
 			elif _debug: print("[PhraseCheck] OR Sentence did NOT contain '",phrase,"', continuing...")
 		if _debug: push_warning("[PhraseCheck] OR Sentence did NOT contain any of the phrases, returning false!")
 		return false
-	elif checkType == Constants.CheckType.MIN3:
+	elif checkType == Constants.CheckType.MIN3:		# ACTUALLY MIN 2 BUT WHO CARES? NOT ME
 		count = 0
 		for phrase in phrases:
 			if sentence.containsn(phrase):
 				if _debug: print("[PhraseCheck] MIN3 NOTE -> Sentence contained '",phrase,"', adding 1 to count!")
 				count += 1
 			elif _debug: print("[PhraseCheck] MIN3 NOTE -> Sentence did NOT contain '",phrase,"', continuing...")
-		if count < 3:
+		if count < 2:
 			if _debug: push_warning("[PhraseCheck] MIN3 Sentence only contained ",count," of the phrases, returning false!")
 			return false
 		if _debug: print("[PhraseCheck] MIN3 Sentence contained ",count," phrases, returning true!")

@@ -2,46 +2,49 @@
 
 <!-- Define variables -->
 
-var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition
-var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition || null;
+//var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
 
 var pageURL = window.location.href;
 var folderURL = pageURL.replace(/[^/]*$/, '');
 
+var lastResultsJoined = "";
+
 <!-- Setup Speech Recognition -->
+if (window.SpeechRecognition === null) {
+	// STUDIO KETTLE > Do something to show that the browser is unsupported
+	console.log("Note: window.SpeechRecognition === null");
+} 
 
 var recognition = new SpeechRecognition();
-//var speechRecognitionList = new SpeechGrammarList(); // unused
-recognition.continuous = false;
-recognition.lang = "en-AU";
-recognition.interimResults = false;
-recognition.maxAlternatives = 1;
+recognition.continuous = true;
+
 
 <!-- Functions -->
 
 function loadingStarted() {
   console.log("[HEADER] Godot has started loading a pack!");  
-  // Hook into here to display something while we're loading 
+  // STUDIO KETTLE > Hook into here to display something while we're loading 
 }
 
 function loadingFinished() {
   console.log("[HEADER] Godot has finished loading!");  
-  // Hook into here to hide the above 
+  // STUDIO KETTLE > Hook into here to hide the above 
 }
 
 function exitNormal() {
   console.log("[HEADER] User is trying to exit normally.");  
-  // Hook into here to goto landing page
+  // STUDIO KETTLE > Hook into here to goto landing page
 }
 
 function exitQuick() {
   console.log("[HEADER] User is trying to exit quickly!");  
-  // Hook into here to go somewhere innocuous
+  // STUDIO KETTLE > Hook into here to go somewhere innocuous
 }
 
 function shareExperience() {
   console.log("[HEADER] User is trying to share the experience...");  
-  // Hook into here to go somewhere innocuous
+  // STUDIO KETTLE > Hook into here to go somewhere innocuous
 }
 
 
@@ -50,25 +53,38 @@ function startRecognition() {
   recognition.start();
 }
 
+function stopRecognition() {
+  console.log("[HEADER] Trying to start recognition!");  
+  recognition.stop();
+}
+
+
+
 <!-- Callbacks -->
+
+recognition.addEventListener("result", () => {
+	// The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
+	// The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
+	// It has a getter so it can be accessed like an array
+	// The first [0] returns the SpeechRecognitionResult at the last position.
+	// Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
+	// These also have getters so they can be accessed like arrays.
+	// The second [0] returns the SpeechRecognitionAlternative at position 0.
+	// We then return the transcript property of the SpeechRecognitionAlternative object
+	console.log("[HEADER] Got to SR result in header!");
+	var lastResults = [];
+	for (var i = event.resultIndex; i < event.results.length; i++) {
+		if (event.results[i].isFinal) {
+			var result = event.results[i][0].transcript + ' (Confidence: ' + event.results[i][0].confidence + ')';
+			console.log("[HEADER] Result: ", result);
+			lastResults.push(result);
+		}
+	}
+	lastResultsJoined = lastResults.join("|");
+});
 
 recognition.onstart = () => {
   console.log("[HEADER] Speech recognition started!");
-}
-
-recognition.onresult = () => {
-  // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
-  // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
-  // It has a getter so it can be accessed like an array
-  // The first [0] returns the SpeechRecognitionResult at the last position.
-  // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
-  // These also have getters so they can be accessed like arrays.
-  // The second [0] returns the SpeechRecognitionAlternative at position 0.
-  // We then return the transcript property of the SpeechRecognitionAlternative object
-  var result = event.results[0][0].transcript;
-  // CONTACT GODOT HERE
-  console.log("[HEADER] Result: ", result);
-  console.log("[HEADER] Confidence: ", event.results[0][0].confidence);
 }
 
 recognition.addEventListener("audiostart", () => {

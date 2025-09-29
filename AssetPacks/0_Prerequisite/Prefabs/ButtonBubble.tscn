@@ -30,7 +30,6 @@ theme_override_constants/margin_bottom = 19
 script = ExtResource("1_bcwoe")
 _debug = true
 _updateInEditor = true
-always_pop_out_on_click = null
 click_sound = ExtResource("2_f330p")
 max_char_threshold = 24
 click_size = 0.9

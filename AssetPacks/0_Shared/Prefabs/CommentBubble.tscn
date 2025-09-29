@@ -29,7 +29,7 @@ theme_override_constants/margin_bottom = 19
 script = ExtResource("1_fm8n2")
 _updateInEditor = true
 pop_in_sound = ExtResource("2_x5m08")
-max_width = 245
+max_width = 260
 bg_border_size = 35.0
 comment_resize_d = 0.3
 comment_resize_t = 10
@@ -112,6 +112,13 @@ uppercase = true
 [node name="BubbleAudio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="meta_link_1" from="MarginText/BubbleText" to="." method="_send_meta_link_1"]
+[connection signal="meta_link_10" from="MarginText/BubbleText" to="." method="_send_meta_link_10"]
+[connection signal="meta_link_11" from="MarginText/BubbleText" to="." method="_send_meta_link_11"]
+[connection signal="meta_link_12" from="MarginText/BubbleText" to="." method="_send_meta_link_12"]
+[connection signal="meta_link_13" from="MarginText/BubbleText" to="." method="_send_meta_link_13"]
+[connection signal="meta_link_14" from="MarginText/BubbleText" to="." method="_send_meta_link_14"]
+[connection signal="meta_link_15" from="MarginText/BubbleText" to="." method="_send_meta_link_15"]
+[connection signal="meta_link_16" from="MarginText/BubbleText" to="." method="_send_meta_link_16"]
 [connection signal="meta_link_2" from="MarginText/BubbleText" to="." method="_send_meta_link_2"]
 [connection signal="meta_link_3" from="MarginText/BubbleText" to="." method="_send_meta_link_3"]
 [connection signal="meta_link_4" from="MarginText/BubbleText" to="." method="_send_meta_link_4"]

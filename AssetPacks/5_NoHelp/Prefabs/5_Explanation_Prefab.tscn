@@ -70,13 +70,13 @@ auto_check = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 fit_content = true
 meta_underlined = false
 script = ExtResource("5_pwvre")
 debugging = true
-default_size = 22
+default_size = 28
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="Explanation_MC/Explanation_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -111,7 +111,6 @@ alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("6_w68al")]
 layout_mode = 2
-always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]

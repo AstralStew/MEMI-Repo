@@ -20,7 +20,7 @@ class_name SentenceComparer extends Resource
 var attempts = 0
 
 
-func _init(_debug:=false, _correctConditions:Array[PhraseCheck] = [],_wrongConditions:Array[String] = [],_correctAnim := "",_wrongAnim := "",_mumboAnim := "",_dontKnowAnim := "",_giveUpAnim:="", _total_attempts := 4) -> void:
+func _init(_debug:=false, _correctConditions:Array[PhraseCheck] = [],_wrongConditions:Array[String] = [],_correctAnim := "",_wrongAnim := "",_mumboAnim := "",_dontKnowAnim := "",_giveUpAnim:="", _total_attempts := -1) -> void:
 	debug = _debug
 	correctConditions = _correctConditions
 	wrongConditions = _wrongConditions
@@ -66,7 +66,7 @@ func compare(sentence:String) -> String:
 					if debug: print("[SentenceComparer] Wrong conditions found! Returning wrongAnim ('",wrongAnim,"')")
 					return wrongAnim
 		
-		if sentence.containsn("don't know") || sentence.containsn("do not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
+		if sentence.containsn("don't understand") || sentence.containsn("don't know") || sentence.containsn("do not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
 			if debug: print("[SentenceComparer] User said 'I don't know'! Returning dontKnowAnim ('",dontKnowAnim,"')")
 			return dontKnowAnim
 		

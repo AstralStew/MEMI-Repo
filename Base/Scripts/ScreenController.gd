@@ -25,6 +25,7 @@ extends AnimationPlayer
 @export var overrideAnimSpeedScale := 1.0
 @export var overrideTimeScale := false
 @export var overrideTimeScaleFactor := 1.0
+#@export var overrideLoadingLog := false
 
 @export_group("Screen Sets")
 @export var screen_sets : Array[ScreenSet] = []
@@ -53,6 +54,9 @@ signal switched_backgrounds
 signal pack_load_finished
 
 signal last_sentence_changed(newSentence)
+
+signal display_loading
+
 
 # Called when the node enters the scene tree for the first time.
 func _enter_tree() -> void:
@@ -736,6 +740,10 @@ func _input(event):
 			if event.keycode == KEY_L:
 				print("[ScreenController] LanguageSwitching, the L key was pressed! Changing language...")
 				LanguageManager.cycle_language()
+		#if event.pressed && overrideLoadingLog:
+			#if event.keycode == KEY_ASCIITILDE:
+				#print("[ScreenController] LoadingLog, the tilde key was pressed! Display loading messages...")
+				#display_loading.emit()
 		if overrideTimeScale:
 			if event.pressed && event.keycode == KEY_F && !event.is_echo():
 				print("[ScreenController] TimeCheating, the F key was pressed! Fastforwarding...")
@@ -745,7 +753,8 @@ func _input(event):
 				Engine.time_scale = 1.0 
 
 func check_attempts_while_cheating() -> bool:
-	if sentenceComparer.attempts > -1:
+	if debugging: print("[SentenceComparer] SpeechCheating, total attempts = ", sentenceComparer.total_attempts)
+	if sentenceComparer.total_attempts > -1:
 		sentenceComparer.attempts -= 1
 		if sentenceComparer.attempts == 0:
 			if debugging: print("[SentenceComparer] SpeechCheating, ran out of attempts! Sending GiveUp instead...")
