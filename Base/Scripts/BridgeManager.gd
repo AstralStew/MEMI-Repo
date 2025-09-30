@@ -30,6 +30,10 @@ signal speech_nomatch()
 signal speech_end()
 signal speech_error()
 
+signal speech_audiostart()
+signal speech_audioend()
+signal speech_soundstart()
+signal speech_soundend()
 
 # Called in ScreenController _ready()
 func _initialise() -> void:
@@ -42,6 +46,11 @@ func _initialise() -> void:
 	recognition.onspeechend = _speech_end_callback_ref
 	recognition.onnomatch = _speech_nomatch_callback_ref
 	recognition.onerror = _speech_error_callback_ref
+	
+	recognition.onaudiostart = _audio_start_callback_ref
+	recognition.onaudioend = _audio_end_callback_ref
+	recognition.onsoundstart = _sound_start_callback_ref
+	recognition.onsoundend = _sound_end_callback_ref
 
 	pageURL = JavaScriptBridge.eval("pageURL;")
 	folderURL = JavaScriptBridge.eval("folderURL;")
@@ -128,26 +137,36 @@ func _on_speech_result_callback(_args):
 	await get_tree().process_frame
 	
 	var js_results = """
-	function getLastResults() {
-		return lastResultsJoined;
+	function getLastResult() {
+		return lastResult;
 	}
-	getLastResults();
+	getLastResult();
 	"""
 	
-	var last_results = JavaScriptBridge.eval(js_results)
-	print("[BridgeManager] Last Results = ", last_results)
-	for phrase in last_results.split("|"):
-		print("[BridgeManager] Phrase received: ", phrase)
+	var last_result = JavaScriptBridge.eval(js_results)
+	print("[BridgeManager] Last Result = ", last_result)
+	#for phrase in last_results.split("|"):
+	#	print("[BridgeManager] Phrase received: ", phrase)
 	
-	##NEED THIS
-	#speech_phrase.emit(phrase)
-	
-	
+	speech_phrase.emit(last_result)
+
 
 
 
 func _on_speech_end_callback(_args):
-	print("[BridgeManager] On Speech End callback!")
+	print("[BridgeManager] On Speech End callback! Waiting for speech_ongoing...")
+	var speech_ongoing = true
+	var js_results = ""
+	while(speech_ongoing):
+		await get_tree().process_frame
+		js_results = """
+		function getSpeechOngoing() {
+		return speech_ongoing;
+		}
+		getSpeechOngoing();
+		"""
+		speech_ongoing = JavaScriptBridge.eval(js_results)
+	print("[BridgeManager] Finished speech_ongoing! Emitting end.")
 	speech_end.emit()
 
 func _on_speech_nomatch_callback(_args):
@@ -166,12 +185,16 @@ func _on_speech_error_callback(_args):
 
 func _on_audio_start_callback(_args):
 	print("[BridgeManager] On Audio Start callback.")
+	speech_audiostart.emit()
 
 func _on_audio_end_callback(_args):
 	print("[BridgeManager] On Audio End callback.")
+	speech_audioend.emit()
 
 func _on_sound_start_callback(_args):
 	print("[BridgeManager] On Sound Start callback.")
+	speech_soundstart.emit()
 
 func _on_sound_end_callback(_args):
 	print("[BridgeManager] On Sound End callback.")
+	speech_soundend.emit()

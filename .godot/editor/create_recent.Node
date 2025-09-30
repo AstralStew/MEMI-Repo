@@ -1,9 +1,9 @@
+Timer
 TextureRect
 Control
 VBoxContainer
 MarginContainer
 HSeparator
-Timer
 CharacterController
 LabelController
 AudioPlayer

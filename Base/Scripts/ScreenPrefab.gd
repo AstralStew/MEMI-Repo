@@ -22,8 +22,8 @@ signal try_queue_animation(_name,_delay)
 
 signal try_play_stream_from_path(_path)
 
-signal try_activate_exit
-signal try_deactivate_exit
+signal try_activate_restarts
+signal try_deactivate_restarts
 
 
 signal try_reset_to_start
@@ -69,13 +69,13 @@ func reset_scenario() -> void:
 
 #region Animation functions
 
-func activate_exit() -> void:
+func activate_restarts() -> void:
 	if debugging: print("[ScreenPrefab] Attempting to activate exit...")
-	try_activate_exit.emit()
+	try_activate_restarts.emit()
 
-func deactivate_exit() -> void:
+func deactivate_restarts() -> void:
 	if debugging: print("[ScreenPrefab] Attempting to deactivate exit...")
-	try_deactivate_exit.emit()
+	try_deactivate_restarts.emit()
 
 #endregion
 

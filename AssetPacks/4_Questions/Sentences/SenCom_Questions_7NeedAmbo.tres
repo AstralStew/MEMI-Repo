@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_rqgly"]
 script = ExtResource("1_xx0oo")
 checkType = 1
-phrases = Array[String](["No", "Nope", "Nah", "Not"])
+phrases = Array[String](["No", "Nope", "Nah", "Not", "don't"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]

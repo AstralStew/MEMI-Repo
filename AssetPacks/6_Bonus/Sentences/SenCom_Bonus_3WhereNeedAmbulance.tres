@@ -11,12 +11,14 @@ metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [sub_resource type="Resource" id="Resource_qrirv"]
 script = ExtResource("1_2l33p")
+checkType = 1
 phrases = Array[String](["Clark", "Clarke"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [sub_resource type="Resource" id="Resource_2l33p"]
 script = ExtResource("1_2l33p")
-phrases = Array[String](["Street", "Epping"])
+checkType = 1
+phrases = Array[String](["Street", "St"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]

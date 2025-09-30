@@ -145,7 +145,7 @@ region = Rect2(600, 432, 100, 108)
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 12.0,
 "texture": SubResource("AtlasTexture_rlocp")
 }, {
 "duration": 1.0,

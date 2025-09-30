@@ -10,6 +10,7 @@ extends Control
 @export var exit_text := "MENU_EXIT"
 @export var back_text := "MENU_BACK"
 
+
 @export_group("Colours")
 @export var light_button_text_colour := Color.BLACK
 #@export var light_exit_button_bg := Color(1,1,1,0.3)
@@ -40,6 +41,10 @@ signal try_reset_scenario
 signal try_reset_to_start
 
 
+signal enable_menu_restarts
+signal disable_menu_restarts
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -54,6 +59,9 @@ func _ready() -> void:
 
 
 
+#region Menu options
+
+
 func reset_scenario() -> void:
 	if debugging: print("[ExitMenu] Attempting to reset scenario...")
 	try_reset_scenario.emit()
@@ -61,6 +69,7 @@ func reset_scenario() -> void:
 func reset_to_start() -> void:
 	if debugging: print("[ExitMenu] Attempting to reset to start...")
 	try_reset_to_start.emit()
+
 
 
 func exit_normal() -> void:
@@ -71,6 +80,15 @@ func exit_quick() -> void:
 	if debugging: print("[ExitMenu] EXIT QUICK  Attempting to exit quickly...")
 	BridgeManager.exit_quick()
 
+
+#endregion
+
+
+func enable_level_menu() -> void:
+	enable_menu_restarts.emit()
+
+func disable_level_menu() -> void:
+	disable_menu_restarts.emit()
 
 
 func slide_in() -> void:
@@ -131,8 +149,24 @@ func switch_colours(_make_text_dark:bool=false) -> void:
 	text_is_dark = _make_text_dark
 
 
+func toggle_colours() -> void:
+	if text_is_dark:
+		exit_button._set_text_colour(light_button_text_colour)
+		exit_button._auto_text_colour = light_button_text_colour
+	else:
+		exit_button._set_text_colour(dark_button_text_colour)
+		exit_button._auto_text_colour = dark_button_text_colour
+	text_is_dark = !text_is_dark
 
-
+func set_dark() -> void:	
+	exit_button._set_text_colour(dark_button_text_colour)
+	exit_button._auto_text_colour = dark_button_text_colour
+	text_is_dark = true
+	
+func set_light() -> void:
+	exit_button._set_text_colour(light_button_text_colour)
+	exit_button._auto_text_colour = light_button_text_colour
+	text_is_dark = false
 
 
 

@@ -43,7 +43,8 @@ class_name TapBubble
 @export var receive_touch_ease := Tween.EaseType.EASE_OUT_IN
 @export var receive_touch_trans := Tween.TransitionType.TRANS_LINEAR
 
-
+@export_group("Answering")
+@export var ongoing_text_colour := Color("000000aa")
 
 @export_group("Touch Hint")
 @export var touch_hint_fade_in := 0.25
@@ -236,18 +237,25 @@ func activate_touch_input() -> void:
 		_:
 			push_error("[TapBubble(",name,")] ERROR -> No matching touch hint! Shouldn't be possible. Ignoring :(")
 
-func answer(_text:String) -> void:	
+func answer(_text:String) -> void:
 	if _debug: print("[TapBubble(",name,")] NOTE -> Answer received! Setting text...")
 	
+	bubbleText.add_theme_color_override("default_color", ongoing_text_colour)
+	
 	# fade out dots
-	_fade_speaking_dots(false,speaking_dots_fade_out,speaking_dots_ease,speaking_dots_trans)
-	
-	# set text once speaking dots have faded out
-	speaking_dots_fade.tween_callback(_set_text.bind(_text))
-	
+	if speakingDots.is_playing():
+		_fade_speaking_dots(false,speaking_dots_fade_out,speaking_dots_ease,speaking_dots_trans)
+		# set text once speaking dots have faded out
+		speaking_dots_fade.tween_callback(_set_text.bind(_text))
+	else:
+		_set_text(_text)
+
 
 func correct() -> void:	
 	if _debug: print("[TapBubble(",name,")] NOTE -> Correct answer! Setting to green and bouncing...")
+	
+	bubbleText.add_theme_color_override("default_color", _auto_text_colour)
+	
 	# fade to correct colour + resize background twice to bounce
 	_fade_background(correct_colour,correct_inout,correct_ease,Tween.TransitionType.TRANS_LINEAR)
 	_resize_background(correct_size,correct_inout,correct_ease,correct_trans)

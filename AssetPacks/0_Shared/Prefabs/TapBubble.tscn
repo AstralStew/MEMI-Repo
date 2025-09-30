@@ -39,6 +39,7 @@ pop_in_sound = ExtResource("3_xuxd2")
 correct_sound = ExtResource("4_16d4k")
 incorrect_sound = ExtResource("5_ddfbp")
 incorrect_pause = 2.0
+ongoing_text_colour = Color(0, 0, 0, 0.5)
 pulse_out = 0.35
 pulse_in_trans = 5
 pulse_out_trans = 5
@@ -91,6 +92,7 @@ patch_margin_bottom = 15
 [node name="BubbleTapHint" type="AnimatedSprite2D" parent="BubbleText/BubbleBG"]
 position = Vector2(144.5, 113)
 sprite_frames = ExtResource("5_bhybv")
+frame_progress = 0.2743407
 
 [node name="SpeakingDots" type="AnimatedSprite2D" parent="BubbleText/BubbleBG"]
 modulate = Color(1, 1, 1, 0)

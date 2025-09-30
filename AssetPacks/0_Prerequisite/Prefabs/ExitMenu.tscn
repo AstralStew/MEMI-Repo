@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="10_digka"]
 [ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="11_ao6ln"]
 
-[node name="ExitMenu_MC" type="Control" node_paths=PackedStringArray("exit_button", "overlay", "menu")]
+[node name="ExitMenu" type="Control" node_paths=PackedStringArray("exit_button", "overlay", "menu")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 1
@@ -120,6 +120,7 @@ grow_horizontal = 0
 theme_override_constants/separation = 15
 
 [node name="Restart_RTL" type="RichTextLabel" parent="SlidingMenu/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -137,6 +138,7 @@ autopopulate = true
 autokey = "MENU_RESTART"
 
 [node name="HardRestart_RTL" type="RichTextLabel" parent="SlidingMenu/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(383.065, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -173,11 +175,16 @@ autokey = "MENU_HARDEXIT"
 [node name="QuickExit_RTL" type="RichTextLabel" parent="SlidingMenu"]
 clip_contents = false
 layout_direction = 2
-layout_mode = 0
-offset_left = 122.0
-offset_top = 359.0
-offset_right = 322.0
-offset_bottom = 389.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.80859375
+anchor_top = 0.81380755
+anchor_right = 0.80859375
+anchor_bottom = 0.81380755
+offset_left = -200.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
@@ -192,6 +199,7 @@ debugging = true
 default_size = 22
 autopopulate = true
 autokey = "MENU_QUICKEXIT"
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="SlidingMenu/QuickExit_RTL"]
 z_index = -1
@@ -333,10 +341,14 @@ flat = true
 
 [node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="ExitButton_BB"]
 
-[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="reset_scenario"]
+[connection signal="disable_menu_restarts" from="." to="SlidingMenu/VBoxContainer/Restart_RTL" method="set_visible" binds= [false]]
+[connection signal="disable_menu_restarts" from="." to="SlidingMenu/VBoxContainer/HardRestart_RTL" method="set_visible" binds= [false]]
+[connection signal="enable_menu_restarts" from="." to="SlidingMenu/VBoxContainer/Restart_RTL" method="set_visible" binds= [true]]
+[connection signal="enable_menu_restarts" from="." to="SlidingMenu/VBoxContainer/HardRestart_RTL" method="set_visible" binds= [true]]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="slide_out"]
-[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="reset_to_start"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/Restart_RTL" to="." method="reset_scenario"]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="slide_out"]
+[connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardRestart_RTL" to="." method="reset_to_start"]
 [connection signal="meta_link_1" from="SlidingMenu/VBoxContainer/HardExit_RTL" to="." method="exit_normal"]
 [connection signal="meta_link_1" from="SlidingMenu/QuickExit_RTL" to="." method="exit_quick"]
 [connection signal="pressed" from="SlidingMenu/QuickExit_RTL/TextureRect/QuickExitTouchButton" to="SlidingMenu/QuickExit_RTL" method="check_meta_link_from_button"]
@@ -351,5 +363,5 @@ flat = true
 [connection signal="meta_link_7" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_7"]
 [connection signal="meta_link_8" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_8"]
 [connection signal="meta_link_9" from="ExitButton_BB/BubbleText" to="ExitButton_BB" method="_send_meta_link_9"]
-[connection signal="pressed" from="ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="ExitButton_BB" method="pop_out"]
 [connection signal="pressed" from="ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="ExitButton_BB" method="check_meta_link_from_button"]
+[connection signal="pressed" from="ExitButton_BB/BubbleText/BubbleBG/ScenarioTouchButton" to="ExitButton_BB" method="pop_out"]

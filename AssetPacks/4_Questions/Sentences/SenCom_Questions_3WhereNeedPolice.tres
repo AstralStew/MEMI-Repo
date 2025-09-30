@@ -1,16 +1,29 @@
-[gd_resource type="Resource" script_class="SentenceComparer" load_steps=4 format=3 uid="uid://dfgf4qwrgkhsr"]
+[gd_resource type="Resource" script_class="SentenceComparer" load_steps=6 format=3 uid="uid://dfgf4qwrgkhsr"]
 
 [ext_resource type="Script" uid="uid://mcavyn2jq2t0" path="res://Base/Scripts/PhraseCheck.gd" id="1_gsrcd"]
 [ext_resource type="Script" uid="uid://nudfku7qhbxq" path="res://Base/Scripts/SentenceComparer.gd" id="2_nvotj"]
 
 [sub_resource type="Resource" id="Resource_r3g0v"]
 script = ExtResource("1_gsrcd")
-phrases = Array[String](["3", "High", "Street", "Doreen"])
+checkType = 1
+phrases = Array[String](["3", "Three"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[sub_resource type="Resource" id="Resource_gsrcd"]
+script = ExtResource("1_gsrcd")
+checkType = 1
+phrases = Array[String](["High", "Hi"])
+metadata/_custom_type_script = "uid://mcavyn2jq2t0"
+
+[sub_resource type="Resource" id="Resource_nvotj"]
+script = ExtResource("1_gsrcd")
+checkType = 1
+phrases = Array[String](["Street", "St"])
 metadata/_custom_type_script = "uid://mcavyn2jq2t0"
 
 [resource]
 script = ExtResource("2_nvotj")
-correctConditions = Array[ExtResource("1_gsrcd")]([SubResource("Resource_r3g0v")])
+correctConditions = Array[ExtResource("1_gsrcd")]([SubResource("Resource_r3g0v"), SubResource("Resource_gsrcd"), SubResource("Resource_nvotj")])
 correctAnim = "Questions/Questions_6a_Correct"
 wrongAnim = "Questions/Questions_6b_Mumbo"
 mumboAnim = "Questions/Questions_6b_Mumbo"

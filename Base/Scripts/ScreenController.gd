@@ -6,6 +6,8 @@ extends AnimationPlayer
 
 @export var startRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/SFX/RecordingStart.mp3"
 @export var stopRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/SFX/RecordingStop.mp3"
+@export var exitMenuPath : StringName = "res://AssetPacks/0_Prerequisite/Prefabs/ExitMenu.tscn"
+
 
 @export_group("Autostart Properties")
 #@export var autostart := true
@@ -25,6 +27,7 @@ extends AnimationPlayer
 @export var overrideAnimSpeedScale := 1.0
 @export var overrideTimeScale := false
 @export var overrideTimeScaleFactor := 1.0
+@export var overrideLogTimers := false
 #@export var overrideLoadingLog := false
 
 @export_group("Screen Sets")
@@ -37,25 +40,40 @@ var _current_set_index := 0
 var _current_screen_index := 0
 
 
+@export_group("Speech Recognition")
+
+@export var topup_time := 2.0
+@export var max_time := 8.0
+
+
+
 @export_group("Read Only")
 @export var loaded_elements = {} ## e.g. {SectionName}~{ScreenName}~{ElementName}[br] ## i.e. Intro~Landing~Logo, Intro~Landing~BG1, Intro~Landing~
 @onready var content_parent : String = "MarginContainer/Content" #get_child(0).get_child(0)
 
 @export var sentenceComparer : SentenceComparer = null
-@export var recentResult := false
+
+@onready var speechTimer : Timer = find_child("SpeechTimer")
+@export var is_speaking = false
+#@export var recentResult := false
 @export var lastSentence := ""
 @export var sentenceAnim := ""
 
 @export var audioStreamPlayer : AudioPlayer = null
 
 
-signal switched_backgrounds
+signal switched_menu_button_dark
+signal switched_menu_button_light
+#signal switched_backgrounds
 
 signal pack_load_finished
 
 signal last_sentence_changed(newSentence)
 
 signal display_loading
+
+signal activate_restarts
+signal deactivate_restarts
 
 
 # Called when the node enters the scene tree for the first time.
@@ -89,6 +107,8 @@ func _enter_tree() -> void:
 	
 	audioStreamPlayer = get_child(2)
 	
+	create_prefab_untracked(load(exitMenuPath),"/root/AllMother/MenuCanvas")
+	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
 
@@ -96,21 +116,35 @@ func _ready() -> void:
 	if overrideAnimSpeed: speed_scale = overrideAnimSpeedScale
 	if overrideLanguageSwitching: LanguageManager.set_language(overrideLanguageIndex)
 
+func _process(delta: float) -> void:
+	if !overrideLogTimers: return
+	if speechTimer.is_stopped(): return
+	
+	if debugging: print("[ScreenController] OverrideLogTimers. SpeechTimer = ", speechTimer.time_left)
+
+
+
 #region Menu functions
 
-func activate_exit_button():
-	push_error("[ScreenController] ERROR - DEPRECATED - Activating exit button")
-	#activate_exit.emit()
+func activate_exit_menu_restarts():
+	if debugging: print("[ScreenController] Activating exit menu restarts")
+	activate_restarts.emit()
 
-func deactivate_exit_button():
-	push_error("[ScreenController] ERROR - DEPRECATED - Deactivating exit button")
-	#deactivate_exit.emit()
+func deactivate_exit_menu_restarts():
+	if debugging: print("[ScreenController] Deactivating exit menu restarts")
+	deactivate_restarts.emit()
 
-func announce_switched_backgrounds():
-	if debugging: print("[ScreenController] Proudly (manually) announcing we switched backgrounds :)")
-	switched_backgrounds.emit()
+#func announce_switched_backgrounds():
+	#if debugging: print("[ScreenController] Proudly (manually) announcing we switched backgrounds :)")
+	#switched_backgrounds.emit()
 
+func set_exit_menu_button_dark():
+	if debugging: print("[ScreenController] Exit menu button dark.")
+	switched_menu_button_dark.emit()
 
+func set_exit_menu_button_light():
+	if debugging: print("[ScreenController] Exit menu button light.")
+	switched_menu_button_light.emit()
 
 
 func reset_scenario():
@@ -150,7 +184,7 @@ func reset_scenario():
 	await get_tree().process_frame
 	
 	# load screen 0
-	if current_set.resource_name != "Interpreter":
+	if current_set.resource_name != "Interpreter" && current_set.resource_name != "Intro":
 		load_screen(0, true,"Skip_Start")
 	else:
 		load_screen(0, true)
@@ -475,11 +509,12 @@ func create_prefab(_key:String,_scene:PackedScene, _parent:String=content_parent
 		print("[ScreenController] CREATE PREFAB -> Prefab is a TapBubble! Liking + subscribing.")
 		scene.touch_input.connect(_start_recognition)
 		last_sentence_changed.connect(scene.answer)
-	elif scene is ExitMenu:
-		print("[ScreenController] CREATE PREFAB -> Prefab is an ExitMenu! Liking + subscribing.")
-		scene.try_reset_scenario.connect(reset_scenario)
-		scene.try_reset_to_start.connect(reset_to_start)
-		switched_backgrounds.connect(scene.switch_colours)
+	#elif scene is ExitMenu:
+		#print("[ScreenController] CREATE PREFAB -> Prefab is an ExitMenu! Liking + subscribing.")
+		#scene.try_reset_scenario.connect(reset_scenario)
+		#scene.try_reset_to_start.connect(reset_to_start)
+		#switched_menu_button_dark.connect(scene.set_dark)
+		#switched_menu_button_light.connect(scene.set_light)
 	
 	# Add it to the dictionary
 	loaded_elements[_key] = scene
@@ -501,11 +536,12 @@ func destroy_prefab(_key:String):
 		print("[ScreenController] DESTROY PREFAB -> Prefab is a TapBubble, unliking + unsubscribing.")
 		scene.touch_input.disconnect(_start_recognition)
 		last_sentence_changed.disconnect(scene.answer)
-	elif scene is ExitMenu:
-		print("[ScreenController] DESTROY PREFAB -> Prefab is an ExitMenu, unliking + unsubscribing.")
-		scene.try_reset_scenario.disconnect(reset_scenario)
-		scene.try_reset_to_start.disconnect(reset_to_start)
-		switched_backgrounds.disconnect(scene.switch_colours)
+	#elif scene is ExitMenu:
+		#print("[ScreenController] DESTROY PREFAB -> Prefab is an ExitMenu, unliking + unsubscribing.")
+		#scene.try_reset_scenario.disconnect(reset_scenario)
+		#scene.try_reset_to_start.disconnect(reset_to_start)
+		#switched_menu_button_dark.connect(scene.set_dark)
+		#switched_menu_button_light.connect(scene.set_light)
 	
 	# Destroy the prefab
 	loaded_elements[_key].queue_free()
@@ -525,6 +561,8 @@ func destroy_all_prefabs_except(_protected:PackedStringArray):
 			destroy_prefab(key)
 		elif debugging:
 			print("[ScreenController] Prefab '",key,"' was NOT destroyed ;) ...")
+			
+
 
 
 func _subscribe(prefab:ScreenPrefab) -> void:
@@ -550,8 +588,8 @@ func _subscribe(prefab:ScreenPrefab) -> void:
 	
 	prefab.try_play_stream_from_path.connect(play_stream_from_path)
 	
-	prefab.try_activate_exit.connect(activate_exit_button)
-	prefab.try_deactivate_exit.connect(deactivate_exit_button)
+	prefab.try_activate_restarts.connect(activate_exit_menu_restarts)
+	prefab.try_deactivate_restarts.connect(deactivate_exit_menu_restarts)
 	
 	prefab.try_reset_to_start.connect(reset_to_start)
 	prefab.try_reset_scenario.connect(reset_scenario)
@@ -577,11 +615,48 @@ func _unsubscribe(prefab:ScreenPrefab) -> void:
 	
 	prefab.try_play_stream_from_path.disconnect(play_stream_from_path)
 	
-	prefab.try_activate_exit.disconnect(activate_exit_button)
-	prefab.try_deactivate_exit.disconnect(deactivate_exit_button)
+	prefab.try_activate_restarts.disconnect(activate_exit_menu_restarts)
+	prefab.try_deactivate_restarts.disconnect(deactivate_exit_menu_restarts)
 	
 	prefab.try_reset_to_start.disconnect(reset_to_start)
 	prefab.try_reset_scenario.disconnect(reset_scenario)
+
+
+
+
+## Key should be the same name as prefab [br] ## i.e. Intro_Landing_Prefab1, Intro_Landing_Prefab2, etc
+func create_prefab_untracked(_scene:PackedScene, _parent:String=content_parent):
+	if debugging: print("[ScreenController] Attemping to create prefab '",_scene,"' but untracked")
+	
+	# Spawn the packed scene
+	var scene = _scene.instantiate()
+	get_node(_parent).add_child(scene)
+	
+	if _parent == content_parent:
+		print("[ScreenController] Prefab is directly under 'Content', setting anchor presets")
+		
+		# Set its layout mode
+		var scene_as_control := scene as Control
+		scene_as_control.set_anchors_preset(Control.PRESET_FULL_RECT)
+	
+	if scene is ExitMenu:
+		print("[ScreenController] CREATE PREFAB -> Prefab is an ExitMenu! Liking + subscribing.")
+		scene.try_reset_scenario.connect(reset_scenario)
+		scene.try_reset_to_start.connect(reset_to_start)
+		switched_menu_button_dark.connect(scene.set_dark)
+		switched_menu_button_light.connect(scene.set_light)
+		activate_restarts.connect(scene.enable_level_menu)
+		deactivate_restarts.connect(scene.disable_level_menu)	
+	
+	if debugging: print("[ScreenController]Prefab '",_scene,"' created.")
+
+
+
+
+
+
+
+
 
 #endregion
 
@@ -592,7 +667,8 @@ func set_sentence_comparer(_sentenceComparer:SentenceComparer):
 		if debugging: print("[ScreenController] Setting new Sentence Comparer ('",_sentenceComparer,"') and resetting its total attempts.")
 		sentenceComparer = _sentenceComparer
 		sentenceComparer.reset_attempts()
-	
+
+
 
 func _start_recognition() -> void:
 	
@@ -606,74 +682,130 @@ func _start_recognition() -> void:
 			play_stream_from_path(startRecordingStreamPath)
 		return
 	
+	# Reset timers
+	speechTimer.start(max_time)
+	lastSentence = ""
+	is_speaking = true
+	
 	if debugging: print("[ScreenController] Starting speech recognition...")
 	_connect_bridge()
 	BridgeManager._start_recognition()
 
+func _stop_recognition() -> void:
+	if debugging: print("[ScreenController] Stopping recognition...")
+	BridgeManager._stop_recognition()
+
+
+
+
+
 func _on_speech_start():
 	if debugging: print("[ScreenController] OnSpeechStart...")
-	recentResult = false
+	#recentResult = false
 	# Play sound
 	if !OS.has_feature("web_android"):
 		play_stream_from_path(startRecordingStreamPath)
 
 func _on_speech_end():
 	if debugging: print("[ScreenController] OnSpeechEnd (does nothing now?)")
-	if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
-	if recentResult:
-		if debugging: print("[ScreenController] OLD recent result was found, ignoring.")
-		return
 	
-	if debugging: print("[ScreenController] OnSpeechEnd waiting for 1 second...")
-	await get_tree().create_timer(1).timeout 
-	if recentResult:
-		if debugging: print("[ScreenController] NEW recent result found, ignoring.")
-		return
+	await get_tree().create_timer(0.5)
 	
-	if debugging: print("[ScreenController] Still no recent result found, checking blank string.")
 	if _bridge_connected: _disconnect_bridge()
-	recentResult = true
-	lastSentence = "" 
-	last_sentence_changed.emit("?")
+	
+	is_speaking = false
+	
+	# run check_speech
 	_play_sentence_anim()
+	
 	# Play sound
 	if !OS.has_feature("web_android"):
 		play_stream_from_path(stopRecordingStreamPath)
+	
+	#if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
+	#if recentResult:
+		#if debugging: print("[ScreenController] OLD recent result was found, ignoring.")
+		#return
+	#
+	#if debugging: print("[ScreenController] OnSpeechEnd waiting for 1 second...")
+	#await get_tree().create_timer(1).timeout 
+	#if recentResult:
+		#if debugging: print("[ScreenController] NEW recent result found, ignoring.")
+		#return
+	#
+	#if debugging: print("[ScreenController] Still no recent result found, checking blank string.")
+	#if _bridge_connected: _disconnect_bridge()
+	#recentResult = true
+	#lastSentence = "" 
+	#last_sentence_changed.emit("?")
+	#_play_sentence_anim()
+	## Play sound
+	#if !OS.has_feature("web_android"):
+		#play_stream_from_path(stopRecordingStreamPath)
 
 
-func _on_speech_error():
-	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned, checking blank string.")
-	if _bridge_connected: _disconnect_bridge()
-	recentResult = true
-	lastSentence = ""
-	last_sentence_changed.emit("?")
-	_play_sentence_anim()
-	# Play sound
-	if !OS.has_feature("web_android"):
-		play_stream_from_path(stopRecordingStreamPath)
+func _on_speech_audiostart():
+	pass
 
-func _on_speech_nomatch():
-	if debugging: printerr("[ScreenController] ERROR -> OnSpeechNoMatch returned, checking blank string.")
-	if _bridge_connected: _disconnect_bridge()
-	recentResult = true
-	lastSentence = ""
-	last_sentence_changed.emit("?")
-	_play_sentence_anim()
-	# Play sound
-	if !OS.has_feature("web_android"):
-		play_stream_from_path(stopRecordingStreamPath)
+func _on_speech_audioend():
+	pass
+
+func _on_speech_soundstart():
+	pass
+
+
+func _on_speech_soundend():
+	pass
+
 
 
 func _on_speech_sentence(newSentence:String) -> void:
+	if !is_speaking: return
 	if debugging: print("[ScreenController] OnSpeechSentence: '",newSentence,"'")
-	if _bridge_connected: _disconnect_bridge()
-	recentResult = true
+	if newSentence == "": push_warning("[ScreenController] OnSpeechSentence is blank!")
+	#lastSentence += "" if newSentence == "" else " " + newSentence	
 	lastSentence = newSentence
-	last_sentence_changed.emit(newSentence[0].to_upper() + newSentence.substr(1))
-	_play_sentence_anim()
-	# Play sound
-	if !OS.has_feature("web_android"):
-		play_stream_from_path(stopRecordingStreamPath)
+	last_sentence_changed.emit(lastSentence[0].to_upper() + lastSentence.substr(1))
+	
+	speechTimer.stop()
+	speechTimer.start(topup_time)
+
+
+func _on_speech_error():
+	#if !is_speaking: return
+	if debugging: printerr("[ScreenController] ERROR -> OnSpeechError returned! Ignoring.")
+	
+	#lastSentence += " [__]"
+	#last_sentence_changed.emit(lastSentence[0].to_upper() + lastSentence.substr(1))
+	
+	#speechTimer.stop()
+	#speechTimer.start(topup_time)
+
+
+func _on_speech_nomatch():
+	#if !is_speaking: return
+	if debugging: printerr("[ScreenController] ERROR -> OnSpeechNoMatch returned, checking blank string.")
+	
+	#lastSentence += " [__]"
+	#last_sentence_changed.emit(lastSentence[0].to_upper() + lastSentence.substr(1))
+	
+	#speechTimer.stop()
+	#speechTimer.start(topup_time)
+
+
+
+
+func _timeout() -> void:
+	_stop_recognition()
+	
+	await get_tree().create_timer(3.5)
+	
+	if is_speaking: _on_speech_end()
+
+
+
+
+
 
 func _play_sentence_anim() -> void:
 	if debugging: print("[ScreenController] PlaySentenceAnim, last sentence = '",lastSentence,"'")
@@ -688,6 +820,10 @@ func _connect_bridge() -> void:
 	BridgeManager.speech_nomatch.connect(_on_speech_nomatch)
 	BridgeManager.speech_end.connect(_on_speech_end)
 	BridgeManager.speech_phrase.connect(_on_speech_sentence)
+	BridgeManager.speech_audiostart.connect(_on_speech_audiostart)
+	BridgeManager.speech_audioend.connect(_on_speech_audioend)
+	BridgeManager.speech_soundstart.connect(_on_speech_soundstart)
+	BridgeManager.speech_soundend.connect(_on_speech_soundend)
 
 func _disconnect_bridge() -> void:
 	_bridge_connected = false
@@ -696,6 +832,10 @@ func _disconnect_bridge() -> void:
 	BridgeManager.speech_nomatch.disconnect(_on_speech_nomatch)
 	BridgeManager.speech_end.disconnect(_on_speech_end)
 	BridgeManager.speech_phrase.disconnect(_on_speech_sentence)
+	BridgeManager.speech_audiostart.disconnect(_on_speech_audiostart)
+	BridgeManager.speech_audioend.disconnect(_on_speech_audioend)
+	BridgeManager.speech_soundstart.disconnect(_on_speech_soundstart)
+	BridgeManager.speech_soundend.disconnect(_on_speech_soundend)
 
 
 

@@ -8,7 +8,8 @@ var SpeechRecognition = SpeechRecognition || window.webkitSpeechRecognition || n
 var pageURL = window.location.href;
 var folderURL = pageURL.replace(/[^/]*$/, '');
 
-var lastResultsJoined = "";
+var lastResult = "";
+var speech_ongoing = false
 
 <!-- Setup Speech Recognition -->
 if (window.SpeechRecognition === null) {
@@ -18,6 +19,7 @@ if (window.SpeechRecognition === null) {
 
 var recognition = new SpeechRecognition();
 recognition.continuous = true;
+recognition.interimResults = true;
 
 
 <!-- Functions -->
@@ -54,7 +56,7 @@ function startRecognition() {
 }
 
 function stopRecognition() {
-  console.log("[HEADER] Trying to start recognition!");  
+  console.log("[HEADER] Trying to stop recognition!");  
   recognition.stop();
 }
 
@@ -71,21 +73,27 @@ recognition.addEventListener("result", () => {
 	// These also have getters so they can be accessed like arrays.
 	// The second [0] returns the SpeechRecognitionAlternative at position 0.
 	// We then return the transcript property of the SpeechRecognitionAlternative object
+	
 	console.log("[HEADER] Got to SR result in header!");
-	var lastResults = [];
+	lastResult = ""
 	for (var i = event.resultIndex; i < event.results.length; i++) {
 		if (event.results[i].isFinal) {
-			var result = event.results[i][0].transcript + ' (Confidence: ' + event.results[i][0].confidence + ')';
-			console.log("[HEADER] Result: ", result);
-			lastResults.push(result);
+			var result = event.results[i][0].transcript // + ' (Confidence: ' + event.results[i][0].confidence + ')';
+			//lastResults.push(result);
+			lastResult = result
+			console.log("[HEADER] lastResult: ", lastResult);
+		} else {
+			var result = event.results[i][0].transcript
+			lastResult += result
+			console.log("[HEADER] lastResult: ", lastResult);
 		}
 	}
-	lastResultsJoined = lastResults.join("|");
 });
 
-recognition.onstart = () => {
+recognition.addEventListener("start", () => {
   console.log("[HEADER] Speech recognition started!");
-}
+  speech_ongoing = true;
+});
 
 recognition.addEventListener("audiostart", () => {
   console.log("[HEADER] AudioStart!");
@@ -102,6 +110,7 @@ recognition.addEventListener("soundend", () => {
 
 recognition.addEventListener("end", () => {
   console.log("[HEADER] Speech recognition ended.");
+  speech_ongoing = false;
 });
 
 recognition.addEventListener("nomatch", () => {
