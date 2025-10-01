@@ -462,8 +462,10 @@ func _resize(_doTween:bool=true) -> void:
 		
 		#if _debug: print ("[CommentBubble(",name,")] ParsedText.Substr = '",parsed_text,"', ")
 		
-		line_length += font.get_string_size(parsed_text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,bubbleText.current_size,bubbleText.justification_flags,TextServer.DIRECTION_AUTO,TextServer.ORIENTATION_HORIZONTAL).x
-		
+		if !Engine.is_editor_hint():
+			line_length += font.get_string_size(parsed_text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,bubbleText.current_size,bubbleText.justification_flags,TextServer.DIRECTION_AUTO,TextServer.ORIENTATION_HORIZONTAL).x
+		else:
+			line_length += font.get_string_size(parsed_text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,22,bubbleText.justification_flags,TextServer.DIRECTION_AUTO,TextServer.ORIENTATION_HORIZONTAL).x
 		
 		if _debug: print ("[CommentBubble(",name,")] Normal line length = ",line_length)
 		img_count = parsed_text.count("`", bubbleText.get_line_range(i).x ,bubbleText.get_line_range(i).y)

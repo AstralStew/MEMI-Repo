@@ -3,7 +3,7 @@ COMMON_YOUSAY,YOU SAY,أنت تقول,شما بگویید,你说,
 COMMON_000SAYS,000 SAYS,يقول موظّف 000,000 میگوید,000说,
 COMMON_EXIT,[url={1}]EXIT[/url],[url={1}]أخرج[/url],[url={1}]ترک کنید[/url],[url={1}]退出[/url],
 COMMON_ALLSCENARIOS,[url={9}]All scenarios[/url],,,,
-COMMON_NEXT,[url={1}]Continue[/url],تابع,ادامه دهید,继续,
+COMMON_NEXT,[url={1}]Continue[/url],[url={1}]تابع[/url],[url={1}]ادامه دهید[/url],[url={1}]继续[/url],
 ,,,,,
 ,,,,,
 ,,,,,
@@ -13,6 +13,15 @@ MENU_RESTART,[url={1}]Restart this call[/url],,,,
 MENU_HARDRESTART,[url={1}]Start from the beginning[/url],,,,
 MENU_HARDEXIT,[url={1}]Exit experience[/url],,,,
 MENU_QUICKEXIT,[url={1}]Quick Exit[/url],[url={1}]خروج سري[/url],[url={1}]خروج سریع [/url],[url={1}] 快速退出 [/url],
+,,,,,
+,,,,,
+,,,,,
+DONT_FEEL_BAD_T1,"On a real 000 call you speak to a human.
+
+Humans are better listeners than machines.
+
+This machine can't understand you now, but keep going you are doing well!",,,,
+DONT_FEEL_BAD_B1,[url={1}]Ok![/url],,,,
 ,,,,,
 ,,,,,
 ,,,,,
@@ -63,26 +72,28 @@ LEARNSTEPS_2_EXPLANATION_B2,or [url={1}]Skip Steps[/url],[url={1}]تخطّى ا�
 LEARNSTEPS_3_FIRSTSTEP_T_STEP,STEP 1,الخطوة الأولى,مرحله 1,第1步,
 ,,,,,
 LEARNSTEPS_3_FIRSTSTEP_T1,000 ASKS:,يسأل موظّف 000,000 پرسان میکند:,000问：,
-LEARNSTEPS_3_FIRSTSTEP_T2,"[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]","[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]
-الطوارئ: شرطة، إطفاء أم إسعاف؟","[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]
-شرایط اضطراری. پولیس آتش سوزی یا امبولانس؟","[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]
-紧急电话：警察、救火还是救护车？","[url={1}]<~Emergency. Police, Fire, or Ambulance?~>[/url]
+LEARNSTEPS_3_FIRSTSTEP_T2,"[url={1}]<~Emergency: police, fire, or ambulance?~>[/url]","[url={1}]<~Emergency: police, fire, or ambulance?~>[/url]
+الطوارئ: شرطة، إطفاء أم إسعاف؟","[url={1}]<~Emergency: police, fire, or ambulance?~>[/url]
+شرایط اضطراری. پولیس آتش سوزی یا امبولانس؟","[url={1}]<~Emergency: police, fire, or ambulance?~>[/url]
+
+紧急电话：警察、救火还是救护车？","[url={1}]<~Emergency. Police, Fire, or ambulance?~>[/url]
 Emergency. Police fire of ambulance?"
 LEARNSTEPS_3_FIRSTSTEP_T3,YOU ANSWER:,إجابتك:,شما جواب می دهید:,你回答：,
-LEARNSTEPS_3_FIRSTSTEP_T4,"[url={1}]<~Police~>[/url], [url={2}]<~Fire~>[/url], or [url={3}]<~Ambulance~>[/url].
+LEARNSTEPS_3_FIRSTSTEP_T4,"[url={1}]<~Police,~>[/url] [url={2}]<~fire~>[/url] or [url={3}]<~ambulance.~>[/url]
 
-Say only one service in English.","بوليس (شرطة): [url={1}]<~Police~>[/url]
-فاير (إطفاء):  [url={2}]<~Fire~>[/url]
- أو أمبولانس (إسعاف): [url={3}]<~Ambulance~>[/url]
-قل اسم خدمة واحدة فقط باللغة الإنجليزية","پولیس: [url={1}]<~Police~>[/url] 
-آتش سوزی: [url={2}]<~Fire~>[/url] 
-یا امبولانس [url={3}]<~Ambulance~>[/url] 
-فقط یکی از خدمات را به انگلیسی بگویید.","警察：[url={1}]<~Police~>[/url], 
-救火：[url={2}]<~Fire~>[/url], 
-或救护车：[url={3}]<~Ambulance~>[/url] 
+Say only one service in English.","بوليس (شرطة): [url={1}]<~police~>[/url]
+فاير (إطفاء):  [url={2}]<~fire~>[/url]
+ أو أمبولانس (إسعاف): [url={3}]<~ambulance~>[/url]
+قل اسم خدمة واحدة فقط باللغة الإنجليزية","پولیس: [url={1}]<~police~>[/url] 
+آتش سوزی: [url={2}]<~fire~>[/url] 
+یا امبولانس [url={3}]<~ambulance~>[/url] 
+فقط یکی از خدمات را به انگلیسی بگویید.","警察：[url={1}]<~police~>[/url]
+救火：[url={2}]<~fire~>[/url]
+或救护车：[url={3}]<~ambulance~>[/url] 
+
 用英语说出其中一项。","Police: [url={1}]<~Police~>[/url], 
 Fire: [url={2}]<~Fire~>[/url], 
-or Ambulance [url={3}]<~Ambulance~>[/url] 
+or ambulance [url={3}]<~ambulance~>[/url] 
 
 Say only one service in English."
 ,,,,,
@@ -97,6 +108,7 @@ LEARNSTEPS_4_SECONDSTEP_T1,000 ASKS:,يسأل موظّف 000,000 پرسان می
 LEARNSTEPS_4_SECONDSTEP_T2,[url={2}]<~What state and town is the emergency in?~>[/url],"[url={2}]<~What state and town is the emergency in?~>[/url]
 في أي ولاية ومنطقة توجد الحالة الطارئة؟","[url={2}]<~What state and town is the emergency in?~>[/url]
 این وضعیت اضطراری در کدام ایالت و منطقه مسکونی پیش آمده است؟","[url={2}]<~What state and town is the emergency in?~>[/url]
+
 哪个州和区出现了紧急情况？","[url={2}]<~What state and town is the emergency in?~>[/url]
 What state and town is the emergency in?"
 LEARNSTEPS_4_SECONDSTEP_T3,YOU ANSWER:,إجابتك:,شما جواب میدهید:,你回答：,
@@ -107,6 +119,7 @@ eg: [url={5}]<~Mildura, Victoria~>[/url]","المنطقة والولاية حي�
 مثال: [url={5}]<~Mildura, Victoria~>[/url]
 ","منطقه مسکونی و ایالتی که شرایط اضطراری پیش آمده است.
 مثلاً: [url={5}]<~Mildura, Victoria~>[/url]","出现紧急情况的区和州。
+
 比如：[url={5}]<~Mildura, Victoria~>[/url]","The area and state of your emergency.
 eg: [url={5}]<~Mildura, Victoria~>[/url]"
 ,,,,,
@@ -122,13 +135,14 @@ LEARNSTEPS_5_THIRDSTEP_T2,When you are connected they will ask you for the addre
 LEARNSTEPS_5_THIRDSTEP_T3,This is a good time to ask for an interpreter.,هذا وقت مناسب لتطلب مترجم شفهي.,یک یک وقت خوبی است که درخواست یک ترجمان کنید.,现在要翻译正是时候。,
 LEARNSTEPS_5_THIRDSTEP_T4,"ASK FOR AN INTERPRETER IN ENGLISH
 
-eg: [url={6}]<~Interpreter, Hindi~>[/url]","اطلب مترجم باللغة الإنجليزية:
-مثال: [url={6}]<~Interpreter, Hindi~>[/url]","به زبان انگلیسی یک ترجمان درخواست کنید
-مثلاً: [url={6}]<~Interpreter, Hindi~>[/url]","用英语要翻译：
-比如：[url={6}]<~Interpreter, Hindi~>[/url]","ASK FOR AN INTERPRETER IN ENGLISH:
-eg: [url={6}]<~Interpreter, Hindi~>[/url]"
+eg: [url={6}]<~interpreter, Hindi~>[/url]","اطلب مترجم باللغة الإنجليزية:
+مثال: [url={6}]<~interpreter, Hindi~>[/url]","به زبان انگلیسی یک ترجمان درخواست کنید
+مثلاً: [url={6}]<~interpreter, Hindi~>[/url]","用英语要翻译：
+
+比如：[url={6}]<~interpreter, Hindi~>[/url]","ASK FOR AN INTERPRETER IN ENGLISH:
+eg: [url={6}]<~interpreter, Hindi~>[/url]"
 ,,,,,
-LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],[url={4}]فهمت![/url],[url={4}]فهمیدم![/url],[url={4}]收到！[/url],Got it!
+LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],[url={4}]فهمت![/url],[url={4}]فهمیدم![/url],[url={4}]收到d！[/url],Got it!
 ,,,,,
 ,,,,,
 ,,,,,
@@ -168,25 +182,25 @@ to respond.","تقول الرسالة التلقائية: ""لقد اتصلت ب
 ,,,,,
 ,,,,,
 ,,,,,
-INTERPRETER_4_QUESTION1_O1,"Emergency: police, fire, or ambulance?","Emergency: police, fire, or ambulance?","Emergency: police, fire, or ambulance?","Emergency: police, fire, or ambulance?","Emergency: police, fire, or ambulance?"
+INTERPRETER_4_QUESTION1_O1,"Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire, or ambulance?"
 ,,,,,
 INTERPRETER_4_QUESTION1_C1,They always ask this question first.,"يبدؤون دائمًا بهذا السؤال أولًا: هل أنت بحاجة إلى:
-بوليس (الشرطة) [url={1}]<~Police~>[/url]
-فاير (الإطفاء) [url={2}]<~Fire~>[/url]
-أو أمبولانس (الإسعاف)؟ [url={3}]<~Ambulance~>[/url]","آنها همیشه در قدم اول این سوالات را می پرسند. آیا به کدام یک از خدمات زیر نیاز دارید
-پولیس [url={1}]<~Police~>[/url]
-اطفائیه [url={2}]<~Fire~>[/url]
-یا امبولانس؟ [url={3}]<~Ambulance~>[/url]","他们总是先问这个问题。你是需要
-警察 [url={1}]<~Police~>[/url]
-救火 [url={2}]<~Fire~>[/url]
-还是救护车？ [url={3}]<~Ambulance~>[/url]","They always ask this question first. Do you need
-Police [url={1}]<~Police~>[/url]
-Fire [url={2}]<~Fire~>[/url]
-or Ambulance? [url={3}]<~Ambulance~>[/url]"
-INTERPRETER_4_QUESTION1_C2,Tap and say [url={3}]<~Ambulance.~>[/url],انقر وقل [url={3}]<~Ambulance~>[/url],فشار داده و بگویید [url={3}]<~Ambulance~>[/url],点击、说 [url={3}]<~Ambulance~>[/url],Tap and say [url={3}]<~Ambulance~>[/url]
+بوليس (الشرطة) [url={1}]<~police~>[/url]
+فاير (الإطفاء) [url={2}]<~fire~>[/url]
+أو أمبولانس (الإسعاف)؟ [url={3}]<~ambulance~>[/url]","آنها همیشه در قدم اول این سوالات را می پرسند. آیا به کدام یک از خدمات زیر نیاز دارید
+پولیس [url={1}]<~police~>[/url]
+اطفائیه [url={2}]<~fire~>[/url]
+یا امبولانس؟ [url={3}]<~ambulance~>[/url]","他们总是先问这个问题。你是需要
+警察 [url={1}]<~police~>[/url]
+救火 [url={2}]<~fire~>[/url]
+还是救护车？ [url={3}]<~ambulance~>[/url]","They always ask this question first. Do you need
+police [url={1}]<~police~>[/url]
+fire [url={2}]<~fire~>[/url]
+or ambulance? [url={3}]<~ambulance~>[/url]"
+INTERPRETER_4_QUESTION1_C2,Tap and say [url={3}]<~ambulance.~>[/url],انقر وقل [url={3}]<~ambulance~>[/url],فشار داده و بگویید [url={3}]<~ambulance~>[/url],点击、说 [url={3}]<~ambulance~>[/url],Tap and say [url={3}]<~ambulance~>[/url]
 INTERPRETER_4_QUESTION1_CC,Well done!,أحسنت!,آفرین!,很好！,Well done!
-INTERPRETER_4_QUESTION1_CM,You need an [url={3}]<~Ambulance.~>[/url],أنت بحاجة إلى [url={3}]<~Ambulance~>[/url],شما یک  [url={3}]<~Ambulance~>[/url] نیاز دارید,你需要 [url={3}]<~Ambulance~>[/url],You need an [url={3}]<~Ambulance.~>[/url]
-INTERPRETER_4_QUESTION1_CG,You need an [url={3}]<~Ambulance.~>[/url],أنت بحاجة إلى [url={3}]<~Ambulance~>[/url],شما یک  [url={3}]<~Ambulance~>[/url] نیاز دارید,你需要 [url={3}]<~Ambulance.~>[/url],You need an [url={3}]<~Ambulance.~>[/url]
+INTERPRETER_4_QUESTION1_CM,You need an [url={3}]<~ambulance.~>[/url],أنت بحاجة إلى [url={3}]<~ambulance~>[/url],شما یک  [url={3}]<~ambulance~>[/url] نیاز دارید,你需要 [url={3}]<~ambulance~>[/url],You need an [url={3}]<~ambulance.~>[/url]
+INTERPRETER_4_QUESTION1_CG,You need an [url={3}]<~ambulance.~>[/url],أنت بحاجة إلى [url={3}]<~ambulance~>[/url],شما یک  [url={3}]<~ambulance~>[/url] نیاز دارید,你需要 [url={3}]<~ambulance.~>[/url],You need an [url={3}]<~ambulance.~>[/url]
 ,,,,,
 ,,,,,
 ,,,,,
@@ -198,28 +212,28 @@ INTERPRETER_5_QUESTION2_C2,"The state is [url={4}]<~Victoria,~>[/url] and the to
 منطقه مسکونی: [url={5}]<~Springvale~>[/url]","州：[url={4}]<~Victoria~>[/url]
 区：[url={5}]<~Springvale~>[/url]",
 INTERPRETER_5_QUESTION2_CC,Excellent!,عظيم!,,极好！,Excellent!
-INTERPRETER_5_QUESTION2_CM,"Tell them the state and town. [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]","قل لهم اسم الولاية والضاحية. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","ایالت و منطقه مسکونی را برای شان بگویید [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale.~>[/url]","告诉他们州和区。[url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]",
-INTERPRETER_5_QUESTION2_CG,"The answer is [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale.~>[/url]","قل لهم اسم الولاية والضاحية. [url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]","ایالت و منطقه مسکونی را برای شان بگویید [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale.~>[/url]","告诉他们州和区。[url={4}]<~Victoria~>[/url], [url={5}]<~Springvale~>[/url]",
+INTERPRETER_5_QUESTION2_CM,"Tell them the state and town. [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]",قل لهم اسم الولاية والضاحية. [url={4}]<~Victoria~>[/url] [url={5}]<~Springvale~>[/url],"ایالت و منطقه مسکونی را برای شان بگویید [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]","告诉他们州和区。[url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]",
+INTERPRETER_5_QUESTION2_CG,"The answer is [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale.~>[/url]","قل لهم اسم الولاية والضاحية. [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]","ایالت و منطقه مسکونی را برای شان بگویید [url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]","告诉他们州和区。[url={4}]<~Victoria,~>[/url] [url={5}]<~Springvale~>[/url]",
 ,,,,,
 ,,,,,
 ,,,,,
-INTERPRETER_6_QUESTION3_O1,"Connecting you to ambulance, Springvale, Victoria","Connecting you to ambulance, Springvale, Victoria","Connecting you to ambulance, Springvale, Victoria","Connecting you to ambulance, Springvale, Victoria","Connecting you to ambulance, Springvale, Victoria"
-INTERPRETER_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?"
-INTERPRETER_6_QUESTION3_O3,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.
+INTERPRETER_6_QUESTION3_O1,"Connecting you to ambulance, Springvale, Victoria.","Connecting you to ambulance, Springvale, Victoria.","Connecting you to ambulance, Springvale, Victoria.","Connecting you to ambulance, Springvale, Victoria.","Connecting you to ambulance, Springvale, Victoria."
+INTERPRETER_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?",
+INTERPRETER_6_QUESTION3_O3,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.,Connecting you to an interpreter. Please stay on the phone.,
 ,,,,,
 INTERPRETER_6_QUESTION3_C1,They are connecting you to a service in your area.,يوصلونك الآن مع مركز خدمات في منطقتك.,آنها شما را به یک مرکز خدماتی به منطقه تان وصل میکنند.,他们正在为你接通你本地的服务机构。,They are connecting you to a service in your area.
 INTERPRETER_6_QUESTION3_C2,Practise asking for an interpreter now.,تدرّب على طلب مُترجم الآن.,درخواست نمودن یک ترجمان را حالا تمرین کنید.,现在练习要翻译。,Practise asking for an interpreter now.
-INTERPRETER_6_QUESTION3_C3,Say [url={6}]<~Interpreter~>[/url] and the language you speak in English.,"قل:[url={7}]<~Interpreter, Arabic~>[/url]","بگویید
- [url={8}]<~Interpreter, Dari~>[/url]","说 
-[url={9}]<~Interpreter, Mandrin~>[/url]","Say [url={7?}]<~Interpreter, LAN. ~>[/url]"
+INTERPRETER_6_QUESTION3_C3,Say [url={6}]<~interpreter~>[/url] and the language you speak in English.,"قل:[url={7}]<~interpreter, Arabic~>[/url]","بگویید
+ [url={8}]<~interpreter, Dari~>[/url]","说 
+[url={9}]<~interpreter, Mandrin~>[/url]","Say [url={7?}]<~interpreter, LAN. ~>[/url]"
 INTERPRETER_6_QUESTION3_CC,Fantastic!,رائع!,خیلی عالی!,非常好！,Fantastic!
-INTERPRETER_6_QUESTION3_CW,Say the language you need and [url={6}]<~Interpreter~>[/url],"قل:[url={7}]<~Interpreter, Arabic~>[/url]","بگویید
- [url={8}]<~Interpreter, Dari~>[/url]","说 
-[url={9}]<~Interpreter, Mandarin~>[/url]","Say [url={7?}]<~Interpreter, LAN. ~>[/url]"
+INTERPRETER_6_QUESTION3_CW,Say the language you need and [url={6}]<~interpreter.~>[/url],"قل:[url={7}]<~interpreter, Arabic~>[/url]","بگویید
+ [url={8}]<~interpreter, Dari~>[/url]","说 
+[url={9}]<~interpreter, Mandarin~>[/url]","Say [url={7?}]<~interpreter, LAN. ~>[/url]"
 INTERPRETER_6_QUESTION3_CM,"She missed your answer, please try again. ",لا يستطيعون فهمك.,آنها حرف شما را نمی فهمند.,他们听不懂你的话。,They can't understand you.
-INTERPRETER_6_QUESTION3_CG,Say the language you need and [url={6}]<~Interpreter~>[/url],"قل: [url={7}]<~Interpreter, Arabic~>[/url]","بگویید
- [url={8}]<~Interpreter, Dari. ~>[/url]","说 
-[url={9}]<~Interpreter, Mandarin. ~>[/url]","Say [url={7?}]<~Interpreter, LAN. ~>[/url]"
+INTERPRETER_6_QUESTION3_CG,Say the language you need and [url={6}]<~interpreter.~>[/url],"قل: [url={7}]<~interpreter, Arabic~>[/url]","بگویید
+ [url={8}]<~interpreter, Dari ~>[/url]","说 
+[url={9}]<~interpreter, Mandarin. ~>[/url]","Say [url={7?}]<~interpreter, LAN. ~>[/url]"
 ,,,,,
 ,,,,,
 ,,,,,
@@ -229,7 +243,7 @@ INTERPRETER_7_YOUDIDIT_T3,They will ask questions in your language so that emerg
 INTERPRETER_7_YOUDIDIT_T4,You now know how to call 000 if you need help in an emergency in Australia.,تعرف الآن كيف تطلب الطوارئ 000 إن كان لديك حالة طارئة في أستراليا.,حالا شما میدانید که در صورت پیش آمدن شرایط اضطراری در استرالیا چگونه به 000 تماس بگیرید.,你现在知道在澳大利亚遇到紧急情况需要帮助时如何拨打000了。,You now know how to call 000 if you need help in an emergency in Australia.
 ,,,,,
 INTERPRETER_7_YOUDIDIT_B1,[url={3}]Continue[/url],[url={3}]تابع[/url],[url={3}]ادامه دهید[/url],[url={3}]继续[/url],Continue
-INTERPRETER_7_YOUDIDIT_B2,[url={1}]Try again[/url],حاول ثانيةً,دوباره تلاش کنید,再试,Try again
+INTERPRETER_7_YOUDIDIT_B2,[url={1}]Try again[/url],[url={1}]حاول ثانيةً[/url],[url={1}]دوباره تلاش کنید[/url],[url={1}]再试[/url],Try again
 ,,,,,
 ,,,,,
 INTERPRETER_7_YOUDIDIT_ALT1,Good start!,تدرّب باستمرار!,تمرین تان را ادامه دهید.,继续练习！,Good start!
@@ -249,8 +263,10 @@ LOCATION_1_LETSTRY_B1,[url={1}]Let's go[/url],[url={1}]هيا بنا[/url],[url=
 ,,,,,
 ,,,,,
 LOCATION_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,SCENARIO
-LOCATION_2_SCENARIO_T2,You are visiting your aunt. She has sudden chest pain and is dizzy.,أنت في زيارة لعمّتك، تشعّرعمّتك فجأةً بألم في الصدّر وتشعر بالدوخة.,شما از عمه/خاله خود بازدید میکنید. او دچار درد ناگهانی در قفسه سینه خود شده و سرگیجه دارد.,你去探望姑妈。她突然胸口疼、头晕。,You are visiting your aunt. She has sudden chest pain and is dizzy.
-LOCATION_2_SCENARIO_T3,She is having a heart attack. She needs urgent medical help.,إنها تتعرّض لجلطة قلبية وهي بحاجة إلى عناية طبيّة مستعجلة.,او دچار حمله قلبی شده است. او به کمک طبی فوری نیاز دارد.,她犯心脏病了，需要急救。,She is having a heart attack. She needs urgent medical help.
+LOCATION_2_SCENARIO_T2,You are visiting your aunt. She has sudden chest pain and is dizzy.,أنت في زيارة لعمّتك، تشعّرعمّتك فجأةً بألم في الصدّر وتشعر بالدوخة.,شما از عمه/خاله خود بازدید میکنید. او دچار درد ناگهانی در قفسه سینه خود شده و سرگیجه دارد.,"你去探望姑妈。
+她突然胸口疼、头晕。",You are visiting your aunt. She has sudden chest pain and is dizzy.
+LOCATION_2_SCENARIO_T3,She is having a heart attack. She needs urgent medical help.,إنها تتعرّض لجلطة قلبية وهي بحاجة إلى عناية طبيّة مستعجلة.,او دچار حمله قلبی شده است. او به کمک طبی فوری نیاز دارد.,"她犯心脏病了，
+需要急救。",She is having a heart attack. She needs urgent medical help.
 LOCATION_2_SCENARIO_T4,"She lives at 8 Main Road, Shepparton, Victoria.","تسكن في عنوان 8 مين رُود، شيبارتون، فيكتوريا [ 8 Main Road, Shepparton, Victoria]","او در آدرس  8Main Road, Shepparton, Victoria زندگی میکند.","她住在8 Main Road, Shepparton, Victoria。","She lives at 8 Main Road, Shepparton, Victoria."
 ,,,,,
 LOCATION_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],Dial 000
@@ -268,13 +284,13 @@ LOCATION_3_CALL_C1,You will never need to respond to this pre-recorded message.,
 ,,,,,
 ,,,,,
 ,,,,,
-LOCATION_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? "
+LOCATION_4_QUESTION1_O1,"Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency. police, fire or ambulance? "
 ,,,,,
 LOCATION_4_QUESTION1_C1,Say in English which service you need.,قل بالإنجليزية ما هي الخدمة التي تُريدها.,به انگلیسی بگویید که به کدام خدمات نیاز دارید.,用英语说你需要的服务。,Say in English which service you need.
 LOCATION_4_QUESTION1_C2,Check the scenario here!,راجع السيناريو هنا!,سناریو را در اینجا بررسی کنید!,看这里的场景！,Check the scenario here!
 LOCATION_4_QUESTION1_CC,Perfect,تمام!,کاملاً درست,太好了,Perfect
-LOCATION_4_QUESTION1_CM,You need an [url={1}]<~Ambulance.~>[/url],أنت بحاجة إلى [url={1}]<~Ambulance~>[/url],شما یک  [url={3}]<~Ambulance~>[/url] نیاز دارید,你需要 [url={1}]<~Ambulance.~>[/url],You need an [url={1}]<~Ambulance~>[/url]
-LOCATION_4_QUESTION1_CG,You need an [url={1}]<~Ambulance.~>[/url],أنت بحاجة إلى [url={1}]<~Ambulance~>[/url],شما یک  [url={3}]<~Ambulance~>[/url] نیاز دارید,你需要 [url={1}]<~Ambulance.~>[/url],You need an [url={1}]<~Ambulance~>[/url]
+LOCATION_4_QUESTION1_CM,You need an [url={1}]<~ambulance.~>[/url],أنت بحاجة إلى [url={1}]<~ambulance~>[/url],شما یک  [url={3}]<~ambulance~>[/url] نیاز دارید,你需要 [url={1}]<~ambulance.~>[/url],You need an [url={1}]<~ambulance~>[/url]
+LOCATION_4_QUESTION1_CG,You need an [url={1}]<~ambulance.~>[/url],أنت بحاجة إلى [url={1}]<~ambulance~>[/url],شما یک  [url={3}]<~ambulance~>[/url] نیاز دارید,你需要 [url={1}]<~ambulance.~>[/url],You need an [url={1}]<~ambulance~>[/url]
 ,,,,,
 ,,,,,
 ,,,,,
@@ -284,7 +300,7 @@ LOCATION_5_QUESTION2_C1,Tell them the state and town.,قل لهم اسم الو�
 LOCATION_5_QUESTION2_CC,Excellent!,عظيم!,عالی!,太好了！,Excellent!
 LOCATION_5_QUESTION2_CW,"You need to say the state and town.
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton.~>[/url]","عليك قول اسم الولاية والمدينة.
-[url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","شما باید ایالت و منطقه مسکونی تان را بگویید.
+[url={2}]<~Victoria~>[/url] [url={3}]<~Shepparton~>[/url]","شما باید ایالت و منطقه مسکونی تان را بگویید.
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","你需要说州和区。
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","You need to say the state and town.
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]"
@@ -302,14 +318,14 @@ LOCATION_5_QUESTION2_CG,"The answer is [url={2}]<~Victoria,~>[/url] [url={3}]<~S
 ,,,,,
 ,,,,,
 ,,,,,
-LOCATION_6_QUESTION3_O1,"Connecting you to ambulance, Shepparton, Victoria","Connecting you to ambulance, Shepparton, Victoria","Connecting you to ambulance, Shepparton, Victoria","Connecting you to ambulance, Shepparton, Victoria","Connecting you to ambulance, Shepparton, Victoria"
-LOCATION_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?"
+LOCATION_6_QUESTION3_O1,"Connecting you to ambulance, Shepparton, Victoria.","Connecting you to ambulance, Shepparton, Victoria.","Connecting you to ambulance, Shepparton, Victoria.","Connecting you to ambulance, Shepparton, Victoria.",
+LOCATION_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?",
 ,,,,,
 LOCATION_6_QUESTION3_C1,They are connecting you to a service in your area.,إنهم يوصلونك مع مركز خدمة في منطقتك.,آنها شما را به یک مرکز خدماتی در منطقه تان وصل میکنند.,他们正在为你接通你本地的服务机构。,They are connecting you to a service in your area.
-LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~8 Main Road, Shepparton.~>[/url]","وطلبوا منك العنوان حيث توجد الحالة الطارئة [url={4}]<~8 Main Road, Shepparton~>[/url]","آنها آدرسی که شرایط اضطراری تان رخ داده را پرسید: [url={4}]<~8 Main Road, Shepparton~>[/url]","他们会问你紧急情况的地址：[url={4}]<~8 Main Road, Shepparton~>[/url]","They asked for the address of your emergency: [url={4}]<~8 Main road, Shepparton~>[/url]"
+LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~8 Main Road, Shepparton.~>[/url]",وطلبوا منك العنوان حيث توجد الحالة الطارئة [url={4}]<~8Main Road Shepparton~>[/url],آنها آدرسی که شرایط اضطراری تان رخ داده را پرسید: [url={4}]<~8Main Road Shepparton~>[/url],"他们会问你紧急情况的地址：[url={4}]<~8 Main Road, Shepparton~>[/url]","They asked for the address of your emergency: [url={4}]<~8 Main road, Shepparton~>[/url]"
 LOCATION_6_QUESTION3_CC,Great! 000 knows where your emergency is.,عظيم، تعلم خدمة الطوارئ الـ000 الآن أين توجد الحالة الطارئة,,很好！000知道出现紧急情况的地址了。,Great! 000 knows where your emergency is.
-LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~8 Main Road, Shepparton.~>[/url]","حاول ثانيةً:  [url={4}]<~8 Main road, Shepparton~>[/url]","دوباره تلاش کنید: [url={4}]<~8 Main road, Shepparton~>[/url]","再试：[url={4}]<~8 Main road, Shepparton.~>[/url]","Try again: [url={4}]<~8 Main road, Shepparton.~>[/url]"
-LOCATION_6_QUESTION3_CG,"The address is: [url={4}]<~8 Main Road, Shepparton.~>[/url]","لعنوان هو: [url={4}]<~8 Main road, Shepparton.~>[/url]","آدرس [url={4}]<~8 Main road, Shepparton.~>[/url]","地址是[url={4}]<~8 Main road, Shepparton.~>[/url]","The address is: [url={4}]<~8 Main Road, Shepparton.~>[/url]"
+LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~8 Main Road, Shepparton.~>[/url]",حاول ثانيةً:  [url={4}]<~8Main road Shepparton~>[/url],دوباره تلاش کنید: [url={4}]<~8Main road Shepparton~>[/url],"再试：[url={4}]<~8 Main road, Shepparton.~>[/url]","Try again: [url={4}]<~8 Main road, Shepparton.~>[/url]"
+LOCATION_6_QUESTION3_CG,"The address is: [url={4}]<~8 Main Road, Shepparton.~>[/url]",لعنوان هو: [url={4}]<~8Main road Shepparton~>[/url],آدرس [url={4}]<~8Main road Shepparton~>[/url],"地址是[url={4}]<~8 Main road, Shepparton.~>[/url]","The address is: [url={4}]<~8 Main Road, Shepparton.~>[/url]"
 ,,,,,
 ,,,,,
 ,,,,,
@@ -317,11 +333,11 @@ LOCATION_7_QUESTION4_O1,Why do you need the ambulance?,Why do you need the ambul
 LOCATION_7_QUESTION4_O2,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.
 ,,,,,
 LOCATION_7_QUESTION4_C1,Let’s practice asking for an interpreter again.,لنتدرّب على طلب مُترجم شفهي مرةً ثانية.,بیایید درخواست نمودن یک ترجمان را دوباره تمرین کنیم.,让我们再练一遍要翻译。,Let’s practice asking for an interpreter again.
-LOCATION_7_QUESTION4_C2,Say [url={5}]<~interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~interpreter, Arabic.~>[/url]","بگویید [url={8}]<~interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
+LOCATION_7_QUESTION4_C2,Say [url={5}]<~interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~interpreter, Arabic~>[/url]","بگویید [url={8}]<~interpreter, Dari~>[/url]","说 [url={6}]<~interpreter, Mandarin~>[/url]","Say [url={X}]<~interpreter, LAN.~>[/url]"
 LOCATION_7_QUESTION4_CC,Well done!,أحسنت!,آفرین!,好！,Well done!
-LOCATION_7_QUESTION4_CW,"Say the language you speak in English, and [url={5}]<~interpreter.~>[/url]","قل: [url={7}]<~interpreter, Arabic.~>[/url]","بگویید [url={8}]<~interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
+LOCATION_7_QUESTION4_CW,"Say the language you speak in English, and [url={5}]<~interpreter.~>[/url]","قل: [url={7}]<~interpreter, Arabic~>[/url]","بگویید [url={8}]<~interpreter, Dari~>[/url]","说 [url={6}]<~interpreter, Mandarin~>[/url]","Say [url={X}]<~interpreter, LAN.~>[/url]"
 LOCATION_7_QUESTION4_CM,"He missed your answer, please try again. ",لا يستطيعون فهمك,آنها حرف شما را نمیفهمند,他们听不懂你的话。,They can't understand you
-LOCATION_7_QUESTION4_CG,Say [url={5}]<~interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~interpreter, Arabic.~>[/url]","بگویید [url={8}]<~Interpreter, Dari.~>[/url]","说 [url={6}]<~Interpreter, Mandarin.~>[/url]","Say [url={X}]<~Interpreter, LAN.~>[/url]"
+LOCATION_7_QUESTION4_CG,Say [url={5}]<~interpreter~>[/url] and the language you speak in English.,"قل: [url={7}]<~interpreter, Arabic~>[/url]","بگویید [url={8}]<~interpreter, Dari~>[/url]","说 [url={6}]<~interpreter, Mandarin~>[/url]","Say [url={X}]<~interpreter, LAN.~>[/url]"
 .,,,,,
 ,,,,,
 ,,,,,
@@ -336,7 +352,7 @@ interpreter",كيف تطلب مُترجم شفهي,و یک ترجمان درخو
 LOCATION_8_YOUDIDIT_B1,[url={3}]Continue[/url],[url={3}]تابع[/url],[url={3}]ادامه دهید[/url],[url={3}]继续[/url],Continue
 LOCATION_8_YOUDIDIT_B2, [url={1}]Try again[/url],حاول ثانيةً,دوباره تلاش کنید,再试,Try again
 ,,,,,
-LOCATION_8_YOUDIDIT_ALT1,Well done,تدرّب باستمرار!,تمرین تان را ادامه دهید.,继续练习！,Keep practising!
+LOCATION_8_YOUDIDIT_ALT1,Well done,أحسنت,آفرین,好,
 LOCATION_8_YOUDIDIT_ALT2,Repeat this call to practice:,راجع هذا السيناريو مرةً ثانية لتتدرّب على إعطاء عنوان بالإنجليزية.,برای تمرین ارائه نمودن یک آدرس به انگلیسی این سناریو را دوباره امتحان کنید.,再用这个场景来练习用英语提供地址。,Try this scenario again to practice giving an address in English.
 LOCATION_8_YOUDIDIT_ALT3,- sharing an address in English,,,,
 LOCATION_8_YOUDIDIT_ALT4,- asking for an interpreter,,,,
@@ -344,24 +360,23 @@ LOCATION_8_YOUDIDIT_ALT5, ,,,,
 ,,,,,
 ,,,,,
 ,,,,,
-QUESTIONS_1_LETSTRY_T1,Answer as many questions as you can in English.,أجب على أكبر عدد من الأسئلة بالإنجليزية.,تا جایی که می توانید سوالات را به انگلیسی جواب دهید.,尽量用英语回答问题。,Answer as many questions as you can in English.
+QUESTIONS_1_LETSTRY_T1,Answer as many questions as you can in English.,أجب على أكبر عدد من الأسئلة بالإنجليزية.,تا جایی که می توانید سوالات را به انگلیسی جواب دهید.,尽量用英语回答问题。,
 QUESTIONS_1_LETSTRY_T2,"If you don’t understand something, you can say
 [url={1}]<~I don’t understand.~>[/url]","إن لم يكن باستطاعتك فهم شيئًا فباستطاعتك قول:
-[url={1}]<~I don’t understand.~>[/url]","اگر کدام چیزی را نفهمیدید، میتوانید بگویید
-[url={1}]<~I don’t understand.~>[/url]","如果你听不懂，你可以说
-[url={1}]<~I don’t understand.~>[/url]","If you don’t understand something, you can say
-[url={1}]<~I don’t understand.~>[/url]"
+[url={1}]<~I don’t understand~>[/url]","اگر کدام چیزی را نفهمیدید، میتوانید بگویید
+[url={1}]<~I don’t understand~>[/url]","如果你听不懂，你可以说
+[url={1}]<~I don’t understand~>[/url]",
 ,,,,,
-QUESTIONS_1_LETSTRY_B1, [url={1}]Let's begin[/url], [url={1}]لنبدأ[/url], [url={1}]بیایید شروع کنیم[/url], [url={1}]让我们开始[/url],Let's begin
-,,,,,
+QUESTIONS_1_LETSTRY_B1, [url={1}]Let's begin[/url], [url={1}]لنبدأ[/url], [url={1}]بیایید شروع کنیم[/url], [url={1}]让我们开始[/url],
 ,,,,,
 ,,,,,
-QUESTIONS_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,SCENARIO
-QUESTIONS_2_SCENARIO_T2,You are at a children’s party. The neighbour starts shouting at the party.,أنت في احتفال للأطفال، يبدأ الجار بالصراخ على الجميع.,شما در یک مهمانی اطفال هستید. همسایه شروع میکند که بالای همگی فریاد بزند.,你在参加一个儿童派对。邻居开始对大家吼叫。,You are at a children’s party. The neighbour starts shouting at everyone.
-QUESTIONS_2_SCENARIO_T3,He is drunk and is kicking the fence. He says he will break into the party.,أنه سكران ويركل السور. يقول أنه سيقتحم الاحتفال.,او مست است و حصار حویلی را با لگد می زند. او می گوید که به زور در مهمانی می آید.,他醉了，在踢围栏，他说他要闯进派对里来。,He is drunk and is kicking the fence. He says he will break into the party.
-QUESTIONS_2_SCENARIO_T4,"The address is 3 High Street, Doreen, Victoria.","العنوان هو: 3 هاي ستريت، دورين، فيكتوريا [3 High Street Doreen, Victoria]","آدرس  3High Street Doreen, Victoria است.","地址是 3 High Street Doreen, Victoria。","The address is 3 High Street Doreen, Victoria."
 ,,,,,
-QUESTIONS_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],Dial 000
+QUESTIONS_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,
+QUESTIONS_2_SCENARIO_T2,You are at a children’s party. The neighbour starts shouting at the party.,أنت في احتفال للأطفال، يبدأ الجار بالصراخ على الجميع.,شما در یک مهمانی اطفال هستید. همسایه شروع میکند که بالای همگی فریاد بزند.,你在参加一个儿童派对。邻居开始对大家吼叫。,
+QUESTIONS_2_SCENARIO_T3,He is drunk and is kicking the fence. He says he will break into the party.,أنه سكران ويركل السور. يقول أنه سيقتحم الاحتفال.,او مست است و حصار حویلی را با لگد می زند. او می گوید که به زور در مهمانی می آید.,他醉了，在踢围栏，他说他要闯进派对里来。,
+QUESTIONS_2_SCENARIO_T4,"The address is 3 High Street, Doreen, Victoria.","العنوان هو: 3 هاي ستريت، دورين، فيكتوريا [3 High Street Doreen, Victoria]","آدرس  3High Street Doreen, Victoria است.","地址是 3 High Street Doreen, Victoria。",
+,,,,,
+QUESTIONS_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],
 ,,,,,
 ,,,,,
 ,,,,,
@@ -369,45 +384,39 @@ QUESTIONS_3_CALL_O1,"You have dialled emergency 000.
 Your call is being connected...","You have dialled emergency 000.
 Your call is being connected...","You have dialled emergency 000.
 Your call is being connected...","You have dialled emergency 000.
-Your call is being connected...","You have dialled emergency 000.
-Your call is being connected..."
+Your call is being connected...",
 ,,,,,
 ,,,,,
 ,,,,,
-QUESTIONS_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? "
+QUESTIONS_4_QUESTION1_O1,"Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ",
 ,,,,,
-QUESTIONS_4_QUESTION1_C1,Say in English which service you need.,قل بالإنجليزية ما هي الخدمة التي تُريدها.,به انگلیسی بگویید که به کدام خدمات نیاز دارید.,用英语说你需要什么服务。,Say in English which service you need.
+QUESTIONS_4_QUESTION1_C1,Say in English which service you need.,قل بالإنجليزية ما هي الخدمة التي تُريدها.,به انگلیسی بگویید که به کدام خدمات نیاز دارید.,用英语说你需要什么服务。,
 ,,,,,
-QUESTIONS_4_QUESTION1_CC,Perfect! The police can help if you feel threatened.,تمام! باستطاعة الشرطة المُساعدة إن كنت تشعر بتهديد.,خیلی عالی! اگر احساس خطر میکنید پولیس می تواند کمک کند.,很好！如果你觉得受到威胁，警察可以提供帮助。,Perfect! The police can help if you feel threatened.
-QUESTIONS_4_QUESTION1_CM,You need the [url={1}]<~Police~>[/url],أنت بحاجة إلى  [url={1}]<~Police~>[/url],شما یک  [url={1}]<~Police~>[/url] نیاز دارید,你需要 [url={1}]<~Police~>[/url],You need the [url={1}]<~Police~>[/url]
-QUESTIONS_4_QUESTION1_CG,You need the [url={1}]<~Police~>[/url],أنت بحاجة إلى  [url={1}]<~Police~>[/url],شما یک  [url={1}]<~Police~>[/url] نیاز دارید,你需要 [url={1}]<~Police~>[/url],You need the [url={1}]<~Police~>[/url]
+QUESTIONS_4_QUESTION1_CC,Perfect! The police can help if you feel threatened.,تمام! باستطاعة الشرطة المُساعدة إن كنت تشعر بتهديد.,خیلی عالی! اگر احساس خطر میکنید پولیس می تواند کمک کند.,很好！如果你觉得受到威胁，警察可以提供帮助。,
+QUESTIONS_4_QUESTION1_CM,You need the [url={1}]<~police.~>[/url],أنت بحاجة إلى  [url={1}]<~police~>[/url],شما یک  [url={1}]<~police~>[/url] نیاز دارید,你需要 [url={1}]<~police~>[/url],
+QUESTIONS_4_QUESTION1_CG,You need the [url={1}]<~police.~>[/url],أنت بحاجة إلى  [url={1}]<~police~>[/url],شما یک  [url={1}]<~police~>[/url] نیاز دارید,你需要 [url={1}]<~police~>[/url],
 ,,,,,
 ,,,,,
 ,,,,,
-QUESTIONS_5_QUESTION2_O1,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?
+QUESTIONS_5_QUESTION2_O1,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,
 ,,,,,
-QUESTIONS_5_QUESTION2_C1,Tell them your state and town.,قل لهم اسم الولاية والضاحية.,ایالت و منطقه مسکونی خود را به آنها بگویید.,告诉他们你的州和区。,Tell them your state and town.
-QUESTIONS_5_QUESTION2_CC,Correct.,عظيم!,عالی!,太好了！,Excellent!
+QUESTIONS_5_QUESTION2_C1,Tell them your state and town.,قل لهم اسم الولاية والضاحية.,ایالت و منطقه مسکونی خود را به آنها بگویید.,告诉他们你的州和区。,
+QUESTIONS_5_QUESTION2_CC,Correct.,عظيم!,عالی!,太好了！,
 QUESTIONS_5_QUESTION2_CM,"The state is [url={2}]<~Victoria,~>[/url]
 and the town is [url={3}]<~Doreen.~>[/url]","الولاية هي: [url={2}]<~Victoria~>[/url]
-الضاحية هي: [url={3}]<~Doreen.~>[/url]","ایالت [url={2}]<~Victoria~>[/url] است
-و منطقه مسکونی [url={3}]<~Doreen.~>[/url] است","州是 [url={2}]<~Victoria~>[/url]
-区是 [url={3}]<~Doreen.~>[/url]","The state is [url={2}]<~Victoria~>[/url]
-and the town is [url={3}]<~Doreen.~>[/url]"
+الضاحية هي: [url={3}]<~Doreen~>[/url]","ایالت [url={2}]<~Victoria~>[/url] است
+و منطقه مسکونی [url={3}]<~Doreen~>[/url] است","州是 [url={2}]<~Victoria~>[/url]
+区是 [url={3}]<~Doreen~>[/url]",
 QUESTIONS_5_QUESTION2_CG,"The state is [url={2}]<~Victoria,~>[/url]
 and the town is [url={3}]<~Doreen.~>[/url]","الولاية هي: [url={2}]<~Victoria~>[/url]
-الضاحية هي: [url={3}]<~Doreen.~>[/url]","ایالت [url={2}]<~Victoria~>[/url] است
-و منطقه مسکونی [url={3}]<~Doreen.~>[/url] است","州是 [url={2}]<~Victoria~>[/url]
-区是 [url={3}]<~Doreen.~>[/url]","The state is [url={2}]<~Victoria~>[/url]
-and the town is [url={3}]<~Doreen.~>[/url]"
+الضاحية هي: [url={3}]<~Doreen~>[/url]","ایالت [url={2}]<~Victoria~>[/url] است
+و منطقه مسکونی [url={3}]<~Doreen~>[/url] است","州是 [url={2}]<~Victoria~>[/url]
+区是 [url={3}]<~Doreen~>[/url]",
 ,,,,,
 ,,,,,
 ,,,,,
-QUESTIONS_6_QUESTION3_O1,"Connecting you to Police, Doreen, Victoria.","Connecting you to ambulance,
-Shepparton, Victoria","Connecting you to ambulance,
-Shepparton, Victoria","Connecting you to ambulance,
-Shepparton, Victoria",
-QUESTIONS_6_QUESTION3_O2,"Emergency services, where do you need the police?","Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?","Emergency services, where do you need the ambulance?",
+QUESTIONS_6_QUESTION3_O1,"Connecting you to police, Doreen, Victoria.","Connecting you to police, Doreen, Victoria.","Connecting you to police, Doreen, Victoria.","Connecting you to police, Doreen, Victoria.",
+QUESTIONS_6_QUESTION3_O2,"Emergency services, where do you need the police?","Emergency services, where do you need the police?","Emergency services, where do you need the police?","Emergency services, where do you need the police?",
 ,,,,,
 QUESTIONS_6_QUESTION3_C1,Say the address of your emergency now.,قل عنوان الحالة الطارئة الآن.,حالا آدرس شرایط اضطراری خود را بگویید.,现在说紧急情况的地址,Say the address of your emergency now.
 QUESTIONS_6_QUESTION3_CC,Nice.,جميل,خیلی خوب,好,Nice
@@ -424,10 +433,10 @@ QUESTIONS_7_QUESTION4_CC,Great job!,عظيم!,خوب انجام دادید!,很�
 QUESTIONS_7_QUESTION4_CW,"Try saying words like: [url={5}]<~drunk,~>[/url] [url={6}]<~neighbour,~>[/url] 
 and [url={7}]<~violent.~>[/url]",حاول ثانيةً,دوباره تلاش کنید,再试。,Try again.
 QUESTIONS_7_QUESTION4_CM,"Try saying words like: [url={5}]<~drunk,~>[/url] [url={6}]<~neighbour,~>[/url] 
-and [url={7}]<~violent.~>[/url]","حاول قول كلمات مثل:  [url={5}]<~drunk,~>[/url] و [url={4}]<~neighbour,~>[/url] 
-و [url={6}]<~violent.~>[/url]","تلاش کنید کلماتی از این قبیل بگویید: [url={5}]<~drunk,~>[/url] [url={4}]<~neighbour,~>[/url] 
-و [url={6}]<~violent.~>[/url]","试着说这样的词：[url={5}]<~drunk,~>[/url] [url={4}]<~neighbour,~>[/url] 
-和 [url={6}]<~violent.~>[/url]","Try saying words like: [url={5}]<~drunk,~>[/url] [url={4}]<~neighbour,~>[/url] 
+and [url={7}]<~violent.~>[/url]","حاول قول كلمات مثل:  [url={5}]<~drunk~>[/url] و [url={4}]<~neighbour~>[/url] 
+و [url={6}]<~violent~>[/url]","تلاش کنید کلماتی از این قبیل بگویید: [url={5}]<~drunk~>[/url] [url={4}]<~neighbour~>[/url] 
+و [url={6}]<~violent~>[/url]","试着说这样的词：[url={5}]<~drunk~>[/url] [url={4}]<~neighbour~>[/url] 
+和 [url={6}]<~violent~>[/url]","Try saying words like: [url={5}]<~drunk,~>[/url] [url={4}]<~neighbour,~>[/url] 
 and [url={6}]<~violent.~>[/url]"
 QUESTIONS_7_QUESTION4_CG,[url={8}]<~The neighbour is drunk and violent~>[/url],[url={8}]<~The neighbour is drunk and violent~>[/url],[url={8}]<~The neighbour is drunk and violent~>[/url],[url={8}]<~The neighbour is drunk and violent~>[/url],[url={X}]<~The neighbour is drunk and violent~>[/url]
 ,,,,,
@@ -437,13 +446,13 @@ QUESTIONS_8_QUESTION5_O1,Has there been any physical violence?,Has there been an
 QUESTIONS_8_QUESTION5_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
 QUESTIONS_8_QUESTION5_C1,You can answer yes or no.,"لقد سألوك فيما إن كان هناك عنف؟
-[url={X}]<~yes~>[/url] أو [url={X}]<~no.~>[/url]","آنها پرسید که اگر خشونتی صورت گرفته باشد؟
-[url={X}]<~yes~>[/url] یا [url={X}]<~no.~>[/url]","他们会问是否出现了暴力事件？
+[url={X}]<~yes~>[/url] أو [url={X}]<~no~>[/url]","آنها پرسید که اگر خشونتی صورت گرفته باشد؟
+[url={X}]<~yes~>[/url] یا [url={X}]<~no~>[/url]","他们会问是否出现了暴力事件？
 [url={X}]<~yes~>[/url] 或 [url={X}]<~no.~>[/url]",They asked if there has been any violence?
 QUESTIONS_8_QUESTION5_CC,Correct.,صحيح.,درست.,对。,Correct.
 QUESTIONS_8_QUESTION5_CW,He kicked the fence. This is violence. Try again.,لقد ركل السور، وهذا عنف. حاول ثانيةً.,او حصار حویلی را با لگد زد. خشونت صورت گرفته است. دوباره تلاش کنید.,他踢了围栏，这是暴力。再试。,He kicked the fence. This is violence. Try again.
-QUESTIONS_8_QUESTION5_CM,You can answer [url={9}]<~yes~>[/url] or [url={10}]<~no.~>[/url],باستطاعتك الإجابة: [url={X}]<~yes~>[/url] أو [url={X}]<~no.~>[/url],شما می توانید اینگونه جواب دهید [url={X}]<~yes~>[/url] یا [url={X}]<~no.~>[/url],你可以回答 [url={X}]<~yes~>[/url] 或 [url={X}]<~no.~>[/url],You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
-QUESTIONS_8_QUESTION5_CG,The answer is [url={10}]<~no.~>[/url],الإجابة الصحيحة هي  [url={8}]<~no.~>[/url],جواب درست  [url={8}]<~no.~>[/url] است.,正确回答是 [url={8}]<~no.~>[/url],The answer is [url={8}]<~no.~>[/url]
+QUESTIONS_8_QUESTION5_CM,You can answer [url={9}]<~yes~>[/url] or [url={10}]<~no.~>[/url],باستطاعتك الإجابة: [url={X}]<~yes~>[/url] أو [url={X}]<~no~>[/url],شما می توانید اینگونه جواب دهید [url={X}]<~yes~>[/url] یا [url={X}]<~no~>[/url],你可以回答 [url={X}]<~yes~>[/url] 或 [url={X}]<~no.~>[/url],You can answer [url={X}]<~yes~>[/url] or [url={X}]<~no.~>[/url]
+QUESTIONS_8_QUESTION5_CG,The answer is [url={10}]<~no.~>[/url],الإجابة الصحيحة هي  [url={8}]<~no~>[/url],جواب درست  [url={8}]<~no~>[/url] است.,正确回答是 [url={8}]<~no.~>[/url],The answer is [url={8}]<~no.~>[/url]
 QUESTIONS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,Next question
 ,,,,,
 ,,,,,
@@ -453,7 +462,7 @@ QUESTIONS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next quest
 ,,,,,
 QUESTIONS_9_QUESTION6_C1,"For example a knife, a bat or a gun?",هل يحمل سلاح؟,آیا آنها یک اسلحه دارند؟,他们是否有武器？,Do they have a weapon?
 QUESTIONS_9_QUESTION6_CC,Well done!,أحسنت!,آفرین!,很好！,
-QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon. The answer is [url={10}]<~no.~>[/url],إنه لا يحمل سلاحًا (كسكين أو مضرب) فالإجابة هي: [url={8}]<~no.~>[/url],او کدام اسلحه (مانند یک چاقو یا یک میله چوب) ندارد پس جواب [url={8}]<~no.~>[/url] است,他没有武器（比如刀或棍），所以回答 [url={8}]<~no.~>[/url],He doesn’t have a weapon (like a knife or a bat) so the answer is [url={10}]<~no.~>[/url]
+QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon. The answer is [url={10}]<~no.~>[/url],إنه لا يحمل سلاحًا (كسكين أو مضرب) فالإجابة هي: [url={8}]<~no~>[/url],او کدام اسلحه (مانند یک چاقو یا یک میله چوب) ندارد پس جواب [url={8}]<~no~>[/url] است,他没有武器（比如刀或棍），所以回答 [url={8}]<~no.~>[/url],He doesn’t have a weapon (like a knife or a bat) so the answer is [url={10}]<~no.~>[/url]
 QUESTIONS_9_QUESTION6_CM,"He missed your answer, please try again. ",,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
 QUESTIONS_9_QUESTION6_CG,The answer is [url={10}]<~no.~>[/url],لنُتابع ونرى ما الأسئلة الأخرى التي يمكن أن تُسأل.,بیایید ادامه دهیم و ببینیم چه سوالات دیگری پرسیده خواهند شد.,让我们继续，看看还会问其它什么问题。,Let’s keep going and see what other questions could ask. 
 QUESTIONS_9_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي.,سوال بعدی.,下一个问题。,Next question.
@@ -464,17 +473,17 @@ QUESTIONS_10_QUESTION7_O1,Do you need an ambulance?,Do you need an ambulance?,Do
 QUESTIONS_10_QUESTION7_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
 QUESTIONS_10_QUESTION7_C1,Is anyone hurt?,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Do you need an ambulance?
-QUESTIONS_10_QUESTION7_CC,Nice.,جميل.,عالی,好。,Nice.
-QUESTIONS_10_QUESTION7_CW,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.","ليس هناك أحدًا متأذي، [url={8}]<~No,~>[/url] فأنت لا تحتاج إلى الإسعاف.","کسی مجروح نشده است. [url={8}]<~No,~>[/url] شما به یک امبولانس نیاز ندارید.","没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。","No one is hurt. [url={8}]<~No,~>[/url] you don't need an ambulance."
+QUESTIONS_10_QUESTION7_CC,Nice.,جميل.,عالی,好。,
+QUESTIONS_10_QUESTION7_CW,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.",ليس هناك أحدًا متأذي، [url={8}]<~no~>[/url] فأنت لا تحتاج إلى الإسعاف.,کسی مجروح نشده است. [url={8}]<~no~>[/url] شما به یک امبولانس نیاز ندارید.,"没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。",
 QUESTIONS_10_QUESTION7_CM,"He missed your answer, please try again. ",ليس باستطاعتهم فهمك.,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
-QUESTIONS_10_QUESTION7_CG,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.",ليس هناك أحدًا متأذي فأنت لا تحتاج إلى الإسعاف.,کسی مجروح نشده است.  شما به یک امبولانس نیاز ندارید.,没有人受伤。你不需要救护车。,No one is hurt. You don't need an ambulance. 
+QUESTIONS_10_QUESTION7_CG,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.",ليس هناك أحدًا متأذي، [url={8}]<~no~>[/url] فأنت لا تحتاج إلى الإسعاف.,کسی مجروح نشده است. [url={8}]<~no~>[/url] شما به یک امبولانس نیاز ندارید.,"没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。",
 QUESTIONS_10_QUESTION7_CD,It's OK if you can't answer every question.,السؤال التالي.,سوال بعدی.,下一个问题。,Next question.
 ,,,,,
 ,,,,,
 ,,,,,
 QUESTIONS_11_QUESTION8_O1,Are there children present?,Are there children present?,Are there children present?,Are there children present?,
 ,,,,,
-QUESTIONS_11_QUESTION8_C1,You can answer yes or no.,هل أنت بحاجة إلى إسعاف؟,آیا به یک امبولانس نیاز دارید؟,你需要救护车吗？,Are there children present?
+QUESTIONS_11_QUESTION8_C1,You can answer yes or no.,,,,Are there children present?
 QUESTIONS_11_QUESTION8_CC,Great job!,عظيم!,خوب انجام دادید!,很好！,Great job!
 QUESTIONS_11_QUESTION8_CW,[url={9}]<~Yes~>[/url] there are children at the party. ,هناك أطفال في الاحتفال، بإمكانك قول: [url={7}]<~yes.~>[/url],دراین مهمانی اطفال شامل است. شما می توانید بگویید  [url={7}]<~yes.~>[/url],派对上有儿童，你可以说 [url={7}]<~yes.~>[/url],There are children at the party. You can say [url={7}]<~yes.~>[/url]
 QUESTIONS_11_QUESTION8_CM,"He missed your answer, please try again. ",ليس باستطاعتهم فهمك.,آنها حرف شما را نمیفهمد.,他们听不懂你的话。,They can't understand you.  
@@ -503,8 +512,8 @@ QUESTIONS_12_YOUDIDIT_DT4,  ,,,,
 ,,,,,
 ,,,,,
 ,,,,,
-QUESTIONS_D_INTERPRETER_O1,I can call an Intrepreter to help. What language?,باستطاعتي طلب مُترجم شفهي للمساعدة، ما هي اللغة التي تتكلّمها؟,من می توانم برای کمک به یک ترجمان زنگ بزنم. زبانت چیست؟,I can call an Intrepreter to help. What language?,I can call an Intrepreter to help. What language?
-QUESTIONS_D_INTERPRETER_O2,Connecting you to an Interpreter. Stay on the phone please.,,شما را به یک ترجمان وصل میکنیم. پشت خط بمانید.,Connecting you to an Interpreter. Stay on the phone.,Connecting you to an Interpreter. Stay on the phone.
+QUESTIONS_D_INTERPRETER_O1,I can call an Interpreter to help. What language?,باستطاعتي طلب مُترجم شفهي للمساعدة، ما هي اللغة التي تتكلّمها؟,من می توانم برای کمک به یک ترجمان زنگ بزنم. زبانت چیست؟,I can call an Intrepreter to help. What language?,I can call an Intrepreter to help. What language?
+QUESTIONS_D_INTERPRETER_O2,Connecting you to an interpreter. Stay on the phone please.,,شما را به یک ترجمان وصل میکنیم. پشت خط بمانید.,Connecting you to an interpreter. Stay on the phone.,Connecting you to an interpreter. Stay on the phone.
 ,,,,,
 QUESTIONS_D_INTERPRETER_C1,Say your language in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 QUESTIONS_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
@@ -540,7 +549,7 @@ Your call is being connected..."
 ,,,,,
 ,,,,,
 ,,,,,
-NOHELP_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ",
+NOHELP_4_QUESTION1_O1,"Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ",
 ,,,,,
 NOHELP_4_QUESTION1_CG,The correct answer is [url={1}]<~fire.~>[/url],الإجابة الصحيحة هي: [url={1}]<~fire.~>[/url],جواب درست آتش سوزی است. [url={1}]<~fire.~>[/url],正确回答是 [url={1}]<~fire.~>[/url],The correct answer is fire.
 ,,,,,
@@ -563,25 +572,25 @@ NOHELP_7_QUESTION4_O1,What is your emergency?,What is your emergency?,What is yo
 NOHELP_7_QUESTION4_O2,Next question.,,,,
 ,,,,,
 NOHELP_7_QUESTION4_CG,[url={4}]<~The house is on fire.~>[/url],"هناك حريق في منزلك!
-[url={4}]<~The house is on fire.~>[/url]","خانه شما را آتش گرفته است!
-[url={4}]<~The house is on fire.~>[/url]","你屋子里着火了！
+[url={4}]<~The house is on fire~>[/url]","خانه شما را آتش گرفته است!
+[url={4}]<~The house is on fire~>[/url]","你屋子里着火了！
 [url={4}]<~The house is on fire.~>[/url]",There is a fire in your house!
 ,,,,,
 ,,,,,
 ,,,,,
-NOHELP_8_QUESTION5_O1,Is anyone inside the house?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,
+NOHELP_8_QUESTION5_O1,Is anyone inside the house?,Is anyone inside the house?,Is anyone inside the house?,Is anyone inside the house?,
 NOHELP_8_QUESTION5_O2,Next question.,,,,
 ,,,,,
-NOHELP_8_QUESTION5_CG,"[url={5}]<~No,~>[/url] no-one is inside the house."," [url={5}]<~No,~>[/url] لا يوجد أحدًا داخل المنزل."," [url={5}]<~No,~>[/url] کسی در خانه نیست.","[url={5}]<~No,~>[/url] 屋子里没有人。",There is no one in the house.
+NOHELP_8_QUESTION5_CG,"[url={5}]<~No,~>[/url] no-one is inside the house.", [url={5}]<~no~>[/url] لا يوجد أحدًا داخل المنزل., [url={5}]<~no~>[/url] کسی در خانه نیست.,[url={5}]<~no~>[/url] 屋子里没有人。,There is no one in the house.
 NOHELP_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي.,سوال بعدی,下一个问题,Next question.
 ,,,,,
 ,,,,,
 ,,,,,
-NOHELP_9_QUESTION6_O1,Is there anyone injured?,Has there been any physical violence?,Has there been any physical violence?,Has there been any physical violence?,
-NOHELP_9_QUESTION5_O2,Next question.,Next question.,Next question.,Next question.,
+NOHELP_9_QUESTION6_O1,Is there anyone injured?,Is there anyone injured?,Is there anyone injured?,Is there anyone injured?,
+NOHELP_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-NOHELP_9_QUESTION6_CG,"[url={5}]<~No,~>[/url] no-one is injured.","[url={5}]<~No,~>[/url] no-one is injured.","[url={5}]<~No,~>[/url] no-one is injured.","[url={5}]<~No,~>[/url] no-one is injured.",
-NOHELP_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي.,سوال بعدی.,下一个问题。,Next question.
+NOHELP_9_QUESTION6_CG,"[url={5}]<~No,~>[/url] no-one is injured.",[url={5}]<~no~>[/url] no-one is injured.,[url={5}]<~no~>[/url] no-one is injured.,[url={5}]<~no~>[/url] no-one is injured.,
+NOHELP_9_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي.,سوال بعدی.,下一个问题。,Next question.
 ,,,,,
 ,,,,,
 ,,,,,
@@ -589,8 +598,8 @@ NOHELP_10_YOUDIDIT_T1,Well done!,أحسنت!,آفرین!,很好！,Well done!
 NOHELP_10_YOUDIDIT_T2,000 will keep asking questions to get more details.,ستتابع الـ000 سؤالك أسئلة للحصول على تفاصيلٍ إضافية.,000 به سوالات خود ادامه خواهد داد تا جزئیات بیشتر بگیرد.,000会接着提问，以便了解更多细节。,000 will keep asking questions to get more details.
 NOHELP_10_YOUDIDIT_T3,Stay on the phone until 000 tells you to hang up.,ابق على الخط إلى أن تقول لك الـ000 أن تقفل الخط.,تا زمانیکه 000 به شما نگفته است پشت لین مانده و قطع نکنید.,不要挂电话，除非000告诉你挂电话。,Stay on the phone until 000 tells you to hang up.
 ,,,,,
-NOHELP_10_YOUDIDIT_B1, [url={3}]Continue[/url],تابع,ادامه دهید,继续,Continue
-NOHELP_10_YOUDIDIT_B2, [url={1}]Try again[/url],حاول ثانيةً,دوباره تلاش کنید,再试,Try again
+NOHELP_10_YOUDIDIT_B1,[url={1}]Continue[/url],[url={1}]تابع[/url],[url={1}]ادامه دهید[/url],[url={1}]继续[/url],Continue
+NOHELP_10_YOUDIDIT_B2,[url={1}]Try again[/url],[url={1}]حاول ثانيةً[/url],[url={1}]دوباره تلاش کنید[/url],[url={1}]再试[/url],Try again
 ,,,,,
 NOHELP_10_YOUDIDIT_ALT1,Well done!,أحسنت!,آفرین!,很好！,Well done!
 NOHELP_10_YOUDIDIT_ALT2,This call is difficult. 000 will keep asking questions to get more details.,إن هذا السيناريو صعب. ستتابع الـ000 سؤالك أسئلة للحصول على تفاصيلٍ إضافية.,این سناریو سخت است. 000 به سوالات خود ادامه خواهد داد تا جزئیات بیشتر بگیرد.,这个场景较难。000会接着提问，以便了解更多细节。,This scenario is difficult. 000 will keep asking questions to get more details.
@@ -602,8 +611,8 @@ NOHELP_10_YOUDIDIT_DT3,Try this call again if you want to practice answering mor
 ,,,,,
 ,,,,,
 ,,,,,
-NOHELP_D_INTERPRETER_O1,I can call an intrepreter to help. What language?,I can call an intrepreter to help. What language?,I can call an intrepreter to help. What language?,I can call an intrepreter to help. What language?,I can call an Intrepreter to help. What language?
-NOHELP_D_INTERPRETER_O2,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an Interpreter. Stay on the phone.
+NOHELP_D_INTERPRETER_O1,I can call an interpreter to help. What language?,I can call an interpreter to help. What language?,I can call an interpreter to help. What language?,I can call an interpreter to help. What language?,I can call an Interpreter to help. What language?
+NOHELP_D_INTERPRETER_O2,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter now. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone.
 ,,,,,
 NOHELP_D_INTERPRETER_C1,Say the language you speak in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 NOHELP_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
@@ -612,10 +621,10 @@ NOHELP_D_INTERPRETER_CG,Say the language you speak in English.,قل: [url={6}]<~
 ,,,,,
 ,,,,,
 ,,,,,
-BONUS_1_LETSTRY_T1,One last time?,مرة أخيرة؟,برای آخرین بار؟,最后再来一次？,One last time?
-BONUS_1_LETSTRY_T2,Listen carefully to the questions and stay calm.,استمع إلى الأسئلة بعناية وحافظ على هدوئك.,با دقت به سوالات گوش داده و آرامش خود را حفظ کنید.,仔细听问题，保持镇静。,Listen carefully to the questions and stay calm.
+BONUS_1_LETSTRY_T1,You win a bonus call!,مرة أخيرة؟,برای آخرین بار؟,最后再来一次？,
+BONUS_1_LETSTRY_T2,Challenge yourself with one final scenario.,استمع إلى الأسئلة بعناية وحافظ على هدوئك.,با دقت به سوالات گوش داده و آرامش خود را حفظ کنید.,仔细听问题，保持镇静。,
 ,,,,,
-BONUS_1_LETSTRY_B1, [url={1}]Let's go![/url], [url={1}]هيا بنا![/url], [url={1}]بیایید ادامه دهیم![/url], [url={1}]让我们开始！[/url],Let's go!
+BONUS_1_LETSTRY_B1, [url={1}]Let's go![/url], [url={1}]هيا بنا![/url], [url={1}]بیایید ادامه دهیم![/url], [url={1}]让我们开始！[/url],
 ,,,,,
 ,,,,,
 ,,,,,
@@ -623,7 +632,7 @@ BONUS_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,SCENARIO
 BONUS_2_SCENARIO_T2,You are at home and your four-year-old daughter falls and hits her head.,أنت في المنزل، تقع ابنتك البالغة من العمر أربع سنوات، وترطم رأسها.,شما در خانه هستید و دختر چهارساله تان به زمین خورده و سرش به چیزی برخورد میکند.,你在家，你4岁女儿摔倒碰到了头。,
 BONUS_2_SCENARIO_T3,She is bleeding from the head and crying loudly.,إنها تنزف من الرأس وتبكي بصوتٍ عالٍ.,از سرش خون می آید و چیغ می زند.,她头上出血，在大声啼哭。,
 BONUS_2_SCENARIO_T4,"You live at 9 Clark Street, Epping, Victoria. ","تسكن في العنوان: 9 نيوتون ستيريت، إيبينغ
- [9 Clark Street, Epping]،","شما در  9Clark Street, Epping زندگی میکنید.","你住在 9 Clark Street, Epping",
+ [9 Clark Street Epping]،",شما در  9Clark Street Epping زندگی میکنید.,"你住在 9 Clark Street, Epping",
 ,,,,,
 BONUS_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],
 ,,,,,
@@ -637,23 +646,20 @@ Your call is being connected...",
 ,,,,,
 ,,,,,
 ,,,,,
-BONUS_4_QUESTION1_O1,"Emergency. Police, Fire or Ambulance? ",حالة طوارئ: أتريد الشرطة أم الإطفاء أم الإسعاف؟,"Emergency. Police, Fire or Ambulance? ","Emergency. Police, Fire or Ambulance? ",
+BONUS_4_QUESTION1_O1,"Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ","Emergency: police, fire or ambulance? ",
 ,,,,,
-BONUS_4_QUESTION1_CG,You need an [url={1}]<~Ambulance.~>[/url],أنت بحاجة إلى [url={1}]<~Ambulance~>[/url],شما یک  [url={1}]<~Ambulance~>[/url] نیاز دارید,你需要 [url={1}]<~Ambulance.~>[/url],
+BONUS_4_QUESTION1_CG,You need an [url={1}]<~ambulance.~>[/url],أنت بحاجة إلى [url={1}]<~ambulance~>[/url],شما یک  [url={1}]<~ambulance~>[/url] نیاز دارید,你需要 [url={1}]<~ambulance~>[/url],
 ,,,,,
 ,,,,,
 ,,,,,
 BONUS_5_QUESTION2_O1,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,What state and town is the emergency in?,
 ,,,,,
-BONUS_5_QUESTION2_CG,"The answer is [url={2}]<~Epping, Victoria.~>[/url]","الإجابة الصحيحة هي إبينغ، فيكتوريا. [url={2}]<~Epping, Victoria.~>[/url]","جواب درست [url={2}]<~Epping, Victoria.~>[/url] است.","正确回答是[url={2}]<~Epping, Victoria.~>[/url]","The correct answer is Epping, Victoria. Let's keep going."
+BONUS_5_QUESTION2_CG,"The answer is [url={2}]<~Epping, Victoria.~>[/url]","الإجابة الصحيحة هي إبينغ، فيكتوريا. [url={2}]<~Epping, Victoria~>[/url]","جواب درست [url={2}]<~Epping, Victoria~>[/url] است.","正确回答是[url={2}]<~Epping, Victoria.~>[/url]","The correct answer is Epping, Victoria. Let's keep going."
 ,,,,,
 ,,,,,
 ,,,,,
-BONUS_6_QUESTION3_O1,"Connecting you to ambulance, Epping, Victoria.","Connecting you to ambulance,
-Shepparton, Victoria","Connecting you to ambulance,
-Shepparton, Victoria","Connecting you to ambulance,
-Shepparton, Victoria",
-BONUS_6_QUESTION3_O2,"Emergency services, what address do you need the Ambulance?","Emergency services, what address do you need the Ambulance?","Emergency services, what address do you need the Ambulance?","Emergency services, what address do you need the Ambulance?",
+BONUS_6_QUESTION3_O1,"Connecting you to ambulance, Epping, Victoria.","Connecting you to ambulance, Epping, Victoria.","Connecting you to ambulance, Epping, Victoria.","Connecting you to ambulance, Epping, Victoria.",
+BONUS_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?",
 ,,,,,
 BONUS_6_QUESTION3_CG,"The answer is [url={3}]<~9 Clark Street, Epping.~>[/url]","العنوان هو:[url={3}]<~9 Clark Street, Epping.~>[/url]","آدرس  [url={3}]<~9 Clark Street, Epping.~>[/url] است.","地址是 [url={3}]<~9 Clark Street, Epping.~>[/url]",
 ,,,,,
@@ -662,8 +668,8 @@ BONUS_6_QUESTION3_CG,"The answer is [url={3}]<~9 Clark Street, Epping.~>[/url]",
 BONUS_7_QUESTION4_O1,Why do you need the ambulance?,Why do you need the ambulance?,Why do you need the ambulance?,Why do you need the ambulance?,
 ,,,,,
 BONUS_7_QUESTION4_CG,[url={4}]<~A child is bleeding from the head.~>[/url],"لقد صدمت ابتنك رأسها، وهي تنزف الآن.
-[url={4}]<~A child is bleeding from the head.~>[/url]","سر دخترت به کدام چیزی برخورد کرده است و خونریزی دارد.
-[url={4}]<~A child is bleeding from the head.~>[/url]","你女儿碰到了头，在流血。
+[url={4}]<~A child is bleeding from the head~>[/url]","سر دخترت به کدام چیزی برخورد کرده است و خونریزی دارد.
+[url={4}]<~A child is bleeding from the head~>[/url]","你女儿碰到了头，在流血。
 [url={4}]<~A child is bleeding from the head.~>[/url]",Your daughter hit her head and is bleeding. Let's keep going.
 ,,,,,
 ,,,,,
@@ -671,8 +677,8 @@ BONUS_7_QUESTION4_CG,[url={4}]<~A child is bleeding from the head.~>[/url],"لق
 BONUS_8_QUESTION5_O1,Is she breathing?,Is she breathing?,Is she breathing?,Is she breathing?,
 BONUS_8_QUESTION5_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-BONUS_8_QUESTION6_C1,-,سألوك: هل تتنفّس؟,آنها پرسیدند: آیا او نفس میکشد؟,他们问：她有呼吸吗？,They asked: Is she breathing?
-BONUS_8_QUESTION5_CG,"[url={5}]<~Yes,~>[/url] she is breathing.","[url={5}]<~Yes,~>[/url] أنها تتنفّس.","[url={5}]<~Yes,~>[/url] او نفس میکشد.","[url={5}]<~Yes,~>[/url] 她有呼吸",
+BONUS_8_QUESTION5_C1,-,هل تتنفّس؟,آیا او نفس میکشد؟,她有呼吸吗？,They asked: Is she breathing?
+BONUS_8_QUESTION5_CG,"[url={5}]<~Yes,~>[/url] she is breathing.",[url={5}]<~yes~>[/url] أنها تتنفّس.,[url={5}]<~yes~>[/url] او نفس میکشد.,[url={5}]<~yes~>[/url] 她有呼吸,
 BONUS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,Next question
 ,,,,,
 ,,,,,
@@ -680,26 +686,23 @@ BONUS_8_QUESTION5_CD,It's OK if you can't answer every question.,السؤال ا
 BONUS_9_QUESTION6_O1,Is she awake?,Is she awake?,Is she awake?,Is she awake?,
 BONUS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.,
 ,,,,,
-BONUS_9_QUESTION6_C1,-,لقد سألوك: هل هي صاحية؟ ,آنها پرسیدند: آیا او بیدار است؟,他们问：她有意识吗？,They asked: Is she awake?
-BONUS_9_QUESTION6_CG,"[url={5}]<~Yes,~>[/url] she is awake."," [url={5}]<~Yes,~>[/url]  إنها صاحية.","[url={5}]<~Yes,~>[/url]  او بیدار است.",她有意识。,
-BONUS_8_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,
+BONUS_9_QUESTION6_C1,-,هل هي صاحية؟ ,آیا او بیدار است؟,她有意识吗？,They asked: Is she awake?
+BONUS_9_QUESTION6_CG,"[url={5}]<~Yes,~>[/url] she is awake.", [url={5}]<~yes~>[/url]  إنها صاحية.,[url={5}]<~yes~>[/url]  او بیدار است.,她有意识。,
+BONUS_9_QUESTION6_CD,It's OK if you can't answer every question.,السؤال التالي,سوال بعدی,下一个问题,
 ,,,,,
 ,,,,,
 ,,,,,
 BONUS_10_QUESTION7_O1,How old is she?,How old is she?,How old is she?,How old is she?,
 ,,,,,
-BONUS_9_QUESTION7_C1,-,سألوك: كم عمرها؟,آنها پرسیدند: او چند ساله است؟,他们问：她多大？,They asked: How old is she?
+BONUS_10_QUESTION7_C1,-,كم عمرها؟,او چند ساله است؟,她多大？,They asked: How old is she?
 BONUS_10_QUESTION7_CG,She is [url={6}]<~four.~>[/url] You've done well to get this far!,عمرها 4 سنوات [url={6}]<~four~>[/url]  لقد أحسنت في أنك وصلت إلى هذه المرحلة.,او چهار ساله است [url={6}]<~four~>[/url]  شما خوب انجام داده اید تا به اینجا رسیده اید!,她4岁。[url={6}]<~four.~>[/url] 到现在为止你都做得很好！,She is four. You've done well to get this far!
-BONUS_10_QUESTION7_CD,You've done well to get this far!,أحسنت في أنك وصلت إلى هذه المرحلة., شما خوب انجام داده اید تا به اینجا رسیده اید!,到现在为止你都做得很好！,You've done well to get this far!
+BONUS_10_QUESTION7_CD,She is [url={6}]<~four.~>[/url] You've done well to get this far!,عمرها 4 سنوات [url={6}]<~four~>[/url]  لقد أحسنت في أنك وصلت إلى هذه المرحلة.,او چهار ساله است [url={6}]<~four~>[/url]  شما خوب انجام داده اید تا به اینجا رسیده اید!,她4岁。[url={6}]<~four.~>[/url] 到现在为止你都做得很好！,You've done well to get this far!
 ,,,,,
 ,,,,,
 ,,,,,
 BONUS_11_YOUDIDIT_T1,Congratulations!,مبروك!,تبریک باشد!,恭喜你！,Congratulations!
 BONUS_11_YOUDIDIT_T2,You have all the skills you need to call 000 in an emergency. ,لديك الآن جميع المهارات التي تحتاج إليها لتطلب 000,شما تمام مهارت های لازم برای تماس گرفتن با 000 را آموخته اید.,你已经掌握了拨打000所需的所有技巧。,You have all the skills you need to call 000.
-BONUS_11_YOUDIDIT_T3,Tell your family and friends so they can feel confident calling 000 too.,أخبر أسرتك والأصدقاء ما تعلّمته بحيثُ يكون لديهم الثقة في الاتصال بـ000 أيضًا.,به فامیل و دوستان خود نیز بگویید تا آنها نیز به راحتی با 000 تماس بگیرند.,告诉你的家人朋友，这样他们也有信心拨打000。,Tell your family and friends so they can feel confident calling 000 too.
-,,,,,
-BONUS_11_YOUDIDIT_T4,,,,,Share what you’ve learned.
-BONUS_11_YOUDIDIT_T5,,,,,
+BONUS_11_YOUDIDIT_T3,Share with your family and friends so they can feel confident calling 000 too.,أخبر أسرتك والأصدقاء ما تعلّمته بحيثُ يكون لديهم الثقة في الاتصال بـ000 أيضًا.,به فامیل و دوستان خود نیز بگویید تا آنها نیز به راحتی با 000 تماس بگیرند.,告诉你的家人朋友，这样他们也有信心拨打000。,Tell your family and friends so they can feel confident calling 000 too.
 ,,,,,
 BONUS_11_YOUDIDIT_B1, [url={3}]Share Practise Calling 000[/url], [url={3}]شارك التدرّب على الاتصال بـ000[/url], [url={3}]تمرین نمودن تماس با 000 را با دیگران شریک کنید[/url], [url={3}]分享、练习拨打000[/url],Share Practise Calling 000
 BONUS_11_YOUDIDIT_B2, [url={1}]Keep Practising skills[/url], [url={1}]تابع التدرّب على المهارات باستمرار[/url], [url={1}]این مهارت را تمرین کنید[/url], [url={1}]继续练习[/url],Keep practising skills
@@ -714,8 +717,8 @@ BONUS_11_YOUDIDIT_DT3,Try this call again if you want to practice answering more
 ,,,,,
 ,,,,,
 ,,,,,
-BONUS_D_INTERPRETER_O1,I can call an intrepreter to help. What language do you need?,I can call an intrepreter to help. What language do you need?,I can call an intrepreter to help. What language do you need?,I can call an intrepreter to help. What language do you need?,I can call an Intrepreter to help. What language?
-BONUS_D_INTERPRETER_O2,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an Interpreter. Stay on the phone.
+BONUS_D_INTERPRETER_O1,I can call an interpreter to help. What language do you need?,I can call an interpreter to help. What language do you need?,I can call an interpreter to help. What language do you need?,I can call an interpreter to help. What language do you need?,
+BONUS_D_INTERPRETER_O2,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,Connecting you to an interpreter now. Please stay on the phone.,
 ,,,,,
 BONUS_D_INTERPRETER_C1,Say the language you speak in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 BONUS_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
@@ -724,8 +727,8 @@ BONUS_D_INTERPRETER_CG,Say the language you speak in English.,قل: [url={7}]<~A
 ,,,,,
 ,,,,,
 ,,,,,
-FINALMENU_1_SELECTION_T1,All skills complete!,لقد تمّت كلّ المهارات!,تمام مهارت ها تکمیل شد!,所有技巧都在这了！,All skills complete!
-FINALMENU_1_SELECTION_T2,Practice any scenario again.,تدرّب على أيّ سيناريو ثانيةً.,هر سناریو را دوباره تمرین کنید.,挑一个场景继续练习。,Practice any scenario again.
+FINALMENU_1_SELECTION_T1,All skills complete!,لقد تمّت كلّ المهارات!,تمام مهارت ها تکمیل شد!,所有技巧都在这了！,
+FINALMENU_1_SELECTION_T2,Practice any scenario again.,تدرّب على أيّ سيناريو ثانيةً.,هر سناریو را دوباره تمرین کنید.,挑一个场景继续练习。,
 ,,,,,
 FINALMENU_1_SELECTION_B1,[url={1}]EXIT EXPERIENCE[/url],,,,
 FINALMENU_1_SELECTION_B2,[url={1}]Share Practise Calling 000[/url],,,,

@@ -7,6 +7,7 @@ extends AnimationPlayer
 @export var startRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/SFX/RecordingStart.mp3"
 @export var stopRecordingStreamPath : StringName = "res://AssetPacks/0_Shared/Audio/SFX/RecordingStop.mp3"
 @export var exitMenuPath : StringName = "res://AssetPacks/0_Prerequisite/Prefabs/ExitMenu.tscn"
+@export var dontFeelBadPath : StringName = "res://AssetPacks/0_Prerequisite/Prefabs/DontFeelBad.tscn"
 
 
 @export_group("Autostart Properties")
@@ -75,6 +76,8 @@ signal display_loading
 signal activate_restarts
 signal deactivate_restarts
 
+signal dont_feel_bad
+
 
 # Called when the node enters the scene tree for the first time.
 func _enter_tree() -> void:
@@ -108,6 +111,7 @@ func _enter_tree() -> void:
 	audioStreamPlayer = get_child(2)
 	
 	create_prefab_untracked(load(exitMenuPath),"/root/AllMother/MenuCanvas")
+	create_prefab_untracked(load(dontFeelBadPath),"/root/AllMother/MenuCanvas")
 	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
@@ -640,15 +644,19 @@ func create_prefab_untracked(_scene:PackedScene, _parent:String=content_parent):
 		scene_as_control.set_anchors_preset(Control.PRESET_FULL_RECT)
 	
 	if scene is ExitMenu:
-		print("[ScreenController] CREATE PREFAB -> Prefab is an ExitMenu! Liking + subscribing.")
+		print("[ScreenController] CREATE PREFAB UNTRACKED -> Prefab is an ExitMenu! Liking + subscribing.")
 		scene.try_reset_scenario.connect(reset_scenario)
 		scene.try_reset_to_start.connect(reset_to_start)
 		switched_menu_button_dark.connect(scene.set_dark)
 		switched_menu_button_light.connect(scene.set_light)
 		activate_restarts.connect(scene.enable_level_menu)
-		deactivate_restarts.connect(scene.disable_level_menu)	
+		deactivate_restarts.connect(scene.disable_level_menu)
+	elif scene is DontFeelBad:
+		print("[ScreenController] CREATE PREFAB UNTRACKED -> Prefab is a DontFeelBad! Liking + subscribing.")
+		dont_feel_bad.connect(scene.open)
+		
 	
-	if debugging: print("[ScreenController]Prefab '",_scene,"' created.")
+	if debugging: print("[ScreenController] Untracked prefab '",_scene,"' created.")
 
 
 
@@ -678,7 +686,7 @@ func _start_recognition() -> void:
 		if debugging: print("[ScreenController] OverrideAnswerCheating. Cheat past speech recognition: A = Correct, B = Wrong, C = Mumbo, D = DontKnow")
 		speechCheating = true
 		# Play sound
-		if !OS.has_feature("web_android"):
+		if OS.has_feature("web_windows") || OS.has_feature("web_macos") || OS.has_feature("web_linuxbsd"):
 			play_stream_from_path(startRecordingStreamPath)
 		return
 	
@@ -703,7 +711,7 @@ func _on_speech_start():
 	if debugging: print("[ScreenController] OnSpeechStart...")
 	#recentResult = false
 	# Play sound
-	if !OS.has_feature("web_android"):
+	if OS.has_feature("web_windows") || OS.has_feature("web_macos") || OS.has_feature("web_linuxbsd"):
 		play_stream_from_path(startRecordingStreamPath)
 
 func _on_speech_end():
@@ -719,7 +727,7 @@ func _on_speech_end():
 	_play_sentence_anim()
 	
 	# Play sound
-	if !OS.has_feature("web_android"):
+	if OS.has_feature("web_windows") || OS.has_feature("web_macos") || OS.has_feature("web_linuxbsd"):
 		play_stream_from_path(stopRecordingStreamPath)
 	
 	#if debugging: print("[ScreenController] OnSpeechEnd, checking for recent results...")
@@ -811,6 +819,8 @@ func _play_sentence_anim() -> void:
 	if debugging: print("[ScreenController] PlaySentenceAnim, last sentence = '",lastSentence,"'")
 	sentenceAnim = sentenceComparer.compare(lastSentence)
 	play_animation(sentenceAnim)
+	await get_tree().process_frame
+	if sentenceComparer.attempts == 0: dont_feel_bad.emit()
 
 var _bridge_connected := false
 func _connect_bridge() -> void:
@@ -902,6 +912,7 @@ func check_attempts_while_cheating() -> bool:
 			last_sentence_changed.emit(lastSentence)
 			play_animation(sentenceComparer.giveUpAnim)
 			play_stream_from_path(stopRecordingStreamPath)
+			dont_feel_bad.emit()
 			return true
 		if debugging: print("[SentenceComparer] SpeechCheating, attempts remaining before GiveUp: ",sentenceComparer.attempts)
 	return false

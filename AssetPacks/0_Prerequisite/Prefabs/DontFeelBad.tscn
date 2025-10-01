@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1r6v37a6ohge"]
+
+[ext_resource type="Script" uid="uid://ub5hgkx4bx8v" path="res://Base/Scripts/DontFeelBad.gd" id="1_ic31u"]
+[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="3_ic31u"]
+[ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="5_1cl4f"]
+[ext_resource type="Texture2D" uid="uid://kbik121pa55i" path="res://AssetPacks/0_Shared/Images/BubbleNineSprite.png" id="6_u7ime"]
+
+[node name="DontFeelBad" type="Control"]
+process_mode = 3
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_ic31u")
+
+[node name="Overlay" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.4)
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3612.0
+offset_top = -3354.0
+offset_right = 3612.0
+offset_bottom = 3354.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_u7ime")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CommentBubble" parent="VBoxContainer" instance=ExtResource("5_1cl4f")]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+_auto_text = "On a real 000 call you speak to a human.
+
+Humans are better listeners than machines.
+
+This machine can't understand you now, but keep going you are doing well!"
+_old_text = "On a real 000 call you speak to a human.
+
+Humans are better listeners than machines.
+
+This machine can't understand you now, but keep going you are doing well!"
+
+[node name="ButtonBubble" parent="VBoxContainer" instance=ExtResource("3_ic31u")]
+z_index = 1
+layout_mode = 2
+_auto_text = "[url={1}]Ok![/url]"
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_old_text = "Ok!"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 96.96)
+layout_mode = 2
+
+[connection signal="meta_link_1" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_police.mp3"]]
+[connection signal="meta_link_2" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_fire.mp3"]]
+[connection signal="meta_link_3" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ambulance.mp3"]]
+[connection signal="meta_link_4" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_victoria.mp3"]]
+[connection signal="meta_link_5" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_INTER_springvale.mp3"]]
+[connection signal="meta_link_6" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreter.mp3"]]
+[connection signal="meta_link_7" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreterarabic.mp3"]]
+[connection signal="meta_link_8" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreterdari.mp3"]]
+[connection signal="meta_link_9" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpretermandarin.mp3"]]
+[connection signal="meta_link_1" from="VBoxContainer/ButtonBubble" to="." method="close"]
