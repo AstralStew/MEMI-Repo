@@ -66,7 +66,7 @@ func compare(sentence:String) -> String:
 					if debug: print("[SentenceComparer] Wrong conditions found! Returning wrongAnim ('",wrongAnim,"')")
 					return wrongAnim
 		
-		if sentence.containsn("intepreter") || sentence.containsn("don't understand") || sentence.containsn("don't know") || sentence.containsn("do not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
+		if sentence.containsn("interpreter") || sentence.containsn("don't understand") || sentence.containsn("not understand") || sentence.containsn("no understand") || sentence.containsn("don't know") || sentence.containsn("not know") || sentence.containsn("unsure") || sentence.containsn("not sure"):
 			if debug: print("[SentenceComparer] User said 'I don't know'! Returning dontKnowAnim ('",dontKnowAnim,"')")
 			return dontKnowAnim
 		

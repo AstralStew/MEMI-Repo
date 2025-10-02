@@ -102,6 +102,8 @@ func _enter_tree() -> void:
 		# Load the shared pack (thus initialising the LoadManager)
 		_load_pack("0_Prerequisite")
 		await pack_load_finished
+		_load_pack("0_Shared")
+		await pack_load_finished
 		
 		# WARNING > This must be initialised AFTER 0_Prerequisite is loaded
 		LanguageManager._initialise()

@@ -301,18 +301,18 @@ LOCATION_5_QUESTION2_CC,Excellent!,عظيم!,عالی!,太好了！,Excellent!
 LOCATION_5_QUESTION2_CW,"You need to say the state and town.
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton.~>[/url]","عليك قول اسم الولاية والمدينة.
 [url={2}]<~Victoria~>[/url] [url={3}]<~Shepparton~>[/url]","شما باید ایالت و منطقه مسکونی تان را بگویید.
-[url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","你需要说州和区。
+[url={2}]<~Victoria~>[/url] [url={3}]<~Shepparton~>[/url]","你需要说州和区。
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","You need to say the state and town.
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]"
 LOCATION_5_QUESTION2_CM,"The state is [url={2}]<~Victoria~>[/url]
 and the town is [url={3}]<~Shepparton.~>[/url]","الولاية هي: [url={2}]<~Victoria~>[/url]
-والمدينة هي: [url={3}]<~Shepparton.~>[/url]","ایالت [url={2}]<~Victoria~>[/url] است
-و منطقه مسکونی [url={3}]<~Shepparton.~>[/url] است","州是 [url={2}]<~Victoria~>[/url]
-区是 [url={3}]<~Shepparton.~>[/url]","The state is [url={2}]<~Victoria~>[/url]
+والمدينة هي: [url={3}]<~Shepparton~>[/url]","ایالت [url={2}]<~Victoria~>[/url] است
+و منطقه مسکونی [url={3}]<~Shepparton~>[/url] است","州是 [url={2}]<~Victoria~>[/url]
+区是 [url={3}]<~Shepparton~>[/url]","The state is [url={2}]<~Victoria~>[/url]
 and the town is [url={3}]<~Shepparton.~>[/url]"
 LOCATION_5_QUESTION2_CG,"The answer is [url={2}]<~Victoria,~>[/url] [url={3}]<~Shepparton.~>[/url]","عليك قول اسم الولاية والمدينة.
-[url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","شما باید ایالت و منطقه مسکونی تان را بگویید.
-[url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","你需要说州和区。
+[url={2}]<~Victoria~>[/url] [url={3}]<~Shepparton~>[/url]","شما باید ایالت و منطقه مسکونی تان را بگویید.
+[url={2}]<~Victoria~>[/url] [url={3}]<~Shepparton~>[/url]","你需要说州和区。
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]","You need to say the state and town.
 [url={2}]<~Victoria~>[/url], [url={3}]<~Shepparton~>[/url]"
 ,,,,,
@@ -512,8 +512,8 @@ QUESTIONS_12_YOUDIDIT_DT4,  ,,,,
 ,,,,,
 ,,,,,
 ,,,,,
-QUESTIONS_D_INTERPRETER_O1,I can call an Interpreter to help. What language?,باستطاعتي طلب مُترجم شفهي للمساعدة، ما هي اللغة التي تتكلّمها؟,من می توانم برای کمک به یک ترجمان زنگ بزنم. زبانت چیست؟,I can call an Intrepreter to help. What language?,I can call an Intrepreter to help. What language?
-QUESTIONS_D_INTERPRETER_O2,Connecting you to an interpreter. Stay on the phone please.,,شما را به یک ترجمان وصل میکنیم. پشت خط بمانید.,Connecting you to an interpreter. Stay on the phone.,Connecting you to an interpreter. Stay on the phone.
+QUESTIONS_D_INTERPRETER_O1,I can call an interpreter to help. What language?,I can call an interpreter to help. What language?,I can call an interpreter to help. What language?,I can call an interpreter to help. What language?,
+QUESTIONS_D_INTERPRETER_O2,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,Connecting you to an interpreter. Stay on the phone please.,
 ,,,,,
 QUESTIONS_D_INTERPRETER_C1,Say your language in English.,لقد سألوك إن كنت تريد مُترجمًا شفهيّا، قل لهم اسم لغتك بالإنجليزية.,آنها پرسید که اگر یک ترجمان می خواهید. زبان خود را به آنها به انگلیسی بگویید,他们问你是否要翻译。用英语告诉他们你说普通话。,They asked if you want an interpreter. Tell them your language in English
 QUESTIONS_D_INTERPRETER_CC,Good idea! It's always OK to ask for an interpreter.,فكرة جيّدة، لا بأس من طلب مُترجم شفهي دائمًا.,نظر خوبی است! ترجمان خواستن هیچ وقت کدام عیبی ندارد.,好主意！你完全可以要翻译。,Good idea! It's always OK to ask for an interpreter.
@@ -533,7 +533,7 @@ NOHELP_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,SCENARIO
 NOHELP_2_SCENARIO_T2,Your smoke alarm wakes you up. There is a fire in your house and it's full of smoke.,يُصدر جهاز إنذار الدخان صوتًا والمطبخ عابق بالدخان.,زنگ خطر دود تان به صدا درآمده است. آشپزخانه پر از دود شده است.,你的烟雾警报器在响，厨房里都是烟。,Your smoke alarm is beeping. The kitchen is full of smoke.
 NOHELP_2_SCENARIO_T3,"You wake your children, go outside together and call 000.",توقظ الأطفال وتخرجون من المنزل معًا، وتطلب الـ000.,شما اطفال خود را از خواب بیدار میکنید، بیرون از خانه می روید، و به 000 زنگ می زنید.,你把孩子叫醒，一起到外面，然后拨000。,"You wake your children, go outside together, and call 000."
 NOHELP_2_SCENARIO_T4,"You live at 2 Main Road, Bendigo, Victoria.","تسكن في العنوان: 2 مِين رُود، مورْويل، فيكتوريا 
-[2 Main Road, Bendigo, Victoria].","شما در این آدرس زندگی میکنید:
+[2 Main Road, Bendigo, Victoria]","شما در این آدرس زندگی میکنید:
   2Main Road, Bendigo, Victoria","你住在：2 Main Road, Bendigo, Victoria.","You live at: 2 Main Road, Bendigo, Victoria."
 ,,,,,
 NOHELP_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],Dial 000
@@ -598,7 +598,7 @@ NOHELP_10_YOUDIDIT_T1,Well done!,أحسنت!,آفرین!,很好！,Well done!
 NOHELP_10_YOUDIDIT_T2,000 will keep asking questions to get more details.,ستتابع الـ000 سؤالك أسئلة للحصول على تفاصيلٍ إضافية.,000 به سوالات خود ادامه خواهد داد تا جزئیات بیشتر بگیرد.,000会接着提问，以便了解更多细节。,000 will keep asking questions to get more details.
 NOHELP_10_YOUDIDIT_T3,Stay on the phone until 000 tells you to hang up.,ابق على الخط إلى أن تقول لك الـ000 أن تقفل الخط.,تا زمانیکه 000 به شما نگفته است پشت لین مانده و قطع نکنید.,不要挂电话，除非000告诉你挂电话。,Stay on the phone until 000 tells you to hang up.
 ,,,,,
-NOHELP_10_YOUDIDIT_B1,[url={1}]Continue[/url],[url={1}]تابع[/url],[url={1}]ادامه دهید[/url],[url={1}]继续[/url],Continue
+NOHELP_10_YOUDIDIT_B1,[url={3}]Continue[/url],[url={1}]تابع[/url],[url={1}]ادامه دهید[/url],[url={1}]继续[/url],Continue
 NOHELP_10_YOUDIDIT_B2,[url={1}]Try again[/url],[url={1}]حاول ثانيةً[/url],[url={1}]دوباره تلاش کنید[/url],[url={1}]再试[/url],Try again
 ,,,,,
 NOHELP_10_YOUDIDIT_ALT1,Well done!,أحسنت!,آفرین!,很好！,Well done!

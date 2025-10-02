@@ -73,13 +73,4 @@ modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 96.96)
 layout_mode = 2
 
-[connection signal="meta_link_1" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_police.mp3"]]
-[connection signal="meta_link_2" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_fire.mp3"]]
-[connection signal="meta_link_3" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ambulance.mp3"]]
-[connection signal="meta_link_4" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_victoria.mp3"]]
-[connection signal="meta_link_5" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_INTER_springvale.mp3"]]
-[connection signal="meta_link_6" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreter.mp3"]]
-[connection signal="meta_link_7" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreterarabic.mp3"]]
-[connection signal="meta_link_8" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreterdari.mp3"]]
-[connection signal="meta_link_9" from="VBoxContainer/CommentBubble" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpretermandarin.mp3"]]
 [connection signal="meta_link_1" from="VBoxContainer/ButtonBubble" to="." method="close"]
