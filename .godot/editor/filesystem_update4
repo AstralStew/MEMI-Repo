@@ -1,26 +1,10 @@
-res://AssetPacks/0_Prerequisite/Prefabs/DontFeelBad.tscn
+res://Base/MEMI Translations.en.translation
+res://Base/MEMI Translations.ar.translation
+res://Base/MEMI Translations.prs.translation
+res://Base/MEMI Translations.zh.translation
+res://Base/MEMI Translations.en foreign language script when different from en.translation
+res://Base/AllMother.tscn
 res://Base/Shaders/Dissolve.gdshader
 res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres
 res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_1PoliceFireAmbulance.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_2StateAndTown.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_3WhereNeedFire.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_4WhatEmergency.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_5AnyoneInHouse.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_6AnyoneInjured.tres
-res://AssetPacks/5_NoHelp/Sentences/SenCom_NoHelp_DInterpreter.tres
-res://Base/Scripts/ScreenController.gd
-res://Base/AllMother.tscn
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_DInterpreter.tres
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_DInterpreter.tres
-res://AssetPacks/3_Location/Sentences/SenCom_Location_WhatEmergency.tres
-res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres
 res://Base/Scripts/SentenceComparer.gd
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_1PoliceFireAmbulance.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_2StateAndTown.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_3WhereNeedPolice.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_4WhyNeedPolice.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_5HasPhysicalViolence.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_6HasWeapon.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_7NeedAmbo.tres
-res://AssetPacks/4_Questions/Sentences/SenCom_Questions_8ChildrenPresent.tres
