@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://2cvpge4gsqjv"
+
+[deps]
+
+files=["res://Base/MEMI Translations.en.translation", "res://Base/MEMI Translations.ar.translation", "res://Base/MEMI Translations.prs.translation", "res://Base/MEMI Translations.zh.translation", "res://Base/MEMI Translations.en foreign language script when different from en.translation"]
+
+source_file="res://Base/MEMI Translations.csv"
+dest_files=["res://Base/MEMI Translations.en.translation", "res://Base/MEMI Translations.ar.translation", "res://Base/MEMI Translations.prs.translation", "res://Base/MEMI Translations.zh.translation", "res://Base/MEMI Translations.en foreign language script when different from en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

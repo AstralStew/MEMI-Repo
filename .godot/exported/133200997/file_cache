@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 res://AssetPacks/6_Bonus/Animations/Bonus.tres::8e3693a69dbd82f8fad97f830e4480fa::1758857160::res://.godot/exported/133200997/export-03e230f857ec77cbe6a5ab5ac85f2212-Bonus.res
 res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_DInterpreter.tres::99b3a9aa7cb18257b81ba0a034443e71::1759402231::res://.godot/exported/133200997/export-fb9db8158184f03f64e46ac9c03b0fc6-SenCom_Bonus_DInterpreter.res
 res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_7HowOld.tres::1f5be29e6a4f92f8bc82c1d8e403910e::1759316513::res://.godot/exported/133200997/export-f00b3ddccf8d3f6acdc77014f177eb44-SenCom_Bonus_7HowOld.res
@@ -9,3 +10,18 @@ res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_2StateAndTown.tres::e20ae2bd65fe
 res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_1PoliceFireAmbulance.tres::590a0e1da924385ce7468ace40741473::1759316512::res://.godot/exported/133200997/export-60a61f1d153d8101c05c9bcb7313a192-SenCom_Bonus_1PoliceFireAmbulance.res
 res://AssetPacks/6_Bonus/Prefabs/6_Explanation_Prefab.tscn::efdbb8598ab9087870489d1669b384cc::1758890471::res://.godot/exported/133200997/export-4ec74f912973af9d2ced75cb02e26e82-6_Explanation_Prefab.scn
 res://AssetPacks/6_Bonus/Prefabs/6_Comments_Prefab.tscn::4f8dce708a396720f50f0448eaef56c0::1759147168::res://.godot/exported/133200997/export-5f37731b0f8ffaa1182fa8369028f189-6_Comments_Prefab.scn
+=======
+res://AssetPacks/0_Shared/Prefabs/Operator_Call_Prefab.tscn::65580f914184fd67b75f65472af47d03::1759452145::res://.godot/exported/133200997/export-93515efbca93d22891618e1120374370-Operator_Call_Prefab.scn
+res://AssetPacks/0_Shared/Prefabs/ScenarioButton.tscn::fae9bb98bad37a3c051ce5068e5bed2d::1759452145::res://.godot/exported/133200997/export-0dd01673b2cff8b4a7d38167cac415a1-ScenarioButton.scn
+res://AssetPacks/0_Shared/Prefabs/Scenario_Info_Prefab.tscn::5e1f353b8acf7e5b123b49d5c85e2021::1759452145::res://.godot/exported/133200997/export-b1ad3fa9eff8b6a371185cc06024b9c7-Scenario_Info_Prefab.scn
+res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn::4d78167c4a2800b005d8b12629a668c6::1759452145::res://.godot/exported/133200997/export-1abe575ca9c765ad6669c18dbbf867c1-TapBubble.scn
+res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres::97faf72fc88f03ba1679a99a7af4aaee::1759452145::res://.godot/exported/133200997/export-fed1ad368525b2a244daec217862af19-SpriteFrames_BubbleTapHint.res
+res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres::2184931cd8f21b956089348e5cd7e386::1759452145::res://.godot/exported/133200997/export-e517c3924b98411665b0d514eca1053c-SpriteFrames_SpeakingDots.res
+res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn::1df9d5d69a086e28bab97803913ab41b::1759452145::res://.godot/exported/133200997/export-13453590b55096eae6c707f6ee454e86-CommentBubble.scn
+res://AssetPacks/0_Shared/Prefabs/LetsLearn_Prefab.tscn::c8efcefd19242713c6625ce0cf230443::1759452145::res://.godot/exported/133200997/export-4c4afd9fbc82e18d69c5341855fc414d-LetsLearn_Prefab.scn
+res://AssetPacks/0_Shared/Prefabs/OperatorBubble.tscn::78bf77245c7c94427f44c6ed026f17a8::1759452145::res://.godot/exported/133200997/export-1b92c37e30008a4716ab913119b03daf-OperatorBubble.scn
+res://AssetPacks/0_Shared/Animations/FinalMenu.tres::ceb3c8d446bc6645311fd43cb546b032::1759452145::res://.godot/exported/133200997/export-d8fc61e479affae53bcacd0427f3224b-FinalMenu.res
+res://AssetPacks/0_Shared/Animations/FinalMenu_1_Selection.tres::6b7eee88ead0b6f8b520eff0910e9e49::1759452145::res://.godot/exported/133200997/export-071d5ee0f47a79fe60ec561f962cc98b-FinalMenu_1_Selection.res
+res://AssetPacks/0_Shared/Animations/FinalMenu_Load.tres::277444ad8f1d4dc8a6b21b0f3a18c5cd::1759452145::res://.godot/exported/133200997/export-886ceb0f040a5ec59f4dce398be38ff0-FinalMenu_Load.res
+res://AssetPacks/0_Shared/Animations/LetsLearn.tres::0a2ecb4a6f6271e984ba72dbd74f06b7::1759452145::res://.godot/exported/133200997/export-3fa5902b7e9bcf0761cf73cc91b8115a-LetsLearn.res
+>>>>>>> origin/main
