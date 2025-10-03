@@ -8,3 +8,8 @@ res://Base/Shaders/Dissolve.gdshader
 res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BubbleTapHint.tres
 res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_SpeakingDots.tres
 res://Base/Scripts/SentenceComparer.gd
+res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_LetsTry.tres
+res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_PoliceFireAmbulance.tres
+res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_StateAndTown.tres
+res://AssetPacks/2_Interpreter/Animations/Interpreter_5_Question2.res
+res://AssetPacks/2_Interpreter/Sentences/SenCom_Intepreter_WhatAddress.tres
