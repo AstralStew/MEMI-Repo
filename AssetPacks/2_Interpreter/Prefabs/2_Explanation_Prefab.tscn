@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv0gkn5xyfhn1"]
+[gd_scene load_steps=13 format=3 uid="uid://cv0gkn5xyfhn1"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_84asj"]
 [ext_resource type="Shader" uid="uid://dpe1no4o6hm8c" path="res://Base/Shaders/Dissolve.gdshader" id="2_pritx"]
@@ -6,7 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cd0xoiaxa0gay" path="res://AssetPacks/1_CharacterEn/CharacterEn_Talking.png" id="4_85imk"]
 [ext_resource type="Script" uid="uid://wxg3udy510jy" path="res://Base/Scripts/CharacterController.gd" id="5_85imk"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="5_jbdvx"]
-[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="7_28ad4"]
+[ext_resource type="Script" uid="uid://dlxhg0hhx0mc8" path="res://Base/Scripts/ButtonBubble.gd" id="7_y5x78"]
+[ext_resource type="AudioStream" uid="uid://p2xm1xq3wbwp" path="res://AssetPacks/0_Shared/Audio/S0_SHARED_ButtonClick.mp3" id="8_dsgpl"]
+[ext_resource type="FontVariation" uid="uid://donwlhnvg10ac" path="res://AssetPacks/0_Prerequisite/Fonts/NotoSansSC-Normal.tres" id="9_6wsvx"]
+[ext_resource type="Texture2D" uid="uid://d4la28l2kim86" path="res://AssetPacks/0_Prerequisite/Images/RoundedNineSprite.png" id="10_28vv1"]
+[ext_resource type="Texture2D" uid="uid://pvtehiea0cky" path="res://AssetPacks/0_Prerequisite/Images/RoundedShadowSoloNineSprite.png" id="11_22vgs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qk448"]
 shader = ExtResource("2_pritx")
@@ -125,13 +129,109 @@ size_flags_vertical = 8
 theme_override_constants/separation = 20
 alignment = 2
 
-[node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("7_28ad4")]
+[node name="ContinueButton" type="MarginContainer" parent="Buttons_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
+script = ExtResource("7_y5x78")
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("8_dsgpl")
+max_char_threshold = 24
+click_bg_colour = Color(1, 1, 1, 0)
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
-_auto_bg_colour = Color(1, 1, 1, 0.3)
-_auto_text_colour = Color(0.157, 0.09, 0.141, 0.6)
+_auto_bg_colour = Color(1, 1, 1, 0)
+_auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
 _old_text = "INTERPRETER_1_LETSTRY_B1"
+
+[node name="BubbleText" type="RichTextLabel" parent="Buttons_VB/ContinueButton"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(191.8, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0.157, 0.09, 0.141, 0.6)
+theme_override_fonts/normal_font = ExtResource("9_6wsvx")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "INTERPRETER_1_LETSTRY_B1"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_jbdvx")
+default_size = 22
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="Buttons_VB/ContinueButton/BubbleText"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.75
+offset_right = 5.0
+offset_bottom = 6.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(100.9, 40.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("10_28vv1")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="Buttons_VB/ContinueButton/BubbleText/BubbleBG"]
+visible = false
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1162684
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(104.9, 45.20887)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_22vgs")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="ScenarioTouchButton" type="Button" parent="Buttons_VB/ContinueButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="Buttons_VB/ContinueButton"]
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]
 visible = false
@@ -165,4 +265,14 @@ mouse_filter = 2
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]
 [connection signal="meta_link_9" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_7a_Fade"]]
+[connection signal="meta_link_1" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="Buttons_VB/ContinueButton/BubbleText" to="Buttons_VB/ContinueButton" method="_send_meta_link_9"]
+[connection signal="pressed" from="Buttons_VB/ContinueButton/BubbleText/BubbleBG/ScenarioTouchButton" to="Buttons_VB/ContinueButton" method="check_meta_link_from_button"]
 [connection signal="meta_link_1" from="Buttons_VB/SkipSteps_RTL" to="." method="reset_scenario"]

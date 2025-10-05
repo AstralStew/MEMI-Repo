@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 offset_top = -106.0
 offset_right = 265.0
 grow_vertical = 0
-pivot_offset = Vector2(0, 216)
+pivot_offset = Vector2(0, 127)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/margin_left = 24
@@ -27,7 +27,9 @@ min_width = 60
 max_width = 210
 bg_border_size = 45.0
 _autostart = true
+_auto_text = "asdas dasdasdas das"
 _auto_title = "COMMON_000SAYS"
+_old_text = "asdas dasdasdas das"
 
 [node name="MarginText" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -41,7 +43,7 @@ theme_override_constants/margin_bottom = 22
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(60, 10)
+custom_minimum_size = Vector2(188, 10)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
@@ -50,6 +52,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("3_13c48")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
+text = "asdas dasdasdas das"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
@@ -61,7 +64,7 @@ metadata/_edit_group_ = true
 
 [node name="BubbleProxy" type="BoxContainer" parent="."]
 z_index = -1
-custom_minimum_size = Vector2(105, 55)
+custom_minimum_size = Vector2(233, 111)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -95,6 +98,17 @@ default_size = 20
 autopopulate = true
 autokey = "COMMON_000SAYS"
 
+[node name="OperatorTouchButton" type="Button" parent="BubbleProxy/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
 [node name="BubbleAudio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="meta_link_1" from="MarginText/BubbleText" to="." method="_send_meta_link_1"]
@@ -106,3 +120,4 @@ autokey = "COMMON_000SAYS"
 [connection signal="meta_link_7" from="MarginText/BubbleText" to="." method="_send_meta_link_7"]
 [connection signal="meta_link_8" from="MarginText/BubbleText" to="." method="_send_meta_link_8"]
 [connection signal="meta_link_9" from="MarginText/BubbleText" to="." method="_send_meta_link_9"]
+[connection signal="pressed" from="BubbleProxy/BubbleBG/OperatorTouchButton" to="." method="play_last_stream"]

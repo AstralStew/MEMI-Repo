@@ -33,4 +33,6 @@ func close() -> void:
 	
 	close_tween.tween_callback(set.bind("visible", false))
 	
+	await get_tree().create_timer(fade_duration,true,false,true)
+	
 	get_tree().paused = false

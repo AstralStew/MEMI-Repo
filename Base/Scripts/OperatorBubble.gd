@@ -75,7 +75,7 @@ class_name OperatorBubble
 
 @export_group("Read Only")
 @export var _old_text := ""
-
+@export var last_stream : AudioStream = null
 
 # Private variables
 var marginText : MarginContainer
@@ -174,6 +174,7 @@ func pop_in(_text:String, _stream:AudioStream = null) -> void:
 	if _stream:
 		bubbleAudio.stream = _stream
 		bubbleAudio.play()
+		last_stream = _stream
 	
 	
 	_set_text(_text)
@@ -232,6 +233,13 @@ func comment(_text:String) -> void:
 func reset() -> void:
 	_set_properties(_auto_text,_auto_title,_auto_bg_colour,_auto_text_colour)
 
+
+
+
+func play_last_stream() -> void:
+	if last_stream == null: return
+	bubbleAudio.play()
+	
 
 #endregion
 
@@ -413,13 +421,14 @@ func _resize(_doTween:bool=true) -> void:
 	var font = bubbleText.get_font() if !Engine.is_editor_hint() else get_theme_default_font()
 	var max_line_length = 0
 	var range := 0
-	var line_length := 0
+	var line_length := 0	
+	var current_size = bubbleText.get_current_size() if !Engine.is_editor_hint() else 22
 	for i in bubbleText.get_line_count():
 		if _debug: print("[OperatorBubble(",name,")] Min size = ",bubbleText.custom_minimum_size,", Line index = ",i,", range = ", bubbleText.get_line_range(i), ", sub = ", bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x)
 		range = bubbleText.get_line_range(i).y - bubbleText.get_line_range(i).x
 		line_length = 10
 		if _debug: print ("[OperatorBubble(",name,")] Line index = ",i)		
-		line_length += font.get_string_size(bubbleText.text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,bubbleText.current_size,bubbleText.justification_flags,TextServer.DIRECTION_LTR,TextServer.ORIENTATION_HORIZONTAL).x
+		line_length += font.get_string_size(bubbleText.text.substr(bubbleText.get_line_range(i).x, range),bubbleText.horizontal_alignment,-1,current_size,bubbleText.justification_flags,TextServer.DIRECTION_LTR,TextServer.ORIENTATION_HORIZONTAL).x
 		if _debug: print ("[OperatorBubble(",name,")] Normal line length = ",line_length)
 		max_line_length = maxi(line_length, max_line_length)
 	var min_size = clamp(max_line_length,min_width,max_width)

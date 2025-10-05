@@ -669,7 +669,7 @@ autokey = "LETSLEARN_OVERVIEW_1"
 
 [node name="LetsLearnExplanation_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB"]
 visible = false
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, -2.3841858e-07)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 19
@@ -704,7 +704,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.70000005)
@@ -752,7 +752,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.70000005)
@@ -800,7 +800,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.70000005)
@@ -848,7 +848,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.70000005)
@@ -897,7 +897,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Bonus_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.70000005)

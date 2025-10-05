@@ -71,12 +71,18 @@ script = ExtResource("4_eopm5")
 debugging = true
 startRecordingStreamPath = &"res://AssetPacks/0_Shared/Audio/S0_SHARED_MicOn.mp3"
 stopRecordingStreamPath = &"res://AssetPacks/0_Shared/Audio/S0_SHARED_MicOff.mp3"
-overrideLanguageIndex = 3
+overrideLanguageIndex = 1
 overrideScreenIndex = 3
 overrideTimeScale = true
 overrideTimeScaleFactor = 10.0
 screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb"), ExtResource("19_fw3jg")])
 topup_time = 1.5
+replacement_words = {
+&"bungalow": &"bengali",
+&"dairy": &"dari",
+&"diary": &"dari",
+&"please": &"police"
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
 texture_filter = 4

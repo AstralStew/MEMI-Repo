@@ -122,8 +122,8 @@ _debug = true
 _updateInEditor = true
 click_sound = ExtResource("9_0076w")
 max_char_threshold = 24
-click_bg_colour = Color(0.59608823, 0.8389701, 0.4945157, 0)
-click_text_colour = Color(1, 0.580392, 0, 1)
+click_bg_colour = Color(0.40164778, 0.60512775, 0.31373265, 1)
+click_text_colour = Color(0.25130188, 0.25130188, 0.25130183, 1)
 click_size = 0.9
 click_inout = 0.05
 click_ease = 2
@@ -131,8 +131,8 @@ unclick_inout = 0.14
 unclick_ease = 1
 _autostart = true
 _auto_text = "COMMON_NEXT"
-_auto_bg_colour = Color(0.59608823, 0.8389701, 0.4945157, 0)
-_auto_text_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_auto_text_colour = Color(0.18, 0.18, 0.18, 1)
 _old_text = "COMMON_NEXT"
 
 [node name="BubbleText" type="RichTextLabel" parent="NextButton"]
@@ -157,8 +157,7 @@ default_size = 22
 metadata/_edit_group_ = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="NextButton/BubbleText"]
-visible = false
-self_modulate = Color(0.59608823, 0.8389701, 0.4945157, 0)
+self_modulate = Color(0.596078, 0.839216, 0.494118, 1)
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -171,7 +170,7 @@ offset_bottom = 6.25
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
-pivot_offset = Vector2(72.1, 40.5)
+pivot_offset = Vector2(75.3, 40.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("12_qp6s0")
@@ -181,7 +180,6 @@ patch_margin_right = 20
 patch_margin_bottom = 19
 
 [node name="BubbleShadow" type="NinePatchRect" parent="NextButton/BubbleText/BubbleBG"]
-visible = false
 z_index = -2
 layout_mode = 1
 anchors_preset = -1
@@ -191,7 +189,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(76.1, 45.20887)
+pivot_offset = Vector2(79.3, 45.20887)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("13_5qqbn")

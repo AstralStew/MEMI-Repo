@@ -23,5 +23,5 @@ wrongAnim = "NoHelp/NoHelp_5b_Mumbo"
 mumboAnim = "NoHelp/NoHelp_5b_Mumbo"
 dontKnowAnim = "NoHelp/NoHelp_5b_Mumbo"
 giveUpAnim = "NoHelp/NoHelp_5c_GiveUp"
-total_attempts = 3
+total_attempts = 4
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

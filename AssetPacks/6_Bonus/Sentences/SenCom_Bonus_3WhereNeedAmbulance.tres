@@ -29,5 +29,5 @@ wrongAnim = "Bonus/Bonus_6b_Mumbo"
 mumboAnim = "Bonus/Bonus_6b_Mumbo"
 dontKnowAnim = "Bonus/Bonus_D_Interpreter"
 giveUpAnim = "Bonus/Bonus_6c_GiveUp"
-total_attempts = 3
+total_attempts = 4
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

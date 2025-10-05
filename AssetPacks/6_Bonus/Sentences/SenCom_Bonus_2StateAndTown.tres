@@ -22,5 +22,5 @@ wrongAnim = "Bonus/Bonus_5b_Mumbo"
 mumboAnim = "Bonus/Bonus_5b_Mumbo"
 dontKnowAnim = "Bonus/Bonus_5b_Mumbo"
 giveUpAnim = "Bonus/Bonus_5c_GiveUp"
-total_attempts = 3
+total_attempts = 4
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

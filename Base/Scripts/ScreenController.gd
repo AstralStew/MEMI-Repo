@@ -46,6 +46,7 @@ var _current_screen_index := 0
 @export var topup_time := 2.0
 @export var max_time := 8.0
 
+@export var replacement_words := {}
 
 
 @export_group("Read Only")
@@ -773,7 +774,19 @@ func _on_speech_sentence(newSentence:String) -> void:
 	if !is_speaking: return
 	if debugging: print("[ScreenController] OnSpeechSentence: '",newSentence,"'")
 	if newSentence == "": push_warning("[ScreenController] OnSpeechSentence is blank!")
-	#lastSentence += "" if newSentence == "" else " " + newSentence	
+	#lastSentence += "" if newSentence == "" else " " + newSentence
+	
+	#var sentence:String = newSentence
+	
+	# Check return answer for replacement words
+	if debugging: print("[ScreenController] OnSpeechSentence: Checking sentence for replacement keys...")
+	for key in replacement_words.keys():
+		if newSentence.containsn(key):
+			if debugging: push_warning("[ScreenController] OnSpeechSentence: KEY FOUND -> Replacing '",key,"' with '",replacement_words.get(key),"'!")
+			newSentence = newSentence.replacen(key,replacement_words.get(key))
+		elif debugging: print("[ScreenController] OnSpeechSentence: Could not find '",key,"'! Moving on...")	
+	if debugging: print("[ScreenController] OnSpeechSentence: Sentence is now '",newSentence,"'")
+	
 	lastSentence = newSentence
 	last_sentence_changed.emit(lastSentence[0].to_upper() + lastSentence.substr(1))
 	
