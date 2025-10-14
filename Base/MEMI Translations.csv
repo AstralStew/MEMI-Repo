@@ -443,7 +443,7 @@ QUESTIONS_8_QUESTION5_CC,Correct.,صحيح.,درست.,对。
 QUESTIONS_8_QUESTION5_CW,He kicked the fence. This is violence. Try again.,لقد ركل السور، وهذا عنف. حاول ثانيةً.,او حصار حویلی را با لگد زد. خشونت صورت گرفته است. دوباره تلاش کنید.,他踢了围栏，这是暴力。再试。
 QUESTIONS_8_QUESTION5_CM,You can answer [url={9}]<~yes~>[/url] or [url={10}]<~no.~>[/url],باستطاعتك الإجابة: [url={X}]<~yes~>[/url] أو [url={X}]<~no~>[/url],شما می توانید اینگونه جواب دهید [url={X}]<~yes~>[/url] یا [url={X}]<~no~>[/url],你可以回答 [url={X}]<~yes~>[/url] 或 [url={X}]<~no.~>[/url]
 QUESTIONS_8_QUESTION5_CG,The answer is [url={10}]<~no.~>[/url],الإجابة الصحيحة هي  [url={8}]<~no~>[/url],جواب درست  [url={8}]<~no~>[/url] است.,正确回答是 [url={8}]<~no.~>[/url]
-QUESTIONS_8_QUESTION5_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+QUESTIONS_8_QUESTION5_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -455,7 +455,7 @@ QUESTIONS_9_QUESTION6_CC,Well done!,أحسنت!,آفرین!,很好！
 QUESTIONS_9_QUESTION6_CW,He doesn’t have a weapon. The answer is [url={10}]<~no.~>[/url],إنه لا يحمل سلاحًا (كسكين أو مضرب) فالإجابة هي: [url={8}]<~no~>[/url],او کدام اسلحه (مانند یک چاقو یا یک میله چوب) ندارد پس جواب [url={8}]<~no~>[/url] است,他没有武器（比如刀或棍），所以回答 [url={8}]<~no.~>[/url]
 QUESTIONS_9_QUESTION6_CM,"He missed your answer, please try again. ",لم يسمع إجابتك. يُرجى الإعادة.,او جواب شما را متوجه نشد. لطفاً دوباره بگویید.,他没有听清，请再说一遍。
 QUESTIONS_9_QUESTION6_CG,The answer is [url={10}]<~no.~>[/url],الإجابة هي [url={10}]<~no~>[/url],جوابش است [url={10}]<~no~>[/url],答案是 [url={10}]<~no.~>[/url]
-QUESTIONS_9_QUESTION6_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+QUESTIONS_9_QUESTION6_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -467,7 +467,7 @@ QUESTIONS_10_QUESTION7_CC,Nice.,جميل.,عالی,好。
 QUESTIONS_10_QUESTION7_CW,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.",ليس هناك أحدًا متأذي، [url={8}]<~no~>[/url] فأنت لا تحتاج إلى الإسعاف.,کسی مجروح نشده است. [url={8}]<~no~>[/url] شما به یک امبولانس نیاز ندارید.,"没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。"
 QUESTIONS_10_QUESTION7_CM,"He missed your answer, please try again. ",لم يسمع إجابتك. يُرجى الإعادة.,او جواب شما را متوجه نشد. لطفاً دوباره بگویید.,他没有听清，请再说一遍。
 QUESTIONS_10_QUESTION7_CG,"No one is hurt. [url={10}]<~No,~>[/url] you don't need an ambulance.",ليس هناك أحدًا متأذي، [url={8}]<~no~>[/url] فأنت لا تحتاج إلى الإسعاف.,کسی مجروح نشده است. [url={8}]<~no~>[/url] شما به یک امبولانس نیاز ندارید.,"没有人受伤 [url={8}]<~No,~>[/url] 你不需要救护车。"
-QUESTIONS_10_QUESTION7_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+QUESTIONS_10_QUESTION7_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -478,7 +478,7 @@ QUESTIONS_11_QUESTION8_CC,Great job!,عظيم!,خوب انجام دادید!,很
 QUESTIONS_11_QUESTION8_CW,[url={9}]<~Yes~>[/url] there are children at the party. ,[url={9}]<~Yes~>[/url] هناك أطفال في الاحتفال.,[url={9}]<~Yes~>[/url] در مهمانی اطفل نیز شامل می باشند.,[url={9}]<~Yes~>[/url] 聚会上有小孩。 
 QUESTIONS_11_QUESTION8_CM,"He missed your answer, please try again. ",لم يسمع إجابتك. يُرجى الإعادة.,او جواب شما را متوجه نشد. لطفاً دوباره بگویید.,他没有听清，请再说一遍。
 QUESTIONS_11_QUESTION8_CG,[url={9}]<~Yes~>[/url] there are children at the party. ,[url={9}]<~Yes~>[/url] هناك أطفال في الاحتفال.,[url={9}]<~Yes~>[/url] در مهمانی اطفل نیز شامل می باشند.,[url={9}]<~Yes~>[/url] 聚会上有小孩。 
-QUESTIONS_11_QUESTION8_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+QUESTIONS_11_QUESTION8_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -493,7 +493,7 @@ QUESTIONS_12_YOUDIDIT_B2,[url={1}]Try again[/url],[url={1}]حاول ثانيةً
 QUESTIONS_12_YOUDIDIT_ALT1,Well done,أحسنت,آفرین,好
 QUESTIONS_12_YOUDIDIT_ALT2,000 will continue to ask questions.,ستتابع خدمات الـ000 بطرح الأسئلة.,000 به سوالات خود ادامه خواهد داد.,000会继续问问题。
 QUESTIONS_12_YOUDIDIT_ALT3,The questions are specific to your emergency.,الأسئلة هي خاصة بالحالة الطارئة التي لديك.,این سوالات مخصوص وضعیت ایمرجنسی تان است.,问题与你遇到的紧急情况有关。
-QUESTIONS_12_YOUDIDIT_ALT4,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+QUESTIONS_12_YOUDIDIT_ALT4,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 QUESTIONS_12_YOUDIDIT_DT1,An interpreter will be here soon.,سيوصّل المُترجم قريبًا.,یک ترجمان به زودی اینجا خواهد آمد.,翻译马上就来。
 QUESTIONS_12_YOUDIDIT_DT2,Great work asking for an interpreter.,أحسنت في طلب المُترجم الشفهي.,کار خوبی کردید که یک ترجمان خواستید.,要翻译是对的。
@@ -571,7 +571,7 @@ NOHELP_8_QUESTION5_O1,Is anyone inside the house?,Is anyone inside the house?,Is
 NOHELP_8_QUESTION5_O2,Next question.,,,
 ,,,,
 NOHELP_8_QUESTION5_CG,"[url={5}]<~No,~>[/url] no-one is inside the house.", [url={5}]<~no~>[/url] لا يوجد أحدًا داخل المنزل., [url={5}]<~no~>[/url] کسی در خانه نیست.,[url={5}]<~no~>[/url] 屋子里没有人。
-NOHELP_8_QUESTION5_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+NOHELP_8_QUESTION5_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -579,7 +579,7 @@ NOHELP_9_QUESTION6_O1,Is there anyone injured?,Is there anyone injured?,Is there
 NOHELP_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.
 ,,,,
 NOHELP_9_QUESTION6_CG,"[url={5}]<~No,~>[/url] no-one is injured.",[url={5}]<~no~>[/url] no-one is injured.,[url={5}]<~no~>[/url] no-one is injured.,[url={5}]<~no~>[/url] no-one is injured.
-NOHELP_9_QUESTION6_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+NOHELP_9_QUESTION6_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -668,7 +668,7 @@ BONUS_8_QUESTION5_O2,Next question.,Next question.,Next question.,Next question.
 ,,,,
 BONUS_8_QUESTION5_C1,They will ask for more details like this. ,هل تتنفّس؟,آیا او نفس میکشد؟,她有呼吸吗？
 BONUS_8_QUESTION5_CG,"[url={5}]<~Yes,~>[/url] she is breathing.",[url={5}]<~yes~>[/url] أنها تتنفّس.,[url={5}]<~yes~>[/url] او نفس میکشد.,[url={5}]<~yes~>[/url] 她有呼吸
-BONUS_8_QUESTION5_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+BONUS_8_QUESTION5_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
@@ -677,7 +677,7 @@ BONUS_9_QUESTION6_O2,Next question.,Next question.,Next question.,Next question.
 ,,,,
 BONUS_9_QUESTION6_C1,You can answer yes or no.,هل هي صاحية؟ ,آیا او بیدار است؟,她有意识吗？
 BONUS_9_QUESTION6_CG,"[url={5}]<~Yes,~>[/url] she is awake.", [url={5}]<~yes~>[/url]  إنها صاحية.,[url={5}]<~yes~>[/url]  او بیدار است.,她有意识。
-BONUS_9_QUESTION6_CD,It's OK if you can't answer every question!,لا بأس إن لم تستطع الإجابة على جميع الأسئلة.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
+BONUS_9_QUESTION6_CD,It's OK if you can't answer every question!,لا بأس إذا لم تجيب على كل سؤال.,اگر نمی توانید به هر سوال جوب بگویید کدام مشکل نیست.,如果有哪个问题你不知道如何回答，这没有关系。
 ,,,,
 ,,,,
 ,,,,
