@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1760419374
-export_presets.cfg::TextFile::-1::1760416958::0::1::::<><><>0<>0<><>::
+::res://::1760422853
+export_presets.cfg::TextFile::-1::1760419445::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3082677571438133502::1759452145::1759452145::1::::<><><>0<>0<>996e998b7db5a18ece3bc9d1f89e9d97<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1759452145::0::1::::<><><>0<>0<><>::
 ::res://addons/::1759452145
@@ -570,12 +570,12 @@ testing_bridge.gd::GDScript::6209168420433554777::1759452145::0::1::::<>Node<><>
 ::res://Base/Images/::1759452145
 loading_circle.png::CompressedTexture2D/CompressedTexture2D::9139977056822387271::1759452145::1759452145::1::::<><><>0<>0<>3c2c9124aa9435f54449e77cf2e360cf<>res://.godot/imported/loading_circle.png-ef328a78078f43b498780c40855b5b1a.ctex::
 MemiLogo.png::CompressedTexture2D/CompressedTexture2D::5812551517284337293::1759452145::1759452145::1::::<><><>0<>0<>bfd6b901ea2fc390b657643b90c4e116<>res://.godot/imported/MemiLogo.png-de123a9f194a7eb3d03853e00f820d5d.ctex::
-::res://Base/Languages/::1760419419
-MEMI Translations.csv::Translation::8455319623010848291::1760419400::1760419431::1::::<><><>0<>0<>645b3564ca79db454549043240b63749<>res://Base/Languages/MEMI Translations.en.translation<*>res://Base/Languages/MEMI Translations.ar.translation<*>res://Base/Languages/MEMI Translations.prs.translation<*>res://Base/Languages/MEMI Translations.zh.translation::
-MEMI Translations.en.translation::OptimizedTranslation::5516188421546802978::1760419431::0::1::::<><><>0<>0<><>::
-MEMI Translations.ar.translation::OptimizedTranslation::5283776212216382628::1760419431::0::1::::<><><>0<>0<><>::
-MEMI Translations.prs.translation::OptimizedTranslation::2756201923204054113::1760419431::0::1::::<><><>0<>0<><>::
-MEMI Translations.zh.translation::OptimizedTranslation::7179604455004408606::1760419431::0::1::::<><><>0<>0<><>::
+::res://Base/Languages/::1760422872
+MEMI Translations.csv::Translation::7026442206964782673::1760422839::1760422873::1::::<><><>0<>0<>9b09d62d378c6539cce71c170b6c6bda<>res://Base/Languages/MEMI Translations.en.translation<*>res://Base/Languages/MEMI Translations.ar.translation<*>res://Base/Languages/MEMI Translations.prs.translation<*>res://Base/Languages/MEMI Translations.zh.translation::
+MEMI Translations.en.translation::OptimizedTranslation::5516188421546802978::1760422873::0::1::::<><><>0<>0<><>::
+MEMI Translations.ar.translation::OptimizedTranslation::5283776212216382628::1760422873::0::1::::<><><>0<>0<><>::
+MEMI Translations.prs.translation::OptimizedTranslation::2756201923204054113::1760422873::0::1::::<><><>0<>0<><>::
+MEMI Translations.zh.translation::OptimizedTranslation::7179604455004408606::1760422873::0::1::::<><><>0<>0<><>::
 ::res://Base/Scripts/::1760419315
 AllMother.gd::GDScript::1321494933273789799::1759452145::0::1::::AllMother<>Node<><>0<>0<><>::
 AudioPlayer.gd::GDScript::4680650014978945712::1759452145::0::1::::AudioPlayer<>Node<><>0<>0<><>::

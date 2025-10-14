@@ -140,7 +140,7 @@ eg: [url={6}]<~interpreter, Hindi~>[/url]","اطلب مترجم باللغة ا�
 
 比如：[url={6}]<~interpreter, Hindi~>[/url]"
 ,,,,
-LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],[url={4}]فهمت![/url],[url={4}]فهمیدم![/url],[url={4}]收到d！[/url]
+LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],[url={4}]فهمت![/url],[url={4}]فهمیدم![/url],[url={4}]收到！[/url]
 ,,,,
 ,,,,
 ,,,,
@@ -220,7 +220,7 @@ INTERPRETER_6_QUESTION3_C1,They are connecting you to a service in your area.,ي
 INTERPRETER_6_QUESTION3_C2,Practise asking for an interpreter now.,تدرّب على طلب مُترجم الآن.,درخواست نمودن یک ترجمان را حالا تمرین کنید.,现在练习要翻译。
 INTERPRETER_6_QUESTION3_C3,Say [url={6}]<~interpreter~>[/url] and the language you speak in English.,"قل:[url={7}]<~interpreter, Arabic~>[/url]","بگویید
  [url={8}]<~interpreter, Dari~>[/url]","说 
-[url={9}]<~interpreter, Mandrin~>[/url]"
+[url={9}]<~interpreter, Mandarin~>[/url]"
 INTERPRETER_6_QUESTION3_CC,Fantastic!,رائع!,خیلی عالی!,非常好！
 INTERPRETER_6_QUESTION3_CW,Say the language you need and [url={6}]<~interpreter.~>[/url],"قل:[url={7}]<~interpreter, Arabic~>[/url]","بگویید
  [url={8}]<~interpreter, Dari~>[/url]","说 
@@ -356,7 +356,7 @@ QUESTIONS_1_LETSTRY_T2,"If you don’t understand something, you can say
 [url={1}]<~I don’t understand.~>[/url]","إن لم يكن باستطاعتك فهم شيئًا فباستطاعتك قول:
 [url={1}]<~I don’t understand~>[/url]","اگر کدام چیزی را نفهمیدید، میتوانید بگویید
 [url={1}]<~I don’t understand~>[/url]","如果你听不懂，你可以说
-[url={1}]<~I don’t understand~>[/url]"
+[url={1}]<~I don't understand~>[/url]"
 ,,,,
 QUESTIONS_1_LETSTRY_B1, [url={1}]Let's begin[/url], [url={1}]لنبدأ[/url], [url={1}]بیایید شروع کنیم[/url], [url={1}]让我们开始[/url]
 ,,,,
@@ -587,7 +587,7 @@ NOHELP_10_YOUDIDIT_T1,Well done!,أحسنت!,آفرین!,很好！
 NOHELP_10_YOUDIDIT_T2,000 will keep asking questions to get more details.,ستتابع الـ000 سؤالك أسئلة للحصول على تفاصيلٍ إضافية.,000 به سوالات خود ادامه خواهد داد تا جزئیات بیشتر بگیرد.,000会接着提问，以便了解更多细节。
 NOHELP_10_YOUDIDIT_T3,Stay on the phone until 000 tells you to hang up.,ابق على الخط إلى أن تقول لك الـ000 أن تقفل الخط.,تا زمانیکه 000 به شما نگفته است پشت لین مانده و قطع نکنید.,不要挂电话，除非000告诉你挂电话。
 ,,,,
-NOHELP_10_YOUDIDIT_B1,[url={3}]Continue[/url],[url={1}]تابع[/url],[url={1}]ادامه دهید[/url],[url={1}]继续[/url]
+NOHELP_10_YOUDIDIT_B1,[url={3}]Continue[/url],[url={3}]تابع[/url],[url={3}]ادامه دهید[/url],[url={3}]继续[/url]
 NOHELP_10_YOUDIDIT_B2,[url={1}]Try again[/url],[url={1}]حاول ثانيةً[/url],[url={1}]دوباره تلاش کنید[/url],[url={1}]再试[/url]
 ,,,,
 NOHELP_10_YOUDIDIT_ALT1,Well done!,أحسنت!,آفرین!,很好！
