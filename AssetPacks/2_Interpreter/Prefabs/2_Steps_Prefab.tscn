@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 script = ExtResource("1_xoyxg")
@@ -28,17 +29,20 @@ debugging = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+mouse_filter = 2
 theme_override_constants/separation = 15
 
 [node name="StepSpacer_HSep" type="HSeparator" parent="Explanation_VB"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Steps_HB" type="HBoxContainer" parent="Explanation_VB"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_constants/separation = -10
 alignment = 1
 
@@ -314,15 +318,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LadLetsLearn_C" type="Control" parent="Explanation_VB"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="LadLetsLearn_TR" type="TextureRect" parent="Explanation_VB/LadLetsLearn_C"]
 custom_minimum_size = Vector2(200, 375.5)
 layout_mode = 0
 offset_left = 150.0
-offset_top = 195.0
+offset_top = 230.0
 offset_right = 350.0
-offset_bottom = 570.5
+offset_bottom = 605.5
 size_flags_horizontal = 8
+mouse_filter = 2
 texture = ExtResource("7_kqmik")
 expand_mode = 1
 stretch_mode = 5
@@ -392,12 +398,12 @@ default_size = 22
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 2
 
 [node name="ConfirmBubble" parent="Buttons_VB" instance=ExtResource("7_pjkio")]
 layout_mode = 2
-always_pop_out_on_click = true
 click_bg_colour = Color(0.157, 0.09, 0.141, 0.8)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]

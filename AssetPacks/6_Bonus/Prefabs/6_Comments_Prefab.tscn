@@ -23,6 +23,7 @@ z_index = 2
 layout_mode = 3
 anchors_preset = 0
 size_flags_vertical = 8
+mouse_filter = 2
 script = ExtResource("1_gl8uy")
 debugging = true
 
@@ -42,6 +43,7 @@ offset_right = 120.0
 offset_bottom = 780.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_fxttr")
 expand_mode = 1
 script = ExtResource("4_2r0x4")
@@ -81,6 +83,7 @@ offset_right = 1586.0
 offset_bottom = 1361.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 texture = ExtResource("6_k2kg1")
 expand_mode = 1
 

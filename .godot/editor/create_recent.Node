@@ -1,3 +1,4 @@
+CanvasLayer
 VSeparator
 HBoxContainer
 HSeparator
@@ -12,4 +13,3 @@ AudioPlayer
 AnimationPlayer
 Container
 Node
-AudioStreamPlayer

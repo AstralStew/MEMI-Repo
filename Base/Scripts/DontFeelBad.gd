@@ -11,6 +11,7 @@ extends Control
 
 func open() -> void:
 	if has_been_opened: return
+	
 	has_been_opened = true
 	visible = true
 	

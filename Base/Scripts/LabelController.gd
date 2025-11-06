@@ -76,10 +76,17 @@ func populate(_newText : String) -> void:
 	#text = tr(_newText).replacen("<~","[color=00000000].[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] "+ _get_speaker_string())
 	
 	# Make sure speaker is always on the right
+	text = tr(_newText)
 	if is_layout_rtl():
-		text = tr(_newText).replacen("<~",_get_speaker_string() + "[color=00000000]`[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] ").dedent()
+		if get_parsed_text().begins_with("<~"):
+			text = text.replacen("<~",_get_speaker_string() + "[color=00000000]`[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor]") #.dedent()
+		else:			
+			text = text.replacen("<~",_get_speaker_string() + "[color=00000000]`[/color][bgcolor=F7A420C2]").replacen("~>","[/bgcolor] ") #.dedent()
 	else:
-		text = tr(_newText).replacen("<~"," [bgcolor=F7A420C2]").replacen("~>","[/bgcolor][color=00000000]`[/color]" + _get_speaker_string()).dedent()
+		if get_parsed_text().begins_with("<~"):
+			text = text.replacen("<~","[bgcolor=F7A420C2]").replacen("~>","[/bgcolor][color=00000000]`[/color]" + _get_speaker_string())
+		else:
+			text = text.replacen("<~"," [bgcolor=F7A420C2]").replacen("~>","[/bgcolor][color=00000000]`[/color]" + _get_speaker_string())
 	
 	text_populated.emit()
 	text_populated_with_text.emit(text)

@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 40
@@ -30,6 +31,7 @@ debugging = true
 
 [node name="Explanation_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 15
 
 [node name="LadLanding_C" type="Control" parent="Explanation_VB"]
@@ -37,6 +39,7 @@ custom_minimum_size = Vector2(100, 207)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 
 [node name="LadLanding_TR" type="TextureRect" parent="Explanation_VB/LadLanding_C"]
 custom_minimum_size = Vector2(0, 207)
@@ -47,6 +50,7 @@ offset_left = -100.0
 offset_right = 100.0
 offset_bottom = 207.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("2_7pmus")
 expand_mode = 1
 stretch_mode = 5
@@ -59,6 +63,7 @@ auto_check = true
 visible = false
 custom_minimum_size = Vector2(0, 121)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_7pmus")
 expand_mode = 1
 stretch_mode = 4
@@ -69,6 +74,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="LadTutorial1" type="TextureRect" parent="Explanation_VB/LadTutorial1_C"]
 material = SubResource("ShaderMaterial_fgxit")
@@ -80,6 +86,7 @@ offset_left = -115.0
 offset_right = 110.0
 offset_bottom = 400.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("5_3n3tr")
 expand_mode = 1
 stretch_mode = 5

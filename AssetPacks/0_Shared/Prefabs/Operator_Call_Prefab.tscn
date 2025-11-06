@@ -126,6 +126,7 @@ grow_horizontal = 0
 rotation = -0.174533
 scale = Vector2(0.7, 0.7)
 pivot_offset = Vector2(0, 232)
+mouse_filter = 2
 texture = ExtResource("3_gldab")
 expand_mode = 1
 

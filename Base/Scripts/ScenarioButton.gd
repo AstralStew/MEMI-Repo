@@ -44,6 +44,16 @@ var _highlighted := false
 func _ready() -> void:
 	_getrefs()
 	
+	match LanguageManager.currentLanguage:
+		Constants.LanguageCode.en:
+			text_LB.text_direction = Control.TEXT_DIRECTION_LTR
+		Constants.LanguageCode.ar:
+			text_LB.text_direction = Control.TEXT_DIRECTION_RTL
+		Constants.LanguageCode.prs:
+			text_LB.text_direction = Control.TEXT_DIRECTION_RTL
+		Constants.LanguageCode.zh:
+			text_LB.text_direction = Control.TEXT_DIRECTION_LTR
+	
 	# Set icon to the Info texture first
 	set_to_info()
 

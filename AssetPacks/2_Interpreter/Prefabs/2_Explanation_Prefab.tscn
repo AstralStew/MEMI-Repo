@@ -24,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
@@ -34,6 +35,7 @@ debugging = true
 [node name="Explanation_MC" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 0
 
@@ -41,6 +43,7 @@ theme_override_constants/margin_right = 0
 custom_minimum_size = Vector2(265, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 2
 theme_override_constants/separation = 15
 
 [node name="LadTutorial1_C" type="Control" parent="Explanation_MC/Explanation_VB"]
@@ -48,6 +51,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
 material = SubResource("ShaderMaterial_qk448")
@@ -60,6 +64,7 @@ offset_left = -100.0
 offset_right = 100.0
 offset_bottom = 430.0
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("4_85imk")
 expand_mode = 1
 stretch_mode = 5
@@ -126,6 +131,7 @@ lightSpeakerIcon = true
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 2
 
@@ -260,7 +266,7 @@ layout_direction = 2
 layout_mode = 2
 mouse_filter = 2
 
-[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_yes.mp3"]]
+[connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ready.mp3"]]
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="reset_scenario"]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]

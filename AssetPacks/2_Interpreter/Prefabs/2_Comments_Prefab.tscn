@@ -23,6 +23,7 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 script = ExtResource("1_8na7o")
 debugging = true
 
@@ -42,6 +43,7 @@ offset_right = 120.0
 offset_bottom = 780.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_3iybb")
 expand_mode = 1
 script = ExtResource("4_3iybb")
@@ -81,6 +83,7 @@ offset_right = 1586.0
 offset_bottom = 1361.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 texture = ExtResource("20_o5b0k")
 expand_mode = 1
 
@@ -126,7 +129,7 @@ _old_text = "COMMON_NEXT"
 [node name="BubbleText" type="RichTextLabel" parent="NextButton"]
 z_index = 1
 clip_contents = false
-custom_minimum_size = Vector2(159.8, 0)
+custom_minimum_size = Vector2(153.4, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6

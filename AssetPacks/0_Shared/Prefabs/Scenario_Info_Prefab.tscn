@@ -205,6 +205,7 @@ _data = {
 [node name="Scenario_Info_Prefab" type="VBoxContainer"]
 visible = false
 size_flags_vertical = 0
+mouse_filter = 2
 theme_override_constants/separation = 35
 script = ExtResource("1_3io74")
 debugging = true
@@ -212,6 +213,7 @@ debugging = true
 [node name="Scenario_Title_MC" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 20
@@ -229,6 +231,7 @@ default_size = 22
 [node name="Scenario_Info_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = -10
@@ -246,6 +249,7 @@ descriptionText = NodePath("Info_C/Info_TR/Info_RTL")
 
 [node name="Info_C" type="Control" parent="Scenario_Info_MC"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Info_TR" type="TextureRect" parent="Scenario_Info_MC/Info_C"]
 visible = false
@@ -258,6 +262,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(40, 41.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 texture = ExtResource("3_hbp8f")
 expand_mode = 1
 
@@ -279,6 +284,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(0, 39)
 size_flags_horizontal = 2
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
@@ -313,6 +319,7 @@ axis_stretch_vertical = 2
 [node name="Scenario_Emergency_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = -10
@@ -330,6 +337,7 @@ descriptionText = NodePath("Emergency_C/Emergency_TR/Emergency_RTL")
 
 [node name="Emergency_C" type="Control" parent="Scenario_Emergency_MC"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Emergency_TR" type="TextureRect" parent="Scenario_Emergency_MC/Emergency_C"]
 visible = false
@@ -342,6 +350,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(40, 41.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 texture = ExtResource("7_3bgki")
 expand_mode = 1
 
@@ -363,6 +372,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(0, 70)
 size_flags_horizontal = 2
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
@@ -397,6 +407,7 @@ axis_stretch_vertical = 2
 [node name="Scenario_Location_MC" type="MarginContainer" parent="." node_paths=PackedStringArray("descriptionText")]
 custom_minimum_size = Vector2(0, 83)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = -10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = -10
@@ -414,6 +425,7 @@ descriptionText = NodePath("Location_C/Location_TR/Location_RTL")
 
 [node name="Location_C" type="Control" parent="Scenario_Location_MC"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Location_TR" type="TextureRect" parent="Scenario_Location_MC/Location_C"]
 visible = false
@@ -426,6 +438,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(40, 41.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_filter = 2
 texture = ExtResource("8_r5kik")
 expand_mode = 1
 
@@ -447,6 +460,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(0, 39)
 size_flags_horizontal = 2
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true

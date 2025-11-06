@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
@@ -31,12 +32,14 @@ debugging = true
 [node name="Explanation_MC" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_top = 30
 
 [node name="Explanation_VB" type="VBoxContainer" parent="Explanation_MC"]
 custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+mouse_filter = 2
 theme_override_constants/separation = 15
 
 [node name="LadTutorial1_C" type="Control" parent="Explanation_MC/Explanation_VB"]
@@ -44,6 +47,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="LadTutorial1" type="TextureRect" parent="Explanation_MC/Explanation_VB/LadTutorial1_C"]
 material = SubResource("ShaderMaterial_c1y5l")
@@ -58,6 +62,7 @@ offset_right = 135.0
 offset_bottom = 440.0
 grow_horizontal = 2
 pivot_offset = Vector2(756, 327)
+mouse_filter = 2
 texture = ExtResource("4_6rkpc")
 expand_mode = 1
 stretch_mode = 5
@@ -133,12 +138,12 @@ default_size = 22
 [node name="Buttons_VB" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 2
 
 [node name="ContinueButton" parent="Buttons_VB" instance=ExtResource("5_shmvb")]
 layout_mode = 2
-always_pop_out_on_click = true
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="Buttons_VB"]

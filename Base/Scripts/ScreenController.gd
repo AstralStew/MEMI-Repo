@@ -51,7 +51,8 @@ var _current_screen_index := 0
 
 @export_group("Read Only")
 @export var loaded_elements = {} ## e.g. {SectionName}~{ScreenName}~{ElementName}[br] ## i.e. Intro~Landing~Logo, Intro~Landing~BG1, Intro~Landing~
-@onready var content_parent : String = "MarginContainer/Content" #get_child(0).get_child(0)
+@export var content_parent : String = "MarginContainer/Content" #get_child(0).get_child(0)
+
 
 @export var sentenceComparer : SentenceComparer = null
 
@@ -111,10 +112,9 @@ func _enter_tree() -> void:
 	
 	LoadManager.menu_unlocked = overrideMenuUnlocked
 	
-	audioStreamPlayer = get_child(2)
+	audioStreamPlayer = get_node("AudioStreamPlayer")
 	
 	create_prefab_untracked(load(exitMenuPath),"/root/AllMother/MenuCanvas")
-	create_prefab_untracked(load(dontFeelBadPath),"/root/AllMother/MenuCanvas")
 	
 	if debugging: print("[ScreenController] Hardsetting the first animation library...")
 	_load_screen_set(0)
@@ -129,6 +129,10 @@ func _process(delta: float) -> void:
 	
 	if debugging: print("[ScreenController] OverrideLogTimers. SpeechTimer = ", speechTimer.time_left)
 
+
+func initialise_dontfeelbad() -> void:
+	create_prefab_untracked(load(dontFeelBadPath),"/root/AllMother/MenuCanvas")
+	
 
 
 #region Menu functions
@@ -408,6 +412,36 @@ func play_marker(marker:StringName) -> void:
 func play_between(start_marker:StringName,end_marker:StringName) -> void:
 	if debugging: print("[ScreenController] Playing between markers '",start_marker,"' and '",end_marker,"'")
 	play_section_with_markers(current_animation,start_marker,end_marker)
+
+
+func skip_animation() -> void:
+	if is_playing() && Engine.time_scale == 1:
+		if debugging: push_warning("[ScreenController] SKIPPING -> Attempting to skip to next marker...")
+		var current_anim = get_animation(current_animation)
+		var marker_time = 0.0
+		for marker in current_anim.get_marker_names():
+			marker_time = current_anim.get_marker_time(marker)
+			if marker_time > current_animation_position:
+				if marker.containsn("SKIP"):
+					if debugging: print("[ScreenController] SKIPPING -> Next marker is '",marker,"'! Skipping to it...")
+					
+					Engine.time_scale = (marker_time - current_animation_position) / get_process_delta_time()
+					await get_tree().process_frame
+					Engine.time_scale = 1
+					#pause()
+					#speed_scale = (current_anim.get_marker_time(marker) - current_animation_position) / get_process_delta_time()
+					#while (current_animation_position < marker_time):
+						#speed_scale = 2 # (marker_time - current_animation_position) / get_process_delta_time() * 2
+						#await get_tree().process_frame
+					#speed_scale = 1
+					#set_section_with_markers(marker)
+					#play()
+					#play_marker(marker)
+					break
+				elif debugging: print("[ScreenController] SKIPPING -> Marker '",marker,"' does not contain 'SKIP', ignoring...")
+			elif debugging: print("[ScreenController] SKIPPING -> Marker '",marker,"' is earlier than current time, ignoring...")
+		if debugging: push_warning("[ScreenController] SKIPPING -> No suitable marker found ahead of current time! Cancelling skip.")
+	elif debugging: push_warning("[ScreenController] SKIPPING -> Currently paused and/or speed scale isn't 1, ignoring skip.")
 
 
 func queue_animation(animName:String, delay:float=0) -> void:
