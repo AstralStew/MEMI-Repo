@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=59 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="AnimationLibrary" uid="uid://cmgi5g7iph88u" path="res://AssetPacks/2_Interpreter/Animations/LearnSteps.tres" id="3_3hchi"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cjxn00ku2l42w" path="res://Base/Scripts/ScreenSet.gd" id="5_iu5ba"]
 [ext_resource type="Resource" uid="uid://d0tnr6lqh5d6w" path="res://AssetPacks/0_Prerequisite/ScreenSets/Intro.tres" id="5_qbn4n"]
 [ext_resource type="Resource" uid="uid://3jnx5gje3ilt" path="res://AssetPacks/0_Prerequisite/ScreenSets/Interpreter.tres" id="6_0p6sj"]
+[ext_resource type="AnimationLibrary" uid="uid://fjo5xkrra3dm" path="res://AssetPacks/3_Location/Animations/Location.tres" id="6_8bgth"]
 [ext_resource type="Resource" uid="uid://bwglm45wctgq" path="res://AssetPacks/0_Prerequisite/ScreenSets/NoHelp.tres" id="6_f0qj7"]
 [ext_resource type="Resource" uid="uid://dqy52kkuknkki" path="res://AssetPacks/0_Prerequisite/ScreenSets/Location.tres" id="8_s83ii"]
 [ext_resource type="Resource" uid="uid://cu62raoj8oe5j" path="res://AssetPacks/0_Prerequisite/ScreenSets/Questions.tres" id="9_x7k22"]
@@ -38,14 +39,15 @@
 [ext_resource type="PackedScene" uid="uid://cce2hen3g0oa5" path="res://AssetPacks/0_Shared/Prefabs/Operator_Call_Prefab.tscn" id="27_mtg58"]
 [ext_resource type="PackedScene" uid="uid://bqsbhg5xhd1r5" path="res://AssetPacks/0_Shared/Prefabs/TapBubble.tscn" id="28_i58l5"]
 [ext_resource type="PackedScene" uid="uid://cy5l5ur5io04e" path="res://AssetPacks/0_Shared/Prefabs/Scenario_Info_Prefab.tscn" id="29_unxyd"]
-[ext_resource type="PackedScene" uid="uid://rb6gbttr6pht" path="res://AssetPacks/2_Interpreter/Prefabs/2_Comments_Prefab.tscn" id="30_5bxcq"]
 [ext_resource type="Texture2D" uid="uid://bghw73stsxlsq" path="res://AssetPacks/1_CharacterEn/CharacterEn_Postbox.png" id="31_2wq01"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="32_wcxfd"]
-[ext_resource type="PackedScene" uid="uid://dw6st8a35qf1b" path="res://AssetPacks/3_Location/Prefabs/3_Comments_Prefab.tscn" id="33_auoba"]
 [ext_resource type="Texture2D" uid="uid://dmm2ij6lkyue3" path="res://AssetPacks/1_CharacterEn/CharacterEn_Explain.png" id="34_5p8cl"]
 [ext_resource type="PackedScene" uid="uid://t3b4csj1ti70" path="res://AssetPacks/4_Questions/Prefabs/4_Comments_Prefab.tscn" id="35_dvfcc"]
 [ext_resource type="PackedScene" uid="uid://ug1n5tk5epuy" path="res://AssetPacks/5_NoHelp/Prefabs/5_Comments_Prefab.tscn" id="36_62ty7"]
 [ext_resource type="PackedScene" uid="uid://dl72oa0xa7h1o" path="res://AssetPacks/6_Bonus/Prefabs/6_Comments_Prefab.tscn" id="37_7rm63"]
+[ext_resource type="PackedScene" uid="uid://hx51s1lp8rc7" path="res://AssetPacks/0_Shared/Prefabs/CommentBubble.tscn" id="42_heh3n"]
+[ext_resource type="PackedScene" uid="uid://yerl174fjbm5" path="res://AssetPacks/0_Shared/Prefabs/ScenarioButton.tscn" id="44_20xqg"]
+[ext_resource type="Script" uid="uid://c65kea35dsj4f" path="res://Base/Scripts/NextButton.gd" id="45_ym3tl"]
 
 [sub_resource type="SystemFont" id="SystemFont_pih2p"]
 font_names = PackedStringArray("Open Sans")
@@ -675,9 +677,17 @@ shader = ExtResource("17_fkmet")
 shader_parameter/target_texture = ExtResource("18_dto2j")
 shader_parameter/weight = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oxnu"]
+shader = ExtResource("17_fkmet")
+shader_parameter/weight = 0.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c1y5l"]
 shader = ExtResource("17_fkmet")
 shader_parameter/target_texture = ExtResource("19_lxd4l")
+shader_parameter/weight = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wirx"]
+shader = ExtResource("17_fkmet")
 shader_parameter/weight = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hrcfs"]
@@ -746,7 +756,8 @@ root_node = NodePath("MarginContainer")
 libraries = {
 &"Interpreter": ExtResource("3_bqdsp"),
 &"Intro": ExtResource("4_lxd4l"),
-&"LearnSteps": ExtResource("3_3hchi")
+&"LearnSteps": ExtResource("3_3hchi"),
+&"Location": ExtResource("6_8bgth")
 }
 autoplay = "testing_anim_library/testing_animation"
 script = ExtResource("4_eopm5")
@@ -759,7 +770,7 @@ overrideLanguageIndex = 1
 overrideScreenIndex = 3
 overrideTimeScale = true
 overrideTimeScaleFactor = 10.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb"), ExtResource("19_fw3jg")])
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("19_fw3jg"), ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb")])
 topup_time = 1.5
 replacement_words = {
 &"4C": &"farsi",
@@ -1163,8 +1174,6 @@ number_of_players = 1
 metadata/_custom_type_script = "uid://b7xlve576cyge"
 
 [node name="2_Steps_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("15_5usye")]
-visible = true
-modulate = Color(1, 1, 1, 1)
 layout_mode = 2
 
 [node name="2_Explanation_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
@@ -1180,6 +1189,7 @@ script = ExtResource("16_mn8u3")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 0
@@ -1211,12 +1221,15 @@ texture = ExtResource("19_lxd4l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
 auto_pose = 3
 current_pose = 3
 debugging = true
 auto_check = true
 
 [node name="Explanation1_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -1229,6 +1242,7 @@ default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation2_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -1241,6 +1255,7 @@ default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -1253,6 +1268,7 @@ default_size = 22
 lightSpeakerIcon = true
 
 [node name="Explanation4_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Explanation_MC/Explanation_VB"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
@@ -1292,6 +1308,8 @@ unclick_inout = 0.14
 unclick_ease = 1
 _autostart = true
 _auto_text = "INTERPRETER_1_LETSTRY_B1"
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
 _old_text = "INTERPRETER_1_LETSTRY_B1"
 
 [node name="BubbleText" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton"]
@@ -1301,7 +1319,7 @@ custom_minimum_size = Vector2(191.8, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.156863, 0.0901961, 0.141176, 1)
 theme_override_fonts/normal_font = ExtResource("24_ym3tl")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
@@ -1316,6 +1334,7 @@ default_size = 22
 metadata/_edit_group_ = true
 
 [node name="BubbleBG" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton/BubbleText"]
+self_modulate = Color(0.596078, 0.839216, 0.494118, 1)
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
@@ -1328,7 +1347,7 @@ offset_bottom = 6.25
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1, 1.1)
-pivot_offset = Vector2(100.9, 40.5)
+pivot_offset = Vector2(119, 40.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("25_fw3jg")
@@ -1348,7 +1367,7 @@ offset_left = -4.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(104.9, 45.20887)
+pivot_offset = Vector2(123, 45.20887)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("26_54nga")
@@ -1372,6 +1391,7 @@ flat = true
 [node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton"]
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB"]
+modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -1402,29 +1422,211 @@ layout_mode = 2
 [node name="TapBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C" instance=ExtResource("28_i58l5")]
 layout_mode = 2
 theme_override_constants/margin_bottom = -30
-incorrect_pause = 3.5
 
-[node name="2_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C" instance=ExtResource("30_5bxcq")]
+[node name="2_Comments_Prefab" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C"]
+z_index = 2
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("16_mn8u3")
+debugging = true
+
+[node name="LadComment1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab"]
+z_index = 2
+material = SubResource("ShaderMaterial_8oxnu")
+custom_minimum_size = Vector2(220, 505.5)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -130.0
+offset_right = 120.0
+offset_bottom = 470.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("34_5p8cl")
+expand_mode = 1
+script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
+current_pose = 1
+debugging = true
+auto_check = true
+
+[node name="CommentBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1" instance=ExtResource("42_heh3n")]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00625
+anchor_top = 0.033333335
+anchor_right = 0.46875
+anchor_bottom = 0.2
+offset_left = -18.0
+offset_top = 7.999998
+offset_right = -18.0
+offset_bottom = 8.0
+_auto_text = ""
+_old_text = ""
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab"]
+modulate = Color(0, 0, 0, 0)
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1614.0
+offset_top = -1839.0
+offset_right = 1586.0
+offset_bottom = 1361.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("5_eopm5")
+expand_mode = 1
+
+[node name="NextButton" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" node_paths=PackedStringArray("parent")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.8
+offset_top = -8.0
+offset_right = -147.99998
+offset_bottom = 97.0
+grow_horizontal = 0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(102.4, 52.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
+script = ExtResource("45_ym3tl")
+parent = NodePath("..")
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("23_20xqg")
+max_char_threshold = 24
+click_bg_colour = Color(0.4, 0.6039216, 0.3137255, 1)
+click_text_colour = Color(0.25130188, 0.25130188, 0.25130183, 1)
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
+_auto_text = "COMMON_NEXT"
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_auto_text_colour = Color(0.18, 0.18, 0.18, 1)
+_old_text = "COMMON_NEXT"
+
+[node name="BubbleText" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(147, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0.18, 0.18, 0.18, 1)
+theme_override_fonts/normal_font = ExtResource("24_ym3tl")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "COMMON_NEXT"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("21_8wirx")
+default_size = 22
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText"]
+self_modulate = Color(0.596078, 0.839216, 0.494118, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.75
+offset_right = 5.0
+offset_bottom = 6.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(78.5, 40.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("25_fw3jg")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1162684
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(82.5, 45.20887)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("26_54nga")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="ScenarioTouchButton" type="Button" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton"]
 
 [node name="Scenario_Info_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab" instance=ExtResource("29_unxyd")]
 layout_mode = 2
 
 [node name="3_Explanation_Prefab" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 40
 script = ExtResource("16_mn8u3")
 debugging = true
 
 [node name="Explanation_MC" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/margin_top = 30
+theme_override_constants/margin_top = 20
 
 [node name="Explanation_VB" type="VBoxContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Explanation_MC"]
 custom_minimum_size = Vector2(240, 0)
@@ -1455,6 +1657,8 @@ texture = ExtResource("31_2wq01")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
 auto_pose = 6
 current_pose = 6
 _updateInEditor = true
@@ -1485,7 +1689,6 @@ debugging = true
 default_size = 22
 
 [node name="Explanation3_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Explanation_MC/Explanation_VB"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -1498,7 +1701,6 @@ debugging = true
 default_size = 22
 
 [node name="Explanation4_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Explanation_MC/Explanation_VB"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -1511,7 +1713,6 @@ debugging = true
 default_size = 22
 
 [node name="Explanation5_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Explanation_MC/Explanation_VB"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -1532,9 +1733,11 @@ alignment = 2
 [node name="ContinueButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB" instance=ExtResource("32_wcxfd")]
 layout_mode = 2
 click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_auto_text_colour = Color(0.156863, 0.0901961, 0.141176, 1)
 
 [node name="SkipSteps_RTL" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB"]
-visible = false
+modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.5)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -1550,7 +1753,6 @@ autopopulate = true
 autokey = "INTERPRETER_7_YOUDIDIT_B2"
 
 [node name="HSeparator" type="HSeparator" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 50
@@ -1565,9 +1767,207 @@ layout_mode = 2
 
 [node name="TapBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C" instance=ExtResource("28_i58l5")]
 layout_mode = 2
+theme_override_constants/margin_bottom = -30
+incorrect_pause = 2.5
 
-[node name="3_Comments_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C" instance=ExtResource("33_auoba")]
+[node name="3_Comments_Prefab" type="Control" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C"]
+visible = false
+z_index = 2
 layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("16_mn8u3")
+debugging = true
+
+[node name="LadComment1" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab"]
+z_index = 2
+material = SubResource("ShaderMaterial_8wirx")
+custom_minimum_size = Vector2(220, 505.5)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = 180.0
+offset_right = 110.0
+offset_bottom = 780.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("34_5p8cl")
+expand_mode = 1
+script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
+current_pose = 1
+debugging = true
+auto_check = true
+
+[node name="CommentBubble" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/LadComment1" instance=ExtResource("42_heh3n")]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.373
+anchor_top = 0.2
+anchor_right = 0.373
+anchor_bottom = 0.2
+offset_left = -139.36
+offset_top = -92.0
+offset_right = 12.639999
+offset_bottom = 8.0
+_auto_text = ""
+_old_text = ""
+
+[node name="Overlay" type="TextureRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab"]
+visible = false
+modulate = Color(0, 0, 0, 0)
+custom_minimum_size = Vector2(3200, 3200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1614.0
+offset_top = -1839.0
+offset_right = 1586.0
+offset_bottom = 1361.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("5_eopm5")
+expand_mode = 1
+
+[node name="ScenarioButton" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" instance=ExtResource("44_20xqg")]
+z_index = -1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 125.0
+grow_vertical = 2
+
+[node name="NextButton" type="MarginContainer" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" node_paths=PackedStringArray("parent")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.8
+offset_top = -8.0
+offset_right = -147.99998
+offset_bottom = 97.0
+grow_horizontal = 0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(136.5, 52.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 19
+script = ExtResource("45_ym3tl")
+parent = NodePath("..")
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("23_20xqg")
+max_char_threshold = 24
+click_bg_colour = Color(0.40164778, 0.60512775, 0.31373265, 1)
+click_text_colour = Color(0.25130188, 0.25130188, 0.25130183, 1)
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
+_auto_text = "COMMON_NEXT"
+_auto_bg_colour = Color(0.596078, 0.839216, 0.494118, 1)
+_auto_text_colour = Color(0.18, 0.18, 0.18, 1)
+_old_text = "COMMON_NEXT"
+
+[node name="BubbleText" type="RichTextLabel" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(159.8, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0.596078, 0.839216, 0.494118, 1)
+theme_override_fonts/normal_font = ExtResource("24_ym3tl")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "COMMON_NEXT"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("21_8wirx")
+default_size = 22
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText"]
+self_modulate = Color(0.596078, 0.839216, 0.494118, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.75
+offset_right = 5.0
+offset_bottom = 6.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(119, 40.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("25_fw3jg")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText/BubbleBG"]
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1162684
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(123, 45.20887)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("26_54nga")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="ScenarioTouchButton" type="Button" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton"]
 
 [node name="Scenario_Info_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" instance=ExtResource("29_unxyd")]
 layout_mode = 2
@@ -1617,6 +2017,8 @@ texture = ExtResource("34_5p8cl")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
 current_pose = 1
 _updateInEditor = true
 auto_check = true
@@ -1765,6 +2167,8 @@ texture = ExtResource("34_5p8cl")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
 current_pose = 1
 _updateInEditor = true
 auto_check = true
@@ -1900,6 +2304,8 @@ texture = ExtResource("34_5p8cl")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("20_8bgth")
+inactive_dur = 0.5
+active_dur = 0.5
 current_pose = 1
 _updateInEditor = true
 auto_check = true
@@ -1992,7 +2398,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Background" type="Control" parent="ContentCanvas/ScreenController"]
-modulate = Color(0.7921569, 0.7176471, 0.6509804, 1)
+modulate = Color(0.156863, 0.0901961, 0.141176, 1)
 z_index = -5
 custom_minimum_size = Vector2(440, 956)
 layout_direction = 2
@@ -2184,11 +2590,45 @@ size_flags_vertical = 4
 [connection signal="meta_link_9" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton" method="_send_meta_link_9"]
 [connection signal="pressed" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton/BubbleText/BubbleBG/ScenarioTouchButton" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/ContinueButton" method="check_meta_link_from_button"]
 [connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/Buttons_VB/SkipSteps_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab" method="reset_scenario"]
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_police.mp3"]]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_fire.mp3"]]
+[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ambulance.mp3"]]
+[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_victoria.mp3"]]
+[connection signal="meta_link_5" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/2_Interpreter/Audio/P2_INTER_springvale.mp3"]]
+[connection signal="meta_link_6" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreter.mp3"]]
+[connection signal="meta_link_7" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreterarabic.mp3"]]
+[connection signal="meta_link_8" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreterdari.mp3"]]
+[connection signal="meta_link_9" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpretermandarin.mp3"]]
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="_send_meta_link_9"]
+[connection signal="pressed" from="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton/BubbleText/BubbleBG/ScenarioTouchButton" to="ContentCanvas/ScreenController/MarginContainer/Content/2_Explanation_Prefab/LeftAligned_C/2_Comments_Prefab/NextButton" method="check_meta_link_from_button"]
 [connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB/ContinueButton" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" method="play_animation" binds= [&"Location/Location_1a_Fade"]]
 [connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB/ContinueButton" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" method="play_animation" binds= ["Location/Location_3_Call"]]
 [connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB/ContinueButton" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" method="play_animation" binds= [&"Location/Location_8a_Fade"]]
 [connection signal="meta_link_9" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB/ContinueButton" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" method="play_animation" binds= [&"Location/Location_8a_Fade"]]
 [connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/Buttons_VB/SkipSteps_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab" method="reset_scenario"]
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ambulance.mp3"]]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_victoria.mp3"]]
+[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/3_Location/Audio/P3_LOCA_shepparton.mp3"]]
+[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/3_Location/Audio/P3_LOCA_8mainroadshep.mp3"]]
+[connection signal="meta_link_5" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/LadComment1/CommentBubble" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab" method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_interpreter.mp3"]]
+[connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="_send_meta_link_9"]
+[connection signal="pressed" from="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton/BubbleText/BubbleBG/ScenarioTouchButton" to="ContentCanvas/ScreenController/MarginContainer/Content/3_Explanation_Prefab/LeftAligned_C/3_Comments_Prefab/NextButton" method="check_meta_link_from_button"]
 [connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/Explanation_MC/Explanation_VB/Explanation2_RTL" to="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab" method="play_stream" binds= [&"res://AssetPacks/4_Questions/Audio/P4_QUEST_idontunderstand.mp3"]]
 [connection signal="meta_link_1" from="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/Buttons_VB/ContinueButton" to="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab" method="play_animation" binds= [&"Questions/Questions_1a_Fade"]]
 [connection signal="meta_link_2" from="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab/Buttons_VB/ContinueButton" to="ContentCanvas/ScreenController/MarginContainer/Content/4_Explanation_Prefab" method="play_animation" binds= ["Questions/Questions_3_Call"]]
