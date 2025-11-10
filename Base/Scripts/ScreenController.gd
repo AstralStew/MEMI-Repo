@@ -64,6 +64,8 @@ var _current_screen_index := 0
 
 @export var audioStreamPlayer : AudioPlayer = null
 
+@export var dontfeelbad_initialised := false
+
 
 signal switched_menu_button_dark
 signal switched_menu_button_light
@@ -131,8 +133,18 @@ func _process(delta: float) -> void:
 
 
 func initialise_dontfeelbad() -> void:
+	if dontfeelbad_initialised:
+			if debugging: print("[ScreenController] NOTE > DontFeelBad already initialised, skipping.")
+			return
+	if debugging: print("[ScreenController] Initialising DontFeelBad!")
 	create_prefab_untracked(load(dontFeelBadPath),"/root/AllMother/MenuCanvas")
+	dontfeelbad_initialised = true
+
+func initial_load_finished() -> void:
+	if OS.has_feature("editor_runtime"): return
 	
+	if debugging: print("[ScreenController] InitialLoadFinished.")
+	BridgeManager.initial_load_finished()
 
 
 #region Menu functions
@@ -422,7 +434,7 @@ func skip_animation() -> void:
 		for marker in current_anim.get_marker_names():
 			marker_time = current_anim.get_marker_time(marker)
 			if marker_time > current_animation_position:
-				if marker.containsn("SKIP"):
+				if marker.contains("SKIP"):
 					if debugging: print("[ScreenController] SKIPPING -> Next marker is '",marker,"'! Skipping to it...")
 					
 					Engine.time_scale = (marker_time - current_animation_position) / get_process_delta_time()

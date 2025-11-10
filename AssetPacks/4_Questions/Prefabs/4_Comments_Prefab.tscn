@@ -49,7 +49,6 @@ expand_mode = 1
 script = ExtResource("3_t84jx")
 inactive_ease = 3
 active_ease = 3
-auto_inactive = null
 current_pose = 1
 debugging = true
 auto_check = true

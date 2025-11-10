@@ -47,9 +47,7 @@ Medical emergency","سيناريو إضافي:
 ,,,,,,
 ,,,,,,
 ,,,,,,
-INTRO_LANDING_2_EXPLANATION_T1,Let’s practise calling 000 in an emergency.,"لنتدّرب على طلب 000 في حالة طارئة.
-
-تسكن في عنوان 8 مين رُود، شيبارتون، فيكتوريا [8[color=00000000]X[/color]Main Road, Shepparton, Victoria]",بیایید تماس گرفتن با 000 را در یک شرایط اضطراری تمرین کنیم.,让我们练习在紧急情况下拨打000。,,
+INTRO_LANDING_2_EXPLANATION_T1,Let’s practise calling 000 in an emergency.,لنتدّرب على طلب 000 في حالة طارئة.,بیایید تماس گرفتن با 000 را در یک شرایط اضطراری تمرین کنیم.,让我们练习在紧急情况下拨打000。,,
 INTRO_LANDING_2_EXPLANATION_T2,I will help you step by step using example situations. ,سأساعدك خطوة بخطوة مستخدمةً حالات افتراضية.,من با استفاده از موقعیت‌های نمونه قدم‌به‌قدم به شما کمک خواهم کرد.,我会用示范场景一步步帮你。 ,,
 INTRO_LANDING_2_EXPLANATION_T3,"Real 000 calls are different, but this practice will help you in a real emergency.",ستكون مكالمات 000 الحقيقية مختلفة، ولكن سيُساعدك هذا التدريب في الحالات الفعلية.,تماس های واقعی 000 متفاوت اند، اما این تمرین به شما در یک شرایط اضطراری واقعی کمک خواهد کرد.,真的拨打000是不同的，不过这种练习能在真的紧急情况下帮到你。,,
 ,,,,,,
@@ -155,7 +153,7 @@ LEARNSTEPS_5_THIRDSTEP_B1,[url={4}]Got it![/url],[url={4}]فهمت![/url],[url={
 ,,,,,,
 ,,,,,,
 INTERPRETER_1_LETSTRY_T1,"Let’s try a practice 000 call, and you can ask for an interpreter in three steps.",لنحاول التدرّب على طلب 000، وباستطاعتك طلب مُترجم في ثلاث خطوات.,بیایید یک تماس تمرینی 000 داشته باشیم، و شما می توانید در سه مرحله درخواست یک ترجمان کنید.,让我们来练习拨打000，你可以按三个步骤要翻译。,,
-INTERPRETER_1_LETSTRY_T2,Ready? Tap and say [url={1}]<~Yes~>[/url],هل أنت جاهز؟ انقر وقل: [url={1}]<~Yes~>[/url],آماده اید؟ ضربه زده و بگویید [url={1}]<~Yes~>[/url],准备好了吗？ 点击、说 [url={1}]<~Yes~>[/url],,
+INTERPRETER_1_LETSTRY_T2,Ready? Tap and say [url={1}]<~Ready~>[/url],هل أنت جاهز؟ انقر وقل: [url={1}]<~Ready~>[/url],آماده اید؟ ضربه زده و بگویید [url={1}]<~Ready~>[/url],准备好了吗？ 点击、说 [url={1}]<~Ready~>[/url],,
 ,,,,,,
 INTERPRETER_1_LETSTRY_B1,[url={1}]See steps again[/url],[url={1}]راجع الخطوات ثانيةًً[/url],[url={1}]مراحل را دوباره ببینید[/url],[url={1}]再看一遍步骤[/url],,
 ,,,,,,
@@ -275,7 +273,7 @@ LOCATION_2_SCENARIO_T2,You are visiting your aunt. She has sudden chest pain and
 她突然胸口疼、头晕。",,
 LOCATION_2_SCENARIO_T3,She is having a heart attack. She needs urgent medical help.,إنها تتعرّض لجلطة قلبية وهي بحاجة إلى عناية طبيّة مستعجلة.,او دچار حمله قلبی شده است. او به کمک طبی فوری نیاز دارد.,"她犯心脏病了，
 需要急救。",,
-LOCATION_2_SCENARIO_T4,"She lives at 8 Main Road, Shepparton, Victoria.","تسكن في عنوان 8 مين رُود، شيبارتون، فيكتوريا [8[color=00000000]X[/color]Main Road, Shepparton, Victoria]","او در آدرس  8Main Road, Shepparton, Victoria زندگی میکند.","她住在8 Main Road, Shepparton, Victoria。",,
+LOCATION_2_SCENARIO_T4,"She lives at 8 Main Road, Shepparton, Victoria.","تسكن في عنوان 8 مين رُود، شيبارتون، فيكتوريا [Main Road, Shepparton, Victoria8[color=00000000]_[/color]]","او در آدرس  8[color=00000000]_[/color]Main Road, Shepparton, Victoria زندگی میکند.","她住在8 Main Road, Shepparton, Victoria。",,
 ,,,,,,
 LOCATION_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],,
 ,,,,,,
@@ -326,10 +324,10 @@ LOCATION_6_QUESTION3_O1,"Connecting you to ambulance: Shepparton, Victoria.","Co
 LOCATION_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?",,
 ,,,,,,
 LOCATION_6_QUESTION3_C1,They are connecting you to a service in your area.,إنهم يوصلونك مع مركز خدمة في منطقتك.,آنها شما را به یک مرکز خدماتی در منطقه تان وصل میکنند.,他们正在为你接通你本地的服务机构。,,
-LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~8 Main Road, Shepparton.~>[/url]",وطلبوا منك العنوان حيث توجد الحالة الطارئة [url={4}]<~8Main Road Shepparton~>[/url],آنها آدرسی که شرایط اضطراری تان رخ داده را پرسید: [url={4}]<~8Main Road Shepparton~>[/url],"他们会问你紧急情况的地址：[url={4}]<~8 Main Road, Shepparton~>[/url]",,
+LOCATION_6_QUESTION3_C2,"Say the address of your emergency: [url={4}]<~8 Main Road, Shepparton.~>[/url]",وطلبوا منك العنوان حيث توجد الحالة الطارئة [url={4}]<~8[color=00000000]X[/color]Main Road Shepparton~>[/url],آنها آدرسی که شرایط اضطراری تان رخ داده را پرسید: [url={4}]<~8[color=00000000]X[/color]Main Road Shepparton~>[/url],"他们会问你紧急情况的地址：[url={4}]<~8 Main Road, Shepparton~>[/url]",,
 LOCATION_6_QUESTION3_CC,Great! 000 knows where your emergency is.,عظيم، تعلم خدمة الطوارئ الـ000 الآن أين توجد الحالة الطارئة,عالی! 000 میدانید که وضعیت ایمرجنسی تان در کجا رخ داده است.,很好！000知道出现紧急情况的地址了。,,
-LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~8 Main Road, Shepparton.~>[/url]",حاول ثانيةً:  [url={4}]<~8Main road Shepparton~>[/url],دوباره تلاش کنید: [url={4}]<~8Main road Shepparton~>[/url],"再试：[url={4}]<~8 Main road, Shepparton.~>[/url]",,
-LOCATION_6_QUESTION3_CG,"The address is: [url={4}]<~8 Main Road, Shepparton.~>[/url]",لعنوان هو: [url={4}]<~8Main road Shepparton~>[/url],آدرس [url={4}]<~8Main road Shepparton~>[/url],"地址是[url={4}]<~8 Main road, Shepparton.~>[/url]",,
+LOCATION_6_QUESTION3_CM,"Try again: [url={4}]<~8 Main Road, Shepparton.~>[/url]",حاول ثانيةً:  [url={4}]<~8[color=00000000]X[/color]Main road Shepparton~>[/url],دوباره تلاش کنید: [url={4}]<~8[color=00000000]X[/color]Main road Shepparton~>[/url],"再试：[url={4}]<~8 Main road, Shepparton.~>[/url]",,
+LOCATION_6_QUESTION3_CG,"The address is: [url={4}]<~8 Main Road, Shepparton.~>[/url]",لعنوان هو: [url={4}]<~8[color=00000000]X[/color]Main road Shepparton~>[/url],آدرس [url={4}]<~8[color=00000000]X[/color]Main road Shepparton~>[/url],"地址是[url={4}]<~8 Main road, Shepparton.~>[/url]",,
 ,,,,,,
 ,,,,,,
 ,,,,,,
@@ -349,7 +347,8 @@ LOCATION_8_YOUDIDIT_T1,You did it!,أحسنت العمل!,شما انجام دا
 LOCATION_8_YOUDIDIT_T2,You now know how:,تعرّف الآن كيف تجري الأمور التالية:,شما حالا موارد ذیل را میدانید:,现在你知道：,,
 LOCATION_8_YOUDIDIT_T3,•  a 000 phone call begins, • كيف تبدأ مكالمة الـ000 ,•  یک تماس 000 چگونه شروع میشود,•  拨通000后开始说什么,,
 LOCATION_8_YOUDIDIT_T4,"•  to share your location 
-in English",• كيف تُشارك معلومات المكان بالإنجليزية,• موقعیت خود را به انگلیسی شریک کنید,•  如何用英语分享你的位置,,
+in English",• كيف تُشارك معلومات المكان بالإنجليزية,• موقعیت خود را به انگلیسی شریک کنید,"•  如何用英语分享
+你的位置",,
 LOCATION_8_YOUDIDIT_T5,"•  and to ask for an
 interpreter",• كيف تطلب مُترجم شفهي,• و یک ترجمان درخواست کنید,•  如何要翻译,,
 ,,,,,,
@@ -379,7 +378,7 @@ QUESTIONS_1_LETSTRY_B1, [url={1}]Let's begin[/url], [url={1}]لنبدأ[/url], [
 QUESTIONS_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,,
 QUESTIONS_2_SCENARIO_T2,You are at a children’s party. The neighbour starts shouting at the party.,أنت في احتفال للأطفال، يبدأ الجار بالصراخ على الجميع.,شما در یک مهمانی اطفال هستید. همسایه شروع میکند که بالای همگی فریاد بزند.,你在参加一个儿童派对。邻居开始对大家吼叫。,,
 QUESTIONS_2_SCENARIO_T3,He is drunk and is kicking the fence. He says he will break into the party.,أنه سكران ويركل السور. يقول أنه سيقتحم الاحتفال.,او مست است و حصار حویلی را با لگد می زند. او می گوید که به زور در مهمانی می آید.,他醉了，在踢围栏，他说他要闯进派对里来。,,
-QUESTIONS_2_SCENARIO_T4,"The address is 3 High Street, Doreen, Victoria.","العنوان هو: 3 هاي ستريت، دورين، فيكتوريا [3High Street Doreen, Victoria]","آدرس  3High Street Doreen, Victoria است.","地址是 3 High Street Doreen, Victoria。",,
+QUESTIONS_2_SCENARIO_T4,"The address is 3 High Street, Doreen, Victoria.","العنوان هو: 3 هاي ستريت، دورين، فيكتوريا [3[color=00000000]_[/color]High Street Doreen, Victoria]","آدرس  3High Street Doreen, Victoria است.","地址是 3 High Street Doreen, Victoria。",,
 ,,,,,,
 QUESTIONS_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],,
 ,,,,,,
@@ -542,8 +541,8 @@ NOHELP_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,,
 NOHELP_2_SCENARIO_T2,Your smoke alarm wakes you up. There is a fire in your house and it's full of smoke.,يُصدر جهاز إنذار الدخان صوتًا والمطبخ عابق بالدخان.,زنگ خطر دود تان به صدا درآمده است. آشپزخانه پر از دود شده است.,你的烟雾警报器在响，厨房里都是烟。,,
 NOHELP_2_SCENARIO_T3,"You wake your children, go outside together and call 000.",توقظ الأطفال وتخرجون من المنزل معًا، وتطلب الـ000.,شما اطفال خود را از خواب بیدار میکنید، بیرون از خانه می روید، و به 000 زنگ می زنید.,你把孩子叫醒，一起到外面，然后拨000。,,
 NOHELP_2_SCENARIO_T4,"You live at 2 Main Road, Bendigo, Victoria.","تسكن في العنوان: 2 مِين رُود، بينديغو، فيكتوريا 
-[2Main Road, Bendigo, Victoria]","شما در این آدرس زندگی میکنید:
-2Main Road, Bendigo, Victoria","你住在：2 Main Road, Bendigo, Victoria.",,
+[2[color=00000000]_[/color]Main Road, Bendigo, Victoria]","شما در این آدرس زندگی میکنید:
+2[color=00000000]_[/color]Main Road, Bendigo, Victoria","你住在：2 Main Road, Bendigo, Victoria.",,
 ,,,,,,
 NOHELP_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],,
 ,,,,,,
@@ -572,7 +571,7 @@ NOHELP_5_QUESTION2_CG,"The correct answer is [url={2}]<~Bendigo, Victoria.~>[/ur
 NOHELP_6_QUESTION3_O1,"Connecting you to fire brigade: Bendigo, Victoria.","Connecting you to fire brigade: Bendigo, Victoria.","Connecting you to fire brigade: Bendigo, Victoria.","Connecting you to fire brigade: Bendigo, Victoria.",,
 NOHELP_6_QUESTION3_O2,"Emergency services, what address do you need the fire brigade?","Emergency services, what address do you need the fire brigade?","Emergency services, what address do you need the fire brigade?","Emergency services, what address do you need the fire brigade?",,
 ,,,,,,
-NOHELP_6_QUESTION3_CG,"The address is [url={3}]<~2 Main Road, Bendigo.~>[/url]","العنوان هو: [url={3}]<~2 Main Road, Bendigo.~>[/url]","جواب درست  [url={3}]<~2 Main Road, Bendigo.~>[/url] است.","地址是[url={3}]<~2 Main Road, Bendigo.~>[/url]",,
+NOHELP_6_QUESTION3_CG,"The address is [url={3}]<~2 Main Road, Bendigo.~>[/url]","العنوان هو: [url={3}]<~2[color=00000000]_[/color]Main Road, Bendigo.~>[/url]","جواب درست  [url={3}]<~2[color=00000000]_[/color]Main Road, Bendigo.~>[/url] است.","地址是[url={3}]<~2 Main Road, Bendigo.~>[/url]",,
 ,,,,,,
 ,,,,,,
 ,,,,,,
@@ -640,7 +639,7 @@ BONUS_2_SCENARIO_T1,SCENARIO,سيناريو,سناریو,场景,,
 BONUS_2_SCENARIO_T2,You are at home and your four-year-old daughter falls and hits her head.,أنت في المنزل، تقع ابنتك البالغة من العمر أربع سنوات، وترطم رأسها.,شما در خانه هستید و دختر چهارساله تان به زمین خورده و سرش به چیزی برخورد میکند.,你在家，你4岁女儿摔倒碰到了头。,,
 BONUS_2_SCENARIO_T3,She is bleeding from the head and crying loudly.,إنها تنزف من الرأس وتبكي بصوتٍ عالٍ.,از سرش خون می آید و چیغ می زند.,她头上出血，在大声啼哭。,,
 BONUS_2_SCENARIO_T4,"You live at 9 Clark Street, Epping, Victoria. ","تسكن في العنوان: 9 كلارك ستيريت، إيبينغ
- [9Clark Street Epping]",شما در  9Clark Street Epping زندگی میکنید.,"你住在 9 Clark Street, Epping",,
+ [9[color=00000000]_[/color]Clark Street Epping]",شما در  9[color=00000000]_[/color]Clark Street Epping زندگی میکنید.,"你住在 9 Clark Street, Epping",,
 ,,,,,,
 BONUS_2_SCENARIO_B1,[url={2}]Dial 000[/url],[url={2}]اطلب الرقم 000[/url],[url={2}]به 000 زنگ بزنید[/url],[url={2}]拨000[/url],,
 ,,,,,,
@@ -669,7 +668,7 @@ BONUS_5_QUESTION2_CG,"The answer is [url={2}]<~Epping, Victoria.~>[/url]","ال�
 BONUS_6_QUESTION3_O1,"Connecting you to ambulance: Epping, Victoria.","Connecting you to ambulance: Epping, Victoria.","Connecting you to ambulance: Epping, Victoria.","Connecting you to ambulance: Epping, Victoria.",,
 BONUS_6_QUESTION3_O2,"Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?","Emergency services, what address do you need the ambulance?",,
 ,,,,,,
-BONUS_6_QUESTION3_CG,"The answer is [url={3}]<~9 Clark Street, Epping.~>[/url]","العنوان هو:[url={3}]<~9 Clark Street, Epping~>[/url]","آدرس  [url={3}]<~9 Clark Street, Epping~>[/url] است.","地址是 [url={3}]<~9 Clark Street, Epping~>[/url]",,
+BONUS_6_QUESTION3_CG,"The answer is [url={3}]<~9 Clark Street, Epping.~>[/url]","العنوان هو:[url={3}]<~9[color=00000000]_[/color]Clark Street, Epping~>[/url]","آدرس  [url={3}]<~9[color=00000000]_[/color]Clark Street, Epping~>[/url] است.","地址是 [url={3}]<~9 Clark Street, Epping~>[/url]",,
 ,,,,,,
 ,,,,,,
 ,,,,,,

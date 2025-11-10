@@ -55,12 +55,9 @@ func _initialise() -> void:
 	pageURL = JavaScriptBridge.eval("pageURL;")
 	folderURL = JavaScriptBridge.eval("folderURL;")
 	print("[BridgeManager] PageURL = ",pageURL," , FolderURL = ",folderURL)	
-		
 	
-	LoadManager.request_started.connect(loading_started)
-	LoadManager.request_error.connect(loading_finished)
-	LoadManager.request_failed.connect(loading_finished)
-	LoadManager.request_successful.connect(loading_finished)
+	
+
 
 
 
@@ -89,7 +86,19 @@ func _test_javascript() -> void:
 	## Get the first argument
 	#var js_event = _args[0]
 	#print("[TEST B] js_event = ",js_event)
+
+func initial_load_finished() -> void:
+	print("[BridgeManager] Subscibing to LoadingStarted and LoadingFinished (for pck loading screen)")
 	
+	window.initialLoadFinished()
+	
+	await get_tree().process_frame
+	
+	# Setup loading requests for pcks
+	LoadManager.request_started.connect(loading_started)
+	LoadManager.request_error.connect(loading_finished)
+	LoadManager.request_failed.connect(loading_finished)
+	LoadManager.request_successful.connect(loading_finished)
 
 func loading_started() -> void:
 	print("[BridgeManager] Announcing that we're loading stuff...")

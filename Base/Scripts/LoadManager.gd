@@ -19,7 +19,7 @@ var hostURL = ""
 var packsURL = "" 
 var audioURL = ""
 
-
+var initial_load_complete := false
 
 var menu_unlocked := false
 

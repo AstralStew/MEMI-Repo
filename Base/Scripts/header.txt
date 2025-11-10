@@ -15,6 +15,9 @@ var speech_ongoing = false
 if (window.SpeechRecognition === null) {
 	// STUDIO KETTLE > Do something to show that the browser is unsupported
 	console.log("Note: window.SpeechRecognition === null");
+	alert(
+		"Not compatible with Mozilla Firefox. Please try on Google Chrome or Safari.\n\n与Mozilla Firefox不兼容。请用Google Chrome或Safari试。\n\nليس متلائمًا  مع موزيلا فايرفوكْس [Mozilla Firefox] يُرجى المحاولة باستخدام غوغل كروم [Google Chrome] أو سَفاري [Safari].\n\nبا مرورگر Mozilla Firefox سازگار نیست. لطفاً از Google Chrome یا Safari استفاده کنید.",
+	);
 } 
 
 var recognition = new SpeechRecognition();
@@ -24,29 +27,69 @@ recognition.interimResults = true;
 
 <!-- Functions -->
 
+function initialLoadFinished() {
+  console.log("[HEADER] Godot has finished loading the engine + prerequisite pcks!");  
+  // STUDIO KETTLE > Hook into here to hide the loading video at the start
+
+	// TEMPORARY FIX - PLEASE DELETE THIS LINE!!
+	 loadingFinished(); 
+	
+}
+
 function loadingStarted() {
-  console.log("[HEADER] Godot has started loading a pack!");  
-  // STUDIO KETTLE > Hook into here to display something while we're loading 
+	console.log("[HEADER] Godot has started loading a pack!");  
+	// STUDIO KETTLE > Hook into here to display something while we're loading pcks 
+	const video = document.getElementById("loading-video");
+		if (video) {
+			video.style.display = "block";
+			video.currentTime = 0; // restart from beginning
+			video
+				.play()
+				.catch((err) =>
+					console.warn("Video play blocked:", err),
+				);
+		}
 }
 
 function loadingFinished() {
-  console.log("[HEADER] Godot has finished loading!");  
-  // STUDIO KETTLE > Hook into here to hide the above 
+	console.log("[HEADER] Godot has finished loading!");  
+	// STUDIO KETTLE > Hook into here to hide above after the pck has loaded
+	const video = document.getElementById("loading-video");
+	if (video) {
+		video.pause();
+		video.style.display = "none";
+	}
 }
 
 function exitNormal() {
-  console.log("[HEADER] User is trying to exit normally.");  
-  // STUDIO KETTLE > Hook into here to goto landing page
+	console.log("[HEADER] User is trying to exit normally.");  
+	// STUDIO KETTLE > Hook into here to goto landing page
+	window.location.href = 
+		"https://prepareandbesafe.com.au/en/topics/";
 }
 
 function exitQuick() {
-  console.log("[HEADER] User is trying to exit quickly!");  
-  // STUDIO KETTLE > Hook into here to go somewhere innocuous
+	console.log("[HEADER] User is trying to exit quickly!");  
+	// STUDIO KETTLE > Hook into here to go somewhere innocuous
+	window.location.replace("https://www.bom.gov.au/");
 }
 
 function shareExperience() {
   console.log("[HEADER] User is trying to share the experience...");  
   // STUDIO KETTLE > Hook into here to go somewhere innocuous
+	if (navigator.share) {
+		navigator
+			.share({
+				title: "Try Practise calling 000",
+				text: "I just learned what it's like to call 000 — try it too!",
+				url: window.location.href,
+			})
+			.then(() => console.log("Sharing successful"))
+			.catch((error) => console.log("Error sharing:", error));
+	} else {
+		// Fallback if Web Share API isn’t supported
+		alert("Copy this link to share:\n" + window.location.href);
+	}
 }
 
 
