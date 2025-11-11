@@ -71,10 +71,12 @@ script = ExtResource("4_eopm5")
 debugging = true
 startRecordingStreamPath = &"res://AssetPacks/0_Shared/Audio/S0_SHARED_MicOn.mp3"
 stopRecordingStreamPath = &"res://AssetPacks/0_Shared/Audio/S0_SHARED_MicOff.mp3"
+overrideMenuUnlocked = true
+overrideLanguageSwitching = true
 overrideLanguageIndex = 1
 overrideScreenIndex = 3
 overrideTimeScaleFactor = 10.0
-screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb"), ExtResource("19_fw3jg")])
+screen_sets = Array[ExtResource("5_iu5ba")]([ExtResource("19_fw3jg"), ExtResource("5_qbn4n"), ExtResource("6_0p6sj"), ExtResource("8_s83ii"), ExtResource("9_x7k22"), ExtResource("6_f0qj7"), ExtResource("12_a4bpb")])
 topup_time = 1.5
 replacement_words = {
 &"4C": &"farsi",
@@ -94,7 +96,6 @@ replacement_words = {
 &"king anthony": &"cantonese",
 &"percy": &"farsi",
 &"pharisee": &"farsi",
-&"please": &"police",
 &"pussy": &"farsi",
 &"read": &"ready",
 &"readyy": &"ready",
@@ -141,7 +142,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="Background" type="Control" parent="ContentCanvas/ScreenController"]
-modulate = Color(0.7921569, 0.7176471, 0.6509804, 1)
+modulate = Color(0.156863, 0.0901961, 0.141176, 1)
 z_index = -5
 custom_minimum_size = Vector2(440, 956)
 layout_direction = 2

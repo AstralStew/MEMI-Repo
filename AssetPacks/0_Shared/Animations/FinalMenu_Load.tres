@@ -10,9 +10,12 @@ tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.06666667, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.033333335, 0.048403658, 0.06666667, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
+"args": [],
+"method": &"initial_load_finished"
+}, {
 "args": [],
 "method": &"initialise_dontfeelbad"
 }, {

@@ -1,7 +1,7 @@
+SpriteFrames
 AnimationLibrary
 Animation
 SentenceComparer
-SpriteFrames
 RichTextEffect
 ScreenSet
 FontVariation

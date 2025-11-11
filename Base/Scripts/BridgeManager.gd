@@ -35,6 +35,7 @@ signal speech_audioend()
 signal speech_soundstart()
 signal speech_soundend()
 
+
 # Called in ScreenController _ready()
 func _initialise() -> void:
 	
@@ -87,12 +88,13 @@ func _test_javascript() -> void:
 	#var js_event = _args[0]
 	#print("[TEST B] js_event = ",js_event)
 
-func initial_load_finished() -> void:
-	print("[BridgeManager] Subscibing to LoadingStarted and LoadingFinished (for pck loading screen)")
+func initial_load_finished() -> void:	
 	
 	window.initialLoadFinished()
 	
 	await get_tree().process_frame
+		
+	print("[BridgeManager] Subscribing to LoadingStarted and LoadingFinished (for pck loading screen)...")
 	
 	# Setup loading requests for pcks
 	LoadManager.request_started.connect(loading_started)

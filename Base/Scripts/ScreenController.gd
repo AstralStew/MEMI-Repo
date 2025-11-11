@@ -65,6 +65,7 @@ var _current_screen_index := 0
 @export var audioStreamPlayer : AudioPlayer = null
 
 @export var dontfeelbad_initialised := false
+@export var _initial_load_finished := false
 
 
 signal switched_menu_button_dark
@@ -142,6 +143,10 @@ func initialise_dontfeelbad() -> void:
 
 func initial_load_finished() -> void:
 	if OS.has_feature("editor_runtime"): return
+	if _initial_load_finished: 
+			if debugging: print("[ScreenController] NOTE > InitialLoadFinished already proc'd, skipping.")
+			return
+	_initial_load_finished = true
 	
 	if debugging: print("[ScreenController] InitialLoadFinished.")
 	BridgeManager.initial_load_finished()

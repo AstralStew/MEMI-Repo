@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuol3yxw3dl0y"]
+[gd_scene load_steps=14 format=3 uid="uid://cuol3yxw3dl0y"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ykllg"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_t2f8j"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dc6sbt1onyjsm" path="res://AssetPacks/0_Shared/Images/LetsLearn_NoHelp.png" id="7_4q1sm"]
 [ext_resource type="AnimationLibrary" uid="uid://bsutrsh0o2oko" path="res://AssetPacks/0_Shared/Animations/LetsLearn.tres" id="8_6yl00"]
 [ext_resource type="Texture2D" uid="uid://cpdhaku0p0onc" path="res://AssetPacks/0_Shared/Images/LetsLearn_Bonus.png" id="8_fyvdw"]
+[ext_resource type="SpriteFrames" uid="uid://blroebma6qb7y" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BonusSparkle.tres" id="8_mw025"]
 [ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="11_t673h"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="12_t673h"]
 
@@ -932,6 +933,12 @@ mouse_filter = 2
 texture = ExtResource("8_fyvdw")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="BonusSparkle" type="AnimatedSprite2D" parent="LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB/Bonus_TR"]
+position = Vector2(50, 50)
+scale = Vector2(1.3, 1.3)
+sprite_frames = ExtResource("8_mw025")
+frame_progress = 0.5648954
 
 [node name="Bonus_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB"]
 custom_minimum_size = Vector2(180, 0)
