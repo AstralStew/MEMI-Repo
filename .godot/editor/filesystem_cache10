@@ -1,6 +1,6 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1762850876
-export_presets.cfg::TextFile::-1::1762850876::0::1::::<><><>0<>0<><>::
+::res://::1762903902
+export_presets.cfg::TextFile::-1::1762851527::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3082677571438133502::1743048201::1751858024::1::::<><><>0<>0<>996e998b7db5a18ece3bc9d1f89e9d97<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1753068698::0::1::::<><><>0<>0<><>::
 ::res://addons/::1755055347
@@ -168,8 +168,8 @@ TapBubble.tscn::PackedScene::3546674561563546928::1759653730::0::1::::<><><>0<>0
 BonusSparkle.png::CompressedTexture2D::1309704482219423881::1762843251::1762843426::1::::<><><>0<>0<>1a4b8e3fb0c032b3ad1d0f6509f1ab4d<>res://.godot/imported/BonusSparkle.png-80c6709cfe7a948aa5039ffb0757eb69.ctex::
 BonusSparkleSmall.png::CompressedTexture2D::6676480568737498981::1762845166::1762845181::1::::<><><>0<>0<>ce73a33a9c199b4533a0d09ef5f3df23<>res://.godot/imported/BonusSparkleSmall.png-671f4a9d0c453a4b86585fd79f5500e4.ctex::
 BubbleTapHint.png::CompressedTexture2D/CompressedTexture2D::7510278193852024319::1755056609::1755056610::1::::<><><>0<>0<>54b31cde4678fcc44546cf7b79bbace5<>res://.godot/imported/BubbleTapHint.png-114b2688e29a4aefd75f7e87ea625596.ctex::
-SpriteFrames_BonusSparkle.tres::SpriteFrames::3194449637707884236::1762845570::0::1::::<><><>0<>0<><>::uid://c2eewon21i5dh::::res://AssetPacks/0_Shared/SpriteSheets/BonusSparkleSmall.png
 SpeakingDots.png::CompressedTexture2D/CompressedTexture2D::5609864634754206248::1757293989::1757293990::1::::<><><>0<>0<>d711417b93b3cc02d349bb9343a49b3c<>res://.godot/imported/SpeakingDots.png-7f4ce12e3c5abc62616f4aa957fd98ed.ctex::
+SpriteFrames_BonusSparkle.tres::SpriteFrames::3194449637707884236::1762845570::0::1::::<><><>0<>0<><>::uid://c2eewon21i5dh::::res://AssetPacks/0_Shared/SpriteSheets/BonusSparkleSmall.png
 SpriteFrames_BubbleTapHint.tres::SpriteFrames::3444827958578202476::1762821401::0::1::::<><><>0<>0<><>::uid://dfabgjna0i2s6::::res://AssetPacks/0_Shared/SpriteSheets/BubbleTapHint.png
 SpriteFrames_SpeakingDots.tres::SpriteFrames::7552365457665473549::1762821401::0::1::::<><><>0<>0<><>::uid://cl6pwep4y6e3i::::res://AssetPacks/0_Shared/SpriteSheets/SpeakingDots.png
 ::res://AssetPacks/1_CharacterAr/::1758879002
@@ -566,21 +566,21 @@ SenCom_Bonus_5IsBreathing.tres::Resource/SentenceComparer::999651319454018502::1
 SenCom_Bonus_6IsAwake.tres::Resource/SentenceComparer::1689015100651368622::1762838185::0::1::::<><><>0<>0<><>::uid://mcavyn2jq2t0::::res://Base/Scripts/PhraseCheck.gd<>uid://nudfku7qhbxq::::res://Base/Scripts/SentenceComparer.gd
 SenCom_Bonus_7HowOld.tres::Resource/SentenceComparer::5048165584392079656::1762838185::0::1::::<><><>0<>0<><>::uid://mcavyn2jq2t0::::res://Base/Scripts/PhraseCheck.gd<>uid://nudfku7qhbxq::::res://Base/Scripts/SentenceComparer.gd
 SenCom_Bonus_DInterpreter.tres::Resource/SentenceComparer::3228669427703936727::1762838185::0::1::::<><><>0<>0<><>::uid://mcavyn2jq2t0::::res://Base/Scripts/PhraseCheck.gd<>uid://nudfku7qhbxq::::res://Base/Scripts/SentenceComparer.gd
-::res://Base/::1762848804
-AllMother.tscn::PackedScene::8706497449919943595::1762848804::0::1::::<><><>0<>0<><>::uid://d3hqc7j7rpapb::::res://Base/Images/loading_circle.png<>uid://b6jos7e13isup::::res://Base/Scripts/VisibleOnLoad.gd<>uid://d3g1rtmb2n2rp::::res://Base/Scripts/ScreenController.gd<>uid://kbik121pa55i::::res://AssetPacks/0_Shared/Images/BubbleNineSprite.png<>uid://cjxn00ku2l42w::::res://Base/Scripts/ScreenSet.gd<>uid://d0tnr6lqh5d6w::::res://AssetPacks/0_Prerequisite/ScreenSets/Intro.tres<>uid://3jnx5gje3ilt::::res://AssetPacks/0_Prerequisite/ScreenSets/Interpreter.tres<>uid://bwglm45wctgq::::res://AssetPacks/0_Prerequisite/ScreenSets/NoHelp.tres<>uid://dqy52kkuknkki::::res://AssetPacks/0_Prerequisite/ScreenSets/Location.tres<>uid://cu62raoj8oe5j::::res://AssetPacks/0_Prerequisite/ScreenSets/Questions.tres<>uid://bqwr46uxw4a0o::::res://AssetPacks/0_Prerequisite/ScreenSets/Bonus.tres<>uid://b7xlve576cyge::::res://Base/Scripts/AudioPlayer.gd<>uid://dqjndrvvyh0vc::::res://AssetPacks/0_Prerequisite/Images/BackgroundFade.png<>uid://xp88hbj2xa1::::res://AssetPacks/0_Prerequisite/ScreenSets/FinalMenu.tres
+::res://Base/::1762852287
+AllMother.tscn::PackedScene::8706497449919943595::1762852287::0::1::::<><><>0<>0<><>::uid://d3hqc7j7rpapb::::res://Base/Images/loading_circle.png<>uid://b6jos7e13isup::::res://Base/Scripts/VisibleOnLoad.gd<>uid://d3g1rtmb2n2rp::::res://Base/Scripts/ScreenController.gd<>uid://kbik121pa55i::::res://AssetPacks/0_Shared/Images/BubbleNineSprite.png<>uid://cjxn00ku2l42w::::res://Base/Scripts/ScreenSet.gd<>uid://d0tnr6lqh5d6w::::res://AssetPacks/0_Prerequisite/ScreenSets/Intro.tres<>uid://3jnx5gje3ilt::::res://AssetPacks/0_Prerequisite/ScreenSets/Interpreter.tres<>uid://bwglm45wctgq::::res://AssetPacks/0_Prerequisite/ScreenSets/NoHelp.tres<>uid://dqy52kkuknkki::::res://AssetPacks/0_Prerequisite/ScreenSets/Location.tres<>uid://cu62raoj8oe5j::::res://AssetPacks/0_Prerequisite/ScreenSets/Questions.tres<>uid://bqwr46uxw4a0o::::res://AssetPacks/0_Prerequisite/ScreenSets/Bonus.tres<>uid://b7xlve576cyge::::res://Base/Scripts/AudioPlayer.gd<>uid://dqjndrvvyh0vc::::res://AssetPacks/0_Prerequisite/Images/BackgroundFade.png<>uid://xp88hbj2xa1::::res://AssetPacks/0_Prerequisite/ScreenSets/FinalMenu.tres
 BorderCurve.tres::Curve::4698937085910457633::1757898024::0::1::::<><><>0<>0<><>::
 TestingBridge.tscn::PackedScene::2125565983231379379::1759044061::0::1::::<><><>0<>0<><>::uid://cup1dj2h8d1bh::::res://Base/testing_bridge.gd
 testing_bridge.gd::GDScript::6209168420433554777::1759039076::0::1::::<>Node<><>0<>0<><>::
 ::res://Base/Images/::1757296090
 loading_circle.png::CompressedTexture2D/CompressedTexture2D::9139977056822387271::1746420255::1757296055::1::::<><><>0<>0<>3c2c9124aa9435f54449e77cf2e360cf<>res://.godot/imported/loading_circle.png-ef328a78078f43b498780c40855b5b1a.ctex::
 MemiLogo.png::CompressedTexture2D/CompressedTexture2D::5812551517284337293::1757295137::1757296078::1::::<><><>0<>0<>bfd6b901ea2fc390b657643b90c4e116<>res://.godot/imported/MemiLogo.png-de123a9f194a7eb3d03853e00f820d5d.ctex::
-::res://Base/Languages/::1762851499
-MEMI Translations.csv::Translation::3635731029994968187::1762851450::1762851505::1::::<><><>0<>0<>026e0bed1b507f07c16b6ca845adf532<>res://Base/Languages/MEMI Translations.en.translation<*>res://Base/Languages/MEMI Translations.ar.translation<*>res://Base/Languages/MEMI Translations.prs.translation<*>res://Base/Languages/MEMI Translations.zh.translation<*>res://Base/Languages/MEMI Translations.foreign script when different from en.translation::
-MEMI Translations.en.translation::OptimizedTranslation::459190249642760065::1762851502::0::1::::<><><>0<>0<><>::
-MEMI Translations.ar.translation::OptimizedTranslation::325013521945895121::1762851505::0::1::::<><><>0<>0<><>::
-MEMI Translations.prs.translation::OptimizedTranslation::987727593690860650::1762851505::0::1::::<><><>0<>0<><>::
-MEMI Translations.zh.translation::OptimizedTranslation::2325408032122002509::1762851505::0::1::::<><><>0<>0<><>::
-MEMI Translations.foreign script when different from en.translation::OptimizedTranslation::6179330016458317301::1762851505::0::1::::<><><>0<>0<><>::
+::res://Base/Languages/::1762904066
+MEMI Translations.csv::Translation::3342104119940378625::1762903970::1762904074::1::::<><><>0<>0<>fece076a78ed7fd71554df9f21178a4b<>res://Base/Languages/MEMI Translations.en.translation<*>res://Base/Languages/MEMI Translations.ar.translation<*>res://Base/Languages/MEMI Translations.prs.translation<*>res://Base/Languages/MEMI Translations.zh.translation<*>res://Base/Languages/MEMI Translations.foreign script when different from en.translation::
+MEMI Translations.en.translation::OptimizedTranslation::5516188421546802978::1762904073::0::1::::<><><>0<>0<><>::
+MEMI Translations.ar.translation::OptimizedTranslation::5283776212216382628::1762904074::0::1::::<><><>0<>0<><>::
+MEMI Translations.prs.translation::OptimizedTranslation::2756201923204054113::1762904074::0::1::::<><><>0<>0<><>::
+MEMI Translations.zh.translation::OptimizedTranslation::7179604455004408606::1762904074::0::1::::<><><>0<>0<><>::
+MEMI Translations.foreign script when different from en.translation::OptimizedTranslation::524606536331435415::1762904074::0::1::::<><><>0<>0<><>::
 ::res://Base/Scripts/::1762840261
 AllMother.gd::GDScript::1321494933273789799::1757898024::0::1::::AllMother<>Node<><>0<>0<><>::
 AudioPlayer.gd::GDScript::4680650014978945712::1754976584::0::1::::AudioPlayer<>Node<><>0<>0<><>::

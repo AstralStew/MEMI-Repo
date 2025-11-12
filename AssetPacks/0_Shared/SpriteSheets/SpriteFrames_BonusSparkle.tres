@@ -1,6 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=61 format=3 uid="uid://blroebma6qb7y"]
+[gd_resource type="SpriteFrames" load_steps=63 format=3 uid="uid://blroebma6qb7y"]
 
 [ext_resource type="Texture2D" uid="uid://c2eewon21i5dh" path="res://AssetPacks/0_Shared/SpriteSheets/BonusSparkleSmall.png" id="1_3tsnx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tsnx"]
+atlas = ExtResource("1_3tsnx")
+region = Rect2(160, 0, 160, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qflw5"]
 atlas = ExtResource("1_3tsnx")
@@ -238,10 +242,17 @@ region = Rect2(800, 960, 160, 160)
 atlas = ExtResource("1_3tsnx")
 region = Rect2(960, 960, 160, 160)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxsj6"]
+atlas = ExtResource("1_3tsnx")
+region = Rect2(1120, 960, 160, 160)
+
 [resource]
 animations = [{
 "frames": [{
-"duration": 7.0,
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tsnx")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qflw5")
 }, {
 "duration": 1.0,
@@ -417,8 +428,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pr6hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxsj6")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 30.0
+"speed": 40.0
 }]
