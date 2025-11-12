@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=23 format=3 uid="uid://dcske7brqbmhq"]
+[gd_resource type="AnimationLibrary" load_steps=25 format=3 uid="uid://dcske7brqbmhq"]
 
 [ext_resource type="Animation" uid="uid://dq2a01ifld7je" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Load.res" id="1_mr0eu"]
 [ext_resource type="Animation" uid="uid://cxamyjl2c7g74" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_Unload.res" id="2_dio3u"]
@@ -22,6 +22,8 @@
 [ext_resource type="Animation" uid="uid://uypax7haa1vr" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_5c_GiveUp.res" id="20_7o8mv"]
 [ext_resource type="Animation" uid="uid://crj2dwo56pywc" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_6d_GiveUp.res" id="21_u0b3k"]
 [ext_resource type="Animation" uid="uid://bgarxjnnic3vk" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_7a_Fade.res" id="22_u0b3k"]
+[ext_resource type="Animation" uid="uid://b1bks3pnakwmb" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1c_GiveUp.res" id="23_tccab"]
+[ext_resource type="Animation" uid="uid://dc45acjoph8k0" path="res://AssetPacks/2_Interpreter/Animations/Interpreter_1u_Skip.res" id="24_f5air"]
 
 [resource]
 resource_name = "Interpreter"
@@ -29,6 +31,8 @@ _data = {
 &"Interpreter_1_LetsTry": ExtResource("3_dio3u"),
 &"Interpreter_1a_Correct": ExtResource("4_nok7u"),
 &"Interpreter_1b_Mumbo": ExtResource("5_ik00u"),
+&"Interpreter_1c_GiveUp": ExtResource("23_tccab"),
+&"Interpreter_1u_Skip": ExtResource("24_f5air"),
 &"Interpreter_2_Scenario": ExtResource("6_0yd86"),
 &"Interpreter_3_Call": ExtResource("7_ik00u"),
 &"Interpreter_4_Question1": ExtResource("8_rtpxc"),

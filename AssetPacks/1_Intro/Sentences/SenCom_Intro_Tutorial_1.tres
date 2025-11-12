@@ -16,4 +16,6 @@ correctAnim = "Intro/Tutorial_1a_Correct"
 wrongAnim = "Intro/Tutorial_1b_Mumbo"
 mumboAnim = "Intro/Tutorial_1b_Mumbo"
 dontKnowAnim = "Intro/Tutorial_1b_Mumbo"
+giveUpAnim = "Intro/Tutorial_1c_GiveUp"
+total_attempts = 4
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

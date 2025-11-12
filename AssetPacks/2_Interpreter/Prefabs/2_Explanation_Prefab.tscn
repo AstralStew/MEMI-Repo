@@ -135,6 +135,108 @@ mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 2
 
+[node name="GiveUpButton" type="MarginContainer" parent="Buttons_VB"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 25
+script = ExtResource("7_y5x78")
+_debug = true
+_updateInEditor = true
+click_sound = ExtResource("8_dsgpl")
+max_char_threshold = 24
+click_bg_colour = Color(1, 1, 1, 0)
+click_size = 0.9
+click_inout = 0.05
+click_ease = 2
+unclick_inout = 0.14
+unclick_ease = 1
+_autostart = true
+_auto_text = "INTERPRETER_1_LETSTRY_B1"
+_old_text = "INTERPRETER_1_LETSTRY_B1"
+
+[node name="BubbleText" type="RichTextLabel" parent="Buttons_VB/GiveUpButton"]
+z_index = 1
+clip_contents = false
+custom_minimum_size = Vector2(191.8, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0.156863, 0.0901961, 0.141176, 1)
+theme_override_fonts/normal_font = ExtResource("9_6wsvx")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "INTERPRETER_1_LETSTRY_B1"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_jbdvx")
+default_size = 22
+metadata/_edit_group_ = true
+
+[node name="BubbleBG" type="NinePatchRect" parent="Buttons_VB/GiveUpButton/BubbleText"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -8.75
+offset_right = 5.0
+offset_bottom = 6.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(100.9, 40.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("10_28vv1")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 19
+
+[node name="BubbleShadow" type="NinePatchRect" parent="Buttons_VB/GiveUpButton/BubbleText/BubbleBG"]
+visible = false
+z_index = -2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1162684
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(104.9, 45.20887)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_22vgs")
+patch_margin_left = 20
+patch_margin_top = 19
+patch_margin_right = 20
+patch_margin_bottom = 27
+metadata/_edit_use_anchors_ = true
+
+[node name="ScenarioTouchButton" type="Button" parent="Buttons_VB/GiveUpButton/BubbleText/BubbleBG"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BubbleTouchAudio" type="AudioStreamPlayer" parent="Buttons_VB/GiveUpButton"]
+
 [node name="ContinueButton" type="MarginContainer" parent="Buttons_VB"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -267,6 +369,18 @@ layout_mode = 2
 mouse_filter = 2
 
 [connection signal="meta_link_1" from="Explanation_MC/Explanation_VB/Explanation2_RTL" to="." method="play_stream" binds= [&"res://AssetPacks/0_Shared/Audio/P0_SHARED_ready.mp3"]]
+[connection signal="meta_link_1" from="Buttons_VB/GiveUpButton" to="Buttons_VB/GiveUpButton" method="pop_out"]
+[connection signal="meta_link_1" from="Buttons_VB/GiveUpButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_1u_Skip"]]
+[connection signal="meta_link_1" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_1"]
+[connection signal="meta_link_2" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_2"]
+[connection signal="meta_link_3" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_3"]
+[connection signal="meta_link_4" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_4"]
+[connection signal="meta_link_5" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_5"]
+[connection signal="meta_link_6" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_6"]
+[connection signal="meta_link_7" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_7"]
+[connection signal="meta_link_8" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_8"]
+[connection signal="meta_link_9" from="Buttons_VB/GiveUpButton/BubbleText" to="Buttons_VB/GiveUpButton" method="_send_meta_link_9"]
+[connection signal="pressed" from="Buttons_VB/GiveUpButton/BubbleText/BubbleBG/ScenarioTouchButton" to="Buttons_VB/GiveUpButton" method="check_meta_link_from_button"]
 [connection signal="meta_link_1" from="Buttons_VB/ContinueButton" to="." method="reset_scenario"]
 [connection signal="meta_link_2" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= [&"Interpreter/Interpreter_3_Call"]]
 [connection signal="meta_link_3" from="Buttons_VB/ContinueButton" to="." method="play_animation" binds= ["Interpreter/Interpreter_7a_Fade"]]

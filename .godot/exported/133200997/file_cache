@@ -1,11 +1,5 @@
-res://AssetPacks/6_Bonus/Animations/Bonus.tres::8e3693a69dbd82f8fad97f830e4480fa::1758857160::res://.godot/exported/133200997/export-03e230f857ec77cbe6a5ab5ac85f2212-Bonus.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_DInterpreter.tres::c5bce435b542799aeec144e802a181cd::1762906443::res://.godot/exported/133200997/export-fb9db8158184f03f64e46ac9c03b0fc6-SenCom_Bonus_DInterpreter.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_7HowOld.tres::99e68cd33a6e18d491c35325a5e4776a::1762906443::res://.godot/exported/133200997/export-f00b3ddccf8d3f6acdc77014f177eb44-SenCom_Bonus_7HowOld.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_6IsAwake.tres::2a3eb04e45ce0eafd4cd3ff3614fce2e::1762906443::res://.godot/exported/133200997/export-63d73b363dabee7716a6262dd4b43156-SenCom_Bonus_6IsAwake.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_5IsBreathing.tres::aec3718c41ce342471f88c2120785d32::1762906443::res://.godot/exported/133200997/export-4bd256c77f3cbc4e209be01dfb933e27-SenCom_Bonus_5IsBreathing.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_4WhatEmergency.tres::c9013e992d98f232804a76f5965ebf97::1762906443::res://.godot/exported/133200997/export-ee7b7dd923612e06b5cefce671bc2bc5-SenCom_Bonus_4WhatEmergency.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_3WhereNeedAmbulance.tres::0f949fd7bf4a356057d8f7ffe31403d6::1762906443::res://.godot/exported/133200997/export-655fed8f0aabb100778acf89b19255b8-SenCom_Bonus_3WhereNeedAmbulance.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_2StateAndTown.tres::c3ad6d8c82d254efc0b6cc66d62832bb::1762906443::res://.godot/exported/133200997/export-df81f4d9d3f2f0260eeb1e624c1eceff-SenCom_Bonus_2StateAndTown.res
-res://AssetPacks/6_Bonus/Sentences/SenCom_Bonus_1PoliceFireAmbulance.tres::bc46ef1811375754717aa3ce71e8d7a9::1762906443::res://.godot/exported/133200997/export-60a61f1d153d8101c05c9bcb7313a192-SenCom_Bonus_1PoliceFireAmbulance.res
-res://AssetPacks/6_Bonus/Prefabs/6_Explanation_Prefab.tscn::b7aa3e7c21a02ae4807da8899313a2ac::1762396386::res://.godot/exported/133200997/export-4ec74f912973af9d2ced75cb02e26e82-6_Explanation_Prefab.scn
-res://AssetPacks/6_Bonus/Prefabs/6_Comments_Prefab.tscn::946289b2734dd9f0f2c5a13c195d05e2::1762496039::res://.godot/exported/133200997/export-5f37731b0f8ffaa1182fa8369028f189-6_Comments_Prefab.scn
+res://AssetPacks/1_Intro/Prefabs/1_LandingMenu_Prefab.tscn::3bd4dd0cb959c1da23c76066ef3de3da::1762395707::res://.godot/exported/133200997/export-26e1e15dae9fbfe4bb85d62918c88002-1_LandingMenu_Prefab.scn
+res://AssetPacks/1_Intro/Animations/Menu.tres::b9ad54dd5bd611f1b812e295ca654a46::1757737624::res://.godot/exported/133200997/export-1e64f5882e5b9ad2dc68e91809cb5aad-Menu.res
+res://AssetPacks/1_Intro/Sentences/SenCom_Intro_Tutorial_1.tres::38b869dfaef441ae08df1ca4068123a6::1762950472::res://.godot/exported/133200997/export-3f794e143d9605ba47828b78aefb034c-SenCom_Intro_Tutorial_1.res
+res://AssetPacks/1_Intro/Prefabs/1_Explanation_Prefab.tscn::165033e5ba2c09182a933e44e312fff8::1762950418::res://.godot/exported/133200997/export-3b09ea4b37110daff72c3a92f50afba4-1_Explanation_Prefab.scn
+res://AssetPacks/1_Intro/Animations/Intro.tres::a5533fc354077ccfb7e53a613b760f36::1762950103::res://.godot/exported/133200997/export-dc359fd84a129b65c28bfc0e38dd60dc-Intro.res

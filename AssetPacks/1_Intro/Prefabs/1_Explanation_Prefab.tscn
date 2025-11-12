@@ -164,3 +164,4 @@ _old_text = "INTRO_LANDING_2_EXPLANATION_B1"
 [connection signal="touch_input" from="Explanation_VB/TapBubble" to="." method="start_speech_recognition"]
 [connection signal="meta_link_1" from="ContinueButton" to="." method="play_animation" binds= [&"Intro/Landing_3_CallsAreFake"]]
 [connection signal="meta_link_2" from="ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1_LetsTry"]]
+[connection signal="meta_link_3" from="ContinueButton" to="." method="play_animation" binds= [&"Intro/Tutorial_1u_Skip"]]

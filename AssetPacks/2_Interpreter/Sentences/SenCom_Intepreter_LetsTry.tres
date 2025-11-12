@@ -16,5 +16,6 @@ correctAnim = "Interpreter/Interpreter_1a_Correct"
 wrongAnim = "Interpreter/Interpreter_1b_Mumbo"
 mumboAnim = "Interpreter/Interpreter_1b_Mumbo"
 dontKnowAnim = "Interpreter/Interpreter_1b_Mumbo"
-giveUpAnim = "Interpreter/Interpreter_1b_Mumbo"
+giveUpAnim = "Interpreter/Interpreter_1c_GiveUp"
+total_attempts = 4
 metadata/_custom_type_script = "uid://nudfku7qhbxq"

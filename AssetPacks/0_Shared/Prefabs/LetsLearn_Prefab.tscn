@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuol3yxw3dl0y"]
+[gd_scene load_steps=16 format=3 uid="uid://cuol3yxw3dl0y"]
 
 [ext_resource type="Script" uid="uid://vdyydm74rcc1" path="res://Base/Scripts/ScreenPrefab.gd" id="1_ykllg"]
+[ext_resource type="SpriteFrames" uid="uid://dhih77n2q2d8f" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_AllSkillsSparkle.tres" id="3_3oqyh"]
 [ext_resource type="Script" uid="uid://c1w20ghdrcrm0" path="res://Base/Scripts/LabelController.gd" id="3_t2f8j"]
 [ext_resource type="Texture2D" uid="uid://mi6es0vyu06d" path="res://AssetPacks/0_Shared/Images/LetsLearn_Interpreter.png" id="4_gfus3"]
 [ext_resource type="Texture2D" uid="uid://c4rjvq5urx8jo" path="res://AssetPacks/0_Shared/Images/LetsLearn_Location.png" id="5_u0lhp"]
@@ -9,7 +10,8 @@
 [ext_resource type="AnimationLibrary" uid="uid://bsutrsh0o2oko" path="res://AssetPacks/0_Shared/Animations/LetsLearn.tres" id="8_6yl00"]
 [ext_resource type="Texture2D" uid="uid://cpdhaku0p0onc" path="res://AssetPacks/0_Shared/Images/LetsLearn_Bonus.png" id="8_fyvdw"]
 [ext_resource type="SpriteFrames" uid="uid://blroebma6qb7y" path="res://AssetPacks/0_Shared/SpriteSheets/SpriteFrames_BonusSparkle.tres" id="8_mw025"]
-[ext_resource type="PackedScene" uid="uid://f1fu6kifcv0p" path="res://AssetPacks/0_Prerequisite/Prefabs/ButtonBubble.tscn" id="11_t673h"]
+[ext_resource type="Texture2D" uid="uid://cupg58fai6536" path="res://AssetPacks/0_Shared/Images/PBSLogoAr.png" id="10_t673h"]
+[ext_resource type="Script" uid="uid://806b7wfq6obh" path="res://Base/Scripts/PBSLogoController.gd" id="11_3oqyh"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="12_t673h"]
 
 [sub_resource type="Animation" id="Animation_6yl00"]
@@ -652,6 +654,32 @@ tracks/52/keys = {
 "method": &"stop"
 }]
 }
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/AllSkillsSparkle:visible")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/54/type = "method"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("LetsLearnMenu_VB/LetsLearnTitle_MC/AllSkillsSparkle")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fyvdw"]
 _data = {
@@ -713,7 +741,7 @@ autokey = "LETSLEARN_OVERVIEW_1"
 
 [node name="LetsLearnExplanation_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearnTitle_MC/LetsLearnTitle_VB"]
 visible = false
-modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, -2.3841858e-07)
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -725,6 +753,14 @@ meta_underlined = false
 script = ExtResource("3_t2f8j")
 debugging = true
 lightSpeakerIcon = true
+
+[node name="AllSkillsSparkle" type="AnimatedSprite2D" parent="LetsLearnMenu_VB/LetsLearnTitle_MC"]
+visible = false
+position = Vector2(219, 77)
+scale = Vector2(1.3377486, 1.3377484)
+sprite_frames = ExtResource("3_3oqyh")
+frame = 65
+frame_progress = 1.0
 
 [node name="LetsLearn_Interpreter_MC" type="MarginContainer" parent="LetsLearnMenu_VB"]
 modulate = Color(1, 1, 1, 0)
@@ -752,7 +788,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Interpreter_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Interpreter_MC/LetsLearn_Interpreter_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 2
@@ -804,7 +840,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Location_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Location_MC/LetsLearn_Location_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 2
@@ -856,7 +892,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Questions_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Questions_MC/LetsLearn_Questions_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 2
@@ -908,7 +944,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="NoHelp_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/LetsLearn_NoHelp_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 2
@@ -967,7 +1003,7 @@ scale = Vector2(1.3, 1.3)
 sprite_frames = ExtResource("8_mw025")
 
 [node name="Bonus_RTL" type="RichTextLabel" parent="LetsLearnMenu_VB/LetsLearn_Bonus_MC/LetsLearn_Bonus_HB"]
-custom_minimum_size = Vector2(180, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 mouse_filter = 2
@@ -1022,13 +1058,19 @@ debugging = true
 autopopulate = true
 autokey = "FINALMENU_1_SELECTION_B2"
 
-[node name="ExitButton" parent="LetsLearnMenu_VB/LetsLearnButtons_VB" instance=ExtResource("11_t673h")]
+[node name="ExitButton" type="TextureButton" parent="LetsLearnMenu_VB/LetsLearnButtons_VB"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(160, 92)
 layout_mode = 2
-mouse_filter = 0
-always_pop_out_on_click = false
-click_bg_colour = Color(0.180392, 0.180392, 0.180392, 1)
-_auto_bg_colour = Color(0.156863, 0.0901961, 0.141176, 1)
-_auto_text_colour = Color(1, 1, 1, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_t673h")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("11_3oqyh")
+debugging = true
+auto_check = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1047,4 +1089,4 @@ metadata/_custom_type_script = "uid://b7xlve576cyge"
 [connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_NoHelp_MC/NoHelpButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectNoHelp"]]
 [connection signal="pressed" from="LetsLearnMenu_VB/LetsLearn_Bonus_MC/BonusButton" to="AnimationPlayer" method="play" binds= [&"LetsLearn/LetsLearn_Final_SelectBonus"]]
 [connection signal="meta_link_1" from="LetsLearnMenu_VB/LetsLearnButtons_VB/Share_RTL" to="." method="share_experience"]
-[connection signal="meta_link_1" from="LetsLearnMenu_VB/LetsLearnButtons_VB/ExitButton" to="." method="exit_normal"]
+[connection signal="pressed" from="LetsLearnMenu_VB/LetsLearnButtons_VB/ExitButton" to="." method="exit_normal"]

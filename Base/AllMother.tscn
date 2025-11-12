@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwbq0gs5gif60"]
+[gd_scene load_steps=18 format=3 uid="uid://dwbq0gs5gif60"]
 
 [ext_resource type="Texture2D" uid="uid://d3hqc7j7rpapb" path="res://Base/Images/loading_circle.png" id="2_ougig"]
 [ext_resource type="Script" uid="uid://b6jos7e13isup" path="res://Base/Scripts/VisibleOnLoad.gd" id="3_d3jd7"]
@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://dqy52kkuknkki" path="res://AssetPacks/0_Prerequisite/ScreenSets/Location.tres" id="8_s83ii"]
 [ext_resource type="Resource" uid="uid://cu62raoj8oe5j" path="res://AssetPacks/0_Prerequisite/ScreenSets/Questions.tres" id="9_x7k22"]
 [ext_resource type="Resource" uid="uid://bqwr46uxw4a0o" path="res://AssetPacks/0_Prerequisite/ScreenSets/Bonus.tres" id="12_a4bpb"]
+[ext_resource type="PackedScene" uid="uid://ngycpjoeboow" path="res://AssetPacks/1_Intro/Prefabs/1_LandingMenu_Prefab.tscn" id="13_341tn"]
+[ext_resource type="PackedScene" uid="uid://t1mdkoctxe4w" path="res://AssetPacks/1_Intro/Prefabs/1_Explanation_Prefab.tscn" id="14_80dkk"]
 [ext_resource type="Script" uid="uid://b7xlve576cyge" path="res://Base/Scripts/AudioPlayer.gd" id="14_h0d2r"]
 [ext_resource type="Texture2D" uid="uid://dqjndrvvyh0vc" path="res://AssetPacks/0_Prerequisite/Images/BackgroundFade.png" id="18_0v13x"]
 [ext_resource type="Resource" uid="uid://xp88hbj2xa1" path="res://AssetPacks/0_Prerequisite/ScreenSets/FinalMenu.tres" id="19_fw3jg"]
@@ -81,17 +83,24 @@ replacement_words = {
 &"account knees": &"cantonese",
 &"bhangali": &"bangla",
 &"bungalow": &"bangla",
+&"carinne": &"karen",
 &"companies": &"cantonese",
 &"counties": &"cantonese",
 &"countries": &"cantonese",
+&"creek": &"greek",
 &"daddy": &"dari",
 &"dairy": &"dari",
 &"diary": &"dari",
 &"faucy": &"farsi",
 &"flingwell": &"springvale",
+&"haka": &"hakka",
+&"hazaragi": &"hazaraghi",
 &"interpret": &"interpreter",
 &"interpreterer": &"interpreter",
+&"karundi": &"kirundi",
 &"king anthony": &"cantonese",
+&"min naan": &"min nan",
+&"ogre": &"uygur",
 &"percy": &"farsi",
 &"pharisee": &"farsi",
 &"pussy": &"farsi",
@@ -101,6 +110,7 @@ replacement_words = {
 &"reddi": &"ready",
 &"reddie": &"ready",
 &"reddy": &"ready",
+&"reinga": &"rohinga",
 &"similes": &"singalese",
 &"sing a laze": &"sinhalese",
 &"sing gala": &"sinhala",
@@ -113,7 +123,9 @@ replacement_words = {
 &"singlies": &"singalese",
 &"sinhalis": &"sinhalese",
 &"slingwell": &"springvale",
-&"springwell": &"springvale"
+&"springwell": &"springvale",
+&"timor": &"timorese",
+&"tirundi": &"kirundi"
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentCanvas/ScreenController"]
@@ -139,8 +151,15 @@ layout_direction = 1
 layout_mode = 2
 mouse_filter = 2
 
+[node name="1_LandingMenu_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("13_341tn")]
+layout_mode = 2
+
+[node name="1_Explanation_Prefab" parent="ContentCanvas/ScreenController/MarginContainer/Content" instance=ExtResource("14_80dkk")]
+modulate = Color(1, 1, 1, 1)
+layout_mode = 2
+
 [node name="Background" type="Control" parent="ContentCanvas/ScreenController"]
-modulate = Color(0.156863, 0.0901961, 0.141176, 1)
+modulate = Color(0.7921569, 0.7176471, 0.6509804, 1)
 z_index = -5
 custom_minimum_size = Vector2(440, 956)
 layout_direction = 2

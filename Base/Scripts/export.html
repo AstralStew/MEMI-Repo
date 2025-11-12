@@ -1,239 +1,573 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>$GODOT_PROJECT_NAME</title>
-		<style>
-html, body, #canvas {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0"
+        />
+        <title>$GODOT_PROJECT_NAME</title>
+        <style>
+            html,
+            body,
+            #canvas {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
 
-body {
-	color: white;
-	background-color: black;
-	overflow: hidden;
-	touch-action: none;
-}
+            body {
+                color: white;
+                background-color: #281724;
+                overflow: hidden;
+                touch-action: none;
+            }
 
-#canvas {
-	display: block;
-}
+            #canvas {
+                display: block;
+                transition: opacity 0.2s linear;
+            }
 
-#canvas:focus {
-	outline: none;
-}
+            #canvas:focus {
+                outline: none;
+            }
 
-#status, #status-splash, #status-progress {
-	position: absolute;
-	left: 0;
-	right: 0;
-}
+            .canvas-hidden {
+                opacity: 0;
+            }
 
-#status, #status-splash {
-	top: 0;
-	bottom: 0;
-}
+            #status,
+            #status-splash,
+            #status-progress {
+                display: none !important;
+            }
 
-#status {
-	background-color: $GODOT_SPLASH_COLOR;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	visibility: hidden;
-}
+            #status,
+            #status-splash {
+                top: 0;
+                bottom: 0;
+            }
 
-#status-splash {
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
-}
+            #status {
+                background-color: #281724;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                visibility: hidden;
+            }
 
-#status-splash.show-image--false {
-	display: none;
-}
+            #status-splash {
+                max-height: 100%;
+                max-width: 100%;
+                margin: auto;
+            }
 
-#status-splash.fullsize--true {
-	height: 50%;
-	width: 50%;
-	object-fit: contain;
-}
+            #status-splash.show-image--false {
+                display: none;
+            }
 
-#status-splash.use-filter--false {
-	image-rendering: pixelated;
-}
+            #status-splash.fullsize--true {
+                height: 50%;
+                width: 50%;
+                object-fit: contain;
+            }
 
-#status-progress, #status-notice {
-	display: none;
-}
+            #status-splash.use-filter--false {
+                image-rendering: pixelated;
+            }
 
-#status-progress {
-	bottom: 10%;
-	width: 50%;
-	margin: 0 auto;
-}
+            #status-progress,
+            #status-notice {
+                display: none;
+            }
 
-#status-notice {
-	background-color: #5b3943;
-	border-radius: 0.5rem;
-	border: 1px solid #9b3943;
-	color: #e0e0e0;
-	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
-	line-height: 1.3;
-	margin: 0 2rem;
-	overflow: hidden;
-	padding: 1rem;
-	text-align: center;
-	z-index: 1;
-}
-		</style>
-		$GODOT_HEAD_INCLUDE
-	</head>
-	<body>
+            #status-progress {
+                bottom: 10%;
+                width: 50%;
+                margin: 0 auto;
+            }
 
-<!-- STUDIO KETTLE EDIT START -->
-	<video
-		id="loading-video"
-		src="PLAY.loading.msg.webm"
-		autoplay
-		muted
-		loop
-		playsinline
-	></video>
-<!-- STUDIO KETTLE EDIT END -->
+            #status-notice {
+                background-color: #5b3943;
+                border-radius: 0.5rem;
+                border: 1px solid #9b3943;
+                color: #e0e0e0;
+                font-family: "Noto Sans", "Droid Sans", Arial, sans-serif;
+                line-height: 1.3;
+                margin: 0 2rem;
+                overflow: hidden;
+                padding: 1rem;
+                text-align: center;
+                z-index: 1;
+            }
 
-		<canvas id="canvas">
-			Your browser does not support the canvas tag.
-		</canvas>
+            #loading-disclaimers {
+                z-index: 10000;
+                display: block;
+            }
 
-		<noscript>
-			Your browser does not support JavaScript.
-		</noscript>
+            #loading-video {
+                z-index: 9999;
+                display: none;
+            }
 
-		<div id="status">
-			<img id="status-splash" class="$GODOT_SPLASH_CLASSES" src="$GODOT_SPLASH" alt="">
-			<!-- STUDIO KETTLE EDIT START -->
-			<video
-				id="status-splash"
-				src="loading-disclaimers.webm"
-				autoplay
-				muted
-				loop
-				playsinline
-			></video>
-			<!-- STUDIO KETTLE EDIT END -->
-			<progress id="status-progress"></progress>
-			<div id="status-notice"></div>
-		</div>
+            #loading-video,
+            #loading-disclaimers {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 350px;
+                pointer-events: none;
+            }
+        </style>
+        <link
+            id="-gd-engine-icon"
+            rel="icon"
+            type="image/png"
+            href="PLAY.icon.png"
+        />
+        <link rel="apple-touch-icon" href="PLAY.apple-touch-icon.png" />
+        <script>
+            <!-- Define variables -->
 
-		<script src="$GODOT_URL"></script>
+            var SpeechRecognition =
+                SpeechRecognition || window.webkitSpeechRecognition || null;
+            //var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
+            var pageURL = window.location.href;
+            var folderURL = pageURL.replace(/[^/]*$/, "");
+
+            var lastResult = "";
+            var speech_ongoing = false;
+
+            <!-- Setup Speech Recognition -->
+            if (window.SpeechRecognition === null) {
+                // STUDIO KETTLE > Do something to show that the browser is unsupported
+                console.log("Note: window.SpeechRecognition === null");
+                alert(
+                    "Not compatible with Mozilla Firefox. Please try on Google Chrome or Safari.\n\n与Mozilla Firefox不兼容。请用Google Chrome或Safari试。\n\nليس متلائمًا  مع موزيلا فايرفوكْس [Mozilla Firefox] يُرجى المحاولة باستخدام غوغل كروم [Google Chrome] أو سَفاري [Safari].\n\nبا مرورگر Mozilla Firefox سازگار نیست. لطفاً از Google Chrome یا Safari استفاده کنید.",
+                );
+            }
+
+            var recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+
+            //looping video
+            let godotReady = false;
+            let disclaimerCompletedOnce = false;
+
+            window.addEventListener("DOMContentLoaded", () => {
+                const canvas = document.getElementById("canvas");
+                if (canvas) canvas.classList.add("canvas-hidden");
+
+                const disc = document.getElementById("loading-disclaimers");
+                if (!disc) return;
+
+                disc.removeAttribute("loop");
+
+                disc.addEventListener("ended", () => {
+                    // Mark that we have completed at least one full play
+                    if (!disclaimerCompletedOnce) {
+                        disclaimerCompletedOnce = true;
+
+                        // if Godot already ready, finish now
+                        if (godotReady) {
+                            finishAfterDelay();
+                            return;
+                        }
+
+                        // Godot still loading
+                        disc.pause();
+                        disc.style.display = "none";
+                        if (wantLoadingVideo) showLoadingVideo();
+                        return;
+                    }
+                });
+            });
+
+            let wantLoadingVideo = false;
+
+            function showLoadingVideo() {
+                // safety: never draw over disclaimers
+                const disc = document.getElementById("loading-disclaimers");
+                if (
+                    disc &&
+                    disc.style.display !== "none" &&
+                    !disclaimerCompletedOnce
+                ) {
+                    return; // bail if disclaimers still on the screen
+                }
+
+                const video = document.getElementById("loading-video");
+                if (video) {
+                    video.style.display = "block";
+                    video.currentTime = 0;
+                    video.play().catch(() => {});
+                }
+            }
+
+            <!-- Functions -->
+            function finishAfterDelay() {
+                const canvas = document.getElementById("canvas");
+                if (canvas) canvas.classList.add("canvas-hidden"); // hide Godot for the gap
+
+                // hide disclaimers right away so nothing overlaps
+                const disc = document.getElementById("loading-disclaimers");
+                if (disc) {
+                    disc.pause();
+                    disc.style.display = "none";
+                }
+
+                // hide the small loading fallback too (if ever shown)
+                const video = document.getElementById("loading-video");
+                if (video) {
+                    video.pause();
+                    video.style.display = "none";
+                }
+
+                // after 1s, reveal the menu and run your ready hook
+                setTimeout(() => {
+                    if (canvas) canvas.classList.remove("canvas-hidden");
+                    initialLoadFinished(); // keeps videos off
+                }, 1000); // <-- one-second visual gap
+            }
+
+            function initialLoadFinished() {
+                console.log(
+                    "[HEADER] Godot has finished loading the engine + prerequisite pcks!",
+                );
+                // Hide the disclaimers video
+                const disc = document.getElementById("loading-disclaimers");
+                if (disc) {
+                    disc.pause();
+                    disc.style.display = "none";
+                }
+
+                const video = document.getElementById("loading-video");
+                if (video) {
+                    video.pause();
+                    video.style.display = "none";
+                }
+            }
+
+            function loadingStarted() {
+                console.log("[HEADER] Godot has started loading a pack!");
+                wantLoadingVideo = true;
+
+                const disc = document.getElementById("loading-disclaimers");
+                const disclaimersVisible =
+                    disc && disc.style.display !== "none";
+
+                // Only show the loader AFTER disclaimers have completed once
+                // or if disclaimers element isn't visible/doesn't exist.
+                if (disclaimerCompletedOnce || !disclaimersVisible) {
+                    showLoadingVideo();
+                }
+            }
+
+            function loadingFinished() {
+                console.log("[HEADER] Godot has finished loading!");
+                wantLoadingVideo = false;
+                hideLoadingVideo();
+            }
+
+            function hideLoadingVideo() {
+                const video = document.getElementById("loading-video");
+                if (video) {
+                    video.pause();
+                    video.style.display = "none";
+                }
+            }
+
+            function exitNormal() {
+                console.log("[HEADER] User is trying to exit normally.");
+                // STUDIO KETTLE > Hook into here to goto landing page
+                window.location.href =
+                    "https://prepareandbesafe.com.au/en/topics/";
+            }
+
+            function exitQuick() {
+                console.log("[HEADER] User is trying to exit quickly!");
+                // STUDIO KETTLE > Hook into here to go somewhere innocuous
+                window.location.replace("https://www.bom.gov.au/");
+            }
+
+            function shareExperience() {
+                console.log(
+                    "[HEADER] User is trying to share the experience...",
+                );
+                // STUDIO KETTLE > Hook into here to go somewhere innocuous
+                if (navigator.share) {
+                    navigator
+                        .share({
+                            title: "Try Practise calling 000",
+                            text: "I just learned what it's like to call 000 — try it too!",
+                            url: window.location.href,
+                        })
+                        .then(() => console.log("Sharing successful"))
+                        .catch((error) => console.log("Error sharing:", error));
+                } else {
+                    // Fallback if Web Share API isn’t supported
+                    alert("Copy this link to share:\n" + window.location.href);
+                }
+            }
+
+            function startRecognition() {
+                console.log("[HEADER] Trying to start recognition!");
+                recognition.start();
+            }
+
+            function stopRecognition() {
+                console.log("[HEADER] Trying to stop recognition!");
+                recognition.stop();
+            }
+
+            <!-- Callbacks -->
+
+            recognition.addEventListener("result", () => {
+                // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
+                // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
+                // It has a getter so it can be accessed like an array
+                // The first [0] returns the SpeechRecognitionResult at the last position.
+                // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
+                // These also have getters so they can be accessed like arrays.
+                // The second [0] returns the SpeechRecognitionAlternative at position 0.
+                // We then return the transcript property of the SpeechRecognitionAlternative object
+
+                console.log("[HEADER] Got to SR result in header!");
+                lastResult = "";
+                for (var i = event.resultIndex; i < event.results.length; i++) {
+                    if (event.results[i].isFinal) {
+                        var result = event.results[i][0].transcript; // + ' (Confidence: ' + event.results[i][0].confidence + ')';
+                        //lastResults.push(result);
+                        lastResult = result;
+                        console.log("[HEADER] lastResult: ", lastResult);
+                    } else {
+                        var result = event.results[i][0].transcript;
+                        lastResult += result;
+                        console.log("[HEADER] lastResult: ", lastResult);
+                    }
+                }
+            });
+
+            recognition.addEventListener("start", () => {
+                console.log("[HEADER] Speech recognition started!");
+                speech_ongoing = true;
+            });
+
+            recognition.addEventListener("audiostart", () => {
+                console.log("[HEADER] AudioStart!");
+            });
+            recognition.addEventListener("audioend", () => {
+                console.log("[HEADER] AudioEnd!");
+            });
+            recognition.addEventListener("soundstart", () => {
+                console.log("[HEADER] SoundStart!");
+            });
+            recognition.addEventListener("soundend", () => {
+                console.log("[HEADER] SoundEnd!");
+            });
+
+            recognition.addEventListener("end", () => {
+                console.log("[HEADER] Speech recognition ended.");
+                speech_ongoing = false;
+            });
+
+            recognition.addEventListener("nomatch", () => {
+                console.error("[HEADER] No match detected!");
+            });
+
+            recognition.addEventListener("error", () => {
+                console.error(
+                    "[HEADER] Speech recognition error detected: ${event.error}",
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <!-- STUDIO KETTLE EDIT START -->
+
+        <video
+            id="loading-disclaimers"
+            src="loading-disclaimers.webm"
+            autoplay
+            muted
+            playsinline
+        ></video>
+
+        <video
+            id="loading-video"
+            src="PLAY.loading.msg.webm"
+            autoplay
+            muted
+            loop
+            playsinline
+        ></video>
+
+        <!-- STUDIO KETTLE EDIT END -->
+
+        <canvas id="canvas">
+            Your browser does not support the canvas tag.
+        </canvas>
+
+        <noscript> Your browser does not support JavaScript. </noscript>
+
+        <div id="status">
+            <!--<img id="status-splash" class="show-image--true fullsize--true use-filter--true" src="PLAY.png" alt=""> -->
+            <!-- STUDIO KETTLE EDIT START -->
+            <!-- STUDIO KETTLE EDIT END -->
+            <progress id="status-progress"></progress>
+            <div id="status-notice"></div>
+        </div>
+
+      <script src="$GODOT_URL"></script>
 		<script>
 const GODOT_CONFIG = $GODOT_CONFIG;
 const GODOT_THREADS_ENABLED = $GODOT_THREADS_ENABLED;
 const engine = new Engine(GODOT_CONFIG);
 
-(function () {
-	const statusOverlay = document.getElementById('status');
-	const statusProgress = document.getElementById('status-progress');
-	const statusNotice = document.getElementById('status-notice');
+            (function () {
+                const statusOverlay = document.getElementById("status");
+                const statusProgress =
+                    document.getElementById("status-progress");
+                const statusNotice = document.getElementById("status-notice");
 
-	let initializing = true;
-	let statusMode = '';
+                let initializing = true;
+                let statusMode = "";
 
-	function setStatusMode(mode) {
-		if (statusMode === mode || !initializing) {
-			return;
-		}
-		if (mode === 'hidden') {
-			statusOverlay.remove();
-			initializing = false;
-			return;
-		}
-		statusOverlay.style.visibility = 'visible';
-		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
-		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
-		statusMode = mode;
-	}
+                function setStatusMode(mode) {
+                    if (statusMode === mode || !initializing) {
+                        return;
+                    }
+                    if (mode === "hidden") {
+                        statusOverlay.remove();
+                        initializing = false;
+                        return;
+                    }
+                    statusOverlay.style.visibility = "visible";
+                    statusProgress.style.display =
+                        mode === "progress" ? "block" : "none";
+                    statusNotice.style.display =
+                        mode === "notice" ? "block" : "none";
+                    statusMode = mode;
+                }
 
-	function setStatusNotice(text) {
-		while (statusNotice.lastChild) {
-			statusNotice.removeChild(statusNotice.lastChild);
-		}
-		const lines = text.split('\n');
-		lines.forEach((line) => {
-			statusNotice.appendChild(document.createTextNode(line));
-			statusNotice.appendChild(document.createElement('br'));
-		});
-	}
+                function setStatusNotice(text) {
+                    while (statusNotice.lastChild) {
+                        statusNotice.removeChild(statusNotice.lastChild);
+                    }
+                    const lines = text.split("\n");
+                    lines.forEach((line) => {
+                        statusNotice.appendChild(document.createTextNode(line));
+                        statusNotice.appendChild(document.createElement("br"));
+                    });
+                }
 
-	function displayFailureNotice(err) {
-		console.error(err);
-		if (err instanceof Error) {
-			setStatusNotice(err.message);
-		} else if (typeof err === 'string') {
-			setStatusNotice(err);
-		} else {
-			setStatusNotice('An unknown error occurred.');
-		}
-		setStatusMode('notice');
-		initializing = false;
-	}
+                function displayFailureNotice(err) {
+                    console.error(err);
+                    if (err instanceof Error) {
+                        setStatusNotice(err.message);
+                    } else if (typeof err === "string") {
+                        setStatusNotice(err);
+                    } else {
+                        setStatusNotice("An unknown error occurred.");
+                    }
+                    setStatusMode("notice");
+                    initializing = false;
+                }
 
-	const missing = Engine.getMissingFeatures({
-		threads: GODOT_THREADS_ENABLED,
-	});
+                const missing = Engine.getMissingFeatures({
+                    threads: GODOT_THREADS_ENABLED,
+                });
 
-	if (missing.length !== 0) {
-		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
-			let serviceWorkerRegistrationPromise;
-			try {
-				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
-			} catch (err) {
-				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
-			}
-			// There's a chance that installing the service worker would fix the issue
-			Promise.race([
-				serviceWorkerRegistrationPromise.then((registration) => {
-					if (registration != null) {
-						return Promise.reject(new Error('Service worker already exists.'));
-					}
-					return registration;
-				}).then(() => engine.installServiceWorker()),
-				// For some reason, `getRegistration()` can stall
-				new Promise((resolve) => {
-					setTimeout(() => resolve(), 2000);
-				}),
-			]).then(() => {
-				// Reload if there was no error.
-				window.location.reload();
-			}).catch((err) => {
-				console.error('Error while registering service worker:', err);
-			});
-		} else {
-			// Display the message as usual
-			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
-			displayFailureNotice(missingMsg + missing.join('\n'));
-		}
-	} else {
-		setStatusMode('progress');
-		engine.startGame({
-			'onProgress': function (current, total) {
-				if (current > 0 && total > 0) {
-					statusProgress.value = current;
-					statusProgress.max = total;
-				} else {
-					statusProgress.removeAttribute('value');
-					statusProgress.removeAttribute('max');
-				}
-			},
-		}).then(() => {
-			setStatusMode('hidden');
-		}, displayFailureNotice);
-	}
-}());
-		</script>
-	</body>
+                if (missing.length !== 0) {
+                    if (
+                        GODOT_CONFIG["serviceWorker"] &&
+                        GODOT_CONFIG["ensureCrossOriginIsolationHeaders"] &&
+                        "serviceWorker" in navigator
+                    ) {
+                        let serviceWorkerRegistrationPromise;
+                        try {
+                            serviceWorkerRegistrationPromise =
+                                navigator.serviceWorker.getRegistration();
+                        } catch (err) {
+                            serviceWorkerRegistrationPromise = Promise.reject(
+                                new Error(
+                                    "Service worker registration failed.",
+                                ),
+                            );
+                        }
+                        // There's a chance that installing the service worker would fix the issue
+                        Promise.race([
+                            serviceWorkerRegistrationPromise
+                                .then((registration) => {
+                                    if (registration != null) {
+                                        return Promise.reject(
+                                            new Error(
+                                                "Service worker already exists.",
+                                            ),
+                                        );
+                                    }
+                                    return registration;
+                                })
+                                .then(() => engine.installServiceWorker()),
+                            // For some reason, `getRegistration()` can stall
+                            new Promise((resolve) => {
+                                setTimeout(() => resolve(), 2000);
+                            }),
+                        ])
+                            .then(() => {
+                                // Reload if there was no error.
+                                window.location.reload();
+                            })
+                            .catch((err) => {
+                                console.error(
+                                    "Error while registering service worker:",
+                                    err,
+                                );
+                            });
+                    } else {
+                        // Display the message as usual
+                        const missingMsg =
+                            "Error\nThe following features required to run Godot projects on the Web are missing:\n";
+                        displayFailureNotice(missingMsg + missing.join("\n"));
+                    }
+                } else {
+                    setStatusMode("progress");
+                    engine
+                        .startGame({
+                            onProgress: function (current, total) {
+                                if (!wantLoadingVideo && current < total) {
+                                    wantLoadingVideo = true;
+                                    loadingStarted();
+                                }
+
+                                if (current > 0 && total > 0) {
+                                    statusProgress.value = current;
+                                    statusProgress.max = total;
+                                } else {
+                                    statusProgress.removeAttribute("value");
+                                    statusProgress.removeAttribute("max");
+                                }
+
+                                if (current === total) {
+                                    loadingFinished();
+                                }
+                            },
+                        })
+
+                        .then(() => {
+                            setStatusMode("hidden");
+                            godotReady = true;
+                            if (disclaimerCompletedOnce) {
+                                finishAfterDelay();
+                            }
+                        }, displayFailureNotice);
+                }
+            })();
+        </script>
+    </body>
 </html>
